@@ -1,0 +1,6 @@
+acceptance_criteria:
+  max_reaction_time: 10
+  min_reaction_time: 0.05
+  max_lapse_rate: .25
+  max_guess_rate: .25
+  min_trials: 300

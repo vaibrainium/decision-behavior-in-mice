@@ -1,0 +1,36 @@
+[project]
+name = "decision-behavior-in-mice"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Vaibhav Thakur", email = "vaibhavt459@gmail.com"},]
+classifiers = ["License :: OSI Approved :: MIT License"]
+dependencies = [
+    "ipykernel",
+    "python-dotenv",
+    "pathlib2",
+    "pyyaml",
+    "pandas",
+    "polars",
+    "numpy",
+    "scipy",
+    "scikit-learn",
+    "numba",
+    "statsmodels",
+    "matplotlib",
+    "seaborn",
+    "bokeh",
+    "pyddm",
+    "omegaconf>=2.3.0",
+    "scienceplots>=2.1.1",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = [""]
+include = ["*"]
