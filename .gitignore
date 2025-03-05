@@ -6,5 +6,10 @@ dist/
 wheels/
 *.egg-info
 
-# Virtual environments
+# dot files
 .venv
+.env
+ruff.toml
+
+
+
