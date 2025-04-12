@@ -7,7 +7,8 @@ def get_RDK(coh, seed, nFrames, pulse_coh=None, pulse_t=None, pulse_dur=None):
 	# Loading pygame dependencies
 	import pygame
 	import pygame.locals
-	from RandomMotion import DotMotionStim
+
+	from scripts.ucla_rdk import DotMotionStim
 
 	if pulse_dur is None:
 		pulse_dur = []
@@ -16,32 +17,27 @@ def get_RDK(coh, seed, nFrames, pulse_coh=None, pulse_t=None, pulse_dur=None):
 	if pulse_coh is None:
 		pulse_coh = []
 	pygame.init()
-	pygame.mixer.init()
-	clock = pygame.time.Clock()
+	# pygame.mixer.init()
+	pygame.time.Clock()
 
 	# clock = pyglet.clock.Clock()
 	# clock.set_fps_limit(60)
 
 	# global window_size, screen, rewardTone, incorrectTone
-	root = tk.Tk()
-	window_size = (root.winfo_screenwidth(), root.winfo_screenheight())
+	tk.Tk()
+	window_size = (1280, 720)
 	flags = pygame.DOUBLEBUF  # Using buffer screen to increase speed
-	# screen = pygame.display.set_mode(window_size, vsync=1, display=1)  # Projecting on secondary screen
 	screen = pygame.display.set_mode(window_size, flags=flags, display=1)  # Projecting on secondary screen      # Changed this line on March 30 2021 to see if flickering stops with no vsync
 
-	msg = ["Nil"]
-	prev_msg = ["Nil"]
 	Dots = DotMotionStim()
 	Dots.vel = 5
-	Dots.radius = 13
+	Dots.radius = 14
 
 	screen.fill((0, 0, 0))  # Display Black Screen
 	pygame.display.update()
 	pygame.event.pump()
 
-	counter = 0
-	FrameRate = 150
-	loop_timer = time.time_ns()
+	time.time_ns()
 
 	Dots.newStimulus(coh, seed)
 	RDK = np.zeros((nFrames, window_size[0], window_size[1]))

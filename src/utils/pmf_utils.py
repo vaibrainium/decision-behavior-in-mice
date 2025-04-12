@@ -12,9 +12,9 @@ class PsychometricFunction(BaseEstimator, RegressorMixin):
 	"""Fits a logistic regression model for psychometric analysis.
 
 	Models:
-	    - "logit_2": Logistic function with mean and variance (without lapse rate).
-	    - "logit_3": Logistic function with lapse rate.
-	    - "logit_4": Logistic function with lapse and guess rates.
+		- "logit_2": Logistic function with mean and variance (without lapse rate).
+		- "logit_3": Logistic function with lapse rate.
+		- "logit_4": Logistic function with lapse and guess rates.
 	"""
 
 	def __init__(
@@ -93,7 +93,7 @@ class PsychometricFunction(BaseEstimator, RegressorMixin):
 		return self._fit_func(x, **self.coefs_)
 
 
-def fit_psychometric_function(x_data, y_data, trial_counts, model_type, **kwargs):
+def fit_psychometric_function(x_data, y_data, trial_counts, model_type, **kwargs) -> PsychometricFunction:
 	"""Fit psychometric function with user-defined or default parameters."""
 	params = {
 		"model": model_type,

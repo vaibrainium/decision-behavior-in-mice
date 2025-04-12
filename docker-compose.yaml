@@ -17,4 +17,8 @@ services:
         reservations:
           devices:
             - driver: nvidia
-              capabilities: [gpu]
+              capabilities:
+                - gpu
+                - utility # nvidia-smi
+                - compute # CUDA
+                - video
