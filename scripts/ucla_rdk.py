@@ -7,8 +7,6 @@ global window_size
 # root = tkinter.Tk()
 # window_size = (root.winfo_screenwidth(), root.winfo_screenheight())
 
-window_size = (1920, 1080)
-
 
 # screen = pygame.display.set_mode(window_size, pygame.FULLSCREEN, display=1)
 
@@ -31,6 +29,7 @@ class DotMotionStim(object):
 		self.noncohDots = []
 		self.Xpath = []
 		self.Ypath = []
+		self.stimulusSize = (1920, 1080)
 
 		self.rdk_generator = np.random.RandomState()  # Creating separate random number generator -> rdk_generator
 
@@ -41,9 +40,9 @@ class DotMotionStim(object):
 		self.rdk_generator.seed(seed)
 		# self.coherence = np.abs(dotCoherence)
 		self.coherence = dotCoherence
-		self.nDots = round((self.fill / 100) * window_size[0] * window_size[1] / (np.pi * self.radius**2))
-		self.x = self.rdk_generator.randint(window_size[0], size=self.nDots)
-		self.y = self.rdk_generator.randint(window_size[1], size=self.nDots)
+		self.nDots = round((self.fill / 100) * self.stimulusSize[0] * self.stimulusSize[1] / (np.pi * self.radius**2))
+		self.x = self.rdk_generator.randint(self.stimulusSize[0], size=self.nDots)
+		self.y = self.rdk_generator.randint(self.stimulusSize[1], size=self.nDots)
 		self.age = self.rdk_generator.randint(self.lifetime, size=self.nDots)
 		self.theta = self.rdk_generator.randint(360, size=self.nDots)  # Non coherent dots in all direction of 360 degrees
 		# self.theta = self.rdk_generator.choice(self.randTheta, size=self.nDots)     # Non coherent dots in one of 8 direction separated by 45 degrees
@@ -55,14 +54,14 @@ class DotMotionStim(object):
 		self.theta[self.cohDots] = np.sign(dotCoherence) * 90
 
 	def moveDots(self, frames=60):
-		self.x[self.age == self.lifetime] = self.rdk_generator.randint(window_size[0], size=np.count_nonzero(self.age == self.lifetime))
-		self.y[self.age == self.lifetime] = self.rdk_generator.randint(window_size[1], size=np.count_nonzero(self.age == self.lifetime))
+		self.x[self.age == self.lifetime] = self.rdk_generator.randint(self.stimulusSize[0], size=np.count_nonzero(self.age == self.lifetime))
+		self.y[self.age == self.lifetime] = self.rdk_generator.randint(self.stimulusSize[1], size=np.count_nonzero(self.age == self.lifetime))
 		self.age[self.age == self.lifetime] = 0
 		# Accounting for boundaries
-		self.x[self.x >= window_size[0]] = 0
-		self.x[self.x < 0] = window_size[0]
-		self.y[self.y >= window_size[1]] = 0
-		self.y[self.y < 0] = window_size[1]
+		self.x[self.x >= self.stimulusSize[0]] = 0
+		self.x[self.x < 0] = self.stimulusSize[0]
+		self.y[self.y >= self.stimulusSize[1]] = 0
+		self.y[self.y < 0] = self.stimulusSize[1]
 
 		# Moving dots one step a time
 		self.x = self.x + self.vel * np.sin(np.deg2rad(self.theta)) * (self.framerate / 60)
