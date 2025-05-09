@@ -22,3 +22,5 @@ services:
                 - utility # nvidia-smi
                 - compute # CUDA
                 - video
+        limits:
+          memory: 30G

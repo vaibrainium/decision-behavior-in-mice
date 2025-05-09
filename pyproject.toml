@@ -29,7 +29,7 @@ dependencies = [
     "opencv-python>=4.11.0.86",
     "ipywidgets>=8.1.5",
     "python3-tkinter",
-    "python-tk",
+    "python3-tk",
 ]
 
 [build-system]
