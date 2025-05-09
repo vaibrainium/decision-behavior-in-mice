@@ -12,6 +12,10 @@ class plot_utils:
 	)
 
 
+# from . import scientific_plotting as sciplot
+# sciplot.setup()
+
+
 class pmf_utils:
 	from .pmf_utils import (
 		fit_psychometric_function,
@@ -24,4 +28,4 @@ class pmf_utils:
 # class glm_hmm_utils:
 #     from .glm_hmm_utils import global_fit, session_wise_fit_cv, session_wise_fit
 
-__all__ = ["plot_utils", "pmf_utils"]  # , "glm_hmm_utils"]
+__all__ = ["sciplot", "plot_utils", "pmf_utils"]  # , "glm_hmm_utils"]
