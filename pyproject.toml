@@ -1,9 +1,9 @@
 [project]
-name = "decision-behavior-in-mice"
+name = "src"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 license = {text = "MIT"}
 authors = [{name = "Vaibhav Thakur", email = "vaibhavt459@gmail.com"},]
 classifiers = ["License :: OSI Approved :: MIT License"]
@@ -28,8 +28,7 @@ dependencies = [
     "torch>=2.6.0",
     "opencv-python>=4.11.0.86",
     "ipywidgets>=8.1.5",
-    "python3-tkinter",
-    "python3-tk",
+    "msgpack>=1.1.0",
 ]
 
 [build-system]
