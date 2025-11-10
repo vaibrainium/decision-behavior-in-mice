@@ -68,7 +68,7 @@ class PsychometricFunction(BaseEstimator, RegressorMixin):
             param_lims = [self.mean_lims, self.var_lims, self.lapse_rate_lims, self.guess_rate_lims]
 
         bounds = list(zip(*param_lims, strict=False))
-        initial_guess = [np.min(lim) for lim in param_lims]
+        initial_guess = [np.mean(param_lims[0])] + [np.min(lim) for lim in param_lims[1:]]
 
         # Compute weights: More trials → Higher weight
         if trial_counts is not None:
@@ -100,8 +100,8 @@ def fit_psychometric_function(x_data, y_data, trial_counts, model_type, **kwargs
         "model": model_type,
         "mean_lims": (-100, 100),
         "var_lims": (1e-5, 30),
-        "lapse_rate_lims": (1e-5, 0.2),
-        "guess_rate_lims": (1e-5, 0.2),
+        "lapse_rate_lims": (1e-5, 0.4),
+        "guess_rate_lims": (1e-5, 0.4),
         **kwargs,  # Override defaults with user input
     }
     return PsychometricFunction(**params).fit(x_data, y_data, trial_counts)
