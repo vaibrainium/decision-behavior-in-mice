@@ -1,3 +1,5 @@
+project_dir: "/src"
+
 data:
   raw: "/mnt/data/raw"
   processed: "/mnt/data/processed"
