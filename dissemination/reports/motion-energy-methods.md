@@ -1,6 +1,6 @@
 # Motion energy for mouse RDK trials: method review and corrections
 
-**Status (2026-10-10):** review and proposed method. The fixes below have been validated in a prototype but are **not yet implemented** in the pipeline. The shard outputs currently on disk (`processed/motion_data_dict/me_shard_{0,1}.pkl`, 25,508 trials) were produced with the old settings described in section 1.
+**Status (2026-10-13):** sections 3.1–3.5 are implemented. The mouse method is in `scripts/motion_energy.py` (`MOUSE_ME_PARAMS`, `render_stimulus_deg`, `compute_mouse_me`). `scripts/compute_motion_energy_full.py` writes `processed/motion_energy_mouse/me_shard_*.pkl` with 300 frames per trial. `scripts/assemble_motion_energy.py` (also run from notebook 2.10) calibrates per rig and writes `motion_energies_normalized/` (cut at the RT) and `motion_energies_full/` (uncut, for the DDM). Still open: DDM frame indexing (3.6) and screen geometry (3.7). The old-settings shards in `processed/motion_data_dict/` are left untouched. Section 1 describes the old pipeline.
 
 **Purpose:** motion energy (ME) is the trial-by-trial evidence signal for the psychophysical kernels and for the DDM fits. This document records how ME is currently computed, which problems that has, and the corrected method for mice. The corrected method must also be fast enough to regenerate for every trial.
 
@@ -94,7 +94,7 @@ The filters' peak frequencies scale as **SF ≈ 0.477 / σc** and **TF ≈ 0.071
 | Time step | 1/60 s | one sample per display frame |
 
 ### 3.2 Causal temporal filtering
-Pad only at the start with zeros (accurate, because the screen is blank before the dots appear), and use no future frames. The output has the same length as the input, so the `[:-3]` trim is no longer needed.
+Pad only at the start with zeros (accurate, because the screen is blank before the dots appear), and use no future frames. Use true convolution, with the kernel flipped. `F.conv1d`/`F.conv3d` compute cross-correlation, and the old pipeline passed them unflipped kernels. With causal `g(t)` taps, that weights future frames most heavily. The output has the same length as the input, so the `[:-3]` trim is no longer needed.
 
 The filters delay the response: they peak at 67 and 117 ms, and their response is centred at about 116 and 176 ms. This stands in for the sensory delay of a real visual system. In the DDM it is absorbed by the non-decision time, so the fitted `ndt` includes it. Its lower bound (currently 0.1 s) should be reviewed with that in mind.
 
@@ -168,9 +168,10 @@ These results come from a scratchpad prototype run on CPU, using the rigs' own R
 
 ## 6. To-do
 
-- [ ] Rewrite `compute_motion_energy_full.py` with sections 3.1–3.3 and the separable GPU form, generating 300 frames per trial (3.5).
-- [ ] Add the per-rig calibration step (3.4).
-- [ ] Update notebook 2.10 to read the shard dictionaries (2.5), and remove the `[:-3]` trim and session-max normalization.
+- [x] Rewrite `compute_motion_energy_full.py` with sections 3.1–3.3 and the separable GPU form, generating 300 frames per trial (3.5).
+- [x] Add the per-rig calibration step (3.4): `scripts/assemble_motion_energy.py`.
+- [x] Update notebook 2.10 to read the shard dictionaries (2.5), and remove the `[:-3]` trim and session-max normalization.
+- [ ] Point `scripts/ddm/ddm_fitting.py` at `motion_energies_full/` once the DDM indexing (3.6) is fixed. It currently reads `motion_energies_normalized/`, which is cut at the RT.
 - [ ] Fix the DDM frame indexing (3.6) and review the `ndt` bounds (3.2).
 - [ ] Measure screen width and viewing distance for each rig, then add the angle correction (3.7).
 - [ ] Run the filter sensitivity analysis (section 5).
