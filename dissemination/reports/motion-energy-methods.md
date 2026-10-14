@@ -27,14 +27,18 @@ Code: [`scripts/compute_motion_energy_full.py`](../../scripts/compute_motion_ene
 |---|---|---|
 | Filter equations | as above | same |
 | σc | 0.35° | 4° (8° in practice, see 2.1) |
-| σg | not stated | 2° |
-| k | 60 s⁻¹ | 31.4 s⁻¹ |
+| σg | not stated (written only as "σg°") | 2° |
+| Temporal rate constant (k in this document) | 60 s⁻¹, written as a literal constant in their Eq. 2 | 31.4 s⁻¹ |
 | Tuning rule | "centered on the speed of coherent motion in our display" | rescaled for mice, but see 2.1 |
 | Spatial pooling | sum | mean (only changes the scale) |
 | Normalization | none | divide by session maximum |
-| Kernel analysis | 0% coherence trials, split by choice, aligned to onset | coherence-mean-subtracted residuals (Nienborg & Cumming 2009; Okazawa et al. 2018) |
+| Kernel analysis | 0% coherence trials, split by choice, aligned to onset | coherence-mean-subtracted residuals (our own choice, see note below) |
 
 The Kiani task had a fixed viewing duration. Ours is reaction-time.
+
+**Notation.** "k" in this document is the temporal rate constant of the filters. In Kiani et al. (2008), k is a different quantity, a fitted gain that converts motion energy to momentary evidence (k ≈ 0.46). Avoid using "k" for the filter constant in a paper.
+
+**Kernel residuals.** Nienborg & Cumming (2009), Kiani et al. (2008) and Okazawa et al. (2018) all compute kernels from 0% coherence trials only. None of them uses residuals from nonzero-coherence trials, so none should be cited for that. Either find a source or present it as our own method, and consider reporting 0% coherence kernels alongside it.
 
 ---
 
@@ -59,7 +63,7 @@ With k = 31.4 s⁻¹, the fast filter (n = 3) peaks at about 73 ms and the slow 
 Even-sized kernels with `s//2` padding on each side make each output one sample longer than the input. Centered padding also means each time point uses about 3 frames that come after it. Dropping the last 3 samples (`me[:-3]`) in notebook 2.10 is a workaround for this.
 
 ### 2.4 Normalization depends on one extreme trial
-Dividing each session by its largest |ME| sets the scale from a single high-coherence trial. As a result the scale varies between sessions and is not comparable between rigs. The rigs genuinely differ by about 5× in raw ME (section 4) because of dot size and pixels per degree.
+Dividing each session by its largest |ME| sets the scale from a single high-coherence trial. As a result the scale varies between sessions and is not comparable between rigs. The rigs genuinely differ by about 4× in raw ME (calibration slopes 1.18 for UCLA and 4.93 for UW per % coherence) because of dot size and pixels per degree.
 
 ### 2.5 Notebook 2.10 cannot read the current output
 The loader expects one file per trial, named `me_array_<code>.pkl`, which is what the older scripts wrote. `compute_motion_energy_full.py` writes two shard dictionaries keyed by `agg_code`, so the notebook would read them as two "trials" called `me_shard_0` and `me_shard_1`.
@@ -75,11 +79,16 @@ The simulator stops at the first NaN, and ME is only generated up to `rt_frame`.
 ## 3. Corrected method
 
 ### 3.1 Filter parameters for mice
-Following Kiani et al., the filters are tuned to the speed of the dots (about 30°/s on both rigs), while staying inside the range mice are sensitive to:
-- Mouse V1 neurons prefer about 0.03–0.04 c/deg (range 0.01–0.18) and about 1.8 Hz (range 0.25–8 Hz).
-- Behavioral optomotor responses are strongest at 0.1–0.2 c/deg, with acuity limited to about 0.4 c/deg.
+Kiani et al. (2008) chose filter constants giving "a spatiotemporal frequency passband consistent with that of MT neurons" and "centered on the speed of coherent motion in our display". Here the filters are tuned the same way, to the speed of the dots (about 30°/s on both rigs), while staying inside the range mice are sensitive to:
+- **Mouse V1, extracellular recordings** (Niell & Stryker 2008): preferred SF "generally ranged from 0.02 to 0.08 cpd (median of 0.036 cpd)", with some units up to 0.32 cpd, the highest tested. Preferred TF had a median of 1.68 Hz ("most units responded optimally at ∼2 Hz").
+- **Mouse V1, two-photon imaging of layer 2/3** (Andermann et al. 2011, Table 1): median preferred SF 0.076 cpd, TF 3.0 Hz and speed 39.9°/s. Higher areas differ: AL is faster (median 84.8°/s) and PM slower (10.9°/s).
+- **Behaviour, optomotor response, photopic** (Umino et al. 2008): peak sensitivity at 0.128 c/deg and 1.5 Hz, acuity 0.48 ± 0.03 c/deg, and maximal sensitivity at about 15°/s.
 
-The filters' peak frequencies scale as **SF ≈ 0.477 / σc** and **TF ≈ 0.071 · k**.
+The chosen filters (0.080 c/deg, 2.4 Hz, 30°/s) sit close to the V1 medians in Andermann et al. (2011), inside the Niell & Stryker range, and below behavioural acuity. Behaviourally, mice are most sensitive at somewhat slower speeds (~15°/s) than our dots move.
+
+The filters' peak frequencies scale as **SF ≈ 0.477 / σc** and **TF ≈ 0.071 · k**. These are numerical properties of the filter equations, found from the peaks of their Fourier spectra; they are not taken from a paper.
+
+The specific values of σc, σg and k are our choices. The speed constraint fixes only their ratio, so they need the sensitivity analysis in section 5. σg = σc/2 is also a choice, since Kiani et al. do not give σg.
 
 | Parameter | Value | Reason |
 |---|---|---|
@@ -111,7 +120,9 @@ Raw ME scale depends on dot size and pixels per degree. For each rig:
 1. Fit how mean ME (after the first ~150 ms, once the filters have warmed up) grows with nominal signed coherence.
 2. Divide by that slope.
 
-ME is then in equivalent-%-coherence units, so `drift_gain` means the same thing on both rigs and can be compared with a DDM fitted to nominal coherence. This replaces normalizing per session.
+ME is then in equivalent-%-coherence units, so `drift_gain` means the same thing on both rigs and can be compared with a DDM fitted to nominal coherence. This replaces normalizing per session. Okazawa et al. (2018) use the same conversion: they divide motion energy by the slope relating it to coherence before simulating their model.
+
+Calibration stays per rig even when the DDM is fitted per session or per mouse. ME describes the stimulus, not the animal. Refitting the slope per session gives 0.988–1.011 for UCLA (32 sessions) and 0.997–1.004 for UW (18 sessions), and per mouse 0.998–1.003. Differences in sensitivity between animals belong in the fitted `drift_gain`, not in the evidence scale.
 
 ### 3.5 Generate ME beyond the RT for the DDM
 The dots are fully determined by the seed, so each trial can be regenerated out to the longest time being fitted (5 s = 300 frames). This is what the stimulus would have shown had the animal not yet responded.
@@ -181,9 +192,11 @@ These results come from a scratchpad prototype run on CPU, using the rigs' own R
 ## References
 
 - Adelson EH, Bergen JR (1985). Spatiotemporal energy models for the perception of motion. *J Opt Soc Am A* 2:284–299.
-- Kiani R, Hanks TD, Shadlen MN (2008). Bounded integration in parietal cortex underlies decisions even when viewing duration is dictated by the environment. *J Neurosci* 28:3017–3029. https://www.jneurosci.org/content/28/12/3017
-- Niell CM, Stryker MP (2008). Highly selective receptive fields in mouse visual cortex. *J Neurosci* 28:7520–7536. Mouse V1 spatial-frequency values as summarized in https://journals.physiology.org/doi/full/10.1152/jn.00022.2012
-- Andermann ML, Kerlin AM, Roumis DK, Glickfeld LL, Reid RC (2011). Functional specialization of mouse higher visual cortical areas. *Neuron* 72:1025–1039. https://pmc.ncbi.nlm.nih.gov/articles/PMC3876958/
-- Umino Y, Solessio E, Barlow RB (2008). Speed, spatial, and temporal tuning of rod and cone vision in mouse. *J Neurosci* 28:189–198. https://www.jneurosci.org/content/28/1/189
-- Nienborg H, Cumming BG (2009). Decision-related activity in sensory neurons reflects more than a neuron's causal effect. *Nature* 459:89–92.
-- Okazawa G, Sha L, Purcell BA, Kiani R (2018). Psychophysical reverse correlation reflects both sensory and decision-making processes. *Nat Commun* 9:3479. https://www.cns.nyu.edu/kianilab/papers/Okazawa_Kiani_2018.pdf
+- Kiani R, Hanks TD, Shadlen MN (2008). Bounded integration in parietal cortex underlies decisions even when viewing duration is dictated by the environment. *J Neurosci* 28:3017–3029. doi:10.1523/JNEUROSCI.4761-07.2008. https://pmc.ncbi.nlm.nih.gov/articles/PMC6670720/ Source of the filter equations (Eqs. 1–2), σc = 0.35°, the temporal constant 60 s⁻¹ and the tuning rule.
+- Niell CM, Stryker MP (2008). Highly selective receptive fields in mouse visual cortex. *J Neurosci* 28:7520–7536. doi:10.1523/JNEUROSCI.0623-08.2008. https://pmc.ncbi.nlm.nih.gov/articles/PMC3040721/
+- Andermann ML, Kerlin AM, Roumis DK, Glickfeld LL, Reid RC (2011). Functional specialization of mouse higher visual cortical areas. *Neuron* 72:1025–1039. doi:10.1016/j.neuron.2011.11.013. https://pmc.ncbi.nlm.nih.gov/articles/PMC3876958/
+- Umino Y, Solessio E, Barlow RB (2008). Speed, spatial, and temporal tuning of rod and cone vision in mouse. *J Neurosci* 28:189–198. doi:10.1523/JNEUROSCI.3551-07.2008. https://pmc.ncbi.nlm.nih.gov/articles/PMC2847259/
+- Nienborg H, Cumming BG (2009). Decision-related activity in sensory neurons reflects more than a neuron's causal effect. *Nature* 459:89–92. doi:10.1038/nature07821. https://pmc.ncbi.nlm.nih.gov/articles/PMC2917918/ Uses 0% signal trials only for kernels.
+- Okazawa G, Sha L, Purcell BA, Kiani R (2018). Psychophysical reverse correlation reflects both sensory and decision-making processes. *Nat Commun* 9:3479. doi:10.1038/s41467-018-05797-y. https://pmc.ncbi.nlm.nih.gov/articles/PMC6113286/ Kernels from 0% coherence trials. Source for converting ME to coherence units (3.4) and for RT-task kernel caveats.
+
+All references were checked against the full text on 2026-10-14. Adelson & Bergen (1985) was checked by the author; the others were checked against PMC. The mouse V1 ranges given in an earlier draft ("0.01–0.18 c/deg", "0.25–8 Hz") do not appear in Niell & Stryker (2008) and were removed.
