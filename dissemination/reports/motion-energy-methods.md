@@ -177,6 +177,16 @@ These results come from a scratchpad prototype run on CPU, using the rigs' own R
 
 ---
 
+### 5.1 Stimulus noise is a fixed bias per trial (hidden coherence)
+In both rigs' RDK code, each non-coherent dot keeps the random direction it draws at stimulus onset for the whole trial; only its position resets when its lifetime ends. Each seed therefore has a fixed net horizontal motion beyond the nominal coherence, the **hidden coherence** (`scripts.motion_energy.hidden_coherence`; saved per trial in `processed/hidden_coherence.csv`). Measured on control trials (notebook 2.14, section 5):
+- SD at 0% coherence is 3.3% (UCLA) and 5.9% (UW); it is zero at 100% coherence.
+- It correlates 0.87 (UCLA) and 0.97 (UW) with trial-mean ME at 0% coherence. ME noise stays correlated for seconds (autocorrelation at 2 s: 0.22 UCLA, 0.60 UW).
+- The ME model weights it like nominal coherence (1.06 ME per 1% hidden coherence), but the mice weight it at about half: shared ratio k ≈ 0.55 (95% CI 0.20–0.95), with a positive weight in 9 of 10 mice.
+
+Consequences:
+- Noise-based psychophysical kernels cannot resolve *when* evidence is weighted. Unlike the dynamic dots of Kiani et al. (2008), the noise does not change within a trial. Timing questions rest on the pulses and the DDM.
+- **DDM:** raw ME as evidence assumes the mice weight noise like coherence (k = 1). Give the nominal part and the residual separate gains: drift ∝ w_nom · c + w_noise · (ME − mean ME for c), and fit w_noise freely.
+
 ## 6. To-do
 
 - [x] Rewrite `compute_motion_energy_full.py` with sections 3.1–3.3 and the separable GPU form, generating 300 frames per trial (3.5).

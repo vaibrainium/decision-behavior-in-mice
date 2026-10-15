@@ -307,3 +307,18 @@ def pool_mouse_me(me):
             "Q4": me[:, hy:, hx:].mean(dim=(1, 2)),
         },
     }
+
+
+def hidden_coherence(rig, rdk, seed, coherence):
+    """Net horizontal motion of a trial's dots at stimulus onset beyond the nominal coherence, in % coherence.
+
+    In both rigs' RDKs each non-coherent dot draws a random direction at onset and keeps it for the
+    whole trial (only its position resets when its lifetime ends), so every seed carries a fixed net
+    motion bias. Effective coherence = coherence + hidden coherence = 100 * mean(sin(theta)) over all
+    dots (+ = rightward). Valid until a pulse changes dot directions.
+    """
+    if rig == "ucla":
+        rdk.newStimulus(coherence, seed)
+    else:
+        rdk.new_stimulus({"seed": seed, "coherence": coherence})
+    return 100 * np.mean(np.sin(np.deg2rad(rdk.theta))) - coherence
