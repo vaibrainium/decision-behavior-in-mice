@@ -76,6 +76,9 @@ class _NumbaSimulator:
         unit_sv: np.ndarray | None = None,
         unit_sz: np.ndarray | None = None,
     ) -> tuple[np.ndarray, np.ndarray]:
+        if isinstance(stimulus, tuple):
+            signal, stim_noise = stimulus
+            stimulus = np.asarray(signal, dtype=np.float32) + float(params.get("noise_weight", 1.0)) * np.asarray(stim_noise, dtype=np.float32)
         if stimulus.size == 0:
             return np.array([], dtype=np.float32), np.array([], dtype=np.float32)
         stim = np.asarray(stimulus, dtype=np.float32)
@@ -125,6 +128,23 @@ class _TorchSimulator:
 
     def __init__(self, device: str | None = None):
         self.device = torch.device(device if device else ("cuda" if torch.cuda.is_available() else "cpu"))
+        self._cache: dict = {}
+
+    def _to_device(self, array: np.ndarray, slot: str) -> torch.Tensor:
+        """Upload `array` once and reuse it while the same array (data pointer + shape) is passed again.
+
+        During fitting the same stimulus and per-rep noise arrays are passed thousands of times. Each slot keeps
+        one array per data pointer, so all n_reps noise draws stay on the device instead of being re-uploaded
+        every rep.
+        """
+        key = (array.__array_interface__["data"][0], array.shape)
+        slot_cache = self._cache.setdefault(slot, {})
+        if key not in slot_cache:
+            slot_cache[key] = torch.tensor(array, device=self.device, dtype=torch.float32)
+        return slot_cache[key]
+
+    def clear_cache(self) -> None:
+        self._cache = {}
 
     def simulate_trials(
         self,
@@ -135,18 +155,14 @@ class _TorchSimulator:
         unit_sz: np.ndarray | None = None,
     ) -> tuple[np.ndarray, np.ndarray]:
         dev = self.device
-        if isinstance(stimulus, torch.Tensor):
+        if isinstance(stimulus, tuple):
+            # two channels: drift input = signal + noise_weight * noise
+            signal, stim_noise = (c.to(dev, dtype=torch.float32) if isinstance(c, torch.Tensor) else self._to_device(c, f"stimulus_{i}") for i, c in enumerate(stimulus))
+            stim = signal + float(params.get("noise_weight", 1.0)) * stim_noise
+        elif isinstance(stimulus, torch.Tensor):
             stim = stimulus.to(dev, dtype=torch.float32)
         else:
-            # Cache the GPU tensor: during fitting the same numpy array is passed
-            # thousands of times. Re-uploading it on every call is the main GPU
-            # bottleneck. We key the cache on the array's data pointer + shape.
-            ptr = stimulus.__array_interface__["data"][0]
-            key = (ptr, stimulus.shape)
-            if getattr(self, "_stim_cache_key", None) != key:
-                self._stim_cache_key = key
-                self._stim_cache = torch.tensor(stimulus, device=dev, dtype=torch.float32)
-            stim = self._stim_cache
+            stim = self._to_device(stimulus, "stimulus")
 
         if stim.numel() == 0:
             return np.array([], dtype=np.float32), np.array([], dtype=np.float32)
@@ -174,12 +190,7 @@ class _TorchSimulator:
         # sv: per-trial drift variability — add a constant offset to each trial's drift
         if sv > 0.0:
             if unit_sv is not None:
-                ptr = unit_sv.__array_interface__["data"][0]
-                svkey = (ptr, unit_sv.shape)
-                if getattr(self, "_sv_cache_key", None) != svkey:
-                    self._sv_cache_key = svkey
-                    self._sv_cache = torch.tensor(unit_sv, device=dev, dtype=torch.float32)
-                sv_draws = self._sv_cache.unsqueeze(1) * sv
+                sv_draws = self._to_device(unit_sv, "unit_sv").unsqueeze(1) * sv
             else:
                 sv_draws = torch.randn(n_trials, 1, device=dev) * sv  # (N, 1)
             drift_inc = drift_inc + sv_draws * dt  # broadcast over T
@@ -187,12 +198,7 @@ class _TorchSimulator:
         # sz: per-trial starting point variability — Uniform(z - sz/2, z + sz/2)
         if sz > 0.0:
             if unit_sz is not None:
-                ptr = unit_sz.__array_interface__["data"][0]
-                szkey = (ptr, unit_sz.shape)
-                if getattr(self, "_sz_cache_key", None) != szkey:
-                    self._sz_cache_key = szkey
-                    self._sz_cache = torch.tensor(unit_sz, device=dev, dtype=torch.float32)
-                z_offsets = (self._sz_cache - 0.5) * sz
+                z_offsets = (self._to_device(unit_sz, "unit_sz") - 0.5) * sz
             else:
                 z_offsets = (torch.rand(n_trials, device=dev) - 0.5) * sz
             z_trials = torch.clamp(z + z_offsets, 0.01, 0.99)
@@ -201,15 +207,7 @@ class _TorchSimulator:
             sp = z * a  # scalar
 
         if unit_noise is not None:
-            # Cache the per-rep noise slice on GPU to avoid repeated CPU→GPU transfers.
-            # unit_noise is a 2-D view into the precomputed array; the data pointer is
-            # stable across all optimizer iterations so we get a cache hit after rep 1.
-            ptr = unit_noise.__array_interface__["data"][0]
-            nkey = (ptr, unit_noise.shape)
-            if getattr(self, "_noise_cache_key", None) != nkey:
-                self._noise_cache_key = nkey
-                self._noise_cache = torch.tensor(unit_noise, device=dev, dtype=torch.float32)
-            noise_inc = self._noise_cache * noise_std  # (N, T)
+            noise_inc = self._to_device(unit_noise, "unit_noise") * noise_std  # (N, T)
         else:
             noise_inc = torch.randn(n_trials, T, device=dev) * noise_std  # (N, T)
 
@@ -322,12 +320,26 @@ class DriftDiffusionSimulator:
 
     def simulate_trials(
         self,
-        stimulus: np.ndarray | torch.Tensor,
+        stimulus: np.ndarray | torch.Tensor | tuple,
         params: dict,
         unit_noise: np.ndarray | None = None,
         unit_sv: np.ndarray | None = None,
         unit_sz: np.ndarray | None = None,
+        labels: np.ndarray | None = None,
     ) -> pd.DataFrame:
-        rt, choice = self._backend.simulate_trials(stimulus, params, unit_noise=unit_noise, unit_sv=unit_sv, unit_sz=unit_sz)
+        """Simulate one decision per trial.
 
-        return pd.DataFrame({"signed_coherence": stimulus[:, 0], "rt": rt, "choice": choice})
+        `stimulus` is (n_trials, n_timepoints), or a (signal, noise) tuple of such arrays whose drift input is
+        signal + params["noise_weight"] * noise. `labels` gives each trial's condition (e.g. coherence) for the
+        likelihood; without it the first stimulus sample is used, which is only right for a constant stimulus.
+        """
+        rt, choice = self._backend.simulate_trials(stimulus, params, unit_noise=unit_noise, unit_sv=unit_sv, unit_sz=unit_sz)
+        if labels is None:
+            if isinstance(stimulus, tuple):
+                raise ValueError("labels are required for a two-channel stimulus")
+            labels = stimulus[:, 0]
+        return pd.DataFrame({"signed_coherence": labels, "rt": rt, "choice": choice})
+
+    def clear_cache(self) -> None:
+        if hasattr(self._backend, "clear_cache"):
+            self._backend.clear_cache()

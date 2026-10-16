@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-LIKELIHOOD_PARAMS = {"nbins": 9, "rt_nllh_weight": 1.0}
+LIKELIHOOD_PARAMS = {"method": "qmle", "nbins": 9, "rt_nllh_weight": 1.0}
 
 FIXED_PARAMS = {
     "dt": FixedParam(0.001),

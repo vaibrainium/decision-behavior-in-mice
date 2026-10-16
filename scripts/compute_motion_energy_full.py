@@ -85,12 +85,12 @@ def save_shard(path, results):
         pickle.dump({"params": MOUSE_ME_PARAMS, "n_frames": N_FRAMES, "me": results}, f)
 
 
-def main(gpu_id, shard, num_shards, num_workers, checkpoint_every, limit=None, queue_maxsize=None):
+def main(gpu_id, shard, num_shards, num_workers, checkpoint_every, limit=None, queue_maxsize=None, trials="valid_data.csv", out_name="motion_energy_mouse"):
     processed_dir = Path(dir_config.data.processed)
-    out_dir = processed_dir / "motion_energy_mouse"
+    out_dir = processed_dir / out_name
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    data = pd.read_csv(processed_dir / "valid_data.csv")
+    data = pd.read_csv(processed_dir / trials)
     data = convert_to_frame_units(data)
     rows = data.to_dict(orient="records")
     rows = rows[shard::num_shards]
@@ -151,5 +151,7 @@ if __name__ == "__main__":
     parser.add_argument("--num-workers", type=int, default=15)
     parser.add_argument("--checkpoint-every", type=int, default=500)
     parser.add_argument("--limit", type=int, default=None)
+    parser.add_argument("--trials", default="valid_data.csv", help="trial table (relative to the processed data directory)")
+    parser.add_argument("--out-dir", default="motion_energy_mouse", help="output directory (relative to the processed data directory)")
     args = parser.parse_args()
-    main(args.gpu, args.shard, args.num_shards, args.num_workers, args.checkpoint_every, args.limit)
+    main(args.gpu, args.shard, args.num_shards, args.num_workers, args.checkpoint_every, args.limit, trials=args.trials, out_name=args.out_dir)

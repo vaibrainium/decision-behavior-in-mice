@@ -22,6 +22,10 @@ from scipy.optimize import differential_evolution, minimize
 
 from .simulator import DriftDiffusionSimulator
 from .likelihood_calculator import LikelihoodCalculator
+from .likelihood_calculator_censored import CensoredQMLE
+from .likelihood_calculator_qmle import LikelihoodCalculator as QMLELikelihoodCalculator
+
+LIKELIHOOD_CALCULATORS = {"qmle": QMLELikelihoodCalculator, "kl": LikelihoodCalculator, "qmle_censored": CensoredQMLE}
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -100,8 +104,23 @@ class DecisionModel:
         device: str | None = None,
         likelihood_params: dict | None = None,
         seed: int = 42,
+        censor_at: float | None = None,
+        min_rt: tuple[float, str] | None = None,
     ):
+        """How simulated RTs map onto the recorded outcomes (both off by default, as for the NHP fits):
+
+        censor_at  RT (s) after which a trial counts as "no response": simulated trials that do not cross a bound
+                   within the stimulus, or respond later than this, become censored (rt = inf, choice = -1)
+                   instead of being dropped. Use with the "qmle_censored" likelihood.
+        min_rt     (rt, mode) for responses earlier than `rt`: "floor" registers them at `rt` (a rig that ignores
+                   early licks and takes the next one), "truncate" drops them (data selected to exclude them).
+        """
+        if min_rt is not None and min_rt[1] not in ("floor", "truncate"):
+            raise ValueError(f"min_rt mode must be 'floor' or 'truncate', got {min_rt[1]!r}")
         self.seed = seed
+        self.censor_at = censor_at
+        self.min_rt = min_rt
+        self._labels: np.ndarray | None = None
         self._precomputed: dict | None = None
         self.simulator = DriftDiffusionSimulator(device=device)
 
@@ -110,17 +129,22 @@ class DecisionModel:
         self.fixed_params = fixed_params or {}
         self._validate_configuration()
 
-        lp = likelihood_params or {}
-        self.likelihood_calc = LikelihoodCalculator(
-            nbins=lp.get("nbins", 5),
-            caf_weight=lp.get("caf_weight", 1.0),
-            caf_bins=lp.get("caf_bins", 5),
-            chrono_weight=lp.get("chrono_weight", 2.0),
-        )
+        # likelihood_params["method"] picks the objective: "qmle" (Ratcliff quantile likelihood, the
+        # default and what the NHP fits used) or "kl" (KL + chronometric + CAF). The remaining keys are
+        # passed to that calculator's constructor, so a key it does not accept raises instead of being
+        # silently ignored.
+        lp = dict(likelihood_params or {})
+        method = lp.pop("method", "qmle")
+        if method not in LIKELIHOOD_CALCULATORS:
+            raise ValueError(f"Unknown likelihood method {method!r}; expected one of {sorted(LIKELIHOOD_CALCULATORS)}")
+        self.likelihood_method = method
+        self.likelihood_calc = LIKELIHOOD_CALCULATORS[method](**lp)
         logger.info(
-            "Initialized %s | device=%s",
+            "Initialized %s | device=%s | likelihood=%s %s",
             type(self).__name__,
             getattr(self.simulator, "device", "CPU"),
+            method,
+            lp,
         )
 
     def _validate_configuration(self):
@@ -177,13 +201,17 @@ class DecisionModel:
         if torch.cuda.is_available():
             torch.cuda.manual_seed_all(seed)
 
+    @staticmethod
+    def _stimulus_shape(stimulus) -> tuple[int, int]:
+        return (stimulus[0] if isinstance(stimulus, tuple) else stimulus).shape
+
     def _simulate_condition(
         self,
-        stimulus: np.ndarray,
+        stimulus: np.ndarray | tuple,
         params: dict,
         n_reps: int,
     ) -> pd.DataFrame | None:
-        """Run repeated simulations and concatenate valid trials."""
+        """Run repeated simulations and concatenate the trials, applying `censor_at` and `min_rt`."""
         simulations = []
 
         for rep in range(n_reps):
@@ -200,13 +228,13 @@ class DecisionModel:
                     unit_noise=rep_noise,
                     unit_sv=rep_sv,
                     unit_sz=rep_sz,
+                    labels=self._labels,
                 )
             except Exception as exc:
                 logger.warning("Simulation failed: %s", exc)
                 return None
 
-            valid = np.isfinite(sim["rt"]) & np.isfinite(sim["choice"])
-            sim = sim.loc[valid]
+            sim = self._map_outcomes(sim)
 
             if len(sim) < 1:
                 continue
@@ -218,18 +246,41 @@ class DecisionModel:
 
         return pd.concat(simulations, ignore_index=True)
 
+    def _map_outcomes(self, sim: pd.DataFrame) -> pd.DataFrame:
+        responded = np.isfinite(sim["rt"]) & np.isfinite(sim["choice"])
+        if self.censor_at is not None:
+            late = ~responded | (sim["rt"] > self.censor_at)
+            sim = sim.assign(rt=np.where(late, np.inf, sim["rt"]), choice=np.where(late, -1.0, sim["choice"]))
+            keep = np.ones(len(sim), dtype=bool)
+        else:
+            keep = responded.to_numpy()
+        if self.min_rt is not None:
+            early = (sim["rt"] < self.min_rt[0]).to_numpy()
+            if self.min_rt[1] == "floor":
+                sim = sim.assign(rt=np.where(early, self.min_rt[0], sim["rt"]))
+            else:
+                keep &= ~early
+        return sim.loc[keep]
+
     def fit(
         self,
         data: dict[str, np.ndarray],
-        stimulus: np.ndarray,
+        stimulus: np.ndarray | tuple,
         max_iterations: int = 100,
         n_reps: int = 5,
         l1_weight: float = 0.01,
         verbose: bool = True,
+        labels: np.ndarray | None = None,
+        tol: float = 0.01,
+        atol: float = 0.0,
     ) -> dict:
         """
         Fit parameters via differential evolution, then a gradient-free local
         refinement.
+
+        `tol`/`atol` are differential evolution's stopping tolerances (population NLL spread <= atol +
+        tol * |mean NLL|). The default relative tol stops once the spread is within 1% of the NLL, which for
+        thousands of trials is coarser than the NLL differences between models; use tol=0 and an absolute atol.
 
         Returns dict with keys: success, parameters, likelihood,
         n_iterations, optimization_result.
@@ -244,12 +295,14 @@ class DecisionModel:
         bounds = [(s.lower_bound, s.upper_bound) for s in specs.values()]
 
         self._set_seed(self.seed)
+        self._labels = labels
+        self.simulator.clear_cache()  # arrays from a previous fit (e.g. another CV fold) would stay on the GPU
 
         # Precompute all unit draws once so every objective evaluation sees the
         # same random numbers (Common Random Numbers): noise, sv, and sz alike.
         # This makes the objective deterministic in the parameters, which is what
         # lets DE navigate it at all.
-        n_trials, n_timepoints = stimulus.shape
+        n_trials, n_timepoints = self._stimulus_shape(stimulus)
         self._precomputed = self.simulator.precompute_noise(n_trials, n_timepoints, n_reps=n_reps)
 
         best_nll = [np.inf]
@@ -285,6 +338,8 @@ class DecisionModel:
                 popsize=15,  # modest bump from 10; cheap insurance for the
                 # 9-10 dim space, not the main fix.
                 seed=self.seed,
+                tol=tol,
+                atol=atol,
                 polish=False,  # the built-in polish is L-BFGS-B, which needs
                 # finite-difference gradients. On a CRN
                 # simulation objective those are ~0 for
@@ -345,34 +400,24 @@ class DecisionModel:
 
     def simulate(
         self,
-        stimulus: np.ndarray,
+        stimulus: np.ndarray | tuple,
         params: dict | None = None,
         n_reps: int = 1,
         seed: int | None = None,
-    ) -> dict[str, np.ndarray]:
-        """Forward pass: returns dict with rt, choice, coherence arrays."""
+        labels: np.ndarray | None = None,
+    ) -> pd.DataFrame:
+        """Forward pass with fresh noise: one row per simulated trial with rt, choice, signed_coherence (the
+        trial's label) and trial (index of the input trial). `censor_at` and `min_rt` are not applied here."""
         if params is None:
             raise ValueError("Must provide params for simulation.")
         validate_params(params)
-
-        self._set_seed(seed if seed is not None else self.seed)
-
         if n_reps < 1:
             raise ValueError("n_reps must be >= 1")
-        elif n_reps == 1:
-            return self.simulator.simulate_trials(stimulus, params)
-        else:
-            all_coherences, all_rt, all_choice = [], [], []
-            for _ in range(n_reps):
-                simulation = self.simulator.simulate_trials(stimulus, params)
-                all_rt.append(simulation["rt"])
-                all_choice.append(simulation["choice"])
-                all_coherences.append(simulation["signed_coherence"])
 
-            return pd.DataFrame(
-                {
-                    "rt": np.concatenate(all_rt),
-                    "choice": np.concatenate(all_choice),
-                    "signed_coherence": np.concatenate(all_coherences),
-                }
-            )
+        self._set_seed(seed if seed is not None else self.seed)
+        n_trials = self._stimulus_shape(stimulus)[0]
+        simulations = []
+        for rep in range(n_reps):
+            sim = self.simulator.simulate_trials(stimulus, params, labels=labels)
+            simulations.append(sim.assign(trial=np.arange(n_trials), rep=rep))
+        return pd.concat(simulations, ignore_index=True)
