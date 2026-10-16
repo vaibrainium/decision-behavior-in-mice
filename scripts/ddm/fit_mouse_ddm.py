@@ -20,7 +20,7 @@ Model space: leak, urgency (time_constant), sv, sz each on/off, and noise_weight
 
 Usage:
     python -m scripts.ddm.fit_mouse_ddm --list                  # print the job grid size
-    python -m scripts.ddm.fit_mouse_ddm --job_id 17             # run one job of the grid
+    python -m scripts.ddm.fit_mouse_ddm --job_id 17             # run one job of the grid (skipped if its output exists)
     python -m scripts.ddm.fit_mouse_ddm --mouse PSUIM5 --variant L0U1V0Z0K1 --split cv0 --max_iterations 5   # one fit, e.g. timing
 """
 
@@ -137,6 +137,10 @@ def build_grid(inputs: dict) -> list[dict]:
     return [{"mouse": m, "variant": v, "split": s} for s in splits for v in VARIANTS for m in mice]
 
 
+def output_path(out_dir: Path, job: dict) -> Path:
+    return out_dir / f"{job['mouse']}_{job['variant']}_{job['split']}.pkl"
+
+
 def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations: int) -> dict:
     mouse_rows = np.flatnonzero(inputs["subject_id"] == job["mouse"])
     is_control = inputs["sched_pulse_type"][mouse_rows] == 0
@@ -183,10 +187,12 @@ def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations:
     model.simulator.clear_cache()
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    name = f"{job['mouse']}_{job['variant']}_{split}"
-    with open(out_dir / f"{name}.pkl", "wb") as f:
+    path = output_path(out_dir, job)
+    tmp = path.with_suffix(".tmp")
+    with open(tmp, "wb") as f:
         pickle.dump(result, f)
-    logger.info("saved %s: %s", name, json.dumps({k: result[k] for k in ("train_nll", "test_nll", "fit_seconds") if k in result}))
+    tmp.replace(path)  # atomic: a preempted job never leaves a partial result that a rerun would skip
+    logger.info("saved %s: %s", path.name, json.dumps({k: result[k] for k in ("train_nll", "test_nll", "fit_seconds") if k in result}))
     return result
 
 
@@ -202,6 +208,7 @@ if __name__ == "__main__":
     parser.add_argument("--n_reps", type=int, default=15)
     parser.add_argument("--max_iterations", type=int, default=1000)
     parser.add_argument("--list", action="store_true")
+    parser.add_argument("--force", action="store_true", help="refit even if the output exists")
     args = parser.parse_args()
 
     processed = Path(dir_config.data.processed)
@@ -209,6 +216,13 @@ if __name__ == "__main__":
     grid = build_grid(inputs)
     if args.list:
         print(f"{len(grid)} jobs: {len(np.unique(inputs['subject_id']))} mice x {len(VARIANTS)} variants x {N_FOLDS + 2} splits")
+        per_split = len(grid) // (N_FOLDS + 2)
+        for i, split in enumerate([f"cv{k}" for k in range(N_FOLDS)] + ["all", "control"]):
+            print(f"  job_id {i * per_split}-{(i + 1) * per_split - 1}: split {split}")
     else:
         job = grid[args.job_id] if args.job_id is not None else {"mouse": args.mouse, "variant": args.variant, "split": args.split}
-        run_job(inputs, job, processed / args.out_dir, args.n_reps, args.max_iterations)
+        if output_path(processed / args.out_dir, job).exists() and not args.force:
+            logger.info("skipping %s: output exists (use --force to refit)", job)
+        else:
+            logger.info("job %s: %s", args.job_id, job)
+            run_job(inputs, job, processed / args.out_dir, args.n_reps, args.max_iterations)

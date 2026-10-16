@@ -11,3 +11,4 @@ wheels/
 .env
 ruff.toml
 old_analysis/
+slurm-logs/
