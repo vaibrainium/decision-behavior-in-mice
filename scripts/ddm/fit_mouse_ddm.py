@@ -59,7 +59,7 @@ BASE_FREE_PARAMS = {
 }
 OPTIONAL_FREE_PARAMS = {  # factor letter: (parameter, bounds when free, value when off)
     "L": ("leak_rate", (0.0, 5.0), 0.0),
-    "U": ("time_constant", (-0.5, 2.0), 0.0),
+    "U": ("time_constant", (-0.15, 2.0), 0.0),  # urgency factor 1 + t * time_constant must stay > 0 up to CENSOR_AT (>= 0.25 at 5 s)
     "V": ("sv", (0.0, 3.0), 0.0),
     "Z": ("sz", (0.0, 0.9), 0.0),
     "K": ("noise_weight", (0.0, 3.0), 1.0),
