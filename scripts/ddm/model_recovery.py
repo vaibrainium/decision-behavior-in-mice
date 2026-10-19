@@ -1,8 +1,8 @@
 """Model recovery for the mouse DDM: can each mechanism of the common model be detected when present and
 rejected when absent, at each mouse's own trial count and stimuli?
 
-Generating models: the common model (leak + urgency + sv + sz, noise weight k = 1) and the four models with one
-of those mechanisms removed, each with the mouse's fitted parameters for that model (fits/<mouse>_<variant>_all.pkl).
+Generating models: the common model (COMMON; set it to the model chosen in the comparison) and the models with one
+of its mechanisms removed, each with the mouse's fitted parameters for that model (<fits_dir>/<mouse>_<variant>_all.pkl).
 For each (mouse, generator, replicate):
   - simulate a training dataset and an independent test dataset from the generator, on the mouse's own trials
     (same stimuli, conditions, censoring at 5 s and the 0.3 s floor as the real fits),
@@ -32,8 +32,8 @@ from scripts.ddm.fit_mouse_ddm import CENSOR_AT, DE_TOL, DEVICE, LIKELIHOOD_PARA
 
 logger = logging.getLogger(__name__)
 
-COMMON = "L1U1V1Z1K0"
-MODELS = [COMMON] + [COMMON[:i + 1] + "0" + COMMON[i + 2:] for i in (0, 2, 4, 6)]  # common model and one mechanism removed
+COMMON = "L1U1V1Z1G1"  # provisional: update once the comparison with fast guesses has picked the common model
+MODELS = [COMMON] + [COMMON[:i + 1] + "0" + COMMON[i + 2:] for i in range(0, len(COMMON), 2) if COMMON[i + 1] == "1"]  # and each mechanism removed
 N_REPLICATES = 2
 
 
@@ -47,7 +47,7 @@ def make_model(variant: str, rig: str) -> MouseDDM:
     return MouseDDM(free_params=free, fixed_params=fixed, device=DEVICE, likelihood_params=LIKELIHOOD_PARAMS, censor_at=CENSOR_AT, min_rt=MIN_RT[rig])
 
 
-def synthesize(model: MouseDDM, params: dict, stimulus: tuple, condition: np.ndarray, seed: int) -> dict:
+def synthesize(model: MouseDDM, params: dict, stimulus: np.ndarray, condition: np.ndarray, seed: int) -> dict:
     """One simulated outcome per real trial, mapped like the recorded data (censoring, floor)."""
     sim = model._map_outcomes(model.simulate(stimulus, params, n_reps=1, seed=seed, labels=condition))
     if len(sim) != len(condition):
@@ -115,7 +115,7 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s", force=True)
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--inputs", default="ddm/ddm_inputs_global.npz", help="relative to the processed data directory")
-    parser.add_argument("--fits_dir", default="ddm/fits", help="real-data fits with the generating parameters")
+    parser.add_argument("--fits_dir", default="ddm/fits_guess", help="real-data fits with the generating parameters")
     parser.add_argument("--out_dir", default="ddm/recovery", help="relative to the processed data directory")
     parser.add_argument("--job_id", type=int)
     parser.add_argument("--n_reps", type=int, default=15)

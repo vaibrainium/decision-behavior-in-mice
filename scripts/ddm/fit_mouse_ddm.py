@@ -1,9 +1,9 @@
 """Fit DDM variants to each mouse's choices and RTs, driven by the trial's own motion energy.
 
-Evidence input (scripts/ddm/build_ddm_inputs.py), per 1 ms step:
-    drift = drift_gain * (S(t) + noise_weight * N(t)) + drift_offset
-S is the motion energy expected from the programmed coherence (pulse included), N the stimulus noise;
-noise_weight = 1 feeds raw motion energy (fixed: a free noise weight improved no mouse's held-out fit).
+Evidence input, per 1 ms step: drift = drift_gain * ME(t) + drift_offset, where ME is the trial's own motion energy
+(scripts/ddm/build_ddm_inputs.py stores it as S + N: S expected from the programmed coherence with any pulse, N the
+stimulus noise). An earlier grid weighted N separately (drift_gain * (S + k * N)); a free k improved no mouse's
+held-out fit, so the model uses the motion energy as is.
 Fast guesses (factor G): with probability p_guess the response is a guess, right with probability guess_bias, at
 0.3 s + an exponential delay with mean guess_tau. Responses < 0.6 s are 17-20% of all responses and near chance at
 every coherence, which the DDM alone cannot produce (it misses the fast errors at high coherence). The likelihood is the Ratcliff quantile likelihood with a censored
@@ -53,7 +53,7 @@ EVAL_SEED = 12345  # held-out scoring uses the same noise draws for every varian
 DE_TOL = {"tol": 0.0, "atol": 1.0}  # stop when the population's NLL spread is within 1 unit (not 1% of the NLL)
 
 MIN_VIEWING = 0.3  # s; guesses start when the response window opens
-FIXED_PARAMS = {"dt": FixedParam(DT), "variance": FixedParam(1.0), "noise_weight": FixedParam(1.0), "guess_t0": FixedParam(MIN_VIEWING)}
+FIXED_PARAMS = {"dt": FixedParam(DT), "variance": FixedParam(1.0), "guess_t0": FixedParam(MIN_VIEWING)}
 BASE_FREE_PARAMS = {
     "ndt": FreeParam(0.0, 0.8),  # the ~116 ms filter delay is already in the input, so ndt can be small
     "a": FreeParam(0.3, 9.5),  # validate_params requires a < 10
@@ -118,18 +118,19 @@ def cv_folds(condition: np.ndarray, n_folds: int, seed: int = 0) -> np.ndarray:
     return folds
 
 
-def select(inputs: dict, rows: np.ndarray) -> tuple[dict, tuple]:
+def select(inputs: dict, rows: np.ndarray) -> tuple[dict, np.ndarray]:
+    """Data and the 1 ms motion-energy input (S + N) of the given trials."""
     frame_rate = int(inputs["frame_rate"])
     data = {"rt": inputs["rt"][rows], "choice": inputs["choice"][rows], "condition": inputs["condition"][rows]}
-    stimulus = (to_ms(inputs["signal"][rows], frame_rate), to_ms(inputs["noise"][rows], frame_rate))
+    stimulus = to_ms(inputs["signal"][rows] + inputs["noise"][rows], frame_rate)
     return data, stimulus
 
 
-def heldout_nll(model: MouseDDM, params: dict, data: dict, stimulus: tuple, n_reps: int) -> float:
+def heldout_nll(model: MouseDDM, params: dict, data: dict, stimulus: np.ndarray, n_reps: int) -> float:
     np.random.seed(EVAL_SEED)
     model.simulator.clear_cache()
     model._labels = data["condition"]
-    model.precompute(*stimulus[0].shape, n_reps=n_reps)
+    model.precompute(*stimulus.shape, n_reps=n_reps)
     result = model._simulate_condition(stimulus, params, n_reps)
     if result is None:
         return float("inf")
