@@ -69,6 +69,28 @@ def validate_params(p: dict) -> None:
         raise ValueError(f"Invalid sv (drift variability): {p['sv']}")
     if not (0 <= p["sz"] < 1):
         raise ValueError(f"Invalid sz (starting point variability): {p['sz']}")
+    if not (0 <= p.get("p_guess", 0.0) < 1):
+        raise ValueError(f"Invalid p_guess: {p['p_guess']}")
+    if not (0 <= p.get("guess_bias", 0.5) <= 1):
+        raise ValueError(f"Invalid guess_bias: {p['guess_bias']}")
+    if p.get("p_guess", 0.0) > 0 and not p.get("guess_tau", 0.0) > 0:
+        raise ValueError(f"Invalid guess_tau: {p.get('guess_tau')}")
+
+
+def apply_guesses(sim: pd.DataFrame, params: dict, draws: np.ndarray) -> pd.DataFrame:
+    """Fast-guess (contaminant) component: with probability p_guess a trial's DDM outcome is replaced by a guess,
+    choice 1 with probability guess_bias, at RT = guess_t0 + an exponential delay with mean guess_tau (s).
+
+    `draws` is (n_trials, 3) uniform [0, 1): whether the trial is a guess, its choice and its delay. Passing the same
+    draws on every evaluation keeps the objective deterministic in the parameters (common random numbers).
+    """
+    p_guess = float(params.get("p_guess", 0.0))
+    if p_guess <= 0:
+        return sim
+    is_guess = draws[:, 0] < p_guess
+    choice = (draws[:, 1] < float(params.get("guess_bias", 0.5))).astype(float)
+    rt = float(params.get("guess_t0", 0.0)) - float(params["guess_tau"]) * np.log1p(-draws[:, 2])
+    return sim.assign(choice=np.where(is_guess, choice, sim["choice"]), rt=np.where(is_guess, rt, sim["rt"]))
 
 
 @dataclass
@@ -219,8 +241,10 @@ class DecisionModel:
                 rep_noise = self._precomputed["unit_noise"][rep]
                 rep_sv = self._precomputed["unit_sv"][rep]
                 rep_sz = self._precomputed["unit_sz"][rep]
+                rep_guess = self._precomputed["unit_guess"][rep]
             else:
                 rep_noise = rep_sv = rep_sz = None
+                rep_guess = np.random.uniform(size=(self._stimulus_shape(stimulus)[0], 3))
             try:
                 sim = self.simulator.simulate_trials(
                     stimulus,
@@ -234,7 +258,7 @@ class DecisionModel:
                 logger.warning("Simulation failed: %s", exc)
                 return None
 
-            sim = self._map_outcomes(sim)
+            sim = self._map_outcomes(apply_guesses(sim, params, rep_guess))
 
             if len(sim) < 1:
                 continue
@@ -245,6 +269,12 @@ class DecisionModel:
             return None
 
         return pd.concat(simulations, ignore_index=True)
+
+    def precompute(self, n_trials: int, n_timepoints: int, n_reps: int) -> None:
+        """Draw all random numbers for `n_reps` simulations of `n_trials` once (diffusion noise, sv, sz and the
+        fast-guess draws), so every objective evaluation sees the same ones."""
+        self._precomputed = self.simulator.precompute_noise(n_trials, n_timepoints, n_reps=n_reps)
+        self._precomputed["unit_guess"] = np.random.uniform(size=(n_reps, n_trials, 3))
 
     def _map_outcomes(self, sim: pd.DataFrame) -> pd.DataFrame:
         responded = np.isfinite(sim["rt"]) & np.isfinite(sim["choice"])
@@ -303,7 +333,7 @@ class DecisionModel:
         # This makes the objective deterministic in the parameters, which is what
         # lets DE navigate it at all.
         n_trials, n_timepoints = self._stimulus_shape(stimulus)
-        self._precomputed = self.simulator.precompute_noise(n_trials, n_timepoints, n_reps=n_reps)
+        self.precompute(n_trials, n_timepoints, n_reps)
 
         best_nll = [np.inf]
         best_vals = [None]
@@ -407,7 +437,8 @@ class DecisionModel:
         labels: np.ndarray | None = None,
     ) -> pd.DataFrame:
         """Forward pass with fresh noise: one row per simulated trial with rt, choice, signed_coherence (the
-        trial's label) and trial (index of the input trial). `censor_at` and `min_rt` are not applied here."""
+        trial's label) and trial (index of the input trial). Fast guesses (p_guess) are included; `censor_at` and
+        `min_rt` are not applied here."""
         if params is None:
             raise ValueError("Must provide params for simulation.")
         validate_params(params)
@@ -419,5 +450,6 @@ class DecisionModel:
         simulations = []
         for rep in range(n_reps):
             sim = self.simulator.simulate_trials(stimulus, params, labels=labels)
+            sim = apply_guesses(sim, params, np.random.uniform(size=(n_trials, 3)))
             simulations.append(sim.assign(trial=np.arange(n_trials), rep=rep))
         return pd.concat(simulations, ignore_index=True)

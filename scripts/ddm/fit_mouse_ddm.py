@@ -3,7 +3,10 @@
 Evidence input (scripts/ddm/build_ddm_inputs.py), per 1 ms step:
     drift = drift_gain * (S(t) + noise_weight * N(t)) + drift_offset
 S is the motion energy expected from the programmed coherence (pulse included), N the stimulus noise;
-noise_weight = 1 feeds raw motion energy. The likelihood is the Ratcliff quantile likelihood with a censored
+noise_weight = 1 feeds raw motion energy (fixed: a free noise weight improved no mouse's held-out fit).
+Fast guesses (factor G): with probability p_guess the response is a guess, right with probability guess_bias, at
+0.3 s + an exponential delay with mean guess_tau. Responses < 0.6 s are 17-20% of all responses and near chance at
+every coherence, which the DDM alone cannot produce (it misses the fast errors at high coherence). The likelihood is the Ratcliff quantile likelihood with a censored
 outcome (src/ddm/likelihood_calculator_censored.py), summed over cells of coherence x scheduled pulse condition,
 so pulse trials inform the fit.
 
@@ -13,8 +16,7 @@ Recorded outcomes, matched in simulation:
       after it counts (UCLA RTs pile up at 0.3 s; UW raw response times start when the response window opens and
       preprocessing adds 0.3 s) -> floored at 0.3 s on both rigs. Nothing before 0.3 s was dropped from the data.
 
-Model space: leak, urgency (time_constant), sv, sz each on/off, and noise_weight free or fixed at 1
-(32 variants). Each job fits one (mouse, variant, split):
+Model space: leak, urgency (time_constant), sv, sz and fast guesses each on/off (32 variants, e.g. L1U1V1Z1G1). Each job fits one (mouse, variant, split):
     split = "cv<k>"   train on all folds but k (stratified by condition), score held-out NLL on fold k
     split = "all"     fit all trials (parameters for reporting)
     split = "control" fit control trials only (for predicting pulse trials out of sample: primacy test)
@@ -22,7 +24,7 @@ Model space: leak, urgency (time_constant), sv, sz each on/off, and noise_weight
 Usage:
     python -m scripts.ddm.fit_mouse_ddm --list                  # print the job grid size
     python -m scripts.ddm.fit_mouse_ddm --job_id 17             # run one job of the grid (skipped if its output exists)
-    python -m scripts.ddm.fit_mouse_ddm --mouse PSUIM5 --variant L0U1V0Z0K1 --split cv0 --max_iterations 5   # one fit, e.g. timing
+    python -m scripts.ddm.fit_mouse_ddm --mouse PSUIM5 --variant L1U1V1Z1G1 --split cv0 --max_iterations 5   # one fit, e.g. timing
 """
 
 import argparse
@@ -50,7 +52,8 @@ LIKELIHOOD_PARAMS = {"method": "qmle_censored", "nbins": 9, "rt_nllh_weight": 1.
 EVAL_SEED = 12345  # held-out scoring uses the same noise draws for every variant
 DE_TOL = {"tol": 0.0, "atol": 1.0}  # stop when the population's NLL spread is within 1 unit (not 1% of the NLL)
 
-FIXED_PARAMS = {"dt": FixedParam(DT), "variance": FixedParam(1.0)}
+MIN_VIEWING = 0.3  # s; guesses start when the response window opens
+FIXED_PARAMS = {"dt": FixedParam(DT), "variance": FixedParam(1.0), "noise_weight": FixedParam(1.0), "guess_t0": FixedParam(MIN_VIEWING)}
 BASE_FREE_PARAMS = {
     "ndt": FreeParam(0.0, 0.8),  # the ~116 ms filter delay is already in the input, so ndt can be small
     "a": FreeParam(0.3, 9.5),  # validate_params requires a < 10
@@ -58,12 +61,12 @@ BASE_FREE_PARAMS = {
     "drift_gain": FreeParam(0.5, 20.0),
     "drift_offset": FreeParam(-2.0, 2.0),
 }
-OPTIONAL_FREE_PARAMS = {  # factor letter: (parameter, bounds when free, value when off)
-    "L": ("leak_rate", (0.0, 5.0), 0.0),
-    "U": ("time_constant", (-0.15, 2.0), 0.0),  # urgency factor 1 + t * time_constant must stay > 0 up to CENSOR_AT (>= 0.25 at 5 s)
-    "V": ("sv", (0.0, 3.0), 0.0),
-    "Z": ("sz", (0.0, 0.9), 0.0),
-    "K": ("noise_weight", (0.0, 3.0), 1.0),
+OPTIONAL_FREE_PARAMS = {  # factor letter: [(parameter, bounds when free, value when off), ...]
+    "L": [("leak_rate", (0.0, 5.0), 0.0)],
+    "U": [("time_constant", (-0.15, 2.0), 0.0)],  # urgency factor 1 + t * time_constant must stay > 0 up to CENSOR_AT (>= 0.25 at 5 s)
+    "V": [("sv", (0.0, 3.0), 0.0)],
+    "Z": [("sz", (0.0, 0.9), 0.0)],
+    "G": [("p_guess", (0.0, 0.6), 0.0), ("guess_bias", (0.0, 1.0), 0.5), ("guess_tau", (0.01, 2.0), 1.0)],
 }
 VARIANTS = ["".join(f"{f}{int(on)}" for f, on in zip(OPTIONAL_FREE_PARAMS, flags)) for flags in itertools.product([0, 1], repeat=len(OPTIONAL_FREE_PARAMS))]
 
@@ -71,11 +74,12 @@ VARIANTS = ["".join(f"{f}{int(on)}" for f, on in zip(OPTIONAL_FREE_PARAMS, flags
 def make_params(variant: str):
     free, fixed = dict(BASE_FREE_PARAMS), dict(FIXED_PARAMS)
     flags = dict(zip(variant[0::2], map(int, variant[1::2])))
-    for factor, (name, bounds, off_value) in OPTIONAL_FREE_PARAMS.items():
-        if flags[factor]:
-            free[name] = FreeParam(*bounds)
-        else:
-            fixed[name] = FixedParam(off_value)
+    for factor, specs in OPTIONAL_FREE_PARAMS.items():
+        for name, bounds, off_value in specs:
+            if flags[factor]:
+                free[name] = FreeParam(*bounds)
+            else:
+                fixed[name] = FixedParam(off_value)
     return free, fixed
 
 
@@ -125,7 +129,7 @@ def heldout_nll(model: MouseDDM, params: dict, data: dict, stimulus: tuple, n_re
     np.random.seed(EVAL_SEED)
     model.simulator.clear_cache()
     model._labels = data["condition"]
-    model._precomputed = model.simulator.precompute_noise(*stimulus[0].shape, n_reps=n_reps)
+    model.precompute(*stimulus[0].shape, n_reps=n_reps)
     result = model._simulate_condition(stimulus, params, n_reps)
     if result is None:
         return float("inf")
@@ -201,7 +205,7 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s", force=True)
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--inputs", default="ddm/ddm_inputs_global.npz", help="relative to the processed data directory")
-    parser.add_argument("--out_dir", default="ddm/fits", help="relative to the processed data directory")
+    parser.add_argument("--out_dir", default="ddm/fits_guess", help="relative to the processed data directory")
     parser.add_argument("--job_id", type=int)
     parser.add_argument("--mouse")
     parser.add_argument("--variant")
