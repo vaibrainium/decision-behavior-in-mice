@@ -9,8 +9,9 @@ so pulse trials inform the fit.
 
 Recorded outcomes, matched in simulation:
   no response by 5 s (RT > 5 s or none; stimulus kept running) -> censored outcome, fraction fit per cell
-  responses before 0.3 s (minimum viewing time): UCLA registered the next lick at 0.3 s -> floored at 0.3 s;
-      UW accepted them, but they are at chance and were excluded from the data -> truncated (dropped)
+  decisions before 0.3 s (minimum viewing time): neither rig could register a response before 0.3 s; the next lick
+      after it counts (UCLA RTs pile up at 0.3 s; UW raw response times start when the response window opens and
+      preprocessing adds 0.3 s) -> floored at 0.3 s on both rigs. Nothing before 0.3 s was dropped from the data.
 
 Model space: leak, urgency (time_constant), sv, sz each on/off, and noise_weight free or fixed at 1
 (32 variants). Each job fits one (mouse, variant, split):
@@ -42,7 +43,7 @@ logger = logging.getLogger(__name__)
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 CENSOR_AT = 5.0  # s; the replayed stimulus is 5 s long
-MIN_RT = {"ucla": (0.3, "floor"), "uw": (0.3, "truncate")}
+MIN_RT = {"ucla": (0.3, "floor"), "uw": (0.3, "floor")}  # never "truncate": the data contain these responses (at 0.3 s+)
 DT = 0.001
 N_FOLDS = 5
 LIKELIHOOD_PARAMS = {"method": "qmle_censored", "nbins": 9, "rt_nllh_weight": 1.0}

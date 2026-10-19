@@ -6,9 +6,11 @@ Per condition cell:
                 simulated trials of the cell
   RT term       for each choice, data RT quantile bins (nbins + 1 edges) and the simulated share of that
                 choice's RTs in each bin: -sum_b n_b log p_b
-Probabilities are smoothed with `alpha` pseudo-counts per category, so a cell, choice or bin the model never
-produces costs a large but finite penalty. (The plain QMLE skips cells without predictions, which a model can
-exploit by predicting nothing, e.g. by putting every simulated RT outside the analysed window.)
+Probabilities are smoothed with `alpha` pseudo-counts per category, so a choice or bin the model never produces
+costs a large but finite penalty. A cell with no simulated trials at all (e.g. every simulated RT dropped by a
+truncation rule) would smooth to uniform probabilities, which is the best possible RT score because the bins are
+data quantiles; such cells instead cost EMPTY_CELL_PENALTY per data trial. (The plain QMLE skips cells without
+predictions, which a model can exploit the same way.)
 
 Data and predictions use rt = inf and choice = -1 for censored trials. Condition labels can be any numbers.
 """
@@ -16,6 +18,7 @@ Data and predictions use rt = inf and choice = -1 for censored trials. Condition
 import numpy as np
 
 CENSORED = -1
+EMPTY_CELL_PENALTY = 20.0  # per data trial, ~ -log(2e-9)
 
 
 class CensoredQMLE:
@@ -46,6 +49,9 @@ class CensoredQMLE:
             d, m = cond_data == cond, cond_pred == cond
             data_counts = np.array([(choice_data[d] == k).sum() for k in outcomes])
             model_counts = np.array([(choice_pred[m] == k).sum() for k in outcomes])
+            if model_counts.sum() == 0:
+                total += EMPTY_CELL_PENALTY * data_counts.sum()
+                continue
             total += self._multinomial_nll(data_counts, model_counts)
             for k in (0, 1):
                 rt_d = rt_data[d & (choice_data == k)]
