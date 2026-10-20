@@ -378,16 +378,19 @@ Generation folders: gen 1 ran with the then-default `ddm/fits` (renamed `fits0`,
 
 ### 8.4a Keeping the NAS copy and Hyak in sync
 `processed/` exists twice: the lab NAS (`nas.uwcnc.net:/mnt/Pool-Backup/cnc/vaib_data/mouse-pulse-experiment`, mounted as
-`/mnt/data` in the analysis container) and Hyak (`/gscratch/walkerlab/vaibhav/mouse-pulse-data`). Each kind of file has
-one owner and is synced only from it: DDM inputs are created on the NAS side and pushed to Hyak; every fit folder under
-`processed/ddm` (including `archive/`) is created or moved on Hyak and pulled to the NAS. Syncing both ways, or without
-`--delete` after a move on Hyak, recreated stale folders once (old fits reappeared next to `archive/`).
+`/mnt/data`) and Hyak (`/gscratch/walkerlab/vaibhav/mouse-pulse-data`). Fits are created, moved and deleted on Hyak only,
+and copied one way, Hyak → NAS; the only file going the other way is `ddm_inputs_global.npz` after a rebuild. Syncing
+without `--delete` after a move on Hyak once left stale folders next to `archive/`.
 ```bash
-LOCAL_DDM=<NAS mount>/processed/ddm bash scripts/sync_ddm_data.sh status         # dry run, both directions
-LOCAL_DDM=<NAS mount>/processed/ddm bash scripts/sync_ddm_data.sh pull --mirror  # make the NAS fits match Hyak (asks first)
-LOCAL_DDM=<NAS mount>/processed/ddm bash scripts/sync_ddm_data.sh push-inputs    # after rebuilding the DDM inputs
+# routine update (new fits; never deletes)
+rsync -avh --progress --exclude='*.tmp' vthakur@klone.hyak.uw.edu:/gscratch/walkerlab/vaibhav/mouse-pulse-data/processed/ddm/ /mnt/data/processed/ddm/
+# after moving or deleting on Hyak: dry run (-n), check the "deleting" lines, then rerun without -n
+rsync -avhn --delete --exclude='*.tmp' vthakur@klone.hyak.uw.edu:/gscratch/walkerlab/vaibhav/mouse-pulse-data/processed/ddm/ /mnt/data/processed/ddm/
 ```
-Run it where both the NAS and `ssh hyak` are available (the analysis container cannot reach Hyak).
+`--exclude='*.tmp'` skips fits still being written (the fit script writes `<name>.tmp`, then renames it). To check that
+both sides match, list `<folder> <file count> <hash of file names>` on each side and compare:
+`for d in $(find . -type d | sort); do echo "$d $(find $d -maxdepth 1 -type f | wc -l) $(find $d -maxdepth 1 -type f -printf "%f\n" | sort | md5sum | cut -c1-8)"; done`
+(`scripts/sync_ddm_data.sh` wraps the same rules for a machine that has both the NAS and `ssh hyak`.)
 
 ### 8.4b Warm-start refits and guess forms (generation 3a/3b)
 ```bash

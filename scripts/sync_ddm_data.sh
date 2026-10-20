@@ -18,7 +18,7 @@ LOCAL_DDM="${LOCAL_DDM:-/mnt/data/processed/ddm}"
 REMOTE="${REMOTE:-hyak:/gscratch/walkerlab/vaibhav/mouse-pulse-data/processed/ddm}"
 INPUTS=(ddm_inputs_global.npz)
 # fit outputs = everything except the input files
-FIT_FILTER=(--exclude=/ddm_inputs_global.npz)
+FIT_FILTER=(--exclude=/ddm_inputs_global.npz --exclude='*.tmp')  # .tmp: fits being written (renamed when complete)
 
 case "${1:-}" in
   status)
