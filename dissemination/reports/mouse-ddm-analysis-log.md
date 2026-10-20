@@ -96,6 +96,9 @@ sliced trials instead of frames.
   correlated for seconds.
 - Mice weight it at about half of programmed coherence: shared ratio k ≈ 0.50 (95% CI 0.15–0.90), positive in 8 of 10
   mice (Wilcoxon p ≈ 0.02). The ME filters weight it like coherence (1.06 ME per 1%), so the discount is behavioural.
+- **Robustness (2026-10-20, plan step 7):** the shared ratio k with per-mouse lapse terms is 0.45 (95% CI 0.15–0.85);
+  with lapses and all coherences 0.50 (0.10–0.85); restricted to |coherence| ≤ 18% without lapses 0.35 (0.00–0.70).
+  The CI excludes 1 in every version: mice discount the noise robustly, at about 0.35–0.50 of programmed coherence.
 - **Consequence:** noise-based kernels cannot show *when* evidence is weighted (unlike Kiani et al. 2008's dynamic
   dots). Timing questions must use the pulses and the DDM.
 

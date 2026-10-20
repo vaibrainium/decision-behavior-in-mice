@@ -137,6 +137,8 @@ smaller effects" is not by itself evidence of primacy. The question is whether t
 constant-weight accumulator predicts**.
 
 ### 6.1 Write the analysis plan first
+**Status:** drafted in [`primacy-analysis-plan.md`](primacy-analysis-plan.md) (2026-10-20); three decisions open before it is locked.
+
 Before looking at pulse-trial residuals, write down and commit: the outcome measures (pulse effect on choice, e.g.
 shift of the psychometric function or change in P(right) in the pulse direction; effect on RT), the time windows and
 bins, the statistical model below, and the decision rule. This is the confirmatory test; anything decided after seeing
