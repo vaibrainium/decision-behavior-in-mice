@@ -28,6 +28,7 @@ def _simulate_ddm_trials_numba(
     dt: float,
     leak_rate: float,
     time_constant: float,
+    gain_decay: float,
 ) -> tuple[np.ndarray, np.ndarray]:
     n_trials, n_timepoints = stimulus.shape
     rt = np.full(n_trials, np.nan, dtype=np.float32)
@@ -43,7 +44,8 @@ def _simulate_ddm_trials_numba(
             if np.isnan(stimulus[trial, t]):
                 break
 
-            drift = (drift_gain * stimulus[trial, t - 1] + trial_drift_offset) * dt
+            gain = drift_gain * np.exp(-gain_decay * (t - 1) * dt) if gain_decay != 0.0 else drift_gain
+            drift = (gain * stimulus[trial, t - 1] + trial_drift_offset) * dt
             leak = leak_rate * (evidence - starting_point) * dt
             evidence += drift + noise[trial, t - 1] - leak
 
@@ -113,6 +115,7 @@ class _NumbaSimulator:
             params["dt"],
             params["leak_rate"],
             params["time_constant"],
+            float(params.get("gain_decay", 0.0)),
         )
 
 
@@ -179,13 +182,19 @@ class _TorchSimulator:
         dt = float(params["dt"])
         leak_rate = float(params["leak_rate"])
         time_constant = float(params["time_constant"])
+        gain_decay = float(params.get("gain_decay", 0.0))
         sv = float(params.get("sv", 0.0))
         sz = float(params.get("sz", 0.0))
 
         noise_std = (variance * dt) ** 0.5
 
         valid = ~torch.isnan(stim[:, 1:])  # (N, T)
-        drift_inc = torch.nan_to_num((drift_gain * stim[:, :-1] + drift_offset) * dt)  # (N, T)
+        if gain_decay != 0.0:
+            # time-varying evidence weight: drift_gain * exp(-gain_decay * t), t from stimulus onset (s)
+            gain_t = drift_gain * torch.exp(-gain_decay * dt * torch.arange(T, device=dev, dtype=torch.float32))
+            drift_inc = torch.nan_to_num((gain_t * stim[:, :-1] + drift_offset) * dt)  # (N, T)
+        else:
+            drift_inc = torch.nan_to_num((drift_gain * stim[:, :-1] + drift_offset) * dt)  # (N, T)
 
         # sv: per-trial drift variability — add a constant offset to each trial's drift
         if sv > 0.0:

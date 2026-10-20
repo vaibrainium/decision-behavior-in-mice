@@ -170,6 +170,11 @@ step 5). As the main model-based test, add an explicit time-varying evidence wei
 time) to the common model, fit it on all trials (the pulses carry the timing information), and test it against the
 common model by cross-validation (~60–120 jobs).
 
+**Status:** the time-varying weight is implemented (`gain_decay`: drift gain × exp(−gain_decay · t), both simulator
+backends; `fit_mouse_ddm.py --time_varying_gain`, output `ddm/fits_guess_W` or `..._<form>_W`). Checked: the two
+backends agree, positive values lower and negative values raise accuracy, and 0 reproduces the constant-weight model.
+Ready to run once the common model is fixed.
+
 ### 6.6 Sensitivity (simulation-based power)
 No new mice needed: simulate each mouse's real trials from its fitted model with a known amount of primacy added
 (evidence weight decaying by e.g. 10%, 20%, 40% over the first 0.5 s), run the 6.3–6.4 analysis on the simulated data,

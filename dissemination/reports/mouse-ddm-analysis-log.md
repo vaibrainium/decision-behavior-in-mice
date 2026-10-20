@@ -236,6 +236,11 @@ Each writes to `ddm/fits_guess_<form>` by default (sharing a folder would make t
 
 Results: pending.
 
+**Time-varying evidence weight (for plan step 6.5/6.6, commit after `5235f37`).** `gain_decay` multiplies the drift gain
+by exp(−gain_decay · t) (t from stimulus onset; > 0 primacy, < 0 recency); bounds −0.5 to 3 /s. Added to both
+simulator backends (they agree; 0 reproduces the constant-weight model) and as `fit_mouse_ddm.py --time_varying_gain`.
+The primacy analysis plan was locked in `aeb0a22` ([`primacy-analysis-plan.md`](primacy-analysis-plan.md)).
+
 ---
 
 ## 6. Things that did not work, and why
