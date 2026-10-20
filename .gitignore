@@ -12,3 +12,4 @@ wheels/
 ruff.toml
 old_analysis/
 slurm-logs/
+.claude
