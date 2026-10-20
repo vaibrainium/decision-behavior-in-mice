@@ -77,10 +77,13 @@ GUESS_MODELS = {
 LAPSE_WINDOW = {"lapse_t0": FixedParam(0.3), "lapse_t1": FixedParam(5.0)}  # lapse RTs uniform over the response window
 # Time-varying evidence weight (plan step 6.5): drift_gain * exp(-gain_decay * t); > 0 primacy, < 0 recency, 0 = constant.
 GAIN_DECAY = ("gain_decay", (-0.5, 3.0), 0.0)
+# Signed leak (plan step 6.5): leak_rate < 0 is a self-exciting accumulator, which amplifies early evidence (primacy).
+# Lower bound -1/s limits the growth to e^5 ~ 148x over the 5 s stimulus.
+SIGNED_LEAK_BOUNDS = (-1.0, 5.0)
 VARIANTS = ["".join(f"{f}{int(on)}" for f, on in zip(OPTIONAL_FREE_PARAMS, flags)) for flags in itertools.product([0, 1], repeat=len(OPTIONAL_FREE_PARAMS))]
 
 
-def make_params(variant: str, guess_model: str = "single", time_varying_gain: bool = False):
+def make_params(variant: str, guess_model: str = "single", time_varying_gain: bool = False, signed_leak: bool = False):
     free, fixed = dict(BASE_FREE_PARAMS), dict(FIXED_PARAMS)
     if time_varying_gain:
         free[GAIN_DECAY[0]] = FreeParam(*GAIN_DECAY[1])
@@ -91,6 +94,8 @@ def make_params(variant: str, guess_model: str = "single", time_varying_gain: bo
         if factor == "G":
             specs = GUESS_MODELS[guess_model]
         for name, bounds, off_value in specs:
+            if name == "leak_rate" and signed_leak:
+                bounds = SIGNED_LEAK_BOUNDS
             if flags[factor]:
                 free[name] = FreeParam(*bounds)
             else:
@@ -191,7 +196,7 @@ def output_path(out_dir: Path, job: dict) -> Path:
     return out_dir / f"{job['mouse']}_{job['variant']}_{job['split']}.pkl"
 
 
-def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations: int, guess_model: str = "single", warm_dirs: list[Path] | None = None, time_varying_gain: bool = False) -> dict:
+def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations: int, guess_model: str = "single", warm_dirs: list[Path] | None = None, time_varying_gain: bool = False, signed_leak: bool = False) -> dict:
     mouse_rows = np.flatnonzero(inputs["subject_id"] == job["mouse"])
     is_control = inputs["sched_pulse_type"][mouse_rows] == 0
     split = job["split"]
@@ -205,7 +210,7 @@ def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations:
     else:
         raise ValueError(f"unknown split {split}")
 
-    free, fixed = make_params(job["variant"], guess_model, time_varying_gain)
+    free, fixed = make_params(job["variant"], guess_model, time_varying_gain, signed_leak)
     rigs = np.unique(inputs["data_source"][mouse_rows])
     assert len(rigs) == 1, f"{job['mouse']} has trials from {rigs}"
     min_rt = MIN_RT[rigs[0]]
@@ -231,6 +236,7 @@ def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations:
         "likelihood_params": LIKELIHOOD_PARAMS,
         "guess_model": guess_model,
         "time_varying_gain": time_varying_gain,
+        "signed_leak": signed_leak,
         "warm_start_seeds": seeds_used,
         "censor_at": CENSOR_AT,
         "min_rt": min_rt,
@@ -271,10 +277,11 @@ if __name__ == "__main__":
     parser.add_argument("--guess_model", default="single", choices=list(GUESS_MODELS), help="form of the guess factor G (plan step 2)")
     parser.add_argument("--warm_start_from", nargs="*", default=[], help="fit folders (relative to processed) whose fits of this variant and its nested variants seed the optimizer")
     parser.add_argument("--time_varying_gain", action="store_true", help="add a free gain_decay: evidence weight drift_gain * exp(-gain_decay * t) (plan step 6.5)")
+    parser.add_argument("--signed_leak", action="store_true", help="allow leak_rate down to -1/s (self-exciting accumulator) in variants with leak (plan step 6.5)")
     args = parser.parse_args()
 
     processed = Path(dir_config.data.processed)
-    args.out_dir = args.out_dir or (("ddm/fits_guess" if args.guess_model == "single" else f"ddm/fits_guess_{args.guess_model}") + ("_W" if args.time_varying_gain else ""))
+    args.out_dir = args.out_dir or (("ddm/fits_guess" if args.guess_model == "single" else f"ddm/fits_guess_{args.guess_model}") + ("_W" if args.time_varying_gain else "") + ("_NL" if args.signed_leak else ""))
     inputs = load_inputs(processed / args.inputs)
     grid = build_grid(inputs, args.variants, args.splits)
     job_ids = [int(x) for x in Path(args.job_file).read_text().split()] if args.job_file else None
@@ -295,4 +302,4 @@ if __name__ == "__main__":
             logger.info("skipping %s: output exists (use --force to refit)", job)
         else:
             logger.info("job %s: %s", args.job_id, job)
-            run_job(inputs, job, processed / args.out_dir, args.n_reps, args.max_iterations, args.guess_model, [processed / d for d in args.warm_start_from], args.time_varying_gain)
+            run_job(inputs, job, processed / args.out_dir, args.n_reps, args.max_iterations, args.guess_model, [processed / d for d in args.warm_start_from], args.time_varying_gain, args.signed_leak)

@@ -128,3 +128,23 @@ unlikely".
 2. Bayesian GLMM with the priors above; primary test is the 95% interval of β_middle (section 6).
 3. Predictive-check threshold: 95% interval contains the prediction, or departure < 25% of the predicted effect
    (section 7).
+
+---
+
+## Amendment 1 (2026-10-20, before any pulse residuals were examined)
+
+**Change:** section 8 tests a second primacy mechanism alongside the time-varying evidence weight: a **self-exciting
+accumulator** (negative leak, `leak_rate` down to −1/s; `fit_mouse_ddm.py --signed_leak`).
+
+**Why:** urgency and the bound change *when* decisions end, not the relative weight of early and late evidence, and the
+fitted leak is restricted to ≥ 0 (recency only). Two standard accounts produce primacy: a gain that declines over time
+(`gain_decay`, already in section 8) and a self-exciting accumulator (Usher & McClelland 2001; Brunton et al. 2013).
+They make different predictions: gain decay depends only on time, while self-excitation depends on the accumulated
+evidence (primacy strongest when early evidence was strong). Testing both avoids attributing primacy to one mechanism
+by default.
+
+**Procedure:** as section 8, for each mechanism separately and together: the common model with `--time_varying_gain`,
+with `--signed_leak`, and with both, fitted to all trials and compared with the common model by the same 5-fold
+cross-validation. Primacy is supported if either extension improves held-out fit beyond the Monte Carlo noise threshold
+in most mice with gain_decay > 0 or leak_rate < 0. Sections 1–7 and 9 are unchanged.
+

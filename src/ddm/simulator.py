@@ -232,19 +232,29 @@ class _TorchSimulator:
             # ------------------------------------------------------------------
             α = 1.0 - leak_rate * dt
             b = (drift_inc + noise_inc + sp * leak_rate * dt) * valid  # (N, T)
-
-            fft_n = 1 << (2 * T - 1).bit_length()  # next power-of-2 ≥ 2T-1
-            k = torch.arange(T, device=dev, dtype=torch.float32)
-            w = torch.tensor(α, device=dev, dtype=torch.float32).pow(k)  # (T,)
-
-            particular = torch.fft.irfft(
-                torch.fft.rfft(b, n=fft_n, dim=1) * torch.fft.rfft(w, n=fft_n),
-                n=fft_n,
-                dim=1,
-            )[:, :T]  # (N, T)
-
             t_exp = torch.arange(1, T + 1, device=dev, dtype=torch.float32)
-            evidence = torch.tensor(α, device=dev).pow(t_exp) * sp + particular  # (N, T)
+
+            if leak_rate < 0:
+                # Negative leak (self-exciting accumulator, α > 1): the FFT weights α^k grow and single-precision FFT
+                # loses accuracy (tested: 1-4% of trials off by > 1 ms). Use the rescaled cumulative sum
+                #   e[t] = α^t · (sp + Σ_{j<t} α^(−1−j) · b[j]),
+                # whose weights α^(−1−j) shrink, in double precision.
+                k = torch.arange(T, device=dev, dtype=torch.float64)
+                a64 = torch.tensor(α, device=dev, dtype=torch.float64)
+                scaled = torch.cumsum(b.double() * a64.pow(-1.0 - k), dim=1)  # (N, T)
+                evidence = (a64.pow(t_exp.double()) * (sp + scaled)).float()
+            else:
+                fft_n = 1 << (2 * T - 1).bit_length()  # next power-of-2 ≥ 2T-1
+                k = torch.arange(T, device=dev, dtype=torch.float32)
+                w = torch.tensor(α, device=dev, dtype=torch.float32).pow(k)  # (T,)
+
+                particular = torch.fft.irfft(
+                    torch.fft.rfft(b, n=fft_n, dim=1) * torch.fft.rfft(w, n=fft_n),
+                    n=fft_n,
+                    dim=1,
+                )[:, :T]  # (N, T)
+
+                evidence = torch.tensor(α, device=dev).pow(t_exp) * sp + particular  # (N, T)
 
         if time_constant != 0.0:
             t_idx = torch.arange(1, n_timepoints, device=dev, dtype=torch.float32)

@@ -173,7 +173,9 @@ common model by cross-validation (~60–120 jobs).
 **Status:** the time-varying weight is implemented (`gain_decay`: drift gain × exp(−gain_decay · t), both simulator
 backends; `fit_mouse_ddm.py --time_varying_gain`, output `ddm/fits_guess_W` or `..._<form>_W`). Checked: the two
 backends agree, positive values lower and negative values raise accuracy, and 0 reproduces the constant-weight model.
-Ready to run once the common model is fixed.
+Ready to run once the common model is fixed. A second primacy mechanism was added (primacy plan, amendment 1): a
+self-exciting accumulator via negative leak (`--signed_leak`, `leak_rate` down to −1/s, output `..._NL`). Urgency is not a
+primacy/recency mechanism: it scales all accumulated evidence equally and only changes when decisions end.
 
 ### 6.6 Sensitivity (simulation-based power)
 No new mice needed: simulate each mouse's real trials from its fitted model with a known amount of primacy added

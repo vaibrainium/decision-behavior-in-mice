@@ -241,6 +241,13 @@ by exp(−gain_decay · t) (t from stimulus onset; > 0 primacy, < 0 recency); bo
 simulator backends (they agree; 0 reproduces the constant-weight model) and as `fit_mouse_ddm.py --time_varying_gain`.
 The primacy analysis plan was locked in `aeb0a22` ([`primacy-analysis-plan.md`](primacy-analysis-plan.md)).
 
+**Negative leak (self-exciting accumulator).** Added as a second primacy mechanism (primacy plan, amendment 1):
+`fit_mouse_ddm.py --signed_leak` allows `leak_rate` down to −1/s. Checking the simulator against a float64 step-by-step
+reference showed that the GPU backend's FFT closed form for leak loses accuracy when leak < 0 (its weights grow): 1–4%
+of trials off by > 1 ms, up to 0.9 s. Positive leak (all fits so far) was exact on both backends. For leak < 0 the GPU
+backend now uses a rescaled cumulative sum in double precision; it matches the reference exactly, with and without sz.
+Note: urgency is not a primacy/recency mechanism; it scales all accumulated evidence equally.
+
 ---
 
 ## 6. Things that did not work, and why
