@@ -376,6 +376,19 @@ sbatch --array=0-319 --export=ALL,JOB_OFFSET=1600 --time=16:00:00 scripts/slurm/
 Generation folders: gen 1 ran with the then-default `ddm/fits` (renamed `fits0`, then archived); gen 2 in `ddm/fits`
 (archived as `fits_no_guess`); gen 3 writes to `ddm/fits_guess` by default.
 
+### 8.4a Keeping the NAS copy and Hyak in sync
+`processed/` exists twice: the lab NAS (`nas.uwcnc.net:/mnt/Pool-Backup/cnc/vaib_data/mouse-pulse-experiment`, mounted as
+`/mnt/data` in the analysis container) and Hyak (`/gscratch/walkerlab/vaibhav/mouse-pulse-data`). Each kind of file has
+one owner and is synced only from it: DDM inputs are created on the NAS side and pushed to Hyak; every fit folder under
+`processed/ddm` (including `archive/`) is created or moved on Hyak and pulled to the NAS. Syncing both ways, or without
+`--delete` after a move on Hyak, recreated stale folders once (old fits reappeared next to `archive/`).
+```bash
+LOCAL_DDM=<NAS mount>/processed/ddm bash scripts/sync_ddm_data.sh status         # dry run, both directions
+LOCAL_DDM=<NAS mount>/processed/ddm bash scripts/sync_ddm_data.sh pull --mirror  # make the NAS fits match Hyak (asks first)
+LOCAL_DDM=<NAS mount>/processed/ddm bash scripts/sync_ddm_data.sh push-inputs    # after rebuilding the DDM inputs
+```
+Run it where both the NAS and `ssh hyak` are available (the analysis container cannot reach Hyak).
+
 ### 8.4b Warm-start refits and guess forms (generation 3a/3b)
 ```bash
 python -m scripts.ddm.find_refits --threshold 5 --out scripts/ddm/jobs/refits_round1.txt   # list (job ids into the full grid)
