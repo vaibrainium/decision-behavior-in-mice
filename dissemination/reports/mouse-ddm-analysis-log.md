@@ -20,6 +20,7 @@ the project environment (`.venv`) or, on Hyak, inside the Singularity image (`sc
 4. [DDM: inputs, model and likelihood](#4-ddm-inputs-model-and-likelihood)
 5. [DDM fit generations](#5-ddm-fit-generations)
 6. [Things that did not work, and why](#6-things-that-did-not-work-and-why)
+   - [6b. Rig code check](#6b-rig-code-check-plan-step-0-2026-10-20)
 7. [Open issues and next steps](#7-open-issues-and-next-steps)
 8. [Replication commands](#8-replication-commands)
 9. [Appendix: NHP DDM review](#9-appendix-nhp-ddm-review)
@@ -220,6 +221,51 @@ From `python -m scripts.ddm.compare_models`:
 - **Free noise weight k:** improved no mouse's held-out fit in the DDM (1 of 10 at most); fixed at 1, then the S/N split
   was removed from the model (`ddd497a`). The choice-level estimate (k ≈ 0.50) stands on its own.
 - **sz** (provisionally): no population support once guesses are in.
+
+---
+
+## 6b. Rig code check (plan step 0, 2026-10-20)
+
+Checked against the task code: UW `NeuRPi` (`protocols/random_dot_motion/rt_pulse`, core task, stimulus manager,
+`neurpi/tasks/trial_construct.py`; current `main`) and UCLA `RDK-Task` (`Burst_Experiment.py`, `StimDisplay.py`,
+`RandomMotion.py`; public repo, single 2021 commit), plus the per-session UW configs in the raw data.
+
+**Confirmed**
+- **UW response timing:** a timer opens the response window at `min_viewing` (0.3 s in all 219 session configs); licks
+  before it are never queued; `response_time` is measured from the window opening, so preprocessing's +0.3 s is right.
+  The response is the first lick *onset* after the window opens, so a decision made earlier registers at the next
+  lick, i.e. at 0.3 s plus part of a lick cycle (UW RTs show no pile-up at 0.3 s, a flat density just after it).
+- **UCLA response timing:** the clock starts with the stimulus; after `minViewTime` the loop checks the current
+  lick-contact state, so a mouse already in contact registers at 0.3 s (the pile-up at 0.3 s). RT is from stimulus
+  onset; nothing added in preprocessing.
+- **Floor rule:** right for UCLA; an approximation for UW (true response = next lick onset after 0.3 s).
+- **Pulse frames:** UW applies the pulse on the scheduled frame and moves the dots on it (as in the replay). UCLA
+  applies `updateBurst` on a display-loop pass without moving or drawing the dots (a one-pass freeze, as in the replay).
+  UCLA bursts start after a drawn delay (normal, mean 60 or 240 ms, SD 15 ms) and end 50 ms later by wall clock.
+- **UW stimulus settings:** all 219 UW session configs use 1280 x 720, dot radius 17, fill 15, speed 350 px/s,
+  lifetime 30 frames, min viewing 0.3 s, as in the replay.
+- **UCLA noise directions:** `randint(360)`, as in the replay.
+
+**Discrepancies and open questions**
+- **UW noise directions:** current NeuRPi draws non-coherent directions from 8 discrete values
+  (`choice(randTheta)`); our replay copy (`scripts/uw_rdk.py`) uses `randint(360)` (the other line is commented out in
+  each). The two consume the random generator differently, so if the rig used `choice` during data collection, every
+  replayed UW stimulus (noise directions, positions, respawns) differs from what the mice saw; the programmed coherence
+  and pulses are unaffected. NeuRPi's history starts 2025-05-31, so the code cannot say which ran. A behavioural test
+  was inconclusive: on 3,404 UW control trials neither version's hidden coherence predicts choice (weights 0.005 ± 0.007
+  and -0.003 ± 0.007), but UW mice are too insensitive for this test to have power. **Needs confirmation.**
+- **UW screen scale:** the session config comments `"dot_vel": 350,  # 50 degrees/sec`, i.e. ~7 px/deg, not the 10 px/deg
+  assumed. If so, UW dots move at ~50°/s, not 30°/s, and the motion-energy filters (tuned to 30°/s) are mistuned for UW.
+- **UCLA frame rate and dot settings:** the display loop moves dots once per pass, capped by `tick(FrameRate)` (default
+  150, settable in the interface) with vsync off; radius, speed, lifetime and frame rate are interface settings not
+  recorded in the data. The replay assumes 190 passes/s, speed 3 px per pass, radius 14, lifetime 60 passes, stepped at
+  60 Hz with speed scaled. The fixed per-trial bias (onset positions and noise directions) is reproduced exactly if
+  the dot count matches; frame-by-frame positions are not (lifetime and respawns count loop passes), and the true dot
+  speed depends on the loop rate achieved. **Needs the settings used.**
+- **UW frame rate:** set by the rig's display preferences (`max_fps`, `vsync`; 60 in the example config), not recorded
+  in the session configs. Pulse timing is in frames and converted at 16.67 ms per frame. **Needs confirmation (60 Hz).**
+- RT clocks start when the stimulus is commanded, not at the first drawn frame; the display latency is absorbed by the
+  non-decision time.
 
 ---
 
