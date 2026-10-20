@@ -317,12 +317,12 @@ forms, 120 jobs) implemented and submitted (section 5.5); `PSUIM6_L1U1V1Z1G1_all
 2. **Fix the common model** from the merged comparison (currently L1U1V1Z0G1) and the guess-form comparison; decide
    whether sz and urgency stay; check the fits with drift_gain at its lower bound and the lapse rate against each
    mouse's psychometric lapse.
-4. **Model recovery** (`scripts/ddm/model_recovery.py`): set `COMMON` to the chosen model, then run (720 jobs at 6
+3. **Model recovery** (`scripts/ddm/model_recovery.py`): set `COMMON` to the chosen model, then run (720 jobs at 6
    generators). Key questions: can sz vs guesses and urgency vs guesses be told apart?
-5. **Primacy test:** with the control-only fits of the chosen model, predict pulse trials and compare predicted vs
+4. **Primacy test:** with the control-only fits of the chosen model, predict pulse trials and compare predicted vs
    observed pulse effects by timing (Okazawa et al. 2018: in RT tasks late pulses matter less even with constant
    weights, so primacy means *less than the model predicts*).
-6. **Screen geometry** (methods doc 3.7) and filter-sensitivity analysis (methods doc 5).
+5. **Screen geometry** (methods doc 3.7) and filter-sensitivity analysis (methods doc 5).
 
 ---
 
