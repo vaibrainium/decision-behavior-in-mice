@@ -148,3 +148,23 @@ with `--signed_leak`, and with both, fitted to all trials and compared with the 
 cross-validation. Primacy is supported if either extension improves held-out fit beyond the Monte Carlo noise threshold
 in most mice with gain_decay > 0 or leak_rate < 0. Sections 1–7 and 9 are unchanged.
 
+---
+
+## Amendment 2 (2026-10-20, before any pulse residuals were examined)
+
+**Changes:**
+1. **Section 8 / amendment 1, one mechanism at a time.** Gain decay (`--time_varying_gain`) and negative leak
+   (`--signed_leak`) are each added separately to the common model (one extra parameter each) and compared with it by
+   cross-validation. The combined variant is dropped. Neither extension becomes part of the reported model unless it
+   passes the complexity budget (next-steps plan, parsimony rule 2): better held-out fit beyond the Monte Carlo noise
+   threshold in most mice, recoverable, interpretable.
+2. **Supplementary model-free check.** Mixed-effects logistic regression on pulse trials with |coherence| ≤ 36%:
+   choice toward the pulse direction ~ signed coherence (aligned to the pulse direction) + timing, random intercept and
+   timing slope per mouse, rig as a covariate; Bayesian, priors as section 6. Restricted to trials with RT ≥ pulse onset
+   + 0.5 s, the same window for every timing, so each pulse could influence the choice. This conditions on RT and is
+   reported as a supplementary consistency check, not the confirmatory test: if it agrees with section 6 the conclusion
+   does not hinge on the DDM; a disagreement is reported and discussed.
+
+**Why:** to keep the reported model as simple as the data justify (each added mechanism must earn its place), and to
+make sure the primacy conclusion does not depend only on DDM assumptions.
+

@@ -24,6 +24,25 @@ Things that stop us from treating that as the answer yet:
 
 Each step says what it is for, how, what it costs, and what we decide from it.
 
+## Parsimony rules (agreed 2026-10-20)
+
+To keep the model from growing with each question:
+1. **Primacy mechanisms are tests, not model parts.** Gain decay and negative leak are each added one at a time (one
+   extra parameter) to the common model to answer one question. The reported model stays the common model unless an
+   extension wins clearly (rule 2).
+2. **Complexity budget.** A mechanism stays in the common model only if it improves held-out fit beyond the Monte Carlo
+   noise threshold in most mice, is recoverable in model recovery, and has a clear interpretation. Failing any one
+   removes it, whatever the summed NLL says.
+3. **Prefer the simpler form.** Among guess/lapse forms that fit about equally (within the noise threshold), take the one
+   with fewer parameters; fix guess_bias at 0.5 unless a free bias clearly improves held-out fit.
+4. **No more factorial grids.** The 32-model grid answered which mechanisms matter; after step 3 every further question
+   is a single targeted comparison with the common model.
+5. **Model-free check.** Each model-based conclusion that matters (primacy above all) is paired with a model-free
+   analysis of the same data; agreement means the conclusion does not hinge on model details.
+
+Expected size of the final model: about 8–10 parameters (5 core + leak + urgency + sv + a 2–3-parameter guess
+component).
+
 ---
 
 ## Step 0. Confirm rig behaviour (quick, no compute)
@@ -162,6 +181,10 @@ rig differences (screens, dots, pulse lengths, cohorts) shift a mouse's overall 
 One mixed-effects model across all mice, not separate tests per rig: pulse effect (observed minus predicted) against
 pulse timing, with a random intercept and slope per mouse and rig as a covariate. All mice inform the timing slope; the
 rig term only asks whether rigs disagree (a null there is "no evidence of a difference", not replication).
+
+### 6.4b Model-free check (parsimony rule 5)
+A logistic regression of the pulse effect on choice by timing, without the DDM (primacy plan, amendment 2). Agreement
+with 6.4 means the conclusion does not depend on the model's details.
 
 ### 6.5 Baseline dependence
 The baseline model itself shapes temporal weighting: leak discounts early evidence (predicts recency), urgency and the
