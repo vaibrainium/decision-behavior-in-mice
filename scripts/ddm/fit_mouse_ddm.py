@@ -146,8 +146,8 @@ def select(inputs: dict, rows: np.ndarray) -> tuple[dict, np.ndarray]:
     return data, stimulus
 
 
-def heldout_nll(model: MouseDDM, params: dict, data: dict, stimulus: np.ndarray, n_reps: int) -> float:
-    np.random.seed(EVAL_SEED)
+def heldout_nll(model: MouseDDM, params: dict, data: dict, stimulus: np.ndarray, n_reps: int, seed: int = EVAL_SEED) -> float:
+    np.random.seed(seed)
     model.simulator.clear_cache()
     model._labels = data["condition"]
     model.precompute(*stimulus.shape, n_reps=n_reps)

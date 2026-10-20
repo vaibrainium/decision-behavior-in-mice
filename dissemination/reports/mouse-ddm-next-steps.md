@@ -111,6 +111,11 @@ chance; y% lapses") and that does not distort the decision parameters.
 1. **Measure the Monte Carlo noise of the comparison.** Re-score the held-out folds of the top ~6 models with several
    evaluation seeds and 50 repetitions. The spread across seeds sets the threshold a difference must exceed, per mouse
    and summed, replacing the arbitrary "> 2 NLL".
+   **Status (2026-10-20): script ready, not yet run.** `scripts/ddm/mc_noise.py` re-scores the saved `ddm/fits_guess`
+   CV fits of L1U1V1Z0G1, its five one-mechanism-removed neighbours, L1U1V1Z1G1 and L1U0V1Z1G1 (70 jobs, one per
+   mouse × variant) at 10 evaluation seeds × 15 and 50 repetitions; `--summarize` gives the SD across seeds of each
+   model's NLL difference from L1U1V1Z0G1 (common random numbers make the difference, not each NLL, the relevant noise).
+   Checked locally: seed 12345 at 15 repetitions reproduces the saved test_nll (PSUIM10, cv0, two variants).
 2. **Select mechanisms** that (i) improve held-out NLL beyond that threshold in most mice and hurt none, and (ii) have
    population-level support (family protected exceedance clearly above 0.5). If in doubt, include: the models are
    nested, so an unneeded mechanism mostly adds parameter noise, while a missing one biases the rest.
