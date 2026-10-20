@@ -1,11 +1,13 @@
 # Primacy test: analysis plan (written before looking at pulse residuals)
 
-**Status: DRAFT for review** (2026-10-20). Once agreed, commit it unchanged and record the commit here; that version is
-the confirmatory analysis. Anything decided after looking at pulse-trial residuals is reported as exploratory.
+**Status: LOCKED** (2026-10-20, agreed with V. Thakur; locking commit recorded in
+[`mouse-ddm-next-steps.md`](mouse-ddm-next-steps.md), step 6.1). This version is the confirmatory analysis; change it
+only by a new, dated commit that says why. Anything decided after looking at pulse-trial residuals is reported as
+exploratory.
 Context: plan step 6 in [`mouse-ddm-next-steps.md`](mouse-ddm-next-steps.md); model and data in
 [`mouse-ddm-analysis-log.md`](mouse-ddm-analysis-log.md).
 
-**Items marked ⟨decide⟩ need a choice before the plan is locked.**
+Decisions taken when locking are listed in section 11.
 
 ---
 
@@ -55,8 +57,8 @@ Late pulses exist only on UW.
   preprocessing's `pulse_type` has.
 - Choice outcomes use trials with a response (0.3–5 s); trials with no response by 5 s are excluded from the choice
   measure (their share is checked in the predictive check).
-- Coherence range ⟨decide⟩: **(a)** |coherence| ≤ 36% (choices not saturated, so a pulse can move them), or **(b)** all
-  coherences. Proposal: (a) primary, (b) as a robustness check.
+- Coherence range: **|coherence| ≤ 36%** (choices not saturated, so a pulse can move them) for the primary analysis;
+  all coherences as a robustness check.
 - The 15 trials with invalid pulse durations are already excluded from the DDM inputs.
 
 ## 5. Outcome
@@ -81,16 +83,17 @@ Binomial generalized linear mixed model:
   reported as secondary and not pooled with UCLA.
 - **Rig:** the timing × rig interaction is reported descriptively (two cohorts of 4 and 6 mice cannot show
   replication; a null is "no evidence of a difference").
-- Fitting tool ⟨decide⟩: frequentist GLMM (e.g. `statsmodels` / `lme4`) or a Bayesian one (`pymc`, weakly informative
-  priors; report the posterior of β_middle and P(β_middle < 0)). Proposal: Bayesian, since 10 mice make random-slope
-  variance estimates unstable in frequentist fits.
+- Fitting tool: **Bayesian GLMM** (`pymc`, weakly informative priors: Normal(0, 1) on the logit-scale fixed effects,
+  half-Normal(0, 1) on random-effect SDs); report the posterior of β_middle, its 95% interval and P(β_middle < 0). The
+  primary test is "the 95% interval of β_middle excludes 0". Chosen because 10 mice make random-slope variances unstable
+  in frequentist fits.
 - **Per-mouse estimates** of the timing effect are shown alongside the group estimate.
 
 ## 7. Gate: predictive check before the timing test (plan step 6.2)
 
 Done first, and does not involve the timing contrast:
 1. β0 (overall departure, all timings pooled) is reported; the model passes if the 95% interval of the pooled pulse
-   effect contains the model's prediction, or the departure is < 25% of the predicted pulse effect ⟨decide threshold⟩.
+   effect contains the model's prediction, or the departure is < 25% of the predicted pulse effect.
 2. Pulse-trial RT distributions (quantiles, pooled over timing) are within the spread of the model's predictions.
 3. The fraction of no-response-by-5 s trials on pulse trials matches the prediction.
 
@@ -119,8 +122,9 @@ unlikely".
 - The model-based test (section 8) and the sensitivity result (section 9).
 - Any deviation from this plan, labelled exploratory.
 
-## 11. Decisions to make before locking ⟨decide⟩
+## 11. Decisions taken when locking
 
-1. Coherence range for the primary analysis (section 4).
-2. Frequentist or Bayesian GLMM (section 6).
-3. Predictive-check threshold (section 7).
+1. Coherence range: |coherence| ≤ 36% primary; all coherences as a robustness check (section 4).
+2. Bayesian GLMM with the priors above; primary test is the 95% interval of β_middle (section 6).
+3. Predictive-check threshold: 95% interval contains the prediction, or departure < 25% of the predicted effect
+   (section 7).
