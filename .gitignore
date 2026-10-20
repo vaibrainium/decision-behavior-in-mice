@@ -13,3 +13,5 @@ ruff.toml
 old_analysis/
 slurm-logs/
 .claude
+CLAUDE.md
+AGENTS.md
