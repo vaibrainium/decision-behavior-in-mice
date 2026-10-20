@@ -4,6 +4,8 @@
 
 **Purpose:** motion energy (ME) is the trial-by-trial evidence signal for the psychophysical kernels and for the DDM fits. This document records how ME is currently computed, which problems that has, and the corrected method for mice. The corrected method must also be fast enough to regenerate for every trial.
 
+**Analysis log:** what was tried downstream (kernels, hidden coherence, DDM fit generations), what worked, and how to reproduce each step is in [`mouse-ddm-analysis-log.md`](mouse-ddm-analysis-log.md).
+
 ---
 
 ## 1. Current pipeline
