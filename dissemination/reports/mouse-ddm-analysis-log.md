@@ -225,6 +225,9 @@ From `python -m scripts.ddm.compare_models`:
 
 ## 7. Open issues and next steps
 
+The detailed plan, with the purpose, method, cost and expected benefit of each step, is in
+[`mouse-ddm-next-steps.md`](mouse-ddm-next-steps.md).
+
 1. **Warm-start refits** of the optimizer failures (larger model worse than its nested model by > 20 NLL; ~50 fits)
    and the missing `PSUIM6_L1U1V1Z1G1_all`, seeding each larger model with its nested model's solution.
 2. **Fix the common model** after step 1 (currently L1U1V1Z0G1); decide whether sz and urgency stay.
