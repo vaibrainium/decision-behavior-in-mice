@@ -37,6 +37,8 @@ the project environment (`.venv`) or, on Hyak, inside the Singularity image (`sc
 | DDM pipeline | ME-driven DDM with censoring at 5 s, 0.3 s floor, scheduled-pulse conditions, censored QMLE, fast guesses. **Working.** | `scripts/ddm/`, `src/ddm/` |
 | Current fits | 32-model grid with fast guesses, 2,239 / 2,240 fits (missing `PSUIM6_L1U1V1Z1G1_all`). | `ddm/fits_guess/` (commit `ddd497a`) |
 | Leading model | Leak + urgency + sv + fast guesses, no sz (`L1U1V1Z0G1`). **Provisional.** | Section 5.4 |
+| Warm starts, guess forms | Implemented; 223 + 120 jobs **submitted** (plan steps 1–2). | Section 5.5, `ddm/fits_guess_warm`, `ddm/fits_guess_<form>` |
+| Rig code check | Replay matches the rigs. **Done** (plan step 0). | Section 6b |
 | Model recovery | Script ready, **not run** (its common model is provisional). | `scripts/ddm/model_recovery.py` |
 | Primacy test | **Not started.** | Section 7 |
 
@@ -144,6 +146,8 @@ simulated trials costs 20 per data trial. Selected explicitly: `LIKELIHOOD_PARAM
 | 2 | `ddm/archive/fits_no_guess` | `7ec9003`, `40858bd` (+ UCLA CV from gen 1) | L, U, V, Z, free k; urgency ≥ −0.15; floor on both rigs | Valid; error RTs misfit | Archived |
 | — | `ddm/archive/fits_uw_truncated` | `0c3de87` / `7ec9003` | UW fits with truncation | Invalid | Archived |
 | 3 | `ddm/fits_guess` | `ddd497a` | L, U, V, Z, **G (fast guesses)**; k fixed 1; single ME input | Current | **Active** |
+| 3a | `ddm/fits_guess_warm` | `3a97ea6` | Warm-start refits of 223 under-optimized gen-3 fits (plan step 1) | Merged with gen 3 by `compare_models` | Submitted |
+| 3b | `ddm/fits_guess_fast_only`, `ddm/fits_guess_guess_lapse` | `3a97ea6` | Leading model L1U1V1Z0G1 with two other guess forms (plan step 2), 5-fold CV + all | Compared with gen 3's single form | Submitted |
 
 ### 5.1 Generation 0: local timing tests
 - First objective (plain QMLE) skipped cells with no predictions, and the then-used RT window dropped simulated trials,
@@ -200,6 +204,34 @@ From `python -m scripts.ddm.compare_models`:
   all-trial fits), i.e. stimulus-independent responses at all RTs. drift_gain at its lower bound in 39 all-trial fits.
 - **Optimizer failures:** 1.3% of nested pairs (all trials) have the larger model worse by > 20 NLL, concentrated in
   PSUIM7 and in models with sz added → the comparison may understate sz (and somewhat leak and urgency).
+
+### 5.5 Generation 3 follow-ups: warm starts and guess forms (plan steps 1–2, commit `3a97ea6`)
+
+**Warm starts (step 1).** A larger model fitted with the same noise draws can only match or beat a model it contains,
+so a larger model with a worse training NLL marks an optimizer that stopped short.
+- `fit()` now accepts *seeds*: parameter vectors placed in differential evolution's initial population (the rest is
+  Latin-hypercube sampled as before). `fit_mouse_ddm.py --warm_start_from <folder>` seeds each fit with its own earlier
+  fit and every nested model's fit (parameters a nested model lacks take their "off" value). Because the noise draws are
+  the same, each seed reproduces its model's NLL exactly, so a warm-started fit cannot end worse than any model it
+  contains.
+- **Smoke test** (DBM14, L0U0V1Z0G1, all trials, 15 repetitions, one iteration): NLL 2,107.8 → 2,099.39, exactly the
+  nested L0U0V0Z0G1 fit's NLL.
+- **Which fits:** `scripts/ddm/find_refits.py` lists fits worse than a nested model by more than a threshold:
+  629 fits at > 0 NLL, 224 at > 5, 38 at > 20. **Threshold 5 chosen** (224 fits): gaps of 5–20 NLL can shift the
+  per-mechanism comparison, smaller gaps hardly matter. The list (`scripts/ddm/jobs/refits_round1.txt`, 223 jobs)
+  excludes `PSUIM6_L1U1V1Z1G1_all`, which was still running in the original grid. A second round may be needed: a
+  refitted nested model can expose a new gap in a model containing it.
+- `compare_models.py --fits_dir ddm/fits_guess ddm/fits_guess_warm` merges the folders, keeping the better fit.
+
+**Guess forms (step 2).** The single guess component (exponential delay up to 2 s) acts as a catch-all for fast
+guesses and slow lapses. Two alternatives, selected with `--guess_model`, are fitted for the leading model
+L1U1V1Z0G1 on all mice, 5 CV folds + all trials (60 jobs each), warm-started from the single-form fits:
+- `fast_only`: guess delay capped at 0.3 s (guess_tau ≤ 0.3);
+- `guess_lapse`: the same fast guess plus a lapse (`p_lapse`; random choice with the same bias, RT uniform over
+  0.3–5 s). Implemented in `apply_guesses()`; with `p_lapse` = 0 it reproduces the single-component code exactly.
+Each writes to `ddm/fits_guess_<form>` by default (sharing a folder would make the skip-if-done rule skip them).
+
+Results: pending.
 
 ---
 
@@ -278,11 +310,13 @@ settings) are correct. The items below were open questions from the code check; 
 The detailed plan, with the purpose, method, cost and expected benefit of each step, is in
 [`mouse-ddm-next-steps.md`](mouse-ddm-next-steps.md).
 
-1. **Warm-start refits** of the optimizer failures (larger model worse than its nested model by > 20 NLL; ~50 fits)
-   and the missing `PSUIM6_L1U1V1Z1G1_all`, seeding each larger model with its nested model's solution.
-2. **Fix the common model** after step 1 (currently L1U1V1Z0G1); decide whether sz and urgency stay.
-3. **Guess/lapse component:** consider a separate fast-guess and slow-lapse process, or constrain guess_tau; check the
-   39 fits with drift_gain at its lower bound.
+Status (2026-10-20): step 0 (rig code check) done (section 6b); steps 1 (warm-start refits, 223 jobs) and 2 (guess
+forms, 120 jobs) implemented and submitted (section 5.5); `PSUIM6_L1U1V1Z1G1_all` still running.
+
+1. **Round 2 of warm starts** if `find_refits` finds new gaps after merging the refits.
+2. **Fix the common model** from the merged comparison (currently L1U1V1Z0G1) and the guess-form comparison; decide
+   whether sz and urgency stay; check the fits with drift_gain at its lower bound and the lapse rate against each
+   mouse's psychometric lapse.
 4. **Model recovery** (`scripts/ddm/model_recovery.py`): set `COMMON` to the chosen model, then run (720 jobs at 6
    generators). Key questions: can sz vs guesses and urgency vs guesses be told apart?
 5. **Primacy test:** with the control-only fits of the chosen model, predict pulse trials and compare predicted vs
@@ -327,9 +361,22 @@ sbatch --array=0-319 --export=ALL,JOB_OFFSET=1600 --time=16:00:00 scripts/slurm/
 Generation folders: gen 1 ran with the then-default `ddm/fits` (renamed `fits0`, then archived); gen 2 in `ddm/fits`
 (archived as `fits_no_guess`); gen 3 writes to `ddm/fits_guess` by default.
 
+### 8.4b Warm-start refits and guess forms (generation 3a/3b)
+```bash
+python -m scripts.ddm.find_refits --threshold 5 --out scripts/ddm/jobs/refits_round1.txt   # list (job ids into the full grid)
+env EXTRA_ARGS="--job_file scripts/ddm/jobs/refits_round1.txt --warm_start_from ddm/fits_guess --out_dir ddm/fits_guess_warm" \
+    sbatch --array=0-222 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+for form in fast_only guess_lapse; do
+  env EXTRA_ARGS="--variants L1U1V1Z0G1 --splits cv0 cv1 cv2 cv3 cv4 all --guess_model $form --warm_start_from ddm/fits_guess" \
+      sbatch --array=0-59 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+done
+python -m scripts.ddm.find_refits --fits_dir ddm/fits_guess ddm/fits_guess_warm --out scripts/ddm/jobs/refits_round2.txt   # round 2
+```
+
 ### 8.5 Analysis
 ```bash
 python -m scripts.ddm.compare_models                                  # generation 3
+python -m scripts.ddm.compare_models --fits_dir ddm/fits_guess ddm/fits_guess_warm   # generation 3 with warm-start refits
 python -m scripts.ddm.compare_models --fits_dir ddm/archive/fits_no_guess   # generation 2
 ```
 Fit-quality plots: `notebooks/3.0-ddm-fit-quality.ipynb` (set `MODEL` and `FITS`).

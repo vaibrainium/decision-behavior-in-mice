@@ -53,6 +53,11 @@ missing `PSUIM6_L1U1V1Z1G1_all`, into a new folder; rerun `compare_models.py`.
 
 **Cost:** ~50 Hyak jobs, mostly the big UCLA mice (1–5 h each).
 
+**Status (2026-10-20): implemented and submitted** (commit `3a97ea6`; analysis log section 5.5). Threshold lowered to
+5 NLL after counting (629 fits at > 0, 224 at > 5, 38 at > 20): 223 jobs (`scripts/ddm/jobs/refits_round1.txt`) into
+`ddm/fits_guess_warm`. Smoke test: the warm-started fit reproduced the best nested model's NLL exactly on its first
+iteration. Next: merge, check for a second round with `find_refits`, rerun `compare_models`.
+
 **Decision:** whether sz stays out, and how strong the case for urgency is once guesses are present.
 
 ## Step 2. Make the guess component interpretable
@@ -73,6 +78,10 @@ fitted lapse rate against the lapse implied by each mouse's psychometric asympto
 coherence)).
 
 **Cost:** 3 variants × 10 mice × 6 splits ≈ 180 jobs.
+
+**Status (2026-10-20): implemented and submitted** (commit `3a97ea6`; analysis log section 5.5). (a) is the existing
+L1U1V1Z0G1 in `ddm/fits_guess`; (b) `guess_lapse` and (c) `fast_only` run as 60 jobs each (5 CV folds + all trials),
+warm-started from (a), into `ddm/fits_guess_guess_lapse` and `ddm/fits_guess_fast_only`.
 
 **Decision:** a guess/lapse component that can be described in one sentence ("x% fast anticipatory responses at
 chance; y% lapses") and that does not distort the decision parameters.
