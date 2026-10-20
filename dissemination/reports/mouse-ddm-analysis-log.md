@@ -246,7 +246,11 @@ Checked against the task code: UW `NeuRPi` (`protocols/random_dot_motion/rt_puls
   lifetime 30 frames, min viewing 0.3 s, as in the replay.
 - **UCLA noise directions:** `randint(360)`, as in the replay.
 
-**Discrepancies and open questions**
+**Resolution (confirmed by V. Thakur, 2026-10-20):** the UW rigs drew non-coherent directions with `randint(360)`
+during data collection, as the replay does, and the replay's other settings (UW 10 px/deg and 60 Hz, UCLA display
+settings) are correct. The items below were open questions from the code check; none requires a change.
+
+**Open questions from the code check (resolved as above)**
 - **UW noise directions:** current NeuRPi draws non-coherent directions from 8 discrete values
   (`choice(randTheta)`); our replay copy (`scripts/uw_rdk.py`) uses `randint(360)` (the other line is commented out in
   each). The two consume the random generator differently, so if the rig used `choice` during data collection, every

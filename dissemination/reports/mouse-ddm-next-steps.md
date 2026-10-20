@@ -35,12 +35,10 @@ pulse inputs directly.
 
 **How:** check the rig task code, or ask whoever ran the rigs. If either rule is wrong, fix it before step 1.
 
-**Status (2026-10-20):** code checked; findings in the analysis log, section 6b. Both rules hold (the floor is exact
-for UCLA and an approximation for UW, where the response is the next lick onset after 0.3 s; the UCLA pulse-frame
-freeze matches the rig). Open, to confirm with the rig records: (1) which UW noise-direction code ran (8 discrete
-directions in current NeuRPi vs 360 in the replay; if 8, all UW replays must be regenerated); (2) UW screen scale (a
-config comment implies ~7 px/deg, i.e. dots at ~50°/s); (3) UCLA loop rate and dot settings; (4) UW frame rate (60 Hz
-assumed).
+**Status: done (2026-10-20).** Findings in the analysis log, section 6b. Both rules hold: the floor is exact for
+UCLA and an approximation for UW (there the response is the next lick onset after 0.3 s); the UCLA pulse-frame freeze
+matches the rig. The UW rigs used `randint(360)` noise directions, as the replay does, and the replay's other settings
+are correct (confirmed by V. Thakur), so no replay or input needs regenerating.
 
 ## Step 1. Warm-start refits of under-optimized fits
 
