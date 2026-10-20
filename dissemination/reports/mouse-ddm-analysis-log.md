@@ -144,7 +144,7 @@ simulated trials costs 20 per data trial. Selected explicitly: `LIKELIHOOD_PARAM
 
 | Gen | Folder | Commit(s) | Grid | Outcome | Status |
 |---|---|---|---|---|---|
-| 0 | `ddm/fits_test`, `fits_test_atol` (local) | `072480a` + local edits | PSUIM5 timing tests | Exposed the empty-cell exploit and premature stopping | Test only |
+| 0 | (`ddm/fits_test`, `fits_test_atol`; deleted 2026-10-20) | `072480a` + local edits | PSUIM5 timing tests | Exposed the empty-cell exploit and premature stopping | Test only, not kept |
 | 1 | `ddm/archive/fits0_urgency_lowerbound` | `0c3de87` | L, U, V, Z, free k; urgency ≥ −0.5; UW **truncated** | UW invalid; UCLA valid | Archived |
 | 2 | `ddm/archive/fits_no_guess` | `7ec9003`, `40858bd` (+ UCLA CV from gen 1) | L, U, V, Z, free k; urgency ≥ −0.15; floor on both rigs | Valid; error RTs misfit | Archived |
 | — | `ddm/archive/fits_uw_truncated` | `0c3de87` / `7ec9003` | UW fits with truncation | Invalid | Archived |
