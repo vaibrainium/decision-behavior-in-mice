@@ -1,6 +1,8 @@
 #!/bin/bash
 # Fit the mouse DDM grid (scripts/ddm/fit_mouse_ddm.py), one fit per array task. Set MODULE to run another grid with the
-# same interface (--job_id, skip if done), e.g. MODULE=scripts.ddm.model_recovery.
+# same interface (--job_id, skip if done), e.g. MODULE=scripts.ddm.model_recovery. Set EXTRA_ARGS for options passed to
+# it; with fish or bash: env EXTRA_ARGS="--job_file ddm_refits.txt --out_dir ddm/fits_guess_warm" sbatch ... (a job file
+# path is relative to the repo root, /src in the container).
 #
 # Submit from the repo root on the cluster (the clone is bound to /src in the container):
 #   mkdir -p slurm-logs
@@ -31,6 +33,7 @@ source "${PROJECT_ROOT}/.env"
 : "${CLUSTER_DATA_PATH:?set CLUSTER_DATA_PATH in .env}" "${SIF_PATH:?set SIF_PATH in .env}"
 JOB_ID=$(( ${JOB_OFFSET:-0} + SLURM_ARRAY_TASK_ID ))
 MODULE="${MODULE:-scripts.ddm.fit_mouse_ddm}"
+EXTRA_ARGS="${EXTRA_ARGS:-}"
 
 module load singularity
 
@@ -38,4 +41,4 @@ singularity exec --nv \
     --bind "${CLUSTER_DATA_PATH}":/mnt/data \
     --bind "${PROJECT_ROOT}":/src \
     "${SIF_PATH}" \
-    bash -c "cd /src && export PYTHONPATH=/src && python3 -m ${MODULE} --job_id ${JOB_ID}"
+    bash -c "cd /src && export PYTHONPATH=/src && python3 -m ${MODULE} --job_id ${JOB_ID} ${EXTRA_ARGS}"

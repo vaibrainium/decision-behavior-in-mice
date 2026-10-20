@@ -13,6 +13,7 @@ Mechanism letters are read from the variant names (e.g. L1U1V1Z0G1 -> L, U, V, Z
 
 Usage:
     python -m scripts.ddm.compare_models                         # ddm/fits_guess, all complete CV folds
+    python -m scripts.ddm.compare_models --fits_dir ddm/fits_guess ddm/fits_guess_warm   # warm-start refits replace originals when better
     python -m scripts.ddm.compare_models --fits_dir ddm/archive/fits_no_guess
 """
 
@@ -61,22 +62,26 @@ def mechanism_on(variant: str, letter: str) -> bool:
     return variant[variant.index(letter) + 1] == "1"
 
 
-def load(fits_dir: Path) -> pd.DataFrame:
+def load(fits_dirs: Path | list[Path]) -> pd.DataFrame:
+    """Fits from one or more folders; when a (mouse, variant, split) appears in several (e.g. a warm-start refit), the
+    fit with the lower training NLL is kept, with its held-out NLL."""
     rows = []
-    for path in glob.glob(str(fits_dir / "*.pkl")):
-        with open(path, "rb") as f:
-            r = pickle.load(f)
-        rows.append({"mouse": r["mouse"], "variant": r["variant"], "split": r["split"], "train_nll": r["train_nll"], "test_nll": r.get("test_nll"), "k": len(r["free_parameters"]), "n": r["n_train"]})
-    return pd.DataFrame(rows)
+    for fits_dir in [fits_dirs] if isinstance(fits_dirs, Path) else fits_dirs:
+        for path in glob.glob(str(fits_dir / "*.pkl")):
+            with open(path, "rb") as f:
+                r = pickle.load(f)
+            rows.append({"mouse": r["mouse"], "variant": r["variant"], "split": r["split"], "train_nll": r["train_nll"], "test_nll": r.get("test_nll"), "k": len(r["free_parameters"]), "n": r["n_train"], "source": fits_dir.name})
+    df = pd.DataFrame(rows)
+    return df.sort_values("train_nll").drop_duplicates(["mouse", "variant", "split"]).reset_index(drop=True)
 
 
-def main(fits_dir: Path, folds: list[str] | None):
+def main(fits_dir: list[Path], folds: list[str] | None):
     df = load(fits_dir)
     letters = list(df.variant.iloc[0][0::2])
     mice, variants = sorted(df.mouse.unique()), sorted(df.variant.unique())
     complete = {s: df[df.split == s].groupby(["mouse", "variant"]).size().reindex(pd.MultiIndex.from_product([mice, variants])).notna().all() for s in sorted(df.split.unique())}
     folds = folds or [s for s in sorted(complete) if s.startswith("cv") and complete[s]]
-    print(f"{fits_dir}: {len(df)} fits, {len(mice)} mice x {len(variants)} variants; complete splits: {[s for s, ok in complete.items() if ok]}")
+    print(f"{[str(d) for d in fits_dir]}: {len(df)} fits ({df.source.value_counts().to_dict()}), {len(mice)} mice x {len(variants)} variants; complete splits: {[s for s, ok in complete.items() if ok]}")
     print(f"CV folds used: {folds}\n")
 
     allf = df[df.split == "all"].set_index(["mouse", "variant"])
@@ -130,7 +135,7 @@ def main(fits_dir: Path, folds: list[str] | None):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--fits_dir", default="ddm/fits_guess", help="relative to the processed data directory")
+    parser.add_argument("--fits_dir", nargs="+", default=["ddm/fits_guess"], help="relative to the processed data directory; several folders are merged, keeping the better fit")
     parser.add_argument("--folds", nargs="*", help="CV folds to use (default: every fold complete for all mice and variants)")
     args = parser.parse_args()
-    main(Path(dir_config.data.processed) / args.fits_dir, args.folds)
+    main([Path(dir_config.data.processed) / d for d in args.fits_dir], args.folds)

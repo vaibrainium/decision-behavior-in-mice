@@ -19,6 +19,7 @@ import numpy as np
 import pandas as pd
 import torch
 from scipy.optimize import differential_evolution, minimize
+from scipy.stats import qmc
 
 from .simulator import DriftDiffusionSimulator
 from .likelihood_calculator import LikelihoodCalculator
@@ -75,22 +76,35 @@ def validate_params(p: dict) -> None:
         raise ValueError(f"Invalid guess_bias: {p['guess_bias']}")
     if p.get("p_guess", 0.0) > 0 and not p.get("guess_tau", 0.0) > 0:
         raise ValueError(f"Invalid guess_tau: {p.get('guess_tau')}")
+    if not (0 <= p.get("p_lapse", 0.0) < 1 - p.get("p_guess", 0.0)):
+        raise ValueError(f"Invalid p_lapse: {p.get('p_lapse')} (with p_guess {p.get('p_guess', 0.0)})")
 
 
 def apply_guesses(sim: pd.DataFrame, params: dict, draws: np.ndarray) -> pd.DataFrame:
-    """Fast-guess (contaminant) component: with probability p_guess a trial's DDM outcome is replaced by a guess,
-    choice 1 with probability guess_bias, at RT = guess_t0 + an exponential delay with mean guess_tau (s).
+    """Contaminant components that replace a trial's DDM outcome:
+      fast guess  with probability p_guess: choice 1 with probability guess_bias, at RT = guess_t0 + an exponential
+                  delay with mean guess_tau (s);
+      lapse       with probability p_lapse: choice 1 with probability guess_bias, at an RT uniform between lapse_t0
+                  and lapse_t1 (s).
 
-    `draws` is (n_trials, 3) uniform [0, 1): whether the trial is a guess, its choice and its delay. Passing the same
-    draws on every evaluation keeps the objective deterministic in the parameters (common random numbers).
+    `draws` is (n_trials, 3) uniform [0, 1): which component (u0 < p_guess: guess; p_guess <= u0 < p_guess + p_lapse:
+    lapse), the choice, and the delay. Passing the same draws on every evaluation keeps the objective deterministic in
+    the parameters (common random numbers).
     """
-    p_guess = float(params.get("p_guess", 0.0))
-    if p_guess <= 0:
+    p_guess, p_lapse = float(params.get("p_guess", 0.0)), float(params.get("p_lapse", 0.0))
+    if p_guess <= 0 and p_lapse <= 0:
         return sim
-    is_guess = draws[:, 0] < p_guess
     choice = (draws[:, 1] < float(params.get("guess_bias", 0.5))).astype(float)
-    rt = float(params.get("guess_t0", 0.0)) - float(params["guess_tau"]) * np.log1p(-draws[:, 2])
-    return sim.assign(choice=np.where(is_guess, choice, sim["choice"]), rt=np.where(is_guess, rt, sim["rt"]))
+    is_guess = draws[:, 0] < p_guess
+    is_lapse = ~is_guess & (draws[:, 0] < p_guess + p_lapse)
+    rt = np.asarray(sim["rt"], dtype=float).copy()
+    if p_guess > 0:
+        rt[is_guess] = float(params.get("guess_t0", 0.0)) - float(params["guess_tau"]) * np.log1p(-draws[is_guess, 2])
+    if p_lapse > 0:
+        t0, t1 = float(params.get("lapse_t0", 0.0)), float(params["lapse_t1"])
+        rt[is_lapse] = t0 + (t1 - t0) * draws[is_lapse, 2]
+    replaced = is_guess | is_lapse
+    return sim.assign(choice=np.where(replaced, choice, sim["choice"]), rt=rt)
 
 
 @dataclass
@@ -303,10 +317,15 @@ class DecisionModel:
         labels: np.ndarray | None = None,
         tol: float = 0.01,
         atol: float = 0.0,
+        seeds: list[np.ndarray] | None = None,
     ) -> dict:
         """
         Fit parameters via differential evolution, then a gradient-free local
         refinement.
+
+        `seeds` are parameter vectors (in `fit_keys` order) placed in the initial population, e.g. the solutions of
+        nested models, so the fit starts at least as well as each of them; they are clipped to the bounds. The rest of
+        the population is Latin-hypercube sampled, as in the default initialization.
 
         `tol`/`atol` are differential evolution's stopping tolerances (population NLL spread <= atol +
         tol * |mean NLL|). The default relative tol stops once the spread is within 1% of the NLL, which for
@@ -361,9 +380,17 @@ class DecisionModel:
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
 
+            init = "latinhypercube"
+            if seeds:
+                lo, hi = np.array(bounds).T
+                pop = lo + (hi - lo) * qmc.LatinHypercube(d=len(bounds), seed=self.seed).random(15 * len(bounds))
+                for i, x in enumerate(seeds[: len(pop)]):
+                    pop[i] = np.clip(np.asarray(x, dtype=float), lo, hi)
+                init = pop
             de_result = differential_evolution(
                 objective,
                 bounds=bounds,
+                init=init,
                 maxiter=max_iterations,
                 popsize=15,  # modest bump from 10; cheap insurance for the
                 # 9-10 dim space, not the main fix.

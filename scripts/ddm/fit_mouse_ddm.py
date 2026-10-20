@@ -68,13 +68,24 @@ OPTIONAL_FREE_PARAMS = {  # factor letter: [(parameter, bounds when free, value 
     "Z": [("sz", (0.0, 0.9), 0.0)],
     "G": [("p_guess", (0.0, 0.6), 0.0), ("guess_bias", (0.0, 1.0), 0.5), ("guess_tau", (0.01, 2.0), 1.0)],
 }
+# Alternative forms of the contaminant factor G (plan step 2); "single" is the grid's default above.
+GUESS_MODELS = {
+    "single": OPTIONAL_FREE_PARAMS["G"],  # one component, exponential delay up to 2 s (fast guesses and slow lapses)
+    "fast_only": [("p_guess", (0.0, 0.6), 0.0), ("guess_bias", (0.0, 1.0), 0.5), ("guess_tau", (0.01, 0.3), 0.1)],
+    "guess_lapse": [("p_guess", (0.0, 0.6), 0.0), ("guess_bias", (0.0, 1.0), 0.5), ("guess_tau", (0.01, 0.3), 0.1), ("p_lapse", (0.0, 0.6), 0.0)],
+}
+LAPSE_WINDOW = {"lapse_t0": FixedParam(0.3), "lapse_t1": FixedParam(5.0)}  # lapse RTs uniform over the response window
 VARIANTS = ["".join(f"{f}{int(on)}" for f, on in zip(OPTIONAL_FREE_PARAMS, flags)) for flags in itertools.product([0, 1], repeat=len(OPTIONAL_FREE_PARAMS))]
 
 
-def make_params(variant: str):
+def make_params(variant: str, guess_model: str = "single"):
     free, fixed = dict(BASE_FREE_PARAMS), dict(FIXED_PARAMS)
     flags = dict(zip(variant[0::2], map(int, variant[1::2])))
+    if flags.get("G") and guess_model == "guess_lapse":
+        fixed.update(LAPSE_WINDOW)
     for factor, specs in OPTIONAL_FREE_PARAMS.items():
+        if factor == "G":
+            specs = GUESS_MODELS[guess_model]
         for name, bounds, off_value in specs:
             if flags[factor]:
                 free[name] = FreeParam(*bounds)
@@ -137,17 +148,46 @@ def heldout_nll(model: MouseDDM, params: dict, data: dict, stimulus: np.ndarray,
     return float(model.likelihood_calc.compute_nll(result["rt"].to_numpy(), result["choice"].to_numpy(), data["rt"], data["choice"], result["signed_coherence"].to_numpy(), data["condition"]))
 
 
-def build_grid(inputs: dict) -> list[dict]:
+ALL_SPLITS = [f"cv{k}" for k in range(N_FOLDS)] + ["all", "control"]
+
+
+def build_grid(inputs: dict, variants: list[str] | None = None, splits: list[str] | None = None) -> list[dict]:
     mice = sorted(np.unique(inputs["subject_id"]))
-    splits = [f"cv{k}" for k in range(N_FOLDS)] + ["all", "control"]
-    return [{"mouse": m, "variant": v, "split": s} for s in splits for v in VARIANTS for m in mice]
+    return [{"mouse": m, "variant": v, "split": s} for s in (splits or ALL_SPLITS) for v in (variants or VARIANTS) for m in mice]
+
+
+def default_value(name: str) -> float:
+    """Value of an optional parameter when its mechanism is off (used to complete warm-start seeds)."""
+    for specs in [*OPTIONAL_FREE_PARAMS.values(), *GUESS_MODELS.values()]:
+        for spec_name, _, off_value in specs:
+            if spec_name == name:
+                return off_value
+    raise KeyError(name)
+
+
+def warm_start_seeds(job: dict, fit_keys: list[str], dirs: list[Path]) -> tuple[list[np.ndarray], list[dict]]:
+    """Seeds from earlier fits of the same mouse and split: this variant and every nested variant (one mechanism
+    switched off), from each directory. Parameters a seed's model did not have take their "off" value, so each seed
+    reproduces that model's fit exactly (same noise draws)."""
+    variant = job["variant"]
+    candidates = [variant] + [variant[: i + 1] + "0" + variant[i + 2:] for i in range(0, len(variant), 2) if variant[i + 1] == "1"]
+    seeds, used = [], []
+    for d in dirs:
+        for v in candidates:
+            path = d / f"{job['mouse']}_{v}_{job['split']}.pkl"
+            if path.exists():
+                with open(path, "rb") as f:
+                    r = pickle.load(f)
+                seeds.append(np.array([r["parameters"][k] if k in r["parameters"] else default_value(k) for k in fit_keys], dtype=float))
+                used.append({"dir": str(d), "variant": v, "train_nll": float(r["train_nll"])})
+    return seeds, used
 
 
 def output_path(out_dir: Path, job: dict) -> Path:
     return out_dir / f"{job['mouse']}_{job['variant']}_{job['split']}.pkl"
 
 
-def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations: int) -> dict:
+def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations: int, guess_model: str = "single", warm_dirs: list[Path] | None = None) -> dict:
     mouse_rows = np.flatnonzero(inputs["subject_id"] == job["mouse"])
     is_control = inputs["sched_pulse_type"][mouse_rows] == 0
     split = job["split"]
@@ -161,14 +201,17 @@ def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations:
     else:
         raise ValueError(f"unknown split {split}")
 
-    free, fixed = make_params(job["variant"])
+    free, fixed = make_params(job["variant"], guess_model)
     rigs = np.unique(inputs["data_source"][mouse_rows])
     assert len(rigs) == 1, f"{job['mouse']} has trials from {rigs}"
     min_rt = MIN_RT[rigs[0]]
     model = MouseDDM(free_params=free, fixed_params=fixed, device=DEVICE, likelihood_params=LIKELIHOOD_PARAMS, censor_at=CENSOR_AT, min_rt=min_rt)
     data, stimulus = select(inputs, train)
     t0 = time.time()
-    fit = model.fit(data=data, stimulus=stimulus, labels=data["condition"], n_reps=n_reps, max_iterations=max_iterations, l1_weight=0.0, verbose=True, **DE_TOL)
+    seeds, seeds_used = warm_start_seeds(job, list(free), warm_dirs or [])
+    if seeds_used:
+        logger.info("warm start from %d fits: %s", len(seeds_used), seeds_used)
+    fit = model.fit(data=data, stimulus=stimulus, labels=data["condition"], n_reps=n_reps, max_iterations=max_iterations, l1_weight=0.0, verbose=True, seeds=seeds, **DE_TOL)
     result = {
         **job,
         "n_train": len(train),
@@ -182,6 +225,8 @@ def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations:
         "max_iterations": max_iterations,
         "de_tol": DE_TOL,
         "likelihood_params": LIKELIHOOD_PARAMS,
+        "guess_model": guess_model,
+        "warm_start_seeds": seeds_used,
         "censor_at": CENSOR_AT,
         "min_rt": min_rt,
         "n_train_censored": int(inputs["censored"][train].sum()),
@@ -206,7 +251,7 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s", force=True)
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--inputs", default="ddm/ddm_inputs_global.npz", help="relative to the processed data directory")
-    parser.add_argument("--out_dir", default="ddm/fits_guess", help="relative to the processed data directory")
+    parser.add_argument("--out_dir", help="relative to the processed data directory (default: ddm/fits_guess, or ddm/fits_guess_<guess_model> for the other guess forms)")
     parser.add_argument("--job_id", type=int)
     parser.add_argument("--mouse")
     parser.add_argument("--variant")
@@ -215,20 +260,33 @@ if __name__ == "__main__":
     parser.add_argument("--max_iterations", type=int, default=1000)
     parser.add_argument("--list", action="store_true")
     parser.add_argument("--force", action="store_true", help="refit even if the output exists")
+    parser.add_argument("--variants", nargs="*", help="restrict the grid to these variants")
+    parser.add_argument("--splits", nargs="*", help="restrict the grid to these splits")
+    parser.add_argument("--job_file", help="text file of grid job ids (one per line, in the full or restricted grid); --job_id then indexes this list")
+    parser.add_argument("--guess_model", default="single", choices=list(GUESS_MODELS), help="form of the guess factor G (plan step 2)")
+    parser.add_argument("--warm_start_from", nargs="*", default=[], help="fit folders (relative to processed) whose fits of this variant and its nested variants seed the optimizer")
     args = parser.parse_args()
 
     processed = Path(dir_config.data.processed)
+    args.out_dir = args.out_dir or ("ddm/fits_guess" if args.guess_model == "single" else f"ddm/fits_guess_{args.guess_model}")
     inputs = load_inputs(processed / args.inputs)
-    grid = build_grid(inputs)
+    grid = build_grid(inputs, args.variants, args.splits)
+    job_ids = [int(x) for x in Path(args.job_file).read_text().split()] if args.job_file else None
     if args.list:
-        print(f"{len(grid)} jobs: {len(np.unique(inputs['subject_id']))} mice x {len(VARIANTS)} variants x {N_FOLDS + 2} splits")
-        per_split = len(grid) // (N_FOLDS + 2)
-        for i, split in enumerate([f"cv{k}" for k in range(N_FOLDS)] + ["all", "control"]):
+        splits, variants = args.splits or ALL_SPLITS, args.variants or VARIANTS
+        print(f"{len(grid)} jobs: {len(np.unique(inputs['subject_id']))} mice x {len(variants)} variants x {len(splits)} splits")
+        per_split = len(grid) // len(splits)
+        for i, split in enumerate(splits):
             print(f"  job_id {i * per_split}-{(i + 1) * per_split - 1}: split {split}")
+        if job_ids:
+            print(f"--job_file lists {len(job_ids)} of these: --array=0-{len(job_ids) - 1}")
     else:
-        job = grid[args.job_id] if args.job_id is not None else {"mouse": args.mouse, "variant": args.variant, "split": args.split}
+        if args.job_id is not None:
+            job = grid[job_ids[args.job_id]] if job_ids else grid[args.job_id]
+        else:
+            job = {"mouse": args.mouse, "variant": args.variant, "split": args.split}
         if output_path(processed / args.out_dir, job).exists() and not args.force:
             logger.info("skipping %s: output exists (use --force to refit)", job)
         else:
             logger.info("job %s: %s", args.job_id, job)
-            run_job(inputs, job, processed / args.out_dir, args.n_reps, args.max_iterations)
+            run_job(inputs, job, processed / args.out_dir, args.n_reps, args.max_iterations, args.guess_model, [processed / d for d in args.warm_start_from])
