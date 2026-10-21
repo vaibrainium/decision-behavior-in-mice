@@ -81,6 +81,23 @@ def run_job(inputs: dict, job: dict, fits_dir: Path, out_dir: Path) -> pd.DataFr
     return df
 
 
+class _NumpyCompatUnpickler(pickle.Unpickler):
+    """Reads pickles written under NumPy 2 (the cluster container) with NumPy 1 (numpy._core -> numpy.core)."""
+
+    def find_class(self, module, name):
+        try:
+            return super().find_class(module, name)
+        except ModuleNotFoundError:
+            if not module.startswith("numpy._core"):
+                raise
+            return super().find_class("numpy.core" + module[len("numpy._core"):], name)
+
+
+def read_rows(path: Path) -> pd.DataFrame:
+    with open(path, "rb") as f:
+        return _NumpyCompatUnpickler(f).load()
+
+
 def compare_noise(df: pd.DataFrame, reference: str = LEADING) -> pd.DataFrame:
     """SD across seeds of the CV-summed NLL difference (variant - reference), per mouse and summed over mice.
     Only folds both models have are summed, so a missing fit does not shift the difference."""
@@ -93,6 +110,17 @@ def compare_noise(df: pd.DataFrame, reference: str = LEADING) -> pd.DataFrame:
         for n_reps, s in summed.iterrows():
             pm = per_mouse.loc[n_reps]
             out.append({"variant": v, "n_reps": n_reps, "delta_summed": s["mean"], "sd_summed": s["std"], "sd_per_mouse_median": pm["std"].median(), "sd_per_mouse_max": pm["std"].max()})
+    return pd.DataFrame(out)
+
+
+def per_mouse_delta(df: pd.DataFrame, n_reps: int = 50, reference: str = LEADING) -> pd.DataFrame:
+    """Per mouse: CV-summed NLL difference (variant - reference) averaged over the evaluation seeds, with its standard
+    error (SD across seeds / sqrt(n seeds)). Averaging over seeds removes most of the evaluation noise."""
+    cv = df[df.n_reps == n_reps].pivot_table(index=["seed", "mouse", "fold"], columns="variant", values="test_nll")
+    out = {}
+    for v in [c for c in cv.columns if c != reference]:
+        d = (cv[v] - cv[reference]).dropna().groupby(level=["seed", "mouse"]).sum().groupby(level="mouse")
+        out[(v, "mean")], out[(v, "se")] = d.mean(), d.std() / np.sqrt(d.size())
     return pd.DataFrame(out)
 
 
@@ -111,13 +139,20 @@ if __name__ == "__main__":
     processed = Path(dir_config.data.processed)
     out_dir = processed / args.out_dir
     if args.summarize:
-        df = pd.concat([pd.read_pickle(p) for p in sorted(out_dir.glob("*.pkl"))], ignore_index=True)
+        df = pd.concat([read_rows(p) for p in sorted(out_dir.glob("*.pkl"))], ignore_index=True)
         if "saved_test_nll" in df:
             check = df.dropna(subset=["saved_test_nll"])
             print(f"reproduced saved test_nll: {np.isclose(check.test_nll, check.saved_test_nll, rtol=0, atol=1e-3).sum()} / {len(check)}")
         table = compare_noise(df)
         print(table.round(2).to_string(index=False))
         table.to_csv(out_dir / "mc_noise_summary.csv", index=False)
+        pm = per_mouse_delta(df)
+        print(f"\nper mouse, {LEADING} vs each variant, mean of {df.seed.nunique()} seeds at 50 repetitions (positive = {LEADING} better):")
+        print(pm.round(1).to_string())
+        for v in pm.columns.levels[0]:
+            m, se = pm[(v, "mean")], pm[(v, "se")]
+            print(f"{v}: summed {m.sum():.1f}; mice with difference > 2 SE: {(m > 2 * se).sum()} for {LEADING}, {(m < -2 * se).sum()} against")
+        pm.to_csv(out_dir / "mc_noise_per_mouse.csv")
     else:
         inputs = load_inputs(processed / args.inputs)
         grid = build_grid(inputs)
