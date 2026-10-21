@@ -79,6 +79,9 @@ iteration. Next: merge, check for a second round with `find_refits`, rerun `comp
 
 **Decision:** whether sz stays out, and how strong the case for urgency is once guesses are present.
 
+**Result (2026-10-21): done.** Merged, no nested pair is off by more than 5.9 NLL (below the Monte Carlo noise), so no
+second round. sz stays out; urgency and leak are decided in step 3 (analysis log, sections 5.5–5.6).
+
 ## Step 2. Make the guess component interpretable
 
 **Why:** one component currently covers both fast anticipatory responses (< 0.6 s, near chance) and slow
@@ -105,6 +108,12 @@ warm-started from (a), into `ddm/fits_guess_guess_lapse` and `ddm/fits_guess_fas
 **Decision:** a guess/lapse component that can be described in one sentence ("x% fast anticipatory responses at
 chance; y% lapses") and that does not distort the decision parameters.
 
+**Result (2026-10-21): fast_only chosen.** Held-out NLL vs the single form: fast_only −69.9 (9/10 mice), guess_lapse
+−83.5; the lapse adds one parameter for 13.6 NLL (within noise) and is ≈ 0 in 8/10 mice. "About 20% fast responses
+at chance." The psychometric asymptote implies far larger lapses than the fitted uniform lapse, so high-coherence
+errors come from the decision process (probably sv); to check in the fit-quality plots. Still to run: fast_only with
+guess_bias fixed at 0.5 (rule 3), on the chosen common model. Analysis log, section 5.5.
+
 ## Step 3. Fix the common model
 
 **How:**
@@ -116,6 +125,11 @@ chance; y% lapses") and that does not distort the decision parameters.
    mouse × variant) at 10 evaluation seeds × 15 and 50 repetitions; `--summarize` gives the SD across seeds of each
    model's NLL difference from L1U1V1Z0G1 (common random numbers make the difference, not each NLL, the relevant noise).
    Checked locally: seed 12345 at 15 repetitions reproduces the saved test_nll (PSUIM10, cv0, two variants).
+   **Result (2026-10-21): done.** SD of a model difference per mouse: median 6.5–12.8 NLL at 15 reps, 4.1–5.9 at 50;
+   summed over mice 22–54 and 13–21. Per mouse, sv helps in 9/10 and guesses in 7/10 mice (> 2 SE, 10 seeds × 50
+   reps); leak in 4/10 and urgency in 3/10, only the mice with the most trials; sz in none (analysis log, section 5.6).
+   **Decision pending (authors):** strict rule 2 gives L0U0V1Z0G1 (sv + fast guesses); keeping leak and urgency rests
+   on the four best-sampled mice.
 2. **Select mechanisms** that (i) improve held-out NLL beyond that threshold in most mice and hurt none, and (ii) have
    population-level support (family protected exceedance clearly above 0.5). If in doubt, include: the models are
    nested, so an unneeded mechanism mostly adds parameter noise, while a missing one biases the rest.

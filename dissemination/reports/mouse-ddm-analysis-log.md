@@ -234,7 +234,24 @@ L1U1V1Z0G1 on all mice, 5 CV folds + all trials (60 jobs each), warm-started fro
   0.3–5 s). Implemented in `apply_guesses()`; with `p_lapse` = 0 it reproduces the single-component code exactly.
 Each writes to `ddm/fits_guess_<form>` by default (sharing a folder would make the skip-if-done rule skip them).
 
-Results: pending.
+**Results (2026-10-21, commit `2954fad`).**
+- *Warm starts worked.* Merged (`fits_guess` + `fits_guess_warm`, 2,240 fits), no nested pair has the larger model
+  worse by > 5.9 NLL (was > 20 in 1.3%). `find_refits` on the merged set: 12 fits with gaps of 5–5.9, none > 20. These
+  gaps are below the per-mouse Monte Carlo noise (section 5.6), so **no second round**.
+- *Leading model unchanged:* L1U1V1Z0G1 has the best summed held-out NLL; L1U1V1Z1G1 and L1U0V1Z1G1 are +16.7 and
+  +16.8, within noise. Random-effects BMS over 32 models is uninformative (omnibus risk 0.72); family-level pxp: sv
+  0.87, leak 0.75, guess 0.66, urgency 0.60, sz 0.40.
+- *Guess forms* (`compare_guess_forms.py`, held-out NLL relative to the single form, summed over mice): fast_only
+  −69.9 (better in 9/10 mice), guess_lapse −83.5; no guesses +377. guess_lapse beats fast_only by only 13.6 summed
+  (within noise) for one more parameter, and its p_lapse is ≤ 0.015 in 8/10 mice (0.10 DBM12, 0.13 DBM15).
+  **fast_only is preferred** (parsimony rule 3): p_guess 0–0.32 (median ≈ 0.2), guess_tau ≤ 0.3 s, i.e. "about 20%
+  fast responses at chance", matching the 17–20% of responses < 0.6 s at chance in the data.
+- *Lapse check fails as a lapse estimate:* the psychometric asymptote implies lapses of 16–53% (all RTs) or 9–47%
+  (RT ≥ 0.6 s) at 100% coherence, but the uniform-RT lapse is ≈ 0 in most mice. High-coherence errors are therefore
+  explained inside the decision process (most likely by sv) and by fast guesses, not by uniform-RT lapses. SUSPECTED,
+  to verify with the model's accuracy at 100% coherence in notebook 3.0.
+- *Flag:* fast_only fits of DBM14 and DBM15 moved to a different regime (drift_gain 0.86 / 0.98, bound 1.9 / 2.0,
+  p_guess 0.23 / 0) with better held-out NLL (−9 / −10). Check in the fit-quality plots before final fits.
 
 **Time-varying evidence weight (for plan step 6.5/6.6, commit after `5235f37`).** `gain_decay` multiplies the drift gain
 by exp(−gain_decay · t) (t from stimulus onset; > 0 primacy, < 0 recency); bounds −0.5 to 3 /s. Added to both
@@ -247,6 +264,32 @@ reference showed that the GPU backend's FFT closed form for leak loses accuracy 
 of trials off by > 1 ms, up to 0.9 s. Positive leak (all fits so far) was exact on both backends. For leak < 0 the GPU
 backend now uses a rescaled cumulative sum in double precision; it matches the reference exactly, with and without sz.
 Note: urgency is not a primacy/recency mechanism; it scales all accumulated evidence equally.
+
+### 5.6 Monte Carlo noise and mechanism selection (plan step 3.1–3.2, 2026-10-21, commit `2954fad`)
+
+`mc_noise.py` re-scored the original `fits_guess` CV fits of L1U1V1Z0G1 and its neighbours (70 Hyak jobs, ~5.7 GPU-h)
+at 10 evaluation seeds × 15 and 50 repetitions. The grid's own score (seed 12345, 15 reps) was reproduced in 350/350
+folds. Output: `ddm/mc_noise/`, `mc_noise_summary.csv`, `mc_noise_per_mouse.csv`.
+- **Noise of a model difference** (SD across seeds, CV-summed): per mouse, median 6.5–12.8 NLL at 15 repetitions and
+  4.1–5.9 at 50 (max 31 and 14); summed over mice, 22–54 at 15 and 13–21 at 50. The old "> 2 NLL" criterion was far
+  inside the noise; a single 15-rep score cannot resolve per-mouse differences under ~15–25 NLL.
+- **Per mouse**, mean of 10 seeds at 50 reps (SE 0.5–4.4), neighbour minus L1U1V1Z0G1, i.e. the cost of removing (or
+  adding sz):
+
+  | change | summed | mice favouring L1U1V1Z0G1 (> 2 SE) | against | mice > 5 NLL |
+  |---|---|---|---|---|
+  | − sv | +422 | 9 | 1 (DBM13, −6) | 9 |
+  | − guess | +443 | 7 | 0 | 7 |
+  | − leak | +93 | 4 | 1 | 4 (DBM12, PSUIM5/6/7) |
+  | − urgency | +99 | 3 | 2 | 3 (PSUIM5/6/7) |
+  | + sz | +10 | 2 | 2 | 1 |
+
+  These use the original fits; the warm refits improved some neighbour folds (e.g. PSUIM5 without urgency +13.8 here,
+  +1.6 with the refits at 15 reps), so the leak and urgency counts can only shrink.
+- **Under parsimony rule 2** ("improves held-out fit beyond noise in most mice"): sv and guesses pass; sz fails
+  (adding it does not help); **leak and urgency fail**: each helps clearly only in the three or four mice with the most
+  trials (2,800–7,500) and is undetectable, not shown absent, in the others. Common-model choice pending the authors'
+  decision (next-steps plan, step 3).
 
 ---
 
@@ -401,7 +444,11 @@ for form in fast_only guess_lapse; do
   env EXTRA_ARGS="--variants L1U1V1Z0G1 --splits cv0 cv1 cv2 cv3 cv4 all --guess_model $form --warm_start_from ddm/fits_guess" \
       sbatch --array=0-59 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
 done
-python -m scripts.ddm.find_refits --fits_dir ddm/fits_guess ddm/fits_guess_warm --out scripts/ddm/jobs/refits_round2.txt   # round 2
+python -m scripts.ddm.find_refits --fits_dir ddm/fits_guess ddm/fits_guess_warm --out scripts/ddm/jobs/refits_round2.txt   # round 2 check: 12 fits at 5-5.9, not run
+python -m scripts.ddm.compare_guess_forms                              # guess forms vs psychometric lapse
+# Monte Carlo noise (step 3.1)
+sbatch --array=0-69 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.mc_noise scripts/slurm/fit_mouse_ddm.slurm
+python -m scripts.ddm.mc_noise --summarize
 ```
 
 ### 8.5 Analysis
