@@ -309,6 +309,11 @@ folds. Output: `ddm/mc_noise/`, `mc_noise_summary.csv`, `mc_noise_per_mouse.csv`
   accumulator stall. SUSPECTED: in PSUIM5/6/7 leak and urgency stand in for a delayed, variable start of integration
   (late engagement, then a normal coherence-dependent decision), not for leaky integration or urgency. An earlier
   version of this note called these trials disengagement; that was wrong (they are coherence-dependent).
+  A delayed-engagement parameter was considered and not pursued (V. Thakur, 2026-10-22).
+- **Options for the common model** (decision pending): *strict* (rule 2 as written): L0U0V1Z0G1 + fast_only guesses,
+  leak + urgency model as secondary baseline; *relaxed*: L1U1V1Z0G1 + fast_only, by summed held-out NLL (leak +93,
+  urgency +99, about 5 summed noise SDs) but helps 3–4 of 10 mice and slightly hurts 1–2 (≈ −3.5 NLL). Recommended:
+  strict. Source for the numbers: `mc_noise --summarize`, `mc_noise_per_mouse.csv`.
 - **UCLA vs UW behaviour (data only).** UCLA mice other than PSUIM7 respond slower (median correct RT at
   |coh| ≥ 36%: 1.33–1.55 s vs 0.86–1.36 s in UW), make fewer fast responses (< 0.6 s: 5–11% vs 14–34%) and PSUIM5/6
   miss more trials (22%). PSUIM7 is UW-like in RT. Figure: `dissemination/figures/leak_urgency_diagnosis_20261022.png`.
@@ -468,6 +473,8 @@ for form in fast_only guess_lapse; do
 done
 python -m scripts.ddm.find_refits --fits_dir ddm/fits_guess ddm/fits_guess_warm --out scripts/ddm/jobs/refits_round2.txt   # round 2 check: 12 fits at 5-5.9, not run
 python -m scripts.ddm.compare_guess_forms                              # guess forms vs psychometric lapse
+python -m scripts.ddm.diagnose_leak_urgency                            # where leak + urgency help (simulates, ~10 min CPU)
+python -m scripts.ddm.diagnose_leak_urgency --data_only                # censored-trial checks only
 # Monte Carlo noise (step 3.1)
 sbatch --array=0-69 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.mc_noise scripts/slurm/fit_mouse_ddm.slurm
 python -m scripts.ddm.mc_noise --summarize

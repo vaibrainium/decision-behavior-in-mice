@@ -8,9 +8,12 @@ control trials only (no scheduled pulse), so the pulse trials of the primacy tes
    x RT bin, RT bins = data deciles per |coherence|). Misfit per cell is the G statistic 2 n_obs log(p_obs / p_model);
    summing its decrease by outcome and RT range shows which features the two mechanisms buy.
 2. Data check, no model: per mouse, RT quantiles of correct responses, accuracy for fast/medium/slow responses and the
-   no-response rate, at matched |coherence|.
+   censored (> 5 s) rate, at matched |coherence|.
+3. Censored trials (`censored_trials.csv`, all of them, pulse trials included): share that are responses after 5 s
+   (the stimulus kept running; 5 s is our censoring cutoff), their RTs, and their accuracy by coherence and lateness.
 
 Usage: python -m scripts.ddm.diagnose_leak_urgency [--mice PSUIM6 DBM6 ...] [--n_reps 20]   # default: all 10 mice
+       python -m scripts.ddm.diagnose_leak_urgency --data_only                              # checks 2-3, no simulation
 Writes dissemination/figures/leak_urgency_diagnosis_<date>.png and prints the tables.
 """
 
@@ -98,10 +101,51 @@ def data_features(obs: pd.DataFrame) -> pd.Series:
     return pd.Series(f)
 
 
-def main(mice: list[str], n_reps: int):
+def data_checks(inputs: dict):
+    feats = {}
+    for mouse in sorted(np.unique(inputs["subject_id"])):
+        _, _, _, obs, rig = control_trials(inputs, mouse)
+        feats[f"{mouse} ({rig})"] = data_features(obs)
+    ft = pd.DataFrame(feats).T.sort_index(key=lambda i: i.str.contains("uw"))
+    print("\n2. data only, control trials (accuracy excludes 0%; 'no response' = censored, > 5 s):")
+    print(ft.round(3).to_string())
+
+
+def late_responses():
+    c = pd.read_csv(PROCESSED / "censored_trials.csv")
+    c["late"] = c.censored_rt.notna()
+    print("\n3. censored trials: share that are responses after 5 s (rest: no response recorded), per mouse:")
+    print(c.groupby("subject_id").late.agg(["mean", "size"]).round(2).T.to_string())
+    r = c[c.late].assign(abs_coh=lambda x: x.signed_coherence.abs())
+    r = r[r.abs_coh > 0].assign(correct=lambda x: (x.choice == 1) == (x.signed_coherence > 0))
+    print("RT of responses after 5 s, quantiles (s):", c.censored_rt.quantile([0.1, 0.25, 0.5, 0.75, 0.9]).round(1).to_dict())
+    print("accuracy by rig and |coherence|:")
+    print(r.groupby(["data_source", "abs_coh"]).correct.agg(["mean", "count"]).round(2).T.to_string())
+    strong = r[r.abs_coh >= 0.36]
+    print("accuracy at |coh| >= 36%, per mouse:")
+    print(strong.groupby("subject_id").correct.agg(["mean", "count"]).round(2).T.to_string())
+    print("accuracy at |coh| >= 36%, by RT window (s):")
+    print(strong.groupby(pd.cut(strong.censored_rt, [5, 8, 15, 61]), observed=True).correct.agg(["mean", "count"]).round(2).T.to_string())
+
+
+def censored_by_coherence(inputs: dict, mice: list[str]):
+    print("\n4. P(censored, > 5 s) by |coherence| (%), control trials:")
+    out = {}
+    for mouse in mice:
+        obs = control_trials(inputs, mouse)[3]
+        out[mouse] = obs.assign(a=(obs.coh.abs() * 100).round().astype(int)).groupby("a").choice.apply(lambda c: (c < 0).mean())
+    print(pd.DataFrame(out).T.round(3).to_string())
+
+
+def main(mice: list[str], n_reps: int, data_only: bool = False):
     logging.disable(logging.WARNING)
     inputs = load_inputs(PROCESSED / "ddm/ddm_inputs_global.npz")
-    summary, by_cell, feats = [], {}, {}
+    if data_only:
+        data_checks(inputs)
+        late_responses()
+        censored_by_coherence(inputs, mice)
+        return
+    summary, by_cell = [], {}
     for mouse in mice:
         rows, data, stim, obs, rig = control_trials(inputs, mouse)
         sims = {v: simulate(v, mouse, data, stim, obs.coh.to_numpy(), rig, n_reps) for v in [STRICT, FULL]}
@@ -114,12 +158,9 @@ def main(mice: list[str], n_reps: int):
     print("\n1. misfit removed by leak + urgency (G strict - G full), by outcome and RT range; positive = full model better:")
     print(pd.concat(summary, axis=1).fillna(0).to_string())
 
-    for mouse in sorted(np.unique(inputs["subject_id"])):
-        obs = control_trials(inputs, mouse)[3]
-        feats[f"{mouse} ({control_trials(inputs, mouse)[4]})"] = data_features(obs)
-    ft = pd.DataFrame(feats).T.sort_index(key=lambda i: i.str.contains("uw"))
-    print("\n2. data only, control trials (accuracy excludes 0%):")
-    print(ft.round(3).to_string())
+    data_checks(inputs)
+    late_responses()
+    censored_by_coherence(inputs, mice)
 
     fig, axes = plt.subplots(2, len(mice), figsize=(3.0 * len(mice), 5.6), sharey="row", squeeze=False)
     bins = np.linspace(0.3, 5, 48)
@@ -147,5 +188,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--mice", nargs="+", default=["PSUIM10", "PSUIM5", "PSUIM6", "PSUIM7", "DBM12", "DBM13", "DBM14", "DBM15", "DBM5", "DBM6"])
     parser.add_argument("--n_reps", type=int, default=20)
+    parser.add_argument("--data_only", action="store_true", help="skip the simulations (checks 2-4 only)")
     args = parser.parse_args()
-    main(args.mice, args.n_reps)
+    main(args.mice, args.n_reps, args.data_only)

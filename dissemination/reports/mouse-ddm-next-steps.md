@@ -128,8 +128,15 @@ guess_bias fixed at 0.5 (rule 3), on the chosen common model. Analysis log, sect
    **Result (2026-10-21): done.** SD of a model difference per mouse: median 6.5–12.8 NLL at 15 reps, 4.1–5.9 at 50;
    summed over mice 22–54 and 13–21. Per mouse, sv helps in 9/10 and guesses in 7/10 mice (> 2 SE, 10 seeds × 50
    reps); leak in 4/10 and urgency in 3/10, only the mice with the most trials; sz in none (analysis log, section 5.6).
-   **Decision pending (authors):** strict rule 2 gives L0U0V1Z0G1 (sv + fast guesses); keeping leak and urgency rests
-   on the four best-sampled mice.
+   **Follow-up (2026-10-22, analysis log 5.6):** the leak/urgency gain is not a power effect. The other seven mice
+   pooled (12,307 trials) gain +6.8 ± 4.0 (leak) and −0.3 ± 4.5 (urgency), against +57.6 / +36.9 in PSUIM6 alone.
+   Where they help, they mainly fit the rate of censored (> 5 s) trials, which is nearly coherence-independent, while
+   the late responses themselves are coherence-dependent (likely late engagement, not leaky integration or urgency).
+   A delayed-engagement parameter was considered and **not pursued** (V. Thakur, 2026-10-22).
+   **Decision pending (authors), recommendation strict:** L0U0V1Z0G1 with fast_only guesses as the common model
+   (path A), L1U1V1Z0G1 as the secondary baseline. Paper consequences in the outline (`dissemination/paper/outline.md`,
+   R4). Relaxing rule 2 instead (path B) would be a dated deviation, needs step 3.3 and recovery of leak/urgency, and
+   puts a leaky (recency-weighted) baseline under the primacy test.
 2. **Select mechanisms** that (i) improve held-out NLL beyond that threshold in most mice and hurt none, and (ii) have
    population-level support (family protected exceedance clearly above 0.5). If in doubt, include: the models are
    nested, so an unneeded mechanism mostly adds parameter noise, while a missing one biases the rest.
