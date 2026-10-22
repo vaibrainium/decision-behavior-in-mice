@@ -168,3 +168,37 @@ in most mice with gain_decay > 0 or leak_rate < 0. Sections 1–7 and 9 are unch
 **Why:** to keep the reported model as simple as the data justify (each added mechanism must earn its place), and to
 make sure the primacy conclusion does not depend only on DDM assumptions.
 
+---
+
+## Amendment 3 (2026-10-22, before any pulse residuals were examined)
+
+**Context:** the common model was chosen in next-steps step 3 (analysis log, section 5.6): **L0U0V1Z0G1 with fast-only
+guesses** (sv + fast guesses, guess delay ≤ 0.3 s; no leak, no urgency, no sz). It was chosen by parsimony rule 2:
+leak and urgency improve held-out fit beyond Monte Carlo noise in only 4 and 3 of 10 mice. Pooled over the other mice
+they give no improvement, and where they help (PSUIM5/6/7) they mainly fit the share of responses after 5 s rather
+than the timing of evidence weighting. Decided by V. Thakur, 2026-10-22.
+
+**Changes:**
+1. **Section 3, baselines.** Primary baseline: L0U0V1Z0G1 (fast-only guesses), fitted per mouse to control trials only,
+   with the final settings of step 5. It weights evidence equally over time, so it is the constant-weight model of H0.
+   **Secondary baseline: L1U1V1Z0G1 (leak + urgency, fast-only guesses)**, fitted the same way, replacing "the same
+   model without leak", which would now be identical to the primary. The secondary baseline is reported alongside the
+   primary for every result in section 10. Both must pass the section 7 gate; the confirmatory test uses the primary.
+2. **Section 8 and amendments 1–2, extensions.** Each extension adds one parameter to L0U0V1Z0G1:
+   - gain decay (`--time_varying_gain`, variant L0U0V1Z0G1);
+   - signed leak (`--signed_leak`, variant L1U0V1Z0G1, leak_rate from −1 to 5 /s).
+
+   Because the common model has no leak, the signed-leak extension tests both directions. Primacy is supported by
+   gain_decay > 0 or leak_rate < 0, recency by gain_decay < 0 or leak_rate > 0. Each requires better held-out fit than
+   L0U0V1Z0G1 beyond the Monte Carlo noise threshold in most mice (parsimony rule 2), as before.
+3. **Guess bias.** If the planned comparison (next-steps step 2) shows that a free guess_bias does not clearly improve
+   held-out fit, guess_bias is fixed at 0.5 in both baselines and all extensions. This is decided before the primacy
+   test and recorded in the analysis log.
+
+**Unchanged:**
+- Sections 1–2, 4–7 and 9–11.
+- The step 3.3 control-only check of the model choice, which is still to be run before the final fits.
+
+**Why:** the plan named its baselines relative to a provisional common model that included leak. The chosen model has
+no leak, so the "without leak" contrast no longer exists. The alternative most likely to change the predicted pulse
+effects is the leak + urgency model, which fits the long-RT behaviour of PSUIM5/6/7 better.

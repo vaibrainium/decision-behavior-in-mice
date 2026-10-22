@@ -133,8 +133,8 @@ guess_bias fixed at 0.5 (rule 3), on the chosen common model. Analysis log, sect
    Where they help, they mainly fit the rate of censored (> 5 s) trials, which is nearly coherence-independent, while
    the late responses themselves are coherence-dependent (likely late engagement, not leaky integration or urgency).
    A delayed-engagement parameter was considered and **not pursued** (V. Thakur, 2026-10-22).
-   **Decision pending (authors), recommendation strict:** L0U0V1Z0G1 with fast_only guesses as the common model
-   (path A), L1U1V1Z0G1 as the secondary baseline. Paper consequences in the outline (`dissemination/paper/outline.md`,
+   **Decision (2026-10-22, V. Thakur): strict.** Common model L0U0V1Z0G1 with fast_only guesses; L1U1V1Z0G1
+   (fast_only) is the secondary baseline (primacy plan, amendment 3). Paper consequences in the outline (`dissemination/paper/outline.md`,
    R4). Relaxing rule 2 instead (path B) would be a dated deviation, needs step 3.3 and recovery of leak/urgency, and
    puts a leaky (recency-weighted) baseline under the primacy test.
 2. **Select mechanisms** that (i) improve held-out NLL beyond that threshold in most mice and hurt none, and (ii) have

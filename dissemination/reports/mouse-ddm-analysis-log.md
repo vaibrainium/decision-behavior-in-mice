@@ -310,7 +310,8 @@ folds. Output: `ddm/mc_noise/`, `mc_noise_summary.csv`, `mc_noise_per_mouse.csv`
   (late engagement, then a normal coherence-dependent decision), not for leaky integration or urgency. An earlier
   version of this note called these trials disengagement; that was wrong (they are coherence-dependent).
   A delayed-engagement parameter was considered and not pursued (V. Thakur, 2026-10-22).
-- **Options for the common model** (decision pending): *strict* (rule 2 as written): L0U0V1Z0G1 + fast_only guesses,
+- **Decision (2026-10-22, V. Thakur): strict**, i.e. L0U0V1Z0G1 + fast_only guesses; L1U1V1Z0G1 + fast_only is the
+  secondary baseline for the primacy test (primacy plan, amendment 3). The options considered: *strict* (rule 2 as written): L0U0V1Z0G1 + fast_only guesses,
   leak + urgency model as secondary baseline; *relaxed*: L1U1V1Z0G1 + fast_only, by summed held-out NLL (leak +93,
   urgency +99, about 5 summed noise SDs) but helps 3–4 of 10 mice and slightly hurts 1–2 (≈ −3.5 NLL). Recommended:
   strict. Source for the numbers: `mc_noise --summarize`, `mc_noise_per_mouse.csv`.
