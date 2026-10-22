@@ -45,4 +45,4 @@ Gate 1 itself; any comparison with recorded pulse outcomes.
 ## Log
 - 2026-10-23: adopted with the proposed defaults (V. Thakur). Draft file removed; text lives in the primacy plan.
 - 2026-10-23: review of amendment 4 (V. Thakur asked): item 5 used simulation-only SD and a whole-trial statistic; E's
-  drift_gain may bind. Amendment 5 written (adopted by V. Thakur), code updated, null calibration done.
+  drift_gain may bind. Amendment 5 drafted at V. Thakur's request (adoption to be confirmed), code updated, null calibration done.
