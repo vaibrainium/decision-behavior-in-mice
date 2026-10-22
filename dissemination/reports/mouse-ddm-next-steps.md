@@ -242,6 +242,11 @@ Ready to run once the common model is fixed. A second primacy mechanism was adde
 self-exciting accumulator via negative leak (`--signed_leak`, `leak_rate` down to −1/s, output `..._NL`). Urgency is not a
 primacy/recency mechanism: it scales all accumulated evidence equally and only changes when decisions end.
 
+### 6.5b Integration vs extrema detection (primacy plan, amendment 4; adopted 2026-10-23)
+Extrema-detection model E (common model with a 5–50 ms time constant) compared with the common model on control trials,
+and its pulse-trial predictions frozen, **before gate 1**; after gate 1, an out-of-sample test of which model's
+predictions explain the pulse choices. Commands: analysis log 8.4d. Plan: `.agents/plans/2026-10-23-amendment-4-extrema.md`.
+
 ### 6.6 Sensitivity (simulation-based power)
 No new mice needed: simulate each mouse's real trials from its fitted model with a known amount of primacy added
 (evidence weight decaying by e.g. 10%, 20%, 40% over the first 0.5 s), run the 6.3–6.4 analysis on the simulated data,

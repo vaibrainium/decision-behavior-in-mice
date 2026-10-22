@@ -35,12 +35,17 @@ import pandas as pd
 from scipy.special import expit, logit
 
 from config import dir_config
-from scripts.ddm.fit_mouse_ddm import CENSOR_AT, DEVICE, LIKELIHOOD_PARAMS, MIN_RT, MouseDDM, load_inputs, make_params, to_ms
+from scripts.ddm.fit_mouse_ddm import CENSOR_AT, DEVICE, EXTREMA_LEAK_BOUNDS, LIKELIHOOD_PARAMS, MIN_RT, MouseDDM, load_inputs, make_params, to_ms
 
 logger = logging.getLogger(__name__)
 
 # Baselines (primacy plan, amendment 3): primary = common model, secondary = with leak + urgency. Fast-only guesses.
 BASELINES = {"primary": "L0U0V1Z0G1", "secondary": "L1U1V1Z0G1"}
+# Strategy model (amendment 4): extrema detection = the common model with a 5-50 ms time constant. Kept out of BASELINES
+# so the default prediction grid (and its job ids) is unchanged; request with --baselines extrema.
+STRATEGY_MODELS = {"extrema": "L1U0V1Z0G1"}
+MODELS = {**BASELINES, **STRATEGY_MODELS}
+LEAK_BOUNDS = {"extrema": EXTREMA_LEAK_BOUNDS}
 GUESS_MODEL = "fast_only"
 TIMING = {1: "early", 2: "middle", 3: "late"}
 MAX_ABS_COH = 0.36  # primary analysis (plan section 4); all coherences as robustness
@@ -78,19 +83,22 @@ def stimuli(inputs: dict, rows: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
     return to_ms(inputs["signal"][rows] + inputs["noise"][rows], fr), to_ms(no_pulse_frames(inputs, rows).astype(np.float32), fr)
 
 
-def make_model(variant: str, rig: str, fixed_guess_bias: bool = False, time_varying_gain: bool = False) -> MouseDDM:
-    free, fixed = make_params(variant, GUESS_MODEL, time_varying_gain=time_varying_gain, fixed_guess_bias=fixed_guess_bias)
+def make_model(variant: str, rig: str, fixed_guess_bias: bool = False, time_varying_gain: bool = False, leak_bounds: tuple[float, float] | None = None) -> MouseDDM:
+    free, fixed = make_params(variant, GUESS_MODEL, time_varying_gain=time_varying_gain, fixed_guess_bias=fixed_guess_bias, leak_bounds=leak_bounds)
     return MouseDDM(free_params=free, fixed_params=fixed, device=DEVICE, likelihood_params=LIKELIHOOD_PARAMS, censor_at=CENSOR_AT, min_rt=MIN_RT[rig])
 
 
-def load_fit(fits_dir: Path, mouse: str, variant: str, split: str, fixed_guess_bias: bool) -> dict:
-    """A fit whose guess form matches; refuses silently mismatched fits (as model_recovery does)."""
+def load_fit(fits_dir: Path, mouse: str, variant: str, split: str, fixed_guess_bias: bool, leak_bounds: tuple[float, float] | None = None) -> dict:
+    """A fit whose guess form (and leak range) matches; refuses silently mismatched fits (as model_recovery does)."""
     path = fits_dir / f"{mouse}_{variant}_{split}.pkl"
     with open(path, "rb") as f:
         r = pickle.load(f)
     form = (r.get("guess_model", "single"), r.get("fixed_guess_bias", False))
     if form != (GUESS_MODEL, fixed_guess_bias):
         raise ValueError(f"{path} has guess form {form}, expected {(GUESS_MODEL, fixed_guess_bias)}")
+    fit_bounds = r.get("leak_bounds")
+    if (tuple(fit_bounds) if fit_bounds else None) != (tuple(leak_bounds) if leak_bounds else None):
+        raise ValueError(f"{path} has leak bounds {fit_bounds}, expected {leak_bounds}")
     return r
 
 
@@ -129,11 +137,11 @@ def per_rep_summary(sim: pd.DataFrame) -> dict:
     return {"rt_quantiles": np.array(q), "censored_fraction": np.array(cens)}
 
 
-def predict_mouse(inputs: dict, mouse: str, params: dict, variant: str, n_reps: int, seed: int, fixed_guess_bias: bool = False) -> dict:
+def predict_mouse(inputs: dict, mouse: str, params: dict, variant: str, n_reps: int, seed: int, fixed_guess_bias: bool = False, leak_bounds: tuple[float, float] | None = None) -> dict:
     """Predictions for one mouse's pulse trials from `params` (no observed choices or RTs are read)."""
     rows = pulse_rows(inputs, mouse)
     rig = np.unique(inputs["data_source"][rows]).item()
-    model = make_model(variant, rig, fixed_guess_bias, time_varying_gain="gain_decay" in params and params["gain_decay"] != 0)
+    model = make_model(variant, rig, fixed_guess_bias, time_varying_gain="gain_decay" in params and params["gain_decay"] != 0, leak_bounds=leak_bounds)
     with_pulse, without = stimuli(inputs, rows)
     condition = inputs["condition"][rows]
     direction = np.sign(inputs["sched_pulse_type"][rows])
@@ -284,9 +292,9 @@ def run_analysis(preds: dict, tables: dict, max_abs_coh: float | None = MAX_ABS_
 
 # ---------------------------------------------------------------- CLI
 
-def build_grid(inputs: dict) -> list[dict]:
+def build_grid(inputs: dict, baselines: list[str] | None = None) -> list[dict]:
     mice = sorted(np.unique(inputs["subject_id"]))
-    return [{"baseline": b, "mouse": m} for b in BASELINES for m in mice]
+    return [{"baseline": b, "mouse": m} for b in (baselines or BASELINES) for m in mice]
 
 
 if __name__ == "__main__":
@@ -302,26 +310,29 @@ if __name__ == "__main__":
     parser.add_argument("--predict", action="store_true")
     parser.add_argument("--job_id", type=int)
     parser.add_argument("--analyze", action="store_true")
-    parser.add_argument("--baseline", choices=list(BASELINES), default="primary")
+    parser.add_argument("--baseline", choices=list(MODELS), default="primary")
+    parser.add_argument("--baselines", nargs="*", choices=list(MODELS), help="models in the prediction grid (default: primary, secondary; extrema needs its own --fits_dir)")
     parser.add_argument("--all_coherences", action="store_true", help="robustness: no |coherence| limit")
     parser.add_argument("--unblind", action="store_true", help="compare with the recorded pulse-trial choices (after plan step 5 only)")
     args = parser.parse_args()
 
     processed = Path(dir_config.data.processed)
     inputs = load_inputs(processed / args.inputs)
-    grid = build_grid(inputs)
+    baselines = args.baselines or list(BASELINES)
+    grid = build_grid(inputs, baselines)
     if args.list:
-        print(f"{len(grid)} prediction jobs: {len(BASELINES)} baselines x {len(grid) // len(BASELINES)} mice; --array=0-{len(grid) - 1}")
+        print(f"{len(grid)} prediction jobs: {len(baselines)} models x {len(grid) // len(baselines)} mice; --array=0-{len(grid) - 1}")
     elif args.predict:
         job = grid[args.job_id]
         out = processed / args.out_dir / job["baseline"] / f"{job['mouse']}.pkl"
         if out.exists():
             logger.info("skipping %s: output exists", job)
         else:
-            variant = BASELINES[job["baseline"]]
-            fit = load_fit(processed / args.fits_dir, job["mouse"], variant, "control", args.fixed_guess_bias)
+            variant = MODELS[job["baseline"]]
+            leak_bounds = LEAK_BOUNDS.get(job["baseline"])
+            fit = load_fit(processed / args.fits_dir, job["mouse"], variant, "control", args.fixed_guess_bias, leak_bounds)
             t0 = time.time()
-            pred = predict_mouse(inputs, job["mouse"], fit["parameters"], variant, args.n_reps, args.seed, args.fixed_guess_bias)
+            pred = predict_mouse(inputs, job["mouse"], fit["parameters"], variant, args.n_reps, args.seed, args.fixed_guess_bias, leak_bounds)
             pred.update(fit_path=str(processed / args.fits_dir), fixed_guess_bias=args.fixed_guess_bias, seconds=time.time() - t0)
             out.parent.mkdir(parents=True, exist_ok=True)
             tmp = out.with_suffix(".tmp")

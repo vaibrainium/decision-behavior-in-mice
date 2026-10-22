@@ -549,6 +549,27 @@ python -m scripts.ddm.compare_guess_forms --variant L0U0V1Z0G1        # free vs 
 python -m scripts.ddm.compare_models --fits_dir ddm/fits_guess_fast_only --folds ccv0 ccv1 ccv2 ccv3 ccv4   # step 3.3
 ```
 
+### 8.4d Amendment 4: extrema detection vs integration (2026-10-23)
+Extrema-detection model E = L1U0V1Z0G1 with leak_rate in [20, 200] /s (primacy plan, amendment 4). Guess bias is not
+decided yet, so E and the common model's control-only CV fits are run both ways. Checked locally: one-iteration fit
+(PSUIM10 ccv0) and backend agreement at leak 0–200 /s (`.agents/plans/2026-10-23-amendment-4-extrema.md`).
+```bash
+# Hyak login shell is bash; check that each EXTRA_ARGS is non-empty before submitting (batches 1/3b of 8.4c ran empty)
+E="--variants L1U0V1Z0G1 --splits ccv0 ccv1 ccv2 ccv3 ccv4 control --guess_model fast_only --leak_bounds 20 200"
+# E1. E, guess_bias free -> ddm/fits_guess_fast_only_leak20-200 (60)
+env EXTRA_ARGS="$E --warm_start_from ddm/fits_guess_fast_only" sbatch --array=0-59 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+# E2. E, guess_bias 0.5 -> ddm/fits_guess_fast_only_FB_leak20-200 (60)
+env EXTRA_ARGS="$E --fixed_guess_bias --warm_start_from ddm/fits_guess_fast_only_FB" sbatch --array=0-59 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+# E3. common model, guess_bias 0.5, control-only CV -> ddm/fits_guess_fast_only_FB (50); the free-bias ccv fits exist (8.4c batch 4)
+env EXTRA_ARGS="--variants L0U0V1Z0G1 --splits ccv0 ccv1 ccv2 ccv3 ccv4 --guess_model fast_only --fixed_guess_bias --warm_start_from ddm/fits_guess_fast_only_FB" sbatch --array=0-49 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+# E4. descriptive integration time constant, leak 0-200, all control trials (10 + 10)
+D="--variants L1U0V1Z0G1 --splits control --guess_model fast_only --leak_bounds 0 200"
+env EXTRA_ARGS="$D --warm_start_from ddm/fits_guess_fast_only" sbatch --array=0-9 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+env EXTRA_ARGS="$D --fixed_guess_bias --warm_start_from ddm/fits_guess_fast_only_FB" sbatch --array=0-9 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+# later, after the guess-bias decision: frozen E predictions (10), before gate 1
+env EXTRA_ARGS="--predict --baselines extrema --fits_dir ddm/fits_guess_fast_only_leak20-200" sbatch --array=0-9 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.primacy --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm   # add _FB / --fixed_guess_bias if bias is fixed
+```
+
 ### 8.5 Analysis
 ```bash
 python -m scripts.ddm.compare_models                                  # generation 3

@@ -202,3 +202,54 @@ than the timing of evidence weighting. Decided by V. Thakur, 2026-10-22.
 **Why:** the plan named its baselines relative to a provisional common model that included leak. The chosen model has
 no leak, so the "without leak" contrast no longer exists. The alternative most likely to change the predicted pulse
 effects is the leak + urgency model, which fits the long-RT behaviour of PSUIM5/6/7 better.
+
+---
+
+## Amendment 4 (2026-10-23, before any pulse residuals were examined): integration vs extrema detection
+
+**Adopted by V. Thakur, 2026-10-23.** Gate 1 (section 7) had not been run: no `ddm/primacy` output existed and no
+recorded pulse-trial outcome had been read when this amendment was committed.
+
+**Prior knowledge, stated for the record.** The raw pulse effects shown on the SfN 2025 poster (psychometric shifts by
+pulse timing, trials grouped by preprocessing's RT-dependent `pulse_type`) were known when this plan was locked
+(2026-10-20) and when this amendment was written. No model-based comparison of pulse trials had been made.
+
+**Why.** The plan assumes the mice integrate evidence. Stine, Zylberberg, Ditterich & Shadlen (2020, eLife 9:e55365)
+showed that the usual signs of integration (sigmoid psychometric functions, accuracy rising with viewing time, good
+DDM fits, flat kernels) are also produced by strategies that do not integrate, notably extrema detection, and that an
+integration model can fit such data well when signal-to-noise and non-decision time are free, as in our fits. The two
+strategies should predict different effects of a brief ±100% pulse (to be computed, item 4), which our design can test
+out of sample. Without this amendment a failed gate would show only that the integrator is wrong.
+
+**Changes:**
+1. **Extrema-detection model (E).** The common model (L0U0V1Z0G1, fast-only guesses, guess bias as decided under
+   amendment 3) with a fast-forgetting accumulator: variant L1U0V1Z0G1 with leak_rate free in **[20, 200] /s**
+   (time constant 5–50 ms); all other parameters and bounds as in the common model. The decision variable then tracks
+   the motion energy of roughly the last 5–50 ms (on top of the ~100 ms in the motion-energy filters), so a bound
+   crossing is a threshold crossing by momentary evidence: a continuous-time analogue of Stine et al.'s extrema
+   detection, not their discrete-sample rule. `fit_mouse_ddm.py --leak_bounds 20 200`; `primacy.py --baselines
+   extrema`. Implementation note: with the common model's lower bound a ≥ 0.3, the threshold at leak 200 /s is at
+   least ~3 SD of the stationary noise; fitted leak rates at the upper limit are reported as such.
+2. **Integration-time model (descriptive).** The same model with leak_rate free over [0, 200] /s, fitted to all
+   control trials per mouse; its leak is reported as an estimated integration time constant. Not used for any test.
+3. **Control-trial comparison (before gate 1).** E and the common model, fitted per mouse to the control-only CV
+   splits (ccv0–ccv4) and to all control trials. Held-out NLL per mouse and summed, against the Monte Carlo noise
+   threshold (analysis log 5.6). Reported as is; it gates nothing.
+4. **Frozen pulse predictions (before gate 1).** From each mouse's control-only E fit, pulse-trial predictions with
+   `primacy.py` exactly as for the baselines (≥ 200 repetitions, same trials and outcome rules), saved, with the commit
+   hash, before any pulse-trial outcome is read.
+5. **Pulse test of strategy (after gate 1; confirmatory).** For each mouse, the log-likelihood of the observed
+   pulse-trial choices (section 4 trial set: |coherence| ≤ 36%, responded trials) under each model's frozen per-trial
+   predictions. Statistic: the summed difference over mice, E minus common model, against its Monte Carlo SD from the
+   prediction repetitions; per-mouse differences shown alongside. Neither model is fitted to pulse trials. **Decision
+   rule:** a model is favoured if the summed difference exceeds 3 Monte Carlo SDs in its favour and has the same sign
+   in at least 6 of 10 mice; otherwise "not distinguished".
+6. **Timing pattern under each model.** The predicted pulse effect by timing (early / middle / late) under E and the
+   common model is reported next to the observed effects, descriptively. If E is favoured in item 5, the section 6
+   timing test is interpreted against E's prediction: a timing pattern that E predicts is not evidence of primacy in
+   evidence weighting.
+
+**Not added:** the snapshot model (a single sample at a random time), which fits a free-response task poorly.
+
+**Unchanged:** sections 1–11 and amendments 1–3. Gate 1 and the primary test are as before; this amendment adds a
+comparison, and gate 1 waits until items 3–4 are done.
