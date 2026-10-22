@@ -150,6 +150,12 @@ bias free and fixed, 5 CV folds + all + control (70 jobs each).
    **Status (2026-10-22): ready to submit.** New splits `ccv0`–`ccv4` (CV within control trials) in
    `fit_mouse_ddm.py`; strict model, minus sv, minus guesses, plus leak, plus urgency, plus both (300 jobs, analysis log
    8.4c). No warm starts exist for these splits, so nested pairs are checked before comparing.
+   **Result (2026-10-23): the strict choice holds without pulse trials.** Held-out NLL change vs L0U0V1Z0G1 (CV within
+   control trials, summed over mice; positive = strict better): − sv +1,018 (strict better by > 10 in 8/10 mice),
+   − guesses +858 (7/10), + leak −21 (1 better / 1 worse by > 10), + urgency +26 (1 / 0), + both −33 (0 / 1, PSUIM6
+   −42). RFX-BMS undecided among the strict model and its leak variants (omnibus risk 0.50). Nested pairs: larger model
+   worse by > 5 NLL in 4/300 (max 11.2), a slight bias against leak/urgency. Leak/urgency gains seen on all trials in
+   PSUIM5 and PSUIM7 do not appear on control trials alone, so part of them came from pulse trials (analysis log 5.6).
 
 **Decision:** one model for all mice, so parameters and pulse predictions are comparable across mice and rigs.
 

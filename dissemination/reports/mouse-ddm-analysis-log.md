@@ -310,6 +310,12 @@ folds. Output: `ddm/mc_noise/`, `mc_noise_summary.csv`, `mc_noise_per_mouse.csv`
   (late engagement, then a normal coherence-dependent decision), not for leaky integration or urgency. An earlier
   version of this note called these trials disengagement; that was wrong (they are coherence-dependent).
   A delayed-engagement parameter was considered and not pursued (V. Thakur, 2026-10-22).
+- **Control-only check (step 3.3, 2026-10-23).** CV within control trials (`ccv0`–`ccv4`, fast-only guesses,
+  `ddm/fits_guess_fast_only`, no warm starts). Change in summed held-out NLL vs L0U0V1Z0G1: − sv +1,018, − guesses
+  +858, + leak −21, + urgency +26, + both −33. Leak and urgency help beyond 10 NLL only in PSUIM6 (−24, −42 for both).
+  The all-trial gains in PSUIM5 (urgency) and PSUIM7 (leak, urgency) vanish on control trials, so part of them came
+  from pulse trials. Selecting on all trials would have let pulse-trial structure into the baseline; the strict model
+  avoids that.
 - **Decision (2026-10-22, V. Thakur): strict**, i.e. L0U0V1Z0G1 + fast_only guesses; L1U1V1Z0G1 + fast_only is the
   secondary baseline for the primacy test (primacy plan, amendment 3). The options considered: *strict* (rule 2 as written): L0U0V1Z0G1 + fast_only guesses,
   leak + urgency model as secondary baseline; *relaxed*: L1U1V1Z0G1 + fast_only, by summed held-out NLL (leak +93,
@@ -579,6 +585,9 @@ and fish syntax in bash left `$W` empty; cancelled.
 Submitted 2026-10-22: batch 1 `42134053` (J1), 2 `42134144`, 3a `42134145`, 3b `42134055` (J3b), 4 `42134146`;
 recovery `42134164` (offset 0) and `42134165` (offset 250), `afterany` on J1 and J3b. A second void attempt
 (`42134111`–`42134113`) was cancelled before starting.
+Batches 1 and 3b (`42134053`, `42134055`) ran with `$W` empty (fits defaulted to `ddm/fits_guess`, all skipped as
+existing), so 400 recovery tasks stopped at the guess-form guard; only the 100 with the no-guess generator ran
+(valid). Batches 2, 3a and 4 are correct. Resubmission of 1, 3b and recovery (`afterok`) pending.
 
 ---
 
