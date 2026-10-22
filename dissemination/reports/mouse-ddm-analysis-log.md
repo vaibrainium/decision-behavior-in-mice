@@ -570,6 +570,8 @@ env EXTRA_ARGS="$D --fixed_guess_bias --warm_start_from ddm/fits_guess_fast_only
 env EXTRA_ARGS="--predict --baselines extrema --fits_dir ddm/fits_guess_fast_only_leak20-200" sbatch --array=0-9 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.primacy --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm   # add _FB / --fixed_guess_bias if bias is fixed
 ```
 
+E vs common model on control trials, at-bound checks, refit rule, time constants (amendment 4 items 2-3, amendment 5
+item 3): `python -m scripts.ddm.compare_strategy [--fixed_guess_bias]`.
 Amendment 5 (2026-10-23): item 5 uses the pulse-specific log-likelihood gain with a paired per-trial SD
 (`primacy.py --strategy_test --unblind`, after gate 1 only); null calibration
 `python -m scripts.ddm.check_strategy_test --null_only --datasets 150` (z SD 1.01 / 0.97, 0/150 beyond 3). If E's

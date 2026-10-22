@@ -27,7 +27,7 @@ predictions frozen. After gate 1: the strategy test (amendment 4, item 5).
 - [x] 3. Amendment 4 appended to the primacy plan and committed before any pulse outcome was read.
 - [ ] 4. User submits the Hyak batches (analysis log 8.4d): E (free and fixed bias, 60 + 60), common model fixed-bias
       ccv (50), descriptive leak 0–200 (10 + 10).
-- [ ] 5. `scripts/ddm/compare_strategy.py`: held-out NLL, E vs common model, per mouse and summed, on ccv0–ccv4,
+- [x] 5. (code; run when the E fits land) `scripts/ddm/compare_strategy.py`: held-out NLL, E vs common model, per mouse and summed, on ccv0–ccv4,
       against the Monte Carlo noise; fitted leak, a **and drift_gain** at their bounds (amendment 5 rule: refit E with
       `--drift_gain_max 200` if drift_gain binds); descriptive time constants.
 - [x] 6. Strategy test (item 5, as changed by amendment 5) in `primacy.py` (`strategy_test`, `--strategy_test
@@ -46,3 +46,5 @@ Gate 1 itself; any comparison with recorded pulse outcomes.
 - 2026-10-23: adopted with the proposed defaults (V. Thakur). Draft file removed; text lives in the primacy plan.
 - 2026-10-23: review of amendment 4 (V. Thakur asked): item 5 used simulation-only SD and a whole-trial statistic; E's
   drift_gain may bind. Amendment 5 drafted at V. Thakur's request (adoption to be confirmed), code updated, null calibration done.
+- 2026-10-23: compare_strategy.py written; smoke-tested on one-iteration PSUIM10 E fits (all sections run; numbers
+  meaningless). Runs on partial results and lists missing fits; refuses folders with the wrong form.
