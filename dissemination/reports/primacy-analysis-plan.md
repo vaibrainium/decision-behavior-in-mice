@@ -258,6 +258,8 @@ comparison, and gate 1 waits until items 3–4 are done.
 
 ## Amendment 5 (2026-10-23, before any pulse residuals were examined): the strategy test statistic and E's gain bound
 
+**Adopted by V. Thakur, 2026-10-23.**
+
 **Context:** a review of amendment 4 before any extrema-detection (E) fit or prediction existed. Gate 1 has not been
 run; no `ddm/primacy` output exists; no recorded pulse-trial outcome has been read.
 

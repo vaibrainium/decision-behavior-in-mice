@@ -45,6 +45,6 @@ Gate 1 itself; any comparison with recorded pulse outcomes.
 ## Log
 - 2026-10-23: adopted with the proposed defaults (V. Thakur). Draft file removed; text lives in the primacy plan.
 - 2026-10-23: review of amendment 4 (V. Thakur asked): item 5 used simulation-only SD and a whole-trial statistic; E's
-  drift_gain may bind. Amendment 5 drafted at V. Thakur's request (adoption to be confirmed), code updated, null calibration done.
+  drift_gain may bind. Amendment 5 drafted at V. Thakur's request and adopted by V. Thakur (2026-10-23), code updated, null calibration done.
 - 2026-10-23: compare_strategy.py written; smoke-tested on one-iteration PSUIM10 E fits (all sections run; numbers
   meaningless). Runs on partial results and lists missing fits; refuses folders with the wrong form.
