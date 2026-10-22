@@ -65,19 +65,24 @@ def output_path(out_dir: Path, job: dict) -> Path:
     return out_dir / f"{job['mouse']}_gen-{job['generator']}_fit-{job['candidate']}_rep{job['replicate']}.pkl"
 
 
-def generating_fit(fits_dirs: list[Path], mouse: str, variant: str) -> Path:
+def generating_params(fits_dirs: list[Path], mouse: str, variant: str, fixed_guess_bias: bool) -> dict:
+    """Parameters of the first all-trial fit of this variant whose guess form matches (any form when guesses are off),
+    so a missing fast-only fit never falls back silently to a single-form fit."""
     for d in fits_dirs:
         if (path := d / f"{mouse}_{variant}_all.pkl").exists():
-            return path
-    raise FileNotFoundError(f"no all-trial fit of {mouse} {variant} in {[str(d) for d in fits_dirs]}")
+            with open(path, "rb") as f:
+                r = pickle.load(f)
+            if variant.endswith("G0") or (r.get("guess_model", "single"), r.get("fixed_guess_bias", False)) == (GUESS_MODEL, fixed_guess_bias):
+                logger.info("generating parameters from %s", path)
+                return r["parameters"]
+    raise FileNotFoundError(f"no all-trial fit of {mouse} {variant} ({GUESS_MODEL}, fixed_guess_bias={fixed_guess_bias}) in {[str(d) for d in fits_dirs]}")
 
 
 def run_job(inputs: dict, job: dict, fits_dirs: list[Path], out_dir: Path, n_reps: int, max_iterations: int, fixed_guess_bias: bool = False) -> dict:
     rows = np.flatnonzero(inputs["subject_id"] == job["mouse"])
     rig = str(np.unique(inputs["data_source"][rows])[0])
     real, stimulus = select(inputs, rows)
-    with open(generating_fit(fits_dirs, job["mouse"], job["generator"]), "rb") as f:
-        true_params = pickle.load(f)["parameters"]
+    true_params = generating_params(fits_dirs, job["mouse"], job["generator"], fixed_guess_bias)
 
     seed = zlib.crc32(f"{job['mouse']}|{job['generator']}|{job['replicate']}".encode())
     generator = make_model(job["generator"], rig, fixed_guess_bias)

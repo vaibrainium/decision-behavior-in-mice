@@ -509,13 +509,19 @@ python -m scripts.ddm.compare_models --fits_dir ddm/archive/fits_no_guess   # ge
 ```
 Fit-quality plots: `notebooks/3.0-ddm-fit-quality.ipynb` (set `MODEL` and `FITS`).
 
-### 8.6 Model recovery (not yet run; after 8.4c and the guess-bias decision)
-Generators and candidates: L0U0V1Z0G1, minus sv, minus guesses, plus leak, plus urgency (fast-only guesses);
-10 mice × 5 × 5 × 2 replicates = 500 jobs. Add `--fixed_guess_bias` (and `--fits_dir ddm/fits_guess_fast_only_FB ...`)
-if the bias is fixed.
-```bash
+### 8.6 Model recovery (submitted with 8.4c, 2026-10-22)
+Generators and candidates: L0U0V1Z0G1, minus sv, minus guesses, plus leak, plus urgency (fast-only guesses, guess_bias
+free); 10 mice × 5 × 5 × 2 replicates = 500 jobs. Generating parameters are the all-trial fits of 8.4c batches 1 and
+3b (the no-guess model from `ddm/fits_guess`), so recovery waits for those arrays (`afterany`). A generator fit with a
+different guess form is refused, never substituted. If guess_bias is later fixed, rerun with `--fixed_guess_bias` and
+`--out_dir ddm/recovery_FB` only if the mechanism verdicts could plausibly change.
+```fish
+set J1 (sbatch --parsable --array=0-69 ... )      # 8.4c batch 1, captured with --parsable
+set J3b (sbatch --parsable --array=0-29 ... )     # 8.4c batch 3b
 python -m scripts.ddm.model_recovery --list
-sbatch --array=0-249 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.model_recovery scripts/slurm/fit_mouse_ddm.slurm   # and JOB_OFFSET=250
+for off in 0 250
+  sbatch --dependency=afterany:$J1:$J3b --array=0-249 --time=16:00:00 --export=ALL,JOB_OFFSET=$off,MODULE=scripts.ddm.model_recovery scripts/slurm/fit_mouse_ddm.slurm
+end
 ```
 
 ---

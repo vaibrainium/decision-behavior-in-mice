@@ -31,8 +31,8 @@ reasons a reaction-time task makes late evidence matter less anyway?
    kernels **cannot** show when evidence is weighted in these tasks. Timing questions need the pulses. *(FINAL; a
    useful methods point for the field in its own right)*
 4. A motion-energy-driven DDM with censoring at 5 s, a 0.3 s response floor and a fast-guess/lapse component
-   explains choices, RTs and no-response rates. Mechanisms supported: `[TBD after plan step 3; recommended: sv +
-   fast guesses (L0U0V1Z0G1, fast_only)]`. *(PROVISIONAL)*
+   explains choices, RTs and no-response rates. Mechanisms supported: sv + fast guesses (L0U0V1Z0G1, fast_only;
+   chosen 2026-10-22, recovery and final fits pending). *(PROVISIONAL)*
 5. Primacy test, with the analysis fixed before the residuals were seen: are pulse effects at later times smaller than
    this model, fitted without pulse trials, predicts? Within each mouse, plus a model extension test, a model-free
    check and a sensitivity analysis. *(PENDING)*
@@ -115,8 +115,9 @@ but did not apply. Each of these claims must be checked against the paper before
   in 8/10 mice (Wilcoxon p ≈ 0.02); robustness range 0.35–0.50, CI excludes 1 in every version (log §3.3).
   Implication for kernels.
 - **R4 A DDM for mouse RT behaviour** (Fig 4, S2–S5). Mechanisms, guess/lapse form, recovery. Numbers `[TBD]`.
-  Common model not yet chosen (next-steps step 3; analysis log 5.5–5.6). How each choice changes the story:
-  - *Path A (recommended), sv + fast guesses, flat bound, no leak:* R4 says "a bounded accumulator with drift
+  **Common model chosen 2026-10-22: path A (strict).** Kept below for the record (next-steps step 3; analysis log
+  5.5–5.6):
+  - *Path A (chosen), sv + fast guesses, flat bound, no leak:* R4 says "a bounded accumulator with drift
     variability and ~20% fast guesses at chance explains mouse RT behaviour". The primacy baseline weights evidence
     equally, i.e. it is the null hypothesis itself; gain decay and signed leak are one-parameter tests in R5, so any
     leak (recency) or self-excitation (primacy) appears there as a finding about temporal weighting. Leak + urgency
