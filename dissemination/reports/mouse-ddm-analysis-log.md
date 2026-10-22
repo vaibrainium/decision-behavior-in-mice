@@ -485,15 +485,15 @@ python -m scripts.ddm.mc_noise --summarize
 Common model L0U0V1Z0G1 with fast-only guesses (section 5.6). All warm-started where an earlier fit of the same split
 exists; the control-only CV splits (`ccv0`–`ccv4`, new) have none, so check nested pairs afterwards.
 ```bash
-# (fish: set W "--guess_model fast_only --warm_start_from ddm/fits_guess ddm/fits_guess_warm")
+# Hyak login shell is bash (not fish): use VAR=... and $(...), not set / ( )
 W="--guess_model fast_only --warm_start_from ddm/fits_guess ddm/fits_guess_warm"
 # 1. strict model, guess_bias free -> ddm/fits_guess_fast_only (70)
-env EXTRA_ARGS="--variants L0U0V1Z0G1 --splits cv0 cv1 cv2 cv3 cv4 all control $W" sbatch --array=0-69 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+J1=$(env EXTRA_ARGS="--variants L0U0V1Z0G1 --splits cv0 cv1 cv2 cv3 cv4 all control $W" sbatch --parsable --array=0-69 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm)
 # 2. strict model, guess_bias fixed at 0.5 -> ddm/fits_guess_fast_only_FB (70); parsimony rule 3
 env EXTRA_ARGS="--variants L0U0V1Z0G1 --splits cv0 cv1 cv2 cv3 cv4 all control $W --fixed_guess_bias" sbatch --array=0-69 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
 # 3. secondary baseline, control-only fit (10), and all-trial fits of the recovery generators (30)
 env EXTRA_ARGS="--variants L1U1V1Z0G1 --splits control $W" sbatch --array=0-9 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
-env EXTRA_ARGS="--variants L0U0V0Z0G1 L1U0V1Z0G1 L0U1V1Z0G1 --splits all $W" sbatch --array=0-29 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+J3b=$(env EXTRA_ARGS="--variants L0U0V0Z0G1 L1U0V1Z0G1 L0U1V1Z0G1 --splits all $W" sbatch --parsable --array=0-29 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm)
 # 4. plan step 3.3: CV within control trials, strict model and its neighbours (300)
 env EXTRA_ARGS="--variants L0U0V1Z0G1 L0U0V0Z0G1 L0U0V1Z0G0 L1U0V1Z0G1 L0U1V1Z0G1 L1U1V1Z0G1 --splits ccv0 ccv1 ccv2 ccv3 ccv4 $W" sbatch --array=0-299 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
 # afterwards
@@ -515,14 +515,15 @@ free); 10 mice × 5 × 5 × 2 replicates = 500 jobs. Generating parameters are t
 3b (the no-guess model from `ddm/fits_guess`), so recovery waits for those arrays (`afterany`). A generator fit with a
 different guess form is refused, never substituted. If guess_bias is later fixed, rerun with `--fixed_guess_bias` and
 `--out_dir ddm/recovery_FB` only if the mechanism verdicts could plausibly change.
-```fish
-set J1 (sbatch --parsable --array=0-69 ... )      # 8.4c batch 1, captured with --parsable
-set J3b (sbatch --parsable --array=0-29 ... )     # 8.4c batch 3b
+```bash
+# J1, J3b from 8.4c batches 1 and 3b (sbatch --parsable)
 python -m scripts.ddm.model_recovery --list
-for off in 0 250
+for off in 0 250; do
   sbatch --dependency=afterany:$J1:$J3b --array=0-249 --time=16:00:00 --export=ALL,JOB_OFFSET=$off,MODULE=scripts.ddm.model_recovery scripts/slurm/fit_mouse_ddm.slurm
-end
+done
 ```
+First attempt (2026-10-22, jobs 42133650/82/83) was void: `git pull` on Hyak failed (stale VS Code credential socket),
+and fish syntax in bash left `$W` empty; cancelled.
 
 ---
 
