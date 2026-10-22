@@ -608,6 +608,7 @@ different guess form is refused, never substituted. If guess_bias is later fixed
 ```bash
 # J1, J3b from 8.4c batches 1 and 3b (sbatch --parsable)
 python -m scripts.ddm.model_recovery --list
+python -m scripts.ddm.summarize_recovery          # after the jobs: confusion, per-mechanism hit/false-alarm rates, optimizer, parameters
 for off in 0 250; do
   sbatch --dependency=afterany:$J1:$J3b --array=0-249 --time=16:00:00 --export=ALL,JOB_OFFSET=$off,MODULE=scripts.ddm.model_recovery scripts/slurm/fit_mouse_ddm.slurm
 done

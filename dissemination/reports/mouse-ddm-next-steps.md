@@ -179,6 +179,10 @@ interpreted for the small mice.
 candidates are the common model, minus sv, minus guesses, plus leak, plus urgency (500 jobs). The two added models
 test whether the comparison would have detected leak or urgency where present, i.e. "absent" vs "undetectable" in the
 smaller mice. Needs the all-trial generator fits (analysis log 8.4c, batch 3) and the guess-bias decision first.
+**Update (2026-10-23):** submitted (jobs 42157147/48, after batches 1 and 3b); 100 of 500 done (no-guess generator).
+Summary script `scripts/ddm/summarize_recovery.py`: completeness, confusion matrix, per-mechanism hit and false-alarm
+rates at 0 and 10 NLL, optimizer gap at the generating parameters, parameter recovery. Tested on the 100 results;
+too few to interpret (one generator).
 
 ## Step 5. Precise final fits
 
