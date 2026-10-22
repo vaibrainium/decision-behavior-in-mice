@@ -296,14 +296,19 @@ folds. Output: `ddm/mc_noise/`, `mc_noise_summary.csv`, `mc_noise_per_mouse.csv`
   between mice (three of four UCLA mice), not missing power. Source: `ddm/mc_noise/mc_noise_per_mouse.csv`.
 - **What leak + urgency fit** (`scripts/ddm/diagnose_leak_urgency.py`, control trials only, all-trial fits, 20 reps;
   G statistic per |coherence| × outcome × RT-decile cell). In PSUIM6 and PSUIM7 most of the misfit removed is the
-  **no-response rate** (+174, +196); gains and losses over RT bins largely cancel. VERIFIED (in-sample, simulation
+  **rate of censored (> 5 s) trials** (+174, +196); gains and losses over RT bins largely cancel. VERIFIED (in-sample, simulation
   noise not quantified).
-- **The no-responses look like disengagement.** In the data, P(no response by 5 s) is nearly flat from 0 to 36%
-  coherence (PSUIM6 0.27, 0.29, 0.27, 0.21; PSUIM7 0.10 at all four) and still 5–12% at 100% coherence in every mouse
-  checked (UW too). Both models underpredict it at 100% (PSUIM6: data 0.109, strict 0.068, full 0.064; PSUIM7: 0.054,
-  0.016, 0.022). Leak raises no-responses at low coherence by letting the accumulator stall below the bound.
-  SUSPECTED: in these mice leak and urgency stand in for a missing coherence-independent omission process rather
-  than describing evidence integration.
+- **The censored trials are late responses, not missed trials.** (Corrected 2026-10-22 after V. Thakur's note: the
+  5 s cutoff is our censoring choice, the stimulus kept running.) Of the 4,537 censored trials, 60–100% per mouse are
+  responses after 5 s (median 7.7 s, 90th percentile 18.6 s; `censored_trials.csv`, column `censored_rt`). Their
+  accuracy rises with coherence (UCLA 0.57 / 0.67 / 0.81 / 0.88 at 9 / 18 / 36 / 100%; UW 0.61 / 0.59 / 0.67 / 0.81),
+  is 0.63–0.77 per mouse at |coh| ≥ 36%, and barely depends on how late (0.70 at 5–8 s, 0.65 at 15–61 s). VERIFIED.
+- **But their share is nearly coherence-independent:** P(censored) is flat from 0 to 36% coherence (PSUIM6 0.27, 0.29,
+  0.27, 0.21; PSUIM7 0.10 at all four) and 5–12% at 100% in every mouse checked; both models underpredict it at 100%
+  (PSUIM6: data 0.109, strict 0.068, full 0.064). Leak produces a flat rate of long trials by letting the
+  accumulator stall. SUSPECTED: in PSUIM5/6/7 leak and urgency stand in for a delayed, variable start of integration
+  (late engagement, then a normal coherence-dependent decision), not for leaky integration or urgency. An earlier
+  version of this note called these trials disengagement; that was wrong (they are coherence-dependent).
 - **UCLA vs UW behaviour (data only).** UCLA mice other than PSUIM7 respond slower (median correct RT at
   |coh| ≥ 36%: 1.33–1.55 s vs 0.86–1.36 s in UW), make fewer fast responses (< 0.6 s: 5–11% vs 14–34%) and PSUIM5/6
   miss more trials (22%). PSUIM7 is UW-like in RT. Figure: `dissemination/figures/leak_urgency_diagnosis_20261022.png`.
