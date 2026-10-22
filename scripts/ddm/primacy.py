@@ -47,8 +47,8 @@ MAX_ABS_COH = 0.36  # primary analysis (plan section 4); all coherences as robus
 N_REPS = 200  # plan section 3: >= 200 simulated repetitions per trial
 RT_QUANTILES = [0.1, 0.3, 0.5, 0.7, 0.9]
 PRIOR_SD = 1.0  # Normal(0, 1) fixed effects, HalfNormal(1) random-effect SDs (plan section 6)
-# Gates 2-3 pass rule. PROPOSED (2026-10-22), to be confirmed by the authors before --unblind: the plan says "within
-# the spread of the model's predictions" without a number. With 95% ranges, ~5% of cells fall outside by chance.
+# Gates 2-3 pass rule (accepted by V. Thakur, 2026-10-22; the plan says "within the spread of the model's predictions"
+# without a number). With 95% ranges, ~5% of cells fall outside by chance.
 GATE_MIN_INSIDE = 0.8  # fraction of (mouse x RT quantile) cells, and of mice for the censored fraction, inside
 
 

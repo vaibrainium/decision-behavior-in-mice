@@ -244,8 +244,9 @@ Reuses the model-recovery machinery.
 
 **Status (2026-10-22): code ready and checked on synthetic data** (`primacy.py`, `primacy_sensitivity.py`; analysis
 log 5.7). **Power problem:** under the fitted model a pulse moves choices by ~0.025 logit. Even full primacy changes
-β_middle by ≤ 0.04, below the test's resolution (~0.1–0.15). Decision pending on how to proceed (analysis log 5.7,
-options 1–3).
+β_middle by ≤ 0.04, below the test's resolution (~0.1–0.15). **Decision (2026-10-22): run the
+predictive check (6.2) first**; a first pass on the 8.4c control fits, the confirmatory one on the step 5 fits. Gates
+2–3 rule: ≥ 80% of checks inside the simulated 95% range (analysis log 5.7).
 
 **Benefit:** a direct, model-based answer to whether mice weight early evidence more, which the noise-based kernels
 cannot give (the stimulus noise is fixed within a trial), with the rig confound, the baseline's own temporal weighting

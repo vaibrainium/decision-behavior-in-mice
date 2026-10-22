@@ -357,6 +357,10 @@ Options for the authors (decision pending):
 3. Write an amendment before unblinding that changes the outcome, e.g. pulse effects on RT or a different contrast.
    Any power gain must be shown by the sensitivity simulation first.
 
+**Decision (2026-10-22, V. Thakur): option 2.** Run gate 1 (pooled, timing-agnostic) first. A first pass can use the
+fast-only control fits of the strict model (8.4c batch 1) as soon as they exist, as the plan allows (next-steps
+"Order"); the confirmatory pass uses the step 5 fits. The gates 2–3 rule `GATE_MIN_INSIDE = 0.8` is accepted.
+
 ---
 
 ## 6. Things that did not work, and why
