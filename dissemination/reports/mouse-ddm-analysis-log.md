@@ -473,12 +473,32 @@ for form in fast_only guess_lapse; do
       sbatch --array=0-59 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
 done
 python -m scripts.ddm.find_refits --fits_dir ddm/fits_guess ddm/fits_guess_warm --out scripts/ddm/jobs/refits_round2.txt   # round 2 check: 12 fits at 5-5.9, not run
-python -m scripts.ddm.compare_guess_forms                              # guess forms vs psychometric lapse
+python -m scripts.ddm.compare_guess_forms --variant L1U1V1Z0G1         # guess forms vs psychometric lapse (section 5.5)
 python -m scripts.ddm.diagnose_leak_urgency                            # where leak + urgency help (simulates, ~10 min CPU)
 python -m scripts.ddm.diagnose_leak_urgency --data_only                # censored-trial checks only
 # Monte Carlo noise (step 3.1)
 sbatch --array=0-69 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.mc_noise scripts/slurm/fit_mouse_ddm.slurm
 python -m scripts.ddm.mc_noise --summarize
+```
+
+### 8.4c Strict common model: guess bias, control-only CV, generator fits (2026-10-22)
+Common model L0U0V1Z0G1 with fast-only guesses (section 5.6). All warm-started where an earlier fit of the same split
+exists; the control-only CV splits (`ccv0`–`ccv4`, new) have none, so check nested pairs afterwards.
+```bash
+# (fish: set W "--guess_model fast_only --warm_start_from ddm/fits_guess ddm/fits_guess_warm")
+W="--guess_model fast_only --warm_start_from ddm/fits_guess ddm/fits_guess_warm"
+# 1. strict model, guess_bias free -> ddm/fits_guess_fast_only (70)
+env EXTRA_ARGS="--variants L0U0V1Z0G1 --splits cv0 cv1 cv2 cv3 cv4 all control $W" sbatch --array=0-69 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+# 2. strict model, guess_bias fixed at 0.5 -> ddm/fits_guess_fast_only_FB (70); parsimony rule 3
+env EXTRA_ARGS="--variants L0U0V1Z0G1 --splits cv0 cv1 cv2 cv3 cv4 all control $W --fixed_guess_bias" sbatch --array=0-69 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+# 3. secondary baseline, control-only fit (10), and all-trial fits of the recovery generators (30)
+env EXTRA_ARGS="--variants L1U1V1Z0G1 --splits control $W" sbatch --array=0-9 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+env EXTRA_ARGS="--variants L0U0V0Z0G1 L1U0V1Z0G1 L0U1V1Z0G1 --splits all $W" sbatch --array=0-29 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+# 4. plan step 3.3: CV within control trials, strict model and its neighbours (300)
+env EXTRA_ARGS="--variants L0U0V1Z0G1 L0U0V0Z0G1 L0U0V1Z0G0 L1U0V1Z0G1 L0U1V1Z0G1 L1U1V1Z0G1 --splits ccv0 ccv1 ccv2 ccv3 ccv4 $W" sbatch --array=0-299 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+# afterwards
+python -m scripts.ddm.compare_guess_forms --variant L0U0V1Z0G1        # free vs fixed bias (fast_only vs fast_only_FB)
+python -m scripts.ddm.compare_models --fits_dir ddm/fits_guess_fast_only --folds ccv0 ccv1 ccv2 ccv3 ccv4   # step 3.3
 ```
 
 ### 8.5 Analysis
@@ -489,10 +509,13 @@ python -m scripts.ddm.compare_models --fits_dir ddm/archive/fits_no_guess   # ge
 ```
 Fit-quality plots: `notebooks/3.0-ddm-fit-quality.ipynb` (set `MODEL` and `FITS`).
 
-### 8.6 Model recovery (not yet run)
+### 8.6 Model recovery (not yet run; after 8.4c and the guess-bias decision)
+Generators and candidates: L0U0V1Z0G1, minus sv, minus guesses, plus leak, plus urgency (fast-only guesses);
+10 mice × 5 × 5 × 2 replicates = 500 jobs. Add `--fixed_guess_bias` (and `--fits_dir ddm/fits_guess_fast_only_FB ...`)
+if the bias is fixed.
 ```bash
 python -m scripts.ddm.model_recovery --list
-sbatch --array=0-359 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.model_recovery scripts/slurm/fit_mouse_ddm.slurm   # and offset 360
+sbatch --array=0-249 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.model_recovery scripts/slurm/fit_mouse_ddm.slurm   # and JOB_OFFSET=250
 ```
 
 ---

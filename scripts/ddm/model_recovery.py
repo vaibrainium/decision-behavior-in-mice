@@ -1,8 +1,10 @@
 """Model recovery for the mouse DDM: can each mechanism of the common model be detected when present and
 rejected when absent, at each mouse's own trial count and stimuli?
 
-Generating models: the common model (COMMON; set it to the model chosen in the comparison) and the models with one
-of its mechanisms removed, each with the mouse's fitted parameters for that model (<fits_dir>/<mouse>_<variant>_all.pkl).
+Generating models: the common model (COMMON, chosen in plan step 3), the models with one of its mechanisms removed, and
+the models with leak or urgency added (to check that the comparison would have detected them where present), each with
+the mouse's fitted parameters for that model (<mouse>_<variant>_all.pkl, first found in --fits_dir). All use the
+GUESS_MODEL form of the guess factor.
 For each (mouse, generator, replicate):
   - simulate a training dataset and an independent test dataset from the generator, on the mouse's own trials
     (same stimuli, conditions, censoring at 5 s and the 0.3 s floor as the real fits),
@@ -14,7 +16,7 @@ NLL at the generating parameters vs at the recovered ones checks the optimizer.
 Usage:
     python -m scripts.ddm.model_recovery --list
     python -m scripts.ddm.model_recovery --job_id 17
-On Slurm: sbatch --array=0-249 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.model_recovery scripts/slurm/fit_mouse_ddm.slurm
+On Slurm (500 jobs): sbatch --array=0-249 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.model_recovery scripts/slurm/fit_mouse_ddm.slurm, then JOB_OFFSET=250
 """
 
 import argparse
@@ -32,8 +34,11 @@ from scripts.ddm.fit_mouse_ddm import CENSOR_AT, DE_TOL, DEVICE, LIKELIHOOD_PARA
 
 logger = logging.getLogger(__name__)
 
-COMMON = "L1U1V1Z1G1"  # provisional: update once the comparison with fast guesses has picked the common model
-MODELS = [COMMON] + [COMMON[:i + 1] + "0" + COMMON[i + 2:] for i in range(0, len(COMMON), 2) if COMMON[i + 1] == "1"]  # and each mechanism removed
+COMMON = "L0U0V1Z0G1"  # chosen 2026-10-22 (strict parsimony rule 2; analysis log 5.6): sv + fast guesses
+GUESS_MODEL = "fast_only"
+ADDED = ["L", "U"]  # mechanisms dropped from the common model whose detectability is checked
+MODELS = ([COMMON] + [COMMON[:i + 1] + "0" + COMMON[i + 2:] for i in range(0, len(COMMON), 2) if COMMON[i + 1] == "1"]  # each mechanism removed
+          + [COMMON.replace(f"{f}0", f"{f}1") for f in ADDED])  # leak or urgency added
 N_REPLICATES = 2
 
 
@@ -42,8 +47,8 @@ def build_grid(inputs: dict) -> list[dict]:
     return [{"mouse": m, "generator": g, "candidate": c, "replicate": r} for r in range(N_REPLICATES) for g in MODELS for c in MODELS for m in mice]
 
 
-def make_model(variant: str, rig: str) -> MouseDDM:
-    free, fixed = make_params(variant)
+def make_model(variant: str, rig: str, fixed_guess_bias: bool = False) -> MouseDDM:
+    free, fixed = make_params(variant, GUESS_MODEL, fixed_guess_bias=fixed_guess_bias)
     return MouseDDM(free_params=free, fixed_params=fixed, device=DEVICE, likelihood_params=LIKELIHOOD_PARAMS, censor_at=CENSOR_AT, min_rt=MIN_RT[rig])
 
 
@@ -60,19 +65,26 @@ def output_path(out_dir: Path, job: dict) -> Path:
     return out_dir / f"{job['mouse']}_gen-{job['generator']}_fit-{job['candidate']}_rep{job['replicate']}.pkl"
 
 
-def run_job(inputs: dict, job: dict, fits_dir: Path, out_dir: Path, n_reps: int, max_iterations: int) -> dict:
+def generating_fit(fits_dirs: list[Path], mouse: str, variant: str) -> Path:
+    for d in fits_dirs:
+        if (path := d / f"{mouse}_{variant}_all.pkl").exists():
+            return path
+    raise FileNotFoundError(f"no all-trial fit of {mouse} {variant} in {[str(d) for d in fits_dirs]}")
+
+
+def run_job(inputs: dict, job: dict, fits_dirs: list[Path], out_dir: Path, n_reps: int, max_iterations: int, fixed_guess_bias: bool = False) -> dict:
     rows = np.flatnonzero(inputs["subject_id"] == job["mouse"])
     rig = str(np.unique(inputs["data_source"][rows])[0])
     real, stimulus = select(inputs, rows)
-    with open(fits_dir / f"{job['mouse']}_{job['generator']}_all.pkl", "rb") as f:
+    with open(generating_fit(fits_dirs, job["mouse"], job["generator"]), "rb") as f:
         true_params = pickle.load(f)["parameters"]
 
     seed = zlib.crc32(f"{job['mouse']}|{job['generator']}|{job['replicate']}".encode())
-    generator = make_model(job["generator"], rig)
+    generator = make_model(job["generator"], rig, fixed_guess_bias)
     train = synthesize(generator, true_params, stimulus, real["condition"], seed)
     test = synthesize(generator, true_params, stimulus, real["condition"], seed + 1)
 
-    model = make_model(job["candidate"], rig)
+    model = make_model(job["candidate"], rig, fixed_guess_bias)
     t0 = time.time()
     fit = model.fit(data=train, stimulus=stimulus, labels=train["condition"], n_reps=n_reps, max_iterations=max_iterations, l1_weight=0.0, verbose=True, **DE_TOL)
     k = len(model.fit_keys)
@@ -96,6 +108,8 @@ def run_job(inputs: dict, job: dict, fits_dir: Path, out_dir: Path, n_reps: int,
         "n_reps": n_reps,
         "max_iterations": max_iterations,
         "truth_train_nll": truth_train_nll,
+        "guess_model": GUESS_MODEL,
+        "fixed_guess_bias": fixed_guess_bias,
     }
     if job["candidate"] == job["generator"]:
         result["truth_test_nll"] = heldout_nll(model, true_params, test, stimulus, n_reps)
@@ -115,7 +129,8 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s", force=True)
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--inputs", default="ddm/ddm_inputs_global.npz", help="relative to the processed data directory")
-    parser.add_argument("--fits_dir", default="ddm/fits_guess", help="real-data fits with the generating parameters")
+    parser.add_argument("--fits_dir", nargs="+", default=["ddm/fits_guess_fast_only", "ddm/fits_guess"], help="real-data fits with the generating parameters, searched in order (relative to processed)")
+    parser.add_argument("--fixed_guess_bias", action="store_true", help="guess_bias fixed at 0.5 (use with the _FB fits)")
     parser.add_argument("--out_dir", default="ddm/recovery", help="relative to the processed data directory")
     parser.add_argument("--job_id", type=int)
     parser.add_argument("--n_reps", type=int, default=15)
@@ -136,4 +151,4 @@ if __name__ == "__main__":
             logger.info("skipping %s: output exists (use --force to refit)", job)
         else:
             logger.info("job %s: %s", args.job_id, job)
-            run_job(inputs, job, processed / args.fits_dir, processed / args.out_dir, args.n_reps, args.max_iterations)
+            run_job(inputs, job, [processed / d for d in args.fits_dir], processed / args.out_dir, args.n_reps, args.max_iterations, args.fixed_guess_bias)

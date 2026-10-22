@@ -113,6 +113,8 @@ chance; y% lapses") and that does not distort the decision parameters.
 at chance." The psychometric asymptote implies far larger lapses than the fitted uniform lapse, so high-coherence
 errors come from the decision process (probably sv); to check in the fit-quality plots. Still to run: fast_only with
 guess_bias fixed at 0.5 (rule 3), on the chosen common model. Analysis log, section 5.5.
+**Status (2026-10-22): ready to submit** (`--fixed_guess_bias`, analysis log 8.4c): L0U0V1Z0G1 fast_only with the
+bias free and fixed, 5 CV folds + all + control (70 jobs each).
 
 ## Step 3. Fix the common model
 
@@ -145,6 +147,9 @@ guess_bias fixed at 0.5 (rule 3), on the chosen common model. Analysis log, sect
    pattern, the test would be partly built in. Re-run the comparison for the top models with cross-validation within
    control trials only (control-only CV split; ~6 models × 10 mice × 5 folds = 300 jobs) and confirm the same
    mechanisms are selected.
+   **Status (2026-10-22): ready to submit.** New splits `ccv0`–`ccv4` (CV within control trials) in
+   `fit_mouse_ddm.py`; strict model, minus sv, minus guesses, plus leak, plus urgency, plus both (300 jobs, analysis log
+   8.4c). No warm starts exist for these splits, so nested pairs are checked before comparing.
 
 **Decision:** one model for all mice, so parameters and pulse predictions are comparable across mice and rigs.
 
@@ -163,6 +168,11 @@ generating parameters vs at the recovered ones (optimizer check).
 **Decision:** for each mechanism and mouse, whether "present" and "absent" are distinguishable. Mechanisms that are not
 recoverable are reported as a family ("late-trial mechanisms") rather than individually, and their parameters are not
 interpreted for the small mice.
+
+**Status (2026-10-22): script updated, not yet run.** `COMMON = "L0U0V1Z0G1"`, fast-only guesses; generators and
+candidates are the common model, minus sv, minus guesses, plus leak, plus urgency (500 jobs). The two added models
+test whether the comparison would have detected leak or urgency where present, i.e. "absent" vs "undetectable" in the
+smaller mice. Needs the all-trial generator fits (analysis log 8.4c, batch 3) and the guess-bias decision first.
 
 ## Step 5. Precise final fits
 

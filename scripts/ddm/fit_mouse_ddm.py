@@ -83,7 +83,7 @@ SIGNED_LEAK_BOUNDS = (-1.0, 5.0)
 VARIANTS = ["".join(f"{f}{int(on)}" for f, on in zip(OPTIONAL_FREE_PARAMS, flags)) for flags in itertools.product([0, 1], repeat=len(OPTIONAL_FREE_PARAMS))]
 
 
-def make_params(variant: str, guess_model: str = "single", time_varying_gain: bool = False, signed_leak: bool = False):
+def make_params(variant: str, guess_model: str = "single", time_varying_gain: bool = False, signed_leak: bool = False, fixed_guess_bias: bool = False):
     free, fixed = dict(BASE_FREE_PARAMS), dict(FIXED_PARAMS)
     if time_varying_gain:
         free[GAIN_DECAY[0]] = FreeParam(*GAIN_DECAY[1])
@@ -96,7 +96,7 @@ def make_params(variant: str, guess_model: str = "single", time_varying_gain: bo
         for name, bounds, off_value in specs:
             if name == "leak_rate" and signed_leak:
                 bounds = SIGNED_LEAK_BOUNDS
-            if flags[factor]:
+            if flags[factor] and not (name == "guess_bias" and fixed_guess_bias):
                 free[name] = FreeParam(*bounds)
             else:
                 fixed[name] = FixedParam(off_value)
@@ -158,6 +158,9 @@ def heldout_nll(model: MouseDDM, params: dict, data: dict, stimulus: np.ndarray,
 
 
 ALL_SPLITS = [f"cv{k}" for k in range(N_FOLDS)] + ["all", "control"]
+# Cross-validation within control trials only (plan step 3.3: does the model choice depend on pulse trials?).
+# Not in ALL_SPLITS, so the default grid and its job ids are unchanged; request with --splits ccv0 ... ccv4.
+CONTROL_CV_SPLITS = [f"ccv{k}" for k in range(N_FOLDS)]
 
 
 def build_grid(inputs: dict, variants: list[str] | None = None, splits: list[str] | None = None) -> list[dict]:
@@ -196,7 +199,7 @@ def output_path(out_dir: Path, job: dict) -> Path:
     return out_dir / f"{job['mouse']}_{job['variant']}_{job['split']}.pkl"
 
 
-def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations: int, guess_model: str = "single", warm_dirs: list[Path] | None = None, time_varying_gain: bool = False, signed_leak: bool = False) -> dict:
+def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations: int, guess_model: str = "single", warm_dirs: list[Path] | None = None, time_varying_gain: bool = False, signed_leak: bool = False, fixed_guess_bias: bool = False) -> dict:
     mouse_rows = np.flatnonzero(inputs["subject_id"] == job["mouse"])
     is_control = inputs["sched_pulse_type"][mouse_rows] == 0
     split = job["split"]
@@ -207,10 +210,14 @@ def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations:
         train, test = mouse_rows, None
     elif split == "control":
         train, test = mouse_rows[is_control], mouse_rows[~is_control]
+    elif split.startswith("ccv"):
+        control_rows = mouse_rows[is_control]
+        folds = cv_folds(inputs["condition"][control_rows], N_FOLDS)
+        train, test = control_rows[folds != int(split[3:])], control_rows[folds == int(split[3:])]
     else:
         raise ValueError(f"unknown split {split}")
 
-    free, fixed = make_params(job["variant"], guess_model, time_varying_gain, signed_leak)
+    free, fixed = make_params(job["variant"], guess_model, time_varying_gain, signed_leak, fixed_guess_bias)
     rigs = np.unique(inputs["data_source"][mouse_rows])
     assert len(rigs) == 1, f"{job['mouse']} has trials from {rigs}"
     min_rt = MIN_RT[rigs[0]]
@@ -237,6 +244,7 @@ def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations:
         "guess_model": guess_model,
         "time_varying_gain": time_varying_gain,
         "signed_leak": signed_leak,
+        "fixed_guess_bias": fixed_guess_bias,
         "warm_start_seeds": seeds_used,
         "censor_at": CENSOR_AT,
         "min_rt": min_rt,
@@ -272,16 +280,17 @@ if __name__ == "__main__":
     parser.add_argument("--list", action="store_true")
     parser.add_argument("--force", action="store_true", help="refit even if the output exists")
     parser.add_argument("--variants", nargs="*", help="restrict the grid to these variants")
-    parser.add_argument("--splits", nargs="*", help="restrict the grid to these splits")
+    parser.add_argument("--splits", nargs="*", help="restrict the grid to these splits (default: cv0-cv4, all, control; also ccv0-ccv4, CV within control trials)")
     parser.add_argument("--job_file", help="text file of grid job ids (one per line, in the full or restricted grid); --job_id then indexes this list")
     parser.add_argument("--guess_model", default="single", choices=list(GUESS_MODELS), help="form of the guess factor G (plan step 2)")
     parser.add_argument("--warm_start_from", nargs="*", default=[], help="fit folders (relative to processed) whose fits of this variant and its nested variants seed the optimizer")
     parser.add_argument("--time_varying_gain", action="store_true", help="add a free gain_decay: evidence weight drift_gain * exp(-gain_decay * t) (plan step 6.5)")
     parser.add_argument("--signed_leak", action="store_true", help="allow leak_rate down to -1/s (self-exciting accumulator) in variants with leak (plan step 6.5)")
+    parser.add_argument("--fixed_guess_bias", action="store_true", help="fix guess_bias at 0.5 (guesses at chance; parsimony rule 3)")
     args = parser.parse_args()
 
     processed = Path(dir_config.data.processed)
-    args.out_dir = args.out_dir or (("ddm/fits_guess" if args.guess_model == "single" else f"ddm/fits_guess_{args.guess_model}") + ("_W" if args.time_varying_gain else "") + ("_NL" if args.signed_leak else ""))
+    args.out_dir = args.out_dir or (("ddm/fits_guess" if args.guess_model == "single" else f"ddm/fits_guess_{args.guess_model}") + ("_W" if args.time_varying_gain else "") + ("_NL" if args.signed_leak else "") + ("_FB" if args.fixed_guess_bias else ""))
     inputs = load_inputs(processed / args.inputs)
     grid = build_grid(inputs, args.variants, args.splits)
     job_ids = [int(x) for x in Path(args.job_file).read_text().split()] if args.job_file else None
@@ -302,4 +311,4 @@ if __name__ == "__main__":
             logger.info("skipping %s: output exists (use --force to refit)", job)
         else:
             logger.info("job %s: %s", args.job_id, job)
-            run_job(inputs, job, processed / args.out_dir, args.n_reps, args.max_iterations, args.guess_model, [processed / d for d in args.warm_start_from], args.time_varying_gain, args.signed_leak)
+            run_job(inputs, job, processed / args.out_dir, args.n_reps, args.max_iterations, args.guess_model, [processed / d for d in args.warm_start_from], args.time_varying_gain, args.signed_leak, args.fixed_guess_bias)

@@ -1,11 +1,11 @@
-"""Compare the guess-component forms of one variant (plan step 2): single (fit_mouse_ddm default), fast_only and
-guess_lapse, plus the same variant without guesses.
+"""Compare the guess-component forms of one variant (plan step 2): single (fit_mouse_ddm default), fast_only,
+guess_lapse and fast_only with guess_bias fixed at 0.5, plus the same variant without guesses.
 
 Reports per mouse the CV-summed held-out NLL relative to the single form, BIC on all trials, the fitted guess/lapse
 parameters, and the lapse implied by the psychometric asymptote (2 x (1 - accuracy) at 100% coherence on control
 trials, all RTs and RT >= 0.6 s), the independent check of the fitted lapse rate.
 
-Usage: python -m scripts.ddm.compare_guess_forms [--variant L1U1V1Z0G1]
+Usage: python -m scripts.ddm.compare_guess_forms [--variant L0U0V1Z0G1]
 """
 
 import argparse
@@ -19,7 +19,8 @@ import pandas as pd
 from config import dir_config
 from scripts.ddm.compare_models import load
 
-FORMS = {"single": "ddm/fits_guess", "fast_only": "ddm/fits_guess_fast_only", "guess_lapse": "ddm/fits_guess_guess_lapse"}
+FORMS = {"single": "ddm/fits_guess", "fast_only": "ddm/fits_guess_fast_only", "guess_lapse": "ddm/fits_guess_guess_lapse",
+         "fast_only_FB": "ddm/fits_guess_fast_only_FB"}  # FB: guess_bias fixed at 0.5 (parsimony rule 3); forms without fits are skipped
 SHOWN = ["p_guess", "guess_bias", "guess_tau", "p_lapse", "drift_gain", "a"]
 
 
@@ -56,7 +57,7 @@ def main(processed: Path, variant: str):
     print("\n2. BIC on all trials, relative to the single form:")
     print(b.sub(b["single"], axis=0).round(1).to_string())
     print("\n3. parameters (all-trial fits):")
-    for form in FORMS:
+    for form in a.form.unique():
         print(f"-- {form}\n{a[a.form == form].set_index('mouse')[SHOWN].sort_index().round(3).to_string()}")
     print("\n4. lapse implied by the psychometric asymptote (control trials, 100% coherence):")
     print(psychometric_lapse(processed / "ddm/ddm_inputs_global.npz").round(3).to_string())
@@ -64,6 +65,6 @@ def main(processed: Path, variant: str):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--variant", default="L1U1V1Z0G1")
+    parser.add_argument("--variant", default="L0U0V1Z0G1")
     args = parser.parse_args()
     main(Path(dir_config.data.processed), args.variant)
