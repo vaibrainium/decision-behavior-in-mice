@@ -29,6 +29,7 @@ dependencies = [
     "ipywidgets>=8.1.5",
     "msgpack>=1.1.0",
     "numpy>=1.26.4",
+    "pymc>=5.25,<6",
 ]
 
 [build-system]
