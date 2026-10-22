@@ -319,6 +319,44 @@ folds. Output: `ddm/mc_noise/`, `mc_noise_summary.csv`, `mc_noise_per_mouse.csv`
   |coh| ≥ 36%: 1.33–1.55 s vs 0.86–1.36 s in UW), make fewer fast responses (< 0.6 s: 5–11% vs 14–34%) and PSUIM5/6
   miss more trials (22%). PSUIM7 is UW-like in RT. Figure: `dissemination/figures/leak_urgency_diagnosis_20261022.png`.
 
+### 5.7 Primacy pipeline and its power (2026-10-22; next-steps step 6)
+
+**Code** (validated on synthetic data only; no recorded pulse-trial outcome read):
+- `scripts/ddm/primacy.py`: per-mouse pulse-trial predictions with and without the pulse; the no-pulse input is
+  coherence × onset response + N, equal to S + N on control trials to 1.2e-7. Also gates (§7), PyMC GLMMs (§6:
+  primary, UW late, trend, rig interaction), RT residuals. `--analyze` refuses real data without `--unblind`, and the
+  timing tests are skipped when the gate fails.
+- `scripts/ddm/primacy_sensitivity.py`: §9, synthetic datasets with the drift gain decaying 0/10/20/40% over 0.5 s;
+  control-only refit per dataset (Hyak) or `--no_refit`.
+- `scripts/ddm/check_primacy_pipeline.py`: synthetic end-to-end check.
+- PyMC 5.25.1 added (`aae7fe2`; numpy 1.26 kept).
+
+**Checks:**
+- Predictions are reproducible.
+- 150 simulated repetitions vs 150 independent synthetic datasets (DBM14): RT quantiles agree within 1.6 SE, and
+  94–98% fall inside the 95% range.
+- Gate 1 passes on null data.
+- Gates 2–3 need a pass rule, which the plan does not give: `GATE_MIN_INSIDE = 0.8` is PROPOSED, to be confirmed
+  before unblinding.
+
+**Power finding.** A ±100% pulse of 50–67 ms carries 0.05 (UCLA) / 0.08 (UW) coherence·s of evidence, i.e. ~5–8%
+coherence for 1 s. With the strict model's control fits (single-form params; final fast-only fits pending), the
+predicted pulse effect at |coh| ≤ 36% is ~0.025 logit, about 0.6 percentage points (DBM14 0.025 / 0.023 / 0.028
+early / middle / late; PSUIM10 0.026 / 0.032).
+- **Primacy can at most remove that effect.** Even a 95% decay of the drift gain over 0.5 s changes the expected
+  β_middle by only ~0.02–0.04.
+- **The test cannot resolve that.** The GLMM's SE on β_middle is ~0.05–0.07 with all mice (SUSPECTED, scaled from
+  trial counts), so under the fitted model the confirmatory test has essentially no power for any amount of primacy.
+- **When it becomes informative:** only if mice react to pulses much more than the model predicts. That is what
+  gate 1 (pooled pulse effect, timing-agnostic) checks; it was deliberately not looked at.
+
+Options for the authors (decision pending):
+1. Proceed as locked. The sensitivity analysis documents the limit ("primacy undetectable at this pulse strength").
+2. Run gate 1 once the final fits exist (planned, timing-agnostic). If the observed pulse effect is much larger
+   than predicted, the model underweights pulses and is revised before any timing test.
+3. Write an amendment before unblinding that changes the outcome, e.g. pulse effects on RT or a different contrast.
+   Any power gain must be shown by the sensitivity simulation first.
+
 ---
 
 ## 6. Things that did not work, and why
@@ -508,6 +546,16 @@ python -m scripts.ddm.compare_models --fits_dir ddm/fits_guess ddm/fits_guess_wa
 python -m scripts.ddm.compare_models --fits_dir ddm/archive/fits_no_guess   # generation 2
 ```
 Fit-quality plots: `notebooks/3.0-ddm-fit-quality.ipynb` (set `MODEL` and `FITS`).
+
+### 8.5b Primacy pipeline (synthetic checks; real analysis after step 5 only)
+```bash
+python -m scripts.ddm.check_primacy_pipeline --datasets 1 --levels 0 0.4 0.95   # CPU, ~30 min
+python -m scripts.ddm.primacy --list                                               # 20 prediction jobs (2 baselines x 10 mice)
+python -m scripts.ddm.primacy_sensitivity --list                                   # 800 jobs (4 levels x 20 datasets x 10 mice)
+# after the final control-only fits (step 5):
+#   sbatch --array=0-19 --export=ALL,MODULE=scripts.ddm.primacy,EXTRA_ARGS="--predict --fits_dir <final>" scripts/slurm/fit_mouse_ddm.slurm
+#   python -m scripts.ddm.primacy --analyze --baseline primary --unblind
+```
 
 ### 8.6 Model recovery (submitted with 8.4c, 2026-10-22)
 Generators and candidates: L0U0V1Z0G1, minus sv, minus guesses, plus leak, plus urgency (fast-only guesses, guess_bias

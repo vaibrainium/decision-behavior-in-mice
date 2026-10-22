@@ -242,6 +242,11 @@ No new mice needed: simulate each mouse's real trials from its fitted model with
 and find the smallest decay detected reliably. A null result is then reported as "primacy larger than X is unlikely".
 Reuses the model-recovery machinery.
 
+**Status (2026-10-22): code ready and checked on synthetic data** (`primacy.py`, `primacy_sensitivity.py`; analysis
+log 5.7). **Power problem:** under the fitted model a pulse moves choices by ~0.025 logit. Even full primacy changes
+β_middle by ≤ 0.04, below the test's resolution (~0.1–0.15). Decision pending on how to proceed (analysis log 5.7,
+options 1–3).
+
 **Benefit:** a direct, model-based answer to whether mice weight early evidence more, which the noise-based kernels
 cannot give (the stimulus noise is fixed within a trial), with the rig confound, the baseline's own temporal weighting
 and model misfit on pulse trials handled explicitly.
