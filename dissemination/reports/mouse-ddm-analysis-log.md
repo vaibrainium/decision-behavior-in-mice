@@ -524,6 +524,9 @@ done
 ```
 First attempt (2026-10-22, jobs 42133650/82/83) was void: `git pull` on Hyak failed (stale VS Code credential socket),
 and fish syntax in bash left `$W` empty; cancelled.
+Submitted 2026-10-22: batch 1 `42134053` (J1), 2 `42134144`, 3a `42134145`, 3b `42134055` (J3b), 4 `42134146`;
+recovery `42134164` (offset 0) and `42134165` (offset 250), `afterany` on J1 and J3b. A second void attempt
+(`42134111`–`42134113`) was cancelled before starting.
 
 ---
 
