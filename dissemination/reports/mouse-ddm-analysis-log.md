@@ -570,6 +570,15 @@ env EXTRA_ARGS="$D --fixed_guess_bias --warm_start_from ddm/fits_guess_fast_only
 env EXTRA_ARGS="--predict --baselines extrema --fits_dir ddm/fits_guess_fast_only_leak20-200" sbatch --array=0-9 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.primacy --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm   # add _FB / --fixed_guess_bias if bias is fixed
 ```
 
+Amendment 5 (2026-10-23): item 5 uses the pulse-specific log-likelihood gain with a paired per-trial SD
+(`primacy.py --strategy_test --unblind`, after gate 1 only); null calibration
+`python -m scripts.ddm.check_strategy_test --null_only --datasets 150` (z SD 1.01 / 0.97, 0/150 beyond 3). If E's
+drift_gain binds at 20 (within 1% in any all-control fit, or in > 10% of ccv fits), refit E for all mice and splits:
+```bash
+env EXTRA_ARGS="$E --drift_gain_max 200 --warm_start_from ddm/fits_guess_fast_only_leak20-200" sbatch --array=0-59 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm   # -> ..._leak20-200_gain200
+```
+(and the same with `--fixed_guess_bias` and the `_FB` folders); predictions then take `--drift_gain_max 200`.
+
 ### 8.5 Analysis
 ```bash
 python -m scripts.ddm.compare_models                                  # generation 3

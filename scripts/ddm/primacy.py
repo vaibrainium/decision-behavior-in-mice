@@ -88,7 +88,7 @@ def make_model(variant: str, rig: str, fixed_guess_bias: bool = False, time_vary
     return MouseDDM(free_params=free, fixed_params=fixed, device=DEVICE, likelihood_params=LIKELIHOOD_PARAMS, censor_at=CENSOR_AT, min_rt=MIN_RT[rig])
 
 
-def load_fit(fits_dir: Path, mouse: str, variant: str, split: str, fixed_guess_bias: bool, leak_bounds: tuple[float, float] | None = None) -> dict:
+def load_fit(fits_dir: Path, mouse: str, variant: str, split: str, fixed_guess_bias: bool, leak_bounds: tuple[float, float] | None = None, drift_gain_max: float | None = None) -> dict:
     """A fit whose guess form (and leak range) matches; refuses silently mismatched fits (as model_recovery does)."""
     path = fits_dir / f"{mouse}_{variant}_{split}.pkl"
     with open(path, "rb") as f:
@@ -99,6 +99,8 @@ def load_fit(fits_dir: Path, mouse: str, variant: str, split: str, fixed_guess_b
     fit_bounds = r.get("leak_bounds")
     if (tuple(fit_bounds) if fit_bounds else None) != (tuple(leak_bounds) if leak_bounds else None):
         raise ValueError(f"{path} has leak bounds {fit_bounds}, expected {leak_bounds}")
+    if r.get("drift_gain_max") != drift_gain_max:
+        raise ValueError(f"{path} has drift_gain_max {r.get('drift_gain_max')}, expected {drift_gain_max}")
     return r
 
 
@@ -290,6 +292,49 @@ def run_analysis(preds: dict, tables: dict, max_abs_coh: float | None = MAX_ABS_
     return res
 
 
+# ---------------------------------------------------------------- strategy test (amendments 4-5)
+
+STRATEGY_SD_THRESHOLD = 3.0  # amendment 4, item 5
+STRATEGY_MIN_MICE = 6  # of 10, same sign as the summed difference
+
+
+def trial_loglik(y: np.ndarray, p: np.ndarray) -> np.ndarray:
+    """Per-trial Bernoulli log-likelihood of the observed choice."""
+    return y * np.log(p) + (1 - y) * np.log(1 - p)
+
+
+def strategy_test(tables_a: dict, tables_b: dict, max_abs_coh: float | None = MAX_ABS_COH) -> dict:
+    """Model a vs model b on the same pulse trials (amendment 5). Primary statistic, per trial: the log-likelihood
+    gained by each model's predicted pulse effect, g = ll(p_hat) - ll(p_hat without the pulse), and the paired
+    difference g_a - g_b, summed over trials and mice. Secondary: the paired difference of total log-likelihood
+    ll_a - ll_b. Each comes with its SD from the paired per-trial differences (variance across trials x n, summed over
+    mice; a Vuong-type SD). Each trial's prediction noise is part of that spread, so it is not added again (adding it
+    double-counts and, for the pulse gain, ignores that the with- and without-pulse predictions share random numbers).
+    Model a (b) is favoured if the sum exceeds STRATEGY_SD_THRESHOLD SDs in its favour
+    and the per-mouse sums have that sign in >= STRATEGY_MIN_MICE mice; otherwise "not distinguished"."""
+    per_mouse = []
+    for mouse in sorted(tables_a):
+        a, b = tables_a[mouse], tables_b[mouse]
+        assert (a.row.to_numpy() == b.row.to_numpy()).all(), f"{mouse}: models predicted different trials"
+        keep = a.responded.to_numpy() & ((a.coh.abs() <= max_abs_coh + 1e-9) if max_abs_coh is not None else True)
+        y = a.y.to_numpy()[keep]
+        out = {"mouse": mouse, "n": int(keep.sum())}
+        lla, ll0a = trial_loglik(y, a.p_hat.to_numpy()[keep]), trial_loglik(y, a.nopulse_p_hat.to_numpy()[keep])
+        llb, ll0b = trial_loglik(y, b.p_hat.to_numpy()[keep]), trial_loglik(y, b.nopulse_p_hat.to_numpy()[keep])
+        for stat, d in [("pulse_gain", (lla - ll0a) - (llb - ll0b)), ("total", lla - llb)]:
+            out[f"{stat}_sum"] = float(d.sum())
+            out[f"{stat}_var"] = float(d.var(ddof=1) * len(d)) if len(d) > 1 else 0.0
+        per_mouse.append(out)
+    pm = pd.DataFrame(per_mouse).set_index("mouse")
+    res = {"per_mouse": pm}
+    for stat in ["pulse_gain", "total"]:
+        total, sd = pm[f"{stat}_sum"].sum(), np.sqrt(pm[f"{stat}_var"].sum())
+        same_sign = int((np.sign(pm[f"{stat}_sum"]) == np.sign(total)).sum())
+        favoured = ("a" if total > 0 else "b") if abs(total) > STRATEGY_SD_THRESHOLD * sd and same_sign >= STRATEGY_MIN_MICE else "not distinguished"
+        res[stat] = {"sum": float(total), "sd": float(sd), "z": float(total / sd) if sd > 0 else np.nan, "mice_same_sign": same_sign, "favoured": favoured}
+    return res
+
+
 # ---------------------------------------------------------------- CLI
 
 def build_grid(inputs: dict, baselines: list[str] | None = None) -> list[dict]:
@@ -314,6 +359,8 @@ if __name__ == "__main__":
     parser.add_argument("--baselines", nargs="*", choices=list(MODELS), help="models in the prediction grid (default: primary, secondary; extrema needs its own --fits_dir)")
     parser.add_argument("--all_coherences", action="store_true", help="robustness: no |coherence| limit")
     parser.add_argument("--unblind", action="store_true", help="compare with the recorded pulse-trial choices (after plan step 5 only)")
+    parser.add_argument("--drift_gain_max", type=float, help="extrema model fitted with a wider drift_gain bound (amendment 5)")
+    parser.add_argument("--strategy_test", action="store_true", help="amendment 4 item 5 / amendment 5: extrema vs primary baseline (after gate 1, with --unblind)")
     args = parser.parse_args()
 
     processed = Path(dir_config.data.processed)
@@ -330,7 +377,8 @@ if __name__ == "__main__":
         else:
             variant = MODELS[job["baseline"]]
             leak_bounds = LEAK_BOUNDS.get(job["baseline"])
-            fit = load_fit(processed / args.fits_dir, job["mouse"], variant, "control", args.fixed_guess_bias, leak_bounds)
+            gain_max = args.drift_gain_max if job["baseline"] in STRATEGY_MODELS else None
+            fit = load_fit(processed / args.fits_dir, job["mouse"], variant, "control", args.fixed_guess_bias, leak_bounds, gain_max)
             t0 = time.time()
             pred = predict_mouse(inputs, job["mouse"], fit["parameters"], variant, args.n_reps, args.seed, args.fixed_guess_bias, leak_bounds)
             pred.update(fit_path=str(processed / args.fits_dir), fixed_guess_bias=args.fixed_guess_bias, seconds=time.time() - t0)
@@ -340,6 +388,22 @@ if __name__ == "__main__":
                 pickle.dump(pred, f)
             tmp.replace(out)
             logger.info("saved %s (%d pulse trials, %.0f s)", out, len(pred["trials"]), pred["seconds"])
+    elif args.strategy_test:
+        if not args.unblind:
+            raise SystemExit("refusing to compare with recorded pulse-trial choices without --unblind (after gate 1 only)")
+        tables = {}
+        for model in ["extrema", "primary"]:
+            tables[model] = {}
+            for p in sorted((processed / args.out_dir / model).glob("*.pkl")):
+                with open(p, "rb") as f:
+                    pr = pickle.load(f)
+                tables[model][p.stem] = attach_observed(pr, inputs["rt"][pr["trials"].row], inputs["choice"][pr["trials"].row])
+        res = strategy_test(tables["extrema"], tables["primary"])
+        out = processed / args.out_dir / "results_strategy.pkl"
+        with open(out, "wb") as f:
+            pickle.dump(res, f)
+        print(res["per_mouse"].round(2).to_string())
+        print({k: res[k] for k in ("pulse_gain", "total")}, "(a = extrema, b = primary)")
     elif args.analyze:
         if not args.unblind:
             raise SystemExit("refusing to compare with recorded pulse-trial choices without --unblind (plan step 5 must be done)")

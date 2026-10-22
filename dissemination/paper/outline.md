@@ -48,8 +48,8 @@ on gate 1.
    functions and accuracy that rises with RT are also produced by strategies that don't integrate, notably extrema
    detection. We test it two ways: (i) on control trials, the strict integrator vs an extrema-detection model (same
    model with a 5–50 ms time constant); (ii) on pulse trials, out of sample: which model's frozen predictions explain
-   the observed pulse effects. The pulses are what make (ii) possible: the two strategies predict very different
-   effects of a brief strong pulse. *(PENDING; primacy plan amendment 4, adopted 2026-10-23)*
+   the observed pulse effects. The pulses are what make (ii) possible: the two strategies are expected to predict
+   different effects of a brief strong pulse (SUSPECTED until E's predictions are computed, amendment 4 item 4). *(PENDING; primacy plan amendment 4, adopted 2026-10-23)*
 6. Pulses: does a brief strong pulse move choices as much as its motion energy predicts, and does its effect depend on
    timing beyond what the model predicts? *(PENDING; Fig 5)*
 

@@ -30,6 +30,8 @@ DDM model selection for the mouse pulse task (next-steps plan steps 1–3) and s
 - Screen geometry not corrected in ME (ME methods §3.7).
 
 ## Decisions
+- 2026-10-23: primacy plan amendment 5 (strategy test: pulse-specific statistic, paired sampling SD; E's
+  drift_gain refit rule; implementation-note corrections); null calibration done.
 - 2026-10-23: primacy plan amendment 4 adopted (integration vs extrema detection; leak 20–200 /s; 3 SD and 6/10 mice);
   gate 1 waits for its fits and frozen predictions (plans/2026-10-23-amendment-4-extrema.md).
 - 2026-10-22: primacy power issue: run the predictive check (gate 1) first; gates 2–3 rule ≥ 80% inside

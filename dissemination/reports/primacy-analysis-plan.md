@@ -253,3 +253,46 @@ out of sample. Without this amendment a failed gate would show only that the int
 
 **Unchanged:** sections 1–11 and amendments 1–3. Gate 1 and the primary test are as before; this amendment adds a
 comparison, and gate 1 waits until items 3–4 are done.
+
+---
+
+## Amendment 5 (2026-10-23, before any pulse residuals were examined): the strategy test statistic and E's gain bound
+
+**Context:** a review of amendment 4 before any extrema-detection (E) fit or prediction existed. Gate 1 has not been
+run; no `ddm/primacy` output exists; no recorded pulse-trial outcome has been read.
+
+**Changes to amendment 4:**
+1. **Item 5, the statistic is pulse-specific.** For each responded pulse trial in the section 4 set and each model,
+   the per-trial log-likelihood of the observed choice under the model's frozen prediction with the pulse (p̂) and
+   without it (p̂ for the same trial with the pulse removed, as in gate 1). The **primary statistic** is the paired
+   difference in the log-likelihood each model's predicted pulse effect gains, [ll(p̂_E) − ll(p̂0_E)] − [ll(p̂_C) −
+   ll(p̂0_C)], summed over trials and mice. It isolates the pulse effect from how well each model predicts choices in
+   general (already compared in item 3). **Secondary:** the paired difference of total log-likelihood, ll(p̂_E) −
+   ll(p̂_C), as in amendment 4.
+2. **Item 5, the SD is the sampling SD.** The SD of each sum is the paired per-trial SD (variance of the per-trial
+   differences across trials × number of trials, summed over mice; a Vuong-type SD). It replaces "the Monte Carlo SD
+   from the prediction repetitions", which measured only simulation noise and is far smaller than trial-sampling
+   variability, so almost any difference would have passed. Each trial's prediction noise is part of the per-trial
+   spread and is not added separately. Thresholds unchanged: a model is favoured if the sum exceeds 3 SDs in its
+   favour and the per-mouse sums have that sign in at least 6 of 10 mice; otherwise "not distinguished".
+   Calibration (synthetic, 3 mice, a model against itself with independent predictions, 150 datasets): z SD 1.01
+   (pulse gain) and 0.97 (total); 0/150 beyond 3 SD (`primacy.strategy_test`; check in the analysis log 8.4d).
+3. **E's drift-gain bound.** With leak λ, E's steady-state signal is drift_gain × motion energy / λ, so the common
+   model's upper bound drift_gain ≤ 20 can cap E's signal-to-noise and make E lose by construction. Rule, decided
+   now from E's control-trial fits only: if drift_gain is within 1% of 20 in any mouse's all-control fit, or in more
+   than 10% of its control-only CV fits, E is refitted for all mice and splits with drift_gain ≤ 200
+   (`fit_mouse_ddm.py --drift_gain_max 200`), and the refits are used for items 3–5. Both are reported.
+4. **Power of item 5 before unblinding.** Once E is fitted, simulate pulse-trial datasets from each mouse's E fit and
+   from its common-model fit (≥ 20 each) and run item 5 on them. Report how often it favours the generating model.
+   If it rarely does, item 5 is reported as underpowered, whatever its outcome.
+
+**Corrections to amendment 4's implementation note:**
+- The decision threshold at leak 200/s is at least ~3 SD of the stationary noise only for an unbiased start (z = 0.5).
+  At z = 0.2 the nearer bound is ~1.1 SD away.
+- The simulator applies leak as e[t] = (1 − λ·dt) e[t−1] + …, dt = 1 ms. At λ = 200/s the equivalent continuous rate
+  is ~223/s and the stationary variance ~11% higher (≤ 1% at 20/s). Fitted leak rates and the descriptive time
+  constants (item 2) are reported on the model's discrete-time scale, with this caveat.
+
+**Unchanged:** amendment 4's items 1–4 and 6, its thresholds, and the order (E fits and frozen predictions before
+gate 1).
+
