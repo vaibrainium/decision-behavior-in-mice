@@ -587,7 +587,8 @@ recovery `42134164` (offset 0) and `42134165` (offset 250), `afterany` on J1 and
 (`42134111`–`42134113`) was cancelled before starting.
 Batches 1 and 3b (`42134053`, `42134055`) ran with `$W` empty (fits defaulted to `ddm/fits_guess`, all skipped as
 existing), so 400 recovery tasks stopped at the guess-form guard; only the 100 with the no-guess generator ran
-(valid). Batches 2, 3a and 4 are correct. Resubmission of 1, 3b and recovery (`afterok`) pending.
+(valid). Batches 2, 3a and 4 are correct. Resubmitted 2026-10-23 with `$W` checked: batch 1 `42157145`, 3b `42157146`,
+recovery `42157147` / `42157148` (`afterok` on both; the 100 finished recovery tasks are skipped).
 
 ---
 
