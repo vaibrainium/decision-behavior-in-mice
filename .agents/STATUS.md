@@ -2,16 +2,16 @@
 Last updated: 2026-10-23 by Claude Opus 5.5 (pulse follow-up coordinator)
 
 ## Current focus
-Exploratory pulse follow-up (run 20261023T191030Z_fa8de8b): A-E and G1 complete and cross-checked; behavioural
-Results draft in dissemination/paper/pulse_followup_results_2026-10-23.md. Awaiting the user's F1 decision (tau_p
-pilot vs stop modelling) and the decision on a versioned corrected DDM input.
+Exploratory pulse follow-up (run 20261023T191030Z_fa8de8b): A-E, G1, corrected inputs v2 and the F3 tau_p pilot done.
+Pilot FAILED its frozen criteria -> scientific stop on modelling (G2-G5 not run). Next: independent check of the pilot
+(Worker 3), then finalize the behavioural Results draft (dissemination/paper/pulse_followup_results_2026-10-23.md).
 
 ## Previous focus
 Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gate failures and predates adoption of amendment 6. Newer draft: manuscript_2026-10-23.md. Timing tests remain withheld after both revised gates failed.
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
-- plans/2026-10-23-pulse-followup-parallel.md : A-E, G1 done; H draft written; next: user decision on F1 (tau_p pilot or stop) and corrected input v2; original primacy procedure remains closed
+- plans/2026-10-23-pulse-followup-parallel.md : A-E, G1, F3 pilot done (FAIL -> modelling stopped); next: H2 check of pilot, H4 finalize; original primacy procedure remains closed
 - plans/2026-10-23-amendment-4-extrema.md : code done and checked; next: Hyak fits (commands in analysis log 8.4d)
 - plans/2026-10-22-primacy-analysis-code.md : done; next: predictive check (gate 1) first pass when 8.4c batch 1 lands
 - plans/2026-10-20-paper-writeup.md : prose/provenance, pulse research review and implementation handoff done; next: remaining author facts, figures and verification; new pulse analyses tracked in child plan
@@ -19,6 +19,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-10-23-pulse-tau-pilot-20261023T191030Z_fa8de8b.md : tau_p pilot FAIL (fit improves at 300 ms but gains stay 2.3x apart and late reversal persists); modelling stopped
 - reports/2026-10-23-pulse-diagnostics-20261023T191030Z_fa8de8b.md : existing model misplaces the pulse effect in time (early, then reverses; data delayed and sustained); choice-RT gain tradeoff demonstrated in 2 mice; proposes one tau_p candidate
 - reports/2026-10-23-pulse-validation-g1-20261023T191030Z_fa8de8b.md : t intervals adequate (coverage 0.93-0.975); power 0.64 at 6 pp; bootstrap undercovers
 - reports/2026-10-23-pulse-stimulus-20261023T191030Z_fa8de8b.md : no sign-aligned post-pulse stimulus bias except a one-dot rounding shift; UCLA pulse energy possibly x1.3-1.4 understated
@@ -61,6 +62,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - Screen geometry not corrected in ME (ME methods §3.7).
 
 ## Decisions
+- 2026-10-23: user chose the reduced tau_p pilot with corrected inputs v2; pilot failed its frozen criteria -> modelling stops within this plan (tau-pilot report).
 - 2026-10-23: pulse follow-up implementation authorized by the user (A–E + H behavioural package; recommendation before F/G; no jobs/installs). Contract v2 frozen from metadata and task code before any effect estimate (pulse-data report).
 - 2026-10-23: user requested a parallel implementation plan for the existing-data pulse follow-up. Draft saved in plans/2026-10-23-pulse-followup-parallel.md; this request did not launch analyses or authorize cluster submissions. Proposed new analyses remain exploratory and separate from the closed primacy protocol.
 - 2026-10-23: user requires existing data only for strengthening the pulse thesis contribution. Literature review and diagnostic recommendations completed; no new experimental collection or modelling decision adopted (pulse-thesis-research report).
