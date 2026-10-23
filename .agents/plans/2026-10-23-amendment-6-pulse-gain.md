@@ -18,13 +18,13 @@ reported, and then (only then) the timing test. Paper stays writable if the revi
 - The w_p fits are 1-D and cheap enough for Hyak (CRN at 50 reps; ~20 likelihood evaluations each).
 
 ## Steps
-- [ ] 1. Step 5 final fits on Hyak: L0U0V1Z0G1 and L1U1V1Z0G1, fast_only, bias free, split control, 50 reps (20 jobs).
-- [ ] 2. `scripts/ddm/fit_pulse_gain.py`: per (baseline, mouse, fold) fit w_p on the training pulse trials; out-of-fold
+- [ ] 1. (submitted: job 42183146) Step 5 final fits on Hyak: L0U0V1Z0G1 and L1U1V1Z0G1, fast_only, bias free, split control, 50 reps (20 jobs).
+- [x] 2. (code; run after step 1) `scripts/ddm/fit_pulse_gain.py`: per (baseline, mouse, fold) fit w_p on the training pulse trials; out-of-fold
       predictions (≥ 200 reps) in the `primacy.py` format, saved with the commit hash; all-trial w_p with a profile
       interval. Unit checks: w_p = 1 reproduces the current predictions; the folds cover each pulse trial once.
 - [ ] 3. Revised gate: `primacy.py --analyze --gate_only` on the out-of-fold predictions, plus descriptive calibration
       by coherence and mouse.
-- [ ] 4. Calibration and power (amendment 6 item 6): extend `primacy_sensitivity.py` to run the revised pipeline
+- [ ] 4. (code ready: `scripts/ddm/primacy_calibration.py`, a new script rather than an extension of `primacy_sensitivity.py`; run after step 3) Calibration and power (amendment 6 item 6): extend `primacy_sensitivity.py` to run the revised pipeline
       (w_p CV fit → predictions → gate → timing GLMM) on synthetic data at decay 0/10/20/40% (≥ 20 datasets each).
       Report gate-pass rate, false positives at 0, detection conditional on the gate and overall. Hyak.
 - [ ] 5. Timing test (only after step 4 is reported): `primacy.py --analyze --unblind` on the revised predictions.
@@ -35,3 +35,9 @@ Any further baseline revision for the primacy question (amendment 6 item 8); loc
 
 ## Log
 - 2026-10-23: plan written after amendment 6 was adopted with corrections.
+- 2026-10-23: step 1 submitted (42183146). fit_pulse_gain.py written: the gain enters as the simulator's two-channel
+  noise_weight (arrays fixed, so the GPU input cache stays valid). Checks: w = 1 reproduces the original predictions
+  exactly; w = 0 removes the pulse exactly; each pulse trial predicted once. Gain likelihood profile at 50 reps (15-rep
+  control fits, PSUIM10 and DBM14): flat within ~3 NLL for w = 0-7, steep above 10; minimum 3-7 depending on the seed,
+  so the gain is only loosely constrained in small mice. primacy_calibration.py written (800 jobs; control fits held
+  fixed, a stated caveat); smoke-tested end to end at reduced repetitions.

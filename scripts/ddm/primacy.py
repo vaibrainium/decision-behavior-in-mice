@@ -83,6 +83,16 @@ def stimuli(inputs: dict, rows: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
     return to_ms(inputs["signal"][rows] + inputs["noise"][rows], fr), to_ms(no_pulse_frames(inputs, rows).astype(np.float32), fr)
 
 
+def gain_stimuli(inputs: dict, rows: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+    """1 ms (no-pulse input, pulse component) for the pulse-gain model (amendment 6). Passed to the simulator as a
+    two-channel stimulus, whose drift input is channel 1 + noise_weight x channel 2, so the gain is the parameter
+    noise_weight and the arrays stay fixed while it varies (the GPU backend caches inputs by array address)."""
+    fr = int(inputs["frame_rate"])
+    without = no_pulse_frames(inputs, rows)
+    pulse = (inputs["signal"][rows] + inputs["noise"][rows]) - without
+    return to_ms(without.astype(np.float32), fr), to_ms(pulse.astype(np.float32), fr)
+
+
 def make_model(variant: str, rig: str, fixed_guess_bias: bool = False, time_varying_gain: bool = False, leak_bounds: tuple[float, float] | None = None) -> MouseDDM:
     free, fixed = make_params(variant, GUESS_MODEL, time_varying_gain=time_varying_gain, fixed_guess_bias=fixed_guess_bias, leak_bounds=leak_bounds)
     return MouseDDM(free_params=free, fixed_params=fixed, device=DEVICE, likelihood_params=LIKELIHOOD_PARAMS, censor_at=CENSOR_AT, min_rt=MIN_RT[rig])
@@ -139,12 +149,18 @@ def per_rep_summary(sim: pd.DataFrame) -> dict:
     return {"rt_quantiles": np.array(q), "censored_fraction": np.array(cens)}
 
 
-def predict_mouse(inputs: dict, mouse: str, params: dict, variant: str, n_reps: int, seed: int, fixed_guess_bias: bool = False, leak_bounds: tuple[float, float] | None = None) -> dict:
-    """Predictions for one mouse's pulse trials from `params` (no observed choices or RTs are read)."""
-    rows = pulse_rows(inputs, mouse)
+def predict_mouse(inputs: dict, mouse: str, params: dict, variant: str, n_reps: int, seed: int, fixed_guess_bias: bool = False, leak_bounds: tuple[float, float] | None = None,
+                  rows: np.ndarray | None = None, pulse_gain: float | None = None, keep_sim: bool = False) -> dict:
+    """Predictions for one mouse's pulse trials (or the given `rows`) from `params`; no observed choices or RTs are
+    read. With `pulse_gain`, the pulse component of the input is scaled by it (amendment 6)."""
+    rows = pulse_rows(inputs, mouse) if rows is None else rows
     rig = np.unique(inputs["data_source"][rows]).item()
     model = make_model(variant, rig, fixed_guess_bias, time_varying_gain="gain_decay" in params and params["gain_decay"] != 0, leak_bounds=leak_bounds)
-    with_pulse, without = stimuli(inputs, rows)
+    if pulse_gain is None:
+        with_pulse, without = stimuli(inputs, rows)
+    else:
+        without, pulse = gain_stimuli(inputs, rows)
+        with_pulse, params = (without, pulse), {**params, "noise_weight": float(pulse_gain)}
     condition = inputs["condition"][rows]
     direction = np.sign(inputs["sched_pulse_type"][rows])
     sim = simulate_outcomes(model, params, with_pulse, condition, n_reps, seed)
@@ -155,7 +171,10 @@ def predict_mouse(inputs: dict, mouse: str, params: dict, variant: str, n_reps: 
         "coh": inputs["signed_coherence"][rows],
     })
     trials = pd.concat([trials, summarize_predictions(sim, direction, len(rows), ""), summarize_predictions(sim0, direction, len(rows), "nopulse_")], axis=1)
-    return {"mouse": mouse, "rig": rig, "variant": variant, "params": params, "n_reps": n_reps, "seed": seed, "trials": trials, "reps": per_rep_summary(sim)}
+    out = {"mouse": mouse, "rig": rig, "variant": variant, "params": params, "n_reps": n_reps, "seed": seed, "trials": trials, "reps": per_rep_summary(sim)}
+    if keep_sim:  # per-repetition outcomes, to pool repetition summaries over cross-validation folds
+        out["sim"] = sim[["trial", "rep", "rt", "choice"]].assign(row=rows[sim["trial"].to_numpy()])
+    return out
 
 
 # ---------------------------------------------------------------- observed data and the analysis table

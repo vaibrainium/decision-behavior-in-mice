@@ -724,6 +724,19 @@ env EXTRA_ARGS="$E --drift_gain_max 200 --warm_start_from ddm/fits_guess_fast_on
 ```
 (and the same with `--fixed_guess_bias` and the `_FB` folders); predictions then take `--drift_gain_max 200`.
 
+### 8.4e Amendment 6: pulse gain (2026-10-23)
+```bash
+# step 1 (submitted 42183146): final control-only fits, 50 reps
+env EXTRA_ARGS="--variants L0U0V1Z0G1 L1U1V1Z0G1 --splits control --guess_model fast_only --n_reps 50 --warm_start_from ddm/fits_guess_fast_only --out_dir ddm/fits_final" sbatch --array=0-19 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+# step 2: cross-validated pulse gain + out-of-fold predictions -> ddm/primacy_revised/{primary,secondary}/
+sbatch --array=0-19 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.fit_pulse_gain,EXTRA_ARGS="--fits_dir ddm/fits_final" --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+# step 3 (local): revised gate
+python -m scripts.ddm.primacy --analyze --gate_only --baseline primary --out_dir ddm/primacy_revised --unblind
+# step 4: calibration and power (800 jobs) then local summary
+for off in 0 400; do sbatch --array=0-399 --export=ALL,JOB_OFFSET=$off,MODULE=scripts.ddm.primacy_calibration --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm; done
+python -m scripts.ddm.primacy_calibration --summarize
+```
+
 ### 8.5 Analysis
 ```bash
 python -m scripts.ddm.compare_models                                  # generation 3
