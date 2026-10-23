@@ -419,6 +419,28 @@ is still to come.
 - **Parameters** (common model): drift_gain r = 0.92, z 0.97, ndt 0.94, p_guess 0.93, drift_offset 0.89, guess_bias
   0.87, sv 0.85, a 0.81; guess_tau is not recovered (r = 0.18), so it is not interpreted.
 
+### 5.9 Frozen pulse-trial predictions (2026-10-23; amendment 4 item 4)
+
+**Files and integrity.** 30 files in `ddm/primacy/{primary,secondary,extrema}/`, 10 mice each.
+- Predicted from the control-only fits (guess bias free): `ddm/fits_guess_fast_only` for the primary and secondary
+  baselines, `ddm/fits_guess_fast_only_leak20-200` for E.
+- 200 repetitions per trial; every file carries commit `17511ca`.
+- SHA-256 checksums: `dissemination/reports/primacy_predictions_sha256_17511ca.txt`.
+- No recorded pulse outcome is in or was read for these files.
+
+**Predicted pulse effects, before any comparison with data** (amendment 4 item 6). Logit, |coh| ≤ 36%, mean over
+mice; table `dissemination/reports/primacy_predicted_pulse_effects_17511ca.csv`:
+
+| model | early | middle | late (UW) |
+|---|---|---|---|
+| primary (integrator) | 0.028 | 0.029 | 0.027 |
+| secondary (leak + urgency) | 0.024 | 0.025 | 0.027 |
+| E (extrema detection) | 0.040 | 0.039 | 0.035 |
+
+That is about 0.7 percentage points for the integrator and 0.9 for E. Fitted to control trials, E predicts pulse effects
+only ~1.4× the integrator's, a difference of ~0.01 logit. Amendment 4's expectation that the two strategies predict
+very different pulse effects does not hold for these fits. No model predicts a timing pattern.
+
 ---
 
 ## 6. Things that did not work, and why

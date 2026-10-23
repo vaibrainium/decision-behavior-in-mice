@@ -9,6 +9,7 @@ Generating parameters: each mouse's control-only L0U0V1Z0G1 fit in --fits_dir (a
 
 Usage: python -m scripts.ddm.check_strategy_test [--mice DBM13 DBM14 PSUIM10] [--datasets 20] [--n_reps 100]
        python -m scripts.ddm.check_strategy_test --null_only --datasets 150      # amendment 5 calibration
+       python -m scripts.ddm.check_strategy_test --power --datasets 20           # amendment 5 item 4, frozen predictions
 """
 
 import argparse
@@ -65,6 +66,45 @@ def null_calibration(inputs, A: dict, datasets: int, n_reps: int):
               f"SD of the sums {s.std():.2f} vs mean estimated SD {np.mean(s / a):.2f}")
 
 
+def power(inputs, pred_dir: Path, datasets: int, out: Path):
+    """Amendment 5, item 4: datasets of pulse-trial outcomes simulated from each mouse's control-only E fit and from its
+    common-model fit, scored with the frozen predictions in pred_dir (extrema = a, primary = b). Reports how often
+    the test favours the generating model, the wrong one, or neither. Uses no recorded outcome."""
+    from scripts.ddm.fit_mouse_ddm import EXTREMA_LEAK_BOUNDS
+
+    preds = {m: {} for m in ["extrema", "primary"]}
+    for model in preds:
+        for f in sorted((pred_dir / model).glob("*.pkl")):
+            with open(f, "rb") as fh:
+                preds[model][f.stem] = pickle.load(fh)
+    mice = sorted(preds["primary"])
+    gens = {}
+    for model, variant, lb in [("extrema", "L1U0V1Z0G1", EXTREMA_LEAK_BOUNDS), ("primary", VARIANT, None)]:
+        for m in mice:
+            rows = preds[model][m]["trials"].row.to_numpy()
+            _, stim = select(inputs, rows)
+            gen = primacy.make_model(variant, np.unique(inputs["data_source"][rows]).item(), leak_bounds=lb)
+            gens[(model, m)] = (gen, preds[model][m]["params"], stim, inputs["condition"][rows])
+    rows_out = []
+    for d in range(datasets):
+        for model in ["extrema", "primary"]:
+            syn = {}
+            for m in mice:
+                gen, params, stim, cond = gens[(model, m)]
+                syn[m] = synthesize(gen, params, stim, cond, zlib.crc32(f"power|{model}|{m}|{d}".encode()))
+                gen.simulator.clear_cache()
+            obs = {k: {m: primacy.attach_observed(preds[k][m], syn[m]["rt"], syn[m]["choice"]) for m in mice} for k in preds}
+            r = primacy.strategy_test(obs["extrema"], obs["primary"])
+            rows_out.append({"generator": model, "dataset": d, **{f"{k}_{x}": r[k][y] for k in ("pulse_gain", "total") for x, y in [("z", "z"), ("favoured", "favoured"), ("same_sign", "mice_same_sign")]}})
+        print(rows_out[-2:], flush=True)
+    df = pd.DataFrame(rows_out)
+    df.to_csv(out, index=False)
+    names = {"a": "extrema", "b": "primary", "not distinguished": "not distinguished"}
+    for k in ("pulse_gain", "total"):
+        print(f"\n{k}: z mean/SD by generator\n{df.groupby('generator')[f'{k}_z'].agg(['mean', 'std']).round(2).to_string()}")
+        print(df.assign(verdict=df[f"{k}_favoured"].map(names)).groupby("generator").verdict.value_counts().unstack(fill_value=0).to_string())
+
+
 def main(mice, datasets, n_reps, fits_dir, leak, null_only=False):
     logging.disable(logging.WARNING)
     inputs = load_inputs(Path(dir_config.data.processed) / "ddm/ddm_inputs_global.npz")
@@ -108,5 +148,12 @@ if __name__ == "__main__":
     parser.add_argument("--leak", type=float, default=50.0)
     parser.add_argument("--fits_dir", default="ddm/fits_guess")
     parser.add_argument("--null_only", action="store_true", help="calibration only (the amendment 5 numbers: --null_only --datasets 150)")
+    parser.add_argument("--power", action="store_true", help="amendment 5 item 4: power of the strategy test from the frozen predictions in --pred_dir")
+    parser.add_argument("--pred_dir", default="ddm/primacy", help="relative to processed")
     args = parser.parse_args()
+    if args.power:
+        logging.disable(logging.WARNING)
+        processed = Path(dir_config.data.processed)
+        power(load_inputs(processed / "ddm/ddm_inputs_global.npz"), processed / args.pred_dir, args.datasets, processed / args.pred_dir / "strategy_power.csv")
+        raise SystemExit
     main(args.mice, args.datasets, args.n_reps, Path(dir_config.data.processed) / args.fits_dir, args.leak, args.null_only)
