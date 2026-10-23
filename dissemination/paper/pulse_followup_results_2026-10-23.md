@@ -99,6 +99,8 @@ Two earlier observations had other explanations. The model predicted no common r
 
 In short, the existing accumulator family does not reproduce a pulse effect that emerges 0.5–2 s after onset without a later reversal. This is a predictive limitation of the fitted models. It does not establish any particular mechanism, nor the absence of accumulation or of primacy.
 
+We tested one bounded extension, with its specification and pass/fail rules fixed before evaluation.¹¹ The pulse input was passed through an additional causal exponential with time constant τ_p, and all other parameters stayed frozen. The test used the two mice with dense data and corrected inputs. A slower pulse response (τ_p = 300 ms, the largest value tested) improved the joint fit: by 11.8 ± 2.3 and 29.5 ± 0.5 NLL across two random-number seeds, with held-out improvement in 4 of 5 folds in each mouse. It did not bring the choice-only and joint gains together (ratio 2.33 in both mice; required ≤ 1.5). It did not remove the late reversal (−1.70 and −2.63 pp; required ≥ −1.0). The candidate therefore failed its pre-specified criteria and modelling was stopped. This is a negative result for one candidate in two mice. It does not exclude other models.
+
 ---
 
 ## Methods (additions)
@@ -153,3 +155,4 @@ Balance was checked against variables fixed before the pulse: coherence sign, pr
 8. `<run>/stimulus/summary.json`, `per_trial_replay_metrics.csv`, `dotstate_all_pulse_trials.csv`; `.agents/reports/2026-10-23-pulse-stimulus-20261023T191030Z_fa8de8b.md`. Rounding shift independently reproduced by the coordinator.
 9. `<run>/validation/g1/`; `.agents/reports/2026-10-23-pulse-validation-g1-20261023T191030Z_fa8de8b.md`.
 10. `<run>/diagnostics/` (`e3_optima.csv`, `e3_tradeoff_verdict.csv`, `e4_model_vs_D_summary.csv`, `e4_departure_decomposition.csv`, `e4_control_psychometric.csv`); `.agents/reports/2026-10-23-pulse-diagnostics-20261023T191030Z_fa8de8b.md`. Commands: `python -B -m scripts.pulse_followup.diagnostics simulate|analyze --run-id 20261023T191030Z_fa8de8b`. Uses the existing DDM inputs, which contain the 43-trial label bug (unresponded trials only).
+11. `<run>/models/f2_spec_tau_pilot.json` (frozen, commit a5583fc); `<run>/models/tau_pilot/` (`criteria.csv`, `decision_addendum.json`); `.agents/reports/2026-10-23-pulse-tau-pilot-20261023T191030Z_fa8de8b.md`. Command: `python -B -m scripts.pulse_followup.fit --run-id 20261023T191030Z_fa8de8b`.
