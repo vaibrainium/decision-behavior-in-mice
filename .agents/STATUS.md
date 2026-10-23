@@ -2,6 +2,10 @@
 Last updated: 2026-10-22 by Codex (client date; prior entries dated 2026-10-23 retained)
 
 ## Current focus
+Paper write-up (manuscript_2026-10-23.md). Remaining analysis: all-trial 50-rep fits (parameter table); optional
+robustness (step 7).
+
+## Previous focus
 Draft in dissemination/paper/manuscript_2026-10-22.md includes observed first-pass gate failures and inconclusive strategy test. Amendment 6 remains draft; timing tests withheld.
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
@@ -44,6 +48,8 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - Screen geometry not corrected in ME (ME methods §3.7).
 
 ## Decisions
+- 2026-10-23: primacy analysis stopped under amendment 6 item 8 (V. Thakur); extensions not run; model-free timing check
+  deferred (optional, descriptive only); all-trial 50-rep common-model fits for reported parameters submitted.
 - 2026-10-23: primacy plan amendment 6 adopted with V. Thakur's corrections: cross-validated per-mouse pulse gain,
   labelled a model revision prompted by the failed gate; null calibration + power before the timing test; no
   further model expansion. Original gate failure reported prominently.

@@ -177,6 +177,8 @@ generating parameters vs at the recovered ones (optimizer check).
 recoverable are reported as a family ("late-trial mechanisms") rather than individually, and their parameters are not
 interpreted for the small mice.
 
+**Result (2026-10-23): done** (500 fits; analysis log 5.8). Guesses and sv recoverable; leak and urgency near zero
+in most generators; guess_tau not recovered (r = 0.18), so not interpreted. Earlier status:
 **Status (2026-10-22): script updated, not yet run.** `COMMON = "L0U0V1Z0G1"`, fast-only guesses; generators and
 candidates are the common model, minus sv, minus guesses, plus leak, plus urgency (500 jobs). The two added models
 test whether the comparison would have detected leak or urgency where present, i.e. "absent" vs "undetectable" in the
@@ -195,6 +197,11 @@ step 6.
 **Cost:** ~30 jobs.
 
 **Benefit:** the parameter values to report and the control-only models step 6 needs.
+
+**Status (2026-10-23):** control-only fits of both baselines at 50 reps done (`ddm/fits_final`, job 42183146). All-trial
+50-rep fits of the common model (parameter values to report) submitted (10 jobs). The "without leak" baseline is
+obsolete (amendment 3: the common model has no leak; the secondary baseline is L1U1V1Z0G1). Poorly recovered
+parameters (guess delay) are not interpreted.
 
 ## Step 6. Primacy test (the scientific question)
 
@@ -230,7 +237,13 @@ One mixed-effects model across all mice, not separate tests per rig: pulse effec
 pulse timing, with a random intercept and slope per mouse and rig as a covariate. All mice inform the timing slope; the
 rig term only asks whether rigs disagree (a null there is "no evidence of a difference", not replication).
 
+**Step 6 outcome (2026-10-23): stopped under amendment 6 item 8.** Gate failed (before and after the pulse-gain
+revision); timing test not run; calibration shows ~no sensitivity at 10–40% decay. See the primacy plan's closing note
+and analysis log 5.10–5.11.
+
 ### 6.4b Model-free check (parsimony rule 5)
+**Status (2026-10-23): deferred for this draft (optional).** If run: exactly as specified, reported descriptively; it
+cannot resolve the model-based question (RT conditioning selects different subsets across timings).
 A logistic regression of the pulse effect on choice by timing, without the DDM (primacy plan, amendment 2). Agreement
 with 6.4 means the conclusion does not depend on the model's details.
 
@@ -244,7 +257,8 @@ common model by cross-validation (~60–120 jobs).
 **Status:** the time-varying weight is implemented (`gain_decay`: drift gain × exp(−gain_decay · t), both simulator
 backends; `fit_mouse_ddm.py --time_varying_gain`, output `ddm/fits_guess_W` or `..._<form>_W`). Checked: the two
 backends agree, positive values lower and negative values raise accuracy, and 0 reproduces the constant-weight model.
-Ready to run once the common model is fixed. A second primacy mechanism was added (primacy plan, amendment 1): a
+**Not run (2026-10-23):** the baseline failed predictive adequacy and the revised procedure had low sensitivity
+(primacy plan, closing note). Ready to run once the common model is fixed. A second primacy mechanism was added (primacy plan, amendment 1): a
 self-exciting accumulator via negative leak (`--signed_leak`, `leak_rate` down to −1/s, output `..._NL`). Urgency is not a
 primacy/recency mechanism: it scales all accumulated evidence equally and only changes when decisions end.
 

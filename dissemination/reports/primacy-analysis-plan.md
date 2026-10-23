@@ -386,3 +386,35 @@ predictions stay frozen. The too-shallow control-trial psychometric fit at 18–
 addressed. Balancing pulse direction against coherence reduces this concern, but cancellation is not established
 under nonlinear predictions, censoring and heterogeneous mice; the descriptive checks by coherence and mouse (item 3)
 are kept.
+
+---
+
+## Closing note (2026-10-23): primacy analysis stopped under amendment 6, item 8
+
+**Decided by V. Thakur, 2026-10-23.**
+
+**Outcome.**
+- The pre-specified baselines failed the predictive check (gate 1: departure +0.30 logit, 95% CI 0.18–0.41, against a
+  predicted pulse effect of 0.03).
+- The amendment 6 revision (cross-validated per-mouse pulse gain) also failed (+0.24, 0.09–0.37, primary baseline).
+- Its calibration showed the procedure valid under the null (gate passes 95%, 0/20 false positives) but with
+  essentially no sensitivity: primacy detected in 0–5% of datasets at 10–40% drift-gain decay over 0.5 s.
+- Under the agreed stopping rule (amendment 6, item 8), the primacy analysis ends here. The section 6 timing test is not
+  run, and no further baseline revision is made. Analysis log 5.10–5.11; report `.agents/reports/2026-10-23-amendment-6-result.md`.
+
+**Not run, and why:**
+- **Mechanism extensions** (section 8, amendments 1–2, amendment 6 item 5: gain decay, signed leak). They were tests of
+  temporal weighting against a baseline that predicts pulse trials. The baseline failed predictive adequacy, before and
+  after revision, and the revised procedure had low sensitivity to primacy. A cross-validated comparison would mostly
+  reflect the unexplained pulse misfit, not temporal weighting.
+- **Model-free timing check** (amendment 2): deferred for the current draft, optional.
+  - It cannot resolve the failed model-based question. Conditioning on RT ≥ pulse onset + 0.5 s selects different
+    subsets of trials at different timings.
+  - Its sensitivity cannot be inferred from the DDM test's calibration.
+  - If run for completeness, it is run exactly as specified in amendment 2 and reported descriptively, whatever the
+    outcome.
+
+**Reported** (section 10, as applicable): both gate failures, the per-mouse pulse gains, the descriptive calibration by
+coherence and mouse, the strategy test (not distinguished, underpowered), and the calibration of the revised
+procedure.
+

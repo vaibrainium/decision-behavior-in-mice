@@ -1,5 +1,12 @@
 # Paper plan: evidence integration over time in mice (RT motion task with pulses)
 
+**Author decision, 2026-10-22 (client date):** strategy discrimination (integration versus the extrema approximation)
+is the primary paper question; primacy is secondary and conditional on predictive adequacy and sensitivity.
+The historical confirmatory analysis endpoints and testing order are unchanged. A first prose draft is in
+[`manuscript_2026-10-22.md`](manuscript_2026-10-22.md); its qualifications supersede stronger wording below:
+the shared hidden-coherence ratio is a conditional model estimate, not an established population-wide discount;
+final strategy discrimination and temporal-weighting results remain pending queued Hyak jobs.
+
 **Status:** living outline, not prose. Started 2026-10-20; **revised 2026-10-22** after the common-model choice, the
 leak/urgency diagnosis and the primacy power result (changes listed at the end).
 **Sources:** [`mouse-ddm-analysis-log.md`](../reports/mouse-ddm-analysis-log.md) (log),
@@ -57,6 +64,13 @@ on gate 1.
 with a stimulus manipulation the human study didn't have. That holds whichever way gate 1 goes, so point 5 is now the
 most likely centre of the paper, with temporal weighting as the second question.
 
+**R5 outcome (2026-10-23): branch (a2), final.** Gate 1 failed (+0.30 logit vs predicted 0.03); the strategy test did
+not distinguish E from the integrator (underpowered); the amendment 6 pulse-gain revision also failed (+0.24); its
+calibration was valid under the null but detected 0–5% of 10–40% primacy. The primacy analysis is stopped (primacy plan,
+closing note; analysis log 5.10–5.11). Write R5 as: mice respond to brief pulses more than a motion-energy model fitted
+to control trials predicts, by an amount that varies between mice; temporal weighting is not resolvable with these
+pulses. Manuscript version `manuscript_2026-10-23.md`.
+
 **Three ways R5 can come out** (draft all three now, so the outcome doesn't shape the framing):
 - **(a) Gate 1 fails: pulses matter far more than predicted.** Mice react to a 50–67 ms full-coherence pulse much more
   than a motion-energy integrator fitted to control trials predicts. With amendment 4, the frozen extrema-detection
@@ -104,7 +118,7 @@ accumulation like primates. Still fits all three outcomes. What the paper adds o
 | 2 | Motion energy: filter, ME time courses by coherence, linearity, pulse response (peak 117 ms) | **Drafted** | `scripts/paper/fig2_motion_energy.py` |
 | 3 | Hidden coherence: per-trial noise bias, it explains ME noise, per-mouse weight (k ≈ 0.50) with robustness, why noise kernels can't resolve timing | Results FINAL; figure to make | log §3.3; notebook 2.14 §1–5 |
 | 4 | DDM: schematic (ME input, bound, sv, fast guesses, censoring at 5 s, 0.3 s floor); per-mechanism held-out change per mouse against the Monte Carlo noise (sv, guesses pass; leak, urgency in 3–4 mice; sz fails); fit quality of the common model (psychometric, chronometric incl. error RTs, P(response after 5 s)) | Comparison FINAL (log 5.6); fit quality PENDING (final fast-only fits) | `mc_noise_per_mouse.csv`; notebook 3.0 |
-| 5 | Pulses: (A) raw pulse effects by timing, scheduled labels (descriptive); (B) gate 1: observed vs predicted pooled pulse effect per mouse, **with both the integrator's and extrema detection's frozen predictions**; (C) pulse-trial log-likelihood, E minus integrator, per mouse (amendment 4); (D) predicted vs observed effect by timing under each model; then by outcome: β_middle posterior, per-mouse estimates, UW late, sensitivity curve | PENDING (amendment 4 fits, then gate 1) | primacy plan §5–9 and amendment 4; `scripts/ddm/primacy.py` |
+| 5 | Pulses: (A) raw pulse effects by timing, scheduled labels (descriptive); (B) gate 1: observed vs predicted pooled pulse effect per mouse, **with both the integrator's and extrema detection's frozen predictions**; (C) pulse-trial log-likelihood, E minus integrator, per mouse (amendment 4); (D) predicted vs observed effect by timing under each model; then by outcome: β_middle posterior, per-mouse estimates, UW late, sensitivity curve | Results FINAL (branch a2): panels A–D plus revised gate and calibration; no β_middle panel (timing test not run) | primacy plan §5–9, amendments 4–6, closing note; `scripts/ddm/primacy.py`, `fit_pulse_gain.py`, `primacy_calibration.py` |
 | 4D | Integration vs extrema detection on control trials: held-out NLL per mouse against the Monte Carlo noise; per-mouse integration time constant (descriptive) | PENDING (amendment 4) | primacy plan amendment 4 |
 | S1 | Rig behaviour check (response floor, pulse frames) | FINAL | log §6b |
 | S2 | Monte Carlo noise of the comparison; warm starts; where leak/urgency help (late-response rate, PSUIM5/6/7) and UCLA vs UW behaviour | Results FINAL; figure exists in draft | log 5.5–5.6; `figures/leak_urgency_diagnosis_20261022.png` |

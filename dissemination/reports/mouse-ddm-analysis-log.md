@@ -577,6 +577,14 @@ generating gains = the real fitted w_p; control fits held fixed):
 So the data do not answer the primacy question. They do show that mice react to the brief pulses more than a
 motion-energy model fitted to control trials predicts, by an amount that varies between mice.
 
+**Stopping decision (2026-10-23, V. Thakur).** The primacy analysis is closed under amendment 6 item 8 (primacy plan,
+closing note):
+- mechanism extensions not run (failed predictive adequacy, low sensitivity);
+- model-free timing check deferred (optional; descriptive only if run);
+- notebook 2.14 section 6 (pulse-triggered kernels) removed, and its summary figure moved to
+  `dissemination/figures/superseded/`;
+- the all-trial 50-rep common-model fits for the reported parameters submitted.
+
 ---
 
 ## 6. Things that did not work, and why
