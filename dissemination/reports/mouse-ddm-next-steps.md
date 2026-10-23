@@ -115,6 +115,8 @@ errors come from the decision process (probably sv); to check in the fit-quality
 guess_bias fixed at 0.5 (rule 3), on the chosen common model. Analysis log, section 5.5.
 **Status (2026-10-22): ready to submit** (`--fixed_guess_bias`, analysis log 8.4c): L0U0V1Z0G1 fast_only with the
 bias free and fixed, 5 CV folds + all + control (70 jobs each).
+**Result (2026-10-23): guess_bias free** (fixed costs 65.5 held-out NLL; > 10 in DBM12, DBM6, PSUIM7; never better by
+> 10). Decided by V. Thakur (analysis log 5.8).
 
 ## Step 3. Fix the common model
 

@@ -25,7 +25,7 @@ predictions frozen. After gate 1: the strategy test (amendment 4, item 5).
 - [x] 2. Checks: one-iteration smoke fit (PSUIM10 ccv0, saved leak bounds, warm seeds clipped into range); Numba and
       torch backends agree exactly at leak 0/20/60/200 (400 trials, shared noise).
 - [x] 3. Amendment 4 appended to the primacy plan and committed before any pulse outcome was read.
-- [ ] 4. User submits the Hyak batches (analysis log 8.4d): E (free and fixed bias, 60 + 60), common model fixed-bias
+- [x] 4. User submits the Hyak batches (analysis log 8.4d): E (free and fixed bias, 60 + 60), common model fixed-bias
       ccv (50), descriptive leak 0–200 (10 + 10).
 - [x] 5. (code; run when the E fits land) `scripts/ddm/compare_strategy.py`: held-out NLL, E vs common model, per mouse and summed, on ccv0–ccv4,
       against the Monte Carlo noise; fitted leak, a **and drift_gain** at their bounds (amendment 5 rule: refit E with
@@ -34,7 +34,7 @@ predictions frozen. After gate 1: the strategy test (amendment 4, item 5).
       --unblind`): pulse-specific log-likelihood gain (primary) and total (secondary), paired per-trial SD, 3 SD and
       6/10 mice. Null calibration done (`check_strategy_test.py`, 150 datasets: z SD 1.01 / 0.97, 0 beyond 3).
 - [ ] 6b. Power of item 5 (amendment 5, item 4): synthetic datasets from the E and common-model fits, once E is fitted.
-- [ ] 7. After the guess-bias decision: E predictions (`primacy.py --predict --baselines extrema`), saved with the
+- [ ] 7. (bias decided: free; commit hash now saved with each prediction) E predictions (`primacy.py --predict --baselines extrema`), saved with the
       commit hash; record in the analysis log.
 - [ ] 8. Verify: E fits converged (nested checks not applicable; compare against warm-seed NLLs), predictions
       reproducible; then report and hand over to gate 1.
@@ -48,3 +48,5 @@ Gate 1 itself; any comparison with recorded pulse outcomes.
   drift_gain may bind. Amendment 5 drafted at V. Thakur's request and adopted by V. Thakur (2026-10-23), code updated, null calibration done.
 - 2026-10-23: compare_strategy.py written; smoke-tested on one-iteration PSUIM10 E fits (all sections run; numbers
   meaningless). Runs on partial results and lists missing fits; refuses folders with the wrong form.
+- 2026-10-23: E fits in. compare_strategy: integrator better by 346 (bias free), no refit needed. Guess bias free
+  (V. Thakur). primacy.py now saves the commit hash with each prediction. Next: frozen predictions (30 Hyak jobs).

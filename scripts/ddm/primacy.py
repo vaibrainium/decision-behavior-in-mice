@@ -337,6 +337,24 @@ def strategy_test(tables_a: dict, tables_b: dict, max_abs_coh: float | None = MA
 
 # ---------------------------------------------------------------- CLI
 
+def git_commit(repo: Path = Path(__file__).resolve().parents[2]) -> str:
+    """Commit hash of the checked-out code, read from .git directly (git may be missing in the cluster container).
+    Saved with every prediction (amendment 4, item 4: frozen predictions carry the commit hash)."""
+    try:
+        head = (repo / ".git" / "HEAD").read_text().strip()
+        if not head.startswith("ref: "):
+            return head
+        ref = head[5:]
+        if (repo / ".git" / ref).exists():
+            return (repo / ".git" / ref).read_text().strip()
+        for line in (repo / ".git" / "packed-refs").read_text().splitlines():
+            if line.endswith(" " + ref):
+                return line.split()[0]
+    except OSError:
+        pass
+    return "unknown"
+
+
 def build_grid(inputs: dict, baselines: list[str] | None = None) -> list[dict]:
     mice = sorted(np.unique(inputs["subject_id"]))
     return [{"baseline": b, "mouse": m} for b in (baselines or BASELINES) for m in mice]
@@ -381,7 +399,7 @@ if __name__ == "__main__":
             fit = load_fit(processed / args.fits_dir, job["mouse"], variant, "control", args.fixed_guess_bias, leak_bounds, gain_max)
             t0 = time.time()
             pred = predict_mouse(inputs, job["mouse"], fit["parameters"], variant, args.n_reps, args.seed, args.fixed_guess_bias, leak_bounds)
-            pred.update(fit_path=str(processed / args.fits_dir), fixed_guess_bias=args.fixed_guess_bias, seconds=time.time() - t0)
+            pred.update(fit_path=str(processed / args.fits_dir), fixed_guess_bias=args.fixed_guess_bias, seconds=time.time() - t0, commit=git_commit())
             out.parent.mkdir(parents=True, exist_ok=True)
             tmp = out.with_suffix(".tmp")
             with open(tmp, "wb") as f:

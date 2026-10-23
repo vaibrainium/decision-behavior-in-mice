@@ -377,7 +377,10 @@ All on control trials or synthetic data; no pulse-trial outcome read.
   PSUIM6 −4.2, PSUIM7 +27.0;
 - summed +65.5. A free bias helps by > 10 in 3 mice and is never worse by > 10.
 
-Fitted free biases are 0.39–0.89. Decision pending (rule 3: fix unless a free bias "clearly improves").
+Fitted free biases are 0.39–0.89. **Decision (2026-10-23, V. Thakur): guess_bias stays free** (it clearly improves
+held-out fit in 3 mice and hurts none), in both baselines, E and all extensions (primacy plan, amendment 3 item 3).
+Analyses from here use `ddm/fits_guess_fast_only` (common model, secondary baseline) and
+`ddm/fits_guess_fast_only_leak20-200` (E); the `_FB` folders are kept as the fixed-bias comparison.
 
 **Extrema detection vs integration on control trials** (amendment 4 items 2–3; `compare_strategy [--fixed_guess_bias]`):
 - **Held-out NLL, E minus C** (CV within control trials): summed +345.7 with the bias free, +246.8 with it fixed. C is
@@ -619,6 +622,11 @@ env EXTRA_ARGS="$D --fixed_guess_bias --warm_start_from ddm/fits_guess_fast_only
 env EXTRA_ARGS="--predict --baselines extrema --fits_dir ddm/fits_guess_fast_only_leak20-200" sbatch --array=0-9 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.primacy --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm   # add _FB / --fixed_guess_bias if bias is fixed
 ```
 
+Frozen pulse-trial predictions (guess bias free; each saved with its commit hash), before gate 1:
+```bash
+env EXTRA_ARGS="--predict --baselines primary secondary --fits_dir ddm/fits_guess_fast_only" sbatch --array=0-19 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.primacy --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+env EXTRA_ARGS="--predict --baselines extrema --fits_dir ddm/fits_guess_fast_only_leak20-200" sbatch --array=0-9 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.primacy --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+```
 E vs common model on control trials, at-bound checks, refit rule, time constants (amendment 4 items 2-3, amendment 5
 item 3): `python -m scripts.ddm.compare_strategy [--fixed_guess_bias]`.
 Amendment 5 (2026-10-23): item 5 uses the pulse-specific log-likelihood gain with a paired per-trial SD
