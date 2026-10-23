@@ -450,6 +450,37 @@ synthetic outcomes from each mouse's E and integrator control fits; `ddm/primacy
 Under amendment 5 the strategy test (item 5) is therefore **reported as underpowered, whatever its outcome**. The pulse
 signatures of the fitted strategies are too similar (~0.01 logit apart).
 
+### 5.10 Gate 1, first pass: fails for both baselines (2026-10-23)
+
+**What was run.** First comparison with recorded pulse-trial outcomes, after the freeze (002fafb) and the power check
+(87e1b25):
+- `primacy --analyze --gate_only --baseline {primary,secondary} --unblind`, which skips the timing tests;
+- predictions 17511ca from the 15-rep control-only fits;
+- outputs `ddm/primacy/results_{primary,secondary}_gate.pkl`.
+
+**Confirmatory gate result** (plan §7; GATE_MIN_INSIDE 0.8):
+
+| baseline | departure b0 (logit, 95% CI) | predicted pulse effect | RT quantile cells inside | P(RT > 5 s) inside | gate |
+|---|---|---|---|---|---|
+| primary (L0U0V1Z0G1) | +0.30 (0.18, 0.41) | 0.030 | 0.68 | 0.90 | **fail** |
+| secondary (L1U1V1Z0G1) | +0.32 (0.21, 0.41) | 0.026 | 0.68 | 0.50 | **fail** |
+
+Choices on pulse trials go in the pulse direction ~0.3 logit more often than either model predicts, about 10× the
+predicted pulse effect. Per plan §7 the timing test is not run on these models. The model is revised (documented)
+first.
+
+**Diagnostics** (EXPLORATORY, timing-agnostic, primary baseline, |coh| ≤ 36%):
+- **By pulse direction vs coherence.** Pulse direction is balanced against the coherence sign (4,312 with, 4,241
+  against). Departure: +0.27 at 0% coherence (n = 1,388), +0.30 when the pulse agrees with the coherence, +0.02 when
+  it opposes it. Read additively, an extra pulse effect of ~0.16–0.27 plus stronger-than-predicted coherence
+  sensitivity on pulse trials (~0.14). SUSPECTED; two components inferred from three numbers.
+- **By rig.** The departure is concentrated in UCLA: PSUIM10 +0.28, PSUIM5 +0.16, PSUIM6 +0.26, PSUIM7 +0.35. UW mice
+  are −0.14 to +0.14 (DBM12 −0.08, DBM13 +0.14, DBM14 −0.14, DBM15 +0.02, DBM5 +0.08, DBM6 +0.08), although UW pulses
+  are longer (67 vs 50 ms) and larger in motion energy.
+- **Leading question** (SUSPECTED, not tested): does the replayed UCLA pulse stimulus, and so its motion energy,
+  match what the UCLA rig displayed during pulses? Alternatively, UCLA mice may respond to the pulse transient itself.
+- **The frozen E predictions** (pulse effect ~0.04) are far from the observed ~0.3 too.
+
 ---
 
 ## 6. Things that did not work, and why

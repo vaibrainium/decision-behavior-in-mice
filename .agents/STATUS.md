@@ -2,7 +2,7 @@
 Last updated: 2026-10-22 by Codex (client date; prior entries dated 2026-10-23 retained)
 
 ## Current focus
-First prose draft written in dissemination/paper/manuscript_2026-10-22.md while Hyak analyses are queued.
+Draft in dissemination/paper/manuscript_2026-10-22.md includes frozen predictions and completed strategy sensitivity.
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
@@ -13,6 +13,8 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-10-22-prediction-sensitivity.md : all frozen hashes match; pulse-specific test selects generator in 1/20 extrema and 0/20 integrator simulations; observed pulse analysis pending
+- reports/2026-10-22-arriving-results.md : independently verified control preference for integrator, free guess bias and completed recovery; manuscript updated; pulse predictions/comparison pending
 - reports/2026-10-22-paper-first-draft.md : first manuscript prose; qualified hidden-coherence population claim, separated analysis sets; final strategy results pending
 - reports/2026-10-23-control-only-selection.md : strict model holds under control-only CV (sv, guesses needed;
   leak/urgency not); batches 1, 3b and recovery resubmitted
@@ -27,6 +29,10 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - ../dissemination/reports/motion-energy-methods.md : motion-energy method review and corrections
 
 ## Known issues
+- Gate 1 FAILS for both baselines (departure +0.30 logit vs predicted pulse effect 0.03), concentrated in UCLA
+  mice; timing test not run; model revision needed (analysis log 5.10).
+- Pulse-specific strategy test has low sensitivity under frozen fitted candidates (1/20 extrema, 0/20 integrator correct); predicted effects differ by ~0.01 logit. Do not infer equivalence or independent pulse confirmation from an inconclusive result.
+- Recovery: sv false-positive rate 7/20 at working threshold; guess-delay parameter poorly recovered. sv bounds and high-coherence error/late-response misfit limit mechanism interpretation (arriving-results report).
 - Hidden-coherence k = 0.50 is a shared-model estimate; paired across-mouse coefficient comparison p = 0.492. Notebook controls use RT-dependent labels; scheduled-control sensitivity remains pending (first-draft report).
 - Manuscript contains explicit pending/missing sections and unverified author-source records; Fig. 1F image/script still need censoring-label correction.
 - Primacy test: predicted pulse effect ~0.025 logit; test likely cannot detect primacy (analysis log 5.7).
