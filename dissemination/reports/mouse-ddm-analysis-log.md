@@ -601,6 +601,11 @@ scripts.ddm.parameter_table`). Median (range) over mice:
 - non-decision time ≈ 0 in DBM14 and PSUIM6. Plausible, because the motion-energy filters add ~116 ms of delay;
 - guess delay at 0.3 s in DBM12, DBM6 and PSUIM5. Not interpreted (recovery r = 0.18).
 
+Fit quality of these final fits (control trials; `dissemination/figures/ddm_fit_quality_L0U0V1Z0G1_fits_final.png`,
+notebook 3.0 with FITS = "fits_final", run with the project venv): unchanged from the 15-rep fits (5.8). Choices and
+correct RTs are captured; error RTs at 36–100% are faster in the data; P(RT > 5 s) at 100% is underpredicted in
+PSUIM5/6/7.
+
 ---
 
 ## 6. Things that did not work, and why
