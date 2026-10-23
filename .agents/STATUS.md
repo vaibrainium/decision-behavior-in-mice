@@ -1,22 +1,27 @@
 # Status
-Last updated: 2026-10-22 by Codex (client date; prior entries dated 2026-10-23 retained)
+Last updated: 2026-10-23 by Claude Opus 5.5 (pulse follow-up coordinator)
 
 ## Current focus
-Paper write-up (manuscript_2026-10-23.md). Remaining analysis: all-trial 50-rep fits (parameter table); optional
-robustness (step 7).
+Exploratory existing-data pulse follow-up is being implemented (run 20261023T191030Z_fa8de8b). A (trial contract) is
+done and frozen (config v2); B (stimulus), C (directional effects) and D (joint response curves) are running in
+parallel; E (existing-model diagnosis) is next. The F/G mechanism work waits for the user's decision on the F1 recommendation.
 
 ## Previous focus
-Draft in dissemination/paper/manuscript_2026-10-22.md includes observed first-pass gate failures and inconclusive strategy test. Amendment 6 remains draft; timing tests withheld.
+Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gate failures and predates adoption of amendment 6. Newer draft: manuscript_2026-10-23.md. Timing tests remain withheld after both revised gates failed.
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
+- plans/2026-10-23-pulse-followup-parallel.md : implementation running; A done; B/C/D running; next E, then H behavioural package and the F1 recommendation to the user; original primacy procedure remains closed
 - plans/2026-10-23-amendment-4-extrema.md : code done and checked; next: Hyak fits (commands in analysis log 8.4d)
 - plans/2026-10-22-primacy-analysis-code.md : done; next: predictive check (gate 1) first pass when 8.4c batch 1 lands
-- plans/2026-10-20-paper-writeup.md : first prose pass and provenance records done; next: queued results, missing author facts, figures and verification
+- plans/2026-10-20-paper-writeup.md : prose/provenance, pulse research review and implementation handoff done; next: remaining author facts, figures and verification; new pulse analyses tracked in child plan
 - ../dissemination/reports/mouse-ddm-next-steps.md : analysis plan (kept in dissemination/reports); steps 0–3 done
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-10-23-pulse-data-20261023T191030Z_fa8de8b.md : pulse contract frozen; assignment verified randomized from task source; 48 UCLA no-response pulses mislabelled control in DDM inputs (43 recovered); UW asymmetric-coherence schedule flagged
+- reports/2026-10-23-pulse-parallel-plan.md : parallel handoff drafted with explicit ownership, common data contract, minimum behavioural deliverable and conditional mechanism validation; no implementation launched
+- reports/2026-10-23-pulse-thesis-research.md : existing-data pulse research synthesis; replay offset redraws noise directions, physical counterfactual validation needed; joint choice/RT route proposed
 - reports/2026-10-23-amendment-6-result.md : revised gate fails; timing test calibrated but powerless; primacy not
   answerable with these pulses
 - reports/2026-10-22-observed-gate-review.md : both first-pass gates fail; strategy z=2.966 remains not distinguished; proposed pulse-gain revision reviewed, not adopted
@@ -36,9 +41,12 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - ../dissemination/reports/motion-energy-methods.md : motion-energy method review and corrections
 
 ## Known issues
+- DDM inputs label 48 UCLA no-response pulse trials as controls (direction lost in notebook 0.0); the 15 trials dropped for invalid duration are responses during the pulse (outcome-dependent). Existing inputs unchanged (pulse-data report).
+- UW: one |coherence| per session (18% or 36%) schedules only rightward pulses; excluded from signed and pulse-vs-control contrasts (pulse-data report).
+- Both replays redraw noise directions at pulse offset; removing the mean pulse component is not a physical no-pulse replay. Consequences for pulse ME and persistence are unmeasured (pulse-thesis-research report).
 - Primacy: original and revised gates FAIL; timing test not run; calibration shows ~no power at 10-40% decay. Final
   under amendment 6 item 8 (analysis log 5.11; reports/2026-10-23-amendment-6-result.md).
-- Gate 1 FAILS for both first-pass baselines (departure +0.30 logit vs predicted effect 0.03); timing tests withheld. Both gate fits have one divergence and use preliminary control fits. Amendment 6 draft, not adopted in this review.
+- Historical first-pass gates failed (departure +0.30 logit vs predicted effect 0.03), using preliminary control fits and one divergence each; superseded by the completed amendment 6 gate review for current status.
 - Pulse-specific strategy test has low sensitivity under frozen fitted candidates (1/20 extrema, 0/20 integrator correct); predicted effects differ by ~0.01 logit. Do not infer equivalence or independent pulse confirmation from an inconclusive result.
 - Recovery: sv false-positive rate 7/20 at working threshold; guess-delay parameter poorly recovered. sv bounds and high-coherence error/late-response misfit limit mechanism interpretation (arriving-results report).
 - Hidden-coherence k = 0.50 is a shared-model estimate; paired across-mouse coefficient comparison p = 0.492. Notebook controls use RT-dependent labels; scheduled-control sensitivity remains pending (first-draft report).
@@ -48,6 +56,9 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - Screen geometry not corrected in ME (ME methods §3.7).
 
 ## Decisions
+- 2026-10-23: pulse follow-up implementation authorized by the user (A–E + H behavioural package; recommendation before F/G; no jobs/installs). Contract v2 frozen from metadata and task code before any effect estimate (pulse-data report).
+- 2026-10-23: user requested a parallel implementation plan for the existing-data pulse follow-up. Draft saved in plans/2026-10-23-pulse-followup-parallel.md; this request did not launch analyses or authorize cluster submissions. Proposed new analyses remain exploratory and separate from the closed primacy protocol.
+- 2026-10-23: user requires existing data only for strengthening the pulse thesis contribution. Literature review and diagnostic recommendations completed; no new experimental collection or modelling decision adopted (pulse-thesis-research report).
 - 2026-10-23: primacy analysis stopped under amendment 6 item 8 (V. Thakur); extensions not run; model-free timing check
   deferred (optional, descriptive only); all-trial 50-rep common-model fits for reported parameters submitted.
 - 2026-10-23: primacy plan amendment 6 adopted with V. Thakur's corrections: cross-validated per-mouse pulse gain,

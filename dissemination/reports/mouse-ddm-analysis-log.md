@@ -585,6 +585,22 @@ closing note):
   `dissemination/figures/superseded/`;
 - the all-trial 50-rep common-model fits for the reported parameters submitted.
 
+### 5.12 Final parameters of the common model (plan step 5, 2026-10-23)
+
+All-trial fits of L0U0V1Z0G1 (fast-only guesses, guess bias free), 50 repetitions, warm-started (10/10), in
+`ddm/fits_final`. Table: `dissemination/paper/parameters_common_model_2026-10-23.{csv,md}` (`python -m
+scripts.ddm.parameter_table`). Median (range) over mice:
+- drift gain 2.91 (0.73–5.70); drift variability sv 2.37 (0.40–2.99); drift offset −0.04 (−0.36 to 1.05);
+- fast-guess probability 0.21 (0.12–0.35); fast-guess bias 0.55 (0.37–0.76);
+- bound separation 7.92 (3.58–9.49); starting point z 0.49 (0.26–0.69); non-decision time 0.12 s (0.00–0.49).
+
+**At a bound** (within 1% of the range):
+- bound separation at its 9.5 upper limit in DBM15 and PSUIM6. The limit comes from the code's `a < 10` check, so these
+  two are lower limits;
+- sv at 3 in PSUIM7;
+- non-decision time ≈ 0 in DBM14 and PSUIM6. Plausible, because the motion-energy filters add ~116 ms of delay;
+- guess delay at 0.3 s in DBM12, DBM6 and PSUIM5. Not interpreted (recovery r = 0.18).
+
 ---
 
 ## 6. Things that did not work, and why
