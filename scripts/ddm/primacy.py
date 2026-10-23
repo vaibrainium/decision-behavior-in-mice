@@ -274,12 +274,14 @@ def gate_pass(res: dict) -> bool:
     return res["gate_departure"]["pass"] and rt_inside >= GATE_MIN_INSIDE and d.censored_inside.mean() >= GATE_MIN_INSIDE
 
 
-def run_analysis(preds: dict, tables: dict, max_abs_coh: float | None = MAX_ABS_COH, require_gate: bool = True, **kw) -> dict:
+def run_analysis(preds: dict, tables: dict, max_abs_coh: float | None = MAX_ABS_COH, require_gate: bool = True, gate_only: bool = False, **kw) -> dict:
     """Gate, then the timing tests (plan sections 6-7). The timing tests are not run when the gate fails (plan
     section 7: the model is revised first), unless require_gate=False."""
     t = analysis_table(list(tables.values()), max_abs_coh)
     res = {"gate_departure": gate_departure(t, **kw), "gate_distributions": gate_distributions(preds, tables), "rt_residuals": rt_residuals(list(tables.values()))}
     res["gate_pass"] = gate_pass(res)
+    if gate_only:  # first pass on provisional fits: no timing contrast, so the confirmatory test stays blind
+        return res
     if require_gate and not res["gate_pass"]:
         logger.warning("predictive check failed; timing tests not run (revise the model first)")
         return res
@@ -378,6 +380,7 @@ if __name__ == "__main__":
     parser.add_argument("--all_coherences", action="store_true", help="robustness: no |coherence| limit")
     parser.add_argument("--unblind", action="store_true", help="compare with the recorded pulse-trial choices (after plan step 5 only)")
     parser.add_argument("--drift_gain_max", type=float, help="extrema model fitted with a wider drift_gain bound (amendment 5)")
+    parser.add_argument("--gate_only", action="store_true", help="with --analyze: predictive check only (no timing tests); for the first pass on provisional fits")
     parser.add_argument("--strategy_test", action="store_true", help="amendment 4 item 5 / amendment 5: extrema vs primary baseline (after gate 1, with --unblind)")
     args = parser.parse_args()
 
@@ -430,8 +433,9 @@ if __name__ == "__main__":
             with open(p, "rb") as f:
                 preds[p.stem] = pickle.load(f)
         tables = {m: attach_observed(pr, inputs["rt"][pr["trials"].row], inputs["choice"][pr["trials"].row]) for m, pr in preds.items()}
-        res = run_analysis(preds, tables, None if args.all_coherences else MAX_ABS_COH)
-        out = processed / args.out_dir / f"results_{args.baseline}{'_allcoh' if args.all_coherences else ''}.pkl"
+        res = run_analysis(preds, tables, None if args.all_coherences else MAX_ABS_COH, gate_only=args.gate_only)
+        res["prediction_commits"] = sorted({pr.get("commit", "unknown") for pr in preds.values()})
+        out = processed / args.out_dir / f"results_{args.baseline}{'_allcoh' if args.all_coherences else ''}{'_gate' if args.gate_only else ''}.pkl"
         with open(out, "wb") as f:
             pickle.dump(res, f)
         logger.info("saved %s", out)

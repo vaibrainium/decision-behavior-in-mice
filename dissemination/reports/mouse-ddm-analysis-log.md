@@ -441,6 +441,15 @@ That is about 0.7 percentage points for the integrator and 0.9 for E. Fitted to 
 only ~1.4× the integrator's, a difference of ~0.01 logit. Amendment 4's expectation that the two strategies predict
 very different pulse effects does not hold for these fits. No model predicts a timing pattern.
 
+**Power of the strategy test** (amendment 5 item 4; `check_strategy_test --power --datasets 20`, frozen predictions,
+synthetic outcomes from each mouse's E and integrator control fits; `ddm/primacy/strategy_power.csv`):
+- **Pulse-gain statistic (primary):** favours the generating model in 1/20 (data from E) and 0/20 (data from the
+  integrator) datasets, the wrong one in none; z mean 0.52 and 0.45, SD 1.1–1.2.
+- **Total log-likelihood (secondary):** correct in 5/20 and 7/20, wrong in none; z mean +2.47 and −2.58.
+
+Under amendment 5 the strategy test (item 5) is therefore **reported as underpowered, whatever its outcome**. The pulse
+signatures of the fitted strategies are too similar (~0.01 logit apart).
+
 ---
 
 ## 6. Things that did not work, and why
