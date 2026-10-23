@@ -1,5 +1,5 @@
 # Plan: implement primacy plan amendment 6 (cross-validated pulse gain) and run it
-Status: active
+Status: done
 Created: 2026-10-23 by Claude (Opus 5.5)
 Related reports: dissemination/reports/primacy-analysis-plan.md (amendment 6, adopted 6ec9b52); analysis log 5.10
 
@@ -24,11 +24,11 @@ reported, and then (only then) the timing test. Paper stays writable if the revi
       interval. Unit checks: w_p = 1 reproduces the current predictions; the folds cover each pulse trial once.
 - [x] 3. (done: FAILS for both baselines, analysis log 5.11) Revised gate: `primacy.py --analyze --gate_only` on the out-of-fold predictions, plus descriptive calibration
       by coherence and mouse.
-- [ ] 4. (code ready: `scripts/ddm/primacy_calibration.py`, a new script rather than an extension of `primacy_sensitivity.py`; run after step 3) Calibration and power (amendment 6 item 6): extend `primacy_sensitivity.py` to run the revised pipeline
+- [x] 4. (done; analysis log 5.11: calibrated under the null, no power at 10-40% decay) (code ready: `scripts/ddm/primacy_calibration.py`, a new script rather than an extension of `primacy_sensitivity.py`; run after step 3) Calibration and power (amendment 6 item 6): extend `primacy_sensitivity.py` to run the revised pipeline
       (w_p CV fit → predictions → gate → timing GLMM) on synthetic data at decay 0/10/20/40% (≥ 20 datasets each).
       Report gate-pass rate, false positives at 0, detection conditional on the gate and overall. Hyak.
 - [ ] 5. NOT RUN: revised gate failed (amendment 6 item 8). Timing test (only after step 4 is reported): `primacy.py --analyze --unblind` on the revised predictions.
-- [ ] 6. Verify and report; update the paper outline's R5 accordingly (three outcome versions already drafted).
+- [x] 6. (report reports/2026-10-23-amendment-6-result.md; paper outline update left to the paper session) Verify and report; update the paper outline's R5 accordingly (three outcome versions already drafted).
 
 ## Out of scope
 Any further baseline revision for the primacy question (amendment 6 item 8); location-level analyses.
@@ -45,3 +45,5 @@ Any further baseline revision for the primacy question (amendment 6 item 8); loc
   run step 3 (revised gate) and summarize step 4; the timing test (step 5) only after both are reported.
 - 2026-10-23: all Hyak results in. Revised gate fails (primary +0.24, secondary +0.31 logit). Timing test not run
   (item 8). Calibration summary running locally (4 parallel processes, one per level).
+- 2026-10-23: calibration summarized (4 parallel local runs). Null calibrated (gate 95%, 0/20 false positives); detection
+  0-5% at 10-40% decay. Plan done; primacy result final under amendment 6 item 8.

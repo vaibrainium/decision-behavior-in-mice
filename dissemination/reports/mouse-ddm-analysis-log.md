@@ -548,6 +548,35 @@ timing-constant gain fitted with the RT-sensitive likelihood cannot absorb this,
 up decisions, which the RT data reject (profile rises steeply above w ≈ 10; section 5.10/plan log). SUSPECTED, not
 tested.
 
+**Calibration and power** (amendment 6 item 6; `primacy_calibration`, 800 Hyak jobs 42183756/57, summaries
+`ddm/primacy_calibration/calibration_summary_levels*.csv`, `primacy_calibration --report`; 20 datasets per level;
+generating gains = the real fitted w_p; control fits held fixed):
+
+| primacy added (drift-gain decay over 0.5 s) | 0 (null) | 10% | 20% | 40% |
+|---|---|---|---|---|
+| gate passes | 0.95 | 0.70 | 0.35 | 0.05 |
+| timing test detects primacy, all datasets | 0.00 | 0.00 | 0.05 | 0.00 |
+| detects primacy, given gate pass | 0/19 | 0/14 | 0/7 | 0/1 |
+| mean β_middle (SD) | +0.01 (0.05) | +0.03 (0.05) | 0.00 (0.06) | 0.00 (0.06) |
+| UW late: interval excludes 0 | 0.05 | 0 | 0 | 0 |
+
+- **Under the null the procedure is calibrated:** the gate passes 95% of the time, the timing test has 0/20 false
+  positives (UW late 1/20), and fitted gains correlate with the generating gains at r = 0.82.
+- **The timing test has essentially no power, even at a 40% decay.** β_middle stays at ~0 against an SD of ~0.06. The
+  gate-pass rate falls with decay, partly by construction: the decay acts on the simulated pulse trials while the
+  control-only parameters stay at the real (no-decay) fits, so the pulse-trial RTs no longer match. Those rates say
+  little about the real data.
+
+**Primacy result under amendment 6** (item 8, final for this question):
+- the original gate failed (5.10);
+- the revised gate (pulse gain) also failed;
+- the timing test was not run;
+- the calibration shows it could not have detected primacy of up to 40% decay over 0.5 s with these pulses and trial
+  counts.
+
+So the data do not answer the primacy question. They do show that mice react to the brief pulses more than a
+motion-energy model fitted to control trials predicts, by an amount that varies between mice.
+
 ---
 
 ## 6. Things that did not work, and why
