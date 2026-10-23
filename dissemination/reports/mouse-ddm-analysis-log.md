@@ -736,6 +736,8 @@ python -m scripts.ddm.primacy --analyze --gate_only --baseline primary --out_dir
 for off in 0 400; do sbatch --array=0-399 --export=ALL,JOB_OFFSET=$off,MODULE=scripts.ddm.primacy_calibration --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm; done
 python -m scripts.ddm.primacy_calibration --summarize
 ```
+Submitted 2026-10-23 as a dependency chain: step 1 `42183146` → step 2 `42183755` (`afterok`) → step 4
+`42183756` / `42183757` (offsets 0 / 400, `afterok` on 42183755). Step 3 (revised gate) runs locally after step 2.
 
 ### 8.5 Analysis
 ```bash

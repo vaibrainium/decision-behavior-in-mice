@@ -41,3 +41,5 @@ Any further baseline revision for the primacy question (amendment 6 item 8); loc
   control fits, PSUIM10 and DBM14): flat within ~3 NLL for w = 0-7, steep above 10; minimum 3-7 depending on the seed,
   so the gain is only loosely constrained in small mice. primacy_calibration.py written (800 jobs; control fits held
   fixed, a stated caveat); smoke-tested end to end at reduced repetitions.
+- 2026-10-23: chained on Hyak: 42183146 (step 1) -> 42183755 (step 2) -> 42183756/57 (step 4). Next: when synced,
+  run step 3 (revised gate) and summarize step 4; the timing test (step 5) only after both are reported.
