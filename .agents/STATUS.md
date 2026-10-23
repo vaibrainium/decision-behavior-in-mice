@@ -2,7 +2,7 @@
 Last updated: 2026-10-22 by Codex (client date; prior entries dated 2026-10-23 retained)
 
 ## Current focus
-Draft in dissemination/paper/manuscript_2026-10-22.md includes frozen predictions and completed strategy sensitivity.
+Draft in dissemination/paper/manuscript_2026-10-22.md includes observed first-pass gate failures and inconclusive strategy test. Amendment 6 remains draft; timing tests withheld.
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
@@ -13,6 +13,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-10-22-observed-gate-review.md : both first-pass gates fail; strategy z=2.966 remains not distinguished; proposed pulse-gain revision reviewed, not adopted
 - reports/2026-10-22-prediction-sensitivity.md : all frozen hashes match; pulse-specific test selects generator in 1/20 extrema and 0/20 integrator simulations; observed pulse analysis pending
 - reports/2026-10-22-arriving-results.md : independently verified control preference for integrator, free guess bias and completed recovery; manuscript updated; pulse predictions/comparison pending
 - reports/2026-10-22-paper-first-draft.md : first manuscript prose; qualified hidden-coherence population claim, separated analysis sets; final strategy results pending
@@ -29,8 +30,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - ../dissemination/reports/motion-energy-methods.md : motion-energy method review and corrections
 
 ## Known issues
-- Gate 1 FAILS for both baselines (departure +0.30 logit vs predicted pulse effect 0.03), varying between mice
-  mice; timing test not run; model revision needed (analysis log 5.10).
+- Gate 1 FAILS for both first-pass baselines (departure +0.30 logit vs predicted effect 0.03); timing tests withheld. Both gate fits have one divergence and use preliminary control fits. Amendment 6 draft, not adopted in this review.
 - Pulse-specific strategy test has low sensitivity under frozen fitted candidates (1/20 extrema, 0/20 integrator correct); predicted effects differ by ~0.01 logit. Do not infer equivalence or independent pulse confirmation from an inconclusive result.
 - Recovery: sv false-positive rate 7/20 at working threshold; guess-delay parameter poorly recovered. sv bounds and high-coherence error/late-response misfit limit mechanism interpretation (arriving-results report).
 - Hidden-coherence k = 0.50 is a shared-model estimate; paired across-mouse coefficient comparison p = 0.492. Notebook controls use RT-dependent labels; scheduled-control sensitivity remains pending (first-draft report).
@@ -40,6 +40,9 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - Screen geometry not corrected in ME (ME methods §3.7).
 
 ## Decisions
+- 2026-10-23: primacy plan amendment 6 adopted with V. Thakur's corrections: cross-validated per-mouse pulse gain,
+  labelled a model revision prompted by the failed gate; null calibration + power before the timing test; no
+  further model expansion. Original gate failure reported prominently.
 - 2026-10-23: guess_bias free (V. Thakur; fixed costs 65.5 held-out NLL). Control trials favour the integrator over
   extrema detection (+346 NLL); no E refit (analysis log 5.8).
 - 2026-10-22 (client date): user approved integration-versus-extrema discrimination as primary paper question, primacy secondary; draft established sections while Hyak jobs queue. Preserve existing confirmatory rules/order (first-draft report).
