@@ -18,16 +18,16 @@ reported, and then (only then) the timing test. Paper stays writable if the revi
 - The w_p fits are 1-D and cheap enough for Hyak (CRN at 50 reps; ~20 likelihood evaluations each).
 
 ## Steps
-- [ ] 1. (submitted: job 42183146) Step 5 final fits on Hyak: L0U0V1Z0G1 and L1U1V1Z0G1, fast_only, bias free, split control, 50 reps (20 jobs).
+- [x] 1. (done: job 42183146) Step 5 final fits on Hyak: L0U0V1Z0G1 and L1U1V1Z0G1, fast_only, bias free, split control, 50 reps (20 jobs).
 - [x] 2. (code; run after step 1) `scripts/ddm/fit_pulse_gain.py`: per (baseline, mouse, fold) fit w_p on the training pulse trials; out-of-fold
       predictions (≥ 200 reps) in the `primacy.py` format, saved with the commit hash; all-trial w_p with a profile
       interval. Unit checks: w_p = 1 reproduces the current predictions; the folds cover each pulse trial once.
-- [ ] 3. Revised gate: `primacy.py --analyze --gate_only` on the out-of-fold predictions, plus descriptive calibration
+- [x] 3. (done: FAILS for both baselines, analysis log 5.11) Revised gate: `primacy.py --analyze --gate_only` on the out-of-fold predictions, plus descriptive calibration
       by coherence and mouse.
 - [ ] 4. (code ready: `scripts/ddm/primacy_calibration.py`, a new script rather than an extension of `primacy_sensitivity.py`; run after step 3) Calibration and power (amendment 6 item 6): extend `primacy_sensitivity.py` to run the revised pipeline
       (w_p CV fit → predictions → gate → timing GLMM) on synthetic data at decay 0/10/20/40% (≥ 20 datasets each).
       Report gate-pass rate, false positives at 0, detection conditional on the gate and overall. Hyak.
-- [ ] 5. Timing test (only after step 4 is reported): `primacy.py --analyze --unblind` on the revised predictions.
+- [ ] 5. NOT RUN: revised gate failed (amendment 6 item 8). Timing test (only after step 4 is reported): `primacy.py --analyze --unblind` on the revised predictions.
 - [ ] 6. Verify and report; update the paper outline's R5 accordingly (three outcome versions already drafted).
 
 ## Out of scope
@@ -43,3 +43,5 @@ Any further baseline revision for the primacy question (amendment 6 item 8); loc
   fixed, a stated caveat); smoke-tested end to end at reduced repetitions.
 - 2026-10-23: chained on Hyak: 42183146 (step 1) -> 42183755 (step 2) -> 42183756/57 (step 4). Next: when synced,
   run step 3 (revised gate) and summarize step 4; the timing test (step 5) only after both are reported.
+- 2026-10-23: all Hyak results in. Revised gate fails (primary +0.24, secondary +0.31 logit). Timing test not run
+  (item 8). Calibration summary running locally (4 parallel processes, one per level).

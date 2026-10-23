@@ -505,6 +505,49 @@ The test is underpowered as declared before unblinding (1/40). Interpretation (E
 smaller pulse effects than observed (~0.03–0.04 vs ~0.3). E's larger prediction is closer, so it gains more
 log-likelihood from the pulses. That indicates under-predicted pulse sensitivity, not extrema detection.
 
+### 5.11 Amendment 6: pulse gain and the revised gate (2026-10-23)
+
+A model revision prompted by the failed gate (section 5.10), specified before any timing contrast. The original gate
+failure (5.10) is the primary result.
+
+**Inputs.** Final control-only fits `ddm/fits_final` (50 reps; job 42183146). Pulse-gain fits and out-of-fold
+predictions in `ddm/primacy_revised/{primary,secondary}/` (job 42183755, commit 5e6b7a5).
+
+**Fitted pulse gain w_p** (all pulse trials; the interval is the set of evaluated gains within 1.92 NLL of the minimum,
+so coarse and sometimes degenerate):
+
+| mouse | DBM12 | DBM13 | DBM14 | DBM15 | DBM5 | DBM6 | PSUIM10 | PSUIM5 | PSUIM6 | PSUIM7 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| primary w_p | 0.27 | 0.06 | 1.23 | 0.32 | 1.28 | 2.00 | 6.98 | 2.94 | 2.45 | 1.40 |
+| primary interval | 0–0.5 | 0–1.5 | 1.1–4.0 | 0–2.0 | 1.1–1.4 | 2.0 | 3.0–8.1 | 2.8–4.0 | 2.0–3.0 | 1.4 |
+| secondary w_p | 0.05 | 0.00 | 3.04 | 1.85 | 1.27 | 2.87 | 6.71 | 3.96 | 0.88 | 0.71 |
+
+Fold gains vary widely in the small mice (e.g. PSUIM10 0.76–10.0, DBM15 0.0–4.9).
+
+**Revised gate: fails for both baselines** (`primacy --analyze --gate_only --out_dir ddm/primacy_revised --unblind`):
+
+| baseline | departure b0 (logit, 95% CI) | predicted pulse effect | RT cells inside | P(RT > 5 s) inside | gate |
+|---|---|---|---|---|---|
+| primary + w_p | +0.24 (0.09, 0.37) | 0.057 | 0.62 | 0.90 | **fail** |
+| secondary + w_p | +0.31 (0.20, 0.41) | 0.029 | 0.70 | 0.60 | **fail** |
+
+The gain roughly doubles the predicted pulse effect of the primary model, but the departure shrinks only from +0.30 to
++0.24. Per amendment 6 item 8: **the timing test is not run, and no further revision is made.** The primacy result is
+the gate failures, these gains, and the calibration (item 6, below when done).
+
+**Descriptive calibration** (amendment 6 item 3; revised primary, out-of-fold; observed vs predicted P(choice toward
+pulse); `dissemination/reports/primacy_revised_calibration_by_{coherence,mouse}.csv`):
+- **By coherence:** 0% 0.574 vs 0.512 (+0.25 logit). Pulse with coherence: +0.25, +0.35, +0.29 at 9, 18, 36%.
+  Pulse against coherence: +0.02, +0.09, −0.18 at 9, 18, 36%.
+- **By mouse:** departure PSUIM7 +0.34, PSUIM6 +0.22, PSUIM10 +0.21, DBM13 +0.16, DBM5 +0.09, PSUIM5 +0.07, DBM6 +0.02,
+  DBM15 −0.02, DBM12 −0.03, DBM14 −0.19.
+
+EXPLORATORY reading: the pulse excess persists even where the pulse is the only signal (0%). On pulse trials, choices
+follow the coherence more steeply than predicted: excess with the coherence, deficit against it at 36%. A single
+timing-constant gain fitted with the RT-sensitive likelihood cannot absorb this, because a stronger pulse also speeds
+up decisions, which the RT data reject (profile rises steeply above w ≈ 10; section 5.10/plan log). SUSPECTED, not
+tested.
+
 ---
 
 ## 6. Things that did not work, and why

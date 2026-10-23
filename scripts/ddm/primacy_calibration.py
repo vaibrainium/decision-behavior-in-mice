@@ -94,7 +94,7 @@ def summarize(out_dir: Path, levels: list[float] | None, **kw) -> pd.DataFrame:
         rows.append(row)
         logger.info("level %.2f dataset %d: %s", level, dataset, row)
     df = pd.DataFrame(rows)
-    df.to_csv(out_dir / "calibration_summary.csv", index=False)
+    df.to_csv(out_dir / ("calibration_summary.csv" if levels is None else f"calibration_summary_levels{'_'.join(f'{lv:g}' for lv in levels)}.csv"), index=False)
     return df
 
 
@@ -128,13 +128,16 @@ if __name__ == "__main__":
     parser.add_argument("--job_id", type=int)
     parser.add_argument("--list", action="store_true")
     parser.add_argument("--summarize", action="store_true")
-    parser.add_argument("--levels", type=float, nargs="*", help="summarize only these levels")
+    parser.add_argument("--levels", type=float, nargs="*", help="summarize only these levels (for parallel runs)")
+    parser.add_argument("--report", action="store_true", help="report from the per-level summary files")
     args = parser.parse_args()
 
     processed = Path(dir_config.data.processed)
     out_dir = processed / args.out_dir
     if args.summarize:
         report(summarize(out_dir, args.levels, draws=500, tune=500))
+    elif args.report:  # combine per-level summaries written by parallel --summarize --levels runs
+        report(pd.concat([pd.read_csv(f) for f in sorted(out_dir.glob("calibration_summary_levels*.csv"))], ignore_index=True))
     else:
         inputs = load_inputs(processed / args.inputs)
         grid = build_grid(inputs)
