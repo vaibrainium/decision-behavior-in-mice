@@ -481,6 +481,15 @@ first.
   match what the UCLA rig displayed during pulses? Alternatively, UCLA mice may respond to the pulse transient itself.
 - **The frozen E predictions** (pulse effect ~0.04) are far from the observed ~0.3 too.
 
+**Strategy test** (amendment 4 item 5 as changed by amendment 5; `primacy --strategy_test --unblind`;
+`ddm/primacy/results_strategy.pkl`). a = E, b = primary, after gate 1:
+- **Pulse-gain statistic:** +5.41 ± 1.83, z = 2.97, same sign in 8/10 mice. **Not distinguished** (threshold 3 SD).
+- **Total log-likelihood:** −8.6 ± 11.6, z = −0.74. Not distinguished.
+
+The test is underpowered as declared before unblinding (1/40). Interpretation (EXPLORATORY): both models predict far
+smaller pulse effects than observed (~0.03–0.04 vs ~0.3). E's larger prediction is closer, so it gains more
+log-likelihood from the pulses. That indicates under-predicted pulse sensitivity, not extrema detection.
+
 ---
 
 ## 6. Things that did not work, and why
