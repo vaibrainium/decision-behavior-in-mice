@@ -135,8 +135,8 @@ No full refit of shared control parameters in E. If frozen-parameter uncertainty
 
 ### F. Select and implement a bounded candidate — after B–E
 
-- [ ] F1. Coordinator writes a dated decision using B–E. Choose **one** branch below or stop with the behavioural/model-limitation result. Record predicted improvements and an observable result that would disconfirm the candidate.
-- [ ] F2. Freeze equations, parameter bounds, shared-versus-mouse parameters, control treatment, train/test folds and the new comparison rule. Archive this specification before evaluating the new comparison, while retaining its exploratory label.
+- [x] F1. (2026-10-23: user chose the reduced tau_p pilot with corrected inputs first; see Log) Coordinator writes a dated decision using B–E. Choose **one** branch below or stop with the behavioural/model-limitation result. Record predicted improvements and an observable result that would disconfirm the candidate.
+- [x] F2. (frozen: <run>/models/f2_spec_tau_pilot.json, sha256 4c1995ca…; committed before any pilot evaluation) Freeze equations, parameter bounds, shared-versus-mouse parameters, control treatment, train/test folds and the new comparison rule. Archive this specification before evaluating the new comparison, while retaining its exploratory label.
 - [ ] F3. Implement the candidate and the comparison with matched sensory flexibility. Run a representative local benchmark; prepare exact cluster commands, job count, resources and budget. Cluster submission needs user authorization under AGENTS.md; preparing code and commands does not authorize submission.
 
 Branches, in priority order conditional on findings:
@@ -175,7 +175,7 @@ The following are **proposed new paths**, not files already implemented:
 
 | Owner | Exclusive code paths under `scripts/pulse_followup/` |
 |---|---|
-| Coordinator/A | `__init__.py`, `data.py`, `config.py`, `io.py` |
+| Coordinator/A | `__init__.py`, `data.py`, `config.py`, `io.py`, `inputs_v2.py` (corrected DDM inputs) |
 | B | `stimulus_audit.py` |
 | C | `behaviour.py` |
 | D | `response_time.py` |
@@ -227,3 +227,6 @@ New data collection; reopening the historical confirmatory test; retuning its th
 - 2026-10-23 (coordinator): verified that the 38 mislabelled UCLA genuine pulse trials also lack the pulse in the stored ME (sign-aligned peak -0.26 vs 24.75 % coherence in normal censored pulses): label and stimulus both 'no pulse' in ddm_inputs_global.npz. Existing-input UCLA censored fraction pulse 16.0% vs corrected 16.4%; controls 16.7% vs 16.4%. Decision on a versioned corrected input (v2) deferred by the user until E is done; coordinator recommendation: document now, build v2 only if F proceeds.
 - 2026-10-23 (coordinator): E done (COMPLETE, no failing checks; first attempt superseded for an over-strict 1e-6 GPU-vs-CPU profile tolerance, relaxed to 0.5 NLL; results identical). Ranked: (1) timing of the directional effect: model early then reversing (2-4.58 s: -2.98 pp [-4.21, -1.75] at choice-only gain; -1.44 at stored gain; leak+urgency baseline also reverses), data delayed and sustained; choice-RT tradeoff demonstrated in PSUIM6/7 only, suspected in 6-7 mice, not supported in DBM14; (2) required gain 2-7x exceeds B's physical bound x1.4; (3) coherence-slope excess on pulse trials (0.156 logit) matches the control fit's own misfit (0.158); pulse-specific residue ~0.08-0.11 logit; (4) no common latency burst (branch 2 not supported). Commit moved fa8de8b -> 475934e during E: user's own commits (final fits, fit-quality figure), not pulse follow-up work.
 - 2026-10-23 (coordinator): F1 recommendation pending the user's decision. E proposes one branch-1-form candidate (causal exponential pulse time constant tau_p, gain and control parameters frozen); full benchmark ~1.8 CPU-h (PSUIM6/7, 5 tau x 23 gains), reduced ~25 min (3 tau x 8 gains). Not run.
+- 2026-10-23 (coordinator, F1 decision recorded): the user chose (a) the reduced ~25-30 min tau_p pilot and (b) corrected inputs only because modelling continues. Corrected inputs v2 built: <run>/models/inputs_v2/ddm_inputs_global_v2.npz (30,025 trials; 38 UCLA no-response genuine pulses relabelled and replayed with their pulse; 5 direction-unknown dropped; v1 reconstruction exact to 4e-7; all other rows and templates byte-identical; replayed mean sign-aligned peak 20.9 % coherence). First attempt superseded (compared against a plain no-pulse replay; v1 actually used a NaN-coherence pulse event that still consumes the onset/offset frames).
+- 2026-10-23 (coordinator, F2 frozen before any evaluation): <run>/models/f2_spec_tau_pilot.json. PSUIM6/7, primary baseline, tau_p in {0, 100, 300} ms x w in {1, 1.5, 2, 2.5, 3, 4, 5.5, 7}, 50 reps CRN, second-seed check. PASS needs, in both mice: controls unchanged (P0); best tau_p > 0 with >= 10 NLL and > 2x seed-SD improvement plus held-out improvement in >= 4/5 folds (P1); w_choice/w_joint <= 1.5 (P2); late-window model contrast >= -1.0 pp (P3). FAIL or MIXED -> modelling stops; no grid expansion. Exploratory; a pass only motivates full F/G (G2-G5), with user approval.
+- 2026-10-23 (coordinator): F3 pilot assigned to Worker 3 (author of E's simulation code) instead of the default Worker 1, to reuse the validated diagnostics machinery; files models.py/fit.py as owned.
