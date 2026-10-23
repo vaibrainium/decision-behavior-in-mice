@@ -2,16 +2,16 @@
 Last updated: 2026-10-23 by Claude Opus 5.5 (pulse follow-up coordinator)
 
 ## Current focus
-Exploratory existing-data pulse follow-up is being implemented (run 20261023T191030Z_fa8de8b). A (trial contract) is
-done and frozen (config v2); B (stimulus), C (directional effects) and D (joint response curves) are running in
-parallel; E (existing-model diagnosis) is next. The F/G mechanism work waits for the user's decision on the F1 recommendation.
+Exploratory pulse follow-up (run 20261023T191030Z_fa8de8b): A-E and G1 complete and cross-checked; behavioural
+Results draft in dissemination/paper/pulse_followup_results_2026-10-23.md. Awaiting the user's F1 decision (tau_p
+pilot vs stop modelling) and the decision on a versioned corrected DDM input.
 
 ## Previous focus
 Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gate failures and predates adoption of amendment 6. Newer draft: manuscript_2026-10-23.md. Timing tests remain withheld after both revised gates failed.
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
-- plans/2026-10-23-pulse-followup-parallel.md : implementation running; A done; B/C/D running; next E, then H behavioural package and the F1 recommendation to the user; original primacy procedure remains closed
+- plans/2026-10-23-pulse-followup-parallel.md : A-E, G1 done; H draft written; next: user decision on F1 (tau_p pilot or stop) and corrected input v2; original primacy procedure remains closed
 - plans/2026-10-23-amendment-4-extrema.md : code done and checked; next: Hyak fits (commands in analysis log 8.4d)
 - plans/2026-10-22-primacy-analysis-code.md : done; next: predictive check (gate 1) first pass when 8.4c batch 1 lands
 - plans/2026-10-20-paper-writeup.md : prose/provenance, pulse research review and implementation handoff done; next: remaining author facts, figures and verification; new pulse analyses tracked in child plan
@@ -19,6 +19,11 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-10-23-pulse-diagnostics-20261023T191030Z_fa8de8b.md : existing model misplaces the pulse effect in time (early, then reverses; data delayed and sustained); choice-RT gain tradeoff demonstrated in 2 mice; proposes one tau_p candidate
+- reports/2026-10-23-pulse-validation-g1-20261023T191030Z_fa8de8b.md : t intervals adequate (coverage 0.93-0.975); power 0.64 at 6 pp; bootstrap undercovers
+- reports/2026-10-23-pulse-stimulus-20261023T191030Z_fa8de8b.md : no sign-aligned post-pulse stimulus bias except a one-dot rounding shift; UCLA pulse energy possibly x1.3-1.4 understated
+- reports/2026-10-23-pulse-response_time-20261023T191030Z_fa8de8b.md : pulse-aligned curves: +5.8 pp direction, emerging 0.5-2 s; no common latency effect (review: reports/2026-10-23-pulse-review-D-...)
+- reports/2026-10-23-pulse-behaviour-20261023T191030Z_fa8de8b.md : scheduled pulse Delta_direction +5.84 pp [1.80, 9.89], 10 mice, Holm p = 0.019
 - reports/2026-10-23-pulse-data-20261023T191030Z_fa8de8b.md : pulse contract frozen; assignment verified randomized from task source; 48 UCLA no-response pulses mislabelled control in DDM inputs (43 recovered); UW asymmetric-coherence schedule flagged
 - reports/2026-10-23-pulse-parallel-plan.md : parallel handoff drafted with explicit ownership, common data contract, minimum behavioural deliverable and conditional mechanism validation; no implementation launched
 - reports/2026-10-23-pulse-thesis-research.md : existing-data pulse research synthesis; replay offset redraws noise directions, physical counterfactual validation needed; joint choice/RT route proposed
