@@ -474,23 +474,17 @@ first.
   against). Departure: +0.27 at 0% coherence (n = 1,388), +0.30 when the pulse agrees with the coherence, +0.02 when
   it opposes it. Read additively, an extra pulse effect of ~0.16–0.27 plus stronger-than-predicted coherence
   sensitivity on pulse trials (~0.14). SUSPECTED; two components inferred from three numbers.
-- **By rig.** The departure is concentrated in UCLA: PSUIM10 +0.28, PSUIM5 +0.16, PSUIM6 +0.26, PSUIM7 +0.35. UW mice
-  are −0.14 to +0.14 (DBM12 −0.08, DBM13 +0.14, DBM14 −0.14, DBM15 +0.02, DBM5 +0.08, DBM6 +0.08), although UW pulses
-  are longer (67 vs 50 ms) and larger in motion energy.
-- **Leading question** (SUSPECTED, not tested): does the replayed UCLA pulse stimulus, and so its motion energy,
-  match what the UCLA rig displayed during pulses? Alternatively, UCLA mice may respond to the pulse transient itself.
+- **By mouse.** The departure varies between mice: PSUIM7 +0.35, PSUIM10 +0.28, PSUIM6 +0.26, PSUIM5 +0.16,
+  DBM13 +0.14, DBM5 +0.08, DBM6 +0.08, DBM15 +0.02, DBM12 −0.08, DBM14 −0.14. The largest values are in the four mice
+  of one cohort and site, but with 4 and 6 mice, site is confounded with cohort, training and rig, so **no
+  location-level conclusion is drawn** (V. Thakur, 2026-10-23: analyses are not separated by location; rig stays a
+  covariate, plan §6). Treated as between-mouse heterogeneity in pulse sensitivity.
 - **The frozen E predictions** (pulse effect ~0.04) are far from the observed ~0.3 too.
-- **By rig × direction** (EXPLORATORY; observed / predicted P(choice toward pulse), departure in logit):
-
-  | rig | 0% coherence | pulse with coherence | pulse against coherence |
-  |---|---|---|---|
-  | UCLA | 0.624 / 0.509 (+0.47), n = 744 | 0.739 / 0.632 (+0.50), n = 2,239 | 0.401 / 0.381 (+0.09), n = 2,232 |
-  | UW | 0.517 / 0.507 (+0.04), n = 644 | 0.620 / 0.592 (+0.12), n = 2,073 | 0.423 / 0.435 (−0.05), n = 2,009 |
-
-  At 0% coherence a UCLA pulse moves choices ~12 percentage points, against a predicted ~0.8 (~15×); UW pulses act
-  roughly as predicted. The UCLA with/against asymmetry fits an extra pulse effect (~0.3–0.5) plus the shallow
-  control-trial psychometric fit at 18–36% coherence for UCLA (notebook 3.0 figure), which adds on "with" trials and
-  cancels on "against" trials. SUSPECTED.
+- **0% coherence trials** (EXPLORATORY; pulse is the only signal): across all mice, P(choice toward pulse) is 0.574
+  observed vs 0.508 predicted (n = 1,388). Per mouse it ranges from near the prediction to ~12 percentage points
+  above it, i.e. up to ~15× the predicted pulse effect. The with/against asymmetry above is consistent with this extra
+  pulse effect plus the too-shallow control-trial psychometric fit at 18–36% coherence in some mice (notebook 3.0
+  figure), which adds on "with" trials and cancels on "against" trials. SUSPECTED.
 - **Replay vs rig, UCLA burst** (code check, `scripts/motion_energy.py`, `scripts/ucla_rdk.py`):
   - the replay ends the burst at its scheduled offset (`updateBurst(base)`), as the rig does;
   - it changes only dot directions, not positions, size, brightness or speed;

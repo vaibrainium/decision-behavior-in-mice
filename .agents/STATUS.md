@@ -29,7 +29,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - ../dissemination/reports/motion-energy-methods.md : motion-energy method review and corrections
 
 ## Known issues
-- Gate 1 FAILS for both baselines (departure +0.30 logit vs predicted pulse effect 0.03), concentrated in UCLA
+- Gate 1 FAILS for both baselines (departure +0.30 logit vs predicted pulse effect 0.03), varying between mice
   mice; timing test not run; model revision needed (analysis log 5.10).
 - Pulse-specific strategy test has low sensitivity under frozen fitted candidates (1/20 extrema, 0/20 integrator correct); predicted effects differ by ~0.01 logit. Do not infer equivalence or independent pulse confirmation from an inconclusive result.
 - Recovery: sv false-positive rate 7/20 at working threshold; guess-delay parameter poorly recovered. sv bounds and high-coherence error/late-response misfit limit mechanism interpretation (arriving-results report).
