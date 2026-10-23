@@ -1,0 +1,138 @@
+{
+  "search_date": "2026-10-23",
+  "review_type": "Targeted critical narrative review; not systematic or exhaustive",
+  "provider": "web.run search_query, supplemented by primary-page open/find and public Europe PMC fullTextXML",
+  "queries": [
+    "motion pulse perceptual decision making evidence accumulation reaction time Huk Shadlen 2005",
+    "Stine Zylberberg Ditterich Shadlen 2020 integration extrema detection pulses",
+    "Okazawa Sha Odean Basso 2018 mice evidence accumulation motion pulses",
+    "Huk Shadlen 2005 neural activity macaque parietal cortex temporal integration motion pulse",
+    "Okazawa Sha Odean Basso 2018 Psychophysical reverse correlation reflects both sensory and decision-making processes",
+    "motion pulse decision making response time stimulus selection bias temporal weighting survival analysis",
+    "site:biorxiv.org motion pulses evidence accumulation urgency temporal weighting 2024 2025 2026",
+    "\"Neural activity in macaque parietal cortex reflects temporal integration\" PMC",
+    "\"Using Time-Varying Evidence to Test Models\" full text",
+    "\"Psychophysical reverse correlation reflects\" nature 2018",
+    "\"motion\" \"double-pulse\" \"integration\" \"decision\"",
+    "\"pulse\" \"urgency gating\" evidence accumulation test",
+    "\"pulse\" \"reaction time\" \"non-decision\" \"integration\" sensory memory",
+    "\"Functional dissection of signal and noise\" Yates 2017",
+    "\"Integration of Direction Cues Is Invariant\" Kiani Churchland Shadlen 2013",
+    "\"Functional dissection\" \"MT\" \"temporal\" \"weighting\" 2017 Yates",
+    "\"The computations that support simple decision-making\" authors 2017",
+    "\"Bounded Integration in Parietal Cortex\" pulses 2008",
+    "\"motion pulses\" \"decision\" \"2024\"",
+    "\"motion pulses\" \"decision\" \"2025\"",
+    "site:biorxiv.org \"evidence accumulation\" \"pulses\"",
+    "\"saccadic inhibition\" \"evidence accumulation\" transient",
+    "Brunton Botvinick Brody 2013 rats humans optimal accumulation noisy evidence sensory adaptation pulses",
+    "\"urgency\" \"pulse\" \"Cisek\" \"2015\"",
+    "\"Evidence accumulation\" \"competing risks\" response time",
+    "site:pubmed.ncbi.nlm.nih.gov (\"motion pulse\" OR \"motion pulses\") decision",
+    "\"pulse\" \"sensory\" \"integration\" \"2025\" \"decision\" site:elifesciences.org",
+    "\"pulse\" \"evidence accumulation\" \"2026\" site:pubmed.ncbi.nlm.nih.gov",
+    "\"Rats and humans can optimally accumulate\" PMC",
+    "\"Employment of time-varying sensory evidence\" authors",
+    "\"Decisions in changing conditions\" \"urgency-gating\" 2009",
+    "\"Adaptive gain control during human perceptual choice\" 2012",
+    "\"Neural Circuit Dynamics Underlying Accumulation\" Wong Huk Shadlen Wang 2007",
+    "\"Psychophysical kernels\" \"nonlinear\" \"pulse\" \"2023\"",
+    "Zhou 2009 perturbation protocol distinguish choice reaction time models pulse",
+    "\"Zhou\" \"2009\" \"time-varying\" \"decision\" perturbation",
+    "\"Time-varying perturbations\" \"10.1162\"",
+    "\"10.1162/neco.2009.12-07-671\"",
+    "\"motion pulse\" \"competing\" \"reaction time\" \"2025\"",
+    "\"motion pulse\" \"2026\" \"accumulation\"",
+    "site:pubmed.ncbi.nlm.nih.gov \"Time-varying perturbations can distinguish\""
+  ],
+  "limitations": [
+    "Ranked search results were screened selectively; no total database hit count or PRISMA claim.",
+    "Some discovery queries contained uncertain author names or dates; final citations were checked against the identified papers.",
+    "Single-agent appraisal; no independent duplicate screening.",
+    "No unpublished project data were included in external queries."
+  ],
+  "core_sources": [
+    {
+      "citation": "Huk & Shadlen (2005)",
+      "doi": "10.1523/JNEUROSCI.4684-04.2005",
+      "read_url": "https://www.gatsby.ucl.ac.uk/~pel/course_wuhan/2021/papers/huk_shadlen2005.pdf",
+      "scope": "Author PDF, methods and results"
+    },
+    {
+      "citation": "Wong et al. (2007)",
+      "doi": "10.3389/neuro.10.006.2007",
+      "read_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2525934/fullTextXML",
+      "scope": "Full-text XML, pulse sections"
+    },
+    {
+      "citation": "Zhou et al. (2009)",
+      "doi": "10.1162/neco.2009.07-08-817",
+      "read_url": "https://arxiv.org/pdf/0901.2173",
+      "scope": "Full manuscript; published DOI verified with PMID 19416080"
+    },
+    {
+      "citation": "Cisek et al. (2009)",
+      "doi": "10.1523/JNEUROSCI.1844-09.2009",
+      "read_url": "https://www.cisek.org/pavel/Pubs/CisekPuskasElMurr2009.pdf",
+      "scope": "Author PDF"
+    },
+    {
+      "citation": "Tsetsos et al. (2012)",
+      "doi": "10.3389/fnins.2012.00079",
+      "read_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3372959/fullTextXML",
+      "scope": "Full text, discussion and methods access"
+    },
+    {
+      "citation": "Kiani et al. (2013)",
+      "doi": "10.1523/JNEUROSCI.2094-13.2013",
+      "read_url": "https://www.cns.nyu.edu/kianilab/papers/Kiani_Shadlen_2013.pdf",
+      "scope": "Author PDF"
+    },
+    {
+      "citation": "Yates et al. (2017)",
+      "doi": "10.1038/nn.4611",
+      "read_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5673485/fullTextXML",
+      "scope": "Full text, sensory model and discussion"
+    },
+    {
+      "citation": "Evans et al. (2017)",
+      "doi": "10.1038/s41598-017-16694-7",
+      "read_url": "https://pure.uva.nl/ws/files/22025649/The_computations_that_support_simple_decision_making.pdf",
+      "scope": "Institutional PDF"
+    },
+    {
+      "citation": "Okazawa et al. (2018)",
+      "doi": "10.1038/s41467-018-05797-y",
+      "read_url": "https://www.cns.nyu.edu/kianilab/papers/Okazawa_Kiani_2018.pdf",
+      "scope": "Author PDF and publisher article"
+    },
+    {
+      "citation": "Stine et al. (2020)",
+      "doi": "10.7554/eLife.55365",
+      "read_url": "https://elifesciences.org/articles/55365",
+      "scope": "Publisher full text"
+    },
+    {
+      "citation": "Kumano & Uka (2024)",
+      "doi": "10.1097/WNR.0000000000001980",
+      "read_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10766094/fullTextXML",
+      "scope": "Full text methods, results and discussion"
+    },
+    {
+      "citation": "Chakravarty et al. (2025)",
+      "doi": "10.7554/eLife.105116.1",
+      "read_url": "https://elifesciences.org/reviewed-preprints/105116v1",
+      "scope": "Reviewed preprint; full publisher text, not a version of record"
+    }
+  ],
+  "retrieval_failures": [
+    "PMC HTML browser challenges on multiple articles; used public alternative sources.",
+    "Europe PMC fullTextXML returned HTTP 500 for PMC3797371 and PMC6246883.",
+    "Publisher nn.4611 access redirected to an unavailable authentication endpoint; used Europe PMC XML."
+  ],
+  "workflow_source": {
+    "doi": "10.48550/arXiv.2609.00065",
+    "url": "https://arxiv.org/abs/2609.00065",
+    "scope": "Metadata verified, workflow attribution only"
+  }
+}
