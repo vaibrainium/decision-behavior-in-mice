@@ -298,3 +298,63 @@ run; no `ddm/primacy` output exists; no recorded pulse-trial outcome has been re
 **Unchanged:** amendment 4's items 1–4 and 6, its thresholds, and the order (E fits and frozen predictions before
 gate 1).
 
+---
+
+## Amendment 6 (2026-10-23, DRAFT, after gate 1 failed and before any timing contrast was examined): pulse gain
+
+**Status: draft for V. Thakur's decision.** Gate 1 (section 7) was run on the 15-rep control-only fits and failed for
+both baselines: pooled departure +0.30 logit (95% CI 0.18–0.41) against a predicted pulse effect of 0.03 (analysis log
+5.10). Only pooled, timing-agnostic quantities were examined (by pulse direction relative to coherence, and by
+mouse). The section 6 timing contrast has not been computed. The section 7 rule applies: the model is revised and the
+revision documented before the timing test.
+
+**Why.** Mice respond to the ±100% pulses more than their motion energy predicts under a model fitted to control
+trials, and by an amount that differs between mice. At 0% coherence, the pooled share of choices in the pulse direction
+is 0.574 observed vs 0.508 predicted (n = 1,388); per mouse up to ~12 percentage points above the prediction. Neither
+the integrator nor extrema detection predicts this (0.03 and 0.04 logit). The primacy question is whether the pulse's
+weight depends on its timing. That can be asked with a model whose overall pulse weight is fitted, as long as that
+weight is the same at every timing.
+
+**Changes:**
+1. **Revised baselines.** Each baseline (primary L0U0V1Z0G1, secondary L1U1V1Z0G1; fast-only guesses, guess bias free)
+   gains one parameter per mouse, the **pulse gain** w_p ∈ [0, 50]. The input is the trial's no-pulse motion energy
+   plus w_p times its pulse component, i.e. coherence × onset response + w_p × (pulse change × pulse response) + N
+   (`build_ddm_inputs.py` decomposition; w_p = 1 is the current model).
+   - w_p does not depend on pulse timing, so it can match the average pulse effect but cannot create a difference
+     between early, middle and late pulses.
+   - All other parameters stay at the mouse's control-only fit (plan step 5, final settings); only w_p is fitted.
+   - w_p also absorbs any mismatch between the replayed and displayed pulse. The UCLA replay's one-frame freeze makes
+     its pulse energy ~25–35% too small (analysis log 5.10), so w_p is not a pure behavioural weight and is interpreted
+     only relative to 1 with that caveat.
+2. **Fitting w_p by cross-validation over pulse trials.**
+   - **Folds:** 5 per mouse, stratified by `condition` (coherence × scheduled pulse type, so each fold has every
+     timing).
+   - **Fit:** for each fold, w_p is fitted to the other 4 folds' pulse trials with the censored QMLE likelihood
+     (choices, RTs and censoring, as in the fits), at 50 repetitions with common random numbers, by bounded
+     one-dimensional minimisation.
+   - **Prediction:** each held-out trial is predicted with ≥ 200 repetitions from its fold's w_p. So every pulse
+     trial's p̂ comes from a gain fitted without that trial, and no fit sees a timing contrast.
+   - **Reporting:** w_p fitted to all pulse trials, with a profile-likelihood interval, per mouse.
+3. **Gate for the revised baselines** (section 7, applied to the out-of-fold predictions):
+   - gate 1 as before: the pooled departure must have a 95% interval containing 0, or be smaller than 25% of the
+     predicted pulse effect;
+   - gates 2–3 as before (GATE_MIN_INSIDE = 0.8).
+
+   If the revised primary baseline fails, the timing test is not run and the outcome is reported as the gate result
+   plus the w_p estimates.
+4. **Timing test** (sections 5–6, unchanged in form): offsets logit(p̂) from the out-of-fold predictions of the
+   revised baselines. Primary: β_middle, all mice, rig as a covariate. Secondary: UW-only late pulses and trend. Both
+   baselines reported.
+5. **Extensions** (section 8, amendments 1–2): gain decay and signed leak are fitted to all trials with w_p free as
+   well, and compared with the revised common model by the same cross-validation.
+6. **Sensitivity** (section 9): synthetic data from each mouse's revised model, i.e. its control fit and w_p, with the
+   drift gain decaying 0/10/20/40% over 0.5 s. Then the whole revised pipeline (cross-validated w_p, predictions,
+   GLMM). The smallest decay detected in ≥ 80% of datasets is reported. **Run before the timing test**, so its power
+   is known first.
+7. **Order:** step 5 final control-only fits (50 reps) → w_p cross-validated fits and predictions → gate → sensitivity
+   → timing test. Step 5 had not been run when gate 1 was computed (that pass used the 15-rep fits).
+
+**Not changed:** the strategy test (amendments 4–5) stays as run (not distinguished, underpowered); E's predictions
+stay frozen. The too-shallow control-trial psychometric fit at 18–36% coherence in some mice is not addressed here; it
+cancels in the pooled departure (pulse direction is balanced against coherence) but adds noise to the residuals.
+
