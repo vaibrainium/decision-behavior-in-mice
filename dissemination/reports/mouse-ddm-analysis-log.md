@@ -480,6 +480,27 @@ first.
 - **Leading question** (SUSPECTED, not tested): does the replayed UCLA pulse stimulus, and so its motion energy,
   match what the UCLA rig displayed during pulses? Alternatively, UCLA mice may respond to the pulse transient itself.
 - **The frozen E predictions** (pulse effect ~0.04) are far from the observed ~0.3 too.
+- **By rig × direction** (EXPLORATORY; observed / predicted P(choice toward pulse), departure in logit):
+
+  | rig | 0% coherence | pulse with coherence | pulse against coherence |
+  |---|---|---|---|
+  | UCLA | 0.624 / 0.509 (+0.47), n = 744 | 0.739 / 0.632 (+0.50), n = 2,239 | 0.401 / 0.381 (+0.09), n = 2,232 |
+  | UW | 0.517 / 0.507 (+0.04), n = 644 | 0.620 / 0.592 (+0.12), n = 2,073 | 0.423 / 0.435 (−0.05), n = 2,009 |
+
+  At 0% coherence a UCLA pulse moves choices ~12 percentage points, against a predicted ~0.8 (~15×); UW pulses act
+  roughly as predicted. The UCLA with/against asymmetry fits an extra pulse effect (~0.3–0.5) plus the shallow
+  control-trial psychometric fit at 18–36% coherence for UCLA (notebook 3.0 figure), which adds on "with" trials and
+  cancels on "against" trials. SUSPECTED.
+- **Replay vs rig, UCLA burst** (code check, `scripts/motion_energy.py`, `scripts/ucla_rdk.py`):
+  - the replay ends the burst at its scheduled offset (`updateBurst(base)`), as the rig does;
+  - it changes only dot directions, not positions, size, brightness or speed;
+  - **mismatch:** the rig freezes the dots for one display-loop pass (~5 ms at ~190 passes/s) at burst onset and
+    offset, but the replay, working in 60 Hz frames, freezes a whole 16.7 ms frame at each. A 3-frame UCLA pulse
+    therefore has 2 frames of coherent motion in the replay vs ~45 ms on the rig.
+
+  The replayed UCLA pulse energy is likely ~25–35% too small (measured 90% of nominal). That is a known bias but cannot
+  produce a ~15× excess. The UCLA repository (`vaibrainium/RDK-Task`) now returns 404, so the rig code could not be
+  re-read; the replay's copy was used.
 
 **Strategy test** (amendment 4 item 5 as changed by amendment 5; `primacy --strategy_test --unblind`;
 `ddm/primacy/results_strategy.pkl`). a = E, b = primary, after gate 1:
