@@ -1,0 +1,11 @@
+claim_id,section,claim_kind,claim_text_sha256,evidence_ids,verification_status,uncertainty,analysis_intent
+C101,The story I recommend,interpretive,499e6ccaf4fe8117c2b65678b79aaae339fa7b64fd2c21309f8922fceb904b5d,E101;E103;E104;E105;E106;E108;E110,unverified,moderate,exploratory
+C201,Figure 1. Motion discrimination with brief directional perturbations in mice,result,65896f846b7ba4e1092aac296bbe40340fe6d677d7249928f66f39ffe534e00c,E101,unverified,moderate,descriptive
+C202,Figure 2. Reconstruction characterizes motion evidence beyond nominal coherence,result,ec2980b99ffb84883b63ab7ea182d5fea71f29fc9c3fbc6245d06ffd499f53b4,E102;E107;E110,unverified,moderate,descriptive
+C203,Figure 3. Control-trial prediction favours the tested accumulator over rapid forgetting,result,5454ab6552e39250080a35febc971a51d18664d7f9c625f591efcef26b9640f2,E103;E110,unverified,moderate,descriptive
+C204,Figure 4. Brief motion pulses shift response direction,result,0235adae044467f53a63e51128698baf3ce8c1852b34c80208ef800911fe9370,E104,unverified,moderate,exploratory
+C205,Figure 4. Brief motion pulses shift response direction,result,023dae550c8f9261340174fdf1848efbf88a4d5189d2dff5df3f586beb169120,E105,unverified,moderate,exploratory
+C206,Figure 4. Brief motion pulses shift response direction,result,afbbe6a1adf4eb0034d1a91f6433f3413ea46923d63f58335b9de0ef1ec2a704,E101;E104;E105,unverified,moderate,exploratory
+C207,Figure 5. Pulse gain alone does not reproduce the observed response time course,result,5c4d2716aac3cb5fa3a3084fb6ec25753f68067320bee578e43b26211580cf29,E106;E110,unverified,moderate,exploratory
+C208,Figure 5. Pulse gain alone does not reproduce the observed response time course,result,459575fed259471a9eece4b8a27913b9fc8c51b071942e9420c7068b920ee847,E106,unverified,moderate,exploratory
+C209,Figure 5. Pulse gain alone does not reproduce the observed response time course,result,2bc54b0ed7f41c4ecaf785dd2ae9a1b2f8ed93df98ca682ae1779ff1d4a9a9ea,E106;E107;E108;E110,unverified,moderate,exploratory

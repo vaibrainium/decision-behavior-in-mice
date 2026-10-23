@@ -1,0 +1,486 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "evidence_id": "E001",
+      "source_type": "journal_article",
+      "title": "Differentiating between integration and non-integration strategies in perceptual decision making",
+      "authors": [
+        "Gabriel M Stine",
+        "Ariel Zylberberg",
+        "Jochen Ditterich",
+        "Michael N Shadlen"
+      ],
+      "year": 2020,
+      "identifiers": {
+        "doi": "10.7554/eLife.55365",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7217695/"
+      },
+      "locator": "Abstract; Introduction; Results, Integration and non-integration strategies are difficult to differentiate",
+      "confidentiality": "public",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E002",
+      "source_type": "report",
+      "title": "Primacy test analysis plan and amendments",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "/src/dissemination/reports/primacy-analysis-plan.md; Sections 1\u201311; amendments 2\u20135. Historical confirmatory timing endpoint and amended strategy rule; paper framing is not a new analysis amendment.",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E003",
+      "source_type": "report",
+      "title": "Figure captions and generation scripts",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "/src/dissemination/paper/figure_captions.md; Figure 1 panels B\u2013H, data and author notes; Figure 2 panels A\u2013E; commands scripts.paper.fig1_behaviour and scripts.paper.fig2_motion_energy; captions report run at e37cc56 plus then-uncommitted scripts. Inspected, not rerun.",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E004",
+      "source_type": "other",
+      "title": "Psychophysical kernel and hidden coherence notebook",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "/src/notebooks/2.14-psychophysical-kernel-analysis.ipynb; Zero-based cells 7 and 18: earlier control definition; 18\u201326: hidden coherence and interpretation; 25 saved output: one-sided p=0.0186, paired p=0.492, k=0.50 profile CI 0.15\u20130.90. Notebook inspected at a39ea6b, not executed. Analysis log section 3.3 gives stimulus correlations.",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E005",
+      "source_type": "report",
+      "title": "Control-only model selection",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "/src/.agents/reports/2026-10-23-control-only-selection.md; Findings and caveats; source fits /mnt/data/processed/ddm/fits_guess_fast_only/*_ccv*.pkl; 300 fits; inspected report, not independently rescored. Exact score deltas and mouse counts also in analysis log section 5.6.",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E006",
+      "source_type": "software",
+      "title": "Build per-trial DDM evidence inputs",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "/src/scripts/ddm/build_ddm_inputs.py; scheduled_pulse, pulse_response, expected_me, main; exclusion and output mapping. Input sample counts documented in analysis log section 4.1. Snapshot a39ea6b.",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E007",
+      "source_type": "journal_article",
+      "title": "Psychophysical reverse correlation reflects both sensory and decision-making processes",
+      "authors": [
+        "Gouki Okazawa",
+        "Long Sha",
+        "Braden A Purcell",
+        "Roozbeh Kiani"
+      ],
+      "year": 2018,
+      "identifiers": {
+        "doi": "10.1038/s41467-018-05797-y",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": "https://www.cns.nyu.edu/kianilab/papers/Okazawa_Kiani_2018.pdf"
+      },
+      "locator": "Abstract and Introduction; publication metadata cross-checked at https://pubmed.ncbi.nlm.nih.gov/30154467/",
+      "confidentiality": "public",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E008",
+      "source_type": "report",
+      "title": "Leak urgency diagnosis and rig behaviour confirmation",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "/src/dissemination/reports/mouse-ddm-analysis-log.md; Sections 5.6 and 6b; accompanying .agents/reports/2026-10-22-leak-urgency-diagnosis.md. Late-response diagnosis is descriptive; delayed engagement is suspected. Rig settings confirmed in prior record; UCLA frame replay approximate.",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E009",
+      "source_type": "report",
+      "title": "Motion energy methods review",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "/src/dissemination/reports/motion-energy-methods.md; Sections 3.1\u20133.7 and 5.1; current implementation scripts/motion_energy.py; full replay scripts/compute_motion_energy_full.py; downstream time-base changes supersede old to-do notes. Snapshot a39ea6b.",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E010",
+      "source_type": "report",
+      "title": "Mouse pulse task analysis log",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "/src/dissemination/reports/mouse-ddm-analysis-log.md; Sections 4.1\u20134.4, 5.5\u20135.6 and 8.4\u20138.6. Selection and MC noise results traced to mc_noise_per_mouse.csv; source analyses not rerun. Snapshot a39ea6b.",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E011",
+      "source_type": "software",
+      "title": "Mouse DDM fitting and simulator implementation",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "/src/scripts/ddm/fit_mouse_ddm.py; BASE_FREE_PARAMS, GUESS_MODELS, make_params, select, cv_folds, run_job; src/ddm/simulator.py _simulate_ddm_trials_numba; src/ddm/ddm.py fit and outcome mapping. Snapshot a39ea6b.",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E012",
+      "source_type": "report",
+      "title": "Preliminary primacy pipeline and power checks",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "/src/.agents/reports/2026-10-22-primacy-power.md; Findings and caveats. Provisional single-form parameters and limited synthetic validation; cohort-wide SE is suspected, not simulated. Source commit a35ef8a. Command python -m scripts.ddm.check_primacy_pipeline --datasets 1 --levels 0 0.4 0.95; not rerun.",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E013",
+      "source_type": "journal_article",
+      "title": "Spatiotemporal energy models for the perception of motion",
+      "authors": [
+        "Edward H Adelson",
+        "James R Bergen"
+      ],
+      "year": 1985,
+      "identifiers": {
+        "doi": "10.1364/JOSAA.2.000284",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": "https://opg.optica.org/abstract.cfm?URI=josaa-2-2-284"
+      },
+      "locator": "Publisher abstract and bibliographic record returned by search; direct full-page and author-PDF retrieval failed. Bibliography and general quadrature/opponent construction need author confirmation.",
+      "confidentiality": "public",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E014",
+      "source_type": "software",
+      "title": "Censored quantile likelihood",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "/src/src/ddm/likelihood_calculator_censored.py; CensoredQMLE._multinomial_nll, _rt_nll, compute_nll; default nbins=9 and alpha=0.5. Snapshot a39ea6b.",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E015",
+      "source_type": "report",
+      "title": "Mouse DDM next steps and parsimony rules",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "/src/dissemination/reports/mouse-ddm-next-steps.md; Parsimony rules and steps 3\u20134; user-approved strict common model. Recovery criterion remains unfinished. Snapshot a39ea6b.",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E016",
+      "source_type": "software",
+      "title": "Primacy predictions gates and strategy test",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "/src/scripts/ddm/primacy.py; no_pulse_frames, predict_mouse, glmm, gate_departure, gate_distributions, gate_pass, strategy_test; amended rules in primacy-analysis-plan.md. Snapshot a39ea6b.",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E017",
+      "source_type": "software",
+      "title": "Project software dependencies",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "/src/pyproject.toml; project.dependencies; dependency declarations do not establish exact versions used for cluster fits. Snapshot a39ea6b.",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E018",
+      "source_type": "preprint",
+      "title": "Scientific Agent Skills: A Library of Procedural Knowledge for Research Agents",
+      "authors": [
+        "Timothy Kassis",
+        "Vinayak Agarwal",
+        "Yuhuan He",
+        "Darshil Patel",
+        "Aubrey M Brueckner"
+      ],
+      "year": 2026,
+      "identifiers": {
+        "doi": "10.48550/arXiv.2609.00065",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": "https://arxiv.org/abs/2609.00065"
+      },
+      "locator": "Title, authors, publication record and abstract opened 2026-10-22; local scientific-writing SKILL.md version 2.3 used in this drafting session. Author confirmation and final AI disclosure pending.",
+      "confidentiality": "public",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E019",
+      "source_type": "report",
+      "title": "Arriving control-strategy and recovery results",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "/src/.agents/reports/2026-10-22-arriving-results.md; source snapshot 17511ca; analysis log section 5.8 from 3c0a061. Independently recomputed control comparison using scripts.ddm.compare_strategy; saved guess-bias CV and recovery pickles summarized in memory; fit-quality PNG inspected. Exact paths, commands and limits in report. No pulse outcomes read.",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E020",
+      "source_type": "report",
+      "title": "Frozen pulse predictions and synthetic strategy sensitivity",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "/src/.agents/reports/2026-10-22-prediction-sensitivity.md; inspected source snapshot 002fafb; prediction commit 17511ca598b3f92fad3e6d44aea4c38d114d8163. All 30 hashes checked against dissemination/reports/primacy_predictions_sha256_17511ca.txt. Predicted effects recomputed from prediction-only tables. Synthetic strategy_power.csv SHA256 3944aa0dcb264dbd9b193d3d22a00872879a76746c72ad8e4f10c67f5dc205b3; forty full-cohort datasets, twenty per candidate. No recorded pulse outcomes read.",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E021",
+      "source_type": "report",
+      "title": "First observed gate failure and inconclusive pulse strategy test",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "/src/.agents/reports/2026-10-22-observed-gate-review.md; reader snapshot b027a4c. Saved results_primary_gate.pkl, results_secondary_gate.pkl and results_strategy.pkl inspected without rerunning GLMMs or timing contrasts. Original analysis log section 5.10, commits 80bde85, 79ae5e4 and 40976ce. Diagnostic zero-coherence proportions read from log, not independently recomputed. Both gate fits have one divergence; fits are preliminary 15-repetition control fits. Amendment 6 remains DRAFT.",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    }
+  ]
+}

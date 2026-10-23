@@ -1,0 +1,178 @@
+{
+  "date": "2026-10-23",
+  "source_snapshot": "84fedd7",
+  "analysis_run": "20261023T191030Z_fa8de8b",
+  "human_verification": "pending",
+  "figures_rendered": false,
+  "claim_count": 10,
+  "source_schema_errors": 0,
+  "caption_numeric_checks": "passed for C/D/E endpoint values, control contrasts, support totals and held-out costs",
+  "earlier_result_verification": "control comparison and parameter settings rely on linked independent reviews; no fits rerun",
+  "sources": [
+    {
+      "path": "/src/.agents/reports/2026-10-23-pulse-data-20261023T191030Z_fa8de8b.md",
+      "sha256": "1073f1fb6ac0890c36d0133ad061780776f1bb30994f0eb564cf92f7ef5f1137",
+      "evidence_id": "E101"
+    },
+    {
+      "path": "/src/scripts/pulse_followup/data.py",
+      "sha256": "55f3eeac47e609e2937195b93e5f82230f56f3fe4c223c61ec94ee7286e21cbd",
+      "evidence_id": "E101"
+    },
+    {
+      "path": "/src/scripts/paper/fig1_behaviour.py",
+      "sha256": "87c707014a3f4955f4264b494ef09de446a720afc3904862f7736bd8bad555b6",
+      "evidence_id": "E101"
+    },
+    {
+      "path": "/src/dissemination/paper/manuscript_2026-10-23.md",
+      "sha256": "523da87a3b904ccee1ab8de823675f8734040b0e329f108386745711d70440ea",
+      "evidence_id": "E102"
+    },
+    {
+      "path": "/src/dissemination/paper/sources_2026-10-23.json",
+      "sha256": "9fe7ac4e4a1dafc33c4bc10bb52d956d5e53ba1eb580c367e97a77e4bed212ca",
+      "evidence_id": "E102"
+    },
+    {
+      "path": "/src/notebooks/2.14-psychophysical-kernel-analysis.ipynb",
+      "sha256": "d173ad755abc55b3367717864e89ec4cb8b6c18e603aa7b5cfa7304e3c7ace15",
+      "evidence_id": "E102"
+    },
+    {
+      "path": "/src/scripts/paper/fig2_motion_energy.py",
+      "sha256": "8ebcfc5eebc0049c136c7e6c18c31c9a8a85ac131003e87a157856ea72e91349",
+      "evidence_id": "E102"
+    },
+    {
+      "path": "/src/.agents/reports/2026-10-22-arriving-results.md",
+      "sha256": "0bebbbae1040976ffe90897f1252dc3a4f10cda3b678b71459ebcac4d5065d80",
+      "evidence_id": "E103"
+    },
+    {
+      "path": "/src/.agents/reports/2026-10-23-control-only-selection.md",
+      "sha256": "25a57abbcd55fd5be4f244d70677d87ad1cf79fed5a11ab1b8456f383da0a846",
+      "evidence_id": "E103"
+    },
+    {
+      "path": "/src/.agents/reports/2026-10-23-final-parameters-review.md",
+      "sha256": "ac0d1c96316d0e787e58baea2f4a642b8f8c9c2d90f28ad78d4f102589bec7fa",
+      "evidence_id": "E103"
+    },
+    {
+      "path": "/src/scripts/ddm/compare_strategy.py",
+      "sha256": "b1aedee8afcf8624c815594d7070385584b1990a483e43595078dbde6b5c3869",
+      "evidence_id": "E103"
+    },
+    {
+      "path": "/src/dissemination/paper/parameters_common_model_2026-10-23.csv",
+      "sha256": "ef7d22d91dc33a1fd3287937a6f6a0906cd7eb855b9b35ecd2d680190ed78547",
+      "evidence_id": "E103"
+    },
+    {
+      "path": "/src/.agents/reports/2026-10-23-pulse-behaviour-20261023T191030Z_fa8de8b.md",
+      "sha256": "03968c7b27cc0df7029e044945ddb1ef50cf020ede7d8d1d602340ea7e435842",
+      "evidence_id": "E104"
+    },
+    {
+      "path": "/mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/behaviour/group.csv",
+      "sha256": "893fc1d7a32ba8e37ea7b9d563686243e216bdc8781bc612c7e48d463e65410b",
+      "evidence_id": "E104"
+    },
+    {
+      "path": "/mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/behaviour/per_mouse.csv",
+      "sha256": "a3ccbc446fc4da09229c5b585d13f2e3472d4252091d8fef6edc706033e8626f",
+      "evidence_id": "E104"
+    },
+    {
+      "path": "/mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/behaviour/coverage.csv",
+      "sha256": "29a7798da13bfe6b728ae3ccc74293c1da0e1e1c54c548927bfe13f2192be736",
+      "evidence_id": "E104"
+    },
+    {
+      "path": "/src/.agents/reports/2026-10-23-pulse-response_time-20261023T191030Z_fa8de8b.md",
+      "sha256": "ad98e5fc26550872383539218532a8dae00d4f8d3c39593b4997daf454d7e449",
+      "evidence_id": "E105"
+    },
+    {
+      "path": "/mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/response_time/contrast_table.csv",
+      "sha256": "c98d81287b95709a339f119d57a51af620e1fc493a37124a858efb79b3174fdc",
+      "evidence_id": "E105"
+    },
+    {
+      "path": "/src/scripts/pulse_followup/response_time.py",
+      "sha256": "417d40781f4378bcad4c6e20ebda284dff7483c4b7928b223d44e848969a6244",
+      "evidence_id": "E105"
+    },
+    {
+      "path": "/src/.agents/reports/2026-10-23-pulse-diagnostics-20261023T191030Z_fa8de8b.md",
+      "sha256": "27bf06e5c0197790e6223313c3e2b1a68710afd84b87f4c0b7edff098e884e93",
+      "evidence_id": "E106"
+    },
+    {
+      "path": "/mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/diagnostics/e4_model_vs_D_summary.csv",
+      "sha256": "9aa96359b824a08249b5e56f9846874d03860dcae0ec7f8a8203a4d9bf296106",
+      "evidence_id": "E106"
+    },
+    {
+      "path": "/mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/diagnostics/e3_optima.csv",
+      "sha256": "b6ef386200b40db1eff3cf4c50c26af4be257bfb6d7e7585397d8af60f9b294b",
+      "evidence_id": "E106"
+    },
+    {
+      "path": "/src/scripts/pulse_followup/diagnostics.py",
+      "sha256": "c9c0c2bb218d6ac1774d45223deee9fe76cb596a199254ca6f7b698868651c62",
+      "evidence_id": "E106"
+    },
+    {
+      "path": "/src/.agents/reports/2026-10-23-pulse-stimulus-20261023T191030Z_fa8de8b.md",
+      "sha256": "8bc7498aa1e7bdbd5c2d3d11b04d4585ba95dce764790a61b12410fcb96438f6",
+      "evidence_id": "E107"
+    },
+    {
+      "path": "/mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/stimulus/summary.json",
+      "sha256": "896c1d29776bd57c1114098684cdf4263f8e62b0dad3c112c0baabfff97d04b1",
+      "evidence_id": "E107"
+    },
+    {
+      "path": "/src/.agents/reports/2026-10-23-amendment-6-result.md",
+      "sha256": "dcd76553db54fa9eb25a32f7d7aeeb6ea3f57fdf42bc54f55c11135949d1dc41",
+      "evidence_id": "E108"
+    },
+    {
+      "path": "/src/.agents/reports/2026-10-22-observed-gate-review.md",
+      "sha256": "ab971e91507d02f9e586f8c8b40b8634cd489867122ec37668e2732be302592b",
+      "evidence_id": "E108"
+    },
+    {
+      "path": "/src/.agents/reports/2026-10-22-prediction-sensitivity.md",
+      "sha256": "4a29f289572ec4a59fc942634c4c6ea1c56559ca9c21aaacf743525ca5ba6238",
+      "evidence_id": "E108"
+    },
+    {
+      "path": "/src/dissemination/reports/pulse-thesis-research-2026-10-23.md",
+      "sha256": "3d23bd66880c187be097b4a76291ddf863a0e15b3acb5866019506e6b63ac099",
+      "evidence_id": "E108"
+    },
+    {
+      "path": "/src/.agents/reports/2026-10-23-pulse-validation-g1-20261023T191030Z_fa8de8b.md",
+      "sha256": "114ace31b7838384d5ce74637d5bbe407ef4ecca42aa3bdd2b263f6fd2860b36",
+      "evidence_id": "E109"
+    },
+    {
+      "path": "/mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/validation/g1/summary.csv",
+      "sha256": "89af26a4721991c04ecac4509ae7a4e1dbbb730861a00084da762d972ccb0ddf",
+      "evidence_id": "E109"
+    },
+    {
+      "path": "/src/.agents/reports/2026-10-23-pulse-extension-review.md",
+      "sha256": "5986eb2605d432f7eda483d5b35c38fe2b3180560f519853c72da7e1a004c4e1",
+      "evidence_id": "E110"
+    },
+    {
+      "path": "/src/.agents/reports/2026-10-23-final-parameters-review.md",
+      "sha256": "ac0d1c96316d0e787e58baea2f4a642b8f8c9c2d90f28ad78d4f102589bec7fa",
+      "evidence_id": "E110"
+    }
+  ]
+}

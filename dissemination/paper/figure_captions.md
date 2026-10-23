@@ -16,7 +16,8 @@ Status: data panels done; panel A (mouse/rig illustration) to be drawn from the 
 [Illustration to be added.]
 **(B)** Trial structure. After a period without licking, random-dot motion appeared; a lick could register only after
 a minimum viewing time of 0.3 s. Correct choices were rewarded and errors followed by a time-out before the
-inter-trial interval. Trials without a response by 5 s are treated as no response in all analyses. [Durations differ
+inter-trial interval. Trials with RT > 5 s or no response are censored in the 5 s analysis window; the stimulus could
+continue beyond that cutoff. [Durations differ
 by rig; to state them, see the note below.]
 **(C)** Coherence over time on control trials (grey; 18% base coherence shown as an example) and on pulse trials,
 where a brief pulse of ±100% coherence replaced the base coherence early, in the middle or late in the trial. Timing
@@ -30,7 +31,7 @@ the mouse-averaged proportions.
 mice (a mouse contributes a point where it has ≥ 10 trials); symbols, mean ± SEM across mice (UCLA circles, 4 mice;
 UW squares, 6 mice). On UCLA, median RT fell from 1.72 s at 0% to 0.99–1.45 s at 100% coherence; on UW it depended
 little on coherence (1.25 s at 0%, 0.98–1.38 s at 100%).
-**(F)** Fraction of control trials with no response by 5 s, same conventions (UCLA 0.165, range 0.088–0.218 across
+**(F)** Fraction of control trials with RT > 5 s or no response, same conventions (UCLA 0.165, range 0.088–0.218 across
 mice; UW 0.133, 0.080–0.231).
 **(G)** Accuracy as a function of reaction time, by |coherence|, both rigs (RT bin edges 0.3, 0.45, 0.6, 0.8, 1.0,
 1.3, 1.6, 2.0, 2.5, 3.0, 4.0, 5.0 s; points at the median RT of each bin; shown where ≥ 3 mice have ≥ 10 trials;
@@ -39,8 +40,8 @@ of mice).
 **(H)** Reaction-time distributions of responded control trials (50 ms bins, mean of per-mouse densities). Responses
 faster than 0.6 s made up 12% (UCLA; range 5–26% across mice) and 21% (UW; 14–35%) of responses.
 
-Data: UCLA 32 sessions (1–15 per mouse), 15,302 responded and 2,933 no-response trials; UW 18 sessions (1–6 per
-mouse), 10,206 responded and 1,604 no-response trials. Scheduled pulse trials per mouse (incl. no-response): UCLA
+Data: UCLA 32 sessions (1–15 per mouse), 15,302 responded and 2,933 censored trials; UW 18 sessions (1–6 per
+mouse), 10,206 responded and 1,604 censored trials. Scheduled pulse trials per mouse (incl. censored): UCLA
 early 102–1,475, middle 94–1,493; UW early 98–480, middle 157–706, late 165–798. Reaction time is measured from
 motion onset on both rigs.
 
@@ -55,6 +56,8 @@ Notes for authors (not caption text):
 - The fit in D is descriptive (least squares in `src/utils/pmf_utils`); its parameters are not interpreted.
 - The 15 trials with invalid pulse durations (dropped from the DDM inputs) are included here: 14 UCLA middle-pulse
   trials (affect only the pulse counts) and 1 UCLA control trial (in D–H).
+- Caption censoring language corrected in the 2026-10-22 manuscript pass. The existing figure image and generation
+  script still need their corresponding panel F label correction before regeneration; no figure was regenerated.
 
 ---
 
@@ -86,6 +89,9 @@ Notes for authors (not caption text):
 
 ---
 
-## Figure 3. Stimulus noise is a fixed bias per trial, and mice discount it
+## Figure 3. Persistent stimulus bias is associated with choices
 
 Script: `scripts/paper/fig3_hidden_coherence.py`. Status: not started.
+The shared ratio and its profile interval must be labelled as conditional on the pooled common-ratio model. Show
+individual mice and distinguish the positive-weight test from the paired hidden-versus-nominal weight test; the
+saved paired test does not establish a population-wide discount.

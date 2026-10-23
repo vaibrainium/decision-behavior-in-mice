@@ -1,0 +1,331 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "evidence_id": "E101",
+      "source_type": "report",
+      "title": "Task, trial contract and assignment audit",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "Task scheduling and 10-mouse/50-session design; inclusion/censoring contract. Figure 1 mask and summaries require final redrawing. Sources: /src/.agents/reports/2026-10-23-pulse-data-20261023T191030Z_fa8de8b.md; /src/scripts/pulse_followup/data.py; /src/scripts/paper/fig1_behaviour.py",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E102",
+      "source_type": "report",
+      "title": "Motion-energy and hidden-coherence evidence",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "Existing manuscript C011-C016/E003-E004/E009; notebook historical control-labelled analysis. Scheduled-control sensitivity remains pending; no population discount claim. Sources: /src/dissemination/paper/manuscript_2026-10-23.md; /src/dissemination/paper/sources_2026-10-23.json; /src/notebooks/2.14-psychophysical-kernel-analysis.ipynb; /src/scripts/paper/fig2_motion_energy.py",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E103",
+      "source_type": "report",
+      "title": "Control strategy comparison, common-model selection and final fits",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "Saved control-CV comparison: summed 345.7 NLL; 6/10 above working threshold; all-trial final fit settings checked in parameter-review report. Reported scores are not population p-values. Sources: /src/.agents/reports/2026-10-22-arriving-results.md; /src/.agents/reports/2026-10-23-control-only-selection.md; /src/.agents/reports/2026-10-23-final-parameters-review.md; /src/scripts/ddm/compare_strategy.py; /src/dissemination/paper/parameters_common_model_2026-10-23.csv",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E104",
+      "source_type": "report",
+      "title": "Directional pulse effect and robustness",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "Primary_coherence, positive_vs_negative, Delta_direction, student_t_95_across_mice; control contrasts in same declared Holm family. Coverage gives supported-trial totals. Sources: /src/.agents/reports/2026-10-23-pulse-behaviour-20261023T191030Z_fa8de8b.md; /mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/behaviour/group.csv; /mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/behaviour/per_mouse.csv; /mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/behaviour/coverage.csv",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E105",
+      "source_type": "report",
+      "title": "Pulse-aligned joint response distributions",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "Figure 4D: all_scheduled, pos_vs_neg, onset_stratum=all, control_seed=default, mouse=group_mean, d_direction@4.58. Stored values are probabilities and converted to pp by x100. Sources: /src/.agents/reports/2026-10-23-pulse-response_time-20261023T191030Z_fa8de8b.md; /mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/response_time/contrast_table.csv; /src/scripts/pulse_followup/response_time.py",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E106",
+      "source_type": "report",
+      "title": "Existing-model pulse diagnostics",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "Temporal windows from quantity=direction; primary w_all_stored/w_choice_only versus observed_ddm_rows. Gain profiles scope=in_sample; held-out costs sum train0-train4 test columns, never training scores. Sources: /src/.agents/reports/2026-10-23-pulse-diagnostics-20261023T191030Z_fa8de8b.md; /mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/diagnostics/e4_model_vs_D_summary.csv; /mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/diagnostics/e3_optima.csv; /src/scripts/pulse_followup/diagnostics.py",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E107",
+      "source_type": "report",
+      "title": "Stimulus reconstruction audit",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "Paired replay audit and labelled acquisition alternatives; unknown acquisition details remain, ratios are not a universal error ceiling. Sources: /src/.agents/reports/2026-10-23-pulse-stimulus-20261023T191030Z_fa8de8b.md; /mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/stimulus/summary.json",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E108",
+      "source_type": "report",
+      "title": "Original pulse procedure, gate failures and calibration",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "Original/revised gates failed; strategy comparison inconclusive; primacy test not run. Use research review caveats on small calibration samples rather than unsupported claims of established null validity. Sources: /src/.agents/reports/2026-10-23-amendment-6-result.md; /src/.agents/reports/2026-10-22-observed-gate-review.md; /src/.agents/reports/2026-10-22-prediction-sensitivity.md; /src/dissemination/reports/pulse-thesis-research-2026-10-23.md",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E109",
+      "source_type": "report",
+      "title": "Behavioural estimator validation",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "G1 concerns C/D estimators under specified behavioural generators, not recovery/identification of a mechanism. Sources: /src/.agents/reports/2026-10-23-pulse-validation-g1-20261023T191030Z_fa8de8b.md; /mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/validation/g1/summary.csv",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E110",
+      "source_type": "report",
+      "title": "Independent qualifications and proposed extension review",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "Boundary proximity, no-response figure label, cumulative-curve interpretation, unresolved acquisition uncertainty and legacy-input caveats. Sources: /src/.agents/reports/2026-10-23-pulse-extension-review.md; /src/.agents/reports/2026-10-23-final-parameters-review.md",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E111",
+      "source_type": "journal_article",
+      "title": "Differentiating between integration and non-integration strategies in perceptual decision making",
+      "authors": [
+        "Gabriel M Stine",
+        "Ariel Zylberberg",
+        "Jochen Ditterich",
+        "Michael N Shadlen"
+      ],
+      "year": 2020,
+      "identifiers": {
+        "doi": "10.7554/eLife.55365",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": "https://elifesciences.org/articles/55365"
+      },
+      "locator": "Abstract and Introduction; public full text opened 2026-10-23 by agent, human verification pending.",
+      "confidentiality": "public",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E112",
+      "source_type": "preprint",
+      "title": "Scientific Agent Skills: A Library of Procedural Knowledge for Research Agents",
+      "authors": [
+        "Timothy Kassis",
+        "Vinayak Agarwal",
+        "Yuhuan He",
+        "Darshil Patel",
+        "Aubrey M. Brueckner"
+      ],
+      "year": 2026,
+      "identifiers": {
+        "doi": "10.48550/arXiv.2609.00065",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": "https://arxiv.org/abs/2609.00065"
+      },
+      "locator": "Public bibliographic metadata opened 2026-10-23; workflow attribution only, not evidence for neuroscience claims.",
+      "confidentiality": "public",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E113",
+      "source_type": "guideline",
+      "title": "The ARRIVE guidelines 2.0",
+      "authors": [
+        "ARRIVE Guidelines"
+      ],
+      "year": 2020,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": "https://arriveguidelines.org/arrive-guidelines"
+      },
+      "locator": "Official guidance page opened 2026-10-23; manuscript reporting reference, no compliance claim.",
+      "confidentiality": "public",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E114",
+      "source_type": "other",
+      "title": "SfN 2025 poster: Visual Decision-Making in Mice Reveals Evidence Accumulation Strategies Similar to Primates",
+      "authors": [
+        "Vaibhav Thakur",
+        "Carlos Garcia",
+        "Edgar Walker",
+        "Michele A. Basso"
+      ],
+      "year": 2025,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "/src/dissemination/poster/SfN Poster - 2025.pdf; page 1, title/highlights and Figures 1\u20135. Agent inspected extracted text and all eleven embedded images. SHA256 fd8316d02a5ee81d1675098dc4402f19f157008d7a3eba1fc4f5e21ad7f43b0b. Historical framing and visual inspiration only; does not supersede current scientific evidence. Original psychometric plotting labels: /src/notebooks/1.0-psychometric-analysis.ipynb, zero-based cells 7, 9, 10. Review: /src/.agents/reports/2026-10-23-poster-story-review.md.",
+      "confidentiality": "restricted",
+      "verification": {
+        "status": "unverified",
+        "source_opened": false,
+        "verified_by": "",
+        "verified_on": ""
+      }
+    }
+  ]
+}

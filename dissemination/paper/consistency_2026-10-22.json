@@ -1,0 +1,459 @@
+{
+  "schema_version": "1.0",
+  "numeric_facts": [
+    {
+      "fact_id": "N001",
+      "concept": "mice",
+      "section": "manuscript_2026-10-22.md",
+      "value": 10,
+      "unit": "mice",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "descriptive behavioural dataset",
+      "evidence_ids": [
+        "E003"
+      ]
+    },
+    {
+      "fact_id": "N002",
+      "concept": "UCLA mice",
+      "section": "manuscript_2026-10-22.md",
+      "value": 4,
+      "unit": "mice",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "descriptive behavioural dataset",
+      "evidence_ids": [
+        "E003"
+      ]
+    },
+    {
+      "fact_id": "N003",
+      "concept": "UW mice",
+      "section": "manuscript_2026-10-22.md",
+      "value": 6,
+      "unit": "mice",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "descriptive behavioural dataset",
+      "evidence_ids": [
+        "E003"
+      ]
+    },
+    {
+      "fact_id": "N004",
+      "concept": "mouse sessions",
+      "section": "manuscript_2026-10-22.md",
+      "value": 50,
+      "unit": "mouse-sessions",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "descriptive behavioural dataset",
+      "evidence_ids": [
+        "E003"
+      ]
+    },
+    {
+      "fact_id": "N005",
+      "concept": "within-window responses",
+      "section": "manuscript_2026-10-22.md",
+      "value": 25508,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "descriptive behavioural dataset",
+      "evidence_ids": [
+        "E003"
+      ]
+    },
+    {
+      "fact_id": "N006",
+      "concept": "censored trials",
+      "section": "manuscript_2026-10-22.md",
+      "value": 4537,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "descriptive behavioural dataset",
+      "evidence_ids": [
+        "E003"
+      ]
+    },
+    {
+      "fact_id": "N007",
+      "concept": "within-window responses",
+      "section": "manuscript_2026-10-22.md",
+      "value": 25493,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "DDM input dataset after invalid durations excluded",
+      "evidence_ids": [
+        "E006"
+      ]
+    },
+    {
+      "fact_id": "N008",
+      "concept": "censored trials",
+      "section": "manuscript_2026-10-22.md",
+      "value": 4537,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "DDM input dataset after invalid durations excluded",
+      "evidence_ids": [
+        "E006"
+      ]
+    },
+    {
+      "fact_id": "N009",
+      "concept": "minimum viewing time",
+      "section": "manuscript_2026-10-22.md",
+      "value": 0.3,
+      "unit": "s",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "both rigs",
+      "evidence_ids": [
+        "E008"
+      ]
+    },
+    {
+      "fact_id": "N010",
+      "concept": "analysis cutoff",
+      "section": "manuscript_2026-10-22.md",
+      "value": 5,
+      "unit": "s",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "DDM input dataset",
+      "evidence_ids": [
+        "E006"
+      ]
+    },
+    {
+      "fact_id": "N011",
+      "concept": "shared hidden coherence ratio",
+      "section": "manuscript_2026-10-22.md",
+      "value": 0.5,
+      "unit": "dimensionless",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "notebook earlier-label controls absolute coherence at most 36 percent",
+      "evidence_ids": [
+        "E004"
+      ]
+    },
+    {
+      "fact_id": "N012",
+      "concept": "paired weight test p",
+      "section": "manuscript_2026-10-22.md",
+      "value": 0.492,
+      "unit": "unadjusted p value",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "ten mouse coefficients",
+      "evidence_ids": [
+        "E004"
+      ]
+    },
+    {
+      "fact_id": "N013",
+      "concept": "positive weight test p",
+      "section": "manuscript_2026-10-22.md",
+      "value": 0.0186,
+      "unit": "unadjusted one-sided p value",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "ten mouse coefficients",
+      "evidence_ids": [
+        "E004"
+      ]
+    },
+    {
+      "fact_id": "N014",
+      "concept": "control CV minus sv",
+      "section": "manuscript_2026-10-22.md",
+      "value": 1017.8,
+      "unit": "NLL units",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "control-only five-fold CV",
+      "evidence_ids": [
+        "E005"
+      ]
+    },
+    {
+      "fact_id": "N015",
+      "concept": "control CV minus guess",
+      "section": "manuscript_2026-10-22.md",
+      "value": 858.1,
+      "unit": "NLL units",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "control-only five-fold CV",
+      "evidence_ids": [
+        "E005"
+      ]
+    },
+    {
+      "fact_id": "N016",
+      "concept": "strategy control delta",
+      "section": "new control and recovery Results",
+      "value": 345.7,
+      "unit": "NLL units",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "control-only five-fold CV",
+      "evidence_ids": [
+        "E019"
+      ]
+    },
+    {
+      "fact_id": "N017",
+      "concept": "guess bias fixed minus free",
+      "section": "new control and recovery Results",
+      "value": 65.5,
+      "unit": "NLL units",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "all-trial five-fold CV",
+      "evidence_ids": [
+        "E019"
+      ]
+    },
+    {
+      "fact_id": "N018",
+      "concept": "recovery fits",
+      "section": "new control and recovery Results",
+      "value": 500,
+      "unit": "fit files",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "five generators five candidates ten mice two replicates",
+      "evidence_ids": [
+        "E019"
+      ]
+    },
+    {
+      "fact_id": "N019",
+      "concept": "guess recovery hit rate",
+      "section": "new control and recovery Results",
+      "value": 1.0,
+      "unit": "fraction",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "twenty datasets generated from common model",
+      "evidence_ids": [
+        "E019"
+      ]
+    },
+    {
+      "fact_id": "N020",
+      "concept": "sv recovery false positive rate",
+      "section": "new control and recovery Results",
+      "value": 0.35,
+      "unit": "fraction",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "twenty datasets generated without sv",
+      "evidence_ids": [
+        "E019"
+      ]
+    },
+    {
+      "fact_id": "N021",
+      "concept": "guess delay recovery correlation",
+      "section": "new control and recovery Results",
+      "value": 0.18,
+      "unit": "Pearson r",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "common-model generating and fitted parameters across mice and replicates",
+      "evidence_ids": [
+        "E019"
+      ]
+    },
+    {
+      "fact_id": "N022",
+      "concept": "frozen prediction files",
+      "section": "Frozen pulse predictions differed little between strategies",
+      "value": 30,
+      "unit": "files",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "three models ten mice",
+      "evidence_ids": [
+        "E020"
+      ]
+    },
+    {
+      "fact_id": "N023",
+      "concept": "prediction repetitions",
+      "section": "Frozen pulse predictions differed little between strategies",
+      "value": 200,
+      "unit": "repetitions per trial",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "all frozen predictions",
+      "evidence_ids": [
+        "E020"
+      ]
+    },
+    {
+      "fact_id": "N024",
+      "concept": "extrema strategy recovery",
+      "section": "Frozen pulse predictions differed little between strategies",
+      "value": 1,
+      "unit": "correct verdicts",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "twenty extrema-generated full-cohort datasets",
+      "evidence_ids": [
+        "E020"
+      ]
+    },
+    {
+      "fact_id": "N025",
+      "concept": "integrator strategy recovery",
+      "section": "Frozen pulse predictions differed little between strategies",
+      "value": 0,
+      "unit": "correct verdicts",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "twenty integrator-generated full-cohort datasets",
+      "evidence_ids": [
+        "E020"
+      ]
+    },
+    {
+      "fact_id": "N026",
+      "concept": "primary gate departure",
+      "section": "First pulse predictive gate and strategy comparison",
+      "value": 0.295968634567205,
+      "unit": "logit",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "pooled pulse choice gate first pass",
+      "evidence_ids": [
+        "E021"
+      ]
+    },
+    {
+      "fact_id": "N027",
+      "concept": "secondary gate departure",
+      "section": "First pulse predictive gate and strategy comparison",
+      "value": 0.3174069864244733,
+      "unit": "logit",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "pooled pulse choice gate first pass",
+      "evidence_ids": [
+        "E021"
+      ]
+    },
+    {
+      "fact_id": "N028",
+      "concept": "RT quantile coverage",
+      "section": "First pulse predictive gate and strategy comparison",
+      "value": 0.68,
+      "unit": "fraction",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "fifty mouse quantile cells each baseline",
+      "evidence_ids": [
+        "E021"
+      ]
+    },
+    {
+      "fact_id": "N029",
+      "concept": "observed pulse strategy z",
+      "section": "First pulse predictive gate and strategy comparison",
+      "value": 2.966322802997533,
+      "unit": "sampling-standard-deviation units",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "prespecified pulse gain comparison",
+      "evidence_ids": [
+        "E021"
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "method_id": "M001",
+      "name": "Exploratory hidden coherence logistic regressions",
+      "analysis_intent": "exploratory",
+      "protocol_status": "post_hoc",
+      "outcome_ids": [
+        "O001"
+      ]
+    },
+    {
+      "method_id": "M002",
+      "name": "Control-only CV mechanism comparison",
+      "analysis_intent": "descriptive",
+      "protocol_status": "not_applicable",
+      "outcome_ids": [
+        "O002"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "result_id": "R001",
+      "method_id": "M001",
+      "outcome_id": "O001",
+      "analysis_intent": "exploratory",
+      "sample_size": 10,
+      "evidence_ids": [
+        "E004"
+      ],
+      "reported_sections": [
+        "Persistent stimulus bias was associated with choices"
+      ]
+    },
+    {
+      "result_id": "R002",
+      "method_id": "M002",
+      "outcome_id": "O002",
+      "analysis_intent": "descriptive",
+      "sample_size": 10,
+      "evidence_ids": [
+        "E005"
+      ],
+      "reported_sections": [
+        "Control trials supported drift variability and a fast-response component"
+      ]
+    }
+  ]
+}
