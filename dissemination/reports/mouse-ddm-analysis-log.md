@@ -367,6 +367,55 @@ Options for the authors (decision pending):
 fast-only control fits of the strict model (8.4c batch 1) as soon as they exist, as the plan allows (next-steps
 "Order"); the confirmatory pass uses the step 5 fits. The gates 2–3 rule `GATE_MIN_INSIDE = 0.8` is accepted.
 
+### 5.8 Guess bias, extrema detection, integration time and recovery (2026-10-23)
+
+All on control trials or synthetic data; no pulse-trial outcome read.
+
+**Guess bias (step 2, parsimony rule 3).** Strict model L0U0V1Z0G1, fast-only guesses
+(`compare_guess_forms --variant L0U0V1Z0G1`). Held-out NLL, bias fixed at 0.5 minus bias free:
+- per mouse: DBM12 +20.1, DBM13 +1.1, DBM14 +1.0, DBM15 +2.3, DBM5 +3.0, DBM6 +13.2, PSUIM10 −0.5, PSUIM5 +2.6,
+  PSUIM6 −4.2, PSUIM7 +27.0;
+- summed +65.5. A free bias helps by > 10 in 3 mice and is never worse by > 10.
+
+Fitted free biases are 0.39–0.89. Decision pending (rule 3: fix unless a free bias "clearly improves").
+
+**Extrema detection vs integration on control trials** (amendment 4 items 2–3; `compare_strategy [--fixed_guess_bias]`):
+- **Held-out NLL, E minus C** (CV within control trials): summed +345.7 with the bias free, +246.8 with it fixed. C is
+  better by > 10 in 6/10 (4/10) mice, E in none. The small mice don't distinguish them (|Δ| < 4).
+- **E's fitted parameters:** leak 20–103/s (time constants ~10–50 ms), bound separation 0.52–1.02; 4 (10) of 60 fits
+  at leak's lower bound of 20/s. drift_gain is never at its bound, so the amendment 5 refit rule says no refit.
+- **sv at its upper bound (≥ 2.97):** 2/60 (9/60) E fits and 10/50 (4/50) of the integrator's ccv fits, so not
+  specific to E. Not covered by the amendment 5 rule; reported as a caveat.
+- **Descriptive time constant** (leak free 0–200/s, all control trials): leak < 2/s in every mouse (0–1.1/s), i.e.
+  time constants > 0.5 s (most > 1 s).
+- **Optimizer check:** that fit is at least as good as both the integrator (by 0 to −29 NLL) and E (by −1 to −152) in
+  every mouse, so it explored high leak and rejected it.
+
+On control trials the mice look like long-time-constant integrators, not extrema detectors. The pulse test (item 5)
+is still to come.
+
+**Model recovery** (500 fits; `summarize_recovery`; bias free; single 15-rep evaluation per fit):
+- **Optimizer:** fine. Training NLL is below the NLL at the generating parameters in every fit (median −17 to −23),
+  held-out NLL median +4 to +9.
+- **Guesses:** detected in 100% of datasets with them (> 10 NLL); 15% false alarms without them.
+- **sv:** 85% hits and 35% false alarms. The false alarms are concentrated in DBM13 and DBM14; DBM14's common-model fit
+  has sv = 0, so its "sv present" data had none.
+- **Leak and urgency:** 35% and 45% hits, 15% false alarms each. In most mice their generating values were ~0
+  (leak < 0.03/s in DBM12/13/14 and PSUIM10; urgency |time_constant| < 0.02 in 6 mice), so "present" ≈ "absent"
+  there. Leak is sizeable in DBM15 (4.1/s), DBM5 (0.8), PSUIM6 (0.6) and PSUIM7 (0.4), with hits 0.5 / 0 / 0.5 / 1.0.
+- **Confusion:** the generating model has the lowest held-out NLL in only 20–45% of datasets; larger nested models
+  often win by small margins. A single 15-rep evaluation is too noisy for per-dataset verdicts (per-mouse Monte Carlo
+  SD 6.5–12.8, section 5.6). Re-scoring with more seeds (as `mc_noise`) would sharpen this.
+- **Fit quality of the strict model** (fast-only guesses, bias free, all-trial fits, control trials;
+  `dissemination/figures/ddm_fit_quality_L0U0V1Z0G1_fits_guess_fast_only.png`, notebook 3.0 run with the project venv):
+  - psychometric functions captured, apart from the known UCLA misfit (more leftward choices than predicted at −36%);
+  - correct RTs captured; error RTs faster in the data than the model at 36% and 100% coherence (DBM14 0.6 vs 1.05 s
+    at 100%; also DBM5, DBM6, PSUIM5/6/7);
+  - P(RT > 5 s) follows coherence, but is underpredicted at 100% in PSUIM5/6/7 (the late-start pattern, section 5.6).
+  The notebook's label "P(no response by 5 s)" was changed to "P(RT > 5 s)" (these are responses after the cutoff).
+- **Parameters** (common model): drift_gain r = 0.92, z 0.97, ndt 0.94, p_guess 0.93, drift_offset 0.89, guess_bias
+  0.87, sv 0.85, a 0.81; guess_tau is not recovered (r = 0.18), so it is not interpreted.
+
 ---
 
 ## 6. Things that did not work, and why
