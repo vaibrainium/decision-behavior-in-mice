@@ -1,0 +1,1051 @@
+{
+  "schema_version": "1.0",
+  "numeric_facts": [
+    {
+      "fact_id": "N001",
+      "concept": "mice",
+      "section": "manuscript_2026-10-22.md",
+      "value": 10,
+      "unit": "mice",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "descriptive behavioural dataset",
+      "evidence_ids": [
+        "E003"
+      ]
+    },
+    {
+      "fact_id": "N002",
+      "concept": "UCLA mice",
+      "section": "manuscript_2026-10-22.md",
+      "value": 4,
+      "unit": "mice",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "descriptive behavioural dataset",
+      "evidence_ids": [
+        "E003"
+      ]
+    },
+    {
+      "fact_id": "N003",
+      "concept": "UW mice",
+      "section": "manuscript_2026-10-22.md",
+      "value": 6,
+      "unit": "mice",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "descriptive behavioural dataset",
+      "evidence_ids": [
+        "E003"
+      ]
+    },
+    {
+      "fact_id": "N004",
+      "concept": "mouse sessions",
+      "section": "manuscript_2026-10-22.md",
+      "value": 50,
+      "unit": "mouse-sessions",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "descriptive behavioural dataset",
+      "evidence_ids": [
+        "E003"
+      ]
+    },
+    {
+      "fact_id": "N005",
+      "concept": "within-window responses",
+      "section": "manuscript_2026-10-22.md",
+      "value": 25508,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "descriptive behavioural dataset",
+      "evidence_ids": [
+        "E003"
+      ]
+    },
+    {
+      "fact_id": "N006",
+      "concept": "censored trials",
+      "section": "manuscript_2026-10-22.md",
+      "value": 4537,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "descriptive behavioural dataset",
+      "evidence_ids": [
+        "E003"
+      ]
+    },
+    {
+      "fact_id": "N007",
+      "concept": "within-window responses",
+      "section": "manuscript_2026-10-22.md",
+      "value": 25493,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "DDM input dataset after invalid durations excluded",
+      "evidence_ids": [
+        "E006"
+      ]
+    },
+    {
+      "fact_id": "N008",
+      "concept": "censored trials",
+      "section": "manuscript_2026-10-22.md",
+      "value": 4537,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "DDM input dataset after invalid durations excluded",
+      "evidence_ids": [
+        "E006"
+      ]
+    },
+    {
+      "fact_id": "N009",
+      "concept": "minimum viewing time",
+      "section": "manuscript_2026-10-22.md",
+      "value": 0.3,
+      "unit": "s",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "both rigs",
+      "evidence_ids": [
+        "E008"
+      ]
+    },
+    {
+      "fact_id": "N010",
+      "concept": "analysis cutoff",
+      "section": "manuscript_2026-10-22.md",
+      "value": 5,
+      "unit": "s",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "DDM input dataset",
+      "evidence_ids": [
+        "E006"
+      ]
+    },
+    {
+      "fact_id": "N011",
+      "concept": "shared hidden coherence ratio",
+      "section": "manuscript_2026-10-22.md",
+      "value": 0.5,
+      "unit": "dimensionless",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "notebook earlier-label controls absolute coherence at most 36 percent",
+      "evidence_ids": [
+        "E004"
+      ]
+    },
+    {
+      "fact_id": "N012",
+      "concept": "paired weight test p",
+      "section": "manuscript_2026-10-22.md",
+      "value": 0.492,
+      "unit": "unadjusted p value",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "ten mouse coefficients",
+      "evidence_ids": [
+        "E004"
+      ]
+    },
+    {
+      "fact_id": "N013",
+      "concept": "positive weight test p",
+      "section": "manuscript_2026-10-22.md",
+      "value": 0.0186,
+      "unit": "unadjusted one-sided p value",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "ten mouse coefficients",
+      "evidence_ids": [
+        "E004"
+      ]
+    },
+    {
+      "fact_id": "N014",
+      "concept": "control CV minus sv",
+      "section": "manuscript_2026-10-22.md",
+      "value": 1017.8,
+      "unit": "NLL units",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "control-only five-fold CV",
+      "evidence_ids": [
+        "E005"
+      ]
+    },
+    {
+      "fact_id": "N015",
+      "concept": "control CV minus guess",
+      "section": "manuscript_2026-10-22.md",
+      "value": 858.1,
+      "unit": "NLL units",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "control-only five-fold CV",
+      "evidence_ids": [
+        "E005"
+      ]
+    },
+    {
+      "fact_id": "N016",
+      "concept": "strategy control delta",
+      "section": "new control and recovery Results",
+      "value": 345.7,
+      "unit": "NLL units",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "control-only five-fold CV",
+      "evidence_ids": [
+        "E019"
+      ]
+    },
+    {
+      "fact_id": "N017",
+      "concept": "guess bias fixed minus free",
+      "section": "new control and recovery Results",
+      "value": 65.5,
+      "unit": "NLL units",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "all-trial five-fold CV",
+      "evidence_ids": [
+        "E019"
+      ]
+    },
+    {
+      "fact_id": "N018",
+      "concept": "recovery fits",
+      "section": "new control and recovery Results",
+      "value": 500,
+      "unit": "fit files",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "five generators five candidates ten mice two replicates",
+      "evidence_ids": [
+        "E019"
+      ]
+    },
+    {
+      "fact_id": "N019",
+      "concept": "guess recovery hit rate",
+      "section": "new control and recovery Results",
+      "value": 1.0,
+      "unit": "fraction",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "twenty datasets generated from common model",
+      "evidence_ids": [
+        "E019"
+      ]
+    },
+    {
+      "fact_id": "N020",
+      "concept": "sv recovery false positive rate",
+      "section": "new control and recovery Results",
+      "value": 0.35,
+      "unit": "fraction",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "twenty datasets generated without sv",
+      "evidence_ids": [
+        "E019"
+      ]
+    },
+    {
+      "fact_id": "N021",
+      "concept": "guess delay recovery correlation",
+      "section": "new control and recovery Results",
+      "value": 0.18,
+      "unit": "Pearson r",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "common-model generating and fitted parameters across mice and replicates",
+      "evidence_ids": [
+        "E019"
+      ]
+    },
+    {
+      "fact_id": "N022",
+      "concept": "frozen prediction files",
+      "section": "Frozen pulse predictions differed little between strategies",
+      "value": 30,
+      "unit": "files",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "three models ten mice",
+      "evidence_ids": [
+        "E020"
+      ]
+    },
+    {
+      "fact_id": "N023",
+      "concept": "prediction repetitions",
+      "section": "Frozen pulse predictions differed little between strategies",
+      "value": 200,
+      "unit": "repetitions per trial",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "all frozen predictions",
+      "evidence_ids": [
+        "E020"
+      ]
+    },
+    {
+      "fact_id": "N024",
+      "concept": "extrema strategy recovery",
+      "section": "Frozen pulse predictions differed little between strategies",
+      "value": 1,
+      "unit": "correct verdicts",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "twenty extrema-generated full-cohort datasets",
+      "evidence_ids": [
+        "E020"
+      ]
+    },
+    {
+      "fact_id": "N025",
+      "concept": "integrator strategy recovery",
+      "section": "Frozen pulse predictions differed little between strategies",
+      "value": 0,
+      "unit": "correct verdicts",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "twenty integrator-generated full-cohort datasets",
+      "evidence_ids": [
+        "E020"
+      ]
+    },
+    {
+      "fact_id": "N026",
+      "concept": "primary gate departure",
+      "section": "First pulse predictive gate and strategy comparison",
+      "value": 0.295968634567205,
+      "unit": "logit",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "pooled pulse choice gate first pass",
+      "evidence_ids": [
+        "E021"
+      ]
+    },
+    {
+      "fact_id": "N027",
+      "concept": "secondary gate departure",
+      "section": "First pulse predictive gate and strategy comparison",
+      "value": 0.3174069864244733,
+      "unit": "logit",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "pooled pulse choice gate first pass",
+      "evidence_ids": [
+        "E021"
+      ]
+    },
+    {
+      "fact_id": "N028",
+      "concept": "RT quantile coverage",
+      "section": "First pulse predictive gate and strategy comparison",
+      "value": 0.68,
+      "unit": "fraction",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "fifty mouse quantile cells each baseline",
+      "evidence_ids": [
+        "E021"
+      ]
+    },
+    {
+      "fact_id": "N029",
+      "concept": "observed pulse strategy z",
+      "section": "First pulse predictive gate and strategy comparison",
+      "value": 2.966322802997533,
+      "unit": "sampling-standard-deviation units",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "prespecified pulse gain comparison",
+      "evidence_ids": [
+        "E021"
+      ]
+    },
+    {
+      "fact_id": "N030",
+      "concept": "revised primary departure",
+      "section": "Pulse-gain revision and calibration",
+      "value": 0.24,
+      "unit": "logit",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "amendment 6 revision",
+      "evidence_ids": [
+        "E022"
+      ]
+    },
+    {
+      "fact_id": "N031",
+      "concept": "revised primary departure lower",
+      "section": "Pulse-gain revision and calibration",
+      "value": 0.09,
+      "unit": "logit",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "amendment 6 revision",
+      "evidence_ids": [
+        "E022"
+      ]
+    },
+    {
+      "fact_id": "N032",
+      "concept": "revised primary departure upper",
+      "section": "Pulse-gain revision and calibration",
+      "value": 0.37,
+      "unit": "logit",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "amendment 6 revision",
+      "evidence_ids": [
+        "E022"
+      ]
+    },
+    {
+      "fact_id": "N033",
+      "concept": "revised primary predicted pulse effect",
+      "section": "Pulse-gain revision and calibration",
+      "value": 0.057,
+      "unit": "logit",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "amendment 6 revision",
+      "evidence_ids": [
+        "E022"
+      ]
+    },
+    {
+      "fact_id": "N034",
+      "concept": "revised secondary departure",
+      "section": "Pulse-gain revision and calibration",
+      "value": 0.31,
+      "unit": "logit",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "amendment 6 revision",
+      "evidence_ids": [
+        "E022"
+      ]
+    },
+    {
+      "fact_id": "N035",
+      "concept": "revised RT cells inside primary",
+      "section": "Pulse-gain revision and calibration",
+      "value": 0.62,
+      "unit": "fraction",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "amendment 6 revision",
+      "evidence_ids": [
+        "E022"
+      ]
+    },
+    {
+      "fact_id": "N036",
+      "concept": "revised RT cells inside secondary",
+      "section": "Pulse-gain revision and calibration",
+      "value": 0.7,
+      "unit": "fraction",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "amendment 6 revision",
+      "evidence_ids": [
+        "E022"
+      ]
+    },
+    {
+      "fact_id": "N037",
+      "concept": "calibration gate pass null",
+      "section": "Pulse-gain revision and calibration",
+      "value": 19,
+      "unit": "datasets",
+      "numerator": 19,
+      "denominator": 20,
+      "sample_size": null,
+      "analysis_set": "amendment 6 revision",
+      "evidence_ids": [
+        "E022"
+      ]
+    },
+    {
+      "fact_id": "N038",
+      "concept": "calibration false detections null",
+      "section": "Pulse-gain revision and calibration",
+      "value": 0,
+      "unit": "datasets",
+      "numerator": 0,
+      "denominator": 20,
+      "sample_size": null,
+      "analysis_set": "amendment 6 revision",
+      "evidence_ids": [
+        "E022"
+      ]
+    },
+    {
+      "fact_id": "N039",
+      "concept": "calibration detections 10%",
+      "section": "Pulse-gain revision and calibration",
+      "value": 0,
+      "unit": "datasets",
+      "numerator": 0,
+      "denominator": 20,
+      "sample_size": null,
+      "analysis_set": "amendment 6 revision",
+      "evidence_ids": [
+        "E022"
+      ]
+    },
+    {
+      "fact_id": "N040",
+      "concept": "calibration detections 20%",
+      "section": "Pulse-gain revision and calibration",
+      "value": 1,
+      "unit": "datasets",
+      "numerator": 1,
+      "denominator": 20,
+      "sample_size": null,
+      "analysis_set": "amendment 6 revision",
+      "evidence_ids": [
+        "E022"
+      ]
+    },
+    {
+      "fact_id": "N041",
+      "concept": "calibration detections 40%",
+      "section": "Pulse-gain revision and calibration",
+      "value": 0,
+      "unit": "datasets",
+      "numerator": 0,
+      "denominator": 20,
+      "sample_size": null,
+      "analysis_set": "amendment 6 revision",
+      "evidence_ids": [
+        "E022"
+      ]
+    },
+    {
+      "fact_id": "N042",
+      "concept": "pulse gain min primary",
+      "section": "Pulse-gain revision and calibration",
+      "value": 0.06,
+      "unit": "gain",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "amendment 6 revision",
+      "evidence_ids": [
+        "E022"
+      ]
+    },
+    {
+      "fact_id": "N043",
+      "concept": "pulse gain max primary",
+      "section": "Pulse-gain revision and calibration",
+      "value": 7.0,
+      "unit": "gain",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "amendment 6 revision",
+      "evidence_ids": [
+        "E022"
+      ]
+    },
+    {
+      "fact_id": "N044",
+      "concept": "zero-coherence predicted revised",
+      "section": "Pulse-gain revision and calibration",
+      "value": 0.512,
+      "unit": "probability",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "amendment 6 revision",
+      "evidence_ids": [
+        "E022"
+      ]
+    },
+    {
+      "fact_id": "N045",
+      "concept": "median drift gain",
+      "section": "Control trials supported drift variability and a fast-response component",
+      "value": 2.91,
+      "unit": "model units",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": 10,
+      "analysis_set": "final all-trial common-model fits",
+      "evidence_ids": [
+        "E023"
+      ]
+    },
+    {
+      "fact_id": "N046",
+      "concept": "median drift variability",
+      "section": "Control trials supported drift variability and a fast-response component",
+      "value": 2.37,
+      "unit": "model units",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": 10,
+      "analysis_set": "final all-trial common-model fits",
+      "evidence_ids": [
+        "E023"
+      ]
+    },
+    {
+      "fact_id": "N047",
+      "concept": "median fast-guess probability",
+      "section": "Control trials supported drift variability and a fast-response component",
+      "value": 0.21,
+      "unit": "probability",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": 10,
+      "analysis_set": "final all-trial common-model fits",
+      "evidence_ids": [
+        "E023"
+      ]
+    },
+    {
+      "fact_id": "N048",
+      "concept": "median fast-guess bias",
+      "section": "Control trials supported drift variability and a fast-response component",
+      "value": 0.55,
+      "unit": "probability",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": 10,
+      "analysis_set": "final all-trial common-model fits",
+      "evidence_ids": [
+        "E023"
+      ]
+    },
+    {
+      "fact_id": "N049",
+      "concept": "median bound separation",
+      "section": "Control trials supported drift variability and a fast-response component",
+      "value": 7.9,
+      "unit": "model units",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": 10,
+      "analysis_set": "final all-trial common-model fits",
+      "evidence_ids": [
+        "E023"
+      ]
+    },
+    {
+      "fact_id": "N050",
+      "concept": "median non-decision time",
+      "section": "Control trials supported drift variability and a fast-response component",
+      "value": 0.12,
+      "unit": "s",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": 10,
+      "analysis_set": "final all-trial common-model fits",
+      "evidence_ids": [
+        "E023"
+      ]
+    },
+    {
+      "fact_id": "N051",
+      "concept": "primary directional pulse contrast",
+      "section": "manuscript_2026-10-23.md story-integration pass",
+      "value": 5.844356,
+      "unit": "percentage points",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": 10,
+      "analysis_set": "primary common-support scheduled positive versus negative pulses",
+      "evidence_ids": [
+        "E024",
+        "E025"
+      ]
+    },
+    {
+      "fact_id": "N052",
+      "concept": "primary directional contrast CI lower",
+      "section": "manuscript_2026-10-23.md story-integration pass",
+      "value": 1.799491,
+      "unit": "percentage points",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": 10,
+      "analysis_set": "primary common-support scheduled positive versus negative pulses",
+      "evidence_ids": [
+        "E025"
+      ]
+    },
+    {
+      "fact_id": "N053",
+      "concept": "primary directional contrast CI upper",
+      "section": "manuscript_2026-10-23.md story-integration pass",
+      "value": 9.889221,
+      "unit": "percentage points",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": 10,
+      "analysis_set": "primary common-support scheduled positive versus negative pulses",
+      "evidence_ids": [
+        "E025"
+      ]
+    },
+    {
+      "fact_id": "N054",
+      "concept": "primary directional contrast Holm p value",
+      "section": "manuscript_2026-10-23.md story-integration pass",
+      "value": 0.01941029,
+      "unit": "probability",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": 10,
+      "analysis_set": "declared three-comparison Holm family",
+      "evidence_ids": [
+        "E025"
+      ]
+    },
+    {
+      "fact_id": "N055",
+      "concept": "primary directional supported trials",
+      "section": "manuscript_2026-10-23.md story-integration pass",
+      "value": 10281,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": 10,
+      "analysis_set": "primary common-support scheduled positive versus negative pulses",
+      "evidence_ids": [
+        "E024",
+        "E025"
+      ]
+    },
+    {
+      "fact_id": "N056",
+      "concept": "primary directional supported cells",
+      "section": "manuscript_2026-10-23.md story-integration pass",
+      "value": 717,
+      "unit": "cells",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": 10,
+      "analysis_set": "primary common-support scheduled positive versus negative pulses",
+      "evidence_ids": [
+        "E024",
+        "E025"
+      ]
+    },
+    {
+      "fact_id": "N057",
+      "concept": "primary directional pre-onset responses",
+      "section": "manuscript_2026-10-23.md story-integration pass",
+      "value": 118,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": 10,
+      "analysis_set": "primary common-support scheduled positive versus negative pulses",
+      "evidence_ids": [
+        "E024",
+        "E025"
+      ]
+    },
+    {
+      "fact_id": "N058",
+      "concept": "primary directional unresponded trials",
+      "section": "manuscript_2026-10-23.md story-integration pass",
+      "value": 1709,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": 10,
+      "analysis_set": "primary common-support scheduled positive versus negative pulses",
+      "evidence_ids": [
+        "E024",
+        "E025"
+      ]
+    },
+    {
+      "fact_id": "N059",
+      "concept": "pulse-aligned endpoint directional contrast",
+      "section": "manuscript_2026-10-23.md story-integration pass",
+      "value": 5.798136,
+      "unit": "percentage points",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": 10,
+      "analysis_set": "all scheduled trials at onset plus 4.58 seconds",
+      "evidence_ids": [
+        "E026"
+      ]
+    },
+    {
+      "fact_id": "N060",
+      "concept": "estimator interval coverage lower",
+      "section": "manuscript_2026-10-23.md story-integration pass",
+      "value": 0.93,
+      "unit": "proportion",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": 10,
+      "analysis_set": "G1 declared generators with 200 datasets per scenario",
+      "evidence_ids": [
+        "E029"
+      ]
+    },
+    {
+      "fact_id": "N061",
+      "concept": "estimator interval coverage upper",
+      "section": "manuscript_2026-10-23.md story-integration pass",
+      "value": 0.975,
+      "unit": "proportion",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": 10,
+      "analysis_set": "G1 declared generators with 200 datasets per scenario",
+      "evidence_ids": [
+        "E029"
+      ]
+    },
+    {
+      "fact_id": "N062",
+      "concept": "Holm power at six point effect",
+      "section": "manuscript_2026-10-23.md story-integration pass",
+      "value": 0.64,
+      "unit": "proportion",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": 10,
+      "analysis_set": "G1 six percentage point generator",
+      "evidence_ids": [
+        "E029"
+      ]
+    },
+    {
+      "fact_id": "N063",
+      "concept": "PSUIM6 held-out choice improvement at choice-optimal gain",
+      "section": "manuscript_2026-10-23.md story-integration pass",
+      "value": 10.3998,
+      "unit": "negative log likelihood units",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": 1,
+      "analysis_set": "diagnostic gain profile",
+      "evidence_ids": [
+        "E028"
+      ]
+    },
+    {
+      "fact_id": "N064",
+      "concept": "PSUIM7 held-out choice improvement at choice-optimal gain",
+      "section": "manuscript_2026-10-23.md story-integration pass",
+      "value": 10.0055,
+      "unit": "negative log likelihood units",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": 1,
+      "analysis_set": "diagnostic gain profile",
+      "evidence_ids": [
+        "E028"
+      ]
+    },
+    {
+      "fact_id": "N065",
+      "concept": "PSUIM6 remaining-objective cost at choice-optimal gain",
+      "section": "manuscript_2026-10-23.md story-integration pass",
+      "value": 96.0103,
+      "unit": "negative log likelihood units",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": 1,
+      "analysis_set": "diagnostic gain profile",
+      "evidence_ids": [
+        "E028"
+      ]
+    },
+    {
+      "fact_id": "N066",
+      "concept": "PSUIM7 remaining-objective cost at choice-optimal gain",
+      "section": "manuscript_2026-10-23.md story-integration pass",
+      "value": 106.6094,
+      "unit": "negative log likelihood units",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": 1,
+      "analysis_set": "diagnostic gain profile",
+      "evidence_ids": [
+        "E028"
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "method_id": "M001",
+      "name": "Exploratory hidden coherence logistic regressions",
+      "analysis_intent": "exploratory",
+      "protocol_status": "post_hoc",
+      "outcome_ids": [
+        "O001"
+      ]
+    },
+    {
+      "method_id": "M002",
+      "name": "Control-only CV mechanism comparison",
+      "analysis_intent": "descriptive",
+      "protocol_status": "not_applicable",
+      "outcome_ids": [
+        "O002"
+      ]
+    },
+    {
+      "method_id": "M003",
+      "name": "Assignment-based scheduled pulse contrast",
+      "analysis_intent": "exploratory",
+      "protocol_status": "post_hoc",
+      "outcome_ids": [
+        "O003"
+      ]
+    },
+    {
+      "method_id": "M004",
+      "name": "Pulse-aligned competing-outcome response curves",
+      "analysis_intent": "exploratory",
+      "protocol_status": "post_hoc",
+      "outcome_ids": [
+        "O004"
+      ]
+    },
+    {
+      "method_id": "M005",
+      "name": "Existing-model pulse gain and temporal diagnostics",
+      "analysis_intent": "exploratory",
+      "protocol_status": "post_hoc",
+      "outcome_ids": [
+        "O005"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "result_id": "R001",
+      "method_id": "M001",
+      "outcome_id": "O001",
+      "analysis_intent": "exploratory",
+      "sample_size": 10,
+      "evidence_ids": [
+        "E004"
+      ],
+      "reported_sections": [
+        "Persistent stimulus bias was associated with choices"
+      ]
+    },
+    {
+      "result_id": "R002",
+      "method_id": "M002",
+      "outcome_id": "O002",
+      "analysis_intent": "descriptive",
+      "sample_size": 10,
+      "evidence_ids": [
+        "E005"
+      ],
+      "reported_sections": [
+        "Control trials supported drift variability and a fast-response component"
+      ]
+    },
+    {
+      "result_id": "R003",
+      "method_id": "M003",
+      "outcome_id": "O003",
+      "analysis_intent": "exploratory",
+      "sample_size": 10,
+      "evidence_ids": [
+        "E024",
+        "E025",
+        "E029"
+      ],
+      "reported_sections": [
+        "Randomized motion pulses shifted response direction"
+      ]
+    },
+    {
+      "result_id": "R004",
+      "method_id": "M004",
+      "outcome_id": "O004",
+      "analysis_intent": "exploratory",
+      "sample_size": 10,
+      "evidence_ids": [
+        "E026"
+      ],
+      "reported_sections": [
+        "The pulse-associated response difference emerged after the physical pulse"
+      ]
+    },
+    {
+      "result_id": "R005",
+      "method_id": "M005",
+      "outcome_id": "O005",
+      "analysis_intent": "exploratory",
+      "sample_size": 2,
+      "evidence_ids": [
+        "E027",
+        "E028"
+      ],
+      "reported_sections": [
+        "The fitted model misplaced the pulse effect in time"
+      ]
+    }
+  ]
+}

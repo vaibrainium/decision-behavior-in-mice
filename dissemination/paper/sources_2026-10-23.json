@@ -525,6 +525,72 @@
         "verified_by": "",
         "verified_on": ""
       }
+    },
+    {
+      "evidence_id": "E024",
+      "source_type": "report",
+      "title": "Pulse trial contract and assignment audit",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {"doi": "", "pmid": "", "pmcid": "", "isbn": "", "url": ""},
+      "locator": "/src/.agents/reports/2026-10-23-pulse-data-20261023T191030Z_fa8de8b.md; /mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/data/analysis_config.json and exclusion_ledger.csv. Assignment source-code audit, trial identities, scheduled labels, censoring, support restrictions and input-label issue. Results package notes 1-3.",
+      "confidentiality": "restricted",
+      "verification": {"status": "unverified", "source_opened": false, "verified_by": "", "verified_on": ""}
+    },
+    {
+      "evidence_id": "E025",
+      "source_type": "report",
+      "title": "Exploratory directional pulse effect",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {"doi": "", "pmid": "", "pmcid": "", "isbn": "", "url": ""},
+      "locator": "/src/.agents/reports/2026-10-23-pulse-behaviour-20261023T191030Z_fa8de8b.md; /mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/behaviour/{group,per_mouse,coverage}.csv; scripts/pulse_followup/behaviour.py. Primary and control contrasts, components, robustness and exact masks. Results package notes 4-6.",
+      "confidentiality": "restricted",
+      "verification": {"status": "unverified", "source_opened": false, "verified_by": "", "verified_on": ""}
+    },
+    {
+      "evidence_id": "E026",
+      "source_type": "report",
+      "title": "Pulse-aligned joint response time course",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {"doi": "", "pmid": "", "pmcid": "", "isbn": "", "url": ""},
+      "locator": "/src/.agents/reports/2026-10-23-pulse-response_time-20261023T191030Z_fa8de8b.md and independent review /src/.agents/reports/2026-10-23-pulse-review-D-20261023T191030Z_fa8de8b.md; /mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/response_time/. Cumulative curves, window increments, eligibility and common-latency checks. Results package note 7.",
+      "confidentiality": "restricted",
+      "verification": {"status": "unverified", "source_opened": false, "verified_by": "", "verified_on": ""}
+    },
+    {
+      "evidence_id": "E027",
+      "source_type": "report",
+      "title": "Pulse stimulus and replay audit",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {"doi": "", "pmid": "", "pmcid": "", "isbn": "", "url": ""},
+      "locator": "/src/.agents/reports/2026-10-23-pulse-stimulus-20261023T191030Z_fa8de8b.md; /mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/stimulus/. Paired replays, post-pulse noise, rounding asymmetry, motion-energy-template comparison and labelled UCLA acquisition alternatives. Results package note 8.",
+      "confidentiality": "restricted",
+      "verification": {"status": "unverified", "source_opened": false, "verified_by": "", "verified_on": ""}
+    },
+    {
+      "evidence_id": "E028",
+      "source_type": "report",
+      "title": "Existing-model pulse diagnostics",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {"doi": "", "pmid": "", "pmcid": "", "isbn": "", "url": ""},
+      "locator": "/src/.agents/reports/2026-10-23-pulse-diagnostics-20261023T191030Z_fa8de8b.md; /mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/diagnostics/. Observed-versus-predicted time windows, likelihood decomposition and gain profiles. Strong gain tradeoff is demonstrated in PSUIM6 and PSUIM7 only. Results package note 10.",
+      "confidentiality": "restricted",
+      "verification": {"status": "unverified", "source_opened": false, "verified_by": "", "verified_on": ""}
+    },
+    {
+      "evidence_id": "E029",
+      "source_type": "report",
+      "title": "Behavioural estimator simulation checks",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {"doi": "", "pmid": "", "pmcid": "", "isbn": "", "url": ""},
+      "locator": "/src/.agents/reports/2026-10-23-pulse-validation-g1-20261023T191030Z_fa8de8b.md; /mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/validation/g1/. Two hundred datasets per declared scenario; estimator bias, interval coverage and sensitivity. This validates C/D estimands under specified generators, not mechanism recovery. Results package note 9.",
+      "confidentiality": "restricted",
+      "verification": {"status": "unverified", "source_opened": false, "verified_by": "", "verified_on": ""}
     }
   ]
 }
