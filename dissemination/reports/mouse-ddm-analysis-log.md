@@ -623,6 +623,14 @@ these models.
   SDs of 22–54 for different comparisons (2 SD ≈ 45 to 108); F1 passes the lower and fails the upper. Pending the
   authors' choice: measure the noise of this comparison by re-scoring (recommended), or apply the conservative bound.
   Two F2 all-control fits (tasks 8–9) were still running on Hyak; they do not affect the selection.
+- **Noise of the F1 − F0 comparison, measured** (authors' choice 1; `scripts/ddm/mc_noise_front_end.py`, 10 evaluation
+  seeds × 15 reps, saved fits re-scored, run locally; 100/100 saved held-out NLLs reproduced): summed F1 − F0 = −64.0
+  at the grid seed, −62.7 averaged over seeds; SD across seeds 14.4, so 2 SD = 28.9. **F1 passes** item 3 and is the
+  selected front end. Per mouse (mean ± SD over seeds): PSUIM6 −37.3 ± 8.1, PSUIM7 −23.0 ± 6.9, DBM14 +4.9 ± 3.0,
+  others within ±3. Output `ddm/mc_noise_front_end/`.
+- Open question raised by V. Thakur: control trials barely contain transients, so they weakly identify F2
+  (normalization), whose effect should mainly appear on pulse trials. Proposed amendment 7a (not adopted): gate both
+  F1 and F2 on frozen pulse predictions (fits still control-only).
 
 ---
 

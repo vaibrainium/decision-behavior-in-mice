@@ -17,7 +17,7 @@ then timing analyses. One round, then stop.
       backends agree; check F2 against a direct numpy reference.
 - [x] 2. (88e6cd0) `fit_mouse_ddm.py --front_end {power,norm}`: adds the parameters with the amendment's bounds; output folder suffix.
 - [x] 3. (118/120; F2 control tasks 8-9 rerunning on gpu-a100) Hyak: ccv0-4 (15 reps) + control (50 reps) for F1 and F2 (120 jobs).
-- [ ] 4. Selection (item 3) on control CV; record before any pulse prediction.
+- [x] 4. (F1 selected: -64.0 vs 2 SD = 28.9) Selection (item 3) on control CV; record before any pulse prediction.
 - [ ] 5. Frozen predictions (commit + SHA-256), then gate (item 4). Stop if it fails.
 - [ ] 6. (only if gate passes) E refit with the same front end; strategy test + power; calibration; timing analyses (a)-(c).
 - [ ] 7. Report.
@@ -31,3 +31,4 @@ Full normalization inside the motion-energy computation; any candidate beyond F1
   option smoke-tested for both. Next: 120 Hyak jobs (analysis log 8.4f).
 - 2026-10-25: selection run (analysis log 5.13): F1 -64.0, F2 -78.7 summed (2 mice); tie rule picks F1 (gamma < 1,
   compressive). Noise threshold in item 3 ambiguous (2 SD = 45-108); awaiting the authors' choice.
+- 2026-10-25: noise measured (SD 14.4); F1 selected. Proposed 7a (gate F2 too) pending the authors' decision.
