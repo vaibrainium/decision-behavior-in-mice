@@ -631,6 +631,8 @@ these models.
 - Open question raised by V. Thakur: control trials barely contain transients, so they weakly identify F2
   (normalization), whose effect should mainly appear on pulse trials. Proposed amendment 7a (not adopted): gate both
   F1 and F2 on frozen pulse predictions (fits still control-only).
+- **Stopped (2026-10-25, V. Thakur):** amendment 7 ends after item 3; 7a not adopted; no pulse predictions or gate for
+  F1/F2. Reported: the control-trial front-end comparison (exploratory).
 
 ---
 

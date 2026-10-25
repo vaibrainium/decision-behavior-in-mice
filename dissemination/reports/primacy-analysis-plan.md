@@ -524,3 +524,12 @@ pulse trials out of sample. If it does, it revisits the strategy and timing ques
 - Hyak: 100 ccv fits and 20 control fits, then, depending on the selection and the gate, E refits (~60),
   predictions (~30), strategy power, calibration (~800), and the extensions (~100).
 
+**Amendment 7 stopped by V. Thakur, 2026-10-25, after item 3.**
+- **Item 3 result:** F1 (power law) was selected on control-only CV: −64.0 summed held-out NLL vs F0, against a
+  measured 2 SD of 28.9. The improvement is concentrated in two mice, and the fitted exponent is compressive
+  (γ ≈ 0.6–0.8).
+- **Not made:** no pulse-trial predictions from F1 or F2, and no gate.
+- **Amendment 7a** (also gating F2, whose effect would mainly show on pulse trials) was proposed and not adopted.
+- **Status:** the primacy analysis stays closed as stated in the closing note above. The front-end comparison on
+  control trials is reported as exploratory.
+

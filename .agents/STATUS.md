@@ -1,10 +1,12 @@
 # Status
-Last updated: 2026-10-23 by Claude Opus 5.5 (pulse follow-up coordinator)
+Last updated: 2026-10-25 by Codex (paper workflow; pulse status preserved)
 
 ## Current focus
-Exploratory pulse follow-up (run 20261023T191030Z_fa8de8b): A-E, G1, corrected inputs v2 and the F3 tau_p pilot done.
-Pilot FAILED its frozen criteria -> scientific stop on modelling (G2-G5 not run). Next: independent check of the pilot
-(Worker 3), then finalize the behavioural Results draft (dissemination/paper/pulse_followup_results_2026-10-23.md).
+Neuropaper manuscript workflow: revised G3 approved and S4 drafting has started. The first wave is Methods in parallel
+with Results plus figure legends, followed by independent section and statistics review and a mandatory author midpoint
+check. The 4,980-word main-text plan keeps failed gates and low sensitivity visible in a named S6 Results subsection.
+The exploratory pulse follow-up status is unchanged: the tau_p pilot failed its frozen criteria and modelling stopped;
+its independent check remains pending before any formal manuscript claim.
 
 ## Previous focus
 Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gate failures and predates adoption of amendment 6. Newer draft: manuscript_2026-10-23.md. Timing tests remain withheld after both revised gates failed.
@@ -14,11 +16,13 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - plans/2026-10-23-pulse-followup-parallel.md : A-E, G1, F3 pilot done (FAIL -> modelling stopped); next: H2 check of pilot, H4 finalize; original primacy procedure remains closed
 - plans/2026-10-23-amendment-4-extrema.md : code done and checked; next: Hyak fits (commands in analysis log 8.4d)
 - plans/2026-10-22-primacy-analysis-code.md : done; next: predictive check (gate 1) first pass when 8.4c batch 1 lands
-- plans/2026-10-20-paper-writeup.md : prose/provenance, pulse research review and implementation handoff done; next: remaining author facts, figures and verification; new pulse analyses tracked in child plan
+- plans/2026-10-20-paper-writeup.md : neuropaper G3 approved; next: draft and independently review Methods and Results/legends, then author midpoint check
 - ../dissemination/reports/mouse-ddm-next-steps.md : analysis plan (kept in dissemination/reports); steps 0–3 done
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-10-25-neuropaper-outline-g3.md : five-figure outline and six briefs pass independent K1-K12 review; G3 author approval pending
+- reports/2026-10-24-neuropaper-literature-g2.md : 44 verified sources; broad mouse novelty rejected, narrow predictive-transfer gap survives; C010-C021 approved at G2
 - reports/2026-10-23-pulse-tau-pilot-20261023T191030Z_fa8de8b.md : tau_p pilot FAIL (fit improves at 300 ms but gains stay 2.3x apart and late reversal persists); modelling stopped
 - reports/2026-10-23-pulse-diagnostics-20261023T191030Z_fa8de8b.md : existing model misplaces the pulse effect in time (early, then reverses; data delayed and sustained); choice-RT gain tradeoff demonstrated in 2 mice; proposes one tau_p candidate
 - reports/2026-10-23-pulse-validation-g1-20261023T191030Z_fa8de8b.md : t intervals adequate (coverage 0.93-0.975); power 0.64 at 6 pp; bootstrap undercovers
@@ -62,6 +66,12 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - Screen geometry not corrected in ME (ME methods §3.7).
 
 ## Decisions
+- 2026-10-25: amendment 7 (visual front end) stopped after the control-trial selection (F1 power law chosen,
+  compressive); 7a not adopted; no pulse gate. Primacy analysis closed; focus on the write-up.
+- 2026-10-25: revised neuropaper G3 approved as written; five-main-figure outline, 4,980-word main-text budget, mandatory S6 record and indicative title style authorized for S4 drafting.
+- 2026-10-25: revised neuropaper G2 approved as written; 44-source literature gap and C010-C021 approved, with broad mouse novelty rejected and no spine change.
+- 2026-10-24: G1 approved (“Looks good”); locked neuropaper spine frames relative control-model support plus failure of strong-pulse predictive transfer, with nine own-result claims approved.
+- 2026-10-24: G0 approved as written; eLife is the provisional target, V. Thakur approves gates, and unpublished material remains local unless explicitly authorized.
 - 2026-10-23: user chose the reduced tau_p pilot with corrected inputs v2; pilot failed its frozen criteria -> modelling stops within this plan (tau-pilot report).
 - 2026-10-23: pulse follow-up implementation authorized by the user (A–E + H behavioural package; recommendation before F/G; no jobs/installs). Contract v2 frozen from metadata and task code before any effect estimate (pulse-data report).
 - 2026-10-23: user requested a parallel implementation plan for the existing-data pulse follow-up. Draft saved in plans/2026-10-23-pulse-followup-parallel.md; this request did not launch analyses or authorize cluster submissions. Proposed new analyses remain exploratory and separate from the closed primacy protocol.

@@ -1,5 +1,5 @@
 # Plan: primacy plan amendment 7 (normalization front end), exploratory
-Status: active
+Status: abandoned (stopped by V. Thakur after the selection step, 2026-10-25)
 Created: 2026-10-25 by Claude (Opus 5.5)
 Related reports: dissemination/reports/primacy-analysis-plan.md (amendment 7, adopted 2026-10-25); analysis log 5.10–5.11
 
@@ -32,3 +32,5 @@ Full normalization inside the motion-energy computation; any candidate beyond F1
 - 2026-10-25: selection run (analysis log 5.13): F1 -64.0, F2 -78.7 summed (2 mice); tie rule picks F1 (gamma < 1,
   compressive). Noise threshold in item 3 ambiguous (2 SD = 45-108); awaiting the authors' choice.
 - 2026-10-25: noise measured (SD 14.4); F1 selected. Proposed 7a (gate F2 too) pending the authors' decision.
+- 2026-10-25: stopped by the authors after selection (F1 chosen, compressive; F2's pulse test would have needed 7a).
+  No pulse predictions made; no gate. Primacy analysis closed (primacy plan, closing note and amendment 7 stop note).
