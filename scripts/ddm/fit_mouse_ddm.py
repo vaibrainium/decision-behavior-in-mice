@@ -77,6 +77,11 @@ GUESS_MODELS = {
 LAPSE_WINDOW = {"lapse_t0": FixedParam(0.3), "lapse_t1": FixedParam(5.0)}  # lapse RTs uniform over the response window
 # Time-varying evidence weight (plan step 6.5): drift_gain * exp(-gain_decay * t); > 0 primacy, < 0 recency, 0 = constant.
 GAIN_DECAY = ("gain_decay", (-0.5, 3.0), 0.0)
+# Visual front ends (primacy plan, amendment 7): applied to the drift input before accumulation (simulator.front_end_*).
+FRONT_ENDS = {
+    "power": [("fe_gamma", (0.3, 3.0), 1.0)],  # x' = sign(x)|x|^gamma
+    "norm": [("fe_beta", (0.0, 20.0), 0.0), ("fe_tau", (0.02, 1.0), 0.1)],  # x' = x / (1 + beta * lowpass_tau(|x|))
+}
 # Signed leak (plan step 6.5): leak_rate < 0 is a self-exciting accumulator, which amplifies early evidence (primacy).
 # Lower bound -1/s limits the growth to e^5 ~ 148x over the 5 s stimulus.
 SIGNED_LEAK_BOUNDS = (-1.0, 5.0)
@@ -86,8 +91,12 @@ EXTREMA_LEAK_BOUNDS = (20.0, 200.0)
 VARIANTS = ["".join(f"{f}{int(on)}" for f, on in zip(OPTIONAL_FREE_PARAMS, flags)) for flags in itertools.product([0, 1], repeat=len(OPTIONAL_FREE_PARAMS))]
 
 
-def make_params(variant: str, guess_model: str = "single", time_varying_gain: bool = False, signed_leak: bool = False, fixed_guess_bias: bool = False, leak_bounds: tuple[float, float] | None = None, drift_gain_max: float | None = None):
+def make_params(variant: str, guess_model: str = "single", time_varying_gain: bool = False, signed_leak: bool = False, fixed_guess_bias: bool = False, leak_bounds: tuple[float, float] | None = None, drift_gain_max: float | None = None,
+                front_end: str | None = None):
     free, fixed = dict(BASE_FREE_PARAMS), dict(FIXED_PARAMS)
+    if front_end is not None:
+        for name, bounds, _ in FRONT_ENDS[front_end]:
+            free[name] = FreeParam(*bounds)
     if drift_gain_max is not None:  # wider gain for the extrema-detection model (primacy plan, amendment 5)
         free["drift_gain"] = FreeParam(BASE_FREE_PARAMS["drift_gain"].lower_bound, drift_gain_max)
     if time_varying_gain:
@@ -177,7 +186,7 @@ def build_grid(inputs: dict, variants: list[str] | None = None, splits: list[str
 
 def default_value(name: str) -> float:
     """Value of an optional parameter when its mechanism is off (used to complete warm-start seeds)."""
-    for specs in [*OPTIONAL_FREE_PARAMS.values(), *GUESS_MODELS.values(), [GAIN_DECAY]]:
+    for specs in [*OPTIONAL_FREE_PARAMS.values(), *GUESS_MODELS.values(), [GAIN_DECAY], *FRONT_ENDS.values()]:
         for spec_name, _, off_value in specs:
             if spec_name == name:
                 return off_value
@@ -206,7 +215,8 @@ def output_path(out_dir: Path, job: dict) -> Path:
     return out_dir / f"{job['mouse']}_{job['variant']}_{job['split']}.pkl"
 
 
-def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations: int, guess_model: str = "single", warm_dirs: list[Path] | None = None, time_varying_gain: bool = False, signed_leak: bool = False, fixed_guess_bias: bool = False, leak_bounds: tuple[float, float] | None = None, drift_gain_max: float | None = None) -> dict:
+def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations: int, guess_model: str = "single", warm_dirs: list[Path] | None = None, time_varying_gain: bool = False, signed_leak: bool = False, fixed_guess_bias: bool = False, leak_bounds: tuple[float, float] | None = None, drift_gain_max: float | None = None,
+            front_end: str | None = None) -> dict:
     mouse_rows = np.flatnonzero(inputs["subject_id"] == job["mouse"])
     is_control = inputs["sched_pulse_type"][mouse_rows] == 0
     split = job["split"]
@@ -224,7 +234,7 @@ def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations:
     else:
         raise ValueError(f"unknown split {split}")
 
-    free, fixed = make_params(job["variant"], guess_model, time_varying_gain, signed_leak, fixed_guess_bias, leak_bounds, drift_gain_max)
+    free, fixed = make_params(job["variant"], guess_model, time_varying_gain, signed_leak, fixed_guess_bias, leak_bounds, drift_gain_max, front_end)
     rigs = np.unique(inputs["data_source"][mouse_rows])
     assert len(rigs) == 1, f"{job['mouse']} has trials from {rigs}"
     min_rt = MIN_RT[rigs[0]]
@@ -254,6 +264,7 @@ def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations:
         "fixed_guess_bias": fixed_guess_bias,
         "leak_bounds": list(leak_bounds) if leak_bounds is not None else None,
         "drift_gain_max": drift_gain_max,
+        "front_end": front_end,
         "warm_start_seeds": seeds_used,
         "censor_at": CENSOR_AT,
         "min_rt": min_rt,
@@ -297,11 +308,12 @@ if __name__ == "__main__":
     parser.add_argument("--signed_leak", action="store_true", help="allow leak_rate down to -1/s (self-exciting accumulator) in variants with leak (plan step 6.5)")
     parser.add_argument("--fixed_guess_bias", action="store_true", help="fix guess_bias at 0.5 (guesses at chance; parsimony rule 3)")
     parser.add_argument("--leak_bounds", type=float, nargs=2, metavar=("LO", "HI"), help="leak_rate bounds (/s) in variants with leak, e.g. 20 200 for the extrema-detection model (primacy plan, amendment 4)")
+    parser.add_argument("--front_end", choices=list(FRONT_ENDS), help="visual front end on the drift input (primacy plan, amendment 7): power or norm")
     parser.add_argument("--drift_gain_max", type=float, help="upper bound of drift_gain (default 20); amendment 5: 200 for the extrema-detection model if its fits reach 20")
     args = parser.parse_args()
 
     processed = Path(dir_config.data.processed)
-    args.out_dir = args.out_dir or (("ddm/fits_guess" if args.guess_model == "single" else f"ddm/fits_guess_{args.guess_model}") + ("_W" if args.time_varying_gain else "") + ("_NL" if args.signed_leak else "") + ("_FB" if args.fixed_guess_bias else "") + (f"_leak{args.leak_bounds[0]:g}-{args.leak_bounds[1]:g}" if args.leak_bounds else "") + (f"_gain{args.drift_gain_max:g}" if args.drift_gain_max else ""))
+    args.out_dir = args.out_dir or (("ddm/fits_guess" if args.guess_model == "single" else f"ddm/fits_guess_{args.guess_model}") + ("_W" if args.time_varying_gain else "") + ("_NL" if args.signed_leak else "") + ("_FB" if args.fixed_guess_bias else "") + (f"_leak{args.leak_bounds[0]:g}-{args.leak_bounds[1]:g}" if args.leak_bounds else "") + (f"_gain{args.drift_gain_max:g}" if args.drift_gain_max else "") + (f"_fe-{args.front_end}" if args.front_end else ""))
     inputs = load_inputs(processed / args.inputs)
     grid = build_grid(inputs, args.variants, args.splits)
     job_ids = [int(x) for x in Path(args.job_file).read_text().split()] if args.job_file else None
@@ -322,4 +334,4 @@ if __name__ == "__main__":
             logger.info("skipping %s: output exists (use --force to refit)", job)
         else:
             logger.info("job %s: %s", args.job_id, job)
-            run_job(inputs, job, processed / args.out_dir, args.n_reps, args.max_iterations, args.guess_model, [processed / d for d in args.warm_start_from], args.time_varying_gain, args.signed_leak, args.fixed_guess_bias, args.leak_bounds, args.drift_gain_max)
+            run_job(inputs, job, processed / args.out_dir, args.n_reps, args.max_iterations, args.guess_model, [processed / d for d in args.warm_start_from], args.time_varying_gain, args.signed_leak, args.fixed_guess_bias, args.leak_bounds, args.drift_gain_max, args.front_end)
