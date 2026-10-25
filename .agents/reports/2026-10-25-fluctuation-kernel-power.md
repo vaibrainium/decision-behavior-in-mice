@@ -44,3 +44,11 @@ Fits: ddm/fits_final (primary model, control), ddm/fits_guess_fast_only_leak20-2
 ## Open questions and next steps
 - [ ] Authors decide: draft amendment 8 (response-aligned integrator-vs-E test; primacy stays closed) or stop.
 - [ ] If drafted: add a refit-based power check (or a parametric bootstrap with refits) before unblinding.
+
+## Rerun without the 48 mislabelled pulse trials (v2, same day)
+Excluded by agg_code from the frozen pulse trial table (37 were in |coh| <= 36; UCLA mice lost 3-19 trials each).
+Outputs: /mnt/data/processed/ddm/fluctuation_kernel_power_v2.csv, fluctuation_kernel_resp_power_v2.csv (v1 kept).
+- VERIFIED: primacy index -0.127 / -0.077 / -0.052 at decay 0 / 20 / 40%; detection 0 / 0 / 0%. Still no power.
+- VERIFIED: late-weight index I +0.24 (SD 0.25), E -0.75 (0.21); classification 20/20 correct for both generators.
+  Per mouse (E/I correct): PSUIM7 1.00/1.00, PSUIM6 0.95/0.95, PSUIM5 0.95/0.85; others 0.25-0.85.
+- The conclusions are unchanged from v1. The v2 numbers supersede v1 for any later use.

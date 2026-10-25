@@ -38,11 +38,20 @@ BINS = [(0.1 + 0.1 * i, 0.2 + 0.1 * i) for i in range(8)]  # stimulus-aligned, s
 RESP_BINS = [(-0.6 + 0.1 * i, -0.5 + 0.1 * i) for i in range(6)]  # response-aligned, s before the response
 MEAN_FRAMES = slice(10, 300)  # trial-mean window for removing the fixed bias (after the onset response settles)
 VARIANT = primacy.BASELINES["primary"]
+# 48 UCLA pulse trials without a response are labelled controls in the DDM inputs (pulse-data report 2026-10-23); excluded here
+PULSE_TABLE = "pulse_followup/20261023T191030Z_fa8de8b/data/trial_table.csv"
+
+
+def mislabelled_pulses(processed: Path) -> set:
+    t = pd.read_csv(processed / PULSE_TABLE, usecols=["trial_id", "in_ddm_input", "ddm_sched_pulse_type", "pulse_category", "no_response_recorded"])
+    m = t[t.in_ddm_input.astype(bool) & (t.ddm_sched_pulse_type == 0) & (t.pulse_category != "control") & t.no_response_recorded.astype(bool)]
+    assert len(m) == 48, len(m)
+    return set(m.trial_id.astype(str))
 
 
 def mouse_trials(inputs: dict, mouse: str) -> np.ndarray:
     m = (inputs["subject_id"] == mouse) & (inputs["sched_pulse_type"] == 0) & (np.abs(inputs["signed_coherence"]) <= 0.36 + 1e-9)
-    return np.flatnonzero(m)
+    return np.flatnonzero(m & ~inputs["mislabelled_pulse"])
 
 
 def fluctuation(inputs: dict, rows: np.ndarray) -> np.ndarray:
@@ -197,15 +206,17 @@ if __name__ == "__main__":
     args = parser.parse_args()
     processed = Path(dir_config.data.processed)
     inputs = load_inputs(processed / "ddm/ddm_inputs_global.npz")
+    inputs["mislabelled_pulse"] = np.isin(inputs["agg_code"].astype(str), list(mislabelled_pulses(processed)))
+    print(f"excluded {inputs['mislabelled_pulse'].sum()} pulse trials mislabelled as controls", flush=True)
     if args.observed:
         if not args.unblind:
             raise SystemExit("refusing to compute kernels of recorded choices without --unblind (power check first)")
         raise SystemExit("observed mode is specified in amendment 8, which is not written yet")
     if args.power:
         df, resp = power(inputs, processed, args.datasets, args.ref_reps)
-        df.to_csv(processed / "ddm" / "fluctuation_kernel_power.csv", index=False)
+        df.to_csv(processed / "ddm" / "fluctuation_kernel_power_v2.csv", index=False)
         report(df, resp)
     if args.resp_power:
         df = resp_power(inputs, processed, args.datasets, args.ref_reps)
-        df.to_csv(processed / "ddm" / "fluctuation_kernel_resp_power.csv", index=False)
+        df.to_csv(processed / "ddm" / "fluctuation_kernel_resp_power_v2.csv", index=False)
         resp_report(df)

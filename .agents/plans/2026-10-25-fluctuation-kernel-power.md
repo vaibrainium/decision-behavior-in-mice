@@ -52,3 +52,8 @@ trials. If yes, draft amendment 8; if not, stop.
   is ~0 in the last 200 ms (bins -0.6..0 s). Whether this survives single-dataset noise is untested.
 - 2026-10-25: step 3 done. Classification 20/20 correct under both generators (criterion met); per mouse reliable only in
   PSUIM6/7. Report: reports/2026-10-25-fluctuation-kernel-power.md. Next: step 4 (author decision).
+- 2026-10-25: V. Thakur: exclude the 48 UCLA no-response pulse trials labelled controls in the DDM inputs (pulse-data
+  report 2026-10-23; 37 of them in |coh| <= 36). Matched by agg_code to the frozen trial table
+  pulse_followup/20261023T191030Z_fa8de8b. Both power checks rerun; outputs *_v2.csv, originals kept. The fits used
+  (fits_final, leak20-200 control fits) still include these trials, and refitting is not done.
+- 2026-10-25: v2 rerun done; conclusions unchanged (primacy 0% detection; I vs E 20/20 each). Report updated. Next: step 4.
