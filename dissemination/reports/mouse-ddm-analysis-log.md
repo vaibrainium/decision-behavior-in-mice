@@ -840,6 +840,16 @@ python -m scripts.ddm.primacy_calibration --summarize
 Submitted 2026-10-23 as a dependency chain: step 1 `42183146` → step 2 `42183755` (`afterok`) → step 4
 `42183756` / `42183757` (offsets 0 / 400, `afterok` on 42183755). Step 3 (revised gate) runs locally after step 2.
 
+### 8.4f Amendment 7: front ends (2026-10-25)
+```bash
+for fe in power norm; do
+  # control-only CV (15 reps, as step 3.3) -> ddm/fits_guess_fast_only_fe-<fe>
+  env EXTRA_ARGS="--variants L0U0V1Z0G1 --splits ccv0 ccv1 ccv2 ccv3 ccv4 --guess_model fast_only --front_end $fe --warm_start_from ddm/fits_guess_fast_only" sbatch --array=0-49 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+  # all control trials (50 reps, for predictions)
+  env EXTRA_ARGS="--variants L0U0V1Z0G1 --splits control --guess_model fast_only --front_end $fe --n_reps 50 --warm_start_from ddm/fits_final" sbatch --array=0-9 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+done
+```
+
 ### 8.5 Analysis
 ```bash
 python -m scripts.ddm.compare_models                                  # generation 3
