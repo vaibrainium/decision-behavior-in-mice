@@ -15,7 +15,10 @@ the generating parameters without decay (no refit, so power is if anything overs
 of the integrator and extrema detection (E) to see whether their shapes separate.
 Real-data mode (--observed) refuses without --unblind; not used before the power check is reported.
 
-Usage: python -m scripts.ddm.fluctuation_kernel --power [--datasets 20] [--ref_reps 10]
+--resp_power (synthetic only): late-weight index of the response-aligned kernel (last 0.2 s minus 0.6-0.4 s before the
+response) on datasets from the integrator and from E, classified by distance to each model's predicted index.
+
+Usage: python -m scripts.ddm.fluctuation_kernel --power | --resp_power [--datasets 20] [--ref_reps 10]
 """
 
 import argparse
@@ -114,6 +117,55 @@ def power(inputs: dict, processed: Path, datasets: int, ref_reps: int, levels=(0
     return pd.DataFrame(rows_out), resp
 
 
+def late_index(k: np.ndarray) -> float:
+    """Response-aligned late-weight index: mean of the last two bins (-0.2..0 s) minus the first two (-0.6..-0.4 s)."""
+    return float(np.nanmean(k[-2:]) - np.nanmean(k[:2]))
+
+
+def resp_power(inputs: dict, processed: Path, datasets: int, ref_reps: int) -> pd.DataFrame:
+    """Integrator (I) vs extrema detection (E): late-weight index of datasets from each generator, with each model's
+    prediction per mouse from separate repetitions."""
+    rows_out = []
+    for mouse in sorted(np.unique(inputs["subject_id"])):
+        rows = mouse_trials(inputs, mouse)
+        rig = np.unique(inputs["data_source"][rows]).item()
+        _, stim = select(inputs, rows)
+        cond = inputs["condition"][rows]
+        f = fluctuation(inputs, rows)
+        models = {
+            "I": (primacy.make_model(VARIANT, rig), primacy.load_fit(processed / "ddm/fits_final", mouse, VARIANT, "control", False)["parameters"]),
+            "E": (primacy.make_model("L1U0V1Z0G1", rig, leak_bounds=EXTREMA_LEAK_BOUNDS),
+                  primacy.load_fit(processed / "ddm/fits_guess_fast_only_leak20-200", mouse, "L1U0V1Z0G1", "control", False, EXTREMA_LEAK_BOUNDS)["parameters"]),
+        }
+        pred = {}
+        for name, (model, params) in models.items():
+            pred[name] = np.nanmean([late_index(kernel(f, rt, ch, RESP_BINS, "response")) for rt, ch in simulate(model, params, stim, cond, ref_reps, 4000)])
+        for name, (model, params) in models.items():
+            for d, (rt, ch) in enumerate(simulate(model, params, stim, cond, datasets, 5000)):
+                rows_out.append({"mouse": mouse, "generator": name, "dataset": d, "index": late_index(kernel(f, rt, ch, RESP_BINS, "response")),
+                                 "pred_I": pred["I"], "pred_E": pred["E"]})
+        print(f"{mouse}: {len(rows)} trials; predicted late-weight index I {pred['I']:.2f}, E {pred['E']:.2f}", flush=True)
+    return pd.DataFrame(rows_out)
+
+
+def resp_report(df: pd.DataFrame) -> None:
+    from scipy import stats
+
+    df = df.assign(dI=(df["index"] - df.pred_I) ** 2, dE=(df["index"] - df.pred_E) ** 2)
+    g = df.groupby(["generator", "dataset"]).agg(dI=("dI", "sum"), dE=("dE", "sum"), mean=("index", "mean"), sd=("index", "std"), n=("index", "count"))
+    g["chosen"] = np.where(g.dI < g.dE, "I", "E")
+    g["t"] = g["mean"] / (g["sd"] / np.sqrt(g["n"]))
+    crit = stats.t.ppf(0.975, g["n"] - 1)
+    g["sig_pos"], g["sig_neg"] = g.t > crit, g.t < -crit
+    g = g.reset_index()
+    g["correct"] = g.chosen == g.generator
+    print("\nlate-weight index, integrator vs extrema detection (per generator, over datasets):")
+    print(g.groupby("generator").agg(mean_index=("mean", "mean"), sd_of_mean=("mean", "std"), correct=("correct", "mean"),
+                                     sig_pos=("sig_pos", "mean"), sig_neg=("sig_neg", "mean")).round(3).to_string())
+    print("\nper-mouse SD of the index across datasets:")
+    print(df.groupby(["mouse", "generator"])["index"].std().unstack().round(2).to_string())
+
+
 def report(df: pd.DataFrame, resp: dict) -> None:
     from scipy import stats
 
@@ -139,6 +191,7 @@ if __name__ == "__main__":
     parser.add_argument("--power", action="store_true")
     parser.add_argument("--datasets", type=int, default=20)
     parser.add_argument("--ref_reps", type=int, default=10)
+    parser.add_argument("--resp_power", action="store_true", help="integrator vs extrema detection, response-aligned (synthetic)")
     parser.add_argument("--observed", action="store_true", help="kernels of the recorded choices (after the power check only)")
     parser.add_argument("--unblind", action="store_true")
     args = parser.parse_args()
@@ -152,3 +205,7 @@ if __name__ == "__main__":
         df, resp = power(inputs, processed, args.datasets, args.ref_reps)
         df.to_csv(processed / "ddm" / "fluctuation_kernel_power.csv", index=False)
         report(df, resp)
+    if args.resp_power:
+        df = resp_power(inputs, processed, args.datasets, args.ref_reps)
+        df.to_csv(processed / "ddm" / "fluctuation_kernel_resp_power.csv", index=False)
+        resp_report(df)
