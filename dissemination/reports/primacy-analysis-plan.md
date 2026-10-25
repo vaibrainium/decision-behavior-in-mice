@@ -422,7 +422,7 @@ procedure.
 
 ## Amendment 7 (2026-10-25, DRAFT for V. Thakur's decision): a visual front end with normalization
 
-**Status: draft, not adopted.** Adopting it would be a new decision by the authors after the stopping decision of
+**Status: adopted by V. Thakur, 2026-10-25** (draft committed ddb51ba). This is a new decision by the authors after the stopping decision of
 amendment 6, item 8 ("no further baseline revision for the primacy test"), and would override that item for this one
 round only. **Everything in it is exploratory and post hoc.** The candidates below were chosen after seeing the
 timing-agnostic pulse diagnostics (pooled departure, departure by pulse direction relative to coherence and by mouse;
