@@ -418,3 +418,109 @@ are kept.
 coherence and mouse, the strategy test (not distinguished, underpowered), and the calibration of the revised
 procedure.
 
+---
+
+## Amendment 7 (2026-10-25, DRAFT for V. Thakur's decision): a visual front end with normalization
+
+**Status: draft, not adopted.** Adopting it would be a new decision by the authors after the stopping decision of
+amendment 6, item 8 ("no further baseline revision for the primacy test"), and would override that item for this one
+round only. **Everything in it is exploratory and post hoc.** The candidates below were chosen after seeing the
+timing-agnostic pulse diagnostics (pooled departure, departure by pulse direction relative to coherence and by mouse;
+analysis log 5.10–5.11). The original and revised gate failures stay the primary results and are reported first. No
+timing contrast has been computed on recorded data when this draft is written.
+
+**Why.** Every decision model tried so far reads linear opponent motion energy (Adelson–Bergen: linear filters,
+squaring, opponency). Under that front end no fitted model predicts the pulse trials, and the misfit has a pattern:
+- **at 0% coherence**, choices follow a 100% pulse far more than predicted (0.574 vs 0.512);
+- **against 36% coherence**, a pulse has less effect than predicted;
+- **on control trials**, the psychometric fit is too shallow at 18–36% in several mice.
+
+Two standard visual nonlinearities predict such effects:
+- **a static response nonlinearity:** strong signals weighted more than proportionally;
+- **divisive normalization with adaptation** (normalization models of V1/MT; references to be verified before
+  citing): sustained motion adapts, so a brief transient escapes adaptation and acts more strongly, and strong
+  ongoing motion raises the normalization pool, which suppresses an opposite pulse.
+
+If the decision process reads a normalized signal, the pulse failure says something about the visual representation,
+not that integration is wrong. This amendment asks whether a front end fitted on control trials only predicts the
+pulse trials out of sample. If it does, it revisits the strategy and timing questions with that front end.
+
+**Changes:**
+
+1. **Front-end candidates.** Each transforms the trial's opponent motion-energy trace x(t) (S + N at 60 Hz, the input of
+   all fits so far) the same way on control and pulse trials, before the decision model. The drift gain is refitted
+   and absorbs overall scale.
+   - **F0 (current):** x' = x.
+   - **F1, power law:** x' = sign(x)·|x|^γ, γ ∈ [0.3, 3] (one parameter; γ > 1 weights strong motion more than
+     proportionally).
+   - **F2, temporal divisive normalization** (approximation): x'(t) = x(t) / (1 + β·p(t)), where p is a causal
+     exponential low-pass of |x| with time constant τ_n. β ∈ [0, 20], τ_n ∈ [0.02, 1] s (two parameters). The pool uses
+     the opponent signal, so it cannot represent normalization by unsigned, non-opponent energy. A full
+     normalization stage in the motion-energy computation is **not** part of this amendment.
+
+   Implemented inside the simulator (both backends), so the input arrays stay fixed while parameters vary.
+2. **Fitting, on control trials only.** Each of F1 and F2 is added to the common model (L0U0V1Z0G1, fast-only guesses,
+   guess bias free), with all parameters refitted, warm-started from the F0 fits:
+   - control-only CV (ccv0–ccv4, 15 repetitions, as in step 3.3);
+   - all control trials, 50 repetitions, for predictions.
+3. **Candidate selection, before any pulse outcome is read for these models.**
+   - The selected front end is the candidate with the lowest summed held-out NLL on control trials (ccv0–ccv4).
+   - It must beat F0 by more than the summed Monte Carlo noise (2 SD, analysis log 5.6) and be worse than F0 by more
+     than 10 NLL in no more than 2 mice.
+   - If F1 and F2 are within 20 summed NLL of each other, F1 (fewer parameters) is chosen.
+   - If neither beats F0, F0 stays and the amendment stops at this step. That is reported as "no control-trial evidence
+     for these front-end nonlinearities".
+4. **Frozen predictions and gate.**
+   - **Predictions:** pulse-trial predictions from the selected front end's all-control fit (≥ 200 repetitions),
+     saved with the commit hash and SHA-256 checksums before gate 1 is computed.
+   - **Gate:** gate 1–3 as in section 7 (GATE_MIN_INSIDE = 0.8), plus the descriptive checks by coherence and by mouse
+     (amendment 6, item 3). No pulse gain is fitted.
+   - **If the gate fails, the primacy and strategy analyses stop permanently.** The front-end comparison and the gate
+     result are reported.
+5. **Strategy comparison with the same front end** (amendments 4–5), run only if the gate passes:
+   - E (leak 20–200 /s) is refitted on control trials with the selected front end, so the comparison stays fair;
+   - frozen predictions, then the amendment 5 strategy test (pulse-gain statistic primary, paired SD, 3 SD and 6/10
+     mice);
+   - its power, computed from synthetic data from both refitted models before the observed test, as in amendment 5,
+     item 4.
+6. **Calibration before any timing contrast** (as amendment 6, item 6), run only if the gate passes.
+   - **Data:** synthetic datasets from each mouse's selected model, whose pulse effects now match the data if the
+     gate passed, with drift-gain decay of 0, 10, 20 and 40% over 0.5 s, ≥ 20 datasets each.
+   - **Pipeline:** each dataset is put through items 4 and 7 unchanged.
+   - **Report:** gate-pass rate, false-positive rate under zero decay, and detection overall and conditional on the
+     gate, for both timing analyses in item 7.
+7. **Timing analyses** (only after item 6 is reported):
+   - **(a) Model-based:** the section 6 GLMM with offsets from the selected model's frozen predictions. Primary:
+     β_middle, all mice, rig as a covariate. Secondary: UW late pulses.
+   - **(b) Model-light, common response-time cut-off:**
+     - **Trials:** responses with RT ≥ 0.92 s, i.e. after the latest scheduled pulse onset (0.417 s) plus 0.5 s. The
+       same cut-off applies at every timing, so all pulses could act before the decision.
+     - **Model:** Bayesian logistic GLMM of choice toward the pulse on timing (early as reference) and
+       pulse-aligned signed coherence, with random intercept and timing slope per mouse, rig as a covariate, and priors
+       as section 6; |coh| ≤ 36%.
+     - **Flat-weighting reference:** the selection bias, i.e. the middle − early difference expected without primacy,
+       is taken from simulations of F0, the selected model and E under the same cut-off. A prediction-only check
+       (2026-10-25, 4 mice, 100 repetitions) gave −0.004 to +0.004 for the integrator, −0.008 to +0.031 for the
+       integrator with 3× pulse, and +0.009 to +0.089 for E, i.e. bias toward apparent recency, not primacy.
+     - **Claim rule:** primacy is claimed only if the 95% interval of β_middle lies below the most negative simulated
+       flat-weighting bias. The UW late-vs-early contrast is reported descriptively, with the simulated bias (+0.02 to
+       +0.06 in that check) subtracted.
+   - **(c) Secondary:** gain decay and signed leak, each added to the selected model (one parameter), fitted on all
+     trials and compared by 5-fold CV. Reported descriptively.
+8. **Interpretation rules.**
+   - Primacy or recency is stated only if analysis (a) or (b) excludes zero in that direction, the calibration's
+     false-positive rate is ≤ 10%, and the result is labelled exploratory.
+   - A null is reported with the calibration's detection rates, as "no evidence at this sensitivity", not as flat
+     weighting.
+   - Integration is supported out of sample only if the selected integrator passes the gate and the strategy test
+     favours it under its own rule.
+9. **One round, then stop.** No front-end or decision-model candidates beyond F1 and F2, no further revision after
+   this amendment's gate, and no changes to thresholds after any result. Every item is reported whatever its outcome.
+
+**Not changed:** amendments 1–6 and their results, which are reported as they stand.
+
+**Cost (estimate):**
+- code: front-end transforms in both simulator backends, checked against a numerical reference;
+- Hyak: 100 ccv fits and 20 control fits, then, depending on the selection and the gate, E refits (~60),
+  predictions (~30), strategy power, calibration (~800), and the extensions (~100).
+
