@@ -67,6 +67,47 @@ def _simulate_ddm_trials_numba(
     return rt, choice
 
 
+def front_end_active(params: dict) -> bool:
+    """True if a visual front-end transform (primacy plan, amendment 7) changes the input."""
+    return float(params.get("fe_gamma", 1.0)) != 1.0 or float(params.get("fe_beta", 0.0)) != 0.0
+
+
+def front_end_numpy(stim: np.ndarray, params: dict) -> np.ndarray:
+    """Front end applied to the drift input x(t) before accumulation (amendment 7); identity with default parameters.
+    Power law: x' = sign(x)|x|^fe_gamma. Temporal divisive normalization: x'(t) = x(t) / (1 + fe_beta * p(t)), where
+    p is a causal exponential low-pass of |x| with time constant fe_tau (s): p[t] = (1 - k) p[t-1] + k |x[t]|,
+    k = dt / fe_tau, p starting at 0. Returns a new array; NaN (no stimulus) stays NaN."""
+    gamma, beta = float(params.get("fe_gamma", 1.0)), float(params.get("fe_beta", 0.0))
+    x = np.asarray(stim, dtype=np.float32)
+    if gamma != 1.0:
+        x = (np.sign(x) * np.abs(x) ** gamma).astype(np.float32)
+    if beta != 0.0:
+        from scipy.signal import lfilter
+
+        k = min(1.0, float(params["dt"]) / float(params["fe_tau"]))
+        pool = lfilter([k], [1.0, k - 1.0], np.nan_to_num(np.abs(x)), axis=1)
+        x = (x / (1.0 + beta * pool)).astype(np.float32)
+    return x
+
+
+def front_end_torch(stim: torch.Tensor, params: dict) -> torch.Tensor:
+    """torch version of front_end_numpy (same definition); the low-pass is an exact FFT convolution with the
+    exponential kernel over the whole trial. Never modifies `stim` in place (it may be a cached input)."""
+    gamma, beta = float(params.get("fe_gamma", 1.0)), float(params.get("fe_beta", 0.0))
+    x = stim
+    if gamma != 1.0:
+        x = torch.sign(x) * torch.abs(x) ** gamma
+    if beta != 0.0:
+        n = x.shape[1]
+        k = min(1.0, float(params["dt"]) / float(params["fe_tau"]))
+        lags = torch.arange(n, device=x.device, dtype=torch.float64)
+        kernel = k * (1.0 - k) ** lags
+        a = torch.nan_to_num(torch.abs(x)).to(torch.float64)
+        pool = torch.fft.irfft(torch.fft.rfft(a, n=2 * n) * torch.fft.rfft(kernel, n=2 * n), n=2 * n)[:, :n]
+        x = (x / (1.0 + beta * pool)).to(torch.float32)
+    return x
+
+
 class _NumbaSimulator:
     """Numba JIT backend — fastest on CPU due to per-trial early termination."""
 
@@ -84,6 +125,8 @@ class _NumbaSimulator:
         if stimulus.size == 0:
             return np.array([], dtype=np.float32), np.array([], dtype=np.float32)
         stim = np.asarray(stimulus, dtype=np.float32)
+        if front_end_active(params):
+            stim = front_end_numpy(stim, params)
         n_trials, n_timepoints = stim.shape
         noise_std = np.sqrt(params["variance"] * params["dt"])
         if unit_noise is not None:
@@ -169,6 +212,8 @@ class _TorchSimulator:
 
         if stim.numel() == 0:
             return np.array([], dtype=np.float32), np.array([], dtype=np.float32)
+        if front_end_active(params):
+            stim = front_end_torch(stim, params)
 
         n_trials, n_timepoints = stim.shape
         T = n_timepoints - 1
