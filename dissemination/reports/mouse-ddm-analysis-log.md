@@ -606,6 +606,24 @@ notebook 3.0 with FITS = "fits_final", run with the project venv): unchanged fro
 correct RTs are captured; error RTs at 36–100% are faster in the data; P(RT > 5 s) at 100% is underpredicted in
 PSUIM5/6/7.
 
+### 5.13 Amendment 7: front-end selection on control trials (2026-10-25)
+
+Control-only CV (ccv0–ccv4, 15 reps), common model plus F1 (power law) or F2 (temporal divisive normalization), in
+`ddm/fits_guess_fast_only_fe-{power,norm}`, against F0 (`ddm/fits_guess_fast_only`). No pulse prediction made for
+these models.
+- **Nesting:** both nest F0 (training NLL never worse in 50/50 folds).
+- **Held-out NLL vs F0** (negative = better): F1 **−64.0**, F2 **−78.7** summed; PSUIM6 −40.9 / −52.6, PSUIM7
+  −19.9 / −20.7. Every other mouse is within ±5. Better by > 10 in 2 mice, worse by > 10 in none, for both.
+- **Fitted parameters** (mean over folds):
+  - F1 γ ≈ 1.0 in five mice and 0.62–0.77 (compressive) in PSUIM5/6/7/10 and DBM6, i.e. **compressive, not the
+    expansive weighting** the pulse-amplification idea needed;
+  - F2 β up to 2.3, τ 0.09–0.59 s.
+- **Rule (item 3):** F1 and F2 are within 20 summed NLL (14.7 apart), so F1, the simpler one, is the candidate. Whether
+  F1 beats F0 "by more than 2 SD of the summed Monte Carlo noise" is **ambiguous as drafted**: section 5.6 gives summed
+  SDs of 22–54 for different comparisons (2 SD ≈ 45 to 108); F1 passes the lower and fails the upper. Pending the
+  authors' choice: measure the noise of this comparison by re-scoring (recommended), or apply the conservative bound.
+  Two F2 all-control fits (tasks 8–9) were still running on Hyak; they do not affect the selection.
+
 ---
 
 ## 6. Things that did not work, and why
