@@ -74,11 +74,22 @@ are final; the DDM common model is provisional (steps 1–2 fits submitted, 3.1 
   - [x] AB4. Build Figure 3 from held-out score tables and final-fit summaries; label held-out versus in-sample panels explicitly.
   - [x] AB5. Rebuild Figures 1–2 only after resolving their registered panel-denominator and replay-display audits.
   - [x] AB6. Reconcile legends against final artwork, run accessibility/export checks and write the figure-production report.
+- [x] AC. Add one maintainable notebook per main figure, with one independently runnable section per labeled panel.
+  - [x] AC1. Create notebook wrappers for Figures 1–5 that reuse the canonical tested figure modules and prepare shared data once.
+  - [x] AC2. Give every labeled panel its own Markdown heading and code cell; keep notebook execution display-only so it cannot overwrite publication exports.
+  - [x] AC3. Validate notebook JSON, cell ordering, kernel metadata and execution in the project environment; document the handoff. Report: [figure notebooks](../reports/2026-10-26-figure-notebooks.md).
 
 ## Out of scope
 Running analyses (tracked in the next-steps plan); editing the poster; the SC WFV inactivation experiments (separate study). Reviewing the old poster for paper/thesis inspiration is authorized under S–U below.
 
 ## Log
+- 2026-10-26 (Codex; editable figure notebooks complete): added one output-free notebook per main figure, with shared
+  setup/data followed by one Markdown/code pair for every labeled panel. All five execute through a temporary kernel
+  pointing at `/src/.venv/bin/python`; the global Jupyter kernel is incompatible because its NumPy/Matplotlib builds
+  do not match. No packages or publication exports were changed. Report: `../reports/2026-10-26-figure-notebooks.md`.
+- 2026-10-26 (Codex; editable figure notebooks): author requested one dedicated notebook per main figure, organized so
+  each labeled subpanel has its own section for later revision. Reuse canonical panel functions to prevent silent
+  divergence from the selected artwork; notebook previews must not overwrite or version-bump publication exports.
 - 2026-10-26 (Codex; Figures 1–2 and package lock): rebuilt the task/behaviour and stimulus-reconstruction figures after
   closing panel-denominator audits N105 and N107; closed Figure 3D mapping as N106. Selected all five versioned
   PDF/SVG/300-dpi PNG exports, reconciled artwork-matched captions in `figure_build_2026-10-26.md` and neuropaper
