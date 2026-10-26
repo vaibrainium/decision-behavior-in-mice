@@ -3,8 +3,8 @@
 Selected current drafts (PDF and SVG are editable vector exports; PNG is the 300-dpi review rendering):
 
 - Figure 1: `fig1_task_behaviour_2026-10-26_v2.{pdf,svg,png}`
-- Figure 2: `fig2_stimulus_reconstruction_2026-10-26_v5.{pdf,svg,png}`
-- Figure 3: `fig3_control_models_2026-10-26_v4.{pdf,svg,png}`
+- Figure 2: `fig2_stimulus_reconstruction_2026-10-26_v6.{pdf,svg,png}`
+- Figure 3: `fig3_control_models_2026-10-26_v5.{pdf,svg,png}`
 - Figure 4: `fig4_pulse_behaviour_2026-10-26_v2.{pdf,svg,png}`
 - Figure 5: `fig5_model_mismatch_2026-10-26_v3.{pdf,svg,png}`
 - Supplementary Figure S6: `figS6_gates_sensitivity_2026-10-26_v2.{pdf,svg,png}`
@@ -12,6 +12,11 @@ Selected current drafts (PDF and SVG are editable vector exports; PNG is the 300
 Each selected basename has adjacent `*_source_*.csv` files containing exactly the rows used in the artwork. Earlier
 same-day versions are retained because repository policy forbids overwriting results; they are layout drafts and are
 not the selected versions.
+
+Update 2026-10-26 (American spelling, D010): Figure 2 v6 and Figure 3 v5 replace v5 and v4. The only change is one
+annotation string each ("labelled" -> "labeled"; "favours" -> "favors"). All adjacent source CSVs are byte-identical
+to the previously audited v5/v4 sources (checked with `cmp`), PNG size and dpi are unchanged, and the pixel difference
+is confined to the annotation bounding box. Ledger records N106/N107 continue to cite the identical v4/v5 source files.
 
 The selected set uses a provisional 180-mm full width pending final journal production specifications. Same-day earlier
 versions are retained as layout drafts and are not selected artwork.

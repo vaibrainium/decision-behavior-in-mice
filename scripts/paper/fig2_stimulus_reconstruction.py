@@ -211,7 +211,7 @@ def panel_alternatives(ax, table):
     ax.set_xlim(1.5, 3.75)
     ax.set_xlabel("Pulse energy per 1% programmed change\n(% coherence-equivalent frames, 0–333 ms)")
     ax.set_title("UCLA replay alternatives", loc="left")
-    ax.text(0.98, 0.03, "Alternatives are labelled assumptions,\nnot acquisition-setting estimates",
+    ax.text(0.98, 0.03, "Alternatives are labeled assumptions,\nnot acquisition-setting estimates",
             transform=ax.transAxes, ha="right", va="bottom", fontsize=5.5, color="0.35")
 
 

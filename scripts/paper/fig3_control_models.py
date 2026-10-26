@@ -99,7 +99,7 @@ def panel_strategy(ax, strategy):
     ax.set_title("Per-mouse strategy comparison", loc="left")
     ax.text(0.98, 0.98, f"sum = {d.delta_nll.sum():.1f}; 6/10 > 10",
             transform=ax.transAxes, ha="right", va="top", fontsize=6.2)
-    ax.text(0.98, 0.06, "positive favours accumulator", transform=ax.transAxes,
+    ax.text(0.98, 0.06, "positive favors accumulator", transform=ax.transAxes,
             ha="right", va="bottom", fontsize=6.0, color="0.3")
 
 
