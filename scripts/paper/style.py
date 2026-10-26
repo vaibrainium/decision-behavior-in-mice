@@ -21,8 +21,14 @@ PROCESSED = Path(dir_config.data.processed)
 
 RIGS = ("ucla", "uw")
 RIG_LABEL = {"ucla": "UCLA", "uw": "UW"}
-RIG_COLOR = {"ucla": "#0072B2", "uw": "#D55E00"}
+# Keep experimental-site colours distinct from stimulus direction throughout the
+# final figure set.  Direction uses the Okabe-Ito vermillion/blue pair; sites use
+# green/purple and always retain different markers.
+RIG_COLOR = {"ucla": "#009E73", "uw": "#CC79A7"}
 RIG_MARKER = {"ucla": "o", "uw": "s"}
+RIGHT_COLOR = "#D55E00"
+LEFT_COLOR = "#0072B2"
+NEUTRAL_COLOR = "#4D4D4D"
 TIMING_LABEL = {1: "Early", 2: "Middle", 3: "Late"}
 ABS_COHERENCES = (0, 9, 18, 36, 100)
 
@@ -98,4 +104,22 @@ def save(fig, stem):
     for ext in ("pdf", "png"):
         fig.savefig(OUT_DIR / f"{name}.{ext}", dpi=600 if ext == "png" else None)
     print(f"saved {OUT_DIR / name}.pdf/.png")
+    return OUT_DIR / name
+
+
+def save_publication(fig, stem, dpi=300):
+    """Write versioned PDF/SVG/PNG exports for publication figures.
+
+    The vector files retain editable text/lines; the PNG is a 300-dpi review
+    rendering.  A common basename is reserved across all three formats.
+    """
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    base = f"{stem}_{date.today().isoformat()}"
+    name, k = base, 1
+    while any((OUT_DIR / f"{name}.{ext}").exists() for ext in ("pdf", "svg", "png")):
+        k += 1
+        name = f"{base}_v{k}"
+    for ext in ("pdf", "svg", "png"):
+        fig.savefig(OUT_DIR / f"{name}.{ext}", dpi=dpi if ext == "png" else None)
+    print(f"saved {OUT_DIR / name}.pdf/.svg/.png")
     return OUT_DIR / name
