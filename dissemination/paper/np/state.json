@@ -74,17 +74,17 @@
       "target_words": 1200
     },
     "introduction": {
-      "status": "in_review",
+      "status": "passed",
       "version": 1,
-      "review_rounds": 0,
-      "verdict": null,
+      "review_rounds": 2,
+      "verdict": "PASS",
       "target_words": 700
     },
     "title_abstract": {
-      "status": "pending",
-      "version": 0,
-      "review_rounds": 0,
-      "verdict": null,
+      "status": "passed",
+      "version": 1,
+      "review_rounds": 2,
+      "verdict": "PASS",
       "target_words": 230
     }
   },
@@ -290,6 +290,38 @@
     {
       "at": "2026-10-26T01:05:56",
       "event": "section introduction -> in_review"
+    },
+    {
+      "at": "2026-10-26T02:03:03",
+      "event": "review introduction round 1: REVISE (P0=0)"
+    },
+    {
+      "at": "2026-10-26T02:04:35",
+      "event": "section introduction -> in_review"
+    },
+    {
+      "at": "2026-10-26T02:06:04",
+      "event": "review introduction round 2: PASS (P0=0)"
+    },
+    {
+      "at": "2026-10-26T02:06:04",
+      "event": "section title_abstract -> drafting"
+    },
+    {
+      "at": "2026-10-26T02:08:26",
+      "event": "section title_abstract -> in_review"
+    },
+    {
+      "at": "2026-10-26T02:10:53",
+      "event": "review title_abstract round 1: REVISE (P0=0)"
+    },
+    {
+      "at": "2026-10-26T02:12:20",
+      "event": "section title_abstract -> in_review"
+    },
+    {
+      "at": "2026-10-26T02:14:01",
+      "event": "review title_abstract round 2: PASS (P0=0)"
     }
   ]
 }
