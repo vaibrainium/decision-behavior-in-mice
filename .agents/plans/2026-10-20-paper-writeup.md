@@ -83,6 +83,11 @@ are final; the DDM common model is provisional (steps 1–2 fits submitted, 3.1 
 Running analyses (tracked in the next-steps plan); editing the poster; the SC WFV inactivation experiments (separate study). Reviewing the old poster for paper/thesis inspiration is authorized under S–U below.
 
 ## Log
+- 2026-10-26 (Codex; neuropaper S4 complete): Introduction v2 and title/abstract v2 each passed independent round-2
+  section review after bounded revisions; all six sections are now passed and deterministic checks have zero errors.
+  G4 is ready at `dissemination/paper/np/checkpoints/G4.md`. Before assembly, G4 asks for an exact direct patch replacing
+  three stale Figure 1–3 Methods provenance placeholders with completed audit records N105–N107, plus approval of the
+  S5 assembly → S6 artwork → panel-review order. Report: `../reports/2026-10-26-neuropaper-s4-g4.md`.
 - 2026-10-26 (Codex; editable figure notebooks complete): added one output-free notebook per main figure, with shared
   setup/data followed by one Markdown/code pair for every labeled panel. All five execute through a temporary kernel
   pointing at `/src/.venv/bin/python`; the global Jupyter kernel is incompatible because its NumPy/Matplotlib builds

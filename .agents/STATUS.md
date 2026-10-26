@@ -1,13 +1,11 @@
 # Status
-Last updated: 2026-10-26 by Codex (editable figure notebooks complete; Introduction v1 remains in review)
+Last updated: 2026-10-26 by Codex (neuropaper S4 complete; G4 author decision pending)
 
 ## Current focus
-The five-main-figure package is assembled as versioned vector/300-dpi exports with exact source-data tables, visually
-inspected, and reconciled to artwork-matched captions and neuropaper legends v4. One output-free notebook per main
-figure now exposes each labeled panel separately and executes with the project environment. Next: author visual review, then resume
-Introduction review and title/abstract work; Supplementary Figure S6 can be built before or after that prose pass.
-Methods, Results, figure legends and Discussion are passed. Introduction v1 remains `in_review`; title, abstract and
-impact statement are paused until the figures are assembled.
+The five-main-figure package and panel-level notebooks are complete. All six neuropaper S4 manuscript sections now
+pass independent review; Introduction v2 and title/abstract v2 passed on round 2. G4 awaits the author's four decisions,
+including an exact evidence-only Methods provenance patch replacing three stale Figure 1–3 placeholders with N105–N107.
+After G4: assemble and audit in S5, build Supplementary Figure S6, then run the simulated journal panel.
 The exploratory pulse follow-up status is unchanged: the tau_p pilot failed its frozen criteria and modelling stopped;
 its independent check remains pending before any formal manuscript claim.
 
@@ -25,6 +23,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-10-26-neuropaper-s4-g4.md : all six S4 sections passed; G4 awaits approval plus an exact N105–N107 Methods provenance reconciliation
 - reports/2026-10-26-figure-notebooks.md : five executable, panel-by-panel figure notebooks wrap canonical modules without writing publication outputs
 - reports/2026-10-26-main-figures-1-2.md : Figures 1–2 selected; N105–N107 close main-art denominator mappings and the five-figure package is reconciled
 - reports/2026-10-26-main-figures-3-5.md : selected Figures 3–5 assembled with vector/300-dpi exports, source data and artwork-matched captions
