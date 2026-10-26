@@ -1,0 +1,4 @@
+scope,rig,n_mice,n_mouse_sessions,n_trials,n_responded,n_no_response,n_scheduled_controls
+all,all,10,50,30045,25508,4537,16522
+all,ucla,4,32,18235,15302,2933,11043
+all,uw,6,18,11810,10206,1604,5479
