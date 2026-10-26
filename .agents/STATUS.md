@@ -1,11 +1,11 @@
 # Status
-Last updated: 2026-10-26 by Codex (neuropaper S4 complete; G4 author decision pending)
+Last updated: 2026-10-26 by Claude (S6 panel + roadmap done; waiting at G5)
 
 ## Current focus
-The five-main-figure package and panel-level notebooks are complete. All six neuropaper S4 manuscript sections now
-pass independent review; Introduction v2 and title/abstract v2 passed on round 2. G4 awaits the author's four decisions,
-including an exact evidence-only Methods provenance patch replacing three stale Figure 1–3 placeholders with N105–N107.
-After G4: assemble and audit in S5, build Supplementary Figure S6, then run the simulated journal panel.
+S6 panel review complete: roadmap `dissemination/paper/np/panel/roadmap.md` (simulated major revision, 7 P0/14 P1/3 P2). Waiting at G5 for author disposition (`np/checkpoints/G5.md`).
+G4 is approved and the exact N105–N107 Methods patch is applied. The manuscript has been assembled, independently
+coherence-reviewed and repaired without scientific-scope changes. Supplementary Figure S6 v2 is selected with adjacent
+source tables and audited denominator record N108. Integrity audit 1 passed after a bounded-fix recheck.
 The exploratory pulse follow-up status is unchanged: the tau_p pilot failed its frozen criteria and modelling stopped;
 its independent check remains pending before any formal manuscript claim.
 
@@ -23,6 +23,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-10-26-neuropaper-s5-s6.md : G4 recorded; S5 assembled/coherence-repaired; S6 v2 selected with exact gate, coverage and calibration denominators
 - reports/2026-10-26-neuropaper-s4-g4.md : all six S4 sections passed; G4 awaits approval plus an exact N105–N107 Methods provenance reconciliation
 - reports/2026-10-26-figure-notebooks.md : five executable, panel-by-panel figure notebooks wrap canonical modules without writing publication outputs
 - reports/2026-10-26-main-figures-1-2.md : Figures 1–2 selected; N105–N107 close main-art denominator mappings and the five-figure package is reconciled
@@ -79,6 +80,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - Screen geometry not corrected in ME (ME methods §3.7).
 
 ## Decisions
+- 2026-10-26: approved G4 with the bounded N105–N107 Methods patch and the order S5 assembly, S6 artwork, then panel review (D009).
 - 2026-10-26: approved Discussion v1 and continuation (“approved and continue”); recorded D008 and authorized
   Introduction drafting.
 - 2026-10-25: approved Results v4 narrative rewrite (“approve the revised Results”); recorded D007, returned Results

@@ -83,6 +83,11 @@ are final; the DDM common model is provisional (steps 1–2 fits submitted, 3.1 
 Running analyses (tracked in the next-steps plan); editing the poster; the SC WFV inactivation experiments (separate study). Reviewing the old poster for paper/thesis inspiration is authorized under S–U below.
 
 ## Log
+
+- 2026-10-26 (Codex; G4 approved, S5/S6 production): user approved the bounded N105–N107 Methods patch and the
+  S5 assembly → S6 artwork → panel-review order. G4 is recorded as D009. S5 assembly and independent coherence review
+  are complete; eight bounded rendering/prose repairs were applied. Supplementary Figure S6 v2 is selected with
+  per-panel source CSVs and registered coverage record N108. Next: integrity audit 1, then S6 panel review if clean.
 - 2026-10-26 (Codex; neuropaper S4 complete): Introduction v2 and title/abstract v2 each passed independent round-2
   section review after bounded revisions; all six sections are now passed and deterministic checks have zero errors.
   G4 is ready at `dissemination/paper/np/checkpoints/G4.md`. Before assembly, G4 asks for an exact direct patch replacing
@@ -173,3 +178,12 @@ Running analyses (tracked in the next-steps plan); editing the poster; the SC WF
 - 2026-10-23: manuscript_2026-10-23.md (new version; 10-22 kept): amendment 6 revision, failed revised gate, calibration and
   stopping decision added (claims C071–C077, evidence E022, facts N030–N044; claim hashes recomputed). Outline R5 set to
   branch (a2). Notebook 2.14 section 6 removed; its figure moved to dissemination/figures/superseded/.
+- 2026-10-26 (Claude; S6): Four panel reports complete (stats header contract repaired by its reviewer, findings
+  unchanged). np-chief-editor wrote `dissemination/paper/np/panel/roadmap.md`: simulated major revision, 24 items
+  (7 P0/14 P1/3 P2). G5 checkpoint at `dissemination/paper/np/checkpoints/G5.md`. Next: author disposition at G5
+  (RM2 spine question, title RM7, author facts, optional analyses); do not start S7 before G5 approval.
+- 2026-10-26 (Claude): At author request, exported Word review copies of the S5 manuscript to
+  `dissemination/paper/review/{manuscript,figure_legends}_review_2026-10-26.docx` (python-docx installed into .venv via
+  `uv pip`, not added to project deps; LibreOffice/poppler installed system-wide for rendering checks). Text is unchanged
+  from manuscript.md; citations rendered author-year from sources.csv. Ledger key `caballero2022rt` does not match its
+  verified first author (Treviño); rendered from metadata. Still waiting at G5.
