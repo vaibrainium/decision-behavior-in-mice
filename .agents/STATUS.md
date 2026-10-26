@@ -3,6 +3,7 @@ Last updated: 2026-10-26 by Claude (S6 panel + roadmap done; waiting at G5)
 
 ## Current focus
 S6 panel review complete: roadmap `dissemination/paper/np/panel/roadmap.md` (simulated major revision, 7 P0/14 P1/3 P2). Waiting at G5 for author disposition (`np/checkpoints/G5.md`).
+Manuscript-facing text converted to American spelling (D010; spine re-locked; `scripts/paper/americanize_spelling.py`); Fig 2/3 artwork strings still British pending decision (plans/2026-10-26-american-english.md).
 G4 is approved and the exact N105–N107 Methods patch is applied. The manuscript has been assembled, independently
 coherence-reviewed and repaired without scientific-scope changes. Supplementary Figure S6 v2 is selected with adjacent
 source tables and audited denominator record N108. Integrity audit 1 passed after a bounded-fix recheck.
@@ -14,6 +15,7 @@ Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gat
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
+- plans/2026-10-26-american-english.md : text done; next: decide on re-exporting Fig 2/3 artwork with US spelling
 - plans/2026-10-25-fluctuation-kernel-power.md : power checks done; next: authors decide on amendment 8
 - plans/2026-10-23-pulse-followup-parallel.md : A-E, G1, F3 pilot done (FAIL -> modelling stopped); next: H2 check of pilot, H4 finalize; original primacy procedure remains closed
 - plans/2026-10-23-amendment-4-extrema.md : code done and checked; next: Hyak fits (commands in analysis log 8.4d)
