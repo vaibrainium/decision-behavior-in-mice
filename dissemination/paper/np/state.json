@@ -1,0 +1,295 @@
+{
+  "title": "Brief motion pulses constrain models of evidence accumulation in mice",
+  "created": "2026-10-25T00:28:59",
+  "stage": "S4_drafting",
+  "gates": {
+    "G0": {
+      "approved": true,
+      "at": "2026-10-25T00:32:53",
+      "note": "Approve G0 as written"
+    },
+    "G1": {
+      "approved": true,
+      "at": "2026-10-25T04:01:31",
+      "note": "Looks good"
+    },
+    "G2": {
+      "approved": true,
+      "at": "2026-10-25T16:31:33",
+      "note": "Approve revised G2 as written"
+    },
+    "G3": {
+      "approved": true,
+      "at": "2026-10-25T17:06:19",
+      "note": "V. Thakur: \u201cApprove revised G3 as written\u201d"
+    },
+    "G4": {
+      "approved": false,
+      "at": null,
+      "note": ""
+    },
+    "G5": {
+      "approved": false,
+      "at": null,
+      "note": ""
+    },
+    "G6": {
+      "approved": false,
+      "at": null,
+      "note": ""
+    },
+    "G7": {
+      "approved": false,
+      "at": null,
+      "note": ""
+    }
+  },
+  "sections": {
+    "methods": {
+      "status": "passed",
+      "version": 1,
+      "review_rounds": 4,
+      "verdict": "PASS",
+      "target_words": 3400
+    },
+    "results": {
+      "status": "passed",
+      "version": 1,
+      "review_rounds": 5,
+      "verdict": "PASS",
+      "target_words": 2850
+    },
+    "figure_legends": {
+      "status": "passed",
+      "version": 1,
+      "review_rounds": 4,
+      "verdict": "PASS",
+      "target_words": 1650
+    },
+    "discussion": {
+      "status": "passed",
+      "version": 1,
+      "review_rounds": 1,
+      "verdict": "PASS",
+      "target_words": 1200
+    },
+    "introduction": {
+      "status": "in_review",
+      "version": 1,
+      "review_rounds": 0,
+      "verdict": null,
+      "target_words": 700
+    },
+    "title_abstract": {
+      "status": "pending",
+      "version": 0,
+      "review_rounds": 0,
+      "verdict": null,
+      "target_words": 230
+    }
+  },
+  "section_order": [
+    "title_abstract",
+    "introduction",
+    "results",
+    "discussion",
+    "methods",
+    "figure_legends"
+  ],
+  "limits": {
+    "max_section_rounds": 2,
+    "max_panel_rounds": 1,
+    "min_verified_sources": 25
+  },
+  "spine_hash": "c5c9f5dc15704d67",
+  "history": [
+    {
+      "at": "2026-10-25T00:28:59",
+      "event": "init"
+    },
+    {
+      "at": "2026-10-25T00:32:53",
+      "event": "gate G0 approved: Approve G0 as written"
+    },
+    {
+      "at": "2026-10-25T00:33:09",
+      "event": "advance S0_intake -> S1_spine"
+    },
+    {
+      "at": "2026-10-25T04:01:31",
+      "event": "gate G1 approved: Looks good"
+    },
+    {
+      "at": "2026-10-25T04:01:33",
+      "event": "spine locked c5c9f5dc15704d67"
+    },
+    {
+      "at": "2026-10-25T04:01:35",
+      "event": "advance S1_spine -> S2_literature"
+    },
+    {
+      "at": "2026-10-25T16:31:33",
+      "event": "gate G2 approved: Approve revised G2 as written"
+    },
+    {
+      "at": "2026-10-25T16:31:35",
+      "event": "advance S2_literature -> S3_outline"
+    },
+    {
+      "at": "2026-10-25T16:43:12",
+      "event": "section introduction -> pending"
+    },
+    {
+      "at": "2026-10-25T16:43:13",
+      "event": "section results -> pending"
+    },
+    {
+      "at": "2026-10-25T16:43:15",
+      "event": "section discussion -> pending"
+    },
+    {
+      "at": "2026-10-25T16:43:17",
+      "event": "section title_abstract -> pending"
+    },
+    {
+      "at": "2026-10-25T16:43:19",
+      "event": "section methods -> pending"
+    },
+    {
+      "at": "2026-10-25T16:43:21",
+      "event": "section figure_legends -> pending"
+    },
+    {
+      "at": "2026-10-25T17:06:19",
+      "event": "gate G3 approved: V. Thakur: \u201cApprove revised G3 as written\u201d"
+    },
+    {
+      "at": "2026-10-25T17:06:21",
+      "event": "advance S3_outline -> S4_drafting"
+    },
+    {
+      "at": "2026-10-25T17:07:13",
+      "event": "section methods -> drafting"
+    },
+    {
+      "at": "2026-10-25T17:07:15",
+      "event": "section results -> drafting"
+    },
+    {
+      "at": "2026-10-25T17:07:17",
+      "event": "section figure_legends -> drafting"
+    },
+    {
+      "at": "2026-10-25T17:14:16",
+      "event": "section methods -> in_review"
+    },
+    {
+      "at": "2026-10-25T17:14:17",
+      "event": "section results -> in_review"
+    },
+    {
+      "at": "2026-10-25T17:14:19",
+      "event": "section figure_legends -> in_review"
+    },
+    {
+      "at": "2026-10-25T17:19:43",
+      "event": "review methods round 1: REVISE (P0=1)"
+    },
+    {
+      "at": "2026-10-25T17:19:49",
+      "event": "review results round 1: REVISE (P0=0)"
+    },
+    {
+      "at": "2026-10-25T17:19:52",
+      "event": "review figure_legends round 1: REVISE (P0=0)"
+    },
+    {
+      "at": "2026-10-25T17:35:54",
+      "event": "section methods -> in_review"
+    },
+    {
+      "at": "2026-10-25T17:35:56",
+      "event": "section results -> in_review"
+    },
+    {
+      "at": "2026-10-25T17:35:58",
+      "event": "section figure_legends -> in_review"
+    },
+    {
+      "at": "2026-10-25T17:39:57",
+      "event": "review methods round 2: REVISE (P0=0)"
+    },
+    {
+      "at": "2026-10-25T17:40:03",
+      "event": "review results round 2: REVISE (P0=1)"
+    },
+    {
+      "at": "2026-10-25T17:40:07",
+      "event": "review figure_legends round 2: PASS (P0=0)"
+    },
+    {
+      "at": "2026-10-25T18:56:22",
+      "event": "section methods -> in_review"
+    },
+    {
+      "at": "2026-10-25T18:56:24",
+      "event": "section results -> in_review"
+    },
+    {
+      "at": "2026-10-25T18:56:28",
+      "event": "section figure_legends -> in_review"
+    },
+    {
+      "at": "2026-10-25T18:59:05",
+      "event": "review methods round 3: REVISE (P0=0)"
+    },
+    {
+      "at": "2026-10-25T18:59:12",
+      "event": "review results round 3: REVISE (P0=0)"
+    },
+    {
+      "at": "2026-10-25T18:59:15",
+      "event": "review figure_legends round 3: REVISE (P0=0)"
+    },
+    {
+      "at": "2026-10-25T19:02:03",
+      "event": "review methods round 4: PASS (P0=0)"
+    },
+    {
+      "at": "2026-10-25T19:02:07",
+      "event": "review results round 4: PASS (P0=0)"
+    },
+    {
+      "at": "2026-10-25T19:02:12",
+      "event": "review figure_legends round 4: PASS (P0=0)"
+    },
+    {
+      "at": "2026-10-25T23:29:59",
+      "event": "section results -> in_review"
+    },
+    {
+      "at": "2026-10-25T23:34:50",
+      "event": "review results round 5: PASS (P0=0)"
+    },
+    {
+      "at": "2026-10-25T23:40:40",
+      "event": "section discussion -> drafting"
+    },
+    {
+      "at": "2026-10-25T23:41:32",
+      "event": "section discussion -> in_review"
+    },
+    {
+      "at": "2026-10-26T01:04:03",
+      "event": "review discussion round 1: PASS (P0=0)"
+    },
+    {
+      "at": "2026-10-26T01:04:50",
+      "event": "section introduction -> drafting"
+    },
+    {
+      "at": "2026-10-26T01:05:56",
+      "event": "section introduction -> in_review"
+    }
+  ]
+}
