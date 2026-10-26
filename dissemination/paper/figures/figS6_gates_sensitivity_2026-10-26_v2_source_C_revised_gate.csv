@@ -1,0 +1,7 @@
+revision,model,observed_minus_predicted_logit,ci_low,ci_high,predicted_logit_effect,gate_pass,mice,interval,outcome,inside,total,fraction_inside,required_fraction
+gain-revised,Accumulator,0.24176887886851925,0.09058025444405345,0.3657293506876197,0.05674774328508774,False,10.0,95% posterior interval,,,,,
+gain-revised,Leak + urgency,0.3088816475149114,0.19782378828105987,0.4059807321033917,0.02889871939633927,False,10.0,95% posterior interval,,,,,
+gain-revised,Accumulator,,,,,,,,RT quantiles,31.0,50.0,0.62,0.8
+gain-revised,Accumulator,,,,,,,,No response,9.0,10.0,0.9,0.8
+gain-revised,Leak + urgency,,,,,,,,RT quantiles,35.0,50.0,0.7,0.8
+gain-revised,Leak + urgency,,,,,,,,No response,6.0,10.0,0.6,0.8

@@ -1,0 +1,5 @@
+revision,model,outcome,inside,total,fraction_inside,required_fraction
+original,Accumulator,RT quantiles,34,50,0.68,0.8
+original,Accumulator,No response,9,10,0.9,0.8
+original,Leak + urgency,RT quantiles,34,50,0.68,0.8
+original,Leak + urgency,No response,5,10,0.5,0.8

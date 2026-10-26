@@ -1,0 +1,3 @@
+revision,model,observed_minus_predicted_logit,ci_low,ci_high,predicted_logit_effect,gate_pass,mice,interval
+original,Accumulator,0.295968634567205,0.17501620902498735,0.40467740236372746,0.030054798453216857,False,10,95% posterior interval
+original,Leak + urgency,0.3174069864244733,0.20898215117160085,0.40775082491482967,0.0262209472494215,False,10,95% posterior interval

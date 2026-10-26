@@ -1,0 +1,3 @@
+generator,correct_verdicts,not_correct,total_datasets,fraction_correct,decision_rule
+Rapid forgetting,1,19,20,0.05,frozen pulse-gain strategy rule
+Accumulator,0,20,20,0.0,frozen pulse-gain strategy rule
