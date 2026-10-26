@@ -10,15 +10,15 @@ Unknown facts remain explicitly marked as missing; never guess a value.
 - Backup venues: [MISSING: authors to choose]
 - Venue rules checked on (date) and source URL: 2026-10-24; https://elife-rp.msubmit.net/html/elife-rp_author_instructions.html and https://elifesciences.org/about/submit-your-research
 - Word / figure / reference limits: Research Articles have no maximum length, but eLife suggests no more than 5,000 words in the main text, excluding Methods, References, and Figure legends; no display-item limit. Abstract normally 150–200 words; title suggested up to 120 characters. No fixed reference limit identified.
-- Required front matter: title, 150–200-word abstract, 15–30-word third-person impact statement, funding information and funder role, author information/contributions, competing interests, data and software availability; acknowledgements and references. Exact submission/VOR requirements to be rechecked before submission.
-- Section order for this venue: Introduction; Results; Discussion; Materials and Methods; Acknowledgements; References; figures and legends; tables. A Methods/Model section may follow the Introduction when justified.
+- Required front matter: title, 150–200-word abstract, 15–30-word third-person impact statement, funding information and funder role, author information/contributions, competing interests, data and software availability; acknowledgments and references. Exact submission/VOR requirements to be rechecked before submission.
+- Section order for this venue: Introduction; Results; Discussion; Materials and Methods; Acknowledgments; References; figures and legends; tables. A Methods/Model section may follow the Introduction when justified.
 - Reporting checklist: ARRIVE 2.0 for animal research and eLife MDAR checklist; final VOR checklist if applicable.
 
 ## Science
-- Species / preparation: mice; behavioural preparation details, sex/age/strain and ethics identifiers remain [MISSING: author records]
+- Species / preparation: mice; behavioral preparation details, sex/age/strain and ethics identifiers remain [MISSING: author records]
 - Task / paradigm: reaction-time random-dot motion direction discrimination on two rigs, with control trials and brief signed motion-pulse trials
-- Techniques: behavioural psychophysics; stimulus replay and motion-energy filtering; drift-diffusion and extrema-detection modelling; cross-validation, predictive checks, simulation calibration and model diagnostics
-- Units of analysis: mice for group inference (10 total); mouse-sessions, scheduled cells and trials for descriptive or within-mouse estimates as explicitly labelled
+- Techniques: behavioral psychophysics; stimulus replay and motion-energy filtering; drift-diffusion and extrema-detection modeling; cross-validation, predictive checks, simulation calibration and model diagnostics
+- Units of analysis: mice for group inference (10 total); mouse-sessions, scheduled cells and trials for descriptive or within-mouse estimates as explicitly labeled
 - Pre-registration or analysis plan: a confirmatory primacy plan was locked before the relevant outcome inspection and subsequently amended in a versioned audit trail; the final timing test was not run after predictive gates failed. Later pulse diagnostics are explicitly exploratory. The plan was not externally preregistered.
 
 ## Inputs the human supplies (paths)
@@ -41,3 +41,4 @@ Agents only report results that come from these files.
 - Max review rounds per section: 2
 - Minimum verified sources for the literature review: 25
 - Citation style / reference manager: eLife author-date style; Markdown/Pandoc source of truth. Zotero/pyzotero may be adopted after the author identifies the library.
+- Spelling: American English throughout manuscript-facing text (author request 2026-10-26; mechanical check `scripts/paper/americanize_spelling.py`).
