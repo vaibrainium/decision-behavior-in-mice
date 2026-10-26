@@ -1,7 +1,7 @@
 {
   "title": "Brief motion pulses constrain models of evidence accumulation in mice",
   "created": "2026-10-25T00:28:59",
-  "stage": "S4_drafting",
+  "stage": "S5_assembly",
   "gates": {
     "G0": {
       "approved": true,
@@ -24,9 +24,9 @@
       "note": "V. Thakur: \u201cApprove revised G3 as written\u201d"
     },
     "G4": {
-      "approved": false,
-      "at": null,
-      "note": ""
+      "approved": true,
+      "at": "2026-10-26T02:17:00",
+      "note": "Approve G4 with the bounded N105\u2013N107 Methods patch and the proposed S5 assembly \u2192 S6 artwork \u2192 panel-review order"
     },
     "G5": {
       "approved": false,
@@ -322,6 +322,14 @@
     {
       "at": "2026-10-26T02:14:01",
       "event": "review title_abstract round 2: PASS (P0=0)"
+    },
+    {
+      "at": "2026-10-26T02:17:00",
+      "event": "gate G4 approved: Approve G4 with the bounded N105\u2013N107 Methods patch and the proposed S5 assembly \u2192 S6 artwork \u2192 panel-review order"
+    },
+    {
+      "at": "2026-10-26T02:17:00",
+      "event": "advance S4_drafting -> S5_assembly"
     }
   ]
 }
