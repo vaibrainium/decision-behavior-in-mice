@@ -3,7 +3,7 @@ Last updated: 2026-10-26 by Claude (S6 panel + roadmap done; waiting at G5)
 
 ## Current focus
 S6 panel review complete: roadmap `dissemination/paper/np/panel/roadmap.md` (simulated major revision, 7 P0/14 P1/3 P2). Waiting at G5 for author disposition (`np/checkpoints/G5.md`).
-Manuscript-facing text converted to American spelling (D010; spine re-locked; `scripts/paper/americanize_spelling.py`); Fig 2/3 artwork strings still British pending decision (plans/2026-10-26-american-english.md).
+Manuscript-facing text converted to American spelling (D010; spine re-locked; `scripts/paper/americanize_spelling.py`); Fig 2 v6 / Fig 3 v5 re-exported with US labels (data identical). Plan done.
 G4 is approved and the exact N105–N107 Methods patch is applied. The manuscript has been assembled, independently
 coherence-reviewed and repaired without scientific-scope changes. Supplementary Figure S6 v2 is selected with adjacent
 source tables and audited denominator record N108. Integrity audit 1 passed after a bounded-fix recheck.
@@ -15,8 +15,7 @@ Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gat
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
-- plans/2026-10-26-american-english.md : text done; next: decide on re-exporting Fig 2/3 artwork with US spelling
-- plans/2026-10-25-fluctuation-kernel-power.md : power checks done; next: authors decide on amendment 8
+- plans/2026-10-26-paper-accumulation-variant.md : second paper version (accumulation-first) in dissemination/paper_accumulation/; S1 spine in progress (G0 approved)
 - plans/2026-10-23-pulse-followup-parallel.md : A-E, G1, F3 pilot done (FAIL -> modelling stopped); next: H2 check of pilot, H4 finalize; original primacy procedure remains closed
 - plans/2026-10-23-amendment-4-extrema.md : code done and checked; next: Hyak fits (commands in analysis log 8.4d)
 - plans/2026-10-22-primacy-analysis-code.md : done; next: predictive check (gate 1) first pass when 8.4c batch 1 lands
@@ -25,6 +24,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-10-26-fluctuation-kernel-observed.md : amendment 8 response-aligned kernel on real choices: neither model fits (inconclusive; not used as support)
 - reports/2026-10-26-neuropaper-s5-s6.md : G4 recorded; S5 assembled/coherence-repaired; S6 v2 selected with exact gate, coverage and calibration denominators
 - reports/2026-10-26-neuropaper-s4-g4.md : all six S4 sections passed; G4 awaits approval plus an exact N105–N107 Methods provenance reconciliation
 - reports/2026-10-26-figure-notebooks.md : five executable, panel-by-panel figure notebooks wrap canonical modules without writing publication outputs

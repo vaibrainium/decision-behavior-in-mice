@@ -1,5 +1,5 @@
 # Plan: Convert manuscript-facing text to American English
-Status: active
+Status: done
 Created: 2026-10-26 by Claude
 Related reports: reports/2026-10-26-neuropaper-s5-s6.md
 
@@ -27,7 +27,7 @@ Assembler `scripts/paper/assemble_neuropaper.py` renders the highest `vN.md` per
         log decision D010; `np.py lock-spine`.
 - [x] 5. Reassemble manuscript.md and marked copy; `np.py check-all`; diff check shows spelling pairs only.
 - [x] 6. Regenerate Word review copies (new dated suffix, no overwrite).
-- [ ] 7. Figure artwork strings (Fig 2 "labelled", Fig 3 "favours"): ask user; regenerating changes selected
+- [x] 7. Figure artwork strings (Fig 2 "labelled", Fig 3 "favours"): ask user; regenerating changes selected
         versions and provenance N105–N107.
 - [x] 8. Verify: grep shows no mapped British forms in manuscript.md outside code spans.
 
@@ -41,3 +41,7 @@ approved.
   New drafts: discussion v3, end_matter v2, figure_legends v6, introduction v3, methods v5, results v6,
   title_abstract v4. Spine re-locked 3e0ebc561cae58d1 (D010). check-all 0 errors; manuscript word count unchanged
   (11198). Word copies: review/*_2026-10-26_v2.docx. Step 7 (figure artwork) awaiting user decision.
+- 2026-10-26: User approved re-exporting figures ("yes"). Fig 2 v6 and Fig 3 v5 exported after changing one
+  annotation string each; all source CSVs byte-identical to v5/v4 (cmp), pixel diff confined to the annotation box.
+  Selection updated in figures/figure_build_2026-10-26.md; Methods v6 updates the two artwork paths only; N106/N107
+  unchanged (cite identical files). check-all 0 errors. Word copies review/*_2026-10-26_v3.docx.
