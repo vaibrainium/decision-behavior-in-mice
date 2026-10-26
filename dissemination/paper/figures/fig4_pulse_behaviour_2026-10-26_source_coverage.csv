@@ -1,0 +1,11 @@
+analysis_set,mouse,rig,n_trials_in_set,n_positive,n_negative,n_control,n_null_pulse_excluded,n_direction_unknown_excluded,n_positive_in_asymmetric_cells,n_cells_total,n_cells_supported,n_signed_trials_in_support,effective_pairs,n_signed_trials_outside_support,n_pre_onset_responses_retained_in_support,n_unresponded_in_support
+primary_coherence,DBM12,uw,1425,533,313,579,0,0,243,38,30,603,240,243,33,43
+primary_coherence,DBM13,uw,632,243,132,257,0,0,112,19,15,263,100,112,5,33
+primary_coherence,DBM14,uw,731,270,152,309,0,0,113,19,15,309,127,113,9,40
+primary_coherence,DBM15,uw,1129,442,240,447,0,0,191,57,45,491,192,191,6,144
+primary_coherence,DBM5,uw,2383,931,532,920,0,0,413,95,75,1050,428,413,32,163
+primary_coherence,DBM6,uw,2884,1128,610,1146,0,0,502,114,90,1236,485,502,33,170
+primary_coherence,PSUIM10,ucla,387,105,75,207,0,0,0,14,14,180,63,0,0,33
+primary_coherence,PSUIM5,ucla,2192,516,480,1195,0,1,0,70,70,996,400,0,0,254
+primary_coherence,PSUIM6,ucla,5797,1296,1267,3231,0,3,0,210,209,2559,983,4,0,624
+primary_coherence,PSUIM7,ucla,5794,1303,1291,3199,0,1,0,154,154,2594,1069,0,0,205

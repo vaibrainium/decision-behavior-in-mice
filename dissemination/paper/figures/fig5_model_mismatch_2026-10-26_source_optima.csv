@@ -1,0 +1,3 @@
+baseline,mouse,seed,scope,w_joint,w_choice_only,w_rt_only,w_resp_only,choice_gain_at_wc_vs_wj,rest_cost_at_wc_vs_wj,rt_cost_at_wc_vs_wj,resp_cost_at_wc_vs_wj,choice_at_w1_minus_min,total_at_w1_minus_min,test_choice_at_wj_minus_wc,test_rest_at_wc_minus_wj,test_total_at_wc_minus_wj,stored_fold_gain
+primary,PSUIM6,50,in_sample,2.4467844093694797,7.0,2.0,0.5,9.310756145921232,102.1346685553799,97.57255542853818,4.562113126841041,14.88065085031326,14.466663753004468,,,,
+primary,PSUIM7,50,in_sample,1.4016994374947425,4.0,1.4016994374947425,0.5,9.430639845610813,141.75929070732764,133.76035475039134,7.998935956936748,11.368962874415727,2.719383292740531,,,,
