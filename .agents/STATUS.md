@@ -1,10 +1,12 @@
 # Status
-Last updated: 2026-10-25 by Codex (paper workflow; pulse status preserved)
+Last updated: 2026-10-26 by Codex (figure-first production; Introduction v1 remains in review)
 
 ## Current focus
-Neuropaper manuscript workflow: revised G3 approved and S4 drafting has started. The first wave is Methods in parallel
-with Results plus figure legends, followed by independent section and statistics review and a mandatory author midpoint
-check. The 4,980-word main-text plan keeps failed gates and low sensitivity visible in a named S6 Results subsection.
+The five-main-figure package is assembled as versioned vector/300-dpi exports with exact source-data tables, visually
+inspected, and reconciled to artwork-matched captions and neuropaper legends v4. Next: author visual review, then resume
+Introduction review and title/abstract work; Supplementary Figure S6 can be built before or after that prose pass.
+Methods, Results, figure legends and Discussion are passed. Introduction v1 remains `in_review`; title, abstract and
+impact statement are paused until the figures are assembled.
 The exploratory pulse follow-up status is unchanged: the tau_p pilot failed its frozen criteria and modelling stopped;
 its independent check remains pending before any formal manuscript claim.
 
@@ -13,14 +15,21 @@ Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gat
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
+- plans/2026-10-25-fluctuation-kernel-power.md : power checks done; next: authors decide on amendment 8
 - plans/2026-10-23-pulse-followup-parallel.md : A-E, G1, F3 pilot done (FAIL -> modelling stopped); next: H2 check of pilot, H4 finalize; original primacy procedure remains closed
 - plans/2026-10-23-amendment-4-extrema.md : code done and checked; next: Hyak fits (commands in analysis log 8.4d)
 - plans/2026-10-22-primacy-analysis-code.md : done; next: predictive check (gate 1) first pass when 8.4c batch 1 lands
-- plans/2026-10-20-paper-writeup.md : neuropaper G3 approved; next: draft and independently review Methods and Results/legends, then author midpoint check
+- plans/2026-10-20-paper-writeup.md : Methods/Results/legends passed; next: mandatory author midpoint verification, then Discussion drafting
 - ../dissemination/reports/mouse-ddm-next-steps.md : analysis plan (kept in dissemination/reports); steps 0–3 done
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-10-26-main-figures-1-2.md : Figures 1–2 selected; N105–N107 close main-art denominator mappings and the five-figure package is reconciled
+- reports/2026-10-26-main-figures-3-5.md : selected Figures 3–5 assembled with vector/300-dpi exports, source data and artwork-matched captions
+- reports/2026-10-25-results-narrative-rewrite.md : Results v4 uses a natural question-to-result narrative; all claims,
+  tokens and scientific boundaries preserved; deterministic checks pass; author verification pending
+- reports/2026-10-25-fluctuation-kernel-power.md : synthetic: fluctuation kernels have no power for primacy; response-aligned index separates integrator vs E (20/20 each); amendment 8 decision pending
+- reports/2026-10-25-neuropaper-wave1-review.md : legends PASS; Methods/Results need bounded correction after two rounds; no new analysis required
 - reports/2026-10-25-neuropaper-outline-g3.md : five-figure outline and six briefs pass independent K1-K12 review; G3 author approval pending
 - reports/2026-10-24-neuropaper-literature-g2.md : 44 verified sources; broad mouse novelty rejected, narrow predictive-transfer gap survives; C010-C021 approved at G2
 - reports/2026-10-23-pulse-tau-pilot-20261023T191030Z_fa8de8b.md : tau_p pilot FAIL (fit improves at 300 ms but gains stay 2.3x apart and late reversal persists); modelling stopped
@@ -53,19 +62,28 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 ## Known issues
 - DDM inputs label 48 UCLA no-response pulse trials as controls (direction lost in notebook 0.0); the 15 trials dropped for invalid duration are responses during the pulse (outcome-dependent). Existing inputs unchanged (pulse-data report).
 - UW: one |coherence| per session (18% or 36%) schedules only rightward pulses; excluded from signed and pulse-vs-control contrasts (pulse-data report).
-- Both replays redraw noise directions at pulse offset; removing the mean pulse component is not a physical no-pulse replay. Consequences for pulse ME and persistence are unmeasured (pulse-thesis-research report).
+- Both replays redraw noise directions at pulse offset; removing the mean pulse component is not a physical no-pulse
+  replay. The paired physical-omission audit found identical pre-onset streams, post-offset random-stream divergence and
+  no resolved late sign-aligned mean at the audited sample size (pulse-stimulus report; Figure 2D).
 - Primacy: original and revised gates FAIL; timing test not run; calibration shows ~no power at 10-40% decay. Final
   under amendment 6 item 8 (analysis log 5.11; reports/2026-10-23-amendment-6-result.md).
 - Historical first-pass gates failed (departure +0.30 logit vs predicted effect 0.03), using preliminary control fits and one divergence each; superseded by the completed amendment 6 gate review for current status.
 - Pulse-specific strategy test has low sensitivity under frozen fitted candidates (1/20 extrema, 0/20 integrator correct); predicted effects differ by ~0.01 logit. Do not infer equivalence or independent pulse confirmation from an inconclusive result.
 - Recovery: sv false-positive rate 7/20 at working threshold; guess-delay parameter poorly recovered. sv bounds and high-coherence error/late-response misfit limit mechanism interpretation (arriving-results report).
 - Hidden-coherence k = 0.50 is a shared-model estimate; paired across-mouse coefficient comparison p = 0.492. Notebook controls use RT-dependent labels; scheduled-control sensitivity remains pending (first-draft report).
-- Manuscript contains explicit pending/missing sections and unverified author-source records; Fig. 1F image/script still need censoring-label correction.
+- Manuscript contains explicit pending/missing sections and unverified author-source records; selected main artwork is
+  indexed separately in `dissemination/paper/figures/figure_build_2026-10-26.md`.
 - Primacy test: predicted pulse effect ~0.025 logit; test likely cannot detect primacy (analysis log 5.7).
 - Psychometric lapses (9–53%) are not captured by the fitted lapse; high-coherence errors probably absorbed by sv.
 - Screen geometry not corrected in ME (ME methods §3.7).
 
 ## Decisions
+- 2026-10-26: approved Discussion v1 and continuation (“approved and continue”); recorded D008 and authorized
+  Introduction drafting.
+- 2026-10-25: approved Results v4 narrative rewrite (“approve the revised Results”); recorded D007, returned Results
+  to passed and closed the mandatory S4 midpoint review.
+- 2026-10-25: approved the exact S4 three-item direct patch and waived a fourth formal review (D006); automated checks passed and first-wave sections are at midpoint.
+- 2026-10-25: authorized one bounded Methods/Results v3 correction and final review beyond the neuropaper two-round default; no new analysis.
 - 2026-10-25: amendment 7 (visual front end) stopped after the control-trial selection (F1 power law chosen,
   compressive); 7a not adopted; no pulse gate. Primacy analysis closed; focus on the write-up.
 - 2026-10-25: revised neuropaper G3 approved as written; five-main-figure outline, 4,980-word main-text budget, mandatory S6 record and indicative title style authorized for S4 drafting.

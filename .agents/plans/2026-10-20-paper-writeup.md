@@ -64,11 +64,69 @@ are final; the DDM common model is provisional (steps 1–2 fits submitted, 3.1 
 - [x] V. Reorganize the committed manuscript around the agreed paper story and integrate the completed exploratory pulse behavioural results, time course and model diagnosis.
 - [x] W. Add the corresponding pulse Methods, evidence records, claim registry and numerical consistency entries; keep the tau-p pilot out of the scientific claims until its independent check is complete.
 - [x] X. Audit the revised draft for claim/source coverage, numerical consistency, unresolved author facts and journal length; write a [drafting handoff](../reports/2026-10-23-manuscript-story-integration.md).
+- [x] Y. Initialize the neuropaper workspace alongside the existing draft; inventory manuscript, evidence, figures and analysis reports without overwriting them.
+- [x] Z. Complete neuropaper S0 configuration and number-ledger seeding, write the G0 checkpoint, and obtain explicit author approval before advancing.
+- [ ] AA. Run the neuropaper spine, literature, outline, drafting/review and integrity stages through their required human gates; reuse verified project evidence and keep missing author facts explicit.
+- [x] AB. Produce the main-figure package before further prose drafting, using versioned outputs and the approved five-figure claim hierarchy.
+  - [x] AB1. Inventory figure scripts, source tables and unresolved denominator/replay audits; select Figure 4 as the first locked artwork because its mouse-level sources are complete and independently checked.
+  - [x] AB2. Build and visually inspect Figure 4 from the saved behaviour and response-time tables; export PDF, SVG and 300-dpi PNG plus source data.
+  - [x] AB3. Build Figure 5, preserving its descriptive status and the restriction of strong gain evidence to PSUIM6/7.
+  - [x] AB4. Build Figure 3 from held-out score tables and final-fit summaries; label held-out versus in-sample panels explicitly.
+  - [x] AB5. Rebuild Figures 1–2 only after resolving their registered panel-denominator and replay-display audits.
+  - [x] AB6. Reconcile legends against final artwork, run accessibility/export checks and write the figure-production report.
 
 ## Out of scope
 Running analyses (tracked in the next-steps plan); editing the poster; the SC WFV inactivation experiments (separate study). Reviewing the old poster for paper/thesis inspiration is authorized under S–U below.
 
 ## Log
+- 2026-10-26 (Codex; Figures 1–2 and package lock): rebuilt the task/behaviour and stimulus-reconstruction figures after
+  closing panel-denominator audits N105 and N107; closed Figure 3D mapping as N106. Selected all five versioned
+  PDF/SVG/300-dpi PNG exports, reconciled artwork-matched captions in `figure_build_2026-10-26.md` and neuropaper
+  legends v4, and completed syntax/source/token/whitespace/accessibility checks. Report:
+  `../reports/2026-10-26-main-figures-1-2.md`.
+- 2026-10-26 (Codex; Figures 3–5): assembled and visually inspected the central model/pulse figures as versioned
+  PDF/SVG/300-dpi PNG exports with exact source-data CSVs. Selected versions and artwork-matched captions are indexed in
+  `dissemination/paper/figures/figure_build_2026-10-26.md`; report:
+  `../reports/2026-10-26-main-figures-3-5.md`. Syntax, source-value, resolution and whitespace checks pass. Figures 1–2
+  remain provisional pending their registered audits.
+- 2026-10-26 (Codex; figure-first reprioritization): author requested figures before further manuscript prose. Introduction
+  remains `in_review`; title/abstract work is paused. Figure inventory found complete, independently checked sources for
+  the central behavioural pulse figure, so production starts with Figure 4. Figures 1–3 retain the registered denominator,
+  replay or fit-display audits and will not be treated as locked until those are resolved.
+- 2026-10-26 (Codex; Introduction v1): drafted the four-paragraph, 599-word Introduction at
+  `np/drafts/introduction/v1.md`; readable checkpoint `np/checkpoints/S4_introduction_v1.md`. The text preserves the
+  bounded mouse gap, states H1–H3, frames pulses as a frozen transfer test and discloses failed gates/withheld timing.
+  Contract/claim/number/lint/spine/whitespace checks pass. Introduction is `in_review`; checkpoint:
+  `np/checkpoints/S4_introduction_review.md`.
+- 2026-10-26 (Codex; Discussion approved): V. Thakur approved Discussion v1 and continuation with the exact words
+  “approved and continue.” Recorded D008; Discussion returns to `passed`; next S4 section is Introduction.
+- 2026-10-25 (Codex; Discussion v1): drafted the six-paragraph, 1,044-word Discussion at
+  `np/drafts/discussion/v1.md`; readable checkpoint `np/checkpoints/S4_discussion_v1.md`. C008, C013 and C014 retain
+  their approved boundaries; nine citations come from the verified ledger; no new results or statistics were added.
+  Contract/claim/number/lint/whitespace checks pass. Discussion is `in_review` pending author feedback; checkpoint:
+  `np/checkpoints/S4_discussion_review.md`.
+- 2026-10-25 (Codex; Results v4 approved): V. Thakur approved the revised Results with the exact words “approve the
+  revised Results.” Recorded D007 and returned Results to `passed`. Mandatory midpoint review is closed; next S4 step
+  is Discussion drafting under the approved brief.
+- 2026-10-25 (Codex; author-requested Results style revision): after midpoint feedback that v3 read too robotically,
+  created `np/drafts/results/v4.md` and readable `np/checkpoints/S4_midpoint_results_v2.md`. The rewrite adopts a
+  question → observation → evidence → interpretation → transition structure while preserving the locked thesis, all
+  approved Results claims and all 42 number tokens. Results checks pass; author verification is pending before
+  Discussion. Report: `../reports/2026-10-25-results-narrative-rewrite.md`.
+- 2026-10-25 (Codex; S4 midpoint ready): user approved the exact direct patch and fourth-review waiver (D006). Deleted stale Wilcoxon Methods inference, added the missing scheduled-label-sensitivity caveat and exact `L1U1V1Z0G1` identifiers, then passed contract/claim/number/lint/spine/whitespace checks. Human-resolution records moved Methods, Results and legends to passed. Rendered midpoint snapshots and checkpoint: `dissemination/paper/np/checkpoints/S4_midpoint.md`. Await author verification before Discussion.
+- 2026-10-25 (Codex; S4 v3 final-review outcome): round 3 returned only three narrow P1 editorial misses, no P0 or analysis request. Methods retained the Wilcoxon procedure D005 meant to remove; Results/legend omitted the exact `L1U1V1Z0G1` label; Results also omitted the unavailable scheduled-label-sensitivity caveat on N011. Neuropaper correctly set all three sections to `needs_human`. Recommend direct, transparent editorial fixes plus automated checks and an author waiver of a fourth formal review.
+- 2026-10-25 (Codex; S4 bounded final review authorized): user approved the proposed v3 correction and one final review beyond the configured two-round limit. Recorded D005. Scope is frozen to restoring/minimally defining the approved C007 secondary-gate record, removing incomplete non-central hidden-coherence inference, honoring canonical section counts and checking regressions.
+- 2026-10-25 (Codex; neuropaper S4 wave-1 review limit): Methods/Results/legends drafted and reviewed twice. Legends PASS; Methods stats PASS; Methods/Results retain revision verdicts. Canonical body counts are within budget, but the section reviewer used a different count. More importantly, v2 removed an undefined secondary pipeline even though approved C007/outline require N027/N034/N036; its Methods ownership was missing from the brief. Hidden-coherence W statistics were never stored. No new analysis is needed. Human decision requested on one bounded v3/third review, restoring the C007 record and dropping incomplete non-central Wilcoxon inference. Checkpoint: `dissemination/paper/np/checkpoints/S4_wave1_review_limit.md`; report: `../reports/2026-10-25-neuropaper-wave1-review.md`.
+- 2026-10-25 (Codex; neuropaper G3 approved): user approved the revised G3 package with the exact words “Approve revised G3 as written.” Recorded D004 and advanced to S4. First drafting wave is Methods in parallel with Results plus figure legends; the mandatory midpoint author check follows only after independent section review.
+- 2026-10-25 (Codex; neuropaper S3 at G3): architect produced a five-figure claim-first outline plus six briefs. The precommitted independent review returned REVISE for three P1 issues (Figure 5 claim hierarchy, one orphan method phrase, and incomplete compliance/end-matter placeholders); one bounded revision resolved all three, and re-review passed K1-K12 with no remaining issues. Main-text budget is 4,980 words; Methods 3,400 and legends 1,650 separately. Checkpoint: `dissemination/paper/np/checkpoints/G3.md`; report: `../reports/2026-10-25-neuropaper-outline-g3.md`. G3 author approval is pending before drafting.
+- 2026-10-25 (Codex; revised G2 approved): user approved the corrected 44-source literature package and C010–C021 with the exact words “Approve revised G2 as written.” Recorded D003, approved the background claims and proceeded to S3; the locked spine remains unchanged.
+- 2026-10-24 (Codex; G2 mouse novelty correction): user asked whether nobody had shown the result in mice with a dynamic visual decision task. Two bounded independent searches and a source audit rejected that broad claim: mouse RDK, dynamic discrete visual accumulation and visual DDM/RT fits are established. Nine unique verified records were added (44 total); C019–C021 state those positive precedents. The narrow conjunction of continuous noisy RDK, randomized signed pulses and frozen control-only joint outcome prediction was not found; use bounded-search language, never “first” or “nobody.”
+- 2026-10-24 (Codex; neuropaper S2 at G2): four literature shards yielded 56 retained rows and 33 initial unique records. Independent challenge found two close macaque pulse papers plus a newer reviewed-preprint version; all were integrated and the full 35-source ledger re-audited (35 verified, 0 failed/retracted). Revised matrix covers all 35 sources and proposes C010–C018. No source closed the narrow predictive-transfer gap. Report: `../reports/2026-10-24-neuropaper-literature-g2.md`; checkpoint: `dissemination/paper/np/checkpoints/G2.md`.
+- 2026-10-24 (Codex; neuropaper S2 dispatch): the environment provides three worker slots alongside the orchestrator, so the four literature shards cannot start in one simultaneous batch as the plugin recommends. Framework, gap/conflict and methods were dispatched first; counter-evidence will start when a slot frees. Each shard retains separate outputs, identical public-source rules and independent later verification.
+- 2026-10-24 (Codex; neuropaper G1 approved): user replied “Looks good” to the full G1 checkpoint. Recorded the exact quote, approved C001–C009 and proceeded to lock the v2 spine before S2 literature verification.
+- 2026-10-24 (Codex; neuropaper S1 at G1): recorded the user's exact G0 approval and advanced to S1. An architect drafted the spine, an independent devil's advocate found no fatal issue but five major framing risks, and the architect revised once. The balanced v2 thesis is an out-of-condition generalization claim about the tested model-and-input pipelines; nine claims remain proposed pending G1. All neuropaper checks pass. Checkpoint: `dissemination/paper/np/checkpoints/G1.md`.
+- 2026-10-24 (Codex; neuropaper Y complete, Z at G0): initialized `dissemination/paper/np/`, configured the provisional eLife Research Article workflow, inventoried existing inputs and exclusions, and migrated all 66 audited numeric facts with source locators. Neuropaper checks pass with zero errors/warnings. G0 checkpoint is written and awaits explicit author decisions; no existing manuscript or provenance file was overwritten.
+- 2026-10-24 (Codex): user requested that the paper continue under the installed `neuropaper@neuropaper` workflow. Add S0 migration steps Y-AA to this existing plan rather than opening a parallel paper plan. Preserve the committed manuscript and provenance package; initialize under `dissemination/paper/np/` and stop at each neuropaper human gate.
 - 2026-10-23 (Codex; V–X complete): revised `manuscript_2026-10-23.md` around the agreed pulse-centred story; added E024–E029, 22 new claims and a v2 consistency registry. Abstract 193 words; text through Discussion 4,845 words including markers/headings. Source schema, 94 claim hashes/evidence links, local links, consistency registry and whitespace checks pass. Linter retains one explicit hidden-coherence TODO plus expected human/confidentiality warnings. Tau-p pilot remains outside formal claims pending independent review. Report: ../reports/2026-10-23-manuscript-story-integration.md.
 - 2026-10-23 (Codex): user authorizes starting the paper draft after committing the prior writing package. Resume at V–X in the existing plan. Use Markdown as the source; integrate A–E/G1, preserve exploratory labels and the failed gates, and defer formal use of the tau-p pilot pending its independent review.
 - 2026-10-23 (Codex; S–U complete): extracted the supplied poster text and embedded figures with installed PDF.js; retained its task-first/comparative motivation and recorded superseded inferences, inconsistent pulse colours and denominator corrections. Updated story and caption production notes; E114 records poster provenance. Source schema, ten unchanged claim hashes, local links, original-PDF hash and whitespace checks pass. Full-page rendering unavailable; no packages installed and no new scientific analyses. Report: ../reports/2026-10-23-poster-story-review.md.
