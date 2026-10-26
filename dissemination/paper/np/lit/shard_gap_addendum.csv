@@ -1,0 +1,4 @@
+key,authors,year,title,venue,doi,pmid,verified,verified_how,role,notes_file
+stine2023termination,"Gabriel M Stine; Eric M Trautmann; Danique Jeurissen; Michael N Shadlen",2023,A neural mechanism for terminating decisions,Neuron,10.1016/j.neuron.2023.05.028,37352857,,,closest_prior,np/lit/notes/stine2023termination.md
+steinemann2024direct,"Natalie Steinemann; Gabriel M Stine; Eric Trautmann; Ariel Zylberberg; Daniel M Wolpert; Michael N Shadlen",2024,Direct observation of the neural computations underlying a single decision,eLife,10.7554/eLife.90859.3,39422555,,,closest_prior,np/lit/notes/steinemann2024direct.md
+parespujolras2026glimpses,"Elisabeth Parés-Pujolràs; Anna C Geuzebroek; Redmond G O'Connell; Simon P Kelly",2026,Perceptual glimpses are locally accumulated and globally maintained at distinct processing levels,eLife Reviewed Preprint v3,10.7554/eLife.107980.3,,,,counter,np/lit/notes/parespujolras2026glimpses.md
