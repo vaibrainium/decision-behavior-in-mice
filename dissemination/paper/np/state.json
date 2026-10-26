@@ -1,7 +1,7 @@
 {
   "title": "Brief motion pulses constrain models of evidence accumulation in mice",
   "created": "2026-10-25T00:28:59",
-  "stage": "S5_assembly",
+  "stage": "S6_panel_review",
   "gates": {
     "G0": {
       "approved": true,
@@ -330,6 +330,10 @@
     {
       "at": "2026-10-26T02:17:00",
       "event": "advance S4_drafting -> S5_assembly"
+    },
+    {
+      "at": "2026-10-26T02:43:05",
+      "event": "advance S5_assembly -> S6_panel_review"
     }
   ]
 }

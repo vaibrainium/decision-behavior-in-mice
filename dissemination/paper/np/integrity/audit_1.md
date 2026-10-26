@@ -5,9 +5,13 @@ claims: C001, C002, C003, C004, C005, C006, C007, C008, C009, C010, C011, C012, 
 numbers: N001, N004, N005, N006, N009, N010, N011, N016, N018, N019, N020, N021, N022, N023, N026, N027, N030, N034, N035, N036, N051, N052, N053, N054, N055, N056, N057, N058, N059, N060, N061, N062, N063, N064, N065, N066, N067, N068, N069, N070, N071, N072, N073, N074, N075, N076, N077, N078, N079, N080, N081, N082, N083, N084, N087, N088, N089, N090, N091, N092, N093, N094, N095, N096, N097, N098, N099, N102, N103, N104, N105, N106, N107, N108
 sources: adelson1985spatiotemporal, bogacz2006physics, caballero2022rt, carland2016evidence, cisek2009decisions, douglas2006motion, hawkins2015discriminating, huk2005neural, hyafil2023temporal, kiani2008bounded, koay2020amplitude, luken2025parameter, marques2018mousev1, odoemene2018visual, okazawa2018psychophysical, palmer2005effect, pinto2018visualpulses, ratcliff2008diffusion, samonds2018motion, steinemann2024direct, stine2020differentiating, stine2023termination, stirman2016touchscreen, tsetsos2012timevarying, wiecki2013hddm, winkel2014early, yates2017functional, you2022dynamics, zhou2009time
 -->
-# S5 manuscript integrity audit 1
+# S5 manuscript integrity audit 1 — resolved after bounded-fix recheck
 
-VERDICT: REVISE
+VERDICT: PASS
+
+Resolution: the initial B1--B3 findings below were corrected and independently re-audited. The canonical PASS record
+is `np/integrity/audit_1_recheck.md`; it confirms deterministic assembly, exact source reconciliation and zero remaining
+integrity blockers. The original findings are retained below for audit history.
 
 Audit date: 2026-10-26  
 Mode: manuscript integrity, audit 1  
@@ -28,7 +32,7 @@ bound to their approved claims; the S6 legend does not describe the plotted gate
 retains an incorrect PMID even though the authoritative source ledger is correct. None requires a new claim, a spine
 change, a new analysis or author judgment.
 
-## Blocking findings and bounded patches
+## Initial blocking findings and bounded patches (resolved)
 
 ### B1. Abstract/impact claim bindings are incomplete
 
@@ -154,5 +158,5 @@ require invented boilerplate.
 CHANGE REQUEST: none. The bounded repairs use already approved claims and verified sources and do not alter the locked
 spine, scientific interpretation, analysis population or figure selection.
 
-BLOCKER: keep S5 active. Apply B1--B3, reassemble both manuscript copies, rerun `np.py check-all`, confirm unique
-claim/number/citation identities and rerun audit 1. Do not advance to S6 or cross G5 until the re-audit returns PASS.
+BLOCKER: none. B1--B3 are resolved and the independent re-audit returned PASS. Entry into S6 panel review is allowed;
+this audit does not approve or cross G5.
