@@ -366,7 +366,8 @@ toward scheduled pulse direction, 0.295968634567205 logit for the primary baseli
 simulated interval level are choice 95% interval includes zero or absolute departure below 25% of predicted logit pulse effect; at least 80% of RT-quantile cells and 80% of censoring cells inside simulated 95% ranges, and the exact coverage counts in B–C are Original accumulator: RT 34/50 mouse-by-quantile cells and no-response 9/10 mice inside simulated 95% ranges. Original leak-plus-urgency: RT 34/50 and no-response 5/10. Gain-revised accumulator: RT 31/50 and no-response 9/10. Gain-revised leak-plus-urgency: RT 35/50 and no-response 6/10. **(C)** Cross-validated pulse-gain revision with control parameters fixed: choice
 departures were 0.24 logit and 0.31 logit; coverage was 0.62 and 0.7 of mouse-by-quantile response-time cells
 inside simulated ranges for the primary and secondary baselines. **(D)** Frozen strategy sensitivity; exact correct
-verdict counts and full-cohort denominators are extrema correct 1/20; accumulator correct 0/20. **(E)** Timing calibration; exact detections and per-condition
-denominators are 10% decay 0/20; 20% decay 1/20; 40% decay 0/20; null false detections 0/20. **(F)** Analysis sequence. Both original and gain-revised baselines failed, sensitivity was
+verdict counts and full-cohort denominators are extrema correct 1/20; accumulator correct 0/20. **(E)** Timing calibration; gate passes across the null,
+10%, 20% and 40% decline conditions were null 19/20; 10% decline 14/20; 20% decline 7/20; 40% decline 1/20, and exact detections and per-condition denominators are 10% decay 0/20; 20% decay 1/20; 40% decay 0/20; null false detections 0/20.
+**(F)** Analysis sequence. Both original and gain-revised baselines failed, sensitivity was
 low and the confirmatory timing test was not run. Panels D and E answer distinct calibration questions and are
 not pooled. These results are not evidence of no primacy, recency or flat weighting. No asterisks are used.

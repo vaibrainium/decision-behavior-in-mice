@@ -1,7 +1,7 @@
 """Assemble the reviewed neuropaper drafts without modifying the pinned plugin.
 
 The neuropaper ledger's ``unit`` column is provenance metadata.  For simple
-tokens it is also a suitable display suffix; compound settings N067--N108
+tokens it is also a suitable display suffix; compound settings N067--N109
 already contain their units inside ``value`` and must render value-only.
 This assembler records the few additional value-only display exceptions and
 fails closed on unresolved markers or known duplicate-unit patterns.
@@ -61,7 +61,7 @@ def load_numbers(path: Path) -> dict[str, dict[str, str]]:
 
 def display_value(token_id: str, row: dict[str, str]) -> str:
     number = int(token_id[1:])
-    if token_id in VALUE_ONLY or 67 <= number <= 108:
+    if token_id in VALUE_ONLY or 67 <= number <= 109:
         return row["value"]
     return row["value"] + (f" {row['unit']}" if row.get("unit") else "")
 

@@ -1,7 +1,7 @@
 <!-- np-contract
 stage: S5 ; section: title_abstract ; agent: np-writer ; version: v3
 thesis: "Joint held-out prediction on control trials favoured the tested accumulator over a rapid-forgetting implementation, but randomized motion pulses exposed a failure of the tested model-and-input pipelines to generalize to transient strong evidence."
-claims: C001
+claims: C001, C004, C005, C006, C007, C008, C009
 numbers: N001, N016, N051, N052, N053, N054, N059
 sources:
 -->
@@ -11,11 +11,11 @@ sources:
 
 ## Abstract
 
-Models that predict ordinary behaviour may still fail when evidence changes abruptly. We tested whether a model-and-input pipeline selected on control trials could predict responses to randomized strong motion pulses. Here, in 10 mice performing a reaction-time random-dot-motion task, joint held-out predictions of response direction, timing and occurrence favoured the tested accumulator over the rapid-forgetting approximation by 345.7 NLL units among the tested implementations, yet the frozen model-and-input pipelines failed to predict the pulse responses [[C001]]. We reconstructed motion energy and fitted both models before testing pulses. Positive rather than negative pulse assignment shifted response direction by 5.844356 percentage points (95% CI, 1.799491–9.889221 percentage points; Holm-adjusted P = 0.01941029). At the common final time point relative to logged pulse onset, the cumulative response-associated directional contrast reached 5.798136 percentage points. Descriptively, the observed and predicted group time courses differed: the observed contrast emerged later and remained sustained, whereas predictions appeared early and weakened or partly reversed. In two informative mice, gains improving held-out choices worsened the remaining response objective. Both predictive gates failed, and inadequate sensitivity precluded the confirmatory timing test. Thus, model selection and pulse transfer constrain the tested pipeline without identifying a unique sensory, decision or response mechanism.
+Models that predict ordinary behaviour may still fail when evidence changes abruptly. We tested whether a model-and-input pipeline selected on control trials could predict responses to randomized strong motion pulses. Here, in 10 mice performing a reaction-time random-dot-motion task, joint held-out predictions of response direction, timing and occurrence favoured the tested accumulator over the rapid-forgetting approximation by 345.7 NLL units among the tested implementations, yet the frozen model-and-input pipelines failed to predict the pulse responses [[C001]] [[C004]]. We reconstructed motion energy and fitted both models before testing pulses. Positive rather than negative pulse assignment shifted response direction by 5.844356 percentage points (95% CI, 1.799491–9.889221 percentage points; Holm-adjusted P = 0.01941029) [[C005]]. At the common final time point relative to logged pulse onset, the cumulative response-associated directional contrast reached 5.798136 percentage points [[C005]]. Descriptively, the observed and predicted group time courses differed: the observed contrast emerged later and remained sustained, whereas predictions appeared early and weakened or partly reversed [[C006]]. In two informative mice, gains improving held-out choices worsened the remaining response objective [[C009]]. Both predictive gates failed, and inadequate sensitivity precluded the confirmatory timing test [[C007]]. Thus, model selection and pulse transfer constrain the tested pipeline without identifying a unique sensory, decision or response mechanism [[C008]].
 
 ## Impact statement
 
-This study shows that held-out motion perturbations can expose predictive limitations hidden by successful model selection on control-trial behaviour.
+This study shows that held-out motion perturbations can expose predictive limitations hidden by successful model selection on control-trial behaviour [[C008]].
 
 <!-- writer-notes
 PROPOSED CLAIMS: none.
@@ -344,7 +344,7 @@ sources:
 stage: S5 ; section: figure_legends ; agent: np-writer ; version: v5
 thesis: "Joint held-out prediction on control trials favoured the tested accumulator over a rapid-forgetting implementation, but randomized motion pulses exposed a failure of the tested model-and-input pipelines to generalize to transient strong evidence."
 claims: C002, C003, C004, C005, C006, C007, C009
-numbers: N001, N004, N005, N006, N009, N010, N016, N026, N027, N030, N034, N035, N036, N051, N052, N053, N054, N055, N056, N057, N058, N059, N063, N064, N065, N066, N088, N090, N093, N095, N097, N098, N099, N102, N105, N106, N107, N108
+numbers: N001, N004, N005, N006, N009, N010, N016, N026, N027, N030, N034, N035, N036, N051, N052, N053, N054, N055, N056, N057, N058, N059, N063, N064, N065, N066, N088, N090, N093, N095, N097, N098, N099, N102, N105, N106, N107, N108, N109
 sources:
 -->
 ## Figure legends
@@ -443,8 +443,9 @@ toward scheduled pulse direction, 0.295968634567205 logit for the primary baseli
 simulated interval level are choice 95% interval includes zero or absolute departure below 25% of predicted logit pulse effect; at least 80% of RT-quantile cells and 80% of censoring cells inside simulated 95% ranges, and the exact coverage counts in B–C are Original accumulator: RT 34/50 mouse-by-quantile cells and no-response 9/10 mice inside simulated 95% ranges. Original leak-plus-urgency: RT 34/50 and no-response 5/10. Gain-revised accumulator: RT 31/50 and no-response 9/10. Gain-revised leak-plus-urgency: RT 35/50 and no-response 6/10. **(C)** Cross-validated pulse-gain revision with control parameters fixed: choice
 departures were 0.24 logit and 0.31 logit; coverage was 0.62 and 0.7 of mouse-by-quantile response-time cells
 inside simulated ranges for the primary and secondary baselines. **(D)** Frozen strategy sensitivity; exact correct
-verdict counts and full-cohort denominators are extrema correct 1/20; accumulator correct 0/20. **(E)** Timing calibration; exact detections and per-condition
-denominators are 10% decay 0/20; 20% decay 1/20; 40% decay 0/20; null false detections 0/20. **(F)** Analysis sequence. Both original and gain-revised baselines failed, sensitivity was
+verdict counts and full-cohort denominators are extrema correct 1/20; accumulator correct 0/20. **(E)** Timing calibration; gate passes across the null,
+10%, 20% and 40% decline conditions were null 19/20; 10% decline 14/20; 20% decline 7/20; 40% decline 1/20, and exact detections and per-condition denominators are 10% decay 0/20; 20% decay 1/20; 40% decay 0/20; null false detections 0/20.
+**(F)** Analysis sequence. Both original and gain-revised baselines failed, sensitivity was
 low and the confirmatory timing test was not run [[C007]]. Panels D and E answer distinct calibration questions and are
 not pooled. These results are not evidence of no primacy, recency or flat weighting. No asterisks are used.
 
