@@ -20,7 +20,7 @@ ES (amendment 10) uses motion energy, sv and fast guesses, so it is not the pape
 - [x] 1. Amendment 13 written before any fit.
 - [x] 2. `--nominal_input` in fit_mouse_ddm (variant L0U0V0Z0G0; z = 0.5 for DDMx; wide drift_offset); smoke test
       (DBM13 ccv0, 3 iterations, both models ran and saved; 4 free parameters each).
-- [ ] 3. Hyak X1 (DDMx, 60 jobs) and X2 (ESx, 60 jobs); commands below.
+- [x] 3. Hyak X1 (DDMx, 60 jobs) and X2 (ESx, 60 jobs); commands below.
 - [ ] 4. rsync; bound check; ESx vs DDMx and vs common model (held-out NLL, > 10 rule); C0 reported.
 - [ ] 5. Pulse timing file (onset/offset frames, pulse coherence by agg_code) and nominal pulse stimuli in primacy.py
       (`--baselines` entries for ESx/DDMx), with the Δ ± 50 ms sensitivity; frozen predictions; strategy test.
@@ -36,3 +36,4 @@ Collapsing-bound ("elaborated") version; their mean-RT fitting objective; gates 
 
 ## Log
 - 2026-10-27: plan written; amendment 13; code and smoke test.
+- 2026-10-27: X1 DDMx 42474716 done (60/60 saved, 2-5 min per fit; train_nll e.g. PSUIM7 control 11796.0). X2 ESx submitted 42487747.
