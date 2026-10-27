@@ -50,3 +50,4 @@ Collapsing-bound ("elaborated") version; their mean-RT fitting objective; gates 
 - 2026-10-27: plan written; amendment 13; code and smoke test.
 - 2026-10-27: X1 DDMx 42474716 done (60/60 saved, 2-5 min per fit; train_nll e.g. PSUIM7 control 11796.0). X2 ESx submitted 42487747.
 - 2026-10-27: pulse timing file built locally: /mnt/data/processed/ddm/pulse_timing_global.npz sha256 01d4d378e9cdf731cbcf5a427e8a4ad869416838473ab4d4af83a7d3eaae55f4.
+- 2026-10-27: Hyak at 40dc38e, pulse timing sha256 verified. XP2 (DDMx predictions) 42488464; XP1 (ESx predictions) 42488498 after X2; XR (recovery, 80) 42488502 after X2. Pending: lead-shift sensitivity (4 submissions).
