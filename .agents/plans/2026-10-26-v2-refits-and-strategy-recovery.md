@@ -81,6 +81,22 @@ strategy test (`--strategy_test --responded_only --unblind --out_dir ddm/primacy
 ddm/primacy_calibration_resp`); timing test only if the revised gate passes (amendment 6 item 8); pulse diagnostics after adaptation.
 - [ ] 5. P1-P4 submitted and finished; local steps above; report original vs responded-only side by side.
 
+## Discrete-sample extrema detection, ES (amendment 10; author: "lets do both", 2026-10-27)
+Simulator rule `extrema_bound` (both backends identical; zero-drift decision time matches theory), `--extrema_samples`
+in fit_mouse_ddm, model_recovery (--strategy --extrema_samples, label ES), primacy (--baselines extrema_samples,
+--strategy_model extrema_samples), check_strategy_test (--strategy_model extrema_samples). No warm start (new parameter).
+```
+# ES1 control-only CV + control (60)
+ES1=$(env EXTRA_ARGS="--responded_only --guess_model fast_only --extrema_samples --variants L0U0V1Z0G1 --splits ccv0 ccv1 ccv2 ccv3 ccv4 control --out_dir ddm/fits_resp_fast_only_es" sbatch --parsable --array=0-59 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm)
+# ES3 pulse predictions (10), after ES1
+sbatch --dependency=afterok:$ES1 --array=0-9 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.primacy,EXTRA_ARGS="--predict --responded_only --baselines extrema_samples --fits_dir ddm/fits_resp_fast_only_es --out_dir ddm/primacy_resp" --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+# ES2 recovery (80), after ES1 and R6
+sbatch --dependency=afterok:$ES1:$R6 --array=0-79 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.model_recovery,EXTRA_ARGS="--responded_only --strategy --extrema_samples --fits_dir ddm/fits_resp_final ddm/fits_resp_fast_only_es --out_dir ddm/recovery_strategy_es_resp" --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+```
+Local after: ES vs accumulator control CV (>10 rule), bound checks (b at 2 or 5, drift_gain at 200), strategy test
+`primacy --strategy_test --strategy_model extrema_samples --responded_only --unblind --out_dir ddm/primacy_resp`, its power.
+- [ ] 6. ES1-ES3 submitted; local comparison and report.
+
 ## Out of scope
 No change to v1 inputs or v1 fits; the first paper version is unaffected.
 
@@ -88,3 +104,4 @@ No change to v1 inputs or v1 fits; the first paper version is unaffected.
 - 2026-10-26: plan written after G1 answers (D002).
 - 2026-10-27: switched from v2 inputs to responded-only (author: no-response and >5 s trials excluded from all analyses). Commands rewritten; outputs ddm/fits_resp_*, ddm/recovery_strategy_resp. Peer session src-46 handles responders-only pulse contrast and behavioural summaries (read-only).
 - 2026-10-27: full point-3 re-run added (amendment 9, plan SHA prefix 2e1e22b0 at 02:12Z); code smoke-tested.
+- 2026-10-27: amendment 10 (ES, Stine et al. 2020 sample rule) added; code smoke-tested; commands ES1-ES3.
