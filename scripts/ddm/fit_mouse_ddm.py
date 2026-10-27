@@ -91,12 +91,23 @@ SIGNED_LEAK_BOUNDS = (-1.0, 5.0)
 # Leak range of the extrema-detection model (primacy plan, amendment 4): time constant 5-50 ms, so the decision variable
 # tracks recent motion energy and a bound crossing is a threshold crossing by momentary evidence.
 EXTREMA_LEAK_BOUNDS = (20.0, 200.0)
+# Discrete-sample extrema detection (Stine et al. 2020; primacy plan, amendment 10): each 1 ms evidence sample is compared
+# with +-b per-step noise SDs and nothing is accumulated; a and z are unused, drift_gain may reach 200.
+EXTREMA_SAMPLE_BOUND = ("extrema_bound", (2.0, 5.0))
+EXTREMA_SAMPLE_GAIN_MAX = 200.0
 VARIANTS = ["".join(f"{f}{int(on)}" for f, on in zip(OPTIONAL_FREE_PARAMS, flags)) for flags in itertools.product([0, 1], repeat=len(OPTIONAL_FREE_PARAMS))]
 
 
 def make_params(variant: str, guess_model: str = "single", time_varying_gain: bool = False, signed_leak: bool = False, fixed_guess_bias: bool = False, leak_bounds: tuple[float, float] | None = None, drift_gain_max: float | None = None,
-                front_end: str | None = None):
+                front_end: str | None = None, extrema_samples: bool = False):
     free, fixed = dict(BASE_FREE_PARAMS), dict(FIXED_PARAMS)
+    if extrema_samples:
+        if variant[1] != "0" or variant[3] != "0":
+            raise ValueError("extrema_samples takes no leak or urgency")
+        del free["a"], free["z"]
+        fixed.update(a=FixedParam(1.0), z=FixedParam(0.5))  # unused by the sample rule
+        free[EXTREMA_SAMPLE_BOUND[0]] = FreeParam(*EXTREMA_SAMPLE_BOUND[1])
+        drift_gain_max = EXTREMA_SAMPLE_GAIN_MAX if drift_gain_max is None else drift_gain_max
     if front_end is not None:
         for name, bounds, _ in FRONT_ENDS[front_end]:
             free[name] = FreeParam(*bounds)
@@ -225,7 +236,7 @@ def output_path(out_dir: Path, job: dict) -> Path:
 
 
 def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations: int, guess_model: str = "single", warm_dirs: list[Path] | None = None, time_varying_gain: bool = False, signed_leak: bool = False, fixed_guess_bias: bool = False, leak_bounds: tuple[float, float] | None = None, drift_gain_max: float | None = None,
-            front_end: str | None = None, likelihood_params: dict = LIKELIHOOD_PARAMS) -> dict:
+            front_end: str | None = None, likelihood_params: dict = LIKELIHOOD_PARAMS, extrema_samples: bool = False) -> dict:
     mouse_rows = np.flatnonzero(inputs["subject_id"] == job["mouse"])
     is_control = inputs["sched_pulse_type"][mouse_rows] == 0
     split = job["split"]
@@ -243,7 +254,7 @@ def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations:
     else:
         raise ValueError(f"unknown split {split}")
 
-    free, fixed = make_params(job["variant"], guess_model, time_varying_gain, signed_leak, fixed_guess_bias, leak_bounds, drift_gain_max, front_end)
+    free, fixed = make_params(job["variant"], guess_model, time_varying_gain, signed_leak, fixed_guess_bias, leak_bounds, drift_gain_max, front_end, extrema_samples)
     rigs = np.unique(inputs["data_source"][mouse_rows])
     assert len(rigs) == 1, f"{job['mouse']} has trials from {rigs}"
     min_rt = MIN_RT[rigs[0]]
@@ -274,6 +285,7 @@ def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations:
         "leak_bounds": list(leak_bounds) if leak_bounds is not None else None,
         "drift_gain_max": drift_gain_max,
         "front_end": front_end,
+        "extrema_samples": extrema_samples,
         "warm_start_seeds": seeds_used,
         "censor_at": CENSOR_AT,
         "min_rt": min_rt,
@@ -319,6 +331,7 @@ if __name__ == "__main__":
     parser.add_argument("--leak_bounds", type=float, nargs=2, metavar=("LO", "HI"), help="leak_rate bounds (/s) in variants with leak, e.g. 20 200 for the extrema-detection model (primacy plan, amendment 4)")
     parser.add_argument("--front_end", choices=list(FRONT_ENDS), help="visual front end on the drift input (primacy plan, amendment 7): power or norm")
     parser.add_argument("--responded_only", action="store_true", help="drop trials without a response by 5 s; likelihood conditional on a response")
+    parser.add_argument("--extrema_samples", action="store_true", help="discrete-sample extrema detection (amendment 10); use with a variant without leak or urgency")
     parser.add_argument("--drift_gain_max", type=float, help="upper bound of drift_gain (default 20); amendment 5: 200 for the extrema-detection model if its fits reach 20")
     args = parser.parse_args()
 
@@ -347,4 +360,4 @@ if __name__ == "__main__":
         else:
             logger.info("job %s: %s", args.job_id, job)
             run_job(inputs, job, processed / args.out_dir, args.n_reps, args.max_iterations, args.guess_model, [processed / d for d in args.warm_start_from], args.time_varying_gain, args.signed_leak, args.fixed_guess_bias, args.leak_bounds, args.drift_gain_max, args.front_end,
-                    RESPONDED_LIKELIHOOD_PARAMS if args.responded_only else LIKELIHOOD_PARAMS)
+                    RESPONDED_LIKELIHOOD_PARAMS if args.responded_only else LIKELIHOOD_PARAMS, args.extrema_samples)

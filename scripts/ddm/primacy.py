@@ -44,7 +44,8 @@ logger = logging.getLogger(__name__)
 BASELINES = {"primary": "L0U0V1Z0G1", "secondary": "L1U1V1Z0G1"}
 # Strategy model (amendment 4): extrema detection = the common model with a 5-50 ms time constant. Kept out of BASELINES
 # so the default prediction grid (and its job ids) is unchanged; request with --baselines extrema.
-STRATEGY_MODELS = {"extrema": "L1U0V1Z0G1"}
+STRATEGY_MODELS = {"extrema": "L1U0V1Z0G1", "extrema_samples": "L0U0V1Z0G1"}  # extrema_samples: amendment 10 sample rule
+SAMPLE_RULE = {"extrema_samples"}
 MODELS = {**BASELINES, **STRATEGY_MODELS}
 LEAK_BOUNDS = {"extrema": EXTREMA_LEAK_BOUNDS}
 GUESS_MODEL = "fast_only"
@@ -95,14 +96,15 @@ def gain_stimuli(inputs: dict, rows: np.ndarray) -> tuple[np.ndarray, np.ndarray
 
 
 def make_model(variant: str, rig: str, fixed_guess_bias: bool = False, time_varying_gain: bool = False, leak_bounds: tuple[float, float] | None = None,
-               responded: bool = False) -> MouseDDM:
-    free, fixed = make_params(variant, GUESS_MODEL, time_varying_gain=time_varying_gain, fixed_guess_bias=fixed_guess_bias, leak_bounds=leak_bounds)
+               responded: bool = False, extrema_samples: bool = False) -> MouseDDM:
+    free, fixed = make_params(variant, GUESS_MODEL, time_varying_gain=time_varying_gain, fixed_guess_bias=fixed_guess_bias, leak_bounds=leak_bounds,
+                              extrema_samples=extrema_samples)
     likelihood_params = RESPONDED_LIKELIHOOD_PARAMS if responded else LIKELIHOOD_PARAMS
     return MouseDDM(free_params=free, fixed_params=fixed, device=DEVICE, likelihood_params=likelihood_params, censor_at=CENSOR_AT, min_rt=MIN_RT[rig])
 
 
 def load_fit(fits_dir: Path, mouse: str, variant: str, split: str, fixed_guess_bias: bool, leak_bounds: tuple[float, float] | None = None, drift_gain_max: float | None = None,
-             responded: bool | None = None) -> dict:
+             responded: bool | None = None, extrema_samples: bool = False) -> dict:
     """A fit whose guess form (and leak range) matches; refuses silently mismatched fits (as model_recovery does).
     With `responded` set, also refuses a fit whose likelihood does (not) condition on a response (amendment 9)."""
     path = fits_dir / f"{mouse}_{variant}_{split}.pkl"
@@ -116,6 +118,8 @@ def load_fit(fits_dir: Path, mouse: str, variant: str, split: str, fixed_guess_b
         raise ValueError(f"{path} has leak bounds {fit_bounds}, expected {leak_bounds}")
     if r.get("drift_gain_max") != drift_gain_max:
         raise ValueError(f"{path} has drift_gain_max {r.get('drift_gain_max')}, expected {drift_gain_max}")
+    if bool(r.get("extrema_samples", False)) != extrema_samples:
+        raise ValueError(f"{path}: extrema_samples={r.get('extrema_samples')}, expected {extrema_samples}")
     if responded is not None and (r.get("likelihood_params", {}).get("include_censored") is False) != responded:
         raise ValueError(f"{path}: likelihood {r.get('likelihood_params')} does not match responded={responded}")
     return r
@@ -162,7 +166,8 @@ def predict_mouse(inputs: dict, mouse: str, params: dict, variant: str, n_reps: 
     read. With `pulse_gain`, the pulse component of the input is scaled by it (amendment 6)."""
     rows = pulse_rows(inputs, mouse) if rows is None else rows
     rig = np.unique(inputs["data_source"][rows]).item()
-    model = make_model(variant, rig, fixed_guess_bias, time_varying_gain="gain_decay" in params and params["gain_decay"] != 0, leak_bounds=leak_bounds)
+    model = make_model(variant, rig, fixed_guess_bias, time_varying_gain="gain_decay" in params and params["gain_decay"] != 0, leak_bounds=leak_bounds,
+                       extrema_samples="extrema_bound" in params)
     if pulse_gain is None:
         with_pulse, without = stimuli(inputs, rows)
     else:
@@ -409,6 +414,7 @@ if __name__ == "__main__":
     parser.add_argument("--drift_gain_max", type=float, help="extrema model fitted with a wider drift_gain bound (amendment 5)")
     parser.add_argument("--gate_only", action="store_true", help="with --analyze: predictive check only (no timing tests); for the first pass on provisional fits")
     parser.add_argument("--responded_only", action="store_true", help="amendment 9: responded trials only; fits must use the conditional likelihood")
+    parser.add_argument("--strategy_model", choices=list(STRATEGY_MODELS), default="extrema", help="model a of the strategy test")
     parser.add_argument("--strategy_test", action="store_true", help="amendment 4 item 5 / amendment 5: extrema vs primary baseline (after gate 1, with --unblind)")
     args = parser.parse_args()
 
@@ -429,7 +435,8 @@ if __name__ == "__main__":
             variant = MODELS[job["baseline"]]
             leak_bounds = LEAK_BOUNDS.get(job["baseline"])
             gain_max = args.drift_gain_max if job["baseline"] in STRATEGY_MODELS else None
-            fit = load_fit(processed / args.fits_dir, job["mouse"], variant, "control", args.fixed_guess_bias, leak_bounds, gain_max, responded=args.responded_only)
+            fit = load_fit(processed / args.fits_dir, job["mouse"], variant, "control", args.fixed_guess_bias, leak_bounds, gain_max, responded=args.responded_only,
+                           extrema_samples=job["baseline"] in SAMPLE_RULE)
             t0 = time.time()
             pred = predict_mouse(inputs, job["mouse"], fit["parameters"], variant, args.n_reps, args.seed, args.fixed_guess_bias, leak_bounds)
             pred.update(fit_path=str(processed / args.fits_dir), fixed_guess_bias=args.fixed_guess_bias, seconds=time.time() - t0, commit=git_commit(),
@@ -444,18 +451,18 @@ if __name__ == "__main__":
         if not args.unblind:
             raise SystemExit("refusing to compare with recorded pulse-trial choices without --unblind (after gate 1 only)")
         tables = {}
-        for model in ["extrema", "primary"]:
+        for model in [args.strategy_model, "primary"]:
             tables[model] = {}
             for p in sorted((processed / args.out_dir / model).glob("*.pkl")):
                 with open(p, "rb") as f:
                     pr = pickle.load(f)
                 tables[model][p.stem] = attach_observed(pr, inputs["rt"][pr["trials"].row], inputs["choice"][pr["trials"].row])
-        res = strategy_test(tables["extrema"], tables["primary"])
-        out = processed / args.out_dir / "results_strategy.pkl"
+        res = strategy_test(tables[args.strategy_model], tables["primary"])
+        out = processed / args.out_dir / ("results_strategy.pkl" if args.strategy_model == "extrema" else f"results_strategy_{args.strategy_model}.pkl")
         with open(out, "wb") as f:
             pickle.dump(res, f)
         print(res["per_mouse"].round(2).to_string())
-        print({k: res[k] for k in ("pulse_gain", "total")}, "(a = extrema, b = primary)")
+        print({k: res[k] for k in ("pulse_gain", "total")}, f"(a = {args.strategy_model}, b = primary)")
     elif args.analyze:
         if not args.unblind:
             raise SystemExit("refusing to compare with recorded pulse-trial choices without --unblind (plan step 5 must be done)")

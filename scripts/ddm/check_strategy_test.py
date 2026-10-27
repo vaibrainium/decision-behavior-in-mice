@@ -66,13 +66,13 @@ def null_calibration(inputs, A: dict, datasets: int, n_reps: int):
               f"SD of the sums {s.std():.2f} vs mean estimated SD {np.mean(s / a):.2f}")
 
 
-def power(inputs, pred_dir: Path, datasets: int, out: Path):
+def power(inputs, pred_dir: Path, datasets: int, out: Path, strategy_model: str = "extrema"):
     """Amendment 5, item 4: datasets of pulse-trial outcomes simulated from each mouse's control-only E fit and from its
     common-model fit, scored with the frozen predictions in pred_dir (extrema = a, primary = b). Reports how often
     the test favours the generating model, the wrong one, or neither. Uses no recorded outcome."""
     from scripts.ddm.fit_mouse_ddm import EXTREMA_LEAK_BOUNDS
 
-    preds = {m: {} for m in ["extrema", "primary"]}
+    preds = {m: {} for m in [strategy_model, "primary"]}
     for model in preds:
         for f in sorted((pred_dir / model).glob("*.pkl")):
             with open(f, "rb") as fh:
@@ -82,27 +82,28 @@ def power(inputs, pred_dir: Path, datasets: int, out: Path):
         raise ValueError("predictions and inputs disagree on responded_only")
     mice = sorted(preds["primary"])
     gens = {}
-    for model, variant, lb in [("extrema", "L1U0V1Z0G1", EXTREMA_LEAK_BOUNDS), ("primary", VARIANT, None)]:
+    lb_a = EXTREMA_LEAK_BOUNDS if strategy_model == "extrema" else None
+    for model, variant, lb in [(strategy_model, primacy.STRATEGY_MODELS[strategy_model], lb_a), ("primary", VARIANT, None)]:
         for m in mice:
             rows = preds[model][m]["trials"].row.to_numpy()
             _, stim = select(inputs, rows)
-            gen = primacy.make_model(variant, np.unique(inputs["data_source"][rows]).item(), leak_bounds=lb)
+            gen = primacy.make_model(variant, np.unique(inputs["data_source"][rows]).item(), leak_bounds=lb, extrema_samples=model in primacy.SAMPLE_RULE)
             gens[(model, m)] = (gen, preds[model][m]["params"], stim, inputs["condition"][rows])
     rows_out = []
     for d in range(datasets):
-        for model in ["extrema", "primary"]:
+        for model in [strategy_model, "primary"]:
             syn = {}
             for m in mice:
                 gen, params, stim, cond = gens[(model, m)]
                 syn[m] = synthesize(gen, params, stim, cond, zlib.crc32(f"power|{model}|{m}|{d}".encode()))
                 gen.simulator.clear_cache()
             obs = {k: {m: primacy.attach_observed(preds[k][m], syn[m]["rt"], syn[m]["choice"]) for m in mice} for k in preds}
-            r = primacy.strategy_test(obs["extrema"], obs["primary"])
+            r = primacy.strategy_test(obs[strategy_model], obs["primary"])
             rows_out.append({"generator": model, "dataset": d, **{f"{k}_{x}": r[k][y] for k in ("pulse_gain", "total") for x, y in [("z", "z"), ("favoured", "favoured"), ("same_sign", "mice_same_sign")]}})
         print(rows_out[-2:], flush=True)
     df = pd.DataFrame(rows_out)
     df.to_csv(out, index=False)
-    names = {"a": "extrema", "b": "primary", "not distinguished": "not distinguished"}
+    names = {"a": strategy_model, "b": "primary", "not distinguished": "not distinguished"}
     for k in ("pulse_gain", "total"):
         print(f"\n{k}: z mean/SD by generator\n{df.groupby('generator')[f'{k}_z'].agg(['mean', 'std']).round(2).to_string()}")
         print(df.assign(verdict=df[f"{k}_favoured"].map(names)).groupby("generator").verdict.value_counts().unstack(fill_value=0).to_string())
@@ -156,11 +157,12 @@ if __name__ == "__main__":
     parser.add_argument("--power", action="store_true", help="amendment 5 item 4: power of the strategy test from the frozen predictions in --pred_dir")
     parser.add_argument("--pred_dir", default="ddm/primacy", help="relative to processed")
     parser.add_argument("--responded_only", action="store_true", help="amendment 9: responded trials only (predictions in --pred_dir must be responded-only too)")
+    parser.add_argument("--strategy_model", default="extrema", help="model a: extrema (amendment 4) or extrema_samples (amendment 10)")
     args = parser.parse_args()
     if args.power:
         logging.disable(logging.WARNING)
         processed = Path(dir_config.data.processed)
         inputs = load_inputs(processed / "ddm/ddm_inputs_global.npz")
-        power(responded_only(inputs) if args.responded_only else inputs, processed / args.pred_dir, args.datasets, processed / args.pred_dir / "strategy_power.csv")
+        power(responded_only(inputs) if args.responded_only else inputs, processed / args.pred_dir, args.datasets, processed / args.pred_dir / ("strategy_power.csv" if args.strategy_model == "extrema" else f"strategy_power_{args.strategy_model}.csv"), args.strategy_model)
         raise SystemExit
     main(args.mice, args.datasets, args.n_reps, Path(dir_config.data.processed) / args.fits_dir, args.leak, args.null_only, args.responded_only)

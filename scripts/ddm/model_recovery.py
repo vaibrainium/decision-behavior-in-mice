@@ -46,19 +46,25 @@ ADDED = ["L", "U"]  # mechanisms dropped from the common model whose detectabili
 MODELS = ([COMMON] + [COMMON[:i + 1] + "0" + COMMON[i + 2:] for i in range(0, len(COMMON), 2) if COMMON[i + 1] == "1"]  # each mechanism removed
           + [COMMON.replace(f"{f}0", f"{f}1") for f in ADDED])  # leak or urgency added
 EXTREMA = "L1U0V1Z0G1"  # with leak 20-200/s (primacy plan, amendment 4)
+EXTREMA_SAMPLES = "ES"  # discrete-sample extrema detection (amendment 10): the common model's components, sample rule
 STRATEGY_MODELS = [COMMON, EXTREMA]
 N_REPLICATES = 2
 
 
-def build_grid(inputs: dict, strategy: bool = False) -> list[dict]:
+def strategy_models(extrema_samples: bool = False) -> list[str]:
+    return [COMMON, EXTREMA_SAMPLES] if extrema_samples else STRATEGY_MODELS
+
+
+def build_grid(inputs: dict, strategy: bool = False, extrema_samples: bool = False) -> list[dict]:
     mice = sorted(np.unique(inputs["subject_id"]))
-    models = STRATEGY_MODELS if strategy else MODELS
+    models = strategy_models(extrema_samples) if strategy else MODELS
     return [{"mouse": m, "generator": g, "candidate": c, "replicate": r} for r in range(N_REPLICATES) for g in models for c in models for m in mice]
 
 
 def make_model(variant: str, rig: str, fixed_guess_bias: bool = False, strategy: bool = False, responded: bool = False) -> MouseDDM:
     leak_bounds = EXTREMA_LEAK_BOUNDS if strategy and variant == EXTREMA else None
-    free, fixed = make_params(variant, GUESS_MODEL, fixed_guess_bias=fixed_guess_bias, leak_bounds=leak_bounds)
+    samples = variant == EXTREMA_SAMPLES
+    free, fixed = make_params(COMMON if samples else variant, GUESS_MODEL, fixed_guess_bias=fixed_guess_bias, leak_bounds=leak_bounds, extrema_samples=samples)
     likelihood_params = RESPONDED_LIKELIHOOD_PARAMS if responded else LIKELIHOOD_PARAMS
     return MouseDDM(free_params=free, fixed_params=fixed, device=DEVICE, likelihood_params=likelihood_params, censor_at=CENSOR_AT, min_rt=MIN_RT[rig])
 
@@ -90,10 +96,12 @@ def generating_params(fits_dirs: list[Path], mouse: str, variant: str, fixed_gue
 
 
 def strategy_params(fits_dirs: list[Path], mouse: str, variant: str) -> dict:
-    """Control-trial fit of the common model (first folder) or of E (second folder); E's leak must lie in 20-200/s."""
-    path = fits_dirs[STRATEGY_MODELS.index(variant)] / f"{mouse}_{variant}_control.pkl"
+    """Control-trial fit of the common model (first folder) or of E / ES (second folder); E's leak must lie in 20-200/s."""
+    path = fits_dirs[0 if variant == COMMON else 1] / f"{mouse}_{COMMON if variant == EXTREMA_SAMPLES else variant}_control.pkl"
     with open(path, "rb") as f:
         r = pickle.load(f)
+    if bool(r.get("extrema_samples", False)) != (variant == EXTREMA_SAMPLES):
+        raise ValueError(f"{path}: extrema_samples={r.get('extrema_samples')} does not match {variant}")
     if (r.get("guess_model", "single"), r.get("fixed_guess_bias", False)) != (GUESS_MODEL, False):
         raise ValueError(f"{path}: guess form does not match")
     if variant == EXTREMA and not EXTREMA_LEAK_BOUNDS[0] <= r["parameters"]["leak_rate"] <= EXTREMA_LEAK_BOUNDS[1]:
@@ -184,6 +192,7 @@ if __name__ == "__main__":
     parser.add_argument("--list", action="store_true")
     parser.add_argument("--force", action="store_true", help="refit even if the output exists")
     parser.add_argument("--responded_only", action="store_true", help="real and simulated trials without a response by 5 s dropped; conditional likelihood")
+    parser.add_argument("--extrema_samples", action="store_true", help="with --strategy: discrete-sample extrema detection (ES) instead of E; second --fits_dir holds its fits")
     parser.add_argument("--strategy", action="store_true", help="common model vs E on control trials (fits_dir: common-model folder, then E folder)")
     args = parser.parse_args()
 
@@ -191,8 +200,8 @@ if __name__ == "__main__":
     inputs = load_inputs(processed / args.inputs)
     if args.responded_only:
         inputs = responded_only(inputs)
-    grid = build_grid(inputs, args.strategy)
-    models = STRATEGY_MODELS if args.strategy else MODELS
+    grid = build_grid(inputs, args.strategy, args.extrema_samples)
+    models = strategy_models(args.extrema_samples) if args.strategy else MODELS
     if args.list:
         print(f"{len(grid)} jobs: {len(np.unique(inputs['subject_id']))} mice x {len(models)} generators x {len(models)} candidates x {N_REPLICATES} replicates")
         print("models:", models)

@@ -29,7 +29,10 @@ def _simulate_ddm_trials_numba(
     leak_rate: float,
     time_constant: float,
     gain_decay: float,
+    sample_threshold: float = 0.0,
 ) -> tuple[np.ndarray, np.ndarray]:
+    """sample_threshold > 0: extrema detection (Stine et al. 2020): each step's evidence sample (drift + noise) is
+    compared with +-sample_threshold and nothing is accumulated; a, z, leak and urgency are then unused."""
     n_trials, n_timepoints = stimulus.shape
     rt = np.full(n_trials, np.nan, dtype=np.float32)
     choice = np.full(n_trials, np.nan, dtype=np.float32)
@@ -46,6 +49,17 @@ def _simulate_ddm_trials_numba(
 
             gain = drift_gain * np.exp(-gain_decay * (t - 1) * dt) if gain_decay != 0.0 else drift_gain
             drift = (gain * stimulus[trial, t - 1] + trial_drift_offset) * dt
+            if sample_threshold > 0.0:
+                sample = drift + noise[trial, t - 1]
+                if sample >= sample_threshold:
+                    rt[trial] = t * dt + ndt
+                    choice[trial] = 1.0
+                    break
+                if sample <= -sample_threshold:
+                    rt[trial] = t * dt + ndt
+                    choice[trial] = 0.0
+                    break
+                continue
             leak = leak_rate * (evidence - starting_point) * dt
             evidence += drift + noise[trial, t - 1] - leak
 
@@ -159,6 +173,7 @@ class _NumbaSimulator:
             params["leak_rate"],
             params["time_constant"],
             float(params.get("gain_decay", 0.0)),
+            float(params.get("extrema_bound", 0.0)) * noise_std,
         )
 
 
@@ -265,7 +280,13 @@ class _TorchSimulator:
         else:
             noise_inc = torch.randn(n_trials, T, device=dev) * noise_std  # (N, T)
 
-        if leak_rate == 0.0:
+        sample_threshold = float(params.get("extrema_bound", 0.0)) * noise_std
+        if sample_threshold > 0.0:
+            # extrema detection (Stine et al. 2020): each step's sample is compared with +-threshold, nothing accumulated
+            sample = drift_inc + noise_inc
+            upper = (sample >= sample_threshold) & valid
+            lower = (sample <= -sample_threshold) & valid
+        elif leak_rate == 0.0:
             evidence = sp + torch.cumsum((drift_inc + noise_inc) * valid, dim=1)
         else:
             # ------------------------------------------------------------------
@@ -301,14 +322,14 @@ class _TorchSimulator:
 
                 evidence = torch.tensor(α, device=dev).pow(t_exp) * sp + particular  # (N, T)
 
-        if time_constant != 0.0:
-            t_idx = torch.arange(1, n_timepoints, device=dev, dtype=torch.float32)
-            decision_var = sp + (evidence - sp) * (1.0 + t_idx * dt * time_constant)
-        else:
-            decision_var = evidence
-
-        upper = (decision_var >= a) & valid
-        lower = (decision_var <= 0) & valid
+        if sample_threshold <= 0.0:
+            if time_constant != 0.0:
+                t_idx = torch.arange(1, n_timepoints, device=dev, dtype=torch.float32)
+                decision_var = sp + (evidence - sp) * (1.0 + t_idx * dt * time_constant)
+            else:
+                decision_var = evidence
+            upper = (decision_var >= a) & valid
+            lower = (decision_var <= 0) & valid
         crossed = upper | lower
 
         rt = torch.full((n_trials,), float("nan"), device=dev, dtype=torch.float32)
