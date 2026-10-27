@@ -103,6 +103,12 @@ EXTREMA_LEAK_BOUNDS = (20.0, 200.0)
 # with +-b per-step noise SDs and nothing is accumulated; a and z are unused, drift_gain may reach 200.
 EXTREMA_SAMPLE_BOUND = ("extrema_bound", (2.0, 5.0))
 EXTREMA_SAMPLE_GAIN_MAX = 200.0
+# Model sets for the downstream scripts (--model_set). "sv": the common model chosen 2026-10-22 with all trials;
+# "nosv": re-selected under the responded-only rule with parsimony rules 2-3 (primacy plan, amendment 12).
+MODEL_SETS = {
+    "sv": {"primary": "L0U0V1Z0G1", "secondary": "L1U1V1Z0G1", "extrema": "L1U0V1Z0G1", "fixed_guess_bias": False},
+    "nosv": {"primary": "L0U0V0Z0G1", "secondary": "L1U1V0Z0G1", "extrema": "L1U0V0Z0G1", "fixed_guess_bias": True},
+}
 VARIANTS = ["".join(f"{f}{int(on)}" for f, on in zip(OPTIONAL_FREE_PARAMS, flags)) for flags in itertools.product([0, 1], repeat=len(OPTIONAL_FREE_PARAMS))]
 
 

@@ -52,7 +52,7 @@ def run_job(inputs: dict, job: dict, fits_dir: Path, gain_dir: Path, fit_reps: i
     """`responded` (amendment 9): synthetic trials without a response by 5 s are dropped before the gain fits."""
     mouse = job["mouse"]
     variant = primacy.BASELINES[BASELINE]
-    params = primacy.load_fit(fits_dir, mouse, variant, "control", False, responded=responded)["parameters"]
+    params = primacy.load_fit(fits_dir, mouse, variant, "control", None, responded=responded)["parameters"]
     with open(gain_dir / BASELINE / f"{mouse}.pkl", "rb") as f:
         gain = pickle.load(f)
     if bool(gain.get("responded_only", False)) != responded:
@@ -140,7 +140,9 @@ if __name__ == "__main__":
     parser.add_argument("--levels", type=float, nargs="*", help="summarize only these levels (for parallel runs)")
     parser.add_argument("--report", action="store_true", help="report from the per-level summary files")
     parser.add_argument("--responded_only", action="store_true", help="amendment 9: responded trials only, conditional likelihood")
+    parser.add_argument("--model_set", choices=list(primacy.MODEL_SETS), default="sv", help="amendment 12")
     args = parser.parse_args()
+    primacy.use_model_set(args.model_set)
 
     processed = Path(dir_config.data.processed)
     out_dir = processed / args.out_dir

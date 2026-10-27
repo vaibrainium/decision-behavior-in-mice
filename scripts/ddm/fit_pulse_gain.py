@@ -103,7 +103,7 @@ def run_job(inputs: dict, baseline: str, mouse: str, fits_dir: Path, fit_reps: i
     `responded`: likelihood conditional on a response by 5 s (amendment 9); the data must contain responses only."""
     variant = primacy.BASELINES[baseline]
     if params is None:
-        params = primacy.load_fit(fits_dir, mouse, variant, "control", False, responded=responded)["parameters"]
+        params = primacy.load_fit(fits_dir, mouse, variant, "control", None, responded=responded)["parameters"]
     rows = primacy.pulse_rows(inputs, mouse) if rows is None else rows
     obs_of = (lambda sel: None) if observed is None else (lambda sel: {k: v[sel] for k, v in observed.items()})  # noqa: E731
     rig = np.unique(inputs["data_source"][rows]).item()
@@ -129,7 +129,8 @@ def run_job(inputs: dict, baseline: str, mouse: str, fits_dir: Path, fit_reps: i
     return {"mouse": mouse, "rig": rig, "variant": variant, "baseline": baseline, "params": params, "n_reps": n_reps, "seed": seed,
             "trials": trials, "reps": primacy.per_rep_summary(sim), "fold_gain": fold_gain, "fold_profile": fold_profile,
             "pulse_gain_all": w_all, "profile_all": prof_all, "pulse_gain_interval": profile_interval(prof_all),
-            "fit_reps": fit_reps, "fit_path": str(fits_dir), "commit": primacy.git_commit(), "responded_only": responded}
+            "fit_reps": fit_reps, "fit_path": str(fits_dir), "commit": primacy.git_commit(), "responded_only": responded,
+            "fixed_guess_bias": primacy.FIXED_GUESS_BIAS}
 
 
 def build_grid(inputs: dict) -> list[dict]:
@@ -149,7 +150,9 @@ if __name__ == "__main__":
     parser.add_argument("--job_id", type=int)
     parser.add_argument("--list", action="store_true")
     parser.add_argument("--responded_only", action="store_true", help="amendment 9: responded trials only, conditional likelihood")
+    parser.add_argument("--model_set", choices=list(primacy.MODEL_SETS), default="sv", help="amendment 12")
     args = parser.parse_args()
+    primacy.use_model_set(args.model_set)
 
     processed = Path(dir_config.data.processed)
     inputs = load_inputs(processed / args.inputs)

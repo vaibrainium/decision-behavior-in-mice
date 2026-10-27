@@ -35,8 +35,8 @@ import pandas as pd
 from scipy.special import expit, logit
 
 from config import dir_config
-from scripts.ddm.fit_mouse_ddm import (CENSOR_AT, DEVICE, EXTREMA_LEAK_BOUNDS, LIKELIHOOD_PARAMS, MIN_RT, RESPONDED_LIKELIHOOD_PARAMS, MouseDDM, load_inputs, make_params,
-                                       responded_only, to_ms)
+from scripts.ddm.fit_mouse_ddm import (CENSOR_AT, DEVICE, EXTREMA_LEAK_BOUNDS, LIKELIHOOD_PARAMS, MIN_RT, MODEL_SETS, RESPONDED_LIKELIHOOD_PARAMS, MouseDDM, load_inputs,
+                                       make_params, responded_only, to_ms)
 
 logger = logging.getLogger(__name__)
 
@@ -48,6 +48,17 @@ STRATEGY_MODELS = {"extrema": "L1U0V1Z0G1", "extrema_samples": "L0U0V1Z0G1"}  # 
 SAMPLE_RULE = {"extrema_samples"}
 MODELS = {**BASELINES, **STRATEGY_MODELS}
 LEAK_BOUNDS = {"extrema": EXTREMA_LEAK_BOUNDS}
+FIXED_GUESS_BIAS = False  # default guess form of the model set in use
+
+
+def use_model_set(name: str) -> None:
+    """Switch the baselines and strategy models in place (amendment 12); every script reads them at call time."""
+    global FIXED_GUESS_BIAS
+    ms = MODEL_SETS[name]
+    BASELINES.update(primary=ms["primary"], secondary=ms["secondary"])
+    STRATEGY_MODELS.update(extrema=ms["extrema"], extrema_samples=ms["primary"])
+    MODELS.update(**BASELINES, **STRATEGY_MODELS)
+    FIXED_GUESS_BIAS = ms["fixed_guess_bias"]
 GUESS_MODEL = "fast_only"
 TIMING = {1: "early", 2: "middle", 3: "late"}
 MAX_ABS_COH = 0.36  # primary analysis (plan section 4); all coherences as robustness
@@ -95,21 +106,23 @@ def gain_stimuli(inputs: dict, rows: np.ndarray) -> tuple[np.ndarray, np.ndarray
     return to_ms(without.astype(np.float32), fr), to_ms(pulse.astype(np.float32), fr)
 
 
-def make_model(variant: str, rig: str, fixed_guess_bias: bool = False, time_varying_gain: bool = False, leak_bounds: tuple[float, float] | None = None,
+def make_model(variant: str, rig: str, fixed_guess_bias: bool | None = None, time_varying_gain: bool = False, leak_bounds: tuple[float, float] | None = None,
                responded: bool = False, extrema_samples: bool = False) -> MouseDDM:
+    fixed_guess_bias = FIXED_GUESS_BIAS if fixed_guess_bias is None else fixed_guess_bias
     free, fixed = make_params(variant, GUESS_MODEL, time_varying_gain=time_varying_gain, fixed_guess_bias=fixed_guess_bias, leak_bounds=leak_bounds,
                               extrema_samples=extrema_samples)
     likelihood_params = RESPONDED_LIKELIHOOD_PARAMS if responded else LIKELIHOOD_PARAMS
     return MouseDDM(free_params=free, fixed_params=fixed, device=DEVICE, likelihood_params=likelihood_params, censor_at=CENSOR_AT, min_rt=MIN_RT[rig])
 
 
-def load_fit(fits_dir: Path, mouse: str, variant: str, split: str, fixed_guess_bias: bool, leak_bounds: tuple[float, float] | None = None, drift_gain_max: float | None = None,
+def load_fit(fits_dir: Path, mouse: str, variant: str, split: str, fixed_guess_bias: bool | None, leak_bounds: tuple[float, float] | None = None, drift_gain_max: float | None = None,
              responded: bool | None = None, extrema_samples: bool = False) -> dict:
     """A fit whose guess form (and leak range) matches; refuses silently mismatched fits (as model_recovery does).
     With `responded` set, also refuses a fit whose likelihood does (not) condition on a response (amendment 9)."""
     path = fits_dir / f"{mouse}_{variant}_{split}.pkl"
     with open(path, "rb") as f:
         r = pickle.load(f)
+    fixed_guess_bias = FIXED_GUESS_BIAS if fixed_guess_bias is None else fixed_guess_bias
     form = (r.get("guess_model", "single"), r.get("fixed_guess_bias", False))
     if form != (GUESS_MODEL, fixed_guess_bias):
         raise ValueError(f"{path} has guess form {form}, expected {(GUESS_MODEL, fixed_guess_bias)}")
@@ -160,7 +173,7 @@ def per_rep_summary(sim: pd.DataFrame) -> dict:
     return {"rt_quantiles": np.array(q), "censored_fraction": np.array(cens)}
 
 
-def predict_mouse(inputs: dict, mouse: str, params: dict, variant: str, n_reps: int, seed: int, fixed_guess_bias: bool = False, leak_bounds: tuple[float, float] | None = None,
+def predict_mouse(inputs: dict, mouse: str, params: dict, variant: str, n_reps: int, seed: int, fixed_guess_bias: bool | None = None, leak_bounds: tuple[float, float] | None = None,
                   rows: np.ndarray | None = None, pulse_gain: float | None = None, keep_sim: bool = False) -> dict:
     """Predictions for one mouse's pulse trials (or the given `rows`) from `params`; no observed choices or RTs are
     read. With `pulse_gain`, the pulse component of the input is scaled by it (amendment 6)."""
@@ -401,6 +414,7 @@ if __name__ == "__main__":
     parser.add_argument("--fits_dir", help="control-only fits of the baselines, relative to processed (plan step 5)")
     parser.add_argument("--out_dir", default="ddm/primacy", help="relative to processed")
     parser.add_argument("--fixed_guess_bias", action="store_true")
+    parser.add_argument("--model_set", choices=list(MODEL_SETS), default="sv", help="sv (default) or nosv (amendment 12; implies the fixed guess bias)")
     parser.add_argument("--n_reps", type=int, default=N_REPS)
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--list", action="store_true")
@@ -419,6 +433,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     processed = Path(dir_config.data.processed)
+    use_model_set(args.model_set)
+    args.fixed_guess_bias = args.fixed_guess_bias or FIXED_GUESS_BIAS
     inputs = load_inputs(processed / args.inputs)
     if args.responded_only:
         inputs = responded_only(inputs)

@@ -35,8 +35,8 @@ from pathlib import Path
 import numpy as np
 
 from config import dir_config
-from scripts.ddm.fit_mouse_ddm import (CENSOR_AT, DE_TOL, DEVICE, EXTREMA_LEAK_BOUNDS, LIKELIHOOD_PARAMS, MIN_RT, RESPONDED_LIKELIHOOD_PARAMS, MouseDDM, heldout_nll, load_inputs,
-                                       make_params, responded_only, select)
+from scripts.ddm.fit_mouse_ddm import (CENSOR_AT, DE_TOL, DEVICE, EXTREMA_LEAK_BOUNDS, LIKELIHOOD_PARAMS, MIN_RT, MODEL_SETS, RESPONDED_LIKELIHOOD_PARAMS, MouseDDM, heldout_nll,
+                                       load_inputs, make_params, responded_only, select)
 
 logger = logging.getLogger(__name__)
 
@@ -49,6 +49,13 @@ EXTREMA = "L1U0V1Z0G1"  # with leak 20-200/s (primacy plan, amendment 4)
 EXTREMA_SAMPLES = "ES"  # discrete-sample extrema detection (amendment 10): the common model's components, sample rule
 STRATEGY_MODELS = [COMMON, EXTREMA]
 N_REPLICATES = 2
+
+
+def use_model_set(name: str) -> None:
+    """Strategy mode only (amendment 12): the common model and E of the chosen set; the default 5-model grid keeps COMMON."""
+    global COMMON, EXTREMA, STRATEGY_MODELS
+    COMMON, EXTREMA = MODEL_SETS[name]["primary"], MODEL_SETS[name]["extrema"]
+    STRATEGY_MODELS = [COMMON, EXTREMA]
 
 
 def strategy_models(extrema_samples: bool = False) -> list[str]:
@@ -95,14 +102,14 @@ def generating_params(fits_dirs: list[Path], mouse: str, variant: str, fixed_gue
     raise FileNotFoundError(f"no all-trial fit of {mouse} {variant} ({GUESS_MODEL}, fixed_guess_bias={fixed_guess_bias}) in {[str(d) for d in fits_dirs]}")
 
 
-def strategy_params(fits_dirs: list[Path], mouse: str, variant: str) -> dict:
+def strategy_params(fits_dirs: list[Path], mouse: str, variant: str, fixed_guess_bias: bool = False) -> dict:
     """Control-trial fit of the common model (first folder) or of E / ES (second folder); E's leak must lie in 20-200/s."""
     path = fits_dirs[0 if variant == COMMON else 1] / f"{mouse}_{COMMON if variant == EXTREMA_SAMPLES else variant}_control.pkl"
     with open(path, "rb") as f:
         r = pickle.load(f)
     if bool(r.get("extrema_samples", False)) != (variant == EXTREMA_SAMPLES):
         raise ValueError(f"{path}: extrema_samples={r.get('extrema_samples')} does not match {variant}")
-    if (r.get("guess_model", "single"), r.get("fixed_guess_bias", False)) != (GUESS_MODEL, False):
+    if (r.get("guess_model", "single"), r.get("fixed_guess_bias", False)) != (GUESS_MODEL, fixed_guess_bias):
         raise ValueError(f"{path}: guess form does not match")
     if variant == EXTREMA and not EXTREMA_LEAK_BOUNDS[0] <= r["parameters"]["leak_rate"] <= EXTREMA_LEAK_BOUNDS[1]:
         raise ValueError(f"{path}: leak_rate outside the extrema-detection bounds")
@@ -123,7 +130,7 @@ def run_job(inputs: dict, job: dict, fits_dirs: list[Path], out_dir: Path, n_rep
         rows = rows[inputs["sched_pulse_type"][rows] == 0]
     rig = str(np.unique(inputs["data_source"][rows])[0])
     real, stimulus = select(inputs, rows)
-    true_params = strategy_params(fits_dirs, job["mouse"], job["generator"]) if strategy else generating_params(fits_dirs, job["mouse"], job["generator"], fixed_guess_bias)
+    true_params = strategy_params(fits_dirs, job["mouse"], job["generator"], fixed_guess_bias) if strategy else generating_params(fits_dirs, job["mouse"], job["generator"], fixed_guess_bias)
 
     seed = zlib.crc32(f"{job['mouse']}|{job['generator']}|{job['replicate']}".encode())
     generator = make_model(job["generator"], rig, fixed_guess_bias, strategy, responded_data)
@@ -192,10 +199,14 @@ if __name__ == "__main__":
     parser.add_argument("--list", action="store_true")
     parser.add_argument("--force", action="store_true", help="refit even if the output exists")
     parser.add_argument("--responded_only", action="store_true", help="real and simulated trials without a response by 5 s dropped; conditional likelihood")
+    parser.add_argument("--model_set", choices=list(MODEL_SETS), default="sv", help="with --strategy: sv (default) or nosv (amendment 12; implies --fixed_guess_bias)")
     parser.add_argument("--extrema_samples", action="store_true", help="with --strategy: discrete-sample extrema detection (ES) instead of E; second --fits_dir holds its fits")
     parser.add_argument("--strategy", action="store_true", help="common model vs E on control trials (fits_dir: common-model folder, then E folder)")
     args = parser.parse_args()
 
+    if args.strategy:
+        use_model_set(args.model_set)
+        args.fixed_guess_bias = args.fixed_guess_bias or MODEL_SETS[args.model_set]["fixed_guess_bias"]
     processed = Path(dir_config.data.processed)
     inputs = load_inputs(processed / args.inputs)
     if args.responded_only:

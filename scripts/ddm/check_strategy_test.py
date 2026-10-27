@@ -83,7 +83,7 @@ def power(inputs, pred_dir: Path, datasets: int, out: Path, strategy_model: str 
     mice = sorted(preds["primary"])
     gens = {}
     lb_a = EXTREMA_LEAK_BOUNDS if strategy_model == "extrema" else None
-    for model, variant, lb in [(strategy_model, primacy.STRATEGY_MODELS[strategy_model], lb_a), ("primary", VARIANT, None)]:
+    for model, variant, lb in [(strategy_model, primacy.STRATEGY_MODELS[strategy_model], lb_a), ("primary", primacy.BASELINES["primary"], None)]:
         for m in mice:
             rows = preds[model][m]["trials"].row.to_numpy()
             _, stim = select(inputs, rows)
@@ -157,8 +157,10 @@ if __name__ == "__main__":
     parser.add_argument("--power", action="store_true", help="amendment 5 item 4: power of the strategy test from the frozen predictions in --pred_dir")
     parser.add_argument("--pred_dir", default="ddm/primacy", help="relative to processed")
     parser.add_argument("--responded_only", action="store_true", help="amendment 9: responded trials only (predictions in --pred_dir must be responded-only too)")
+    parser.add_argument("--model_set", choices=list(primacy.MODEL_SETS), default="sv", help="amendment 12")
     parser.add_argument("--strategy_model", default="extrema", help="model a: extrema (amendment 4) or extrema_samples (amendment 10)")
     args = parser.parse_args()
+    primacy.use_model_set(args.model_set)
     if args.power:
         logging.disable(logging.WARNING)
         processed = Path(dir_config.data.processed)
