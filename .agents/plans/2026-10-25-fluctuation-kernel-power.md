@@ -1,5 +1,5 @@
 # Plan: power of a fluctuation-kernel test of temporal weighting (synthetic only)
-Status: active
+Status: done
 Created: 2026-10-25 by Claude (Opus 5.5)
 Related: analysis log 5.13 (amendment 7 stopped); finding 2026-10-25: ~43% of motion-energy noise varies within trials
 
@@ -26,7 +26,7 @@ trials. If yes, draft amendment 8; if not, stop.
 - [x] 1. `scripts/ddm/fluctuation_kernel.py` (synthetic mode only; real-data mode refuses without --unblind).
 - [x] 2. Run power simulation; record.
 - [x] 3. Power of the response-aligned test, integrator vs extrema detection (design below, fixed before running).
-- [ ] 4. Decide with the authors: amendment 8 (response-aligned test only) or stop.
+- [x] 4. Decide with the authors: amendment 8 adopted 2026-10-26; observed run: neither model fits (reports/2026-10-26-fluctuation-kernel-observed.md).
 
 ## Design, step 3 (added 2026-10-25, before running; V. Thakur agreed)
 - Same trials, fluctuation and response-aligned bins (-0.6..0 s, 100 ms, frames before the response and >= 0.1 s after onset).
@@ -57,3 +57,4 @@ trials. If yes, draft amendment 8; if not, stop.
   pulse_followup/20261023T191030Z_fa8de8b. Both power checks rerun; outputs *_v2.csv, originals kept. The fits used
   (fits_final, leak20-200 control fits) still include these trials, and refitting is not done.
 - 2026-10-25: v2 rerun done; conclusions unchanged (primacy 0% detection; I vs E 20/20 each). Report updated. Next: step 4.
+- 2026-10-26: amendment 8 adopted (V. Thakur, via paper_accumulation G0); observed mode added; verdict 'neither model fits' (S_I 11.44 > 11.22; S_E 14.74 > 13.21). Report: reports/2026-10-26-fluctuation-kernel-observed.md.

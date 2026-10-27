@@ -18,7 +18,10 @@ Real-data mode (--observed) refuses without --unblind; not used before the power
 --resp_power (synthetic only): late-weight index of the response-aligned kernel (last 0.2 s minus 0.6-0.4 s before the
 response) on datasets from the integrator and from E, classified by distance to each model's predicted index.
 
-Usage: python -m scripts.ddm.fluctuation_kernel --power | --resp_power [--datasets 20] [--ref_reps 10]
+--observed --unblind (amendment 8, primacy-analysis-plan.md): the late-weight index of the recorded choices, classified
+against the saved v2 predictions with the pre-specified verdict rule; no simulation.
+
+Usage: python -m scripts.ddm.fluctuation_kernel --power | --resp_power [--datasets 20] [--ref_reps 10] | --observed --unblind
 """
 
 import argparse
@@ -175,6 +178,46 @@ def resp_report(df: pd.DataFrame) -> None:
     print(df.groupby(["mouse", "generator"])["index"].std().unstack().round(2).to_string())
 
 
+def observed(inputs: dict, processed: Path) -> pd.DataFrame:
+    """Amendment 8 (primacy-analysis-plan.md): late-weight index of the recorded choices, scored against the saved
+    v2 predictions and the synthetic reference distributions of the summed squared distance. No simulation."""
+    syn = pd.read_csv(processed / "ddm" / "fluctuation_kernel_resp_power_v2.csv")
+    pred = syn.groupby("mouse")[["pred_I", "pred_E"]].first()
+    rows_out = []
+    for mouse in sorted(np.unique(inputs["subject_id"])):
+        rows = mouse_trials(inputs, mouse)
+        f = fluctuation(inputs, rows)
+        k = kernel(f, inputs["rt"][rows], inputs["choice"][rows], RESP_BINS, "response")
+        rows_out.append({"mouse": mouse, "index": late_index(k), "n": int((inputs["choice"][rows] >= 0).sum()),
+                         **pred.loc[mouse].to_dict(), **{f"k{j}": v for j, v in enumerate(k)}})
+    return pd.DataFrame(rows_out), syn
+
+
+def observed_report(df: pd.DataFrame, syn: pd.DataFrame) -> None:
+    from scipy import stats
+
+    s_i, s_e = ((df["index"] - df.pred_I) ** 2).sum(), ((df["index"] - df.pred_E) ** 2).sum()
+    syn = syn.assign(dI=(syn["index"] - syn.pred_I) ** 2, dE=(syn["index"] - syn.pred_E) ** 2)
+    g = syn.groupby(["generator", "dataset"])[["dI", "dE"]].sum()
+    q_i, q_e = np.percentile(g.loc["I", "dI"], 95), np.percentile(g.loc["E", "dE"], 95)
+    fits_i, fits_e = s_i <= q_i, s_e <= q_e
+    if s_i < s_e and fits_i and not fits_e:
+        verdict = "supports accumulation"
+    elif s_e < s_i and fits_e and not fits_i:
+        verdict = "supports extrema detection"
+    elif not fits_i and not fits_e:
+        verdict = "neither model fits"
+    else:
+        verdict = "not distinguished"
+    m, sd, n = df["index"].mean(), df["index"].std(), len(df)
+    h = stats.t.ppf(0.975, n - 1) * sd / np.sqrt(n)
+    print("\nper mouse (late-weight index, % coh):")
+    print(df[["mouse", "n", "index", "pred_I", "pred_E"]].round(3).to_string(index=False))
+    print(f"\nS_I = {s_i:.2f} (q95 under I {q_i:.2f}); S_E = {s_e:.2f} (q95 under E {q_e:.2f})")
+    print(f"group mean index {m:.3f}, 95% t interval [{m - h:.3f}, {m + h:.3f}] (n = {n}; descriptive)")
+    print(f"VERDICT (amendment 8): {verdict}")
+
+
 def report(df: pd.DataFrame, resp: dict) -> None:
     from scipy import stats
 
@@ -211,7 +254,9 @@ if __name__ == "__main__":
     if args.observed:
         if not args.unblind:
             raise SystemExit("refusing to compute kernels of recorded choices without --unblind (power check first)")
-        raise SystemExit("observed mode is specified in amendment 8, which is not written yet")
+        df, syn = observed(inputs, processed)
+        df.to_csv(processed / "ddm" / "fluctuation_kernel_observed_2026-10-26.csv", index=False)
+        observed_report(df, syn)
     if args.power:
         df, resp = power(inputs, processed, args.datasets, args.ref_reps)
         df.to_csv(processed / "ddm" / "fluctuation_kernel_power_v2.csv", index=False)
