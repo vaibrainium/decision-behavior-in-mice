@@ -647,3 +647,24 @@ accumulator difference. The accumulator (0/50 fits above 20%) was not affected. 
    least; others after an audit); fit sets in which no fit exceeds 50% are unchanged, because the rule cannot bind
    at their optimum. Downstream jobs using refitted models (P2, ES3, F1a, ES2) are rerun.
 4. **Reported:** results before and after the cap, and the empty-cell penalty decomposition.
+
+---
+
+## Amendment 12 (2026-10-27): common model re-selected under the responded-only rule (parsimony rules 2-3 as written)
+
+**Decided by V. Thakur, 2026-10-27** (option A: apply the rules as written). Responded-only control-only CV (amendments
+9 and 11; analysis log 8.4g; plan 2026-10-26-v2-refits-and-strategy-recovery.md): removing sv worsens held-out fit
+beyond the > 10 noise threshold in 4/10 mice only (summed +278), so sv fails rule 2 ("in most mice"); guesses pass
+(8/10, +431); leak, urgency and both fail (alternative better > 10 in 2, 1, 1 mice; none better by most). A free guess
+bias clearly helps in 1/10 mice (+50 summed), so rule 3 fixes guess_bias at 0.5.
+
+1. **New common model (C'):** L0U0V0Z0G1, fast-only guesses, guess_bias fixed at 0.5. Secondary baseline: L1U1V0Z0G1,
+   same guess form. Rapid forgetting (E'): L1U0V0Z0G1, leak 20-200/s, same guess form. Discrete-sample extrema (ES'):
+   the C' components with the amendment-10 sample rule. Free-leak description: L1U0V0Z0G1, leak 0-200/s.
+2. **Check of rule 3 on C':** after the C' fits, free versus fixed guess bias is compared on C' (existing free-bias
+   L0U0V0Z0G1 CV fits vs the new fixed-bias ones); if a free bias clearly improves fit (> 10 in most mice), it is restored
+   and the decision recorded here.
+3. **Everything downstream is redone with C'** (amendments 9-11 apply): control comparisons with E' and ES', strategy
+   recovery for E' and ES', pulse predictions, gates, pulse gain, calibration, strategy tests. Code: `--model_set nosv`.
+4. **Reported:** the sv-model results (amendments 9-11) as a sensitivity analysis next to the C' results; that the common
+   model changed because the analysed trial set changed; sv's earlier 8/10 versus 4/10 now.

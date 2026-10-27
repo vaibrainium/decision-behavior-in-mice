@@ -939,6 +939,34 @@ sbatch --array=0-79 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.model_recovery,
 ```
 Job ids of the 2026-10-27 run: `.agents/plans/2026-10-26-v2-refits-and-strategy-recovery.md` (log).
 
+### 8.4h Common model without sv (2026-10-27; primacy plan amendment 12)
+Responded-only selection (8.4g) drops sv (rule 2: 4/10 mice) and fixes guess_bias (rule 3). New set `--model_set nosv`:
+primary L0U0V0Z0G1, secondary L1U1V0Z0G1, E L1U0V0Z0G1 (leak 20-200), ES = primary with the sample rule; all fast-only
+guesses, guess_bias 0.5. Code at the amendment-12 commit or later; every fit also has the 50% response cap (amendment 11).
+```bash
+# N1 common model, control-only CV (50); rule-3 check against the free-bias L0U0V0Z0G1 fits in ddm/fits_resp_fast_only
+env EXTRA_ARGS="--responded_only --guess_model fast_only --fixed_guess_bias --variants L0U0V0Z0G1 --splits ccv0 ccv1 ccv2 ccv3 ccv4 --warm_start_from ddm/fits_resp_fast_only --out_dir ddm/fits_nosv" sbatch --array=0-49 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+# N2 E, control-only CV + control (60)
+env EXTRA_ARGS="--responded_only --guess_model fast_only --fixed_guess_bias --variants L1U0V0Z0G1 --splits ccv0 ccv1 ccv2 ccv3 ccv4 control --leak_bounds 20 200 --out_dir ddm/fits_nosv_leak20-200" sbatch --array=0-59 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+# N3 ES (60)
+env EXTRA_ARGS="--responded_only --guess_model fast_only --fixed_guess_bias --extrema_samples --variants L0U0V0Z0G1 --splits ccv0 ccv1 ccv2 ccv3 ccv4 control --out_dir ddm/fits_nosv_es" sbatch --array=0-59 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+# N4 free leak 0-200, control (10)
+env EXTRA_ARGS="--responded_only --guess_model fast_only --fixed_guess_bias --variants L1U0V0Z0G1 --splits control --leak_bounds 0 200 --out_dir ddm/fits_nosv_leak0-200" sbatch --array=0-9 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+# N5 final 50-rep fits: control (tasks 0-19, shared GPUs) and all trials (tasks 20-39, > 5 h: walkerlab GPUs)
+env EXTRA_ARGS="--responded_only --guess_model fast_only --fixed_guess_bias --variants L0U0V0Z0G1 L1U1V0Z0G1 --splits control all --n_reps 50 --out_dir ddm/fits_nosv_final" sbatch --array=0-19 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+env EXTRA_ARGS="--responded_only --guess_model fast_only --fixed_guess_bias --variants L0U0V0Z0G1 L1U1V0Z0G1 --splits control all --n_reps 50 --out_dir ddm/fits_nosv_final" sbatch -p gpu-a100 -A gpu-a100-walkerlab --qos=normal --array=20-39 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+# After N5 control (0-19): P1 predictions (20), P3 pulse gain (20); after P3: P4 calibration (800, two halves)
+sbatch --array=0-19 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.primacy,EXTRA_ARGS="--predict --responded_only --model_set nosv --baselines primary secondary --fits_dir ddm/fits_nosv_final --out_dir ddm/primacy_nosv" --time=00:30:00 scripts/slurm/fit_mouse_ddm.slurm
+sbatch --array=0-19 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.fit_pulse_gain,EXTRA_ARGS="--responded_only --model_set nosv --fits_dir ddm/fits_nosv_final --out_dir ddm/primacy_revised_nosv" --time=02:00:00 scripts/slurm/fit_mouse_ddm.slurm
+for off in 0 400; do sbatch --dependency=afterok:<P3> --array=0-399 --export=ALL,JOB_OFFSET=$off,MODULE=scripts.ddm.primacy_calibration,EXTRA_ARGS="--responded_only --model_set nosv --fits_dir ddm/fits_nosv_final --gain_dir ddm/primacy_revised_nosv --out_dir ddm/primacy_calibration_nosv" --time=00:30:00 scripts/slurm/fit_mouse_ddm.slurm; done
+# After N2 (+ drift_gain bound check): P2 E predictions (10); after N3: ES3 ES predictions (10)
+sbatch --array=0-9 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.primacy,EXTRA_ARGS="--predict --responded_only --model_set nosv --baselines extrema --fits_dir ddm/fits_nosv_leak20-200 --out_dir ddm/primacy_nosv" --time=00:30:00 scripts/slurm/fit_mouse_ddm.slurm
+sbatch --array=0-9 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.primacy,EXTRA_ARGS="--predict --responded_only --model_set nosv --baselines extrema_samples --fits_dir ddm/fits_nosv_es --out_dir ddm/primacy_nosv" --time=00:30:00 scripts/slurm/fit_mouse_ddm.slurm
+# After N5 control + N2 / N3: strategy recovery for E (80) and ES (80)
+sbatch --array=0-79 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.model_recovery,EXTRA_ARGS="--responded_only --strategy --model_set nosv --fits_dir ddm/fits_nosv_final ddm/fits_nosv_leak20-200 --out_dir ddm/recovery_strategy_nosv" --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+sbatch --array=0-79 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.model_recovery,EXTRA_ARGS="--responded_only --strategy --model_set nosv --extrema_samples --fits_dir ddm/fits_nosv_final ddm/fits_nosv_es --out_dir ddm/recovery_strategy_es_nosv" --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+```
+
 ### 8.5 Analysis
 ```bash
 python -m scripts.ddm.compare_models                                  # generation 3
