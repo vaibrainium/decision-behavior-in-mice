@@ -13,6 +13,9 @@ data quantiles; such cells instead cost EMPTY_CELL_PENALTY per data trial. (The 
 predictions, which a model can exploit the same way.)
 
 Data and predictions use rt = inf and choice = -1 for censored trials. Condition labels can be any numbers.
+
+include_censored=False scores responded data only (no censored data trials): the outcome term is then a binomial over
+{choice 0, choice 1} among the simulated responses, i.e. the likelihood conditional on a response within the window.
 """
 
 import numpy as np
@@ -22,7 +25,8 @@ EMPTY_CELL_PENALTY = 20.0  # per data trial, ~ -log(2e-9)
 
 
 class CensoredQMLE:
-    def __init__(self, nbins: int = 9, rt_nllh_weight: float = 1.0, alpha: float = 0.5):
+    def __init__(self, nbins: int = 9, rt_nllh_weight: float = 1.0, alpha: float = 0.5, include_censored: bool = True):
+        self.include_censored = include_censored
         self.nbins = nbins
         self.rt_nllh_weight = rt_nllh_weight
         self.alpha = alpha
@@ -43,7 +47,9 @@ class CensoredQMLE:
     def compute_nll(self, rt_pred, choice_pred, rt_data, choice_data, cond_pred, cond_data) -> float:
         rt_pred, choice_pred, cond_pred = (np.asarray(x) for x in (rt_pred, choice_pred, cond_pred))
         rt_data, choice_data, cond_data = (np.asarray(x) for x in (rt_data, choice_data, cond_data))
-        outcomes = np.array([0, 1, CENSORED])
+        if not self.include_censored and (choice_data == CENSORED).any():
+            raise ValueError("include_censored=False expects responded data only")
+        outcomes = np.array([0, 1, CENSORED] if self.include_censored else [0, 1])
         total = 0.0
         for cond in np.unique(cond_data):
             d, m = cond_data == cond, cond_pred == cond

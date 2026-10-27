@@ -49,6 +49,9 @@ MIN_RT = {"ucla": (0.3, "floor"), "uw": (0.3, "floor")}  # never "truncate": the
 DT = 0.001
 N_FOLDS = 5
 LIKELIHOOD_PARAMS = {"method": "qmle_censored", "nbins": 9, "rt_nllh_weight": 1.0}
+# Responses at 0.3-5 s only (V. Thakur, 2026-10-27: trials without a response by 5 s are not analysed); the likelihood
+# is then conditional on a response by 5 s.
+RESPONDED_LIKELIHOOD_PARAMS = {**LIKELIHOOD_PARAMS, "include_censored": False}
 EVAL_SEED = 12345  # held-out scoring uses the same noise draws for every variant
 DE_TOL = {"tol": 0.0, "atol": 1.0}  # stop when the population's NLL spread is within 1 unit (not 1% of the NLL)
 
@@ -138,6 +141,12 @@ def load_inputs(path: Path) -> dict:
         return {k: f[k] for k in f.files}
 
 
+def responded_only(inputs: dict) -> dict:
+    """Drop trials without a response by 5 s (choice -1) from every per-trial array."""
+    keep = inputs["choice"] >= 0
+    return {k: (v[keep] if isinstance(v, np.ndarray) and v.ndim >= 1 and len(v) == len(keep) else v) for k, v in inputs.items()}
+
+
 def to_ms(frames: np.ndarray, frame_rate: int, dt: float = DT) -> np.ndarray:
     """Hold each frame's value for its duration on the 1 ms simulation grid."""
     n_steps = int(round(frames.shape[1] / frame_rate / dt))
@@ -216,7 +225,7 @@ def output_path(out_dir: Path, job: dict) -> Path:
 
 
 def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations: int, guess_model: str = "single", warm_dirs: list[Path] | None = None, time_varying_gain: bool = False, signed_leak: bool = False, fixed_guess_bias: bool = False, leak_bounds: tuple[float, float] | None = None, drift_gain_max: float | None = None,
-            front_end: str | None = None) -> dict:
+            front_end: str | None = None, likelihood_params: dict = LIKELIHOOD_PARAMS) -> dict:
     mouse_rows = np.flatnonzero(inputs["subject_id"] == job["mouse"])
     is_control = inputs["sched_pulse_type"][mouse_rows] == 0
     split = job["split"]
@@ -238,7 +247,7 @@ def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations:
     rigs = np.unique(inputs["data_source"][mouse_rows])
     assert len(rigs) == 1, f"{job['mouse']} has trials from {rigs}"
     min_rt = MIN_RT[rigs[0]]
-    model = MouseDDM(free_params=free, fixed_params=fixed, device=DEVICE, likelihood_params=LIKELIHOOD_PARAMS, censor_at=CENSOR_AT, min_rt=min_rt)
+    model = MouseDDM(free_params=free, fixed_params=fixed, device=DEVICE, likelihood_params=likelihood_params, censor_at=CENSOR_AT, min_rt=min_rt)
     data, stimulus = select(inputs, train)
     t0 = time.time()
     seeds, seeds_used = warm_start_seeds(job, list(free), warm_dirs or [])
@@ -257,7 +266,7 @@ def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations:
         "n_reps": n_reps,
         "max_iterations": max_iterations,
         "de_tol": DE_TOL,
-        "likelihood_params": LIKELIHOOD_PARAMS,
+        "likelihood_params": likelihood_params,
         "guess_model": guess_model,
         "time_varying_gain": time_varying_gain,
         "signed_leak": signed_leak,
@@ -309,12 +318,15 @@ if __name__ == "__main__":
     parser.add_argument("--fixed_guess_bias", action="store_true", help="fix guess_bias at 0.5 (guesses at chance; parsimony rule 3)")
     parser.add_argument("--leak_bounds", type=float, nargs=2, metavar=("LO", "HI"), help="leak_rate bounds (/s) in variants with leak, e.g. 20 200 for the extrema-detection model (primacy plan, amendment 4)")
     parser.add_argument("--front_end", choices=list(FRONT_ENDS), help="visual front end on the drift input (primacy plan, amendment 7): power or norm")
+    parser.add_argument("--responded_only", action="store_true", help="drop trials without a response by 5 s; likelihood conditional on a response")
     parser.add_argument("--drift_gain_max", type=float, help="upper bound of drift_gain (default 20); amendment 5: 200 for the extrema-detection model if its fits reach 20")
     args = parser.parse_args()
 
     processed = Path(dir_config.data.processed)
     args.out_dir = args.out_dir or (("ddm/fits_guess" if args.guess_model == "single" else f"ddm/fits_guess_{args.guess_model}") + ("_W" if args.time_varying_gain else "") + ("_NL" if args.signed_leak else "") + ("_FB" if args.fixed_guess_bias else "") + (f"_leak{args.leak_bounds[0]:g}-{args.leak_bounds[1]:g}" if args.leak_bounds else "") + (f"_gain{args.drift_gain_max:g}" if args.drift_gain_max else "") + (f"_fe-{args.front_end}" if args.front_end else ""))
     inputs = load_inputs(processed / args.inputs)
+    if args.responded_only:
+        inputs = responded_only(inputs)
     grid = build_grid(inputs, args.variants, args.splits)
     job_ids = [int(x) for x in Path(args.job_file).read_text().split()] if args.job_file else None
     if args.list:
@@ -334,4 +346,5 @@ if __name__ == "__main__":
             logger.info("skipping %s: output exists (use --force to refit)", job)
         else:
             logger.info("job %s: %s", args.job_id, job)
-            run_job(inputs, job, processed / args.out_dir, args.n_reps, args.max_iterations, args.guess_model, [processed / d for d in args.warm_start_from], args.time_varying_gain, args.signed_leak, args.fixed_guess_bias, args.leak_bounds, args.drift_gain_max, args.front_end)
+            run_job(inputs, job, processed / args.out_dir, args.n_reps, args.max_iterations, args.guess_model, [processed / d for d in args.warm_start_from], args.time_varying_gain, args.signed_leak, args.fixed_guess_bias, args.leak_bounds, args.drift_gain_max, args.front_end,
+                    RESPONDED_LIKELIHOOD_PARAMS if args.responded_only else LIKELIHOOD_PARAMS)
