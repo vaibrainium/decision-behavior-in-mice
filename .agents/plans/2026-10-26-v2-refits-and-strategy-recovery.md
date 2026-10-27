@@ -146,3 +146,7 @@ No change to v1 inputs or v1 fits; the first paper version is unaffected.
     bias: 1/10 mice (was 3/10). AUTHOR DECISION needed before any change to the common model.
   * Free leak 0-200 (capped refit): leak 0.0-1.8 /s in all mice (time constants > 0.5 s); the earlier DBM13 70 ms was the
     degenerate fit.
+- 2026-10-27: amendment 12 (nosv common model) submitted on Hyak at 116b802: N1 ccv 42462227 (log verified: ccv0,
+  include_censored False, no sv/guess_bias fitted), N2 E 42462309, N3 ES 42462350, N4 free leak 42462357, N5 final
+  control 42462390, N5 all-trial long tasks 28,34,35,37,38,39 on gpu-a100 42462459, other all-trial tasks 42462461.
+  Old cancelled: 42454391 (sv E cap refit), 42433981 (sv calibration 2nd half), 42422579 (sv R6 remainder).
