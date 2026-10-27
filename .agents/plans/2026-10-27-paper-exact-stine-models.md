@@ -67,3 +67,4 @@ Collapsing-bound ("elaborated") version; their mean-RT fitting objective; gates 
 - 2026-10-27: amendment 13 addendum: DDMx drift_gain lower bound 0.01 (NOMINAL_DDM_GAIN_MIN); rerun DDMx fits
   (fits_resp_nominal_ddm_g001), DDMx predictions (primacy_exact2_resp, _lead+50, _lead-50; ESx predictions to be copied
   in locally from primacy_exact_resp*), recovery (recovery_exact2_resp, all 80).
+- 2026-10-27: DDMx g001 refit 42491645 (60/60 COMPLETED); predictions 42492100 (rule lead), 42493231 (+50), 42493235 (-50); recovery 42493255 (80, recovery_exact2_resp). Next: rsync; copy ESx predictions from primacy_exact_resp* into primacy_exact2_resp* locally; bound check; rerun comparison, strategy tests, recovery verdict; report.
