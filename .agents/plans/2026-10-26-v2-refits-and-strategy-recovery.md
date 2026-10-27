@@ -162,3 +162,13 @@ No change to v1 inputs or v1 fits; the first paper version is unaffected.
   extrema detection in most mice. Bears on the THESIS precondition (spine v3); E' result and both recoveries pending.
 - 2026-10-27: amendment 12 withdrawn by the author (D005): sv model set is the analysis. nosv jobs not needed further.
 - 2026-10-27: sv set completion: E cap refit resubmitted 42466794 (skips finished); R6 missing all-trial tasks 34,35,38,39 on gpu-a100 42466826. Then P2 + F1a after E cap bound check.
+- 2026-10-27 RESULTS (sv set, responded-only, VERIFIED locally; ddm/primacy_resp/results_*_gate.pkl,
+  ddm/primacy_revised_resp/results_primary_gate.pkl, ddm/primacy_resp/results_strategy_extrema_samples.pkl):
+  * original gate, primary: departure b0 0.297 [0.170, 0.413] vs predicted pulse effect 0.036 -> FAIL; RT cells inside 0.74.
+  * original gate, secondary: 0.325 [0.211, 0.430] vs 0.022 -> FAIL; RT cells 0.82.
+  * revised gate (pulse gain), primary: 0.239 [0.083, 0.364] vs 0.060 -> FAIL; RT cells 0.74. Stopping rule
+    (amendment 6 item 8): timing test not run. Same outcome as the all-trial analysis (0.30 / 0.32 / 0.24).
+  * strategy test ES (a) vs primary (b), pulse-specific statistic: sum 12.71, SD 2.72, z 4.67, same sign in 7/10 mice
+    -> verdict by the amendment 4-5 rule: ES favoured; total log-likelihood z 1.53, not distinguished. Both models
+    fail the predictive gate; ES predicts a larger pulse effect, so the verdict reflects the less under-predicted
+    pulse response (as for E in the all-trial analysis, z 2.97, not distinguished there).
