@@ -52,3 +52,18 @@ Collapsing-bound ("elaborated") version; their mean-RT fitting objective; gates 
 - 2026-10-27: pulse timing file built locally: /mnt/data/processed/ddm/pulse_timing_global.npz sha256 01d4d378e9cdf731cbcf5a427e8a4ad869416838473ab4d4af83a7d3eaae55f4.
 - 2026-10-27: Hyak at 40dc38e, pulse timing sha256 verified. XP2 (DDMx predictions) 42488464; XP1 (ESx predictions) 42488498 after X2; XR (recovery, 80) 42488502 after X2. Pending: lead-shift sensitivity (4 submissions).
 - 2026-10-27: lead sensitivity submitted: DDMx +50 42488536, DDMx -50 42488544, ESx +50 42488548 (after X2), ESx -50 42488550 (after X2). All amendment-13 jobs queued. Next: when X2 and all of these are done, rsync fits_resp_nominal_ddm, fits_resp_nominal_es, primacy_exact_resp*, recovery_exact_resp; then step 4 (bound check, comparisons), strategy test (--strategy_model extrema_exact --strategy_baseline integration_exact --out_dir ddm/primacy_exact_resp, and per lead dir), recovery verdict, report.
+- 2026-10-27 RESULTS v1 (VERIFIED locally; SUPERSEDED for DDMx by the gain-bound refit; inline script, held-out sums in
+  scratchpad exact_heldout.csv): all outputs complete (60+60 fits, 6x10 predictions, 80 recovery).
+  * DDMx drift_gain at lower bound 0.5 in 31/60 fits; ndt at 0 in 13/60. ESx: no parameter at a bound (gain 3.7-13.1,
+    b 3.25-3.60 in control fits). C0 (control fits) DDMx -0.26..0.18, ESx -0.27..0.14.
+  * Held-out NLL (control-only CV, summed over folds), per mouse summed / better by > 10:
+    ESx - DDMx 31.3 (DDMx 3/10, ESx 1/10); DDMx - C 686.8 (C 7/10, DDMx 0/10); ESx - C 718.0 (C 6/10, ESx 0/10).
+    Reference: E - C 278.9 (C 5/10, E 0/10); ES - C 391.0 (C 6/10, ES 0/10; matches the earlier interim).
+  * Recovery: DDMx-generated scored DDMx 7, ESx 3, within 10: 10 of 20; ESx-generated scored ESx 9, DDMx 3, within 8.
+  * Pulse strategy test ESx (a) vs DDMx (b): lead as rule z 0.60 (pulse) / 0.63 (total); +50 ms -1.07 / -0.06;
+    -50 ms 2.36 / 0.63: not distinguished at any lead.
+  * Also (sv set, final): E vs primary strategy test (P2 42489706): pulse z 1.43, same sign 7/10, total z 0.00 -> not
+    distinguished (ddm/primacy_resp/results_strategy.pkl).
+- 2026-10-27: amendment 13 addendum: DDMx drift_gain lower bound 0.01 (NOMINAL_DDM_GAIN_MIN); rerun DDMx fits
+  (fits_resp_nominal_ddm_g001), DDMx predictions (primacy_exact2_resp, _lead+50, _lead-50; ESx predictions to be copied
+  in locally from primacy_exact_resp*), recovery (recovery_exact2_resp, all 80).

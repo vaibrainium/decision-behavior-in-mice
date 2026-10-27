@@ -719,3 +719,11 @@ symmetric bounds (their "parsimonious" models; the collapsing-bound version is n
    Then the strategy test ESx vs DDMx as in amendment 5 (gates are not re-defined for these models).
 5. **Recovery:** ESx- and DDMx-generated control datasets (2 replicates × 10 mice), each fitted by both models, scored
    by the > 10 rule (as F1a/ES2).
+
+**Amendment 13 addendum (2026-10-27, after the first ESx/DDMx fits, comparisons and pulse tests had been computed).**
+In nominal units DDMx's drift_gain sat at its lower bound 0.5 (inherited from the motion-energy models) in 31/60 fits
+(and in 6/40 DDMx recovery fits); ESx's gains were 3.7–13.1, far from it. Following the logic of amendment 5 (a fitted
+parameter at a bound set for another input scale), DDMx is refitted with drift_gain in [0.01, 20]; ESx is unchanged.
+All DDMx-dependent outputs (fits, pulse predictions at the three leads, the 80 recovery jobs) are rerun into new
+folders; the first results are kept and reported as superseded. DDMx's non-decision time at its lower bound 0 in
+13/60 fits is a natural bound (fast responses without a guess component), reported, not changed.

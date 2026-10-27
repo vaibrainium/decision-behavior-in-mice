@@ -108,6 +108,9 @@ EXTREMA_SAMPLE_GAIN_MAX = 200.0
 # drift_offset bounds wide enough for |C0| <= NOMINAL_C0_MAX at any gain (C0 = -drift_offset / drift_gain).
 NOMINAL_VARIANT = "L0U0V0Z0G0"
 NOMINAL_C0_MAX = 0.3
+# Amendment 13 addendum: in nominal units the integration model's drift_gain sat at 0.5 (the motion-energy bound) in
+# 31/60 fits, so its lower bound is 0.01 (the extrema model, gains 3.7-13.1, keeps 0.5).
+NOMINAL_DDM_GAIN_MIN = 0.01
 # Model sets for the downstream scripts (--model_set). "sv": the common model chosen 2026-10-22 with all trials;
 # "nosv": re-selected under the responded-only rule with parsimony rules 2-3 (primacy plan, amendment 12).
 MODEL_SETS = {
@@ -152,6 +155,8 @@ def make_params(variant: str, guess_model: str = "single", time_varying_gain: bo
             else:
                 fixed[name] = FixedParam(off_value)
     if nominal_input:
+        if not extrema_samples:
+            free["drift_gain"] = FreeParam(NOMINAL_DDM_GAIN_MIN, free["drift_gain"].upper_bound)
         c0_offset = NOMINAL_C0_MAX * free["drift_gain"].upper_bound
         free["drift_offset"] = FreeParam(-c0_offset, c0_offset)
         if "z" in free:
