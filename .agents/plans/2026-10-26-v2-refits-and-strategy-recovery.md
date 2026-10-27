@@ -112,3 +112,5 @@ No change to v1 inputs or v1 fits; the first paper version is unaffected.
   R4 42422510, R5 42422512, R6 42422579, P1 42422581 (after R6), P3 42422586 (after R6), P4 first half 42422652
   (after P3). P4 second half (JOB_OFFSET=400) refused by QOSMaxSubmitJobPerUserLimit; resubmit when the queue drains.
   Not yet submitted: P4 second half; ES1-ES3; after R4 + bound check: P2, F1a.
+- 2026-10-27: ES submitted: ES1 42424538, ES3 42424540 (after ES1), ES2 42424542 (after ES1 and R6). Still pending:
+  P4 second half (when queue < ~600), P2 + F1a (after R4 rsync and drift-gain bound check).
