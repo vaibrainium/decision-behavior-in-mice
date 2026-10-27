@@ -70,3 +70,11 @@ Collapsing-bound ("elaborated") version; their mean-RT fitting objective; gates 
 - 2026-10-27: DDMx g001 refit 42491645 (60/60 COMPLETED); predictions 42492100 (rule lead), 42493231 (+50), 42493235 (-50); recovery 42493255 (80, recovery_exact2_resp). Next: rsync; copy ESx predictions from primacy_exact_resp* into primacy_exact2_resp* locally; bound check; rerun comparison, strategy tests, recovery verdict; report.
 - 2026-10-27: tried Partition=gpu-a100,ckpt-all Account=gpu-a100-walkerlab on pending recovery tasks 36-79 -> InvalidQOS (one QOS per job; ckpt-gpu not valid for the A100 account). Reverted with Partition=ckpt-all Account=ckpt-walkerlab QOS=ckpt-gpu. To use both pools, split the array by hand (A100 part: -p gpu-a100 -A gpu-a100-walkerlab --qos=normal).
 - 2026-10-27: recovery tasks 38-79 were starting one at a time after the partition edit; cancelled and resubmitted as 42497999 (--array=38-79, JOB_OFFSET=0, same out_dir). F1a (42489714) left the queue.
+- 2026-10-27 RESULTS v2 (VERIFIED locally; DDMx = fits_resp_nominal_ddm_g001): DDMx gain 0.25-1.13 (none near 0.01;
+  12/60 below 0.52, i.e. the old bound did bind); ndt at 0 in 17/60. Refit improved DDMx held-out by 31.4 summed.
+  * Held-out (control-only CV): ESx - DDMx 62.7 summed (DDMx better > 10 in 3/10, ESx in 0/10);
+    DDMx - C 655.4 (C 6/10, DDMx 0/10); ESx - C 718.0 (C 6/10, ESx 0/10).
+  * Pulse strategy test ESx vs DDMx (ESx predictions copied from primacy_exact_resp* into primacy_exact2_resp*;
+    identical files): rule lead pulse z 1.20 / total z 1.86; +50 ms -0.58 / 0.13; -50 ms 3.39 (same sign 5/10) / 1.27;
+    verdict "not distinguished" at all three.
+  * Recovery v2 (recovery_exact2_resp): 38/80 so far; pending 42497999.
