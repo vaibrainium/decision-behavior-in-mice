@@ -1,0 +1,31 @@
+choice,q,mean,sem,count,source
+against pulse,0.1,-11.16,17.98,10,data
+against pulse,0.3,-3.75,34.33,10,data
+against pulse,0.5,39.42,40.93,10,data
+against pulse,0.7,41.64,51.94,10,data
+against pulse,0.9,-47.79,78.47,10,data
+toward pulse,0.1,15.58,26.83,10,data
+toward pulse,0.3,-22.99,23.23,10,data
+toward pulse,0.5,-70.45,50.34,10,data
+toward pulse,0.7,-109.1,58.63,10,data
+toward pulse,0.9,-151.72,83.8,10,data
+against pulse,0.1,2.09,3.15,10,model (observed bins)
+against pulse,0.3,18.44,5.82,10,model (observed bins)
+against pulse,0.5,44.02,6.54,10,model (observed bins)
+against pulse,0.7,60.13,8.62,10,model (observed bins)
+against pulse,0.9,62.06,13.46,10,model (observed bins)
+toward pulse,0.1,0.38,1.68,10,model (observed bins)
+toward pulse,0.3,-17.9,4.43,10,model (observed bins)
+toward pulse,0.5,-42.26,4.09,10,model (observed bins)
+toward pulse,0.7,-63.67,5.86,10,model (observed bins)
+toward pulse,0.9,-64.04,12.61,10,model (observed bins)
+against pulse,0.1,2.09,3.15,10,model (own bins)
+against pulse,0.3,18.44,5.82,10,model (own bins)
+against pulse,0.5,44.02,6.54,10,model (own bins)
+against pulse,0.7,60.13,8.62,10,model (own bins)
+against pulse,0.9,62.06,13.46,10,model (own bins)
+toward pulse,0.1,0.38,1.68,10,model (own bins)
+toward pulse,0.3,-17.9,4.43,10,model (own bins)
+toward pulse,0.5,-42.26,4.09,10,model (own bins)
+toward pulse,0.7,-63.67,5.86,10,model (own bins)
+toward pulse,0.9,-64.04,12.61,10,model (own bins)

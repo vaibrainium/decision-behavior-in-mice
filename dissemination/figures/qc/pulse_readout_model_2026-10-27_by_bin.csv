@@ -1,0 +1,46 @@
+set,bin,mean,sem,count,source
+±100%,0,0.0228,0.0484,10,data
+±100%,1,0.1177,0.0238,10,data
+±100%,2,0.023,0.0247,10,data
+±100%,3,0.0051,0.0281,10,data
+±100%,4,0.0369,0.058,10,data
+|c| ≤ 36%,0,0.0491,0.012,10,data
+|c| ≤ 36%,1,0.0434,0.0261,10,data
+|c| ≤ 36%,2,0.0617,0.0224,10,data
+|c| ≤ 36%,3,-0.0016,0.0173,10,data
+|c| ≤ 36%,4,-0.0044,0.0245,10,data
+control accuracy ±100%,0,0.6582,0.0314,10,data
+control accuracy ±100%,1,0.846,0.0235,10,data
+control accuracy ±100%,2,0.8787,0.0216,10,data
+control accuracy ±100%,3,0.8977,0.027,10,data
+control accuracy ±100%,4,0.9056,0.0277,10,data
+±100%,0,0.025,0.0049,10,model (observed bins)
+±100%,1,0.0355,0.0076,10,model (observed bins)
+±100%,2,0.0164,0.006,10,model (observed bins)
+±100%,3,-0.0014,0.0019,10,model (observed bins)
+±100%,4,-0.0178,0.0037,10,model (observed bins)
+|c| ≤ 36%,0,0.0171,0.0025,10,model (observed bins)
+|c| ≤ 36%,1,0.0319,0.0051,10,model (observed bins)
+|c| ≤ 36%,2,0.0179,0.0033,10,model (observed bins)
+|c| ≤ 36%,3,-0.0038,0.0023,10,model (observed bins)
+|c| ≤ 36%,4,-0.016,0.004,10,model (observed bins)
+control accuracy ±100%,0,0.6254,0.0315,10,model (observed bins)
+control accuracy ±100%,1,0.8495,0.0291,10,model (observed bins)
+control accuracy ±100%,2,0.9027,0.0192,10,model (observed bins)
+control accuracy ±100%,3,0.905,0.0211,10,model (observed bins)
+control accuracy ±100%,4,0.8637,0.0274,10,model (observed bins)
+±100%,0,0.0249,0.0052,10,model (own bins)
+±100%,1,0.0354,0.0064,10,model (own bins)
+±100%,2,0.0157,0.005,10,model (own bins)
+±100%,3,-0.0019,0.0018,10,model (own bins)
+±100%,4,-0.0173,0.0039,10,model (own bins)
+|c| ≤ 36%,0,0.0148,0.003,10,model (own bins)
+|c| ≤ 36%,1,0.0325,0.0053,10,model (own bins)
+|c| ≤ 36%,2,0.0149,0.0029,10,model (own bins)
+|c| ≤ 36%,3,-0.005,0.0026,10,model (own bins)
+|c| ≤ 36%,4,-0.017,0.0041,10,model (own bins)
+control accuracy ±100%,0,0.6198,0.0308,10,model (own bins)
+control accuracy ±100%,1,0.8473,0.0293,10,model (own bins)
+control accuracy ±100%,2,0.9039,0.0198,10,model (own bins)
+control accuracy ±100%,3,0.906,0.0213,10,model (own bins)
+control accuracy ±100%,4,0.8673,0.0264,10,model (own bins)

@@ -29,12 +29,19 @@ def trials():
     t = pd.DataFrame({"mouse": inputs["subject_id"], "coh": np.round(inputs["signed_coherence"] * 100).astype(int),
                       "s": np.sign(inputs["sched_pulse_type"]), "choice": np.where(inputs["choice"] == 1, 1, -1), "rt": inputs["rt"]})
     t = t[sym.reindex(inputs["agg_code"].astype(str)).to_numpy().astype(bool)].copy()
-    # RT bins from control quintiles per mouse x |coherence|
+    return assign_bins(t, bin_edges(t))
+
+
+def bin_edges(t):
+    """Inner RT quintile edges of control trials per (mouse, |coherence|)."""
+    return {k: np.quantile(g.rt[g.s == 0], np.linspace(0, 1, N_BINS + 1))[1:-1] for k, g in t.groupby([t.mouse, t.coh.abs()])}
+
+
+def assign_bins(t, edges):
+    t = t.copy()
     t["bin"] = -1
-    for (mouse, ac), g in t.groupby([t.mouse, t.coh.abs()]):
-        edges = np.quantile(g.rt[g.s == 0], np.linspace(0, 1, N_BINS + 1))
-        edges[0], edges[-1] = -np.inf, np.inf
-        t.loc[g.index, "bin"] = np.digitize(g.rt, edges[1:-1])
+    for k, g in t.groupby([t.mouse, t.coh.abs()]):
+        t.loc[g.index, "bin"] = np.digitize(g.rt, edges[k])
     return t
 
 
