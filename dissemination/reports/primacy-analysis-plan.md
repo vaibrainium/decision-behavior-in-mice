@@ -624,3 +624,26 @@ Responded-only rules of amendment 9 apply throughout.
 5. **Recovery:** Es-generated datasets (2 replicates x 10 mice) fitted by the accumulator and by Es, same rule as F1a.
 6. **Pulse:** frozen pulse predictions from the Es control fits, and the strategy test Es vs primary, as for E.
 7. **Checks before fitting:** both simulator backends agree; zero-drift mean decision time matches 1/(2(1 − Φ(b))) steps.
+
+---
+
+## Amendment 11 (2026-10-27): plausible response rate in responded-only fits
+
+**Decided by V. Thakur, 2026-10-27** (option 1). Found after the responded-only fits (amendments 9-10) had run and the
+control-trial comparison had been computed: the likelihood conditional on a response by 5 s does not constrain how
+often a model responds, and 7/50 rapid-forgetting (E) CV fits, 1/50 discrete-sample (ES) CV fits and the E all-control
+fit of PSUIM10 converged to parameter sets predicting no response on ~98% of trials (bound ~7.5 noise SDs vs ~3.4 in
+the other E fits), all in the two mice with the fewest trials (DBM13, PSUIM10). On held-out folds those fits leave whole
+conditions without a simulated response (empty-cell penalty), which supplied 2,020 of the 2,291 summed E-minus-
+accumulator difference. The accumulator (0/50 fits above 20%) was not affected. Code was checked and is not at fault.
+
+1. **Rule.** In training (the fit objective of every responded-only model fit, model-recovery fits and pulse-gain fits),
+   a parameter set whose simulated trials include more than **50%** without a response by 5 s is rejected (objective
+   1e6, as for invalid parameters). Held-out scoring is unchanged.
+2. **Justification and limit.** The analysed trials are those with a response; mice responded within 5 s on ~85% of
+   trials overall (4,537 of 30,030 excluded). The cap uses only that aggregate fact, generously, not the excluded trials'
+   outcomes. It is a model constraint introduced after seeing results, stated as such in the paper.
+3. **Refits.** Every responded-only fit set in which any fit exceeds the cap is refitted with the rule (E and ES at
+   least; others after an audit); fit sets in which no fit exceeds 50% are unchanged, because the rule cannot bind
+   at their optimum. Downstream jobs using refitted models (P2, ES3, F1a, ES2) are rerun.
+4. **Reported:** results before and after the cap, and the empty-cell penalty decomposition.
