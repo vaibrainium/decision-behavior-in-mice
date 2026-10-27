@@ -533,3 +533,65 @@ pulse trials out of sample. If it does, it revisits the strategy and timing ques
 - **Status:** the primacy analysis stays closed as stated in the closing note above. The front-end comparison on
   control trials is reported as exploratory.
 
+
+---
+
+## Amendment 8 (2026-10-26, before any recorded-choice kernel was computed): response-aligned kernel, integrator vs extrema detection
+
+**Adopted by V. Thakur, 2026-10-26** ("add it if it pans out", G0 of the accumulation-first paper variant). Scope:
+integration vs extrema detection on control trials only. Primacy stays closed (the stimulus-aligned primacy index has
+no power; fluctuation-kernel report 2026-10-25). No refit, no new simulation, no pulse trials.
+
+1. **Trials, fluctuation, bins, index:** exactly as in `.agents/plans/2026-10-25-fluctuation-kernel-power.md` step 3 and
+   its v2 rerun: responded control trials, |coh| <= 36%, 48 mislabelled pulse trials excluded; f(t) = N(t) minus its
+   frames 10-299 mean; response-aligned 100 ms bins -0.6..0 s (frames before the response and >= 0.1 s after onset);
+   late-weight index = mean of the last two bins minus the first two (% coh), per mouse, from recorded choices and RTs.
+2. **Predictions:** `pred_I` and `pred_E` per mouse as saved in `/mnt/data/processed/ddm/fluctuation_kernel_resp_power_v2.csv`
+   (10 reps, seed 4000; fits_final primary control fit and fits_guess_fast_only_leak20-200 control fit). Not recomputed.
+3. **Statistics:** S_I = sum over mice of (index - pred_I)^2, S_E likewise. Reference distributions: S_I over the 20
+   synthetic I datasets and S_E over the 20 synthetic E datasets of the same file; q95 = 95th percentile (numpy linear).
+4. **Verdict (fixed now):**
+   - **Supports accumulation** if S_I < S_E, S_I <= q95(S_I | I) and S_E > q95(S_E | E).
+   - **Supports extrema detection** if the mirror condition holds.
+   - **Neither model fits** if S_I > q95(S_I | I) and S_E > q95(S_E | E).
+   - **Not distinguished** otherwise.
+5. **Descriptive only:** group mean index with a two-sided 95% t interval across mice (n = 10); per-mouse index next to
+   both predictions. Per-mouse verdicts are not drawn (only PSUIM6/7 were reliably classified in the power check).
+6. **Reporting:** whatever the verdict, the result is written to a report and given to the authors. "Supports
+   accumulation" makes it eligible as supporting evidence for the control-trial comparison in the accumulation-first
+   paper. "Supports extrema detection" bears on that claim and goes to the authors before any manuscript decision.
+   "Neither" or "not distinguished" is reported as inconclusive.
+7. **Caveats fixed in advance:** predictions come from fits to the same control trials (in-sample); the power check had
+   no refit (optimistic); only two candidate models.
+
+**Amendment 8, operating characteristics (2026-10-26, before the recorded-choice run).** The verdict rule applied to
+the 20 + 20 saved synthetic datasets: I-generated 14 "supports accumulation", 5 "not distinguished", 1 "neither"; E-generated
+19 "supports extrema detection", 1 "neither"; no wrong-model verdicts. (In-sample: the q95 thresholds come from the same datasets.)
+
+---
+
+## Amendment 9 (2026-10-27): responded-only re-analysis of the whole pulse pipeline (sensitivity re-analysis)
+
+**Decided by V. Thakur, 2026-10-27** ("let's do full re-run"), after the rule that trials without a response by 5 s
+(435 with no RT, 4,102 answered after 5 s; 4,537 in the DDM inputs) must not enter any analysis. This is a
+re-analysis of a procedure that was closed (closing note, amendment 6 item 8) after its results were seen. It is
+reported as a sensitivity re-analysis, never as the original prespecified test, and the original results stay reported.
+
+1. **Data.** All fits, predictions, gates, gain fits, calibration and strategy checks use responded trials only
+   (choice >= 0; RT 0.3–5 s): `--responded_only`, which removes those trials from the inputs on load.
+2. **Likelihood.** The censored QMLE without its censored category (`include_censored=False`): per condition a binomial
+   over left/right among simulated responses plus the unchanged RT term, i.e. conditional on a response by 5 s.
+3. **Control fits.** Baselines and E from the responded-only refits (`ddm/fits_resp_final` control split, 50 reps, for
+   primary and secondary, used for both the original-gate predictions and the pulse gain; `ddm/fits_resp_fast_only_leak20-200`
+   control split for E). Originally the first-pass predictions used the 15-rep fits; the 50-rep fits are used for both here.
+4. **Gates.** Gate 1 (departure) unchanged. Gate 2 (pulse-trial RT quantiles inside the 95% range in >= 80% of mouse x
+   quantile cells) unchanged, computed on simulated responses. **Gate 3 (censored fraction) is dropped**: under the rule
+   there is no observed censored fraction. Gate pass = gate 1 and gate 2.
+5. **Calibration (amendment 6 item 6).** Unchanged design (4 levels x 20 datasets x 10 mice). Synthetic pulse-trial
+   outcomes are generated on the mouse's responded pulse trials; synthetic trials without a response by 5 s are then
+   dropped before the gain fits and the gate, as for real data.
+6. **Strategy test and its power check.** Unchanged statistic (already computed on responded trials); predictions and
+   synthetic datasets restricted to responded trials.
+7. **Rules unchanged:** stopping rule (amendment 6 item 8) still applies: if the revised gate fails, the timing test is
+   not run. No other model revision.
+8. **Reporting:** original and responded-only results side by side; differences in denominators stated.
