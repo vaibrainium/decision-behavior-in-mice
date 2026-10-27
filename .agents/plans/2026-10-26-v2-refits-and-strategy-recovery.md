@@ -130,3 +130,8 @@ No change to v1 inputs or v1 fits; the first paper version is unaffected.
   (fits_resp_fast_only_leak0-200_cap). Downstream: ES3 42454650 (after ES refit, -> primacy_resp), ES2 42454671 (after
   ES refit, -> recovery_strategy_es_resp_cap). P2 and F1a wait for the E refit and its drift-gain check.
   Pending audit: the 4 remaining R6 all-trial fits.
+- 2026-10-27 RESULT (interim, VERIFIED locally; scratchpad es_cap_audit.csv): ES refit with cap (fits_resp_fast_only_es_cap,
+  60 fits): predicted no-response max 0.19 (median 0.07), no empty-cell penalty, no bound at a limit, drift_gain max 19.1.
+  Held-out NLL ES minus accumulator (control-only CV, summed over folds): DBM12 23.2, DBM13 10.7, DBM14 -0.6, DBM15 9.2,
+  DBM5 5.1, DBM6 25.4, PSUIM10 -2.4, PSUIM5 32.1, PSUIM6 118.8, PSUIM7 169.3; summed 391.0; accumulator better by > 10
+  in 6/10, ES in 0/10. Pre-cap ES comparison was 796.6 (420 of it empty-cell penalty from DBM13 ccv1).
