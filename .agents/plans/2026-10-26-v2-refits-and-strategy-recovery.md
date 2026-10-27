@@ -122,3 +122,11 @@ No change to v1 inputs or v1 fits; the first paper version is unaffected.
 - 2026-10-27: F1a submitted: 42451102 (16 h). All batches now queued; next: rsync processed/ddm/ when done, then local analysis.
 - 2026-10-27: R6_35 preempted after > 5 h; R6_35, ES2 (42424542) and F1a (42451102) switched to Partition=gpu-a100,ckpt-all.
 - 2026-10-27: R6_39 also preempted after > 5 h. R6_35 and R6_39 moved to gpu-a100 with Account=gpu-a100-walkerlab QOS=normal (ckpt account/QOS had kept them pending). ES2/F1a back on ckpt-all (ES2 tasks 1-4 had started under the mixed setting).
+- 2026-10-27: degenerate responded-only fits found (conditional likelihood leaves response rate free; ~98% simulated
+  non-responses in DBM13/PSUIM10 E, ES, R2 leak variant, R5 free leak). Amendment 11 (cap 50%) adopted and coded
+  (4a06b1e); audit: all other fit sets <= 38%. F1a (42451102) and ES2 (42424542) cancelled; old P2/ES3 predictions
+  moved to ddm/archive/precap_2026-10-27/ on Hyak and NAS. Refits with the cap: E 42454391 (fits_resp_fast_only_leak20-200_cap),
+  ES 42454463 (fits_resp_fast_only_es_cap), R2 leak variant 42454549 (fits_resp_fast_only_cap), R5 free leak 42454615
+  (fits_resp_fast_only_leak0-200_cap). Downstream: ES3 42454650 (after ES refit, -> primacy_resp), ES2 42454671 (after
+  ES refit, -> recovery_strategy_es_resp_cap). P2 and F1a wait for the E refit and its drift-gain check.
+  Pending audit: the 4 remaining R6 all-trial fits.
