@@ -878,6 +878,61 @@ for fe in power norm; do
 done
 ```
 
+### 8.4g Responded-only re-run (2026-10-27; primacy plan amendments 9-10)
+Every analysis uses responses at 0.3-5 s only (author rule 2026-10-27); `--responded_only` drops the rest on load and
+makes the likelihood conditional on a response by 5 s. Inputs are the unchanged `ddm/ddm_inputs_global.npz`
+(sha256 1a6c88ec...; same file on Hyak and the NAS). Code at 34105d2 or later.
+
+**Lessons from the first attempt:**
+- Write every argument out in full. The first submission (jobs 42415371-79) used `$C`/`$CCV`, which were empty in the
+  submitting shell, so the jobs ran the default single guess model on all-trial CV without `--responded_only`. They
+  were cancelled and their outputs deleted on Hyak.
+- Check the first task's log before submitting the rest: it must show a `ccv` split (or `control`/`all`) and
+  `'include_censored': False`:
+  `f=$(ls slurm-logs/mouse_ddm_<JOBID>_*.err | head -1); grep -m1 "INFO | job " $f; grep -m1 "Initialized MouseDDM" $f`
+- Fits skip existing outputs, so move or delete wrong outputs before resubmitting.
+- Hyak refuses submissions above ~1000 queued tasks per user (QOSMaxSubmitJobPerUserLimit); check
+  `squeue -u vthakur -r | wc -l` and submit large batches as the queue drains.
+- Jobs that use the final fits need only their control split (R6 tasks 0-19). The all-trial fits (tasks 20-39) take
+  hours; release dependants once the 20 control files exist: `scontrol update JobId=<id> Dependency=`.
+- Time limits from the earlier runs (median / max): predictions 0.2 / 0.6 min, pulse gain 1.3 / 3.3 min, calibration
+  1.1 / 2.6 min, recovery fits 23 / 197 min. Use 30 min for predictions, pulse gain and calibration, 8 h for recovery,
+  16 h for model fits (the R6 all-trial 50-rep fits ran > 5 h). Pending jobs can be shortened with
+  `scontrol update JobId=<id> TimeLimit=00:30:00` (not lengthened).
+- Long fits preempted repeatedly on ckpt-all can be resubmitted per task on walkerlab's own GPUs (`-p <walkerlab
+  partition> --array=<task ids>`); finished tasks are skipped.
+
+**Commands (from the repo root on Hyak, bash):**
+```bash
+# R1 common model, control-only CV (50)
+env EXTRA_ARGS="--responded_only --guess_model fast_only --variants L0U0V1Z0G1 --splits ccv0 ccv1 ccv2 ccv3 ccv4 --warm_start_from ddm/fits_guess_fast_only --out_dir ddm/fits_resp_fast_only" sbatch --array=0-49 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+# R2 variant selection, control-only CV (250)
+env EXTRA_ARGS="--responded_only --guess_model fast_only --variants L0U0V0Z0G1 L0U0V1Z0G0 L1U0V1Z0G1 L0U1V1Z0G1 L1U1V1Z0G1 --splits ccv0 ccv1 ccv2 ccv3 ccv4 --warm_start_from ddm/fits_guess_fast_only --out_dir ddm/fits_resp_fast_only" sbatch --array=0-249 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+# R3 guess bias fixed (50)
+env EXTRA_ARGS="--responded_only --guess_model fast_only --variants L0U0V1Z0G1 --splits ccv0 ccv1 ccv2 ccv3 ccv4 --fixed_guess_bias --warm_start_from ddm/fits_guess_fast_only_FB --out_dir ddm/fits_resp_fast_only_FB" sbatch --array=0-49 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+# R4 rapid forgetting E, control-only CV + control (60); then check drift_gain < 20 (amendment 5) before P2/F1a
+env EXTRA_ARGS="--responded_only --guess_model fast_only --variants L1U0V1Z0G1 --splits ccv0 ccv1 ccv2 ccv3 ccv4 control --leak_bounds 20 200 --warm_start_from ddm/fits_guess_fast_only_leak20-200 --out_dir ddm/fits_resp_fast_only_leak20-200" sbatch --array=0-59 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+# R5 free leak 0-200, control (10)
+env EXTRA_ARGS="--responded_only --guess_model fast_only --variants L1U0V1Z0G1 --splits control --leak_bounds 0 200 --warm_start_from ddm/fits_guess_fast_only_leak0-200 --out_dir ddm/fits_resp_fast_only_leak0-200" sbatch --array=0-9 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+# R6 final 50-rep fits, control (tasks 0-19) + all (tasks 20-39)
+env EXTRA_ARGS="--responded_only --guess_model fast_only --variants L0U0V1Z0G1 L1U1V1Z0G1 --splits control all --n_reps 50 --warm_start_from ddm/fits_final --out_dir ddm/fits_resp_final" sbatch --array=0-39 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+# ES1 discrete-sample extrema detection (amendment 10), control-only CV + control (60); no warm start
+env EXTRA_ARGS="--responded_only --guess_model fast_only --extrema_samples --variants L0U0V1Z0G1 --splits ccv0 ccv1 ccv2 ccv3 ccv4 control --out_dir ddm/fits_resp_fast_only_es" sbatch --array=0-59 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+# After R6 control fits: P1 predictions primary + secondary (20), P3 pulse gain (20)
+sbatch --array=0-19 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.primacy,EXTRA_ARGS="--predict --responded_only --baselines primary secondary --fits_dir ddm/fits_resp_final --out_dir ddm/primacy_resp" --time=00:30:00 scripts/slurm/fit_mouse_ddm.slurm
+sbatch --array=0-19 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.fit_pulse_gain,EXTRA_ARGS="--responded_only --fits_dir ddm/fits_resp_final --out_dir ddm/primacy_revised_resp" --time=00:30:00 scripts/slurm/fit_mouse_ddm.slurm
+# After P3: P4 calibration (800, two halves)
+for off in 0 400; do sbatch --dependency=afterok:<P3> --array=0-399 --export=ALL,JOB_OFFSET=$off,MODULE=scripts.ddm.primacy_calibration,EXTRA_ARGS="--responded_only --fits_dir ddm/fits_resp_final --gain_dir ddm/primacy_revised_resp --out_dir ddm/primacy_calibration_resp" --time=00:30:00 scripts/slurm/fit_mouse_ddm.slurm; done
+# After R4 (and the bound check): P2 E predictions (10)
+sbatch --array=0-9 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.primacy,EXTRA_ARGS="--predict --responded_only --baselines extrema --fits_dir ddm/fits_resp_fast_only_leak20-200 --out_dir ddm/primacy_resp" --time=00:30:00 scripts/slurm/fit_mouse_ddm.slurm
+# After ES1: ES3 ES predictions (10)
+sbatch --array=0-9 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.primacy,EXTRA_ARGS="--predict --responded_only --baselines extrema_samples --fits_dir ddm/fits_resp_fast_only_es --out_dir ddm/primacy_resp" --time=00:30:00 scripts/slurm/fit_mouse_ddm.slurm
+# After R4 + R6 control: F1a strategy recovery I vs E (80); after ES1 + R6 control: ES2 I vs ES (80)
+sbatch --array=0-79 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.model_recovery,EXTRA_ARGS="--responded_only --strategy --fits_dir ddm/fits_resp_final ddm/fits_resp_fast_only_leak20-200 --out_dir ddm/recovery_strategy_resp" --time=08:00:00 scripts/slurm/fit_mouse_ddm.slurm
+sbatch --array=0-79 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.model_recovery,EXTRA_ARGS="--responded_only --strategy --extrema_samples --fits_dir ddm/fits_resp_final ddm/fits_resp_fast_only_es --out_dir ddm/recovery_strategy_es_resp" --time=08:00:00 scripts/slurm/fit_mouse_ddm.slurm
+```
+Job ids of the 2026-10-27 run: `.agents/plans/2026-10-26-v2-refits-and-strategy-recovery.md` (log).
+
 ### 8.5 Analysis
 ```bash
 python -m scripts.ddm.compare_models                                  # generation 3
