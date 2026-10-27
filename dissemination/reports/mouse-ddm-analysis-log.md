@@ -896,8 +896,8 @@ makes the likelihood conditional on a response by 5 s. Inputs are the unchanged 
 - Jobs that use the final fits need only their control split (R6 tasks 0-19). The all-trial fits (tasks 20-39) take
   hours; release dependants once the 20 control files exist: `scontrol update JobId=<id> Dependency=`.
 - Time limits from the earlier runs (median / max): predictions 0.2 / 0.6 min, pulse gain 1.3 / 3.3 min, calibration
-  1.1 / 2.6 min, recovery fits 23 / 197 min. Use 30 min for predictions, pulse gain and calibration, 8 h for recovery,
-  16 h for model fits (the R6 all-trial 50-rep fits ran > 5 h). Pending jobs can be shortened with
+  1.1 / 2.6 min, recovery fits 23 / 197 min. Use 30 min for predictions and calibration, 2 h for pulse gain (calibration
+  depends on it), 16 h for recovery (decides the thesis; nothing waits on it) and model fits (the R6 all-trial 50-rep fits ran > 5 h). Pending jobs can be shortened with
   `scontrol update JobId=<id> TimeLimit=00:30:00` (not lengthened).
 - Long fits preempted repeatedly on ckpt-all can be resubmitted per task on walkerlab's own GPUs (`-p <walkerlab
   partition> --array=<task ids>`); finished tasks are skipped.
@@ -920,7 +920,7 @@ env EXTRA_ARGS="--responded_only --guess_model fast_only --variants L0U0V1Z0G1 L
 env EXTRA_ARGS="--responded_only --guess_model fast_only --extrema_samples --variants L0U0V1Z0G1 --splits ccv0 ccv1 ccv2 ccv3 ccv4 control --out_dir ddm/fits_resp_fast_only_es" sbatch --array=0-59 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
 # After R6 control fits: P1 predictions primary + secondary (20), P3 pulse gain (20)
 sbatch --array=0-19 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.primacy,EXTRA_ARGS="--predict --responded_only --baselines primary secondary --fits_dir ddm/fits_resp_final --out_dir ddm/primacy_resp" --time=00:30:00 scripts/slurm/fit_mouse_ddm.slurm
-sbatch --array=0-19 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.fit_pulse_gain,EXTRA_ARGS="--responded_only --fits_dir ddm/fits_resp_final --out_dir ddm/primacy_revised_resp" --time=00:30:00 scripts/slurm/fit_mouse_ddm.slurm
+sbatch --array=0-19 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.fit_pulse_gain,EXTRA_ARGS="--responded_only --fits_dir ddm/fits_resp_final --out_dir ddm/primacy_revised_resp" --time=02:00:00 scripts/slurm/fit_mouse_ddm.slurm
 # After P3: P4 calibration (800, two halves)
 for off in 0 400; do sbatch --dependency=afterok:<P3> --array=0-399 --export=ALL,JOB_OFFSET=$off,MODULE=scripts.ddm.primacy_calibration,EXTRA_ARGS="--responded_only --fits_dir ddm/fits_resp_final --gain_dir ddm/primacy_revised_resp --out_dir ddm/primacy_calibration_resp" --time=00:30:00 scripts/slurm/fit_mouse_ddm.slurm; done
 # After R4 (and the bound check): P2 E predictions (10)
@@ -928,8 +928,8 @@ sbatch --array=0-9 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.primacy,EXTRA_AR
 # After ES1: ES3 ES predictions (10)
 sbatch --array=0-9 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.primacy,EXTRA_ARGS="--predict --responded_only --baselines extrema_samples --fits_dir ddm/fits_resp_fast_only_es --out_dir ddm/primacy_resp" --time=00:30:00 scripts/slurm/fit_mouse_ddm.slurm
 # After R4 + R6 control: F1a strategy recovery I vs E (80); after ES1 + R6 control: ES2 I vs ES (80)
-sbatch --array=0-79 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.model_recovery,EXTRA_ARGS="--responded_only --strategy --fits_dir ddm/fits_resp_final ddm/fits_resp_fast_only_leak20-200 --out_dir ddm/recovery_strategy_resp" --time=08:00:00 scripts/slurm/fit_mouse_ddm.slurm
-sbatch --array=0-79 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.model_recovery,EXTRA_ARGS="--responded_only --strategy --extrema_samples --fits_dir ddm/fits_resp_final ddm/fits_resp_fast_only_es --out_dir ddm/recovery_strategy_es_resp" --time=08:00:00 scripts/slurm/fit_mouse_ddm.slurm
+sbatch --array=0-79 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.model_recovery,EXTRA_ARGS="--responded_only --strategy --fits_dir ddm/fits_resp_final ddm/fits_resp_fast_only_leak20-200 --out_dir ddm/recovery_strategy_resp" --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+sbatch --array=0-79 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.model_recovery,EXTRA_ARGS="--responded_only --strategy --extrema_samples --fits_dir ddm/fits_resp_final ddm/fits_resp_fast_only_es --out_dir ddm/recovery_strategy_es_resp" --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
 ```
 Job ids of the 2026-10-27 run: `.agents/plans/2026-10-26-v2-refits-and-strategy-recovery.md` (log).
 
