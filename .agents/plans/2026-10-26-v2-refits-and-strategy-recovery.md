@@ -115,3 +115,7 @@ No change to v1 inputs or v1 fits; the first paper version is unaffected.
 - 2026-10-27: ES submitted: ES1 42424538, ES3 42424540 (after ES1), ES2 42424542 (after ES1 and R6). Still pending:
   P4 second half (when queue < ~600), P2 + F1a (after R4 rsync and drift-gain bound check).
 - 2026-10-27: P4 second half submitted: 42433981 (after P3). Remaining: P2 + F1a after R4 rsync and bound check.
+- 2026-10-27: R4 bound check (local, rsynced fits): drift_gain max 5.05 (control) / 15.5 (ccv), none near 20 -> no
+  amendment-5 refit; leak at lower bound 20/s in 2/50 ccv fits (caveat). P1/P3/ES2 released from the R6 dependency
+  (all 20 R6 control fits present; only all-trial fits still running). P2 submitted: 42450548. F1a refused by
+  QOSMaxSubmitJobPerUserLimit (~935 queued); resubmit when the queue drains.
