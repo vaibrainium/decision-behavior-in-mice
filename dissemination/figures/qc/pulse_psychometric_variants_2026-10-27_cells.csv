@@ -1,0 +1,185 @@
+category,coh,mean,sem,n_mice,source
+congruent,-36,0.3225,0.0478,9,observed
+congruent,-18,0.358,0.0562,8,observed
+congruent,-9,0.432,0.033,10,observed
+congruent,9,0.645,0.0382,10,observed
+congruent,18,0.6409,0.0415,10,observed
+congruent,36,0.7398,0.0329,10,observed
+control,-100,0.1685,0.0188,10,observed
+control,-36,0.3306,0.0372,10,observed
+control,-18,0.3669,0.0262,10,observed
+control,-9,0.4574,0.0254,10,observed
+control,0,0.5178,0.0246,10,observed
+control,9,0.5398,0.0342,10,observed
+control,18,0.6417,0.0253,10,observed
+control,36,0.7424,0.0352,10,observed
+control,100,0.8437,0.022,10,observed
+incongruent,-100,0.2176,0.028,10,observed
+incongruent,-36,0.3476,0.0304,10,observed
+incongruent,-18,0.4919,0.0371,10,observed
+incongruent,-9,0.4945,0.0298,10,observed
+incongruent,9,0.5992,0.0374,10,observed
+incongruent,18,0.5469,0.0591,8,observed
+incongruent,36,0.7106,0.0544,9,observed
+incongruent,100,0.8027,0.0294,10,observed
+congruent,-36,0.3369,0.0275,9,primary (accumulator)
+congruent,-18,0.4213,0.0273,8,primary (accumulator)
+congruent,-9,0.4642,0.0228,10,primary (accumulator)
+congruent,9,0.5653,0.0223,10,primary (accumulator)
+congruent,18,0.608,0.0248,10,primary (accumulator)
+congruent,36,0.6792,0.0281,10,primary (accumulator)
+control,-100,0.1809,0.023,10,primary (accumulator)
+control,-36,0.3481,0.0234,10,primary (accumulator)
+control,-18,0.429,0.022,10,primary (accumulator)
+control,-9,0.4703,0.02,10,primary (accumulator)
+control,0,0.5161,0.0197,10,primary (accumulator)
+control,9,0.5586,0.0215,10,primary (accumulator)
+control,18,0.6009,0.0231,10,primary (accumulator)
+control,36,0.6779,0.0268,10,primary (accumulator)
+control,100,0.8329,0.0254,10,primary (accumulator)
+incongruent,-100,0.1859,0.0236,10,primary (accumulator)
+incongruent,-36,0.3631,0.0247,10,primary (accumulator)
+incongruent,-18,0.4386,0.0228,10,primary (accumulator)
+incongruent,-9,0.4779,0.0186,10,primary (accumulator)
+incongruent,9,0.5519,0.0222,10,primary (accumulator)
+incongruent,18,0.6094,0.0259,8,primary (accumulator)
+incongruent,36,0.6695,0.0303,9,primary (accumulator)
+incongruent,100,0.8261,0.0256,10,primary (accumulator)
+congruent,-36,0.3247,0.0252,9,"secondary (+ leak, urgency)"
+congruent,-18,0.4199,0.0258,8,"secondary (+ leak, urgency)"
+congruent,-9,0.4611,0.0206,10,"secondary (+ leak, urgency)"
+congruent,9,0.5616,0.0196,10,"secondary (+ leak, urgency)"
+congruent,18,0.6082,0.0242,10,"secondary (+ leak, urgency)"
+congruent,36,0.6837,0.0283,10,"secondary (+ leak, urgency)"
+control,-100,0.1707,0.0226,10,"secondary (+ leak, urgency)"
+control,-36,0.3381,0.0236,10,"secondary (+ leak, urgency)"
+control,-18,0.4218,0.0212,10,"secondary (+ leak, urgency)"
+control,-9,0.4651,0.0192,10,"secondary (+ leak, urgency)"
+control,0,0.5134,0.0185,10,"secondary (+ leak, urgency)"
+control,9,0.5593,0.0205,10,"secondary (+ leak, urgency)"
+control,18,0.6044,0.0233,10,"secondary (+ leak, urgency)"
+control,36,0.6828,0.0283,10,"secondary (+ leak, urgency)"
+control,100,0.8392,0.0266,10,"secondary (+ leak, urgency)"
+incongruent,-100,0.1754,0.0233,10,"secondary (+ leak, urgency)"
+incongruent,-36,0.3442,0.026,10,"secondary (+ leak, urgency)"
+incongruent,-18,0.4276,0.0231,10,"secondary (+ leak, urgency)"
+incongruent,-9,0.4729,0.0182,10,"secondary (+ leak, urgency)"
+incongruent,9,0.5535,0.0234,10,"secondary (+ leak, urgency)"
+incongruent,18,0.6148,0.0251,8,"secondary (+ leak, urgency)"
+incongruent,36,0.6784,0.0321,9,"secondary (+ leak, urgency)"
+incongruent,100,0.8355,0.0269,10,"secondary (+ leak, urgency)"
+congruent,-36,0.33,0.0247,9,primary + pulse gain (CV)
+congruent,-18,0.4223,0.0281,8,primary + pulse gain (CV)
+congruent,-9,0.4566,0.0188,10,primary + pulse gain (CV)
+congruent,9,0.5743,0.0249,10,primary + pulse gain (CV)
+congruent,18,0.6108,0.0244,10,primary + pulse gain (CV)
+congruent,36,0.6831,0.0292,10,primary + pulse gain (CV)
+control,-100,0.1809,0.023,10,primary + pulse gain (CV)
+control,-36,0.3481,0.0234,10,primary + pulse gain (CV)
+control,-18,0.429,0.022,10,primary + pulse gain (CV)
+control,-9,0.4703,0.02,10,primary + pulse gain (CV)
+control,0,0.5161,0.0197,10,primary + pulse gain (CV)
+control,9,0.5586,0.0215,10,primary + pulse gain (CV)
+control,18,0.6009,0.0231,10,primary + pulse gain (CV)
+control,36,0.6779,0.0268,10,primary + pulse gain (CV)
+control,100,0.8329,0.0254,10,primary + pulse gain (CV)
+incongruent,-100,0.2064,0.0257,10,primary + pulse gain (CV)
+incongruent,-36,0.3712,0.0266,10,primary + pulse gain (CV)
+incongruent,-18,0.4482,0.0255,10,primary + pulse gain (CV)
+incongruent,-9,0.4942,0.0243,10,primary + pulse gain (CV)
+incongruent,9,0.543,0.0199,10,primary + pulse gain (CV)
+incongruent,18,0.6038,0.0216,8,primary + pulse gain (CV)
+incongruent,36,0.6623,0.0266,9,primary + pulse gain (CV)
+incongruent,100,0.8278,0.0239,10,primary + pulse gain (CV)
+congruent,-36,0.3215,0.0232,9,secondary + pulse gain (CV)
+congruent,-18,0.4177,0.026,8,secondary + pulse gain (CV)
+congruent,-9,0.455,0.0175,10,secondary + pulse gain (CV)
+congruent,9,0.5722,0.0238,10,secondary + pulse gain (CV)
+congruent,18,0.6082,0.0247,10,secondary + pulse gain (CV)
+congruent,36,0.6895,0.0282,10,secondary + pulse gain (CV)
+control,-100,0.1707,0.0226,10,secondary + pulse gain (CV)
+control,-36,0.3381,0.0236,10,secondary + pulse gain (CV)
+control,-18,0.4218,0.0212,10,secondary + pulse gain (CV)
+control,-9,0.4651,0.0192,10,secondary + pulse gain (CV)
+control,0,0.5134,0.0185,10,secondary + pulse gain (CV)
+control,9,0.5593,0.0205,10,secondary + pulse gain (CV)
+control,18,0.6044,0.0233,10,secondary + pulse gain (CV)
+control,36,0.6828,0.0283,10,secondary + pulse gain (CV)
+control,100,0.8392,0.0266,10,secondary + pulse gain (CV)
+incongruent,-100,0.1913,0.0263,10,secondary + pulse gain (CV)
+incongruent,-36,0.3562,0.0285,10,secondary + pulse gain (CV)
+incongruent,-18,0.4352,0.0261,10,secondary + pulse gain (CV)
+incongruent,-9,0.4827,0.0238,10,secondary + pulse gain (CV)
+incongruent,9,0.5487,0.0199,10,secondary + pulse gain (CV)
+incongruent,18,0.6142,0.0223,8,secondary + pulse gain (CV)
+incongruent,36,0.6751,0.0309,9,secondary + pulse gain (CV)
+incongruent,100,0.8318,0.0262,10,secondary + pulse gain (CV)
+congruent,-36,0.3378,0.0238,9,E: rapid forgetting (leak 20-200)
+congruent,-18,0.4389,0.0263,8,E: rapid forgetting (leak 20-200)
+congruent,-9,0.4643,0.0265,10,E: rapid forgetting (leak 20-200)
+congruent,9,0.5691,0.027,10,E: rapid forgetting (leak 20-200)
+congruent,18,0.6108,0.0293,10,E: rapid forgetting (leak 20-200)
+congruent,36,0.6817,0.0343,10,E: rapid forgetting (leak 20-200)
+control,-100,0.1834,0.0187,10,E: rapid forgetting (leak 20-200)
+control,-36,0.3504,0.0234,10,E: rapid forgetting (leak 20-200)
+control,-18,0.4301,0.023,10,E: rapid forgetting (leak 20-200)
+control,-9,0.4718,0.0233,10,E: rapid forgetting (leak 20-200)
+control,0,0.5166,0.0248,10,E: rapid forgetting (leak 20-200)
+control,9,0.5594,0.0277,10,E: rapid forgetting (leak 20-200)
+control,18,0.6001,0.0301,10,E: rapid forgetting (leak 20-200)
+control,36,0.6749,0.0345,10,E: rapid forgetting (leak 20-200)
+control,100,0.8203,0.0335,10,E: rapid forgetting (leak 20-200)
+incongruent,-100,0.1959,0.0192,10,E: rapid forgetting (leak 20-200)
+incongruent,-36,0.3666,0.0236,10,E: rapid forgetting (leak 20-200)
+incongruent,-18,0.4431,0.0229,10,E: rapid forgetting (leak 20-200)
+incongruent,-9,0.4883,0.0238,10,E: rapid forgetting (leak 20-200)
+incongruent,9,0.5492,0.0278,10,E: rapid forgetting (leak 20-200)
+incongruent,18,0.6141,0.0296,8,E: rapid forgetting (leak 20-200)
+incongruent,36,0.6661,0.036,9,E: rapid forgetting (leak 20-200)
+incongruent,100,0.8089,0.0333,10,E: rapid forgetting (leak 20-200)
+congruent,-36,0.3335,0.0238,9,ES: extrema samples
+congruent,-18,0.4279,0.0235,8,ES: extrema samples
+congruent,-9,0.4665,0.015,10,ES: extrema samples
+congruent,9,0.5741,0.0193,10,ES: extrema samples
+congruent,18,0.6174,0.0234,10,ES: extrema samples
+congruent,36,0.6851,0.0302,10,ES: extrema samples
+control,-100,0.1901,0.027,10,ES: extrema samples
+control,-36,0.3593,0.0235,10,ES: extrema samples
+control,-18,0.438,0.0185,10,ES: extrema samples
+control,-9,0.4786,0.0153,10,ES: extrema samples
+control,0,0.5208,0.0164,10,ES: extrema samples
+control,9,0.5659,0.019,10,ES: extrema samples
+control,18,0.6061,0.0225,10,ES: extrema samples
+control,36,0.6786,0.0297,10,ES: extrema samples
+control,100,0.818,0.0351,10,ES: extrema samples
+incongruent,-100,0.2057,0.0276,10,ES: extrema samples
+incongruent,-36,0.377,0.0242,10,ES: extrema samples
+incongruent,-18,0.4522,0.0179,10,ES: extrema samples
+incongruent,-9,0.4968,0.0158,10,ES: extrema samples
+incongruent,9,0.553,0.0195,10,ES: extrema samples
+incongruent,18,0.6077,0.0237,8,ES: extrema samples
+incongruent,36,0.6679,0.0305,9,ES: extrema samples
+incongruent,100,0.8042,0.0358,10,ES: extrema samples
+congruent,-36,0.31,0.0227,9,free leak 0-200
+congruent,-18,0.4135,0.0249,8,free leak 0-200
+congruent,-9,0.4543,0.0204,10,free leak 0-200
+congruent,9,0.5576,0.0213,10,free leak 0-200
+congruent,18,0.6045,0.0241,10,free leak 0-200
+congruent,36,0.6851,0.0298,10,free leak 0-200
+control,-100,0.1638,0.0244,10,free leak 0-200
+control,-36,0.3257,0.0232,10,free leak 0-200
+control,-18,0.4135,0.0203,10,free leak 0-200
+control,-9,0.4579,0.0186,10,free leak 0-200
+control,0,0.5072,0.0188,10,free leak 0-200
+control,9,0.5552,0.0215,10,free leak 0-200
+control,18,0.6025,0.0245,10,free leak 0-200
+control,36,0.6836,0.0302,10,free leak 0-200
+control,100,0.8407,0.0308,10,free leak 0-200
+incongruent,-100,0.1641,0.0242,10,free leak 0-200
+incongruent,-36,0.3354,0.0239,10,free leak 0-200
+incongruent,-18,0.4172,0.0185,10,free leak 0-200
+incongruent,-9,0.4658,0.0192,10,free leak 0-200
+incongruent,9,0.5524,0.0235,10,free leak 0-200
+incongruent,18,0.6186,0.022,8,free leak 0-200
+incongruent,36,0.6779,0.0337,9,free leak 0-200
+incongruent,100,0.8392,0.031,10,free leak 0-200

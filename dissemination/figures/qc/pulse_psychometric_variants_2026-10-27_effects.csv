@@ -1,0 +1,17 @@
+source,category,mean,sem
+E: rapid forgetting (leak 20-200),congruent,0.76,0.18
+E: rapid forgetting (leak 20-200),incongruent,1.41,0.19
+ES: extrema samples,congruent,1.11,0.15
+ES: extrema samples,incongruent,1.61,0.16
+free leak 0-200,congruent,0.35,0.15
+free leak 0-200,incongruent,0.63,0.15
+observed,congruent,1.97,1.33
+observed,incongruent,4.01,2.17
+primary (accumulator),congruent,0.6,0.16
+primary (accumulator),incongruent,0.98,0.06
+primary + pulse gain (CV),congruent,1.06,0.32
+primary + pulse gain (CV),incongruent,1.85,0.5
+"secondary (+ leak, urgency)",congruent,0.35,0.09
+"secondary (+ leak, urgency)",incongruent,0.71,0.13
+secondary + pulse gain (CV),congruent,0.8,0.23
+secondary + pulse gain (CV),incongruent,1.33,0.46
