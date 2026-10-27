@@ -674,3 +674,10 @@ bias on C' (held-out NLL, control-only CV, responded-only): free bias better by 
 better by > 10 in 1/10 -> rule 3 keeps guess_bias fixed at 0.5; no change. Note for reporting: adding sv to the
 fixed-bias model improves fit by > 10 in 5/10 mice (summed 265.6, worse in none); 5/10 is not "most mice", so sv stays
 out under rule 2, but the decision is borderline (4/10 with a free bias).
+
+**Amendment 12 withdrawn (2026-10-27, V. Thakur: "the drift-variability model only").** After the C' (no sv) comparison
+with discrete-sample extrema detection had been seen (accumulator better by > 10 in 1/10 mice, ES' in 1/10, summed
+81.4; with sv: 6/10, 391.0), the author reverted to the sv model set (L0U0V1Z0G1, free guess bias; amendments 9-11) as
+the analysis. This is a deviation from parsimony rule 2 (sv improves held-out fit by > 10 in 4/10 mice with a free
+bias, 5/10 with a fixed bias; summed +278 / +266; worse in none), made after seeing both results. The C' results
+remain on record in this plan and the refit-plan log.

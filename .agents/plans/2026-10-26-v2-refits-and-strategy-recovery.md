@@ -160,3 +160,4 @@ No change to v1 inputs or v1 fits; the first paper version is unaffected.
   8/10 within 10. With sv in both models (sv set) the same comparison was 391.0 summed, accumulator better in 6/10.
   => Under the re-selected model the control comparison does not distinguish accumulation from discrete-sample
   extrema detection in most mice. Bears on the THESIS precondition (spine v3); E' result and both recoveries pending.
+- 2026-10-27: amendment 12 withdrawn by the author (D005): sv model set is the analysis. nosv jobs not needed further.
