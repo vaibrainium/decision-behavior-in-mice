@@ -78,3 +78,4 @@ Collapsing-bound ("elaborated") version; their mean-RT fitting objective; gates 
     identical files): rule lead pulse z 1.20 / total z 1.86; +50 ms -0.58 / 0.13; -50 ms 3.39 (same sign 5/10) / 1.27;
     verdict "not distinguished" at all three.
   * Recovery v2 (recovery_exact2_resp): 38/80 so far; pending 42497999.
+- 2026-10-27: 42497999 stalled again on ckpt-all (reason None, nothing running); cancelled; tasks 39-79 resubmitted on lab A100s: 42498684 (-p gpu-a100 -A gpu-a100-walkerlab --qos=normal).
