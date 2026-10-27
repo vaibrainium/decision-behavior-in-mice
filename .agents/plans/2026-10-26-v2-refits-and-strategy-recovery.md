@@ -150,3 +150,4 @@ No change to v1 inputs or v1 fits; the first paper version is unaffected.
   include_censored False, no sv/guess_bias fitted), N2 E 42462309, N3 ES 42462350, N4 free leak 42462357, N5 final
   control 42462390, N5 all-trial long tasks 28,34,35,37,38,39 on gpu-a100 42462459, other all-trial tasks 42462461.
   Old cancelled: 42454391 (sv E cap refit), 42433981 (sv calibration 2nd half), 42422579 (sv R6 remainder).
+- 2026-10-27: nosv downstream: P1 42462505, P3 42462508, P4 first half 42462543 (after P3), ES3 42462545, ES2 42462576. Pending: P4 second half (job limit), P2 + F1a after N2 (42462309) bound check.
