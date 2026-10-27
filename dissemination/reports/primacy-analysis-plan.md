@@ -668,3 +668,9 @@ bias clearly helps in 1/10 mice (+50 summed), so rule 3 fixes guess_bias at 0.5.
    recovery for E' and ES', pulse predictions, gates, pulse gain, calibration, strategy tests. Code: `--model_set nosv`.
 4. **Reported:** the sv-model results (amendments 9-11) as a sensitivity analysis next to the C' results; that the common
    model changed because the analysed trial set changed; sv's earlier 8/10 versus 4/10 now.
+
+**Amendment 12, item 2 check (2026-10-27, after the C' CV fits, before any downstream result):** free vs fixed guess
+bias on C' (held-out NLL, control-only CV, responded-only): free bias better by > 10 in 2/10 mice (summed 37.1), fixed
+better by > 10 in 1/10 -> rule 3 keeps guess_bias fixed at 0.5; no change. Note for reporting: adding sv to the
+fixed-bias model improves fit by > 10 in 5/10 mice (summed 265.6, worse in none); 5/10 is not "most mice", so sv stays
+out under rule 2, but the decision is borderline (4/10 with a free bias).

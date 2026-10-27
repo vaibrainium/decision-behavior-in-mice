@@ -152,3 +152,4 @@ No change to v1 inputs or v1 fits; the first paper version is unaffected.
   Old cancelled: 42454391 (sv E cap refit), 42433981 (sv calibration 2nd half), 42422579 (sv R6 remainder).
 - 2026-10-27: nosv downstream: P1 42462505, P3 42462508, P4 first half 42462543 (after P3), ES3 42462545, ES2 42462576. Pending: P4 second half (job limit), P2 + F1a after N2 (42462309) bound check.
 - 2026-10-27: nosv P4 second half: 42465331 (after P3). Pending: P2 + F1a after N2 bound check.
+- 2026-10-27: amendment 12 item 2 check passed (free bias 2/10 -> stays fixed); sv on the fixed-bias base 5/10 (borderline, still out).
