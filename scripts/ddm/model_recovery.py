@@ -13,6 +13,11 @@ For each (mouse, generator, replicate):
 A mechanism is recovered when, for data generated without it, the model without it scores better, and vice versa.
 NLL at the generating parameters vs at the recovered ones checks the optimizer.
 
+--strategy (accumulation-first paper, spine challenge F1a): generators and candidates are the common model and the
+rapid-forgetting model (L1U0V1Z0G1, leak 20-200/s); control trials only; generating parameters from the control-trial
+fits (<mouse>_<variant>_control.pkl), the common model from the first --fits_dir and E from the second. Asks whether the
+control-trial comparison scores E-generated data as E.
+
 Usage:
     python -m scripts.ddm.model_recovery --list
     python -m scripts.ddm.model_recovery --job_id 17
@@ -30,7 +35,8 @@ from pathlib import Path
 import numpy as np
 
 from config import dir_config
-from scripts.ddm.fit_mouse_ddm import CENSOR_AT, DE_TOL, DEVICE, LIKELIHOOD_PARAMS, MIN_RT, MouseDDM, heldout_nll, load_inputs, make_params, select
+from scripts.ddm.fit_mouse_ddm import (CENSOR_AT, DE_TOL, DEVICE, EXTREMA_LEAK_BOUNDS, LIKELIHOOD_PARAMS, MIN_RT, RESPONDED_LIKELIHOOD_PARAMS, MouseDDM, heldout_nll, load_inputs,
+                                       make_params, responded_only, select)
 
 logger = logging.getLogger(__name__)
 
@@ -39,17 +45,22 @@ GUESS_MODEL = "fast_only"
 ADDED = ["L", "U"]  # mechanisms dropped from the common model whose detectability is checked
 MODELS = ([COMMON] + [COMMON[:i + 1] + "0" + COMMON[i + 2:] for i in range(0, len(COMMON), 2) if COMMON[i + 1] == "1"]  # each mechanism removed
           + [COMMON.replace(f"{f}0", f"{f}1") for f in ADDED])  # leak or urgency added
+EXTREMA = "L1U0V1Z0G1"  # with leak 20-200/s (primacy plan, amendment 4)
+STRATEGY_MODELS = [COMMON, EXTREMA]
 N_REPLICATES = 2
 
 
-def build_grid(inputs: dict) -> list[dict]:
+def build_grid(inputs: dict, strategy: bool = False) -> list[dict]:
     mice = sorted(np.unique(inputs["subject_id"]))
-    return [{"mouse": m, "generator": g, "candidate": c, "replicate": r} for r in range(N_REPLICATES) for g in MODELS for c in MODELS for m in mice]
+    models = STRATEGY_MODELS if strategy else MODELS
+    return [{"mouse": m, "generator": g, "candidate": c, "replicate": r} for r in range(N_REPLICATES) for g in models for c in models for m in mice]
 
 
-def make_model(variant: str, rig: str, fixed_guess_bias: bool = False) -> MouseDDM:
-    free, fixed = make_params(variant, GUESS_MODEL, fixed_guess_bias=fixed_guess_bias)
-    return MouseDDM(free_params=free, fixed_params=fixed, device=DEVICE, likelihood_params=LIKELIHOOD_PARAMS, censor_at=CENSOR_AT, min_rt=MIN_RT[rig])
+def make_model(variant: str, rig: str, fixed_guess_bias: bool = False, strategy: bool = False, responded: bool = False) -> MouseDDM:
+    leak_bounds = EXTREMA_LEAK_BOUNDS if strategy and variant == EXTREMA else None
+    free, fixed = make_params(variant, GUESS_MODEL, fixed_guess_bias=fixed_guess_bias, leak_bounds=leak_bounds)
+    likelihood_params = RESPONDED_LIKELIHOOD_PARAMS if responded else LIKELIHOOD_PARAMS
+    return MouseDDM(free_params=free, fixed_params=fixed, device=DEVICE, likelihood_params=likelihood_params, censor_at=CENSOR_AT, min_rt=MIN_RT[rig])
 
 
 def synthesize(model: MouseDDM, params: dict, stimulus: np.ndarray, condition: np.ndarray, seed: int) -> dict:
@@ -78,26 +89,52 @@ def generating_params(fits_dirs: list[Path], mouse: str, variant: str, fixed_gue
     raise FileNotFoundError(f"no all-trial fit of {mouse} {variant} ({GUESS_MODEL}, fixed_guess_bias={fixed_guess_bias}) in {[str(d) for d in fits_dirs]}")
 
 
-def run_job(inputs: dict, job: dict, fits_dirs: list[Path], out_dir: Path, n_reps: int, max_iterations: int, fixed_guess_bias: bool = False) -> dict:
+def strategy_params(fits_dirs: list[Path], mouse: str, variant: str) -> dict:
+    """Control-trial fit of the common model (first folder) or of E (second folder); E's leak must lie in 20-200/s."""
+    path = fits_dirs[STRATEGY_MODELS.index(variant)] / f"{mouse}_{variant}_control.pkl"
+    with open(path, "rb") as f:
+        r = pickle.load(f)
+    if (r.get("guess_model", "single"), r.get("fixed_guess_bias", False)) != (GUESS_MODEL, False):
+        raise ValueError(f"{path}: guess form does not match")
+    if variant == EXTREMA and not EXTREMA_LEAK_BOUNDS[0] <= r["parameters"]["leak_rate"] <= EXTREMA_LEAK_BOUNDS[1]:
+        raise ValueError(f"{path}: leak_rate outside the extrema-detection bounds")
+    logger.info("generating parameters from %s", path)
+    return r["parameters"]
+
+
+def responded(data: dict, stimulus: np.ndarray) -> tuple[dict, np.ndarray]:
+    """Drop simulated trials without a response by 5 s, as the real data are with --responded_only."""
+    keep = data["choice"] >= 0
+    return {k: v[keep] for k, v in data.items()}, stimulus[keep]
+
+
+def run_job(inputs: dict, job: dict, fits_dirs: list[Path], out_dir: Path, n_reps: int, max_iterations: int, fixed_guess_bias: bool = False, strategy: bool = False,
+            responded_data: bool = False) -> dict:
     rows = np.flatnonzero(inputs["subject_id"] == job["mouse"])
+    if strategy:
+        rows = rows[inputs["sched_pulse_type"][rows] == 0]
     rig = str(np.unique(inputs["data_source"][rows])[0])
     real, stimulus = select(inputs, rows)
-    true_params = generating_params(fits_dirs, job["mouse"], job["generator"], fixed_guess_bias)
+    true_params = strategy_params(fits_dirs, job["mouse"], job["generator"]) if strategy else generating_params(fits_dirs, job["mouse"], job["generator"], fixed_guess_bias)
 
     seed = zlib.crc32(f"{job['mouse']}|{job['generator']}|{job['replicate']}".encode())
-    generator = make_model(job["generator"], rig, fixed_guess_bias)
+    generator = make_model(job["generator"], rig, fixed_guess_bias, strategy, responded_data)
     train = synthesize(generator, true_params, stimulus, real["condition"], seed)
     test = synthesize(generator, true_params, stimulus, real["condition"], seed + 1)
+    train_stimulus, test_stimulus = stimulus, stimulus
+    if responded_data:
+        train, train_stimulus = responded(train, stimulus)
+        test, test_stimulus = responded(test, stimulus)
 
-    model = make_model(job["candidate"], rig, fixed_guess_bias)
+    model = make_model(job["candidate"], rig, fixed_guess_bias, strategy, responded_data)
     t0 = time.time()
-    fit = model.fit(data=train, stimulus=stimulus, labels=train["condition"], n_reps=n_reps, max_iterations=max_iterations, l1_weight=0.0, verbose=True, **DE_TOL)
+    fit = model.fit(data=train, stimulus=train_stimulus, labels=train["condition"], n_reps=n_reps, max_iterations=max_iterations, l1_weight=0.0, verbose=True, **DE_TOL)
     k = len(model.fit_keys)
     truth_train_nll = None
     if job["candidate"] == job["generator"]:
         # objective at the generating parameters with the fit's own noise draws: recovered > truth means the optimizer
         # stopped short; recovered <= truth with different parameters means the parameters are not identifiable
-        truth_train_nll = float(model._objective_function(np.array([true_params[p] for p in model.fit_keys]), train, stimulus, n_reps))
+        truth_train_nll = float(model._objective_function(np.array([true_params[p] for p in model.fit_keys]), train, train_stimulus, n_reps))
     result = {
         **job,
         "rig": rig,
@@ -108,16 +145,20 @@ def run_job(inputs: dict, job: dict, fits_dirs: list[Path], out_dir: Path, n_rep
         "free_parameters": list(model.fit_keys),
         "train_nll": float(fit["likelihood"]),
         "bic": 2 * float(fit["likelihood"]) + k * np.log(len(rows)),
-        "test_nll": heldout_nll(model, fit["parameters"], test, stimulus, n_reps),
+        "test_nll": heldout_nll(model, fit["parameters"], test, test_stimulus, n_reps),
         "fit_seconds": time.time() - t0,
         "n_reps": n_reps,
         "max_iterations": max_iterations,
         "truth_train_nll": truth_train_nll,
         "guess_model": GUESS_MODEL,
         "fixed_guess_bias": fixed_guess_bias,
+        "strategy": strategy,
+        "responded_only": responded_data,
+        "n_train": len(train["choice"]),
+        "n_test": len(test["choice"]),
     }
     if job["candidate"] == job["generator"]:
-        result["truth_test_nll"] = heldout_nll(model, true_params, test, stimulus, n_reps)
+        result["truth_test_nll"] = heldout_nll(model, true_params, test, test_stimulus, n_reps)
     model.simulator.clear_cache()
 
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -142,18 +183,23 @@ if __name__ == "__main__":
     parser.add_argument("--max_iterations", type=int, default=1000)
     parser.add_argument("--list", action="store_true")
     parser.add_argument("--force", action="store_true", help="refit even if the output exists")
+    parser.add_argument("--responded_only", action="store_true", help="real and simulated trials without a response by 5 s dropped; conditional likelihood")
+    parser.add_argument("--strategy", action="store_true", help="common model vs E on control trials (fits_dir: common-model folder, then E folder)")
     args = parser.parse_args()
 
     processed = Path(dir_config.data.processed)
     inputs = load_inputs(processed / args.inputs)
-    grid = build_grid(inputs)
+    if args.responded_only:
+        inputs = responded_only(inputs)
+    grid = build_grid(inputs, args.strategy)
+    models = STRATEGY_MODELS if args.strategy else MODELS
     if args.list:
-        print(f"{len(grid)} jobs: {len(np.unique(inputs['subject_id']))} mice x {len(MODELS)} generators x {len(MODELS)} candidates x {N_REPLICATES} replicates")
-        print("models:", MODELS)
+        print(f"{len(grid)} jobs: {len(np.unique(inputs['subject_id']))} mice x {len(models)} generators x {len(models)} candidates x {N_REPLICATES} replicates")
+        print("models:", models)
     else:
         job = grid[args.job_id]
         if output_path(processed / args.out_dir, job).exists() and not args.force:
             logger.info("skipping %s: output exists (use --force to refit)", job)
         else:
             logger.info("job %s: %s", args.job_id, job)
-            run_job(inputs, job, [processed / d for d in args.fits_dir], processed / args.out_dir, args.n_reps, args.max_iterations, args.fixed_guess_bias)
+            run_job(inputs, job, [processed / d for d in args.fits_dir], processed / args.out_dir, args.n_reps, args.max_iterations, args.fixed_guess_bias, args.strategy, args.responded_only)
