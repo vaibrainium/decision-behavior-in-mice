@@ -899,8 +899,11 @@ makes the likelihood conditional on a response by 5 s. Inputs are the unchanged 
   1.1 / 2.6 min, recovery fits 23 / 197 min. Use 30 min for predictions and calibration, 2 h for pulse gain (calibration
   depends on it), 16 h for recovery (decides the thesis; nothing waits on it) and model fits (the R6 all-trial 50-rep fits ran > 5 h). Pending jobs can be shortened with
   `scontrol update JobId=<id> TimeLimit=00:30:00` (not lengthened).
-- Long fits preempted repeatedly on ckpt-all can be resubmitted per task on walkerlab's own GPUs (`-p <walkerlab
-  partition> --array=<task ids>`); finished tasks are skipped.
+- ckpt-all jobs are preempted and restart from zero (an R6 all-trial fit lost > 5 h). Walkerlab's own partition is
+  `gpu-a100` (8 GPUs, not preemptible). Give long jobs both partitions so each (re)start takes whichever is free:
+  submit with `-p gpu-a100,ckpt-all`, or for pending jobs/tasks `scontrol update JobId=<id> Partition=gpu-a100,ckpt-all`
+  (running tasks cannot be changed; update them once they are requeued). Keep short jobs (predictions, pulse gain,
+  calibration) on ckpt-all so the lab GPUs stay free for long fits. Free lab GPUs: `hyakalloc`.
 
 **Commands (from the repo root on Hyak, bash):**
 ```bash

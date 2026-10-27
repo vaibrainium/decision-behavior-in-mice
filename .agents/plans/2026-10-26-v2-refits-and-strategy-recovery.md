@@ -120,3 +120,4 @@ No change to v1 inputs or v1 fits; the first paper version is unaffected.
   (all 20 R6 control fits present; only all-trial fits still running). P2 submitted: 42450548. F1a refused by
   QOSMaxSubmitJobPerUserLimit (~935 queued); resubmit when the queue drains.
 - 2026-10-27: F1a submitted: 42451102 (16 h). All batches now queued; next: rsync processed/ddm/ when done, then local analysis.
+- 2026-10-27: R6_35 preempted after > 5 h; R6_35, ES2 (42424542) and F1a (42451102) switched to Partition=gpu-a100,ckpt-all.
