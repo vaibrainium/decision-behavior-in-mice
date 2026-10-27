@@ -161,3 +161,4 @@ No change to v1 inputs or v1 fits; the first paper version is unaffected.
   => Under the re-selected model the control comparison does not distinguish accumulation from discrete-sample
   extrema detection in most mice. Bears on the THESIS precondition (spine v3); E' result and both recoveries pending.
 - 2026-10-27: amendment 12 withdrawn by the author (D005): sv model set is the analysis. nosv jobs not needed further.
+- 2026-10-27: sv set completion: E cap refit resubmitted 42466794 (skips finished); R6 missing all-trial tasks 34,35,38,39 on gpu-a100 42466826. Then P2 + F1a after E cap bound check.
