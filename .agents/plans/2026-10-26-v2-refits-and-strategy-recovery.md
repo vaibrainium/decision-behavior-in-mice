@@ -174,3 +174,11 @@ No change to v1 inputs or v1 fits; the first paper version is unaffected.
     pulse response (as for E in the all-trial analysis, z 2.97, not distinguished there).
 - 2026-10-27 QC (author request): pulse motion-energy traces, scripts/ddm/pulse_energy_traces.py, dissemination/figures/qc/pulse_motion_energy_traces_2026-10-27.png. Pulse-evoked energy (pulse minus same-rig same-coherence controls, 0-600 ms) / nominal (coherence change x pulse duration): median 0.99 across 16 coherence x sign cells (0.85-1.07); peak ~1/3 of the nominal change (filter spreads a 50-67 ms pulse over ~300 ms); model's template matches measured peaks within ~3 % coh.
 - 2026-10-27 QC (author request): comparison layout of the same traces, scripts/ddm/pulse_energy_by_coherence.py -> dissemination/figures/qc/pulse_motion_energy_by_coherence_2026-10-27.{png,pdf} (one column per signed coherence, raw and pulse minus control rows, shared y, ±1 SEM). Same data and alignment as pulse_energy_traces.py; no new numbers.
+- 2026-10-27: R6 complete (PSUIM6 secondary all-trial fit rsynced; 20/20 all-trial). Parameter table of the common model,
+  responded-only (scripts.ddm.parameter_table --fits_dir ddm/fits_resp_final, run from scratchpad so dissemination/paper
+  is untouched) -> dissemination/paper_accumulation/tables/parameters_common_model_resp_2026-10-27.{csv,md}. VERIFIED:
+  25,493 trials; medians ndt 0.158 s, a 6.35, z 0.46, drift_gain 2.76, sv 2.46, p_guess 0.195, guess_bias 0.52;
+  PSUIM7 sv at its upper bound 3. Largest change vs the all-trial table: bound a median -0.59 (max |change| 4.88).
+  CAVEAT: the table's recovery_r column comes from the old all-trial model recovery (not re-run responded-only).
+  E cap refit bound check (fits_resp_fast_only_leak20-200_cap, 60): drift_gain max 6.98 (limit 20) -> no refit;
+  leak at lower bound (<= 20.5/s) in 4/60 (incl. PSUIM7 control 20.11). P2 and F1a can be submitted.
