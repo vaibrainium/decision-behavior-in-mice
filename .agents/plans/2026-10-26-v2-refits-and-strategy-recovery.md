@@ -182,3 +182,4 @@ No change to v1 inputs or v1 fits; the first paper version is unaffected.
   CAVEAT: the table's recovery_r column comes from the old all-trial model recovery (not re-run responded-only).
   E cap refit bound check (fits_resp_fast_only_leak20-200_cap, 60): drift_gain max 6.98 (limit 20) -> no refit;
   leak at lower bound (<= 20.5/s) in 4/60 (incl. PSUIM7 control 20.11). P2 and F1a can be submitted.
+- 2026-10-27: P2 (E predictions, cap fits -> ddm/primacy_resp/extrema) 42489706; F1a (cap, -> ddm/recovery_strategy_resp_cap) 42489714. All sv-set jobs now queued. Next: rsync primacy_resp and recovery_strategy_resp_cap; E strategy test (primacy --strategy_test --strategy_model extrema --responded_only --unblind --out_dir ddm/primacy_resp), its power; F1a k -> THESIS variant (D002 rule).
