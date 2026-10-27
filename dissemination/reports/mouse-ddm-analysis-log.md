@@ -899,11 +899,14 @@ makes the likelihood conditional on a response by 5 s. Inputs are the unchanged 
   1.1 / 2.6 min, recovery fits 23 / 197 min. Use 30 min for predictions and calibration, 2 h for pulse gain (calibration
   depends on it), 16 h for recovery (decides the thesis; nothing waits on it) and model fits (the R6 all-trial 50-rep fits ran > 5 h). Pending jobs can be shortened with
   `scontrol update JobId=<id> TimeLimit=00:30:00` (not lengthened).
-- ckpt-all jobs are preempted and restart from zero (an R6 all-trial fit lost > 5 h). Walkerlab's own partition is
-  `gpu-a100` (8 GPUs, not preemptible). Give long jobs both partitions so each (re)start takes whichever is free:
-  submit with `-p gpu-a100,ckpt-all`, or for pending jobs/tasks `scontrol update JobId=<id> Partition=gpu-a100,ckpt-all`
-  (running tasks cannot be changed; update them once they are requeued). Keep short jobs (predictions, pulse gain,
-  calibration) on ckpt-all so the lab GPUs stay free for long fits. Free lab GPUs: `hyakalloc`.
+- ckpt-all jobs are preempted and restart from zero (two R6 all-trial fits lost > 5 h each). Walkerlab's own GPUs:
+  partition `gpu-a100` (8 GPUs, not preemptible), account `gpu-a100-walkerlab`, QOS `normal`. A job queued for
+  ckpt-all carries Account=ckpt-walkerlab / QOS=ckpt-gpu and never starts on gpu-a100 (stays PENDING, Reason=None),
+  so a partition list `gpu-a100,ckpt-all` does not help. To move a pending job or requeued task:
+  `scontrol update JobId=<id> Partition=gpu-a100 Account=gpu-a100-walkerlab QOS=normal` (running tasks cannot be
+  changed). To submit long fits there directly: `sbatch -p gpu-a100 -A gpu-a100-walkerlab --qos=normal ...`.
+  Keep short jobs (predictions, pulse gain, calibration) and large batches on ckpt-all; check free lab GPUs with
+  `hyakalloc` and account/QOS with `sacctmgr show assoc user=vthakur format=Account%20,QOS%40`.
 
 **Commands (from the repo root on Hyak, bash):**
 ```bash
