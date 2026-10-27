@@ -105,3 +105,10 @@ No change to v1 inputs or v1 fits; the first paper version is unaffected.
 - 2026-10-27: switched from v2 inputs to responded-only (author: no-response and >5 s trials excluded from all analyses). Commands rewritten; outputs ddm/fits_resp_*, ddm/recovery_strategy_resp. Peer session src-46 handles responders-only pulse contrast and behavioural summaries (read-only).
 - 2026-10-27: full point-3 re-run added (amendment 9, plan SHA prefix 2e1e22b0 at 02:12Z); code smoke-tested.
 - 2026-10-27: amendment 10 (ES, Stine et al. 2020 sample rule) added; code smoke-tested; commands ES1-ES3.
+- 2026-10-27: first Stage-1 submission (jobs 42415371-42415379, Hyak 19:20 PDT) ran with empty $C/$CCV (default single
+  guess model, all-trial CV, no --responded_only); cancelled; its outputs moved on Hyak to
+  ddm/archive/invalid_2026-10-27_empty-args/ (fits_resp_fast_only, fits_resp_fast_only_FB). Resubmitted with literal
+  arguments; R1 log verified (ccv0, include_censored False). Job ids: R1 42422239, R2 42422438, R3 42422506,
+  R4 42422510, R5 42422512, R6 42422579, P1 42422581 (after R6), P3 42422586 (after R6), P4 first half 42422652
+  (after P3). P4 second half (JOB_OFFSET=400) refused by QOSMaxSubmitJobPerUserLimit; resubmit when the queue drains.
+  Not yet submitted: P4 second half; ES1-ES3; after R4 + bound check: P2, F1a.
