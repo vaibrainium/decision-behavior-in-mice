@@ -68,3 +68,4 @@ Collapsing-bound ("elaborated") version; their mean-RT fitting objective; gates 
   (fits_resp_nominal_ddm_g001), DDMx predictions (primacy_exact2_resp, _lead+50, _lead-50; ESx predictions to be copied
   in locally from primacy_exact_resp*), recovery (recovery_exact2_resp, all 80).
 - 2026-10-27: DDMx g001 refit 42491645 (60/60 COMPLETED); predictions 42492100 (rule lead), 42493231 (+50), 42493235 (-50); recovery 42493255 (80, recovery_exact2_resp). Next: rsync; copy ESx predictions from primacy_exact_resp* into primacy_exact2_resp* locally; bound check; rerun comparison, strategy tests, recovery verdict; report.
+- 2026-10-27: tried Partition=gpu-a100,ckpt-all Account=gpu-a100-walkerlab on pending recovery tasks 36-79 -> InvalidQOS (one QOS per job; ckpt-gpu not valid for the A100 account). Reverted with Partition=ckpt-all Account=ckpt-walkerlab QOS=ckpt-gpu. To use both pools, split the array by hand (A100 part: -p gpu-a100 -A gpu-a100-walkerlab --qos=normal).
