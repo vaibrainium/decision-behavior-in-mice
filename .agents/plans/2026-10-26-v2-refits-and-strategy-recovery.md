@@ -135,3 +135,14 @@ No change to v1 inputs or v1 fits; the first paper version is unaffected.
   Held-out NLL ES minus accumulator (control-only CV, summed over folds): DBM12 23.2, DBM13 10.7, DBM14 -0.6, DBM15 9.2,
   DBM5 5.1, DBM6 25.4, PSUIM10 -2.4, PSUIM5 32.1, PSUIM6 118.8, PSUIM7 169.3; summed 391.0; accumulator better by > 10
   in 6/10, ES in 0/10. Pre-cap ES comparison was 796.6 (420 of it empty-cell penalty from DBM13 ccv1).
+- 2026-10-27 RESULTS (interim, VERIFIED locally):
+  * ES recovery (recovery_strategy_es_resp_cap, 80/80, responded-only, cap): ES-generated scored as accumulator (>10) in
+    2/20 (DBM14 17.6, DBM15 rep1 35.8), as ES in 10/20, within 10 in 8/20; accumulator-generated scored as ES in 1/20,
+    as accumulator in 14/20. Under the D002 rule (<= 2/20) the control comparison identifies ES.
+  * Variant selection, responded-only (R2 with capped leak refit), held-out NLL vs strict L0U0V1Z0G1, summed / strict
+    better > 10 / alternative better > 10: remove sv 278.0 / 4 / 0; remove guesses 430.5 / 8 / 0; add leak -14.4 / 0 / 2;
+    add urgency -17.1 / 0 / 1; add leak+urgency -59.3 / 0 / 1; fix guess bias 49.5 / 1 / 0. sv clears the > 10 threshold
+    in 4/10 mice only: under parsimony rule 2 ("most mice") sv would FAIL (was 8/10 with no-response trials). Free guess
+    bias: 1/10 mice (was 3/10). AUTHOR DECISION needed before any change to the common model.
+  * Free leak 0-200 (capped refit): leak 0.0-1.8 /s in all mice (time constants > 0.5 s); the earlier DBM13 70 ms was the
+    degenerate fit.
