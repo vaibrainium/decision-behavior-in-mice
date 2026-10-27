@@ -153,3 +153,10 @@ No change to v1 inputs or v1 fits; the first paper version is unaffected.
 - 2026-10-27: nosv downstream: P1 42462505, P3 42462508, P4 first half 42462543 (after P3), ES3 42462545, ES2 42462576. Pending: P4 second half (job limit), P2 + F1a after N2 (42462309) bound check.
 - 2026-10-27: nosv P4 second half: 42465331 (after P3). Pending: P2 + F1a after N2 bound check.
 - 2026-10-27: amendment 12 item 2 check passed (free bias 2/10 -> stays fixed); sv on the fixed-bias base 5/10 (borderline, still out).
+- 2026-10-27 RESULT (interim, VERIFIED locally; scratchpad es_nosv_check.csv): ES' vs C' (nosv set, responded-only, cap):
+  60 ES' fits clean (no-response max 0.19, no empty-cell penalty, no bound at a limit, drift_gain max 18.5). Held-out NLL
+  ES' minus C' (control-only CV): DBM12 1.0, DBM13 2.7, DBM14 -2.2, DBM15 3.5, DBM5 -4.7, DBM6 -22.5, PSUIM10 1.4,
+  PSUIM5 4.4, PSUIM6 89.0, PSUIM7 8.7; summed 81.4; accumulator better by > 10 in 1/10 (PSUIM6), ES better in 1/10 (DBM6),
+  8/10 within 10. With sv in both models (sv set) the same comparison was 391.0 summed, accumulator better in 6/10.
+  => Under the re-selected model the control comparison does not distinguish accumulation from discrete-sample
+  extrema detection in most mice. Bears on the THESIS precondition (spine v3); E' result and both recoveries pending.
