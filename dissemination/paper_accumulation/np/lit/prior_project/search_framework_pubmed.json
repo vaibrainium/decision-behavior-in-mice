@@ -1,0 +1,469 @@
+{
+  "access_date": "2026-10-24",
+  "database": "PubMed E-utilities",
+  "queries": [
+    {
+      "query": "\"evidence accumulation\"[Title/Abstract] AND \"perceptual decision making\"[Title/Abstract]",
+      "hits": 193,
+      "returned_pmids": [
+        "31958755",
+        "34815316",
+        "33945693",
+        "32273500",
+        "32599268",
+        "34782439",
+        "30102151",
+        "30883291"
+      ]
+    },
+    {
+      "query": "(\"drift diffusion\"[Title/Abstract] OR \"sequential sampling\"[Title/Abstract]) AND \"motion discrimination\"[Title/Abstract]",
+      "hits": 21,
+      "returned_pmids": [
+        "33021019",
+        "26652727",
+        "26452377",
+        "33256974",
+        "31803002",
+        "26609110",
+        "30303484",
+        "31270793"
+      ]
+    },
+    {
+      "query": "(\"extrema detection\"[Title/Abstract] OR \"probability summation\"[Title/Abstract]) AND perceptual decision[Title/Abstract]",
+      "hits": 4,
+      "returned_pmids": [
+        "35753178",
+        "37140191",
+        "22423090",
+        "42054743"
+      ]
+    },
+    {
+      "query": "(\"temporal weighting\"[Title/Abstract] OR \"psychophysical kernel\"[Title/Abstract]) AND (\"motion discrimination\"[Title/Abstract] OR \"evidence accumulation\"[Title/Abstract])",
+      "hits": 1,
+      "returned_pmids": [
+        "30406190"
+      ]
+    },
+    {
+      "query": "(pulse[Title/Abstract] OR perturbation[Title/Abstract]) AND (\"motion discrimination\"[Title/Abstract] OR \"random dot motion\"[Title/Abstract]) AND decision[Title/Abstract]",
+      "hits": 4,
+      "returned_pmids": [
+        "31292942",
+        "37584102",
+        "24133253",
+        "18946528"
+      ]
+    },
+    {
+      "query": "(\"leaky integration\"[Title/Abstract] OR \"leaky competing accumulator\"[Title/Abstract]) AND perceptual decision[Title/Abstract]",
+      "hits": 4,
+      "returned_pmids": [
+        "32839233",
+        "21390225",
+        "26412953",
+        "26866598"
+      ]
+    }
+  ],
+  "unique_returned": 29,
+  "records": [
+    {
+      "pmid": "31958755",
+      "doi": "10.1016/j.isci.2019.100777",
+      "title": "Countermanding Perceptual Decision-Making.",
+      "authors": [
+        "Paul G Middlebrooks",
+        "Bram B Zandbelt",
+        "Gordon D Logan",
+        "Thomas J Palmeri",
+        "Jeffrey D Schall"
+      ],
+      "year": "2020",
+      "journal": "iScience",
+      "abstract": "We investigated whether a task requiring concurrent perceptual decision-making and response control can be performed concurrently, whether evidence accumulation and response control are accomplished by the same neurons, and whether perceptual decision-making and countermanding can be unified computationally. Based on neural recordings in a prefrontal area of macaque monkeys, we present behavioral, neural, and computational results demonstrating that perceptual decision-making of varying difficulty can be countermanded efficiently, that single prefrontal neurons instantiate both evidence accumulation and response control, and that an interactive race between stochastic GO evidence accumulators for each alternative and a distinct STOP accumulator fits countermanding choice behavior and replicates neural trajectories. Thus, perceptual decision-making and response control, previously regarded as distinct mechanisms, are actually aspects of a common neuro-computational mechanism supporting flexible behavior."
+    },
+    {
+      "pmid": "34815316",
+      "doi": "10.1093/brain/awv331",
+      "title": "Decreasing Alertness Modulates Perceptual Decision-Making.",
+      "authors": [
+        "Sridhar R Jagannathan",
+        "Corinne A Bareham",
+        "Tristan A Bekinschtein"
+      ],
+      "year": "2022",
+      "journal": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+      "abstract": "The ability to make decisions based on external information, prior knowledge, and evidence is a crucial aspect of cognition and may determine the success and survival of an organism. Despite extensive work on decision-making mechanisms/models, understanding the effects of alertness on neural and cognitive processes remain limited. Here we use EEG and behavioral modeling to characterize cognitive and neural dynamics of perceptual decision-making in awake/low alertness periods in humans (14 male, 18 female) and characterize the compensatory mechanisms as alertness decreases. Well-rested human participants, changing between full-wakefulness and low alertness, performed an auditory tone-localization task, and its behavioral dynamics were quantified with psychophysics, signal detection theory, and drift-diffusion modeling, revealing slower reaction times, inattention to the left side of space, and a lower rate of evidence accumulation in periods of low alertness. Unconstrained multivariate pattern analysis (decoding) showed a ∼280 ms delayed onset driven by low alertness of the neural signatures differentiating between left and right decision, with a spatial reconfiguration from centroparietal to lateral frontal regions 150-360 ms. To understand the neural compensatory mechanisms with decreasing alertness, we connected the evidence-accumulation behavioral parameter to the neural activity, showing in the early periods (125-325 ms) a shift in the associated patterns from right parietal regions in awake, to right frontoparietal during low alertness. This change in the neurobehavioral dynamics for central accumulation-related cognitive processes defines a clear reconfiguration of the brain networks' regions and dynamics needed for the implementation of decision-making, revealing mechanisms of resilience of cognition when challenged by decreased alertness.SIGNIFICANCE STATEMENT Most living organisms make multiple daily decisions, and these require a degree of evidence from both the environment and the internal milieu. Such decisions are usually studied under sequential sampling models and involve making a behavioral choice based on sensory encoding, central accumulation, and motor implementation processes. Since there is little research on how decreasing alertness affects such cognitive processes, this study has looked at the cognitive and neural dynamics of perceptual decision-making in people while fully awake and in drowsy periods. Using computational modeling of behavior and neural dynamics on human participants performing an auditory tone-localization task, we reveal how low alertness modulates evidence accumulation-related processes and its corresponding compensatory neural signatures."
+    },
+    {
+      "pmid": "33945693",
+      "doi": "10.1146/annurev-neuro-092019-100200",
+      "title": "Neurophysiology of Human Perceptual Decision-Making.",
+      "authors": [
+        "Redmond G O'Connell",
+        "Simon P Kelly"
+      ],
+      "year": "2021",
+      "journal": "Annual review of neuroscience",
+      "abstract": "The discovery of neural signals that reflect the dynamics of perceptual decision formation has had a considerable impact. Not only do such signals enable detailed investigations of the neural implementation of the decision-making process but they also can expose key elements of the brain's decision algorithms. For a long time, such signals were only accessible through direct animal brain recordings, and progress in human neuroscience was hampered by the limitations of noninvasive recording techniques. However, recent methodological advances are increasingly enabling the study of human brain signals that finely trace the dynamics of the unfolding decision process. In this review, we highlight how human neurophysiological data are now being leveraged to furnish new insights into the multiple processing levels involved in forming decisions, to inform the construction and evaluation of mathematical models that can explain intra- and interindividual differences, and to examine how key ancillary processes interact with core decision circuits."
+    },
+    {
+      "pmid": "32273500",
+      "doi": "10.1016/j.neuroimage.2013.08.065",
+      "title": "Confidence controls perceptual evidence accumulation.",
+      "authors": [
+        "Tarryn Balsdon",
+        "Valentin Wyart",
+        "Pascal Mamassian"
+      ],
+      "year": "2020",
+      "journal": "Nature communications",
+      "abstract": "Perceptual decisions are accompanied by feelings of confidence that reflect the likelihood that the decision was correct. Here we aim to clarify the relationship between perception and confidence by studying the same perceptual task across three different confidence contexts. Human observers were asked to categorize the source of sequentially presented visual stimuli. Each additional stimulus provided evidence for making more accurate perceptual decisions, and better confidence judgements. We show that observers' ability to set appropriate evidence accumulation bounds for perceptual decisions is strongly predictive of their ability to make accurate confidence judgements. When observers were not permitted to control their exposure to evidence, they imposed covert bounds on their perceptual decisions but not on their confidence decisions. This partial dissociation between decision processes is reflected in behaviour and pupil dilation. Together, these findings suggest a confidence-regulated accumulation-to-bound process that controls perceptual decision-making even in the absence of explicit speed-accuracy trade-offs."
+    },
+    {
+      "pmid": "32599268",
+      "doi": "10.1016/j.neuroimage.2020.117093",
+      "title": "Evidence accumulation during perceptual decision-making is sensitive to the dynamics of attentional selection.",
+      "authors": [
+        "Dragan Rangelov",
+        "Jason B Mattingley"
+      ],
+      "year": "2020",
+      "journal": "NeuroImage",
+      "abstract": "The ability to select and combine multiple sensory inputs in support of accurate decisions is a hallmark of adaptive behaviour. Attentional selection is often needed to prioritize task-relevant stimuli relative to irrelevant, potentially distracting stimuli. As most studies of perceptual decision-making to date have made use of task-relevant stimuli only, relatively little is known about how attention modulates decision making. To address this issue, we developed a novel 'integrated' decision-making task, in which participants judged the average direction of successive target motion signals while ignoring concurrent and spatially overlapping distractor motion signals. In two experiments that varied the role of attentional selection, we used regression to quantify the influence of target and distractor stimuli on behaviour. Using electroencephalography, we characterised the neural correlates of decision making, attentional selection and feature-specific responses to target and distractor signals. While targets strongly influenced perceptual decisions and associated neural activity, we also found that concurrent and spatially coincident distractors exerted a measurable bias on both behaviour and brain activity. Our findings suggest that attention operates as a real-time but imperfect filter during perceptual decision-making by dynamically modulating the contributions of task-relevant and irrelevant sensory inputs."
+    },
+    {
+      "pmid": "34782439",
+      "doi": "10.1037/0096-3445.123.1.34",
+      "title": "Visual Motion and Decision-Making in Dyslexia: Reduced Accumulation of Sensory Evidence and Related Neural Dynamics.",
+      "authors": [
+        "Catherine Manning",
+        "Cameron D Hassall",
+        "Laurence T Hunt",
+        "Anthony M Norcia",
+        "Eric-Jan Wagenmakers",
+        "Margaret J Snowling",
+        "Gaia Scerif",
+        "Nathan J Evans"
+      ],
+      "year": "2022",
+      "journal": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+      "abstract": "Children with and without dyslexia differ in their behavioral responses to visual information, particularly when required to pool dynamic signals over space and time. Importantly, multiple processes contribute to behavioral responses. Here we investigated which processing stages are affected in children with dyslexia when performing visual motion processing tasks, by combining two methods that are sensitive to the dynamic processes leading to responses. We used a diffusion model which decomposes response time and accuracy into distinct cognitive constructs, and high-density EEG. Fifty children with dyslexia (24 male) and 50 typically developing children (28 male) 6-14 years of age judged the direction of motion as quickly and accurately as possible in two global motion tasks (motion coherence and direction integration), which varied in their requirements for noise exclusion. Following our preregistered analyses, we fitted hierarchical Bayesian diffusion models to the data, blinded to group membership. Unblinding revealed reduced evidence accumulation in children with dyslexia compared with typical children for both tasks. Additionally, we identified a response-locked EEG component which was maximal over centro-parietal electrodes which indicated a neural correlate of reduced drift rate in dyslexia in the motion coherence task, thereby linking brain and behavior. We suggest that children with dyslexia tend to be slower to extract sensory evidence from global motion displays, regardless of whether noise exclusion is required, thus furthering our understanding of atypical perceptual decision-making processes in dyslexia.SIGNIFICANCE STATEMENT Reduced sensitivity to visual information has been reported in dyslexia, with a lively debate about whether these differences causally contribute to reading difficulties. In this large preregistered study with a blind modeling approach, we combine state-of-the art methods in both computational modeling and EEG analysis to pinpoint the stages of processing that are atypical in children with dyslexia in two visual motion tasks that vary in their requirement for noise exclusion. We find reduced evidence accumulation in children with dyslexia across both tasks, and identify a neural marker, allowing us to link brain and behavior. We show that children with dyslexia exhibit general difficulties with extracting sensory evidence from global motion displays, not just in tasks that require noise exclusion."
+    },
+    {
+      "pmid": "30102151",
+      "doi": "10.1101/245316",
+      "title": "Cerebellar involvement in an evidence-accumulation decision-making task.",
+      "authors": [
+        "Ben Deverett",
+        "Sue Ann Koay",
+        "Marlies Oostland",
+        "Samuel S-H Wang"
+      ],
+      "year": "2018",
+      "journal": "eLife",
+      "abstract": "To make successful evidence-based decisions, the brain must rapidly and accurately transform sensory inputs into specific goal-directed behaviors. Most experimental work on this subject has focused on forebrain mechanisms. Using a novel evidence-accumulation task for mice, we performed recording and perturbation studies of crus I of the lateral posterior cerebellum, which communicates bidirectionally with numerous forebrain regions. Cerebellar inactivation led to a reduction in the fraction of correct trials. Using two-photon fluorescence imaging of calcium, we found that Purkinje cell somatic activity contained choice/evidence-related information. Decision errors were represented by dendritic calcium spikes, which in other contexts are known to drive cerebellar plasticity. We propose that cerebellar circuitry may contribute to computations that support accurate performance in this perceptual decision-making task."
+    },
+    {
+      "pmid": "30883291",
+      "doi": "10.1162/jocn_a_01393",
+      "title": "Catecholamine Modulation of Evidence Accumulation during Perceptual Decision Formation: A Randomized Trial.",
+      "authors": [
+        "Gerard M Loughnane",
+        "Méadhbh B Brosnan",
+        "Jessica J M Barnes",
+        "Angela Dean",
+        "Sanjay L Nandam",
+        "Redmond G O'Connell",
+        "Mark A Bellgrove"
+      ],
+      "year": "2019",
+      "journal": "Journal of cognitive neuroscience",
+      "abstract": "Recent behavioral modeling and pupillometry studies suggest that neuromodulatory arousal systems play a role in regulating decision formation but neurophysiological support for these observations is lacking. We employed a randomized, double-blinded, placebo-controlled, crossover design to probe the impact of pharmacological enhancement of catecholamine levels on perceptual decision-making. Catecholamine levels were manipulated using the clinically relevant drugs methylphenidate and atomoxetine, and their effects were compared with those of citalopram and placebo. Participants performed a classic EEG oddball paradigm that elicits the P3b, a centro-parietal potential that has been shown to trace evidence accumulation, under each of the four drug conditions. We found that methylphenidate and atomoxetine administration shortened RTs to the oddball targets. The neural basis of this behavioral effect was an earlier P3b peak latency, driven specifically by an increase in its buildup rate without any change in its time of onset or peak amplitude. This study provides neurophysiological evidence for the catecholaminergic enhancement of a discrete aspect of human decision-making, that is, evidence accumulation. Our results also support theoretical accounts suggesting that catecholamines may enhance cognition via increases in neural gain."
+    },
+    {
+      "pmid": "33021019",
+      "doi": "10.1371/journal.pone.0099337",
+      "title": "Bridging sensory and language theories of dyslexia: Toward a multifactorial model.",
+      "authors": [
+        "Gabrielle O'Brien",
+        "Jason D Yeatman"
+      ],
+      "year": "2021",
+      "journal": "Developmental science",
+      "abstract": "Competing theories of dyslexia posit that reading difficulties arise from impaired visual, auditory, phonological, or statistical learning mechanisms. Importantly, many theories posit that dyslexia reflects a cascade of impairments emanating from a single \"core deficit\". Here we report two studies evaluating core deficit and multifactorial models. In Study 1, we use publicly available data from the Healthy Brain Network to test the accuracy of phonological processing measures for predicting dyslexia diagnosis and find that over 30% of cases are misclassified (sensitivity = 66.7%; specificity = 68.2%). In Study 2, we collect a battery of psychophysical measures of visual motion processing and standardized measures of phonological processing in 106 school-aged children to investigate whether dyslexia is best conceptualized under a core-deficit model, or as a disorder with heterogenous origins. Specifically, by capitalizing on the drift diffusion model to analyze performance on a visual motion discrimination experiment, we show that deficits in visual motion processing, perceptual decision-making, and phonological processing manifest largely independently. Based on statistical models of how variance in reading skill is parceled across measures of visual processing, phonological processing, and decision-making, our results challenge the notion that a unifying deficit characterizes dyslexia. Instead, these findings indicate a model where reading skill is explained by several distinct, additive predictors, or risk factors, of reading (dis)ability."
+    },
+    {
+      "pmid": "26652727",
+      "doi": "10.1080/17470218.2015.1130070",
+      "title": "Obsessive compulsive features predict cautious decision strategies.",
+      "authors": [
+        "Ceyla Erhan",
+        "Fuat Balcı"
+      ],
+      "year": "2017",
+      "journal": "Quarterly journal of experimental psychology (2006)",
+      "abstract": "Obsessive compulsive disorder (OCD) is occasionally characterized by decision-making deficits. Compared to the isolated analysis of the choice and response times, characterizing decision outputs at the level of latent processes can be a more powerful approach in revealing differences, even in subclinical cases. We hypothesized that participants with higher obsessive compulsive (OC) features would set their decision thresholds higher and thus make more cautious decisions. We used a perceptual two-alternative forced-choice (2AFC) task (dot motion discrimination) to test this hypothesis in a non-clinical sample ( N = 74). We fitted the data with the diffusion model and evaluated the optimality of decision outputs. We also conducted exploratory analyses to reveal which subscales best predicted the differences at the level of latent decision processes. Higher OC total scores in Maudsley and Padua scales significantly predicted higher threshold settings (cautiousness). The follow-up exploratory analyses with subscale scores showed that checking and rumination tendencies predicted higher threshold settings whereas washing tendency predicted faster non-decision times. Our primary results showed that participants with higher degrees of OC features exhibit more cautious decision making. Our exploratory analyses also revealed distinctions based on different types of OC features in both controlled (cautiousness in decision making) and automatic (faster non-decision times) elements of the decision process."
+    },
+    {
+      "pmid": "26452377",
+      "doi": "10.3758/s13423-015-0851-2",
+      "title": "The urgency-gating model can explain the effects of early evidence.",
+      "authors": [
+        "Matthew A Carland",
+        "David Thura",
+        "Paul Cisek"
+      ],
+      "year": "2015",
+      "journal": "Psychonomic bulletin & review",
+      "abstract": "In a recent report, Winkel, Keuken, van Maanen, Wagenmakers & Forstmann (Psychonomics Bulletin and Review 21(3): 777-784, 2014) show that during a random-dot motion discrimination task, early differences in motion evidence can influence reaction times (RTs) and error rates in human subjects. They use this as an argument in favor of the drift-diffusion model and against the urgency-gating model. However, their implementation of the urgency-gating model is incomplete, as it lacks the low-pass filter that is necessary to deal with noisy input such as the motion signal used in their experimental task. Furthermore, by focusing analyses solely on comparison of mean RTs they overestimate how long early information influences individual trials. Here, we show that if the urgency-gating model is correctly implemented, including a low-pass filter with a 250 ms time constant, it can successfully reproduce the results of the Winkel et al. experiment."
+    },
+    {
+      "pmid": "33256974",
+      "doi": "10.1016/j.cognition.2020.104522",
+      "title": "Dynamic expressions of confidence within an evidence accumulation framework.",
+      "authors": [
+        "Kobe Desender",
+        "Tobias H Donner",
+        "Tom Verguts"
+      ],
+      "year": "2021",
+      "journal": "Cognition",
+      "abstract": "Human observers can reliably report their confidence in the choices they make. An influential framework conceptualizes decision confidence as the probability of a decision being correct, given the choice made and the evidence on which it was based. This framework accounts for three diagnostic signatures of human confidence reports, including an opposite dependence of confidence on evidence strength for correct and error trials. However, the framework does not account for the temporal evolution of these signatures, because it only describes the transformation of a static representation of evidence into choice and the associated confidence. Here, we combine this framework with another influential framework: dynamic accumulation of evidence over time, and build on the notion that confidence reflects the probability of being correct, given the choice and accumulated evidence up until that point. Critically, we show that such a dynamic model predicts that the diagnostic signatures of confidence depend on time; most critically, it predicts a stronger opposite dependence of confidence on evidence strength and choice correctness as a function of time. We tested, and confirmed, these predictions in human behaviour during random dot motion discrimination, in which confidence judgments were queried at different points in time. We conclude that human confidence reports reflect the dynamics of the probability of being correct given the accumulated evidence and choice."
+    },
+    {
+      "pmid": "31803002",
+      "doi": "10.1016/j.neuron.2019.04.031",
+      "title": "The Interaction Between Elapsed Time and Decision Accuracy Differs Between Humans and Rats.",
+      "authors": [
+        "Carly A Shevinsky",
+        "Pamela Reinagel"
+      ],
+      "year": "2019",
+      "journal": "Frontiers in neuroscience",
+      "abstract": "A stochastic visual motion discrimination task is widely used to study rapid decision-making in humans and animals. Among trials of the same sensory difficulty within a block of fixed decision strategy, humans and monkeys are widely reported to make more errors in the individual trials with longer reaction times. This finding has posed a challenge for the drift-diffusion model of sensory decision-making, which in its basic form predicts that errors and correct responses should have the same reaction time distributions. We previously reported that rats also violate this model prediction, but in the opposite direction: for rats, motion discrimination accuracy was highest in the trials with the longest reaction times. To rule out task differences as the cause of our divergent finding in rats, the present study tested humans and rats using the same task and analyzed their data identically. We confirmed that rats' accuracy increased with reaction time, whereas humans' accuracy decreased with reaction time in the same task. These results were further verified using a new temporally local analysis method, ruling out that the observed trend was an artifact of non-stationarity in the data of either species. The main effect was found whether the signal strength (motion coherence) was varied in randomly interleaved trials or held constant within a block. The magnitude of the effects increased with motion coherence. These results provide new constraints useful for refining and discriminating among the many alternative mathematical theories of decision-making."
+    },
+    {
+      "pmid": "26609110",
+      "doi": "10.1152/jn.00264.2015",
+      "title": "Evidence against perfect integration of sensory information during perceptual decision making.",
+      "authors": [
+        "Matthew A Carland",
+        "Encarni Marcos",
+        "David Thura",
+        "Paul Cisek"
+      ],
+      "year": "2016",
+      "journal": "Journal of neurophysiology",
+      "abstract": "Perceptual decision making is often modeled as perfect integration of sequential sensory samples until the accumulated total reaches a fixed decision bound. In that view, the buildup of neural activity during perceptual decision making is attributed to temporal integration. However, an alternative explanation is that sensory estimates are computed quickly with a low-pass filter and combined with a growing signal reflecting the urgency to respond and it is the latter that is primarily responsible for neural activity buildup. These models are difficult to distinguish empirically because they make similar predictions for tasks in which sensory information is constant within a trial, as in most previous studies. Here we presented subjects with a variant of the classic constant-coherence motion discrimination (CMD) task in which we inserted brief motion pulses. We examined the effect of these pulses on reaction times (RTs) in two conditions: 1) when the CMD trials were blocked and subjects responded quickly and 2) when the same CMD trials were interleaved among trials of a variable-motion coherence task that motivated slower decisions. In the blocked condition, early pulses had a strong effect on RTs but late pulses did not, consistent with both models. However, when subjects slowed their decision policy in the interleaved condition, later pulses now became effective while early pulses lost their efficacy. This last result contradicts models based on perfect integration of sensory evidence and implies that motion signals are processed with a strong leak, equivalent to a low-pass filter with a short time constant."
+    },
+    {
+      "pmid": "30303484",
+      "doi": "10.7554/eLife.17688",
+      "title": "Ongoing, rational calibration of reward-driven perceptual biases.",
+      "authors": [
+        "Yunshu Fan",
+        "Joshua I Gold",
+        "Long Ding"
+      ],
+      "year": "2018",
+      "journal": "eLife",
+      "abstract": "Decision-making is often interpreted in terms of normative computations that maximize a particular reward function for stable, average behaviors. Aberrations from the reward-maximizing solutions, either across subjects or across different sessions for the same subject, are often interpreted as reflecting poor learning or physical limitations. Here we show that such aberrations may instead reflect the involvement of additional satisficing and heuristic principles. For an asymmetric-reward perceptual decision-making task, three monkeys produced adaptive biases in response to changes in reward asymmetries and perceptual sensitivity. Their choices and response times were consistent with a normative accumulate-to-bound process. However, their context-dependent adjustments to this process deviated slightly but systematically from the reward-maximizing solutions. These adjustments were instead consistent with a rational process to find satisficing solutions based on the gradient of each monkey's reward-rate function. These results suggest new dimensions for assessing the rational and idiosyncratic aspects of flexible decision-making."
+    },
+    {
+      "pmid": "31270793",
+      "doi": "10.3389/fnins.2014.00069",
+      "title": "The validity and consistency of continuous joystick response in perceptual decision-making.",
+      "authors": [
+        "Maciej J Szul",
+        "Aline Bompas",
+        "Petroc Sumner",
+        "Jiaxiang Zhang"
+      ],
+      "year": "2020",
+      "journal": "Behavior research methods",
+      "abstract": "A computer joystick is an efficient and cost-effective response device for recording continuous movements in psychological experiments. Movement trajectories and other measures from continuous responses have expanded the insights gained from discrete responses (e.g., button presses) by providing unique information about how cognitive processes unfold over time. However, few studies have evaluated the validity of joystick responses with reference to conventional key presses, and how response modality can affect cognitive processes. Here we systematically compared human participants' behavioral performance of perceptual decision-making when they responded with either joystick movements or key presses in a four-alternative motion discrimination task. We found evidence that the response modality did not affect raw behavioral measures, including decision accuracy and mean response time, at the group level. Furthermore, to compare the underlying decision processes between the two response modalities, we fitted a drift-diffusion model of decision-making to individual participants' behavioral data. Bayesian analyses of the model parameters showed no evidence that switching from key presses to continuous joystick movements modulated the decision-making process. These results supported continuous joystick actions as a valid apparatus for continuous movements, although we highlight the need for caution when conducting experiments with continuous movement responses."
+    },
+    {
+      "pmid": "35753178",
+      "doi": "10.1016/j.cognition.2022.105204",
+      "title": "No selective integration required: A race model explains responses to audiovisual motion-in-depth.",
+      "authors": [
+        "S F Andrew Chua",
+        "Yue Liu",
+        "Julie M Harris",
+        "Thomas U Otto"
+      ],
+      "year": "2022",
+      "journal": "Cognition",
+      "abstract": "Looming motion is an ecologically salient signal that often signifies danger. In both audition and vision, humans show behavioral biases in response to perceiving looming motion, which is suggested to indicate an adaptation for survival. However, it is an open question whether such biases occur also in the combined processing of multisensory signals. Towards this aim, Cappe, Thut, Romei, and Murraya (2009) found that responses to audiovisual signals were faster for congruent looming motion compared to receding motion or incongruent combinations. They considered this as evidence for selective integration of multisensory looming signals. To test this proposal, here, we successfully replicate the behavioral results by Cappe et al. (2009). We then show that the redundant signals effect (RSE - a speedup of multisensory compared to unisensory responses) is not distinct for congruent looming motion. Instead, as predicted by a simple probability summation rule, the RSE is primarily modulated by the looming bias in audition, which suggests that multisensory processing inherits a unisensory effect. Finally, we compare a large set of so-called race models that implement probability summation, but that allow for interference between auditory and visual processing. The best-fitting model, selected by the Akaike Information Criterion (AIC), virtually perfectly explained the RSE across conditions with interference parameters that were either constant or varied only with auditory motion. In the absence of effects jointly caused by auditory and visual motion, we conclude that selective integration is not required to explain the behavioral benefits that occur with audiovisual looming motion."
+    },
+    {
+      "pmid": "37140191",
+      "doi": "10.1016/j.cub.2019.03.016",
+      "title": "Temporal integration is a robust feature of perceptual decisions.",
+      "authors": [
+        "Alexandre Hyafil",
+        "Jaime de la Rocha",
+        "Cristina Pericas",
+        "Leor N Katz",
+        "Alexander C Huk",
+        "Jonathan W Pillow"
+      ],
+      "year": "2023",
+      "journal": "eLife",
+      "abstract": "Making informed decisions in noisy environments requires integrating sensory information over time. However, recent work has suggested that it may be difficult to determine whether an animal's decision-making strategy relies on evidence integration or not. In particular, strategies based on extrema-detection or random snapshots of the evidence stream may be difficult or even impossible to distinguish from classic evidence integration. Moreover, such non-integration strategies might be surprisingly common in experiments that aimed to study decisions based on integration. To determine whether temporal integration is central to perceptual decision-making, we developed a new model-based approach for comparing temporal integration against alternative 'non-integration' strategies for tasks in which the sensory signal is composed of discrete stimulus samples. We applied these methods to behavioral data from monkeys, rats, and humans performing a variety of sensory decision-making tasks. In all species and tasks, we found converging evidence in favor of temporal integration. First, in all observers across studies, the integration model better accounted for standard behavioral statistics such as psychometric curves and psychophysical kernels. Second, we found that sensory samples with large evidence do not contribute disproportionately to subject choices, as predicted by an extrema-detection strategy. Finally, we provide a direct confirmation of temporal integration by showing that the sum of both early and late evidence contributed to observer decisions. Overall, our results provide experimental evidence suggesting that temporal integration is an ubiquitous feature in mammalian perceptual decision-making. Our study also highlights the benefits of using experimental paradigms where the temporal stream of sensory evidence is controlled explicitly by the experimenter, and known precisely by the analyst, to characterize the temporal properties of the decision process."
+    },
+    {
+      "pmid": "22423090",
+      "doi": "10.1523/JNEUROSCI.3881-11.2012",
+      "title": "Local visual energy mechanisms revealed by detection of global patterns.",
+      "authors": [
+        "Yaniv Morgenstern",
+        "James H Elder"
+      ],
+      "year": "2012",
+      "journal": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+      "abstract": "A central goal of visual neuroscience is to relate the selectivity of individual neurons to perceptual judgments, such as detection of a visual pattern at low contrast or in noise. Since neurons in early areas of visual cortex carry information only about a local patch of the image, detection of global patterns must entail spatial pooling over many such neurons. Physiological methods provide access to local detection mechanisms at the single-neuron level but do not reveal how neural responses are combined to determine the perceptual decision. Behavioral methods provide access to perceptual judgments of a global stimulus but typically do not reveal the selectivity of the individual neurons underlying detection. Here we show how the existence of a nonlinearity in spatial pooling does allow properties of these early mechanisms to be estimated from behavioral responses to global stimuli. As an example, we consider detection of large-field sinusoidal gratings in noise. Based on human behavioral data, we estimate the length and width tuning of the local detection mechanisms and show that it is roughly consistent with the tuning of individual neurons in primary visual cortex of primate. We also show that a local energy model of pooling based on these estimated receptive fields is much more predictive of human judgments than competing models, such as probability summation. In addition to revealing underlying properties of early detection and spatial integration mechanisms in human cortex, our findings open a window on new methods for relating system-level perceptual judgments to neuron-level processing."
+    },
+    {
+      "pmid": "42054743",
+      "doi": "10.1016/j.cogpsych.2026.101803",
+      "title": "Integration of redundant signals in dynamic multisensory contexts: the principles and computational mechanisms.",
+      "authors": [
+        "Shiqi Tan",
+        "Yuhui Cheng",
+        "Jieru Chen",
+        "Xiangyong Yuan",
+        "Yi Jiang"
+      ],
+      "year": "2026",
+      "journal": "Cognitive psychology",
+      "abstract": "One benefit of multisensory integration is the acceleration of responses in a perceptual decision task, known as the redundant signals effect (RSE). Based on probability summation, two basic principles have been proposed to explain such benefit: the \"principle of congruent effectiveness\", which suggests maximal RSE when unisensory performances are comparable, and the \"variability rule\", which proposes that RSE increases when unisensory performances are more variable. Yet, it remains unclear whether these principles extend to dynamic multisensory contexts and how they manifest in the model architectures proposed to explain RSE. To address these questions, we evaluated RSE in a multisensory context featuring transient onsets and offsets using a change detection task. Our results showed that both principles predicted the rank of the RSE in this dynamic setting, with the principle of congruent effectiveness emerging as the dominant one. Model comparison identified two best-performing model architectures that implement distinct crossmodal interactions (enhanced evidence accumulation rates or lowered decision criterion) in the perceptual process when two unimodal signals race towards their decision criterion. Moreover, the key predictors derived from the principles effectively modulate the crossmodal interactions in the two models. Together, these findings demonstrate that the principles underlying RSE generalize to dynamic multisensory contexts and operate via distinct computational mechanisms, shedding light on how perceptual systems flexibly integrate multisensory cues to optimize decision-making."
+    },
+    {
+      "pmid": "30406190",
+      "doi": "10.1038/nn.4611",
+      "title": "Strategic and Dynamic Temporal Weighting for Perceptual Decisions in Humans and Macaques.",
+      "authors": [
+        "Aaron J Levi",
+        "Jacob L Yates",
+        "Alexander C Huk",
+        "Leor N Katz"
+      ],
+      "year": "2018",
+      "journal": "eNeuro",
+      "abstract": "Perceptual decision-making is often modeled as the accumulation of sensory evidence over time. Recent studies using psychophysical reverse correlation have shown that even though the sensory evidence is stationary over time, subjects may exhibit a time-varying weighting strategy, weighting some stimulus epochs more heavily than others. While previous work has explained time-varying weighting as a consequence of static decision mechanisms (e.g., decision bound or leak), here we show that time-varying weighting can reflect strategic adaptation to stimulus statistics, and thus can readily take a number of forms. We characterized the temporal weighting strategies of humans and macaques performing a motion discrimination task in which the amount of information carried by the motion stimulus was manipulated over time. Both species could adapt their temporal weighting strategy to match the time-varying statistics of the sensory stimulus. When early stimulus epochs had higher mean motion strength than late, subjects adopted a pronounced early weighting strategy, where early information was weighted more heavily in guiding perceptual decisions. When the mean motion strength was greater in later stimulus epochs, in contrast, subjects shifted to a marked late weighting strategy. These results demonstrate that perceptual decisions involve a temporally flexible weighting process in both humans and monkeys, and introduce a paradigm with which to manipulate sensory weighting in decision-making tasks."
+    },
+    {
+      "pmid": "31292942",
+      "doi": "10.3758/s13414-019-01810-8",
+      "title": "Sequence-dependent sensitivity explains the accuracy of decisions when cues are separated with a gap.",
+      "authors": [
+        "Maryam Tohidi-Moghaddam",
+        "Sajjad Zabbah",
+        "Farzaneh Olianezhad",
+        "Reza Ebrahimpour"
+      ],
+      "year": "2019",
+      "journal": "Attention, perception & psychophysics",
+      "abstract": "Most decisions require information gathering from a stimulus presented with different gaps. However, the neural mechanism underlying this integration is ambiguous. Recently, it has been claimed that humans can optimally integrate the information of two discrete pulses independent of the temporal gap between them. Interestingly, subjects' performance on such a task, with two discrete pulses, is superior to what a perfect accumulator can predict. Although numerous neuronal and descriptive models have been proposed to explain the mechanism of perceptual decision-making, none can explain human behavior on this two-pulse task. In order to investigate the mechanism of decision-making on the noted tasks, a set of modified drift-diffusion models based on different hypotheses were used. Model comparisons clarified that, in a sequence of information arriving at different times, the accumulated information of earlier evidence affects the process of information accumulation of later evidence. It was shown that the rate of information extraction depends on whether the pulse is the first or the second one. Moreover, our findings suggest that a drift diffusion model with a dynamic drift rate can also explain the stronger effect of the second pulse on decisions as shown by Kiani et al. (Journal of Neuroscience, 33 (42), 16483-16489, 2013)."
+    },
+    {
+      "pmid": "37584102",
+      "doi": "10.1152/jn.00197.2023",
+      "title": "Muscular reflex gains reflect changes of mind in reaching.",
+      "authors": [
+        "Yvonne F Visser",
+        "W Pieter Medendorp",
+        "Luc P J Selen"
+      ],
+      "year": "2023",
+      "journal": "Journal of neurophysiology",
+      "abstract": "Decisions for action are accompanied by a continual processing of sensory information, sometimes resulting in a revision of the initial choice, called a change of mind (CoM). Although the motor system is tuned during the formation of a reach decision, it is unclear whether its preparatory state differs between CoM and non-CoM decisions. To test this, participants (n = 14) viewed a random-dot motion (RDM) stimulus of various coherence levels for a random viewing duration. At the onset of a mechanical perturbation that rapidly stretched the pectoralis muscle, they indicated the perceived motion direction by making a reaching movement to one of two targets. Using electromyography (EMG), we quantified the reflex gains of the pectoralis and posterior deltoid muscles. Results show that reflex gains scaled with both the coherence level and the viewing duration of the stimulus. We fit a drift diffusion model (DDM) to the behavioral choices. The decision variable (DV), derived from the DDM, correlated well with the measured reflex gain at the single-trial level. However, when matched on DV magnitude, reflex gains were significantly lower in CoM than non-CoM trials. We conclude that the internal state of the motor system, as measured by the spinal reflexes, reflects the continual deliberation on sensory evidence for action selection, including the postdecisional evidence that can lead to a change of mind.NEW & NOTEWORTHY Using behavioral findings, EMG, and computational modeling, we show that not only the perceptual decision outcome but also the accumulating evidence for that outcome is continuously sent to the relevant muscles. Moreover, we show that an upcoming change of mind can be detected in the motor periphery, suggesting that a correlate of the internal decision making process is being sent along."
+    },
+    {
+      "pmid": "24133253",
+      "doi": "10.1523/JNEUROSCI.3733-05.2006",
+      "title": "Integration of direction cues is invariant to the temporal gap between them.",
+      "authors": [
+        "Roozbeh Kiani",
+        "Anne K Churchland",
+        "Michael N Shadlen"
+      ],
+      "year": "2013",
+      "journal": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+      "abstract": "Many decisions involve integration of evidence conferred by discrete cues over time. However, the neural mechanism of this integration is poorly understood. Several decision-making models suggest that integration of evidence is implemented by a dynamic system whose state evolves toward a stable point representing the decision outcome. The internal dynamics of such point attractor models render them sensitive to the temporal gaps between cues because their internal forces push the state forward once it is dislodged from the initial stable point. We asked whether human subjects are as sensitive to such temporal gaps. Subjects reported the net direction of stochastic random dot motion, which was presented in one or two brief observation windows (pulses). Pulse strength and interpulse interval varied randomly from trial to trial. We found that subjects' performance was largely invariant to the interpulse intervals up to at least 1 s. The findings question the implementation of the integration process via mechanisms that rely on autonomous changes of network state. The mechanism should be capable of freezing the state of the network at a variety of firing rate levels during temporal gaps between the cues, compatible with a line of stable attractor states."
+    },
+    {
+      "pmid": "18946528",
+      "doi": "10.3389/neuro.10.006.2007",
+      "title": "Neural circuit dynamics underlying accumulation of time-varying evidence during perceptual decision making.",
+      "authors": [
+        "Kong-Fatt Wong",
+        "Alexander C Huk",
+        "Michael N Shadlen",
+        "Xiao-Jing Wang"
+      ],
+      "year": "2007",
+      "journal": "Frontiers in computational neuroscience",
+      "abstract": "How do neurons in a decision circuit integrate time-varying signals, in favor of or against alternative choice options? To address this question, we used a recurrent neural circuit model to simulate an experiment in which monkeys performed a direction-discrimination task on a visual motion stimulus. In a recent study, it was found that brief pulses of motion perturbed neural activity in the lateral intraparietal area (LIP), and exerted corresponding effects on the monkey's choices and response times. Our model reproduces the behavioral observations and replicates LIP activity which, depending on whether the direction of the pulse is the same or opposite to that of a preferred motion stimulus, increases or decreases persistently over a few hundred milliseconds. Furthermore, our model accounts for the observation that the pulse exerts a weaker influence on LIP neuronal responses when the pulse is late relative to motion stimulus onset. We show that this violation of time-shift invariance (TSI) is consistent with a recurrent circuit mechanism of time integration. We further examine time integration using two consecutive pulses of the same or opposite motion directions. The induced changes in the performance are not additive, and the second of the paired pulses is less effective than its standalone impact, a prediction that is experimentally testable. Taken together, these findings lend further support for an attractor network model of time integration in perceptual decision making."
+    },
+    {
+      "pmid": "32839233",
+      "doi": "10.7554/eLife.17688",
+      "title": "Confluence of Timing and Reward Biases in Perceptual Decision-Making Dynamics.",
+      "authors": [
+        "Maxwell Shinn",
+        "Daniel B Ehrlich",
+        "Daeyeol Lee",
+        "John D Murray",
+        "Hyojung Seo"
+      ],
+      "year": "2020",
+      "journal": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+      "abstract": "Although the decisions of our daily lives often occur in the context of temporal and reward structures, the impact of such regularities on decision-making strategy is poorly understood. Here, to explore how temporal and reward context modulate strategy, we trained 2 male rhesus monkeys to perform a novel perceptual decision-making task with asymmetric rewards and time-varying evidence reliability. To model the choice and response time patterns, we developed a computational framework for fitting generalized drift-diffusion models, which flexibly accommodate diverse evidence accumulation strategies. We found that a dynamic urgency signal and leaky integration, in combination with two independent forms of reward biases, best capture behavior. We also tested how temporal structure influences urgency by systematically manipulating the temporal structure of sensory evidence, and found that the time course of urgency was affected by temporal context. Overall, our approach identified key components of cognitive mechanisms for incorporating temporal and reward structure into decisions.SIGNIFICANCE STATEMENT In everyday life, decisions are influenced by many factors, including reward structures and stimulus timing. While reward and timing have been characterized in isolation, ecologically valid decision-making involves a multiplicity of factors acting simultaneously. This raises questions about whether the same decision-making strategy is used when these two factors are concurrently manipulated. To address these questions, we trained rhesus monkeys to perform a novel decision-making task with both reward asymmetry and temporal uncertainty. In order to understand their strategy and hint at its neural mechanisms, we used the new generalized drift diffusion modeling framework to model both reward and timing mechanisms. We found two of each reward and timing mechanisms are necessary to explain our data."
+    },
+    {
+      "pmid": "21390225",
+      "doi": "10.1371/journal.pone.0009308",
+      "title": "Dynamic integration of reward and stimulus information in perceptual decision-making.",
+      "authors": [
+        "Juan Gao",
+        "Rebecca Tortell",
+        "James L McClelland"
+      ],
+      "year": "2011",
+      "journal": "PloS one",
+      "abstract": "In perceptual decision-making, ideal decision-makers should bias their choices toward alternatives associated with larger rewards, and the extent of the bias should decrease as stimulus sensitivity increases. When responses must be made at different times after stimulus onset, stimulus sensitivity grows with time from zero to a final asymptotic level. Are decision makers able to produce responses that are more biased if they are made soon after stimulus onset, but less biased if they are made after more evidence has been accumulated? If so, how close to optimal can they come in doing this, and how might their performance be achieved mechanistically? We report an experiment in which the payoff for each alternative is indicated before stimulus onset. Processing time is controlled by a \"go\" cue occurring at different times post stimulus onset, requiring a response within msec. Reward bias does start high when processing time is short and decreases as sensitivity increases, leveling off at a non-zero value. However, the degree of bias is sub-optimal for shorter processing times. We present a mechanistic account of participants' performance within the framework of the leaky competing accumulator model [1], in which accumulators for each alternative accumulate noisy information subject to leakage and mutual inhibition. The leveling off of accuracy is attributed to mutual inhibition between the accumulators, allowing the accumulator that gathers the most evidence early in a trial to suppress the alternative. Three ways reward might affect decision making in this framework are considered. One of the three, in which reward affects the starting point of the evidence accumulation process, is consistent with the qualitative pattern of the observed reward bias effect, while the other two are not. Incorporating this assumption into the leaky competing accumulator model, we are able to provide close quantitative fits to individual participant data."
+    },
+    {
+      "pmid": "26412953",
+      "doi": "",
+      "title": "Sequential effects: Superstition or rational behavior?",
+      "authors": [
+        "Angela J Yu",
+        "Jonathan D Cohen"
+      ],
+      "year": "2008",
+      "journal": "Advances in neural information processing systems",
+      "abstract": "In a variety of behavioral tasks, subjects exhibit an automatic and apparently suboptimal sequential effect: they respond more rapidly and accurately to a stimulus if it reinforces a local pattern in stimulus history, such as a string of repetitions or alternations, compared to when it violates such a pattern. This is often the case even if the local trends arise by chance in the context of a randomized design, such that stimulus history has no real predictive power. In this work, we use a normative Bayesian framework to examine the hypothesis that such idiosyncrasies may reflect the inadvertent engagement of mechanisms critical for adapting to a changing environment. We show that prior belief in non-stationarity can induce experimentally observed sequential effects in an otherwise Bayes-optimal algorithm. The Bayesian algorithm is shown to be well approximated by linear-exponential filtering of past observations, a feature also apparent in the behavioral data. We derive an explicit relationship between the parameters and computations of the exact Bayesian algorithm and those of the approximate linear-exponential filter. Since the latter is equivalent to a leaky-integration process, a commonly used model of neuronal dynamics underlying perceptual decision-making and trial-to-trial dependencies, our model provides a principled account of why such dynamics are useful. We also show that parameter-tuning of the leaky-integration process is possible, using stochastic gradient descent based only on the noisy binary inputs. This is a proof of concept that not only can neurons implement near-optimal prediction based on standard neuronal dynamics, but that they can also learn to tune the processing parameters without explicitly representing probabilities."
+    },
+    {
+      "pmid": "26866598",
+      "doi": "10.1016/j.cogpsych.2007.12.002",
+      "title": "Non-monotonic Temporal-Weighting Indicates a Dynamically Modulated Evidence-Integration Mechanism.",
+      "authors": [
+        "Zohar Z Bronfman",
+        "Noam Brezis",
+        "Marius Usher"
+      ],
+      "year": "2016",
+      "journal": "PLoS computational biology",
+      "abstract": "Perceptual decisions are thought to be mediated by a mechanism of sequential sampling and integration of noisy evidence whose temporal weighting profile affects the decision quality. To examine temporal weighting, participants were presented with two brightness-fluctuating disks for 1, 2 or 3 seconds and were requested to choose the overall brighter disk at the end of each trial. By employing a signal-perturbation method, which deploys across trials a set of systematically controlled temporal dispersions of the same overall signal, we were able to quantify the participants' temporal weighting profile. Results indicate that, for intervals of 1 or 2 sec, participants exhibit a primacy-bias. However, for longer stimuli (3-sec) the temporal weighting profile is non-monotonic, with concurrent primacy and recency, which is inconsistent with the predictions of previously suggested computational models of perceptual decision-making (drift-diffusion and Ornstein-Uhlenbeck processes). We propose a novel, dynamic variant of the leaky-competing accumulator model as a potential account for this finding, and we discuss potential neural mechanisms."
+    }
+  ]
+}

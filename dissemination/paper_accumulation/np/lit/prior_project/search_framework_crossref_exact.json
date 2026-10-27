@@ -1,0 +1,252 @@
+{
+  "access_date": "2026-10-24",
+  "endpoint": "Crossref works/{doi}",
+  "records": [
+    {
+      "doi": "10.7554/elife.55365",
+      "title": "Differentiating between integration and non-integration strategies in perceptual decision making",
+      "authors": [
+        "Gabriel M Stine",
+        "Ariel Zylberberg",
+        "Jochen Ditterich",
+        "Michael N Shadlen"
+      ],
+      "year": 2020,
+      "venue": "eLife",
+      "type": "journal-article",
+      "relation": {
+        "has-preprint": [
+          {
+            "id-type": "doi",
+            "id": "10.1101/2020.01.24.918169",
+            "asserted-by": "object"
+          }
+        ],
+        "has-review": [
+          {
+            "id-type": "doi",
+            "id": "10.7554/eLife.55365.sa2",
+            "asserted-by": "object"
+          },
+          {
+            "id-type": "doi",
+            "id": "10.7554/eLife.55365.sa1",
+            "asserted-by": "object"
+          }
+        ]
+      },
+      "update_to": []
+    },
+    {
+      "doi": "10.7554/elife.84045",
+      "title": "Temporal integration is a robust feature of perceptual decisions",
+      "authors": [
+        "Alexandre Hyafil",
+        "Jaime de la Rocha",
+        "Cristina Pericas",
+        "Leor N Katz",
+        "Alexander C Huk",
+        "Jonathan W Pillow"
+      ],
+      "year": 2023,
+      "venue": "eLife",
+      "type": "journal-article",
+      "relation": {
+        "has-preprint": [
+          {
+            "id-type": "doi",
+            "id": "10.1101/2022.10.25.513647",
+            "asserted-by": "subject"
+          },
+          {
+            "id-type": "doi",
+            "id": "10.1101/2022.10.25.513647",
+            "asserted-by": "object"
+          }
+        ],
+        "has-review": [
+          {
+            "id-type": "doi",
+            "id": "10.7554/eLife.84045.sa2",
+            "asserted-by": "object"
+          },
+          {
+            "id-type": "doi",
+            "id": "10.7554/eLife.84045.sa0",
+            "asserted-by": "object"
+          },
+          {
+            "id-type": "doi",
+            "id": "10.7554/eLife.84045.sa1",
+            "asserted-by": "object"
+          }
+        ]
+      },
+      "update_to": []
+    },
+    {
+      "doi": "10.3389/fnins.2012.00079",
+      "title": "Using Time-Varying Evidence to Test Models of Decision Dynamics: Bounded Diffusion vs. the Leaky Competing Accumulator Model",
+      "authors": [
+        "Konstantinos Tsetsos",
+        "Juan Gao",
+        "James L. McClelland",
+        "Marius Usher"
+      ],
+      "year": 2012,
+      "venue": "Frontiers in Neuroscience",
+      "type": "journal-article",
+      "relation": {},
+      "update_to": []
+    },
+    {
+      "doi": "10.1016/j.neuron.2008.10.008",
+      "title": "Structure and Function Come Unglued in the Visual Cortex",
+      "authors": [
+        "Pascal Wallisch",
+        "J. Anthony Movshon"
+      ],
+      "year": 2008,
+      "venue": "Neuron",
+      "type": "journal-article",
+      "relation": {},
+      "update_to": []
+    },
+    {
+      "doi": "10.1523/jneurosci.4684-04.2005",
+      "title": "Neural Activity in Macaque Parietal Cortex Reflects Temporal Integration of Visual Motion Signals during Perceptual Decision Making",
+      "authors": [
+        "Alexander C. Huk",
+        "Michael N. Shadlen"
+      ],
+      "year": 2005,
+      "venue": "The Journal of Neuroscience",
+      "type": "journal-article",
+      "relation": {},
+      "update_to": []
+    },
+    {
+      "doi": "10.1126/science.1233912",
+      "title": "Rats and Humans Can Optimally Accumulate Evidence for Decision-Making",
+      "authors": [
+        "Bingni W. Brunton",
+        "Matthew M. Botvinick",
+        "Carlos D. Brody"
+      ],
+      "year": 2013,
+      "venue": "Science",
+      "type": "journal-article",
+      "relation": {
+        "has-review": [
+          {
+            "id-type": "doi",
+            "id": "10.3410/f.718017701.793478053",
+            "asserted-by": "object"
+          }
+        ]
+      },
+      "update_to": []
+    },
+    {
+      "doi": "10.1146/annurev.neuro.29.051605.113038",
+      "title": "The Neural Basis of Decision Making",
+      "authors": [
+        "Joshua I. Gold",
+        "Michael N. Shadlen"
+      ],
+      "year": 2007,
+      "venue": "Annual Review of Neuroscience",
+      "type": "journal-article",
+      "relation": {},
+      "update_to": []
+    },
+    {
+      "doi": "10.1037/0033-295x.113.4.700",
+      "title": "The physics of optimal decision making: A formal analysis of models of performance in two-alternative forced-choice tasks.",
+      "authors": [
+        "Rafal Bogacz",
+        "Eric Brown",
+        "Jeff Moehlis",
+        "Philip Holmes",
+        "Jonathan D. Cohen"
+      ],
+      "year": 2006,
+      "venue": "Psychological Review",
+      "type": "journal-article",
+      "relation": {},
+      "update_to": []
+    },
+    {
+      "doi": "10.1037/0033-295x.108.3.550",
+      "title": "The time course of perceptual choice: The leaky, competing accumulator model.",
+      "authors": [
+        "Marius Usher",
+        "James L. McClelland"
+      ],
+      "year": 2001,
+      "venue": "Psychological Review",
+      "type": "journal-article",
+      "relation": {},
+      "update_to": []
+    },
+    {
+      "doi": "10.1038/s41467-018-05797-y",
+      "title": "Psychophysical reverse correlation reflects both sensory and decision-making processes",
+      "authors": [
+        "Gouki Okazawa",
+        "Long Sha",
+        "Braden A. Purcell",
+        "Roozbeh Kiani"
+      ],
+      "year": 2018,
+      "venue": "Nature Communications",
+      "type": "journal-article",
+      "relation": {
+        "has-preprint": [
+          {
+            "id-type": "doi",
+            "id": "10.1101/273680",
+            "asserted-by": "object"
+          }
+        ]
+      },
+      "update_to": []
+    },
+    {
+      "doi": "10.1523/eneuro.0169-18.2018",
+      "title": "Strategic and Dynamic Temporal Weighting for Perceptual Decisions in Humans and Macaques",
+      "authors": [
+        "Aaron J Levi",
+        "Jacob L. Yates",
+        "Alexander C. Huk",
+        "Leor N. Katz"
+      ],
+      "year": 2018,
+      "venue": "eneuro",
+      "type": "journal-article",
+      "relation": {},
+      "update_to": []
+    },
+    {
+      "doi": "10.1162/neco.2008.12-06-420",
+      "title": "The Diffusion Decision Model: Theory and Data for Two-Choice Decision Tasks",
+      "authors": [
+        "Roger Ratcliff",
+        "Gail McKoon"
+      ],
+      "year": 2008,
+      "venue": "Neural Computation",
+      "type": "journal-article",
+      "relation": {
+        "is-referenced-by": [
+          {
+            "id-type": "doi",
+            "id": "10.7554/eLife.94231.2",
+            "asserted-by": "object"
+          }
+        ]
+      },
+      "update_to": []
+    }
+  ]
+}
