@@ -1,5 +1,5 @@
 # Status
-Last updated: 2026-10-26 by Claude (S6 panel + roadmap done; waiting at G5)
+Last updated: 2026-10-27 by Claude (pulse descriptive checks: asymmetry, lapse, readout bias)
 
 ## Current focus
 S6 panel review complete: roadmap `dissemination/paper/np/panel/roadmap.md` (simulated major revision, 7 P0/14 P1/3 P2). Waiting at G5 for author disposition (`np/checkpoints/G5.md`).
@@ -25,6 +25,11 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-10-27-pulse-readout-bias-checks.md : readout-bias (slow-trial) account not supported: pulse effect in fast-middle RTs, slow ±100% trials most accurate, pulse-direction choices faster
+- reports/2026-10-27-pulse-asymmetry-lapse-checks.md : no congruency asymmetry beyond models (0.54 ± 3.22 pp) once asymmetric UW cells are dropped; ±100% excess errors are slow, not fast guesses
+- reports/2026-10-27-pulse-psychometric-variants.md : all 7 responded-only variants underpredict pulse effects (0.35-1.9 pp vs observed 2.0 congruent / 4.0 incongruent)
+- reports/2026-10-27-pulse-effect-vs-coherence-change.md : pulse effect vs coherence change inconclusive (slope 0.27 [-0.16, 0.69] logit/100%; design range too narrow)
+- reports/2026-10-27-pulse-me-old-vs-new-filter.md : pulse ME difference from nb 2.11 is the intended filter change (old filter non-causal), not a bug
 - reports/2026-10-27-pulse-contrast-responders-only.md : (src-46) pulse effect holds without no-response trials: pos vs neg 5.84 -> 7.52 pp [2.73, 12.30], Holm 0.012; pulse does not change response rate (p 0.086)
 - reports/2026-10-26-fluctuation-kernel-observed.md : amendment 8 response-aligned kernel on real choices: neither model fits (inconclusive; not used as support)
 - reports/2026-10-26-neuropaper-s5-s6.md : G4 recorded; S5 assembled/coherence-repaired; S6 v2 selected with exact gate, coverage and calibration denominators
