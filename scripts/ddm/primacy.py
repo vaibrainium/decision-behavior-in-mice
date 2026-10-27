@@ -35,8 +35,8 @@ import pandas as pd
 from scipy.special import expit, logit
 
 from config import dir_config
-from scripts.ddm.fit_mouse_ddm import (CENSOR_AT, DEVICE, EXTREMA_LEAK_BOUNDS, LIKELIHOOD_PARAMS, MIN_RT, MODEL_SETS, RESPONDED_LIKELIHOOD_PARAMS, MouseDDM, load_inputs,
-                                       make_params, responded_only, to_ms)
+from scripts.ddm.fit_mouse_ddm import (CENSOR_AT, DEVICE, DT, EXTREMA_LEAK_BOUNDS, LIKELIHOOD_PARAMS, MIN_RT, MODEL_SETS, NOMINAL_VARIANT, RESPONDED_LIKELIHOOD_PARAMS,
+                                       MouseDDM, load_inputs, make_params, responded_only, to_ms)
 
 logger = logging.getLogger(__name__)
 
@@ -45,8 +45,12 @@ BASELINES = {"primary": "L0U0V1Z0G1", "secondary": "L1U1V1Z0G1"}
 # Strategy model (amendment 4): extrema detection = the common model with a 5-50 ms time constant. Kept out of BASELINES
 # so the default prediction grid (and its job ids) is unchanged; request with --baselines extrema.
 STRATEGY_MODELS = {"extrema": "L1U0V1Z0G1", "extrema_samples": "L0U0V1Z0G1"}  # extrema_samples: amendment 10 sample rule
-SAMPLE_RULE = {"extrema_samples"}
-MODELS = {**BASELINES, **STRATEGY_MODELS}
+# Paper-exact Stine et al. 2020 models (amendment 13): nominal coherence input, no sv or guesses; compared with each other.
+EXACT_MODELS = {"extrema_exact": NOMINAL_VARIANT, "integration_exact": NOMINAL_VARIANT}
+STRATEGY_MODELS["extrema_exact"] = NOMINAL_VARIANT
+SAMPLE_RULE = {"extrema_samples", "extrema_exact"}
+MODELS = {**BASELINES, **STRATEGY_MODELS, **EXACT_MODELS}
+PULSE_LEAD_RISE = 0.1  # amendment 13 item 4: latencies at 10% of each response's maximum
 LEAK_BOUNDS = {"extrema": EXTREMA_LEAK_BOUNDS}
 FIXED_GUESS_BIAS = False  # default guess form of the model set in use
 
@@ -106,25 +110,64 @@ def gain_stimuli(inputs: dict, rows: np.ndarray) -> tuple[np.ndarray, np.ndarray
     return to_ms(without.astype(np.float32), fr), to_ms(pulse.astype(np.float32), fr)
 
 
+def attach_pulse_timing(inputs: dict, path: Path) -> dict:
+    """Add the scheduled pulse timing (build_pulse_timing.py) to the inputs; call before responded_only."""
+    with np.load(path) as f:
+        if not np.array_equal(f["agg_code"], inputs["agg_code"]):
+            raise ValueError(f"{path} is not aligned with the inputs")
+        return {**inputs, **{k: f[k] for k in ("pulse_onset_frame0", "pulse_n_frames", "pulse_coherence")}}
+
+
+def rise_time(response: np.ndarray, frame_rate: int, frac: float = PULSE_LEAD_RISE) -> float:
+    """Time (s) at which a response first reaches `frac` of its maximum, interpolated linearly between frames."""
+    r = np.asarray(response, dtype=float)
+    threshold = frac * r.max()
+    i = int(np.argmax(r >= threshold))
+    return ((i - 1) + (threshold - r[i - 1]) / (r[i] - r[i - 1])) / frame_rate
+
+
+def pulse_lead(inputs: dict, rig: str) -> float:
+    """Amendment 13 item 4: how much earlier (s) than the stimulus onset a pulse reaches the decision, relative to
+    the logged frames: onset step response minus pulse response latency, from motion energy only."""
+    fr = int(inputs["frame_rate"])
+    return rise_time(inputs[f"onset_response_{rig}"], fr) - rise_time(inputs[f"pulse_response_{rig}"], fr)
+
+
+def nominal_stimuli(inputs: dict, rows: np.ndarray, lead: float) -> tuple[np.ndarray, np.ndarray]:
+    """1 ms nominal inputs with and without the pulse (amendment 13): the trial's signed coherence from onset, and the
+    scheduled pulse coherence over the logged pulse frames shifted `lead` s earlier."""
+    fr = int(inputs["frame_rate"])
+    n_steps = int(round(inputs["signal"].shape[1] / fr / DT))
+    without = np.repeat(inputs["signed_coherence"][rows, None].astype(np.float32), n_steps, axis=1)
+    with_pulse = without.copy()
+    for i, r in enumerate(rows):
+        if inputs["sched_pulse_type"][r] != 0:
+            start, stop = (np.array([inputs["pulse_onset_frame0"][r], inputs["pulse_onset_frame0"][r] + inputs["pulse_n_frames"][r]]) / fr - lead) / DT
+            with_pulse[i, max(int(round(start)), 0): max(int(round(stop)), 0)] = inputs["pulse_coherence"][r]
+    return with_pulse, without
+
+
 def make_model(variant: str, rig: str, fixed_guess_bias: bool | None = None, time_varying_gain: bool = False, leak_bounds: tuple[float, float] | None = None,
-               responded: bool = False, extrema_samples: bool = False) -> MouseDDM:
+               responded: bool = False, extrema_samples: bool = False, nominal_input: bool = False) -> MouseDDM:
     fixed_guess_bias = FIXED_GUESS_BIAS if fixed_guess_bias is None else fixed_guess_bias
     free, fixed = make_params(variant, GUESS_MODEL, time_varying_gain=time_varying_gain, fixed_guess_bias=fixed_guess_bias, leak_bounds=leak_bounds,
-                              extrema_samples=extrema_samples)
+                              extrema_samples=extrema_samples, nominal_input=nominal_input)
     likelihood_params = RESPONDED_LIKELIHOOD_PARAMS if responded else LIKELIHOOD_PARAMS
     return MouseDDM(free_params=free, fixed_params=fixed, device=DEVICE, likelihood_params=likelihood_params, censor_at=CENSOR_AT, min_rt=MIN_RT[rig])
 
 
 def load_fit(fits_dir: Path, mouse: str, variant: str, split: str, fixed_guess_bias: bool | None, leak_bounds: tuple[float, float] | None = None, drift_gain_max: float | None = None,
-             responded: bool | None = None, extrema_samples: bool = False) -> dict:
+             responded: bool | None = None, extrema_samples: bool = False, nominal_input: bool = False) -> dict:
     """A fit whose guess form (and leak range) matches; refuses silently mismatched fits (as model_recovery does).
     With `responded` set, also refuses a fit whose likelihood does (not) condition on a response (amendment 9)."""
     path = fits_dir / f"{mouse}_{variant}_{split}.pkl"
     with open(path, "rb") as f:
         r = pickle.load(f)
     fixed_guess_bias = FIXED_GUESS_BIAS if fixed_guess_bias is None else fixed_guess_bias
+    if bool(r.get("nominal_input", False)) != nominal_input:
+        raise ValueError(f"{path}: nominal_input={r.get('nominal_input')}, expected {nominal_input}")
     form = (r.get("guess_model", "single"), r.get("fixed_guess_bias", False))
-    if form != (GUESS_MODEL, fixed_guess_bias):
+    if not nominal_input and form != (GUESS_MODEL, fixed_guess_bias):  # the exact models have no guesses
         raise ValueError(f"{path} has guess form {form}, expected {(GUESS_MODEL, fixed_guess_bias)}")
     fit_bounds = r.get("leak_bounds")
     if (tuple(fit_bounds) if fit_bounds else None) != (tuple(leak_bounds) if leak_bounds else None):
@@ -174,14 +217,17 @@ def per_rep_summary(sim: pd.DataFrame) -> dict:
 
 
 def predict_mouse(inputs: dict, mouse: str, params: dict, variant: str, n_reps: int, seed: int, fixed_guess_bias: bool | None = None, leak_bounds: tuple[float, float] | None = None,
-                  rows: np.ndarray | None = None, pulse_gain: float | None = None, keep_sim: bool = False) -> dict:
+                  rows: np.ndarray | None = None, pulse_gain: float | None = None, keep_sim: bool = False, nominal_lead: float | None = None) -> dict:
     """Predictions for one mouse's pulse trials (or the given `rows`) from `params`; no observed choices or RTs are
-    read. With `pulse_gain`, the pulse component of the input is scaled by it (amendment 6)."""
+    read. With `pulse_gain`, the pulse component of the input is scaled by it (amendment 6). With `nominal_lead`, the
+    input is nominal (paper-exact models, amendment 13) with the pulse shifted that many seconds earlier."""
     rows = pulse_rows(inputs, mouse) if rows is None else rows
     rig = np.unique(inputs["data_source"][rows]).item()
     model = make_model(variant, rig, fixed_guess_bias, time_varying_gain="gain_decay" in params and params["gain_decay"] != 0, leak_bounds=leak_bounds,
-                       extrema_samples="extrema_bound" in params)
-    if pulse_gain is None:
+                       extrema_samples="extrema_bound" in params, nominal_input=nominal_lead is not None)
+    if nominal_lead is not None:
+        with_pulse, without = nominal_stimuli(inputs, rows, nominal_lead)
+    elif pulse_gain is None:
         with_pulse, without = stimuli(inputs, rows)
     else:
         without, pulse = gain_stimuli(inputs, rows)
@@ -430,15 +476,20 @@ if __name__ == "__main__":
     parser.add_argument("--responded_only", action="store_true", help="amendment 9: responded trials only; fits must use the conditional likelihood")
     parser.add_argument("--strategy_model", choices=list(STRATEGY_MODELS), default="extrema", help="model a of the strategy test")
     parser.add_argument("--strategy_test", action="store_true", help="amendment 4 item 5 / amendment 5: extrema vs primary baseline (after gate 1, with --unblind)")
+    parser.add_argument("--strategy_baseline", choices=list(MODELS), default="primary", help="model b of the strategy test (amendment 13: integration_exact)")
+    parser.add_argument("--pulse_timing", default="ddm/pulse_timing_global.npz", help="scheduled pulse timing for the paper-exact models (build_pulse_timing.py)")
+    parser.add_argument("--lead_shift", type=float, default=0.0, help="amendment 13 item 4 sensitivity: added to the pulse lead (s), e.g. -0.05 or 0.05")
     args = parser.parse_args()
 
     processed = Path(dir_config.data.processed)
     use_model_set(args.model_set)
     args.fixed_guess_bias = args.fixed_guess_bias or FIXED_GUESS_BIAS
     inputs = load_inputs(processed / args.inputs)
+    baselines = args.baselines or list(BASELINES)
+    if args.predict and set(baselines) & set(EXACT_MODELS):
+        inputs = attach_pulse_timing(inputs, processed / args.pulse_timing)
     if args.responded_only:
         inputs = responded_only(inputs)
-    baselines = args.baselines or list(BASELINES)
     grid = build_grid(inputs, baselines)
     if args.list:
         print(f"{len(grid)} prediction jobs: {len(baselines)} models x {len(grid) // len(baselines)} mice; --array=0-{len(grid) - 1}")
@@ -449,14 +500,16 @@ if __name__ == "__main__":
             logger.info("skipping %s: output exists", job)
         else:
             variant = MODELS[job["baseline"]]
+            exact = job["baseline"] in EXACT_MODELS
             leak_bounds = LEAK_BOUNDS.get(job["baseline"])
-            gain_max = args.drift_gain_max if job["baseline"] in STRATEGY_MODELS else None
+            gain_max = args.drift_gain_max if job["baseline"] in STRATEGY_MODELS and not exact else None
             fit = load_fit(processed / args.fits_dir, job["mouse"], variant, "control", args.fixed_guess_bias, leak_bounds, gain_max, responded=args.responded_only,
-                           extrema_samples=job["baseline"] in SAMPLE_RULE)
+                           extrema_samples=job["baseline"] in SAMPLE_RULE, nominal_input=exact)
+            lead = pulse_lead(inputs, np.unique(inputs["data_source"][pulse_rows(inputs, job["mouse"])]).item()) + args.lead_shift if exact else None
             t0 = time.time()
-            pred = predict_mouse(inputs, job["mouse"], fit["parameters"], variant, args.n_reps, args.seed, args.fixed_guess_bias, leak_bounds)
+            pred = predict_mouse(inputs, job["mouse"], fit["parameters"], variant, args.n_reps, args.seed, args.fixed_guess_bias, leak_bounds, nominal_lead=lead)
             pred.update(fit_path=str(processed / args.fits_dir), fixed_guess_bias=args.fixed_guess_bias, seconds=time.time() - t0, commit=git_commit(),
-                        responded_only=args.responded_only)
+                        responded_only=args.responded_only, nominal_lead=lead, lead_shift=args.lead_shift if exact else None)
             out.parent.mkdir(parents=True, exist_ok=True)
             tmp = out.with_suffix(".tmp")
             with open(tmp, "wb") as f:
@@ -467,18 +520,20 @@ if __name__ == "__main__":
         if not args.unblind:
             raise SystemExit("refusing to compare with recorded pulse-trial choices without --unblind (after gate 1 only)")
         tables = {}
-        for model in [args.strategy_model, "primary"]:
+        for model in [args.strategy_model, args.strategy_baseline]:
             tables[model] = {}
             for p in sorted((processed / args.out_dir / model).glob("*.pkl")):
                 with open(p, "rb") as f:
                     pr = pickle.load(f)
                 tables[model][p.stem] = attach_observed(pr, inputs["rt"][pr["trials"].row], inputs["choice"][pr["trials"].row])
-        res = strategy_test(tables[args.strategy_model], tables["primary"])
+        res = strategy_test(tables[args.strategy_model], tables[args.strategy_baseline])
         out = processed / args.out_dir / ("results_strategy.pkl" if args.strategy_model == "extrema" else f"results_strategy_{args.strategy_model}.pkl")
+        if args.strategy_baseline != "primary":
+            out = out.with_name(f"{out.stem}_vs_{args.strategy_baseline}.pkl")
         with open(out, "wb") as f:
             pickle.dump(res, f)
         print(res["per_mouse"].round(2).to_string())
-        print({k: res[k] for k in ("pulse_gain", "total")}, f"(a = {args.strategy_model}, b = primary)")
+        print({k: res[k] for k in ("pulse_gain", "total")}, f"(a = {args.strategy_model}, b = {args.strategy_baseline})")
     elif args.analyze:
         if not args.unblind:
             raise SystemExit("refusing to compare with recorded pulse-trial choices without --unblind (plan step 5 must be done)")

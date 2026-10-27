@@ -17,6 +17,8 @@ NLL at the generating parameters vs at the recovered ones checks the optimizer.
 rapid-forgetting model (L1U0V1Z0G1, leak 20-200/s); control trials only; generating parameters from the control-trial
 fits (<mouse>_<variant>_control.pkl), the common model from the first --fits_dir and E from the second. Asks whether the
 control-trial comparison scores E-generated data as E.
+--strategy --exact (amendment 13, item 5): the paper-exact Stine et al. 2020 models instead, integration (DDMx, first
+--fits_dir) and extrema detection (ESx, second), on nominal coherence input.
 
 Usage:
     python -m scripts.ddm.model_recovery --list
@@ -36,7 +38,7 @@ import numpy as np
 
 from config import dir_config
 from scripts.ddm.fit_mouse_ddm import (CENSOR_AT, DE_TOL, DEVICE, EXTREMA_LEAK_BOUNDS, LIKELIHOOD_PARAMS, MIN_RT, MODEL_SETS, RESPONDED_LIKELIHOOD_PARAMS, MouseDDM, heldout_nll,
-                                       load_inputs, make_params, responded_only, select)
+                                       NOMINAL_VARIANT, load_inputs, make_params, responded_only, select)
 
 logger = logging.getLogger(__name__)
 
@@ -48,6 +50,7 @@ MODELS = ([COMMON] + [COMMON[:i + 1] + "0" + COMMON[i + 2:] for i in range(0, le
 EXTREMA = "L1U0V1Z0G1"  # with leak 20-200/s (primacy plan, amendment 4)
 EXTREMA_SAMPLES = "ES"  # discrete-sample extrema detection (amendment 10): the common model's components, sample rule
 STRATEGY_MODELS = [COMMON, EXTREMA]
+EXACT_MODELS = ["DDMx", "ESx"]  # paper-exact Stine et al. 2020 models (amendment 13), variant NOMINAL_VARIANT, nominal input
 N_REPLICATES = 2
 
 
@@ -58,20 +61,23 @@ def use_model_set(name: str) -> None:
     STRATEGY_MODELS = [COMMON, EXTREMA]
 
 
-def strategy_models(extrema_samples: bool = False) -> list[str]:
-    return [COMMON, EXTREMA_SAMPLES] if extrema_samples else STRATEGY_MODELS
+def strategy_models(extrema_samples: bool = False, exact: bool = False) -> list[str]:
+    return EXACT_MODELS if exact else [COMMON, EXTREMA_SAMPLES] if extrema_samples else STRATEGY_MODELS
 
 
-def build_grid(inputs: dict, strategy: bool = False, extrema_samples: bool = False) -> list[dict]:
+def build_grid(inputs: dict, strategy: bool = False, extrema_samples: bool = False, exact: bool = False) -> list[dict]:
     mice = sorted(np.unique(inputs["subject_id"]))
-    models = strategy_models(extrema_samples) if strategy else MODELS
+    models = strategy_models(extrema_samples, exact) if strategy else MODELS
     return [{"mouse": m, "generator": g, "candidate": c, "replicate": r} for r in range(N_REPLICATES) for g in models for c in models for m in mice]
 
 
 def make_model(variant: str, rig: str, fixed_guess_bias: bool = False, strategy: bool = False, responded: bool = False) -> MouseDDM:
     leak_bounds = EXTREMA_LEAK_BOUNDS if strategy and variant == EXTREMA else None
-    samples = variant == EXTREMA_SAMPLES
-    free, fixed = make_params(COMMON if samples else variant, GUESS_MODEL, fixed_guess_bias=fixed_guess_bias, leak_bounds=leak_bounds, extrema_samples=samples)
+    samples = variant in (EXTREMA_SAMPLES, "ESx")
+    if variant in EXACT_MODELS:
+        free, fixed = make_params(NOMINAL_VARIANT, extrema_samples=samples, nominal_input=True)
+    else:
+        free, fixed = make_params(COMMON if samples else variant, GUESS_MODEL, fixed_guess_bias=fixed_guess_bias, leak_bounds=leak_bounds, extrema_samples=samples)
     likelihood_params = RESPONDED_LIKELIHOOD_PARAMS if responded else LIKELIHOOD_PARAMS
     return MouseDDM(free_params=free, fixed_params=fixed, device=DEVICE, likelihood_params=likelihood_params, censor_at=CENSOR_AT, min_rt=MIN_RT[rig])
 
@@ -103,13 +109,18 @@ def generating_params(fits_dirs: list[Path], mouse: str, variant: str, fixed_gue
 
 
 def strategy_params(fits_dirs: list[Path], mouse: str, variant: str, fixed_guess_bias: bool = False) -> dict:
-    """Control-trial fit of the common model (first folder) or of E / ES (second folder); E's leak must lie in 20-200/s."""
-    path = fits_dirs[0 if variant == COMMON else 1] / f"{mouse}_{COMMON if variant == EXTREMA_SAMPLES else variant}_control.pkl"
+    """Control-trial fit of the common model (first folder) or of E / ES (second folder); E's leak must lie in 20-200/s.
+    Exact models: DDMx from the first folder, ESx from the second."""
+    exact = variant in EXACT_MODELS
+    stem = NOMINAL_VARIANT if exact else COMMON if variant == EXTREMA_SAMPLES else variant
+    path = fits_dirs[0 if variant in (COMMON, "DDMx") else 1] / f"{mouse}_{stem}_control.pkl"
     with open(path, "rb") as f:
         r = pickle.load(f)
-    if bool(r.get("extrema_samples", False)) != (variant == EXTREMA_SAMPLES):
+    if bool(r.get("extrema_samples", False)) != (variant in (EXTREMA_SAMPLES, "ESx")):
         raise ValueError(f"{path}: extrema_samples={r.get('extrema_samples')} does not match {variant}")
-    if (r.get("guess_model", "single"), r.get("fixed_guess_bias", False)) != (GUESS_MODEL, fixed_guess_bias):
+    if bool(r.get("nominal_input", False)) != exact:
+        raise ValueError(f"{path}: nominal_input={r.get('nominal_input')} does not match {variant}")
+    if not exact and (r.get("guess_model", "single"), r.get("fixed_guess_bias", False)) != (GUESS_MODEL, fixed_guess_bias):
         raise ValueError(f"{path}: guess form does not match")
     if variant == EXTREMA and not EXTREMA_LEAK_BOUNDS[0] <= r["parameters"]["leak_rate"] <= EXTREMA_LEAK_BOUNDS[1]:
         raise ValueError(f"{path}: leak_rate outside the extrema-detection bounds")
@@ -129,7 +140,7 @@ def run_job(inputs: dict, job: dict, fits_dirs: list[Path], out_dir: Path, n_rep
     if strategy:
         rows = rows[inputs["sched_pulse_type"][rows] == 0]
     rig = str(np.unique(inputs["data_source"][rows])[0])
-    real, stimulus = select(inputs, rows)
+    real, stimulus = select(inputs, rows, nominal=job["generator"] in EXACT_MODELS)
     true_params = strategy_params(fits_dirs, job["mouse"], job["generator"], fixed_guess_bias) if strategy else generating_params(fits_dirs, job["mouse"], job["generator"], fixed_guess_bias)
 
     seed = zlib.crc32(f"{job['mouse']}|{job['generator']}|{job['replicate']}".encode())
@@ -202,6 +213,7 @@ if __name__ == "__main__":
     parser.add_argument("--model_set", choices=list(MODEL_SETS), default="sv", help="with --strategy: sv (default) or nosv (amendment 12; implies --fixed_guess_bias)")
     parser.add_argument("--extrema_samples", action="store_true", help="with --strategy: discrete-sample extrema detection (ES) instead of E; second --fits_dir holds its fits")
     parser.add_argument("--strategy", action="store_true", help="common model vs E on control trials (fits_dir: common-model folder, then E folder)")
+    parser.add_argument("--exact", action="store_true", help="with --strategy: paper-exact DDMx vs ESx (amendment 13); fits_dir: DDMx folder, then ESx folder")
     args = parser.parse_args()
 
     if args.strategy:
@@ -211,8 +223,8 @@ if __name__ == "__main__":
     inputs = load_inputs(processed / args.inputs)
     if args.responded_only:
         inputs = responded_only(inputs)
-    grid = build_grid(inputs, args.strategy, args.extrema_samples)
-    models = strategy_models(args.extrema_samples) if args.strategy else MODELS
+    grid = build_grid(inputs, args.strategy, args.extrema_samples, args.exact)
+    models = strategy_models(args.extrema_samples, args.exact) if args.strategy else MODELS
     if args.list:
         print(f"{len(grid)} jobs: {len(np.unique(inputs['subject_id']))} mice x {len(models)} generators x {len(models)} candidates x {N_REPLICATES} replicates")
         print("models:", models)
