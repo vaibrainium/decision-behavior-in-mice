@@ -595,3 +595,32 @@ reported as a sensitivity re-analysis, never as the original prespecified test, 
 7. **Rules unchanged:** stopping rule (amendment 6 item 8) still applies: if the revised gate fails, the timing test is
    not run. No other model revision.
 8. **Reporting:** original and responded-only results side by side; differences in denominators stated.
+
+---
+
+## Amendment 10 (2026-10-27, before any fit of this model): discrete-sample extrema detection (Stine et al. 2020)
+
+**Decided by V. Thakur, 2026-10-27** ("lets do both"): keep the rapid-forgetting model of amendment 4 and add the
+extrema-detection model as specified by Stine, Zylberberg, Ditterich & Shadlen (2020, eLife 9:e55365, Methods;
+PMC7217695): momentary evidence sampled every Δt from N(κ(C − C0)Δt, Δt) (unit variance per second), each sample
+compared with ±B, the first sample beyond a bound decides, sub-threshold samples are discarded (no integration); in a
+free-response task the decision ends only at an extremum. They used Δt = 0.5 ms and report results unchanged at 1 ms.
+Responded-only rules of amendment 9 apply throughout.
+
+1. **Model (Es).** Sample s_t = (drift_gain · x(t) + drift_offset + sv draw) · Δt + ε_t, ε_t ~ N(0, Δt), Δt = 1 ms (the
+   simulator step), x(t) the trial's motion-energy input (as for every model). Choice = sign of the first s_t with
+   |s_t| ≥ B; RT = that time + ndt. B = b · √Δt with b free in **[2, 5]** (per-step noise SDs; b = 3 gives a mean
+   zero-drift decision time of ~0.37 s, b = 4 ~16 s). a and z are unused (fixed). drift_offset plays the role of C0.
+2. **Shared components (fairness, as in amendment 4):** drift variability sv, the fast-only guess mixture with free guess
+   bias, ndt, drift_offset, same bounds; drift_gain bound **[0.5, 200]** from the start (amendment 5 allowed 200 for E).
+   Stine et al.'s model has no sv or guesses; that difference is reported.
+3. **Differences from Stine et al. stated in the paper:** continuous filtered motion energy (~100 ms filters) instead of
+   independent stimulus samples, so stimulus fluctuations are correlated across samples while internal noise is not;
+   Δt = 1 ms; sv and fast guesses added.
+4. **Fits and comparison:** control-only CV (ccv0–ccv4) and all control trials, responded-only, 15 repetitions, same
+   folds, seeds and held-out scoring; compared with the accumulator and with E (amendment 4) by the same > 10 held-out
+   NLL rule. Nothing about Es changes the THESIS selection rule of the accumulation-first paper (which concerns E);
+   how Es enters the spine is an author decision after the results.
+5. **Recovery:** Es-generated datasets (2 replicates x 10 mice) fitted by the accumulator and by Es, same rule as F1a.
+6. **Pulse:** frozen pulse predictions from the Es control fits, and the strategy test Es vs primary, as for E.
+7. **Checks before fitting:** both simulator backends agree; zero-drift mean decision time matches 1/(2(1 − Φ(b))) steps.
