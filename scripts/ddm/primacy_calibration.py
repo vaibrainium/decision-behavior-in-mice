@@ -31,7 +31,7 @@ import pandas as pd
 
 from config import dir_config
 from scripts.ddm import fit_pulse_gain, primacy
-from scripts.ddm.fit_mouse_ddm import load_inputs
+from scripts.ddm.fit_mouse_ddm import load_inputs, responded_only
 from scripts.ddm.model_recovery import synthesize
 from scripts.ddm.primacy_sensitivity import gain_decay
 
@@ -48,12 +48,16 @@ def build_grid(inputs: dict) -> list[dict]:
     return [{"level": lv, "dataset": d, "mouse": m} for lv in LEVELS for d in range(N_DATASETS) for m in mice]
 
 
-def run_job(inputs: dict, job: dict, fits_dir: Path, gain_dir: Path, fit_reps: int, n_reps: int) -> dict:
+def run_job(inputs: dict, job: dict, fits_dir: Path, gain_dir: Path, fit_reps: int, n_reps: int, responded: bool = False) -> dict:
+    """`responded` (amendment 9): synthetic trials without a response by 5 s are dropped before the gain fits."""
     mouse = job["mouse"]
     variant = primacy.BASELINES[BASELINE]
-    params = primacy.load_fit(fits_dir, mouse, variant, "control", False)["parameters"]
+    params = primacy.load_fit(fits_dir, mouse, variant, "control", False, responded=responded)["parameters"]
     with open(gain_dir / BASELINE / f"{mouse}.pkl", "rb") as f:
-        w_true = pickle.load(f)["pulse_gain_all"]
+        gain = pickle.load(f)
+    if bool(gain.get("responded_only", False)) != responded:
+        raise ValueError(f"{gain_dir}: pulse gain responded_only={gain.get('responded_only')}, expected {responded}")
+    w_true = gain["pulse_gain_all"]
     rows = primacy.pulse_rows(inputs, mouse)
     rig = np.unique(inputs["data_source"][rows]).item()
     seed = zlib.crc32(f"calib|{mouse}|{job['level']}|{job['dataset']}".encode())
@@ -62,8 +66,11 @@ def run_job(inputs: dict, job: dict, fits_dir: Path, gain_dir: Path, fit_reps: i
                            primacy.gain_stimuli(inputs, rows), inputs["condition"][rows], seed)
     generator.simulator.clear_cache()
     observed = {"rt": synthetic["rt"], "choice": synthetic["choice"]}
+    if responded:
+        keep = observed["choice"] >= 0
+        rows, observed = rows[keep], {k: v[keep] for k, v in observed.items()}
     t0 = time.time()
-    res = fit_pulse_gain.run_job(inputs, BASELINE, mouse, fits_dir, fit_reps, n_reps, seed + 1, params=params, observed=observed)
+    res = fit_pulse_gain.run_job(inputs, BASELINE, mouse, fits_dir, fit_reps, n_reps, seed + 1, params=params, observed=observed, rows=rows, responded=responded)
     res.update(job=job, w_true=w_true, synthetic=observed, seconds=time.time() - t0)
     return res
 
@@ -84,7 +91,9 @@ def summarize(out_dir: Path, levels: list[float] | None, **kw) -> pd.DataFrame:
         tables = {m: primacy.attach_observed(pr, pr["synthetic"]["rt"], pr["synthetic"]["choice"]) for m, pr in preds.items()}
         t = primacy.analysis_table(list(tables.values()))
         res = {"gate_departure": primacy.gate_departure(t, **kw), "gate_distributions": primacy.gate_distributions(preds, tables)}
-        row = {"level": level, "dataset": dataset, "gate_pass": primacy.gate_pass(res),
+        responded = {bool(pr.get("responded_only", False)) for pr in preds.values()}
+        assert len(responded) == 1, f"level {level} dataset {dataset}: mixed responded_only"
+        row = {"level": level, "dataset": dataset, "gate_pass": primacy.gate_pass(res, responded.pop()),
                "w_true_vs_fit_r": float(np.corrcoef([p["w_true"] for p in preds.values()], [p["pulse_gain_all"] for p in preds.values()])[0, 1])}
         for key, timings, name in [("primary", [1, 2], "middle"), ("uw_late", [1, 2, 3], "late")]:
             sub = t if key == "primary" else t[t.rig == "uw"]
@@ -130,6 +139,7 @@ if __name__ == "__main__":
     parser.add_argument("--summarize", action="store_true")
     parser.add_argument("--levels", type=float, nargs="*", help="summarize only these levels (for parallel runs)")
     parser.add_argument("--report", action="store_true", help="report from the per-level summary files")
+    parser.add_argument("--responded_only", action="store_true", help="amendment 9: responded trials only, conditional likelihood")
     args = parser.parse_args()
 
     processed = Path(dir_config.data.processed)
@@ -140,6 +150,8 @@ if __name__ == "__main__":
         report(pd.concat([pd.read_csv(f) for f in sorted(out_dir.glob("calibration_summary_levels*.csv"))], ignore_index=True))
     else:
         inputs = load_inputs(processed / args.inputs)
+        if args.responded_only:
+            inputs = responded_only(inputs)
         grid = build_grid(inputs)
         if args.list:
             print(f"{len(grid)} jobs: {len(LEVELS)} levels x {N_DATASETS} datasets x {len(grid) // len(LEVELS) // N_DATASETS} mice; --array=0-{len(grid) - 1}")
@@ -149,7 +161,7 @@ if __name__ == "__main__":
             if out.exists():
                 logger.info("skipping %s: output exists", job)
             else:
-                res = run_job(inputs, job, processed / args.fits_dir, processed / args.gain_dir, args.fit_reps, args.n_reps)
+                res = run_job(inputs, job, processed / args.fits_dir, processed / args.gain_dir, args.fit_reps, args.n_reps, args.responded_only)
                 out_dir.mkdir(parents=True, exist_ok=True)
                 tmp = out.with_suffix(".tmp")
                 with open(tmp, "wb") as f:

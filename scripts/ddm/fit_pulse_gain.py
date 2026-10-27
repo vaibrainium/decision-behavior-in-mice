@@ -35,7 +35,7 @@ import pandas as pd
 
 from config import dir_config
 from scripts.ddm import primacy
-from scripts.ddm.fit_mouse_ddm import N_FOLDS, cv_folds, load_inputs
+from scripts.ddm.fit_mouse_ddm import N_FOLDS, cv_folds, load_inputs, responded_only
 
 logger = logging.getLogger(__name__)
 
@@ -97,17 +97,18 @@ def profile_interval(profile: dict) -> tuple[float, float]:
 
 
 def run_job(inputs: dict, baseline: str, mouse: str, fits_dir: Path, fit_reps: int, n_reps: int, seed: int,
-            params: dict | None = None, observed: dict | None = None) -> dict:
+            params: dict | None = None, observed: dict | None = None, rows: np.ndarray | None = None, responded: bool = False) -> dict:
     """`params` overrides the control-only fit and `observed` (rt, choice arrays over the mouse's pulse trials, in
-    pulse_rows order) replaces the recorded outcomes; both are used by the calibration (primacy_sensitivity)."""
+    pulse_rows order, or over `rows`) replaces the recorded outcomes; all three are used by the calibration.
+    `responded`: likelihood conditional on a response by 5 s (amendment 9); the data must contain responses only."""
     variant = primacy.BASELINES[baseline]
     if params is None:
-        params = primacy.load_fit(fits_dir, mouse, variant, "control", False)["parameters"]
-    rows = primacy.pulse_rows(inputs, mouse)
+        params = primacy.load_fit(fits_dir, mouse, variant, "control", False, responded=responded)["parameters"]
+    rows = primacy.pulse_rows(inputs, mouse) if rows is None else rows
     obs_of = (lambda sel: None) if observed is None else (lambda sel: {k: v[sel] for k, v in observed.items()})  # noqa: E731
     rig = np.unique(inputs["data_source"][rows]).item()
     folds = cv_folds(inputs["condition"][rows], N_FOLDS)
-    model = primacy.make_model(variant, rig)
+    model = primacy.make_model(variant, rig, responded=responded)
 
     fold_gain, fold_profile, parts, sims = {}, {}, [], []
     for k in range(N_FOLDS):
@@ -128,7 +129,7 @@ def run_job(inputs: dict, baseline: str, mouse: str, fits_dir: Path, fit_reps: i
     return {"mouse": mouse, "rig": rig, "variant": variant, "baseline": baseline, "params": params, "n_reps": n_reps, "seed": seed,
             "trials": trials, "reps": primacy.per_rep_summary(sim), "fold_gain": fold_gain, "fold_profile": fold_profile,
             "pulse_gain_all": w_all, "profile_all": prof_all, "pulse_gain_interval": profile_interval(prof_all),
-            "fit_reps": fit_reps, "fit_path": str(fits_dir), "commit": primacy.git_commit()}
+            "fit_reps": fit_reps, "fit_path": str(fits_dir), "commit": primacy.git_commit(), "responded_only": responded}
 
 
 def build_grid(inputs: dict) -> list[dict]:
@@ -147,10 +148,13 @@ if __name__ == "__main__":
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--job_id", type=int)
     parser.add_argument("--list", action="store_true")
+    parser.add_argument("--responded_only", action="store_true", help="amendment 9: responded trials only, conditional likelihood")
     args = parser.parse_args()
 
     processed = Path(dir_config.data.processed)
     inputs = load_inputs(processed / args.inputs)
+    if args.responded_only:
+        inputs = responded_only(inputs)
     grid = build_grid(inputs)
     if args.list:
         print(f"{len(grid)} jobs: {len(primacy.BASELINES)} baselines x {len(grid) // len(primacy.BASELINES)} mice; --array=0-{len(grid) - 1}")
@@ -161,7 +165,7 @@ if __name__ == "__main__":
             logger.info("skipping %s: output exists", job)
         else:
             t0 = time.time()
-            res = run_job(inputs, job["baseline"], job["mouse"], processed / args.fits_dir, args.fit_reps, args.n_reps, args.seed)
+            res = run_job(inputs, job["baseline"], job["mouse"], processed / args.fits_dir, args.fit_reps, args.n_reps, args.seed, responded=args.responded_only)
             res["seconds"] = time.time() - t0
             out.parent.mkdir(parents=True, exist_ok=True)
             tmp = out.with_suffix(".tmp")

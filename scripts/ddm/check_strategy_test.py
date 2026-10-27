@@ -23,7 +23,7 @@ import pandas as pd
 
 from config import dir_config
 from scripts.ddm import primacy
-from scripts.ddm.fit_mouse_ddm import load_inputs, select
+from scripts.ddm.fit_mouse_ddm import load_inputs, responded_only, select
 from scripts.ddm.model_recovery import synthesize
 
 VARIANT = "L0U0V1Z0G1"
@@ -77,6 +77,9 @@ def power(inputs, pred_dir: Path, datasets: int, out: Path):
         for f in sorted((pred_dir / model).glob("*.pkl")):
             with open(f, "rb") as fh:
                 preds[model][f.stem] = pickle.load(fh)
+    flags = {bool(p.get("responded_only", False)) for d in preds.values() for p in d.values()}
+    if flags != {bool((inputs["choice"] >= 0).all())}:  # rows index the (filtered) inputs the predictions were made on
+        raise ValueError("predictions and inputs disagree on responded_only")
     mice = sorted(preds["primary"])
     gens = {}
     for model, variant, lb in [("extrema", "L1U0V1Z0G1", EXTREMA_LEAK_BOUNDS), ("primary", VARIANT, None)]:
@@ -105,9 +108,11 @@ def power(inputs, pred_dir: Path, datasets: int, out: Path):
         print(df.assign(verdict=df[f"{k}_favoured"].map(names)).groupby("generator").verdict.value_counts().unstack(fill_value=0).to_string())
 
 
-def main(mice, datasets, n_reps, fits_dir, leak, null_only=False):
+def main(mice, datasets, n_reps, fits_dir, leak, null_only=False, responded=False):
     logging.disable(logging.WARNING)
     inputs = load_inputs(Path(dir_config.data.processed) / "ddm/ddm_inputs_global.npz")
+    if responded:
+        inputs = responded_only(inputs)
     A = {m: pickle.load(open(fits_dir / f"{m}_{VARIANT}_control.pkl", "rb"))["parameters"] for m in mice}
     if null_only:
         null_calibration(inputs, A, datasets, n_reps)
@@ -150,10 +155,12 @@ if __name__ == "__main__":
     parser.add_argument("--null_only", action="store_true", help="calibration only (the amendment 5 numbers: --null_only --datasets 150)")
     parser.add_argument("--power", action="store_true", help="amendment 5 item 4: power of the strategy test from the frozen predictions in --pred_dir")
     parser.add_argument("--pred_dir", default="ddm/primacy", help="relative to processed")
+    parser.add_argument("--responded_only", action="store_true", help="amendment 9: responded trials only (predictions in --pred_dir must be responded-only too)")
     args = parser.parse_args()
     if args.power:
         logging.disable(logging.WARNING)
         processed = Path(dir_config.data.processed)
-        power(load_inputs(processed / "ddm/ddm_inputs_global.npz"), processed / args.pred_dir, args.datasets, processed / args.pred_dir / "strategy_power.csv")
+        inputs = load_inputs(processed / "ddm/ddm_inputs_global.npz")
+        power(responded_only(inputs) if args.responded_only else inputs, processed / args.pred_dir, args.datasets, processed / args.pred_dir / "strategy_power.csv")
         raise SystemExit
-    main(args.mice, args.datasets, args.n_reps, Path(dir_config.data.processed) / args.fits_dir, args.leak, args.null_only)
+    main(args.mice, args.datasets, args.n_reps, Path(dir_config.data.processed) / args.fits_dir, args.leak, args.null_only, args.responded_only)

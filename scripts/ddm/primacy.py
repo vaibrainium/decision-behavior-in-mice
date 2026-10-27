@@ -35,7 +35,8 @@ import pandas as pd
 from scipy.special import expit, logit
 
 from config import dir_config
-from scripts.ddm.fit_mouse_ddm import CENSOR_AT, DEVICE, EXTREMA_LEAK_BOUNDS, LIKELIHOOD_PARAMS, MIN_RT, MouseDDM, load_inputs, make_params, to_ms
+from scripts.ddm.fit_mouse_ddm import (CENSOR_AT, DEVICE, EXTREMA_LEAK_BOUNDS, LIKELIHOOD_PARAMS, MIN_RT, RESPONDED_LIKELIHOOD_PARAMS, MouseDDM, load_inputs, make_params,
+                                       responded_only, to_ms)
 
 logger = logging.getLogger(__name__)
 
@@ -93,13 +94,17 @@ def gain_stimuli(inputs: dict, rows: np.ndarray) -> tuple[np.ndarray, np.ndarray
     return to_ms(without.astype(np.float32), fr), to_ms(pulse.astype(np.float32), fr)
 
 
-def make_model(variant: str, rig: str, fixed_guess_bias: bool = False, time_varying_gain: bool = False, leak_bounds: tuple[float, float] | None = None) -> MouseDDM:
+def make_model(variant: str, rig: str, fixed_guess_bias: bool = False, time_varying_gain: bool = False, leak_bounds: tuple[float, float] | None = None,
+               responded: bool = False) -> MouseDDM:
     free, fixed = make_params(variant, GUESS_MODEL, time_varying_gain=time_varying_gain, fixed_guess_bias=fixed_guess_bias, leak_bounds=leak_bounds)
-    return MouseDDM(free_params=free, fixed_params=fixed, device=DEVICE, likelihood_params=LIKELIHOOD_PARAMS, censor_at=CENSOR_AT, min_rt=MIN_RT[rig])
+    likelihood_params = RESPONDED_LIKELIHOOD_PARAMS if responded else LIKELIHOOD_PARAMS
+    return MouseDDM(free_params=free, fixed_params=fixed, device=DEVICE, likelihood_params=likelihood_params, censor_at=CENSOR_AT, min_rt=MIN_RT[rig])
 
 
-def load_fit(fits_dir: Path, mouse: str, variant: str, split: str, fixed_guess_bias: bool, leak_bounds: tuple[float, float] | None = None, drift_gain_max: float | None = None) -> dict:
-    """A fit whose guess form (and leak range) matches; refuses silently mismatched fits (as model_recovery does)."""
+def load_fit(fits_dir: Path, mouse: str, variant: str, split: str, fixed_guess_bias: bool, leak_bounds: tuple[float, float] | None = None, drift_gain_max: float | None = None,
+             responded: bool | None = None) -> dict:
+    """A fit whose guess form (and leak range) matches; refuses silently mismatched fits (as model_recovery does).
+    With `responded` set, also refuses a fit whose likelihood does (not) condition on a response (amendment 9)."""
     path = fits_dir / f"{mouse}_{variant}_{split}.pkl"
     with open(path, "rb") as f:
         r = pickle.load(f)
@@ -111,6 +116,8 @@ def load_fit(fits_dir: Path, mouse: str, variant: str, split: str, fixed_guess_b
         raise ValueError(f"{path} has leak bounds {fit_bounds}, expected {leak_bounds}")
     if r.get("drift_gain_max") != drift_gain_max:
         raise ValueError(f"{path} has drift_gain_max {r.get('drift_gain_max')}, expected {drift_gain_max}")
+    if responded is not None and (r.get("likelihood_params", {}).get("include_censored") is False) != responded:
+        raise ValueError(f"{path}: likelihood {r.get('likelihood_params')} does not match responded={responded}")
     return r
 
 
@@ -287,18 +294,19 @@ def rt_residuals(tables: list[pd.DataFrame]) -> pd.DataFrame:
     return pd.DataFrame({"observed": g.rt.mean(), "predicted": g.apply(lambda x: np.average(x.mean_rt, weights=x.n_resp)), "n": g.size()}).assign(residual=lambda x: x.observed - x.predicted)
 
 
-def gate_pass(res: dict) -> bool:
+def gate_pass(res: dict, responded: bool = False) -> bool:
+    """Gates 1-3; responded-only data have no observed censored fraction, so gate 3 is dropped (amendment 9, item 4)."""
     d = res["gate_distributions"]
     rt_inside = d[[c for c in d if c.startswith("rt_q")]].to_numpy().mean()
-    return res["gate_departure"]["pass"] and rt_inside >= GATE_MIN_INSIDE and d.censored_inside.mean() >= GATE_MIN_INSIDE
+    return res["gate_departure"]["pass"] and rt_inside >= GATE_MIN_INSIDE and (responded or d.censored_inside.mean() >= GATE_MIN_INSIDE)
 
 
-def run_analysis(preds: dict, tables: dict, max_abs_coh: float | None = MAX_ABS_COH, require_gate: bool = True, gate_only: bool = False, **kw) -> dict:
+def run_analysis(preds: dict, tables: dict, max_abs_coh: float | None = MAX_ABS_COH, require_gate: bool = True, gate_only: bool = False, responded: bool = False, **kw) -> dict:
     """Gate, then the timing tests (plan sections 6-7). The timing tests are not run when the gate fails (plan
     section 7: the model is revised first), unless require_gate=False."""
     t = analysis_table(list(tables.values()), max_abs_coh)
     res = {"gate_departure": gate_departure(t, **kw), "gate_distributions": gate_distributions(preds, tables), "rt_residuals": rt_residuals(list(tables.values()))}
-    res["gate_pass"] = gate_pass(res)
+    res["gate_pass"] = gate_pass(res, responded)
     if gate_only:  # first pass on provisional fits: no timing contrast, so the confirmatory test stays blind
         return res
     if require_gate and not res["gate_pass"]:
@@ -400,11 +408,14 @@ if __name__ == "__main__":
     parser.add_argument("--unblind", action="store_true", help="compare with the recorded pulse-trial choices (after plan step 5 only)")
     parser.add_argument("--drift_gain_max", type=float, help="extrema model fitted with a wider drift_gain bound (amendment 5)")
     parser.add_argument("--gate_only", action="store_true", help="with --analyze: predictive check only (no timing tests); for the first pass on provisional fits")
+    parser.add_argument("--responded_only", action="store_true", help="amendment 9: responded trials only; fits must use the conditional likelihood")
     parser.add_argument("--strategy_test", action="store_true", help="amendment 4 item 5 / amendment 5: extrema vs primary baseline (after gate 1, with --unblind)")
     args = parser.parse_args()
 
     processed = Path(dir_config.data.processed)
     inputs = load_inputs(processed / args.inputs)
+    if args.responded_only:
+        inputs = responded_only(inputs)
     baselines = args.baselines or list(BASELINES)
     grid = build_grid(inputs, baselines)
     if args.list:
@@ -418,10 +429,11 @@ if __name__ == "__main__":
             variant = MODELS[job["baseline"]]
             leak_bounds = LEAK_BOUNDS.get(job["baseline"])
             gain_max = args.drift_gain_max if job["baseline"] in STRATEGY_MODELS else None
-            fit = load_fit(processed / args.fits_dir, job["mouse"], variant, "control", args.fixed_guess_bias, leak_bounds, gain_max)
+            fit = load_fit(processed / args.fits_dir, job["mouse"], variant, "control", args.fixed_guess_bias, leak_bounds, gain_max, responded=args.responded_only)
             t0 = time.time()
             pred = predict_mouse(inputs, job["mouse"], fit["parameters"], variant, args.n_reps, args.seed, args.fixed_guess_bias, leak_bounds)
-            pred.update(fit_path=str(processed / args.fits_dir), fixed_guess_bias=args.fixed_guess_bias, seconds=time.time() - t0, commit=git_commit())
+            pred.update(fit_path=str(processed / args.fits_dir), fixed_guess_bias=args.fixed_guess_bias, seconds=time.time() - t0, commit=git_commit(),
+                        responded_only=args.responded_only)
             out.parent.mkdir(parents=True, exist_ok=True)
             tmp = out.with_suffix(".tmp")
             with open(tmp, "wb") as f:
@@ -452,7 +464,10 @@ if __name__ == "__main__":
             with open(p, "rb") as f:
                 preds[p.stem] = pickle.load(f)
         tables = {m: attach_observed(pr, inputs["rt"][pr["trials"].row], inputs["choice"][pr["trials"].row]) for m, pr in preds.items()}
-        res = run_analysis(preds, tables, None if args.all_coherences else MAX_ABS_COH, gate_only=args.gate_only)
+        if {bool(pr.get("responded_only", False)) for pr in preds.values()} != {args.responded_only}:
+            raise SystemExit("predictions and --responded_only disagree")
+        res = run_analysis(preds, tables, None if args.all_coherences else MAX_ABS_COH, gate_only=args.gate_only, responded=args.responded_only)
+        res["responded_only"] = args.responded_only
         res["prediction_commits"] = sorted({pr.get("commit", "unknown") for pr in preds.values()})
         out = processed / args.out_dir / f"results_{args.baseline}{'_allcoh' if args.all_coherences else ''}{'_gate' if args.gate_only else ''}.pkl"
         with open(out, "wb") as f:
