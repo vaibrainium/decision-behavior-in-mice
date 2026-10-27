@@ -52,6 +52,14 @@ LIKELIHOOD_PARAMS = {"method": "qmle_censored", "nbins": 9, "rt_nllh_weight": 1.
 # Responses at 0.3-5 s only (V. Thakur, 2026-10-27: trials without a response by 5 s are not analysed); the likelihood
 # is then conditional on a response by 5 s.
 RESPONDED_LIKELIHOOD_PARAMS = {**LIKELIHOOD_PARAMS, "include_censored": False}
+# The conditional likelihood does not constrain how often a model responds; small mice drifted to ~98% simulated
+# non-responses. Responded-only training rejects parameter sets above this share (primacy plan, amendment 11).
+MAX_NO_RESPONSE = 0.5
+
+
+def too_few_responses(likelihood_calc, choice: np.ndarray) -> bool:
+    """Amendment 11: in responded-only fits, more than MAX_NO_RESPONSE of simulated trials without a response by 5 s."""
+    return not getattr(likelihood_calc, "include_censored", True) and float(np.mean(choice < 0)) > MAX_NO_RESPONSE
 EVAL_SEED = 12345  # held-out scoring uses the same noise draws for every variant
 DE_TOL = {"tol": 0.0, "atol": 1.0}  # stop when the population's NLL spread is within 1 unit (not 1% of the NLL)
 
@@ -140,7 +148,7 @@ class MouseDDM(DecisionModel):
         except ValueError:
             return 1e6
         result = self._simulate_condition(stimulus, params, n_reps)
-        if result is None:
+        if result is None or too_few_responses(self.likelihood_calc, result["choice"].to_numpy()):
             return 1e6
         return self.likelihood_calc.compute_nll(
             result["rt"].to_numpy(), result["choice"].to_numpy(), data["rt"], data["choice"], result["signed_coherence"].to_numpy(), data["condition"]

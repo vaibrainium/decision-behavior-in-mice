@@ -35,7 +35,7 @@ import pandas as pd
 
 from config import dir_config
 from scripts.ddm import primacy
-from scripts.ddm.fit_mouse_ddm import N_FOLDS, cv_folds, load_inputs, responded_only
+from scripts.ddm.fit_mouse_ddm import N_FOLDS, cv_folds, load_inputs, responded_only, too_few_responses
 
 logger = logging.getLogger(__name__)
 
@@ -59,7 +59,7 @@ def gain_nll_function(model, params: dict, inputs: dict, rows: np.ndarray, n_rep
 
     def nll(w: float) -> float:
         result = model._simulate_condition((without, pulse), {**params, "noise_weight": float(w)}, n_reps)
-        if result is None:
+        if result is None or too_few_responses(model.likelihood_calc, result["choice"].to_numpy()):
             return float("inf")
         return float(model.likelihood_calc.compute_nll(result["rt"].to_numpy(), result["choice"].to_numpy(), data["rt"], data["choice"],
                                                        result["signed_coherence"].to_numpy(), data["condition"]))
