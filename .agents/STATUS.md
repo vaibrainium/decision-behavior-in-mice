@@ -15,7 +15,8 @@ Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gat
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
-- plans/2026-10-26-paper-accumulation-variant.md : second paper version (accumulation-first) in dissemination/paper_accumulation/; S1 spine in progress (G0 approved)
+- plans/2026-10-26-v2-refits-and-strategy-recovery.md : responded-only refits + full point-3 re-run (amendment 9); commands ready; next: user syncs code, submits R1-R6 (460), then F1a (80) and P1-P4 (850)
+- plans/2026-10-26-paper-accumulation-variant.md : second paper version (accumulation-first) in dissemination/paper_accumulation/; G1 held; waiting on v2 refits + E-recovery (plans/2026-10-26-v2-refits-and-strategy-recovery.md)
 - plans/2026-10-23-pulse-followup-parallel.md : A-E, G1, F3 pilot done (FAIL -> modelling stopped); next: H2 check of pilot, H4 finalize; original primacy procedure remains closed
 - plans/2026-10-23-amendment-4-extrema.md : code done and checked; next: Hyak fits (commands in analysis log 8.4d)
 - plans/2026-10-22-primacy-analysis-code.md : done; next: predictive check (gate 1) first pass when 8.4c batch 1 lands
@@ -24,6 +25,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-10-27-pulse-contrast-responders-only.md : (src-46) pulse effect holds without no-response trials: pos vs neg 5.84 -> 7.52 pp [2.73, 12.30], Holm 0.012; pulse does not change response rate (p 0.086)
 - reports/2026-10-26-fluctuation-kernel-observed.md : amendment 8 response-aligned kernel on real choices: neither model fits (inconclusive; not used as support)
 - reports/2026-10-26-neuropaper-s5-s6.md : G4 recorded; S5 assembled/coherence-repaired; S6 v2 selected with exact gate, coverage and calibration denominators
 - reports/2026-10-26-neuropaper-s4-g4.md : all six S4 sections passed; G4 awaits approval plus an exact N105–N107 Methods provenance reconciliation
@@ -64,6 +66,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - ../dissemination/reports/motion-energy-methods.md : motion-energy method review and corrections
 
 ## Known issues
+- 2026-10-27 author rule: trials without a response by 5 s (435 no RT + 4,102 RT > 5 s = 4,537) must not enter any analysis. All existing DDM fits, gates, calibration, pulse-gain diagnostics and the primary pulse contrast (1,709 unresponded) included them; superseded for the accumulation-first paper by responded-only refits (--responded_only). The first paper version is not yet redone.
 - DDM inputs label 48 UCLA no-response pulse trials as controls (direction lost in notebook 0.0); the 15 trials dropped for invalid duration are responses during the pulse (outcome-dependent). Existing inputs unchanged (pulse-data report).
 - UW: one |coherence| per session (18% or 36%) schedules only rightward pulses; excluded from signed and pulse-vs-control contrasts (pulse-data report).
 - Both replays redraw noise directions at pulse offset; removing the mean pulse component is not a physical no-pulse
@@ -82,6 +85,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - Screen geometry not corrected in ME (ME methods §3.7).
 
 ## Decisions
+- 2026-10-27: exclude all trials without a response by 5 s from every analysis (V. Thakur: "both of these trials should not have been considered for any analysis"); likelihood made conditional on a response by 5 s.
 - 2026-10-26: approved G4 with the bounded N105–N107 Methods patch and the order S5 assembly, S6 artwork, then panel review (D009).
 - 2026-10-26: approved Discussion v1 and continuation (“approved and continue”); recorded D008 and authorized
   Introduction drafting.
