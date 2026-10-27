@@ -119,3 +119,4 @@ No change to v1 inputs or v1 fits; the first paper version is unaffected.
   amendment-5 refit; leak at lower bound 20/s in 2/50 ccv fits (caveat). P1/P3/ES2 released from the R6 dependency
   (all 20 R6 control fits present; only all-trial fits still running). P2 submitted: 42450548. F1a refused by
   QOSMaxSubmitJobPerUserLimit (~935 queued); resubmit when the queue drains.
+- 2026-10-27: F1a submitted: 42451102 (16 h). All batches now queued; next: rsync processed/ddm/ when done, then local analysis.
