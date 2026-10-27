@@ -681,3 +681,41 @@ with discrete-sample extrema detection had been seen (accumulator better by > 10
 the analysis. This is a deviation from parsimony rule 2 (sv improves held-out fit by > 10 in 4/10 mice with a free
 bias, 5/10 with a fixed bias; summed +278 / +266; worse in none), made after seeing both results. The C' results
 remain on record in this plan and the refit-plan log.
+
+---
+
+## Amendment 13 (2026-10-27, before any fit of these models): paper-exact Stine et al. (2020) models
+
+**Decided by V. Thakur, 2026-10-27** ("I also wanted to run exact extrema model from paper"; design accepted with "ok",
+including the fixed sensory-delay rule of item 4). Amendment 10 (ES) kept the Stine et al. sample rule but added the
+common model's components (sv, fast guesses, motion-energy input); it is not their model. This amendment adds their
+free-response models as specified in Stine, Zylberberg, Ditterich & Shadlen (2020, eLife 9:e55365, Methods; read
+2026-10-27): momentary evidence N(κ(C − C0)Δt, Δt), one shared non-decision time tND, no lapse or guess term, flat
+symmetric bounds (their "parsimonious" models; the collapsing-bound version is not run).
+
+1. **Models.** Both use variant L0U0V0Z0G0 (no leak, urgency, sv, sz or guesses), Δt = 1 ms, input = the trial's nominal
+   signed coherence C (fraction), constant from stimulus onset. κ(C − C0) is drift_gain · C + drift_offset
+   (C0 = −drift_offset / drift_gain; drift_offset bounds ±0.3 × the drift_gain maximum).
+   - **ESx (extrema detection):** each sample compared with ±b per-step noise SDs (amendment 10 simulator rule),
+     first crossing decides. Free: κ [0.5, 200], b [2, 5], drift_offset [−60, 60], tND [0, 0.8]. a, z unused.
+   - **DDMx (integration):** bounded accumulation, starting point z = 0.5. Free: κ [0.5, 20], a [0.3, 9.5],
+     drift_offset [−6, 6], tND [0, 0.8].
+2. **Stated differences from Stine et al.:** fitted with this study's held-out likelihood of choices and RT quantiles
+   (conditional on a response by 5 s, responded trials only, amendments 9 and 11 apply, including the 50% no-response
+   cap and the 0.3 s response floor) instead of their mean-RT fit; Δt = 1 ms instead of 0.5 ms; mouse data.
+3. **Fits and comparison:** control-only CV (ccv0–ccv4) and all control trials, 15 repetitions, same folds, seeds and
+   scoring as every other model. Primary contrast: ESx vs DDMx by the > 10 held-out NLL rule per mouse and summed.
+   Reported beside it: each against the common model (sv set). Drift-gain bound check after fitting (amendment 5 logic:
+   any fit at its κ maximum is refitted with a wider bound and reported). The THESIS selection rule is unchanged;
+   how ESx/DDMx enter the paper is an author decision after the results.
+4. **Pulse predictions (frozen, from the all-control fits).** Pulse trials get the nominal input with the scheduled
+   pulse as a box: C(t) = the scheduled pulse coherence over the logged pulse frames, shifted earlier by the rig's
+   onset-minus-pulse latency difference Δ, because the onset of the stimulus reaches the decision later than a change in an
+   ongoing stimulus and tND absorbs the onset delay. Rule (fixed now, from motion energy only, no behaviour): Δ = time to
+   10% of maximum of the onset step response minus that of the pulse response (linear interpolation between frames;
+   `onset_response_<rig>`, `pulse_response_<rig>` in ddm_inputs_global.npz). Values computed 2026-10-27: UCLA 54.3 ms,
+   UW 60.1 ms (onset 105.1 / 103.7 ms, pulse 50.8 / 43.5 ms). Sensitivity: Δ ± 50 ms (the 50%-rise rule gives
+   ~100 ms). Pulse onset/offset frames come from the preprocessed trial tables (new file; existing inputs unchanged).
+   Then the strategy test ESx vs DDMx as in amendment 5 (gates are not re-defined for these models).
+5. **Recovery:** ESx- and DDMx-generated control datasets (2 replicates × 10 mice), each fitted by both models, scored
+   by the > 10 rule (as F1a/ES2).

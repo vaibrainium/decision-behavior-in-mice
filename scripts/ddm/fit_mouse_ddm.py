@@ -103,6 +103,11 @@ EXTREMA_LEAK_BOUNDS = (20.0, 200.0)
 # with +-b per-step noise SDs and nothing is accumulated; a and z are unused, drift_gain may reach 200.
 EXTREMA_SAMPLE_BOUND = ("extrema_bound", (2.0, 5.0))
 EXTREMA_SAMPLE_GAIN_MAX = 200.0
+# Paper-exact models of Stine et al. 2020 (primacy plan, amendment 13): nominal signed coherence as input, no sv, guesses,
+# leak or urgency; the integrator starts midway (z = 0.5). Their kappa * (C - C0) is drift_gain * C + drift_offset, with
+# drift_offset bounds wide enough for |C0| <= NOMINAL_C0_MAX at any gain (C0 = -drift_offset / drift_gain).
+NOMINAL_VARIANT = "L0U0V0Z0G0"
+NOMINAL_C0_MAX = 0.3
 # Model sets for the downstream scripts (--model_set). "sv": the common model chosen 2026-10-22 with all trials;
 # "nosv": re-selected under the responded-only rule with parsimony rules 2-3 (primacy plan, amendment 12).
 MODEL_SETS = {
@@ -113,8 +118,10 @@ VARIANTS = ["".join(f"{f}{int(on)}" for f, on in zip(OPTIONAL_FREE_PARAMS, flags
 
 
 def make_params(variant: str, guess_model: str = "single", time_varying_gain: bool = False, signed_leak: bool = False, fixed_guess_bias: bool = False, leak_bounds: tuple[float, float] | None = None, drift_gain_max: float | None = None,
-                front_end: str | None = None, extrema_samples: bool = False):
+                front_end: str | None = None, extrema_samples: bool = False, nominal_input: bool = False):
     free, fixed = dict(BASE_FREE_PARAMS), dict(FIXED_PARAMS)
+    if nominal_input and (variant != NOMINAL_VARIANT or front_end or time_varying_gain):
+        raise ValueError(f"nominal_input (amendment 13) is the paper-exact model: variant {NOMINAL_VARIANT}, no front end or gain decay")
     if extrema_samples:
         if variant[1] != "0" or variant[3] != "0":
             raise ValueError("extrema_samples takes no leak or urgency")
@@ -144,6 +151,12 @@ def make_params(variant: str, guess_model: str = "single", time_varying_gain: bo
                 free[name] = FreeParam(*bounds)
             else:
                 fixed[name] = FixedParam(off_value)
+    if nominal_input:
+        c0_offset = NOMINAL_C0_MAX * free["drift_gain"].upper_bound
+        free["drift_offset"] = FreeParam(-c0_offset, c0_offset)
+        if "z" in free:
+            del free["z"]
+            fixed["z"] = FixedParam(0.5)
     return free, fixed
 
 
@@ -188,10 +201,16 @@ def cv_folds(condition: np.ndarray, n_folds: int, seed: int = 0) -> np.ndarray:
     return folds
 
 
-def select(inputs: dict, rows: np.ndarray) -> tuple[dict, np.ndarray]:
-    """Data and the 1 ms motion-energy input (S + N) of the given trials."""
+def select(inputs: dict, rows: np.ndarray, nominal: bool = False) -> tuple[dict, np.ndarray]:
+    """Data and the 1 ms motion-energy input (S + N) of the given trials; with `nominal` (amendment 13), the trial's
+    nominal signed coherence held from stimulus onset, defined for control trials only."""
     frame_rate = int(inputs["frame_rate"])
     data = {"rt": inputs["rt"][rows], "choice": inputs["choice"][rows], "condition": inputs["condition"][rows]}
+    if nominal:
+        if (inputs["sched_pulse_type"][rows] != 0).any():
+            raise ValueError("nominal input is defined here for control trials only")
+        n_steps = int(round(inputs["signal"].shape[1] / frame_rate / DT))
+        return data, np.repeat(inputs["signed_coherence"][rows, None].astype(np.float32), n_steps, axis=1)
     stimulus = to_ms(inputs["signal"][rows] + inputs["noise"][rows], frame_rate)
     return data, stimulus
 
@@ -250,7 +269,7 @@ def output_path(out_dir: Path, job: dict) -> Path:
 
 
 def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations: int, guess_model: str = "single", warm_dirs: list[Path] | None = None, time_varying_gain: bool = False, signed_leak: bool = False, fixed_guess_bias: bool = False, leak_bounds: tuple[float, float] | None = None, drift_gain_max: float | None = None,
-            front_end: str | None = None, likelihood_params: dict = LIKELIHOOD_PARAMS, extrema_samples: bool = False) -> dict:
+            front_end: str | None = None, likelihood_params: dict = LIKELIHOOD_PARAMS, extrema_samples: bool = False, nominal_input: bool = False) -> dict:
     mouse_rows = np.flatnonzero(inputs["subject_id"] == job["mouse"])
     is_control = inputs["sched_pulse_type"][mouse_rows] == 0
     split = job["split"]
@@ -267,13 +286,15 @@ def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations:
         train, test = control_rows[folds != int(split[3:])], control_rows[folds == int(split[3:])]
     else:
         raise ValueError(f"unknown split {split}")
+    if nominal_input and split == "control":
+        test = None  # pulse trials need the pulse in nominal units (amendment 13, item 4), not built here
 
-    free, fixed = make_params(job["variant"], guess_model, time_varying_gain, signed_leak, fixed_guess_bias, leak_bounds, drift_gain_max, front_end, extrema_samples)
+    free, fixed = make_params(job["variant"], guess_model, time_varying_gain, signed_leak, fixed_guess_bias, leak_bounds, drift_gain_max, front_end, extrema_samples, nominal_input)
     rigs = np.unique(inputs["data_source"][mouse_rows])
     assert len(rigs) == 1, f"{job['mouse']} has trials from {rigs}"
     min_rt = MIN_RT[rigs[0]]
     model = MouseDDM(free_params=free, fixed_params=fixed, device=DEVICE, likelihood_params=likelihood_params, censor_at=CENSOR_AT, min_rt=min_rt)
-    data, stimulus = select(inputs, train)
+    data, stimulus = select(inputs, train, nominal_input)
     t0 = time.time()
     seeds, seeds_used = warm_start_seeds(job, list(free), warm_dirs or [])
     if seeds_used:
@@ -300,13 +321,14 @@ def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations:
         "drift_gain_max": drift_gain_max,
         "front_end": front_end,
         "extrema_samples": extrema_samples,
+        "nominal_input": nominal_input,
         "warm_start_seeds": seeds_used,
         "censor_at": CENSOR_AT,
         "min_rt": min_rt,
         "n_train_censored": int(inputs["censored"][train].sum()),
     }
     if test is not None and len(test):
-        test_data, test_stimulus = select(inputs, test)
+        test_data, test_stimulus = select(inputs, test, nominal_input)
         result["n_test"] = len(test)
         result["test_nll"] = heldout_nll(model, fit["parameters"], test_data, test_stimulus, n_reps)
     model.simulator.clear_cache()
@@ -347,10 +369,11 @@ if __name__ == "__main__":
     parser.add_argument("--responded_only", action="store_true", help="drop trials without a response by 5 s; likelihood conditional on a response")
     parser.add_argument("--extrema_samples", action="store_true", help="discrete-sample extrema detection (amendment 10); use with a variant without leak or urgency")
     parser.add_argument("--drift_gain_max", type=float, help="upper bound of drift_gain (default 20); amendment 5: 200 for the extrema-detection model if its fits reach 20")
+    parser.add_argument("--nominal_input", action="store_true", help=f"paper-exact Stine et al. 2020 models (amendment 13): nominal coherence input, variant {NOMINAL_VARIANT}; with --extrema_samples their extrema detector")
     args = parser.parse_args()
 
     processed = Path(dir_config.data.processed)
-    args.out_dir = args.out_dir or (("ddm/fits_guess" if args.guess_model == "single" else f"ddm/fits_guess_{args.guess_model}") + ("_W" if args.time_varying_gain else "") + ("_NL" if args.signed_leak else "") + ("_FB" if args.fixed_guess_bias else "") + (f"_leak{args.leak_bounds[0]:g}-{args.leak_bounds[1]:g}" if args.leak_bounds else "") + (f"_gain{args.drift_gain_max:g}" if args.drift_gain_max else "") + (f"_fe-{args.front_end}" if args.front_end else ""))
+    args.out_dir = args.out_dir or (("ddm/fits_guess" if args.guess_model == "single" else f"ddm/fits_guess_{args.guess_model}") + ("_W" if args.time_varying_gain else "") + ("_NL" if args.signed_leak else "") + ("_FB" if args.fixed_guess_bias else "") + (f"_leak{args.leak_bounds[0]:g}-{args.leak_bounds[1]:g}" if args.leak_bounds else "") + (f"_gain{args.drift_gain_max:g}" if args.drift_gain_max else "") + (f"_fe-{args.front_end}" if args.front_end else "") + ("_nominal" if args.nominal_input else ""))
     inputs = load_inputs(processed / args.inputs)
     if args.responded_only:
         inputs = responded_only(inputs)
@@ -374,4 +397,4 @@ if __name__ == "__main__":
         else:
             logger.info("job %s: %s", args.job_id, job)
             run_job(inputs, job, processed / args.out_dir, args.n_reps, args.max_iterations, args.guess_model, [processed / d for d in args.warm_start_from], args.time_varying_gain, args.signed_leak, args.fixed_guess_bias, args.leak_bounds, args.drift_gain_max, args.front_end,
-                    RESPONDED_LIKELIHOOD_PARAMS if args.responded_only else LIKELIHOOD_PARAMS, args.extrema_samples)
+                    RESPONDED_LIKELIHOOD_PARAMS if args.responded_only else LIKELIHOOD_PARAMS, args.extrema_samples, args.nominal_input)
