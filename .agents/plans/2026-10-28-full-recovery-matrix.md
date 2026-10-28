@@ -15,7 +15,7 @@ existing pairwise recoveries.
 - [x] 1. Amendment 14 written before any cross-family fit.
 - [x] 2. model_recovery --strategy --cross (160 jobs; candidate gets its own input); smoke test DBM13 C->DDMx and
       DDMx->C (2 iterations), generator folders checked for all four.
-- [ ] 3. Hyak: 160 jobs (command below).
+- [x] 3. Hyak: 160 jobs (command below).
 - [ ] 4. rsync; combine three folders; confusion + inversion matrices; dashboard; report.
 
 ## Hyak command
@@ -26,3 +26,4 @@ New statistical tests; ES; pulse trials.
 
 ## Log
 - 2026-10-28: plan written; code and smoke test.
+- 2026-10-28: submitted 42503176 (160 jobs, lab A100s: -p gpu-a100 -A gpu-a100-walkerlab --qos=normal), code 63552c1.
