@@ -3,7 +3,7 @@
 
 Checks each fit's settings (variant, guess form, repetitions) and flags parameters within 1% of a bound. guess_tau is
 reported but marked as not interpreted: model recovery did not recover it (r = 0.18, analysis log 5.8). Also reports
-the group median and range over mice, and the recovery correlation of each parameter.
+the group median, mean and range over mice, and the recovery correlation of each parameter.
 
 Writes <out_dir>/parameters_common_model[_control]_<date>.csv and .md (a new file per date; existing files are kept).
 
@@ -57,6 +57,7 @@ def main(fits_dir: Path, split: str = "all", out_dir: Path = Path("dissemination
     summary = pd.DataFrame({
         "parameter": [SHOWN[k] for k in SHOWN],
         "median": [df[k].median() for k in SHOWN],
+        "mean": [df[k].mean() for k in SHOWN],
         "min": [df[k].min() for k in SHOWN],
         "max": [df[k].max() for k in SHOWN],
         "recovery_r": [rec.loc[(VARIANT, k), "r"] if (VARIANT, k) in rec.index else np.nan for k in SHOWN],
