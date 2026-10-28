@@ -27,3 +27,4 @@ New statistical tests; ES; pulse trials.
 ## Log
 - 2026-10-28: plan written; code and smoke test.
 - 2026-10-28: submitted 42503176 (160 jobs, lab A100s: -p gpu-a100 -A gpu-a100-walkerlab --qos=normal), code 63552c1.
+- 2026-10-28: tasks 4-159 moved to ckpt-all (Account ckpt-walkerlab, QOS ckpt-gpu) by scontrol; 0-3 ran on gpu-a100.
