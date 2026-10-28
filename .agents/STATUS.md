@@ -26,6 +26,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-10-28-pulse-direction-by-time.md : right vs left pulse per pulse time; bias differs (early -17.1% coh, Holm 0.047 over 6, post hoc family; middle -12.4, Holm 0.10; late n.s.), slope does not
 - reports/2026-10-28-pulse-psychometric-parameter-bootstrap.md : per-stage bootstrap on psychometric bias/slope; early congruent-incongruent slope +0.040 (Holm 0.022) and early right-pulse bias -15.1% (Holm 0.011); rest n.s.
 - reports/2026-10-28-pulse-congruency-tests.md : congruent 3.0 pp (Holm 0.096) and incongruent 3.6 pp (0.39) pulse effects each non-significant; positive-vs-negative (7.52 pp, Holm 0.012) pools both
 - reports/2026-10-28-recovery-synthetic-data-mismatch.md : BUG: recovery candidates scored on different synthetic data (GPU-dependent synthesis); F1a k=5, ES and ESx/DDMx recoveries invalid until rerun on fixed CPU datasets

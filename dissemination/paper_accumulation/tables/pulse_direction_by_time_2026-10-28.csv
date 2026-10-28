@@ -1,0 +1,7 @@
+stage,contrast,parameter,n_mice,estimate,ci_lo,ci_hi,p_boot,frac_at_bound,p_boot_holm
+early,right pulse - left pulse,mu,10,-17.0501,-32.1054,-4.4059,0.0078,0.0,0.0468
+early,right pulse - left pulse,beta,10,0.0017,-0.0214,0.0258,0.8402,0.0,1.0
+middle,right pulse - left pulse,mu,10,-12.4445,-23.3416,-2.2287,0.0208,0.0,0.104
+middle,right pulse - left pulse,beta,10,0.0166,-0.0069,0.0467,0.1864,0.0,0.7456
+late,right pulse - left pulse,mu,6,-16.8154,-49.2505,12.6815,0.249,0.0215,0.747
+late,right pulse - left pulse,beta,6,0.0005,-0.0367,0.0128,0.9576,0.0,1.0
