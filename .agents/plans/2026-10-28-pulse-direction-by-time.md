@@ -25,3 +25,7 @@ Congruency set (revisit later); control comparisons; tests between pulse times.
 - 2026-10-28: plan written.
 - 2026-10-28: done. Early bias right - left -17.1 (Holm 0.047); rest n.s. Dashboard version 16. Report:
   reports/2026-10-28-pulse-direction-by-time.md.
+- 2026-10-28: the same 6-test analysis was run for congruent - incongruent (early slope +0.040 [0.016, 0.085], Holm
+  0.007; middle slope +0.027, Holm 0.29; no bias differences). Author: not used; congruency dropped for now. Outputs
+  and the --set option removed; the numbers come from the 36-test table
+  (tables/pulse_psychometric_parameter_bootstrap_2026-10-28.csv) if needed.
