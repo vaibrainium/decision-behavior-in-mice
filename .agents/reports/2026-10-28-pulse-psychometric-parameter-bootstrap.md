@@ -30,6 +30,7 @@ Difference [95% percentile CI], bootstrap p, Holm p (18 tests per curve set). Bi
 | late (6) | congruent - incongruent | +4.5 [-28.2, 53.0] Holm 1 | +0.007 Holm 1 |
 | late | right - left | -16.8 [-49.3, 12.7] Holm 1 | +0.000 Holm 1 |
 
+Figure: dissemination/paper_accumulation/figures/qc/pulse_psychometric_parameter_bootstrap_2026-10-28.png (scripts/ddm/pulse_psychometric_bootstrap_plot.py --date 2026-10-28).
 Full 36 rows in the CSV. Observed parameters equal pulse_psychometric_stage_2026-10-28_fits.csv (max difference 5e-5,
 rounding); cells.csv unchanged after factoring out stage_curves(). Bias fits at their +-50 bound: 0 in early/middle,
 up to 7% of resamples for late.

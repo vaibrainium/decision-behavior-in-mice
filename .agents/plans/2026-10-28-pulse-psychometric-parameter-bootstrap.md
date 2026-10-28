@@ -27,6 +27,7 @@ the pp choice shift. Output: CI and p per stage x curve set x contrast x paramet
 - [x] 2. scripts/ddm/pulse_psychometric_bootstrap.py; table dissemination/paper_accumulation/tables/pulse_psychometric_parameter_bootstrap_<date>.csv.
 - [x] 3. Verify: observed parameters equal pulse_psychometric_stage_2026-10-28_fits.csv; cells.csv unchanged after refactor.
 - [x] 4. Report section, dashboard table, STATUS.
+- [x] 5. Figure (author request): scripts/ddm/pulse_psychometric_bootstrap_plot.py -> figures/qc/pulse_psychometric_parameter_bootstrap_2026-10-28.{png,pdf}; on dashboard.
 
 ## Out of scope
 Per-mouse psychometric fits; lapse tests; model predictions.
