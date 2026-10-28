@@ -184,3 +184,11 @@ No change to v1 inputs or v1 fits; the first paper version is unaffected.
   leak at lower bound (<= 20.5/s) in 4/60 (incl. PSUIM7 control 20.11). P2 and F1a can be submitted.
 - 2026-10-27: P2 (E predictions, cap fits -> ddm/primacy_resp/extrema) 42489706; F1a (cap, -> ddm/recovery_strategy_resp_cap) 42489714. All sv-set jobs now queued. Next: rsync primacy_resp and recovery_strategy_resp_cap; E strategy test (primacy --strategy_test --strategy_model extrema --responded_only --unblind --out_dir ddm/primacy_resp), its power; F1a k -> THESIS variant (D002 rule).
 - 2026-10-27 RESULT (VERIFIED): F1a k = 5/20 -> THESIS_B (report reports/2026-10-27-f1a-strategy-recovery-responded.md). E strategy test: not distinguished (pulse z 1.43, total z 0.00).
+- 2026-10-28 RESULT (VERIFIED; inline script, tables dissemination/paper_accumulation/tables/heldout_{per_trial,group}_2026-10-28.csv):
+  group-level held-out comparison with mice as the unit. Per-mouse difference (alternative - C, ccv0-4 summed) / held-out
+  control trials x 1000; one-sample t and Wilcoxon over 10 mice, Holm over 4 alternatives. Median (range), t(9), Holm p
+  (t / Wilcoxon), dz: E 12.6 (-16.9..29.5), 2.96, 0.037 / 0.059, 0.94; ES 21.0 (-9.3..41.4), 3.61, 0.023 / 0.055, 1.14;
+  DDMx 21.1 (-15.4..65.7), 3.11, 0.037 / 0.059, 0.98; ESx 36.2 (-14.9..72.7), 3.02, 0.037 / 0.059, 0.96. PSUIM6+7 supply
+  71-74% of each summed difference (3,566 / 4,095 of 14,014 control trials). Proposed reporting: per-mouse > 10 rule as
+  pre-specified; per-trial values with mice as unit for the group claim (replacing summed totals). Per-mouse MC-noise
+  thresholds for responded-only models not computed (existing ddm/mc_noise is all-trial). Dashboard updated.
