@@ -25,6 +25,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-10-28-stine-exact-models.md : paper-exact Stine models barely differ (ESx-DDMx 62.7, DDMx 3/10, ESx 0/10), pulse test not distinguished, recovery weak; both fit far worse than the common model (C better 6/10)
 - reports/2026-10-27-f1a-strategy-recovery-responded.md : F1a k = 5/20 E-generated datasets scored as accumulator (genuine, not optimizer) -> THESIS_B under D002; E vs C on real data 278.9 (C 5/10, E 0/10); E pulse strategy test not distinguished
 - reports/2026-10-27-pulse-readout-model-rt-split.md : primary model gets the RT shape of the pulse effect right but is too weak at RT ~0.5-1.3 s and predicts a late reversal the data lack
 - reports/2026-10-27-pulse-readout-bias-checks.md : readout-bias (slow-trial) account not supported: pulse effect in fast-middle RTs, slow ±100% trials most accurate, pulse-direction choices faster

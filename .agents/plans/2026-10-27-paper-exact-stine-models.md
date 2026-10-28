@@ -1,5 +1,5 @@
 # Plan: paper-exact Stine et al. (2020) extrema detection and integration models (ESx, DDMx)
-Status: active
+Status: done (report: reports/2026-10-28-stine-exact-models.md)
 Created: 2026-10-27 by Claude (Opus 5.5)
 Related reports: amendment 13 in dissemination/reports/primacy-analysis-plan.md; ES results in
 .agents/plans/2026-10-26-v2-refits-and-strategy-recovery.md (Log)
@@ -21,16 +21,16 @@ ES (amendment 10) uses motion energy, sv and fast guesses, so it is not the pape
 - [x] 2. `--nominal_input` in fit_mouse_ddm (variant L0U0V0Z0G0; z = 0.5 for DDMx; wide drift_offset); smoke test
       (DBM13 ccv0, 3 iterations, both models ran and saved; 4 free parameters each).
 - [x] 3. Hyak X1 (DDMx, 60 jobs) and X2 (ESx, 60 jobs); commands below.
-- [ ] 4. rsync; bound check; ESx vs DDMx and vs common model (held-out NLL, > 10 rule); C0 reported.
+- [x] 4. rsync; bound check; ESx vs DDMx and vs common model (held-out NLL, > 10 rule); C0 reported.
 - [x] 5a. Code (smoke-tested on DBM13 with 3-iteration fits): build_pulse_timing.py -> ddm/pulse_timing_global.npz
       (13,509 pulse trials; pulse component zero before onset, peak at the response's peak lag in all); primacy.py
       extrema_exact / integration_exact, --strategy_baseline, --lead_shift; lead UCLA 54.3 ms, UW 60.1 ms. Early pulses
       whose shifted start falls before 0 are clipped at 0 (caveat for the report).
-- [ ] 5. Pulse timing file (onset/offset frames, pulse coherence by agg_code) and nominal pulse stimuli in primacy.py
+- [x] 5. Pulse timing file (onset/offset frames, pulse coherence by agg_code) and nominal pulse stimuli in primacy.py
       (`--baselines` entries for ESx/DDMx), with the Δ ± 50 ms sensitivity; frozen predictions; strategy test.
 - [x] 6a. model_recovery --strategy --exact (DDMx, ESx; 80 jobs), smoke-tested both directions.
-- [ ] 6. model_recovery support for nominal input; recovery jobs (80).
-- [ ] 7. Verify: report with all numbers traced; STATUS update.
+- [x] 6. model_recovery support for nominal input; recovery jobs (80).
+- [x] 7. Verify: report with all numbers traced; STATUS update.
 
 ## Hyak commands
 X1: env EXTRA_ARGS="--responded_only --nominal_input --variants L0U0V0Z0G0 --splits ccv0 ccv1 ccv2 ccv3 ccv4 control --out_dir ddm/fits_resp_nominal_ddm" sbatch --array=0-59 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
@@ -79,3 +79,4 @@ Collapsing-bound ("elaborated") version; their mean-RT fitting objective; gates 
     verdict "not distinguished" at all three.
   * Recovery v2 (recovery_exact2_resp): 38/80 so far; pending 42497999.
 - 2026-10-27: 42497999 stalled again on ckpt-all (reason None, nothing running); cancelled; tasks 39-79 resubmitted on lab A100s: 42498684 (-p gpu-a100 -A gpu-a100-walkerlab --qos=normal).
+- 2026-10-28: recovery v2 complete (80): DDMx-gen DDMx 5 / ESx 3 / within 12; ESx-gen ESx 7 / DDMx 1 / within 12. Plan done; report reports/2026-10-28-stine-exact-models.md.
