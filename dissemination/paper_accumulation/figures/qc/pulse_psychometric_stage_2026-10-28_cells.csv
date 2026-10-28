@@ -1,145 +1,145 @@
-set,stage,curve,coh,p_right,sem,n_mice,n_trials,shown
-direction,early,control,-100,0.1718,0.0208,9,2233,True
-direction,early,right pulse,-100,0.1879,0.0308,9,282,True
-direction,early,control,-36,0.3057,0.0378,8,1210,True
-direction,early,right pulse,-36,0.3708,0.0628,8,241,True
-direction,early,left pulse,-36,0.2904,0.0558,8,227,True
-direction,early,control,-18,0.3876,0.0474,7,977,True
-direction,early,right pulse,-18,0.5313,0.0503,7,237,True
-direction,early,left pulse,-18,0.3822,0.0742,7,229,True
-direction,early,control,-9,0.4574,0.0254,10,1356,True
-direction,early,right pulse,-9,0.5216,0.0375,10,291,True
-direction,early,left pulse,-9,0.4287,0.0325,10,299,True
-direction,early,control,0,0.5086,0.0255,9,1295,True
-direction,early,right pulse,0,0.5698,0.0363,9,284,True
-direction,early,left pulse,0,0.4739,0.0406,9,288,True
-direction,early,control,9,0.5419,0.0271,8,1285,True
-direction,early,right pulse,9,0.6915,0.0375,8,299,True
-direction,early,left pulse,9,0.5925,0.0366,8,269,True
-direction,early,control,18,0.6342,0.0161,6,1019,True
-direction,early,right pulse,18,0.7607,0.0605,6,236,True
-direction,early,left pulse,18,0.5905,0.0465,6,206,True
-direction,early,control,36,0.7238,0.03,8,1241,True
-direction,early,right pulse,36,0.805,0.0377,8,250,True
-direction,early,left pulse,36,0.7606,0.0357,8,268,True
-direction,early,control,100,0.8437,0.022,10,2253,True
-direction,early,left pulse,100,0.7654,0.0273,10,385,True
-congruency,early,control,-100,0.1718,0.0208,9,2233,True
-congruency,early,incongruent,-100,0.1879,0.0308,9,282,True
-congruency,early,control,-36,0.3057,0.0378,8,1210,True
-congruency,early,congruent,-36,0.2904,0.0558,8,227,True
-congruency,early,incongruent,-36,0.3708,0.0628,8,241,True
-congruency,early,control,-18,0.3876,0.0474,7,977,True
-congruency,early,congruent,-18,0.3822,0.0742,7,229,True
-congruency,early,incongruent,-18,0.5313,0.0503,7,237,True
-congruency,early,control,-9,0.4574,0.0254,10,1356,True
-congruency,early,congruent,-9,0.4287,0.0325,10,299,True
-congruency,early,incongruent,-9,0.5216,0.0375,10,291,True
-congruency,early,control,0,0.5178,0.0246,10,1315,True
-congruency,early,control,9,0.5419,0.0271,8,1285,True
-congruency,early,congruent,9,0.6915,0.0375,8,299,True
-congruency,early,incongruent,9,0.5925,0.0366,8,269,True
-congruency,early,control,18,0.6342,0.0161,6,1019,True
-congruency,early,congruent,18,0.7607,0.0605,6,236,True
-congruency,early,incongruent,18,0.5905,0.0465,6,206,True
-congruency,early,control,36,0.7238,0.03,8,1241,True
-congruency,early,congruent,36,0.805,0.0377,8,250,True
-congruency,early,incongruent,36,0.7606,0.0357,8,268,True
-congruency,early,control,100,0.8437,0.022,10,2253,True
-congruency,early,incongruent,100,0.7654,0.0273,10,385,True
-direction,middle,control,-100,0.1718,0.0208,9,2233,True
-direction,middle,right pulse,-100,0.1961,0.0279,9,293,True
-direction,middle,control,-36,0.3048,0.0372,8,1221,True
-direction,middle,right pulse,-36,0.2797,0.0395,8,276,True
-direction,middle,left pulse,-36,0.3065,0.0474,8,219,True
-direction,middle,control,-18,0.3522,0.0521,5,935,True
-direction,middle,right pulse,-18,0.427,0.0456,5,189,True
-direction,middle,left pulse,-18,0.3452,0.0525,5,220,True
-direction,middle,control,-9,0.4415,0.0223,9,1331,True
-direction,middle,right pulse,-9,0.4723,0.048,9,259,True
-direction,middle,left pulse,-9,0.4496,0.0513,9,313,True
-direction,middle,control,0,0.5086,0.0255,9,1295,True
-direction,middle,right pulse,0,0.5679,0.0652,9,283,True
-direction,middle,left pulse,0,0.4633,0.0641,9,275,True
-direction,middle,control,9,0.5419,0.0271,8,1285,True
-direction,middle,right pulse,9,0.5953,0.067,8,266,True
-direction,middle,left pulse,9,0.553,0.0314,8,288,True
-direction,middle,control,18,0.6569,0.0264,7,1048,True
-direction,middle,right pulse,18,0.7522,0.0314,7,223,True
-direction,middle,left pulse,18,0.5868,0.0452,7,210,True
-direction,middle,control,36,0.7556,0.0421,8,1244,True
-direction,middle,right pulse,36,0.7888,0.0478,8,273,True
-direction,middle,left pulse,36,0.7172,0.056,8,286,True
-direction,middle,control,100,0.861,0.0153,9,2192,True
-direction,middle,left pulse,100,0.8239,0.0443,9,311,True
-congruency,middle,control,-100,0.1718,0.0208,9,2233,True
-congruency,middle,incongruent,-100,0.1961,0.0279,9,293,True
-congruency,middle,control,-36,0.3048,0.0372,8,1221,True
-congruency,middle,congruent,-36,0.3065,0.0474,8,219,True
-congruency,middle,incongruent,-36,0.2797,0.0395,8,276,True
-congruency,middle,control,-18,0.3522,0.0521,5,935,True
-congruency,middle,congruent,-18,0.3452,0.0525,5,220,True
-congruency,middle,incongruent,-18,0.427,0.0456,5,189,True
-congruency,middle,control,-9,0.4415,0.0223,9,1331,True
-congruency,middle,congruent,-9,0.4496,0.0513,9,313,True
-congruency,middle,incongruent,-9,0.4723,0.048,9,259,True
-congruency,middle,control,0,0.5178,0.0246,10,1315,True
-congruency,middle,control,9,0.5419,0.0271,8,1285,True
-congruency,middle,congruent,9,0.5953,0.067,8,266,True
-congruency,middle,incongruent,9,0.553,0.0314,8,288,True
-congruency,middle,control,18,0.6569,0.0264,7,1048,True
-congruency,middle,congruent,18,0.7522,0.0314,7,223,True
-congruency,middle,incongruent,18,0.5868,0.0452,7,210,True
-congruency,middle,control,36,0.7556,0.0421,8,1244,True
-congruency,middle,congruent,36,0.7888,0.0478,8,273,True
-congruency,middle,incongruent,36,0.7172,0.056,8,286,True
-congruency,middle,control,100,0.861,0.0153,9,2192,True
-congruency,middle,incongruent,100,0.8239,0.0443,9,311,True
-direction,late,control,-100,0.1959,0.0236,6,831,True
-direction,late,right pulse,-100,0.2326,0.0395,6,145,True
-direction,late,control,-36,0.3597,0.039,5,300,True
-direction,late,right pulse,-36,0.485,0.107,5,94,True
-direction,late,left pulse,-36,0.359,0.0546,5,92,True
-direction,late,control,-18,0.487,0.0844,2,98,False
-direction,late,right pulse,-18,0.5635,0.0079,2,25,False
-direction,late,left pulse,-18,0.4855,0.1812,2,29,False
-direction,late,control,-9,0.4613,0.0301,5,422,True
-direction,late,right pulse,-9,0.4818,0.033,5,112,True
-direction,late,left pulse,-9,0.4463,0.0556,5,114,True
-direction,late,control,0,0.5588,0.0265,5,410,True
-direction,late,right pulse,0,0.5266,0.041,5,107,True
-direction,late,left pulse,0,0.5091,0.0524,5,114,True
-direction,late,control,9,0.4813,0.0358,6,448,True
-direction,late,right pulse,9,0.5913,0.0589,6,118,True
-direction,late,left pulse,9,0.5747,0.0999,6,118,True
-direction,late,control,18,0.6261,0.0261,2,94,False
-direction,late,right pulse,18,0.6346,0.1346,2,33,False
-direction,late,left pulse,18,0.6944,0.0278,2,24,False
-direction,late,control,36,0.6897,0.0401,3,240,True
-direction,late,right pulse,36,0.6263,0.1044,3,68,True
-direction,late,left pulse,36,0.6217,0.0117,3,58,True
-direction,late,control,100,0.8057,0.0265,6,804,True
-direction,late,left pulse,100,0.7682,0.0618,6,114,True
-congruency,late,control,-100,0.1959,0.0236,6,831,True
-congruency,late,incongruent,-100,0.2326,0.0395,6,145,True
-congruency,late,control,-36,0.3597,0.039,5,300,True
-congruency,late,congruent,-36,0.359,0.0546,5,92,True
-congruency,late,incongruent,-36,0.485,0.107,5,94,True
-congruency,late,control,-18,0.487,0.0844,2,98,False
-congruency,late,congruent,-18,0.4855,0.1812,2,29,False
-congruency,late,incongruent,-18,0.5635,0.0079,2,25,False
-congruency,late,control,-9,0.4613,0.0301,5,422,True
-congruency,late,congruent,-9,0.4463,0.0556,5,114,True
-congruency,late,incongruent,-9,0.4818,0.033,5,112,True
-congruency,late,control,0,0.5178,0.0246,10,1315,True
-congruency,late,control,9,0.4813,0.0358,6,448,True
-congruency,late,congruent,9,0.5913,0.0589,6,118,True
-congruency,late,incongruent,9,0.5747,0.0999,6,118,True
-congruency,late,control,18,0.6261,0.0261,2,94,False
-congruency,late,congruent,18,0.6346,0.1346,2,33,False
-congruency,late,incongruent,18,0.6944,0.0278,2,24,False
-congruency,late,control,36,0.6897,0.0401,3,240,True
-congruency,late,congruent,36,0.6263,0.1044,3,68,True
-congruency,late,incongruent,36,0.6217,0.0117,3,58,True
-congruency,late,control,100,0.8057,0.0265,6,804,True
-congruency,late,incongruent,100,0.7682,0.0618,6,114,True
+coh,set,stage,curve,p_right,sem,n_mice,n_trials,panel_mice,shown
+-100,direction,early,control,0.1685,0.0188,10,2276,10,True
+-36,direction,early,control,0.3242,0.0382,9,1246,10,True
+-18,direction,early,control,0.3539,0.0532,8,994,10,True
+-9,direction,early,control,0.4574,0.0254,10,1356,10,True
+0,direction,early,control,0.5178,0.0246,10,1315,10,True
+9,direction,early,control,0.5398,0.0342,10,1350,10,True
+18,direction,early,control,0.643,0.0268,8,1059,10,True
+36,direction,early,control,0.7504,0.0375,9,1268,10,True
+100,direction,early,control,0.8437,0.022,10,2253,10,True
+-100,direction,early,right pulse,0.1879,0.0308,9,282,10,True
+-36,direction,early,right pulse,0.3708,0.0628,8,241,10,True
+-18,direction,early,right pulse,0.5313,0.0503,7,237,10,True
+-9,direction,early,right pulse,0.5216,0.0375,10,291,10,True
+0,direction,early,right pulse,0.5698,0.0363,9,284,10,True
+9,direction,early,right pulse,0.7036,0.0352,9,304,10,True
+18,direction,early,right pulse,0.7607,0.0605,6,236,10,True
+36,direction,early,right pulse,0.8108,0.0338,9,257,10,True
+-36,direction,early,left pulse,0.2859,0.0494,9,239,10,True
+-18,direction,early,left pulse,0.3822,0.0742,7,229,10,True
+-9,direction,early,left pulse,0.4287,0.0325,10,299,10,True
+0,direction,early,left pulse,0.4551,0.0409,10,295,10,True
+9,direction,early,left pulse,0.5822,0.0339,9,275,10,True
+18,direction,early,left pulse,0.6204,0.0494,7,211,10,True
+36,direction,early,left pulse,0.7606,0.0357,8,268,10,True
+100,direction,early,left pulse,0.7654,0.0273,10,385,10,True
+-100,congruency,early,control,0.1685,0.0188,10,2276,10,True
+-36,congruency,early,control,0.3242,0.0382,9,1246,10,True
+-18,congruency,early,control,0.3539,0.0532,8,994,10,True
+-9,congruency,early,control,0.4574,0.0254,10,1356,10,True
+0,congruency,early,control,0.5178,0.0246,10,1315,10,True
+9,congruency,early,control,0.5398,0.0342,10,1350,10,True
+18,congruency,early,control,0.643,0.0268,8,1059,10,True
+36,congruency,early,control,0.7504,0.0375,9,1268,10,True
+100,congruency,early,control,0.8437,0.022,10,2253,10,True
+-36,congruency,early,congruent,0.2859,0.0494,9,239,10,True
+-18,congruency,early,congruent,0.3822,0.0742,7,229,10,True
+-9,congruency,early,congruent,0.4287,0.0325,10,299,10,True
+9,congruency,early,congruent,0.7036,0.0352,9,304,10,True
+18,congruency,early,congruent,0.7607,0.0605,6,236,10,True
+36,congruency,early,congruent,0.8108,0.0338,9,257,10,True
+-100,congruency,early,incongruent,0.1879,0.0308,9,282,10,True
+-36,congruency,early,incongruent,0.3708,0.0628,8,241,10,True
+-18,congruency,early,incongruent,0.5313,0.0503,7,237,10,True
+-9,congruency,early,incongruent,0.5216,0.0375,10,291,10,True
+9,congruency,early,incongruent,0.5822,0.0339,9,275,10,True
+18,congruency,early,incongruent,0.6204,0.0494,7,211,10,True
+36,congruency,early,incongruent,0.7606,0.0357,8,268,10,True
+100,congruency,early,incongruent,0.7654,0.0273,10,385,10,True
+-100,direction,middle,control,0.1685,0.0188,10,2276,10,True
+-36,direction,middle,control,0.3242,0.0382,9,1246,10,True
+-18,direction,middle,control,0.3539,0.0532,8,994,10,True
+-9,direction,middle,control,0.4574,0.0254,10,1356,10,True
+0,direction,middle,control,0.5178,0.0246,10,1315,10,True
+9,direction,middle,control,0.5398,0.0342,10,1350,10,True
+18,direction,middle,control,0.643,0.0268,8,1059,10,True
+36,direction,middle,control,0.7504,0.0375,9,1268,10,True
+100,direction,middle,control,0.8437,0.022,10,2253,10,True
+-100,direction,middle,right pulse,0.1961,0.0279,9,293,10,True
+-36,direction,middle,right pulse,0.2709,0.0359,9,281,10,True
+-18,direction,middle,right pulse,0.427,0.0456,5,189,10,True
+-9,direction,middle,right pulse,0.4723,0.048,9,259,10,True
+0,direction,middle,right pulse,0.5957,0.0647,10,296,10,True
+9,direction,middle,right pulse,0.5975,0.0591,9,279,10,True
+18,direction,middle,right pulse,0.7522,0.0314,7,223,10,True
+36,direction,middle,right pulse,0.7888,0.0478,8,273,10,True
+-36,direction,middle,left pulse,0.3065,0.0474,8,219,10,True
+-18,direction,middle,left pulse,0.2942,0.061,7,231,10,True
+-9,direction,middle,left pulse,0.4496,0.0513,9,313,10,True
+0,direction,middle,left pulse,0.4633,0.0641,9,275,10,True
+9,direction,middle,left pulse,0.553,0.0314,8,288,10,True
+18,direction,middle,left pulse,0.5868,0.0452,7,210,10,True
+36,direction,middle,left pulse,0.682,0.0607,9,296,10,True
+100,direction,middle,left pulse,0.8239,0.0443,9,311,10,True
+-100,congruency,middle,control,0.1685,0.0188,10,2276,10,True
+-36,congruency,middle,control,0.3242,0.0382,9,1246,10,True
+-18,congruency,middle,control,0.3539,0.0532,8,994,10,True
+-9,congruency,middle,control,0.4574,0.0254,10,1356,10,True
+0,congruency,middle,control,0.5178,0.0246,10,1315,10,True
+9,congruency,middle,control,0.5398,0.0342,10,1350,10,True
+18,congruency,middle,control,0.643,0.0268,8,1059,10,True
+36,congruency,middle,control,0.7504,0.0375,9,1268,10,True
+100,congruency,middle,control,0.8437,0.022,10,2253,10,True
+-36,congruency,middle,congruent,0.3065,0.0474,8,219,10,True
+-18,congruency,middle,congruent,0.2942,0.061,7,231,10,True
+-9,congruency,middle,congruent,0.4496,0.0513,9,313,10,True
+9,congruency,middle,congruent,0.5975,0.0591,9,279,10,True
+18,congruency,middle,congruent,0.7522,0.0314,7,223,10,True
+36,congruency,middle,congruent,0.7888,0.0478,8,273,10,True
+-100,congruency,middle,incongruent,0.1961,0.0279,9,293,10,True
+-36,congruency,middle,incongruent,0.2709,0.0359,9,281,10,True
+-18,congruency,middle,incongruent,0.427,0.0456,5,189,10,True
+-9,congruency,middle,incongruent,0.4723,0.048,9,259,10,True
+9,congruency,middle,incongruent,0.553,0.0314,8,288,10,True
+18,congruency,middle,incongruent,0.5868,0.0452,7,210,10,True
+36,congruency,middle,incongruent,0.682,0.0607,9,296,10,True
+100,congruency,middle,incongruent,0.8239,0.0443,9,311,10,True
+-100,direction,late,control,0.1959,0.0236,6,831,6,True
+-36,direction,late,control,0.3597,0.039,5,300,6,True
+-18,direction,late,control,0.3979,0.0996,4,139,6,True
+-9,direction,late,control,0.4614,0.0246,6,461,6,True
+0,direction,late,control,0.5364,0.0311,6,443,6,True
+9,direction,late,control,0.4813,0.0358,6,448,6,True
+18,direction,late,control,0.5971,0.0219,4,127,6,True
+36,direction,late,control,0.68,0.0351,5,307,6,True
+100,direction,late,control,0.8057,0.0265,6,804,6,True
+-100,direction,late,right pulse,0.2326,0.0395,6,145,6,True
+-36,direction,late,right pulse,0.485,0.107,5,94,6,True
+-18,direction,late,right pulse,0.5635,0.0079,2,25,6,True
+-9,direction,late,right pulse,0.4818,0.033,5,112,6,True
+0,direction,late,right pulse,0.543,0.0373,6,115,6,True
+9,direction,late,right pulse,0.5913,0.0589,6,118,6,True
+18,direction,late,right pulse,0.6346,0.1346,2,33,6,True
+36,direction,late,right pulse,0.5947,0.0803,4,78,6,True
+-36,direction,late,left pulse,0.359,0.0546,5,92,6,True
+-18,direction,late,left pulse,0.5112,0.1077,3,45,6,True
+-9,direction,late,left pulse,0.4274,0.0491,6,126,6,True
+0,direction,late,left pulse,0.5091,0.0524,5,114,6,True
+9,direction,late,left pulse,0.5747,0.0999,6,118,6,True
+18,direction,late,left pulse,0.5741,0.1214,3,30,6,True
+36,direction,late,left pulse,0.502,0.12,4,65,6,True
+100,direction,late,left pulse,0.7682,0.0618,6,114,6,True
+-100,congruency,late,control,0.1959,0.0236,6,831,6,True
+-36,congruency,late,control,0.3597,0.039,5,300,6,True
+-18,congruency,late,control,0.3979,0.0996,4,139,6,True
+-9,congruency,late,control,0.4614,0.0246,6,461,6,True
+0,congruency,late,control,0.5364,0.0311,6,443,6,True
+9,congruency,late,control,0.4813,0.0358,6,448,6,True
+18,congruency,late,control,0.5971,0.0219,4,127,6,True
+36,congruency,late,control,0.68,0.0351,5,307,6,True
+100,congruency,late,control,0.8057,0.0265,6,804,6,True
+-36,congruency,late,congruent,0.359,0.0546,5,92,6,True
+-18,congruency,late,congruent,0.5112,0.1077,3,45,6,True
+-9,congruency,late,congruent,0.4274,0.0491,6,126,6,True
+9,congruency,late,congruent,0.5913,0.0589,6,118,6,True
+18,congruency,late,congruent,0.6346,0.1346,2,33,6,True
+36,congruency,late,congruent,0.5947,0.0803,4,78,6,True
+-100,congruency,late,incongruent,0.2326,0.0395,6,145,6,True
+-36,congruency,late,incongruent,0.485,0.107,5,94,6,True
+-18,congruency,late,incongruent,0.5635,0.0079,2,25,6,True
+-9,congruency,late,incongruent,0.4818,0.033,5,112,6,True
+9,congruency,late,incongruent,0.5747,0.0999,6,118,6,True
+18,congruency,late,incongruent,0.5741,0.1214,3,30,6,True
+36,congruency,late,incongruent,0.502,0.12,4,65,6,True
+100,congruency,late,incongruent,0.7682,0.0618,6,114,6,True

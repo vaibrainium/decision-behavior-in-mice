@@ -1,5 +1,5 @@
 # Plan: pulse effects as congruent vs incongruent (author's chosen framing)
-Status: active
+Status: done
 Created: 2026-10-28 by Claude (Opus 5.5)
 Related reports: reports/2026-10-27-pulse-contrast-responders-only.md, reports/2026-10-27-pulse-asymmetry-lapse-checks.md
 Related plans: plans/2026-10-28-pulse-psychometric-by-stage.md
@@ -20,7 +20,7 @@ Tested pulse effects in the congruent / incongruent framing, replacing positive-
 ## Steps
 - [x] 1. scripts/ddm/pulse_congruency_tests.py (reuses congruency_effects); tables in paper_accumulation/tables.
 - [x] 2. Verify: pooled congruent - incongruent matches the asymmetry report's observed A sign and size.
-- [ ] 3. Dashboard: congruency test table in section 5; decision D010; report.
+- [x] 3. Dashboard: congruency test table in section 5; decision D010; report.
 
 ## Out of scope
 Model predictions; RT effects.
@@ -29,3 +29,10 @@ Model predictions; RT effects.
 - 2026-10-28: plan written after author chose the congruency framing.
 - 2026-10-28: results: congruent 3.0 pp (Holm 0.096), incongruent 3.6 (0.39), difference -0.5 (0.87); check vs asymmetry
   report passed. Step 3 held: author to choose which test the paper reports (reports/2026-10-28-pulse-congruency-tests.md).
+- 2026-10-28: author: run the congruency analysis per pulse time (early, middle, late) with bootstrap. Spec added before
+  computing: hierarchical bootstrap (resample mice with replacement, then trials within each mouse x category x
+  coherence cell, as binomial draws), 10,000 resamples, seed 0; effects as above per stage; 95% percentile CI; two-sided
+  bootstrap p = 2 x min(P(boot <= 0), P(boot >= 0)); Holm over the 9 stage x effect tests. Also: psychometric panels
+  show the number of mice in the panel, without per-point mouse matching (author).
+- 2026-10-28: bootstrap per stage done (all CIs include 0, Holm 1.0); psychometric panels now show panel mouse counts
+  (10/10/6); dashboard v11 with bootstrap table. D010 not recorded: author has not chosen which test the paper reports.

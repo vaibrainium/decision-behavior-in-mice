@@ -1,0 +1,10 @@
+stage,effect,n_mice,mean_pp,ci_lo,ci_hi,p_boot,p_boot_holm
+early,congruent,10,4.0717,-1.9243,9.9348,0.173,1.0
+early,incongruent,10,2.723,-3.8485,8.7164,0.3852,1.0
+early,congruent_minus_incongruent,10,1.3487,-8.1539,11.7978,0.8316,1.0
+middle,congruent,10,4.2379,-1.2884,9.6645,0.1298,1.0
+middle,incongruent,10,3.328,-3.8565,10.0993,0.3374,1.0
+middle,congruent_minus_incongruent,10,0.9099,-6.8735,9.3904,0.8372,1.0
+late,congruent,6,-0.4238,-8.0064,6.5571,0.9154,1.0
+late,incongruent,6,0.1285,-9.362,11.7735,0.9766,1.0
+late,congruent_minus_incongruent,6,-0.5523,-17.3505,13.3712,0.9842,1.0

@@ -6,8 +6,8 @@ pulse_asymmetry_lapse. Pulse stage = |sched_pulse_type|: 1 early, 2 middle, 3 la
 design). Two sets of curves per stage, each with the same control curve:
   direction:  right pulse (sched_pulse_type > 0) and left pulse (< 0), all coherences;
   congruency: congruent (pulse toward the trial's coherence) and incongruent (against it); 0% pulses are on neither.
-Mouse is the unit: P(right) per mouse and cell, then mean +- SEM over mice. At each coherence all curves of a panel use
-the same mice (>= MIN_TRIALS trials in each); points with < MIN_MICE mice are not drawn. Each curve is a logistic
+Mouse is the unit: P(right) per mouse and cell, then mean +- SEM over mice. Each stage's panel holds the mice that had
+that pulse stage (late: the six DBM mice); a mouse enters a point if it has >= MIN_TRIALS trials in that cell. Each curve is a logistic
 with lapses, p = gamma + (1 - gamma - lambda) / (1 + exp(-beta * (c - mu))), c in % coherence, fitted by least squares
 to the drawn group-mean points weighted by their number of mice (descriptive). The control curve fits all four
 parameters (lapses in [0, 0.5]); pulse curves share the control curve's lapses and fit only bias mu and slope beta,
@@ -33,7 +33,6 @@ from scripts.ddm.pulse_psychometric import PROCESSED, trial_table
 OUT = Path(__file__).resolve().parents[2] / "dissemination" / "paper_accumulation" / "figures" / "qc"
 STAGES = {1: "early", 2: "middle", 3: "late"}
 MIN_TRIALS = 5
-MIN_MICE = 3
 GRID = np.arange(-100, 101)
 SETS = {"direction": ["control", "right pulse", "left pulse"], "congruency": ["control", "congruent", "incongruent"]}
 COLOURS = {"control": "0.3", "right pulse": "tab:orange", "left pulse": "tab:purple", "congruent": "tab:blue", "incongruent": "tab:red"}
@@ -50,25 +49,21 @@ def load_trials() -> pd.DataFrame:
 
 
 def cells(t: pd.DataFrame) -> pd.DataFrame:
-    """Mean +- SEM over mice of P(right) per curve set, stage, curve and coherence. Within a panel and coherence, every
-    curve uses the same mice: those with >= MIN_TRIALS trials in each curve present at that coherence (paired points);
-    points with fewer than MIN_MICE such mice are marked shown = False."""
-    control = t[t.category == "control"]
+    """Mean +- SEM over mice of P(right) per curve set, stage, curve and coherence. A stage's panel holds the mice that
+    had that pulse stage (control curve from the same mice); a mouse enters a point if it has >= MIN_TRIALS trials there."""
     rows = []
     for stage in STAGES:
         p = t[t.stage == stage]
+        control = t[(t.category == "control") & t.mouse.isin(p.mouse.unique())]
         curves = {"control": control, "right pulse": p[p.direction > 0], "left pulse": p[p.direction < 0],
                   "congruent": p[p.category == "congruent"], "incongruent": p[p.category == "incongruent"]}
         for set_name, names in SETS.items():
-            pm = {n: curves[n].groupby(["coh", "mouse"]).right.agg(["mean", "size"]) for n in names}
-            for coh in sorted(control.coh.unique()):
-                present = [n for n in names if coh in pm[n].index.get_level_values("coh")]
-                mice = set.intersection(*[set(pm[n].loc[coh].query("size >= @MIN_TRIALS").index) for n in present])
-                for n in present:
-                    x = pm[n].loc[coh].loc[sorted(mice)] if mice else pm[n].loc[coh].iloc[:0]
-                    rows.append({"set": set_name, "stage": STAGES[stage], "curve": n, "coh": coh, "p_right": x["mean"].mean(),
-                                 "sem": x["mean"].sem(), "n_mice": len(x), "n_trials": int(x["size"].sum()), "shown": len(x) >= MIN_MICE})
-    return pd.DataFrame(rows)
+            for name in names:
+                pm = curves[name].groupby(["coh", "mouse"]).right.agg(["mean", "size"])
+                g = pm[pm["size"] >= MIN_TRIALS].groupby("coh")
+                rows.append(pd.DataFrame({"set": set_name, "stage": STAGES[stage], "curve": name, "p_right": g["mean"].mean(), "sem": g["mean"].sem(),
+                                          "n_mice": g.size(), "n_trials": g["size"].sum(), "panel_mice": p.mouse.nunique(), "shown": True}).reset_index())
+    return pd.concat(rows, ignore_index=True)
 
 
 def logistic4(params, c):
@@ -121,8 +116,8 @@ def main():
                 ax.errorbar(d.coh, d.p_right, yerr=d["sem"], fmt="o", ms=3.5, capsize=0, color=COLOURS[name], label=name)
                 k = curves[(curves.set == set_name) & (curves.stage == stage) & (curves.curve == name)]
                 ax.plot(k.coh, k.p_fit, lw=1.2, color=COLOURS[name])
-            n = c[(c.set == set_name) & (c.stage == stage) & c.shown & (c.curve != "control")].n_mice
-            ax.set_title(f"{stage} pulse ({n.min()}-{n.max()} mice per point)", fontsize=9)
+            n = c[(c.set == set_name) & (c.stage == stage)].panel_mice.iloc[0]
+            ax.set_title(f"{stage} pulse ({n} mice)", fontsize=9)
             ax.axhline(0.5, color="0.8", lw=0.6, zorder=0)
             ax.axvline(0, color="0.8", lw=0.6, zorder=0)
             ax.set_xticks([-100, -36, 0, 36, 100])

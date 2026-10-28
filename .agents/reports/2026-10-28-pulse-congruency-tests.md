@@ -22,6 +22,15 @@ dissemination/paper_accumulation/tables/pulse_congruency_{per_mouse,tests}_2026-
 - Check: congruent - incongruent = -0.54 equals minus the asymmetry report's observed A = 0.54 (same definition).
 - Between-mouse spread is large for incongruent (DBM15 +18.4, DBM14 -8.9 pp).
 
+## Per pulse time, hierarchical bootstrap (author request; VERIFIED; pulse_congruency_bootstrap_2026-10-28.csv)
+Resample mice, then trials within each mouse x category x coherence cell (binomial), 10,000, seed 0; Holm over 9.
+| Pulse time | Mice | Congruent (pp) | Incongruent (pp) | Difference (pp) |
+|---|---|---|---|---|
+| early | 10 | 4.07 [-1.92, 9.94], p 0.17 | 2.72 [-3.85, 8.72], p 0.39 | 1.35 [-8.15, 11.80], p 0.83 |
+| middle | 10 | 4.24 [-1.29, 9.67], p 0.13 | 3.33 [-3.86, 10.10], p 0.34 | 0.91 [-6.87, 9.39], p 0.84 |
+| late | 6 | -0.42 [-8.01, 6.56], p 0.92 | 0.13 [-9.36, 11.77], p 0.98 | -0.55 [-17.35, 13.37], p 0.98 |
+All Holm p = 1.0. Bootstrap CIs are wider than the t intervals because they add trial-level noise.
+
 ## What didn't work
 - Nothing failed; the framing splits one effect into two smaller tests, each underpowered with 10 mice.
 
