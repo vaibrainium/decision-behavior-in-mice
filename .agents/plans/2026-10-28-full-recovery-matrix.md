@@ -1,5 +1,5 @@
 # Plan: full model-recovery matrix (C, E, DDMx, ESx), responded-only
-Status: active
+Status: active (on hold by author, 2026-10-28)
 Created: 2026-10-28 by Claude (Opus 5.5)
 Related reports: reports/2026-10-27-f1a-strategy-recovery-responded.md, reports/2026-10-28-stine-exact-models.md
 
@@ -31,3 +31,5 @@ New statistical tests; ES; pulse trials.
 - 2026-10-28: 160 fits received. Check failed: candidates saw different synthetic data (n_train/n_test differ in 63/80
   datasets across folders; GPU-dependent torch synthesis suspected). Matrix not valid; report
   reports/2026-10-28-recovery-synthetic-data-mismatch.md. Proposed: pre-generated CPU datasets + rerun 320 fits (awaiting OK).
+- 2026-10-28: author: fix and 320-fit rerun pinned, not run; revisit only if recovery becomes necessary for the paper.
+  Next step when resumed: CPU pre-generated datasets (sha256) + model_recovery --datasets, then rerun all 16 cells.

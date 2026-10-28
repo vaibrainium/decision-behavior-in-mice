@@ -15,6 +15,7 @@ Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gat
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
+- plans/2026-10-28-full-recovery-matrix.md : ON HOLD (author); recovery rerun on fixed CPU datasets if it becomes necessary
 - plans/2026-10-26-v2-refits-and-strategy-recovery.md : responded-only refits + full point-3 re-run (amendment 9); commands ready; next: user syncs code, submits R1-R6 (460), then F1a (80) and P1-P4 (850)
 - plans/2026-10-26-paper-accumulation-variant.md : second paper version (accumulation-first) in dissemination/paper_accumulation/; G1 held; waiting on v2 refits + E-recovery (plans/2026-10-26-v2-refits-and-strategy-recovery.md)
 - plans/2026-10-23-pulse-followup-parallel.md : A-E, G1, F3 pilot done (FAIL -> modelling stopped); next: H2 check of pilot, H4 finalize; original primacy procedure remains closed
@@ -75,7 +76,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - ../dissemination/reports/motion-energy-methods.md : motion-energy method review and corrections
 
 ## Known issues
-- 2026-10-28: all strategy recoveries (F1a, ES, ESx/DDMx, cross matrix) are unpaired: synthetic data differ between candidates (63/80 datasets). F1a k = 5 / THESIS_B provisional (reports/2026-10-28-recovery-synthetic-data-mismatch.md).
+- 2026-10-28: all strategy recoveries (F1a, ES, ESx/DDMx, cross matrix) are unpaired: synthetic data differ between candidates (63/80 datasets). F1a k = 5 / THESIS_B provisional (reports/2026-10-28-recovery-synthetic-data-mismatch.md). Old 500-fit variant recovery also suspect (GPU synthesis; not checkable). Fix + rerun pinned by author; do not cite recovery results meanwhile.
 - 2026-10-27 author rule: trials without a response by 5 s (435 no RT + 4,102 RT > 5 s = 4,537) must not enter any analysis. All existing DDM fits, gates, calibration, pulse-gain diagnostics and the primary pulse contrast (1,709 unresponded) included them; superseded for the accumulation-first paper by responded-only refits (--responded_only). The first paper version is not yet redone.
 - DDM inputs label 48 UCLA no-response pulse trials as controls (direction lost in notebook 0.0); the 15 trials dropped for invalid duration are responses during the pulse (outcome-dependent). Existing inputs unchanged (pulse-data report).
 - UW: one |coherence| per session (18% or 36%) schedules only rightward pulses; excluded from signed and pulse-vs-control contrasts (pulse-data report).
