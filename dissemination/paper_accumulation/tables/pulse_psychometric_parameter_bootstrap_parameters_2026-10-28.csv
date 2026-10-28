@@ -1,0 +1,61 @@
+stage,curve,parameter,n_mice,estimate,ci_lo,ci_hi
+early,control,mu,10,0.8171,-7.3721,7.2113
+early,control,beta,10,0.0408,0.0262,0.0557
+early,control,gamma,10,0.1662,0.1093,0.2153
+early,control,lambda,10,0.1366,0.0899,0.1787
+early,congruent,mu,10,-5.4584,-12.759,0.0464
+early,congruent,beta,10,0.0675,0.042,0.1171
+early,congruent,gamma,10,0.1662,0.1093,0.2153
+early,congruent,lambda,10,0.1366,0.0899,0.1787
+early,incongruent,mu,10,-9.8885,-23.5559,1.8356
+early,incongruent,beta,10,0.0279,0.0172,0.0481
+early,incongruent,gamma,10,0.1662,0.1093,0.2153
+early,incongruent,lambda,10,0.1366,0.0899,0.1787
+early,right pulse,mu,10,-14.2491,-25.892,-6.1597
+early,right pulse,beta,10,0.0439,0.0281,0.07
+early,right pulse,gamma,10,0.1662,0.1093,0.2153
+early,right pulse,lambda,10,0.1366,0.0899,0.1787
+early,left pulse,mu,10,2.801,-6.4145,11.7652
+early,left pulse,beta,10,0.0423,0.0198,0.0678
+early,left pulse,gamma,10,0.1662,0.1093,0.2153
+early,left pulse,lambda,10,0.1366,0.0899,0.1787
+middle,control,mu,10,0.8171,-7.3372,7.3572
+middle,control,beta,10,0.0408,0.0261,0.0558
+middle,control,gamma,10,0.1662,0.1073,0.2159
+middle,control,lambda,10,0.1366,0.0903,0.1787
+middle,congruent,mu,10,-1.5729,-10.3692,6.0317
+middle,congruent,beta,10,0.0604,0.0339,0.1038
+middle,congruent,gamma,10,0.1662,0.1073,0.2159
+middle,congruent,lambda,10,0.1366,0.0903,0.1787
+middle,incongruent,mu,10,3.1512,-7.0169,15.9695
+middle,incongruent,beta,10,0.0332,0.0197,0.0493
+middle,incongruent,gamma,10,0.1662,0.1073,0.2159
+middle,incongruent,lambda,10,0.1366,0.0903,0.1787
+middle,right pulse,mu,10,-5.8147,-13.2742,1.3366
+middle,right pulse,beta,10,0.0535,0.0317,0.0803
+middle,right pulse,gamma,10,0.1662,0.1073,0.2159
+middle,right pulse,lambda,10,0.1366,0.0903,0.1787
+middle,left pulse,mu,10,6.6298,-4.0772,17.5563
+middle,left pulse,beta,10,0.0369,0.0193,0.0565
+middle,left pulse,gamma,10,0.1662,0.1073,0.2159
+middle,left pulse,lambda,10,0.1366,0.0903,0.1787
+late,control,mu,6,1.2368,-16.6918,19.007
+late,control,beta,6,0.0265,0.0139,0.046
+late,control,gamma,6,0.1542,0.0,0.2447
+late,control,lambda,6,0.1428,0.0,0.2174
+late,congruent,mu,6,-1.8448,-21.6757,50.0
+late,congruent,beta,6,0.0223,0.0045,0.0485
+late,congruent,gamma,6,0.1542,0.0,0.2447
+late,congruent,lambda,6,0.1428,0.0,0.2174
+late,incongruent,mu,6,-6.3921,-42.0774,34.0962
+late,incongruent,beta,6,0.0157,0.0082,0.0305
+late,incongruent,gamma,6,0.1542,0.0,0.2447
+late,incongruent,lambda,6,0.1428,0.0,0.2174
+late,right pulse,mu,6,-13.1166,-39.9093,21.6487
+late,right pulse,beta,6,0.0181,0.0088,0.032
+late,right pulse,gamma,6,0.1542,0.0,0.2447
+late,right pulse,lambda,6,0.1428,0.0,0.2174
+late,left pulse,mu,6,3.6988,-22.4248,42.0122
+late,left pulse,beta,6,0.0176,0.008,0.0572
+late,left pulse,gamma,6,0.1542,0.0,0.2447
+late,left pulse,lambda,6,0.1428,0.0,0.2174

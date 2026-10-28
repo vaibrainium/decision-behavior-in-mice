@@ -48,15 +48,21 @@ def load_trials() -> pd.DataFrame:
     return t[keep.astype(bool)]
 
 
+def stage_curves(t: pd.DataFrame, stage: int) -> dict[str, pd.DataFrame]:
+    """Trials of each curve in a stage's panel: the mice that had that pulse stage, control from the same mice."""
+    p = t[t.stage == stage]
+    control = t[(t.category == "control") & t.mouse.isin(p.mouse.unique())]
+    return {"control": control, "right pulse": p[p.direction > 0], "left pulse": p[p.direction < 0],
+            "congruent": p[p.category == "congruent"], "incongruent": p[p.category == "incongruent"]}
+
+
 def cells(t: pd.DataFrame) -> pd.DataFrame:
     """Mean +- SEM over mice of P(right) per curve set, stage, curve and coherence. A stage's panel holds the mice that
     had that pulse stage (control curve from the same mice); a mouse enters a point if it has >= MIN_TRIALS trials there."""
     rows = []
     for stage in STAGES:
         p = t[t.stage == stage]
-        control = t[(t.category == "control") & t.mouse.isin(p.mouse.unique())]
-        curves = {"control": control, "right pulse": p[p.direction > 0], "left pulse": p[p.direction < 0],
-                  "congruent": p[p.category == "congruent"], "incongruent": p[p.category == "incongruent"]}
+        curves = stage_curves(t, stage)
         for set_name, names in SETS.items():
             for name in names:
                 pm = curves[name].groupby(["coh", "mouse"]).right.agg(["mean", "size"])
