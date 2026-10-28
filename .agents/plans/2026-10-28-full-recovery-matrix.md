@@ -28,3 +28,6 @@ New statistical tests; ES; pulse trials.
 - 2026-10-28: plan written; code and smoke test.
 - 2026-10-28: submitted 42503176 (160 jobs, lab A100s: -p gpu-a100 -A gpu-a100-walkerlab --qos=normal), code 63552c1.
 - 2026-10-28: tasks 4-159 moved to ckpt-all (Account ckpt-walkerlab, QOS ckpt-gpu) by scontrol; 0-3 ran on gpu-a100.
+- 2026-10-28: 160 fits received. Check failed: candidates saw different synthetic data (n_train/n_test differ in 63/80
+  datasets across folders; GPU-dependent torch synthesis suspected). Matrix not valid; report
+  reports/2026-10-28-recovery-synthetic-data-mismatch.md. Proposed: pre-generated CPU datasets + rerun 320 fits (awaiting OK).

@@ -25,6 +25,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-10-28-recovery-synthetic-data-mismatch.md : BUG: recovery candidates scored on different synthetic data (GPU-dependent synthesis); F1a k=5, ES and ESx/DDMx recoveries invalid until rerun on fixed CPU datasets
 - reports/2026-10-28-stine-exact-models.md : paper-exact Stine models barely differ (ESx-DDMx 62.7, DDMx 3/10, ESx 0/10), pulse test not distinguished, recovery weak; both fit far worse than the common model (C better 6/10)
 - reports/2026-10-27-f1a-strategy-recovery-responded.md : F1a k = 5/20 E-generated datasets scored as accumulator (genuine, not optimizer) -> THESIS_B under D002; E vs C on real data 278.9 (C 5/10, E 0/10); E pulse strategy test not distinguished
 - reports/2026-10-27-pulse-readout-model-rt-split.md : primary model gets the RT shape of the pulse effect right but is too weak at RT ~0.5-1.3 s and predicts a late reversal the data lack
@@ -74,6 +75,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - ../dissemination/reports/motion-energy-methods.md : motion-energy method review and corrections
 
 ## Known issues
+- 2026-10-28: all strategy recoveries (F1a, ES, ESx/DDMx, cross matrix) are unpaired: synthetic data differ between candidates (63/80 datasets). F1a k = 5 / THESIS_B provisional (reports/2026-10-28-recovery-synthetic-data-mismatch.md).
 - 2026-10-27 author rule: trials without a response by 5 s (435 no RT + 4,102 RT > 5 s = 4,537) must not enter any analysis. All existing DDM fits, gates, calibration, pulse-gain diagnostics and the primary pulse contrast (1,709 unresponded) included them; superseded for the accumulation-first paper by responded-only refits (--responded_only). The first paper version is not yet redone.
 - DDM inputs label 48 UCLA no-response pulse trials as controls (direction lost in notebook 0.0); the 15 trials dropped for invalid duration are responses during the pulse (outcome-dependent). Existing inputs unchanged (pulse-data report).
 - UW: one |coherence| per session (18% or 36%) schedules only rightward pulses; excluded from signed and pulse-vs-control contrasts (pulse-data report).
