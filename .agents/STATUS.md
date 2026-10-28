@@ -99,6 +99,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - Screen geometry not corrected in ME (ME methods §3.7).
 
 ## Decisions
+- 2026-10-28: D010 pulse effects reported as right vs left (per pulse time, psychometric bias/slope bootstrap); congruency framing dropped (reports/2026-10-28-pulse-direction-by-time.md).
 - 2026-10-27: exclude all trials without a response by 5 s from every analysis (V. Thakur: "both of these trials should not have been considered for any analysis"); likelihood made conditional on a response by 5 s.
 - 2026-10-26: approved G4 with the bounded N105–N107 Methods patch and the order S5 assembly, S6 artwork, then panel review (D009).
 - 2026-10-26: approved Discussion v1 and continuation (“approved and continue”); recorded D008 and authorized

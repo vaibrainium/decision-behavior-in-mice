@@ -29,3 +29,5 @@ Congruency set (revisit later); control comparisons; tests between pulse times.
   0.007; middle slope +0.027, Holm 0.29; no bias differences). Author: not used; congruency dropped for now. Outputs
   and the --set option removed; the numbers come from the 36-test table
   (tables/pulse_psychometric_parameter_bootstrap_2026-10-28.csv) if needed.
+- 2026-10-28: author chose right vs left for the paper (D010); congruency panels, the pp congruency bootstrap table and
+  the 36-test parameter table removed from the dashboard (version 17); their CSVs and reports stay in the repo.
