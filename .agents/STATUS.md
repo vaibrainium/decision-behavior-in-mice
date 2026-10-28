@@ -26,6 +26,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-10-28-pulse-congruency-tests.md : congruent 3.0 pp (Holm 0.096) and incongruent 3.6 pp (0.39) pulse effects each non-significant; positive-vs-negative (7.52 pp, Holm 0.012) pools both
 - reports/2026-10-28-recovery-synthetic-data-mismatch.md : BUG: recovery candidates scored on different synthetic data (GPU-dependent synthesis); F1a k=5, ES and ESx/DDMx recoveries invalid until rerun on fixed CPU datasets
 - reports/2026-10-28-stine-exact-models.md : paper-exact Stine models barely differ (ESx-DDMx 62.7, DDMx 3/10, ESx 0/10), pulse test not distinguished, recovery weak; both fit far worse than the common model (C better 6/10)
 - reports/2026-10-27-f1a-strategy-recovery-responded.md : F1a k = 5/20 E-generated datasets scored as accumulator (genuine, not optimizer) -> THESIS_B under D002; E vs C on real data 278.9 (C 5/10, E 0/10); E pulse strategy test not distinguished
