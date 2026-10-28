@@ -1,0 +1,7 @@
+change,summed,median,mean,min,max,worse_mice,t,dz,p_t_holm,p_w_holm
+Remove drift variability (sv),278.0,10.3,13.0,-13.1,48.6,8,2.01,0.64,0.3,0.316
+Remove fast guesses,430.5,27.3,24.9,-3.8,40.1,9,6.37,2.01,0.001,0.023
+Add leak,-14.4,-0.0,0.4,-7.3,9.4,5,0.23,0.07,1.0,1.0
+Add urgency,-17.1,-0.0,-0.6,-9.7,9.4,5,-0.34,-0.11,1.0,1.0
+Add leak and urgency,-59.3,-3.0,-3.8,-17.3,5.6,2,-1.97,-0.62,0.3,0.258
+Fix guess bias at 0.5,49.5,2.9,4.0,-6.8,14.8,9,2.26,0.72,0.25,0.244
