@@ -1,0 +1,19 @@
+set,stage,curve,mu,beta,gamma,lambda,lapses_from_control,rmse,n_points
+congruency,early,congruent,-5.7283,0.0641,0.1566,0.1382,True,0.0302,6
+congruency,early,control,-0.0617,0.0374,0.1566,0.1382,False,0.0107,9
+congruency,early,incongruent,-11.0788,0.0271,0.1566,0.1382,True,0.0415,8
+congruency,late,congruent,-1.4847,0.0238,0.1294,0.1171,True,0.0299,4
+congruency,late,control,1.8544,0.0226,0.1294,0.1171,False,0.028,7
+congruency,late,incongruent,-9.8203,0.0165,0.1294,0.1171,True,0.0318,6
+congruency,middle,congruent,-1.9606,0.0543,0.1703,0.1241,True,0.0334,6
+congruency,middle,control,2.1104,0.0435,0.1703,0.1241,False,0.0178,9
+congruency,middle,incongruent,3.3392,0.034,0.1703,0.1241,True,0.0226,8
+direction,early,control,0.4058,0.0374,0.1575,0.1373,False,0.0103,9
+direction,early,left pulse,1.7352,0.0398,0.1575,0.1373,True,0.0375,8
+direction,early,right pulse,-14.8528,0.042,0.1575,0.1373,True,0.0307,8
+direction,late,control,-0.2886,0.0227,0.1265,0.1217,False,0.0346,7
+direction,late,left pulse,-0.1633,0.0197,0.1265,0.1217,True,0.0214,6
+direction,late,right pulse,-12.3011,0.0174,0.1265,0.1217,True,0.0331,6
+direction,middle,control,2.5593,0.0436,0.1716,0.1236,False,0.0172,9
+direction,middle,left pulse,6.2735,0.0361,0.1716,0.1236,True,0.0212,8
+direction,middle,right pulse,-4.056,0.0513,0.1716,0.1236,True,0.0256,8

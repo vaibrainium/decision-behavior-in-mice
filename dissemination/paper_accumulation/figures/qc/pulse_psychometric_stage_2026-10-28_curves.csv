@@ -1,0 +1,3619 @@
+set,stage,curve,coh,p_fit
+congruency,early,congruent,-100,0.1583
+congruency,early,congruent,-99,0.1584
+congruency,early,congruent,-98,0.1585
+congruency,early,congruent,-97,0.1586
+congruency,early,congruent,-96,0.1587
+congruency,early,congruent,-95,0.1589
+congruency,early,congruent,-94,0.159
+congruency,early,congruent,-93,0.1592
+congruency,early,congruent,-92,0.1594
+congruency,early,congruent,-91,0.1596
+congruency,early,congruent,-90,0.1598
+congruency,early,congruent,-89,0.16
+congruency,early,congruent,-88,0.1602
+congruency,early,congruent,-87,0.1604
+congruency,early,congruent,-86,0.1607
+congruency,early,congruent,-85,0.1609
+congruency,early,congruent,-84,0.1612
+congruency,early,congruent,-83,0.1615
+congruency,early,congruent,-82,0.1618
+congruency,early,congruent,-81,0.1622
+congruency,early,congruent,-80,0.1626
+congruency,early,congruent,-79,0.163
+congruency,early,congruent,-78,0.1634
+congruency,early,congruent,-77,0.1638
+congruency,early,congruent,-76,0.1643
+congruency,early,congruent,-75,0.1648
+congruency,early,congruent,-74,0.1653
+congruency,early,congruent,-73,0.1659
+congruency,early,congruent,-72,0.1665
+congruency,early,congruent,-71,0.1672
+congruency,early,congruent,-70,0.1678
+congruency,early,congruent,-69,0.1686
+congruency,early,congruent,-68,0.1694
+congruency,early,congruent,-67,0.1702
+congruency,early,congruent,-66,0.1711
+congruency,early,congruent,-65,0.172
+congruency,early,congruent,-64,0.173
+congruency,early,congruent,-63,0.1741
+congruency,early,congruent,-62,0.1752
+congruency,early,congruent,-61,0.1764
+congruency,early,congruent,-60,0.1777
+congruency,early,congruent,-59,0.179
+congruency,early,congruent,-58,0.1804
+congruency,early,congruent,-57,0.182
+congruency,early,congruent,-56,0.1836
+congruency,early,congruent,-55,0.1853
+congruency,early,congruent,-54,0.1871
+congruency,early,congruent,-53,0.189
+congruency,early,congruent,-52,0.1911
+congruency,early,congruent,-51,0.1932
+congruency,early,congruent,-50,0.1955
+congruency,early,congruent,-49,0.198
+congruency,early,congruent,-48,0.2005
+congruency,early,congruent,-47,0.2033
+congruency,early,congruent,-46,0.2061
+congruency,early,congruent,-45,0.2092
+congruency,early,congruent,-44,0.2124
+congruency,early,congruent,-43,0.2158
+congruency,early,congruent,-42,0.2193
+congruency,early,congruent,-41,0.2231
+congruency,early,congruent,-40,0.2271
+congruency,early,congruent,-39,0.2312
+congruency,early,congruent,-38,0.2356
+congruency,early,congruent,-37,0.2402
+congruency,early,congruent,-36,0.2451
+congruency,early,congruent,-35,0.2502
+congruency,early,congruent,-34,0.2555
+congruency,early,congruent,-33,0.2611
+congruency,early,congruent,-32,0.2669
+congruency,early,congruent,-31,0.273
+congruency,early,congruent,-30,0.2794
+congruency,early,congruent,-29,0.286
+congruency,early,congruent,-28,0.2929
+congruency,early,congruent,-27,0.3001
+congruency,early,congruent,-26,0.3076
+congruency,early,congruent,-25,0.3154
+congruency,early,congruent,-24,0.3234
+congruency,early,congruent,-23,0.3317
+congruency,early,congruent,-22,0.3403
+congruency,early,congruent,-21,0.3491
+congruency,early,congruent,-20,0.3582
+congruency,early,congruent,-19,0.3676
+congruency,early,congruent,-18,0.3772
+congruency,early,congruent,-17,0.387
+congruency,early,congruent,-16,0.3971
+congruency,early,congruent,-15,0.4073
+congruency,early,congruent,-14,0.4178
+congruency,early,congruent,-13,0.4284
+congruency,early,congruent,-12,0.4392
+congruency,early,congruent,-11,0.4502
+congruency,early,congruent,-10,0.4612
+congruency,early,congruent,-9,0.4723
+congruency,early,congruent,-8,0.4836
+congruency,early,congruent,-7,0.4948
+congruency,early,congruent,-6,0.5061
+congruency,early,congruent,-5,0.5174
+congruency,early,congruent,-4,0.5287
+congruency,early,congruent,-3,0.54
+congruency,early,congruent,-2,0.5512
+congruency,early,congruent,-1,0.5623
+congruency,early,congruent,0,0.5733
+congruency,early,congruent,1,0.5841
+congruency,early,congruent,2,0.5949
+congruency,early,congruent,3,0.6054
+congruency,early,congruent,4,0.6158
+congruency,early,congruent,5,0.626
+congruency,early,congruent,6,0.6359
+congruency,early,congruent,7,0.6457
+congruency,early,congruent,8,0.6551
+congruency,early,congruent,9,0.6644
+congruency,early,congruent,10,0.6734
+congruency,early,congruent,11,0.6821
+congruency,early,congruent,12,0.6906
+congruency,early,congruent,13,0.6987
+congruency,early,congruent,14,0.7066
+congruency,early,congruent,15,0.7143
+congruency,early,congruent,16,0.7216
+congruency,early,congruent,17,0.7287
+congruency,early,congruent,18,0.7355
+congruency,early,congruent,19,0.742
+congruency,early,congruent,20,0.7482
+congruency,early,congruent,21,0.7542
+congruency,early,congruent,22,0.7599
+congruency,early,congruent,23,0.7654
+congruency,early,congruent,24,0.7706
+congruency,early,congruent,25,0.7756
+congruency,early,congruent,26,0.7803
+congruency,early,congruent,27,0.7848
+congruency,early,congruent,28,0.7891
+congruency,early,congruent,29,0.7932
+congruency,early,congruent,30,0.7971
+congruency,early,congruent,31,0.8007
+congruency,early,congruent,32,0.8042
+congruency,early,congruent,33,0.8075
+congruency,early,congruent,34,0.8107
+congruency,early,congruent,35,0.8136
+congruency,early,congruent,36,0.8164
+congruency,early,congruent,37,0.8191
+congruency,early,congruent,38,0.8216
+congruency,early,congruent,39,0.8239
+congruency,early,congruent,40,0.8262
+congruency,early,congruent,41,0.8283
+congruency,early,congruent,42,0.8303
+congruency,early,congruent,43,0.8322
+congruency,early,congruent,44,0.8339
+congruency,early,congruent,45,0.8356
+congruency,early,congruent,46,0.8372
+congruency,early,congruent,47,0.8387
+congruency,early,congruent,48,0.84
+congruency,early,congruent,49,0.8414
+congruency,early,congruent,50,0.8426
+congruency,early,congruent,51,0.8438
+congruency,early,congruent,52,0.8449
+congruency,early,congruent,53,0.8459
+congruency,early,congruent,54,0.8469
+congruency,early,congruent,55,0.8478
+congruency,early,congruent,56,0.8486
+congruency,early,congruent,57,0.8494
+congruency,early,congruent,58,0.8502
+congruency,early,congruent,59,0.8509
+congruency,early,congruent,60,0.8516
+congruency,early,congruent,61,0.8522
+congruency,early,congruent,62,0.8528
+congruency,early,congruent,63,0.8533
+congruency,early,congruent,64,0.8539
+congruency,early,congruent,65,0.8544
+congruency,early,congruent,66,0.8548
+congruency,early,congruent,67,0.8552
+congruency,early,congruent,68,0.8557
+congruency,early,congruent,69,0.856
+congruency,early,congruent,70,0.8564
+congruency,early,congruent,71,0.8567
+congruency,early,congruent,72,0.857
+congruency,early,congruent,73,0.8573
+congruency,early,congruent,74,0.8576
+congruency,early,congruent,75,0.8579
+congruency,early,congruent,76,0.8581
+congruency,early,congruent,77,0.8583
+congruency,early,congruent,78,0.8586
+congruency,early,congruent,79,0.8588
+congruency,early,congruent,80,0.859
+congruency,early,congruent,81,0.8591
+congruency,early,congruent,82,0.8593
+congruency,early,congruent,83,0.8595
+congruency,early,congruent,84,0.8596
+congruency,early,congruent,85,0.8597
+congruency,early,congruent,86,0.8599
+congruency,early,congruent,87,0.86
+congruency,early,congruent,88,0.8601
+congruency,early,congruent,89,0.8602
+congruency,early,congruent,90,0.8603
+congruency,early,congruent,91,0.8604
+congruency,early,congruent,92,0.8605
+congruency,early,congruent,93,0.8606
+congruency,early,congruent,94,0.8607
+congruency,early,congruent,95,0.8607
+congruency,early,congruent,96,0.8608
+congruency,early,congruent,97,0.8609
+congruency,early,congruent,98,0.8609
+congruency,early,congruent,99,0.861
+congruency,early,congruent,100,0.861
+congruency,early,control,-100,0.1729
+congruency,early,control,-99,0.1735
+congruency,early,control,-98,0.1742
+congruency,early,control,-97,0.1748
+congruency,early,control,-96,0.1755
+congruency,early,control,-95,0.1762
+congruency,early,control,-94,0.1769
+congruency,early,control,-93,0.1777
+congruency,early,control,-92,0.1785
+congruency,early,control,-91,0.1793
+congruency,early,control,-90,0.1801
+congruency,early,control,-89,0.181
+congruency,early,control,-88,0.1819
+congruency,early,control,-87,0.1828
+congruency,early,control,-86,0.1838
+congruency,early,control,-85,0.1847
+congruency,early,control,-84,0.1858
+congruency,early,control,-83,0.1868
+congruency,early,control,-82,0.1879
+congruency,early,control,-81,0.1891
+congruency,early,control,-80,0.1903
+congruency,early,control,-79,0.1915
+congruency,early,control,-78,0.1928
+congruency,early,control,-77,0.1941
+congruency,early,control,-76,0.1954
+congruency,early,control,-75,0.1968
+congruency,early,control,-74,0.1982
+congruency,early,control,-73,0.1997
+congruency,early,control,-72,0.2013
+congruency,early,control,-71,0.2029
+congruency,early,control,-70,0.2045
+congruency,early,control,-69,0.2062
+congruency,early,control,-68,0.208
+congruency,early,control,-67,0.2098
+congruency,early,control,-66,0.2117
+congruency,early,control,-65,0.2136
+congruency,early,control,-64,0.2156
+congruency,early,control,-63,0.2176
+congruency,early,control,-62,0.2198
+congruency,early,control,-61,0.2219
+congruency,early,control,-60,0.2242
+congruency,early,control,-59,0.2265
+congruency,early,control,-58,0.2289
+congruency,early,control,-57,0.2314
+congruency,early,control,-56,0.2339
+congruency,early,control,-55,0.2365
+congruency,early,control,-54,0.2392
+congruency,early,control,-53,0.242
+congruency,early,control,-52,0.2448
+congruency,early,control,-51,0.2478
+congruency,early,control,-50,0.2508
+congruency,early,control,-49,0.2539
+congruency,early,control,-48,0.2571
+congruency,early,control,-47,0.2603
+congruency,early,control,-46,0.2637
+congruency,early,control,-45,0.2671
+congruency,early,control,-44,0.2707
+congruency,early,control,-43,0.2743
+congruency,early,control,-42,0.278
+congruency,early,control,-41,0.2818
+congruency,early,control,-40,0.2857
+congruency,early,control,-39,0.2897
+congruency,early,control,-38,0.2938
+congruency,early,control,-37,0.298
+congruency,early,control,-36,0.3023
+congruency,early,control,-35,0.3067
+congruency,early,control,-34,0.3111
+congruency,early,control,-33,0.3157
+congruency,early,control,-32,0.3204
+congruency,early,control,-31,0.3251
+congruency,early,control,-30,0.33
+congruency,early,control,-29,0.3349
+congruency,early,control,-28,0.3399
+congruency,early,control,-27,0.3451
+congruency,early,control,-26,0.3503
+congruency,early,control,-25,0.3556
+congruency,early,control,-24,0.361
+congruency,early,control,-23,0.3665
+congruency,early,control,-22,0.372
+congruency,early,control,-21,0.3777
+congruency,early,control,-20,0.3834
+congruency,early,control,-19,0.3892
+congruency,early,control,-18,0.3951
+congruency,early,control,-17,0.401
+congruency,early,control,-16,0.407
+congruency,early,control,-15,0.4131
+congruency,early,control,-14,0.4192
+congruency,early,control,-13,0.4254
+congruency,early,control,-12,0.4317
+congruency,early,control,-11,0.438
+congruency,early,control,-10,0.4444
+congruency,early,control,-9,0.4508
+congruency,early,control,-8,0.4572
+congruency,early,control,-7,0.4637
+congruency,early,control,-6,0.4702
+congruency,early,control,-5,0.4767
+congruency,early,control,-4,0.4833
+congruency,early,control,-3,0.4898
+congruency,early,control,-2,0.4964
+congruency,early,control,-1,0.503
+congruency,early,control,0,0.5096
+congruency,early,control,1,0.5162
+congruency,early,control,2,0.5228
+congruency,early,control,3,0.5294
+congruency,early,control,4,0.536
+congruency,early,control,5,0.5425
+congruency,early,control,6,0.5491
+congruency,early,control,7,0.5556
+congruency,early,control,8,0.562
+congruency,early,control,9,0.5685
+congruency,early,control,10,0.5749
+congruency,early,control,11,0.5812
+congruency,early,control,12,0.5875
+congruency,early,control,13,0.5938
+congruency,early,control,14,0.5999
+congruency,early,control,15,0.6061
+congruency,early,control,16,0.6122
+congruency,early,control,17,0.6182
+congruency,early,control,18,0.6241
+congruency,early,control,19,0.63
+congruency,early,control,20,0.6357
+congruency,early,control,21,0.6415
+congruency,early,control,22,0.6471
+congruency,early,control,23,0.6526
+congruency,early,control,24,0.6581
+congruency,early,control,25,0.6635
+congruency,early,control,26,0.6688
+congruency,early,control,27,0.674
+congruency,early,control,28,0.6791
+congruency,early,control,29,0.6841
+congruency,early,control,30,0.6891
+congruency,early,control,31,0.6939
+congruency,early,control,32,0.6986
+congruency,early,control,33,0.7033
+congruency,early,control,34,0.7078
+congruency,early,control,35,0.7123
+congruency,early,control,36,0.7167
+congruency,early,control,37,0.7209
+congruency,early,control,38,0.7251
+congruency,early,control,39,0.7292
+congruency,early,control,40,0.7332
+congruency,early,control,41,0.7371
+congruency,early,control,42,0.7409
+congruency,early,control,43,0.7446
+congruency,early,control,44,0.7482
+congruency,early,control,45,0.7517
+congruency,early,control,46,0.7551
+congruency,early,control,47,0.7585
+congruency,early,control,48,0.7617
+congruency,early,control,49,0.7649
+congruency,early,control,50,0.768
+congruency,early,control,51,0.771
+congruency,early,control,52,0.7739
+congruency,early,control,53,0.7768
+congruency,early,control,54,0.7795
+congruency,early,control,55,0.7822
+congruency,early,control,56,0.7848
+congruency,early,control,57,0.7874
+congruency,early,control,58,0.7898
+congruency,early,control,59,0.7922
+congruency,early,control,60,0.7945
+congruency,early,control,61,0.7968
+congruency,early,control,62,0.7989
+congruency,early,control,63,0.801
+congruency,early,control,64,0.8031
+congruency,early,control,65,0.8051
+congruency,early,control,66,0.807
+congruency,early,control,67,0.8089
+congruency,early,control,68,0.8107
+congruency,early,control,69,0.8124
+congruency,early,control,70,0.8141
+congruency,early,control,71,0.8157
+congruency,early,control,72,0.8173
+congruency,early,control,73,0.8189
+congruency,early,control,74,0.8204
+congruency,early,control,75,0.8218
+congruency,early,control,76,0.8232
+congruency,early,control,77,0.8245
+congruency,early,control,78,0.8258
+congruency,early,control,79,0.8271
+congruency,early,control,80,0.8283
+congruency,early,control,81,0.8295
+congruency,early,control,82,0.8306
+congruency,early,control,83,0.8317
+congruency,early,control,84,0.8328
+congruency,early,control,85,0.8338
+congruency,early,control,86,0.8348
+congruency,early,control,87,0.8357
+congruency,early,control,88,0.8367
+congruency,early,control,89,0.8376
+congruency,early,control,90,0.8384
+congruency,early,control,91,0.8393
+congruency,early,control,92,0.8401
+congruency,early,control,93,0.8408
+congruency,early,control,94,0.8416
+congruency,early,control,95,0.8423
+congruency,early,control,96,0.843
+congruency,early,control,97,0.8437
+congruency,early,control,98,0.8443
+congruency,early,control,99,0.845
+congruency,early,control,100,0.8456
+congruency,early,incongruent,-100,0.2148
+congruency,early,incongruent,-99,0.2163
+congruency,early,incongruent,-98,0.2178
+congruency,early,incongruent,-97,0.2193
+congruency,early,incongruent,-96,0.2209
+congruency,early,incongruent,-95,0.2225
+congruency,early,incongruent,-94,0.2241
+congruency,early,incongruent,-93,0.2258
+congruency,early,incongruent,-92,0.2275
+congruency,early,incongruent,-91,0.2292
+congruency,early,incongruent,-90,0.231
+congruency,early,incongruent,-89,0.2329
+congruency,early,incongruent,-88,0.2347
+congruency,early,incongruent,-87,0.2366
+congruency,early,incongruent,-86,0.2386
+congruency,early,incongruent,-85,0.2405
+congruency,early,incongruent,-84,0.2426
+congruency,early,incongruent,-83,0.2446
+congruency,early,incongruent,-82,0.2467
+congruency,early,incongruent,-81,0.2489
+congruency,early,incongruent,-80,0.2511
+congruency,early,incongruent,-79,0.2533
+congruency,early,incongruent,-78,0.2556
+congruency,early,incongruent,-77,0.2579
+congruency,early,incongruent,-76,0.2603
+congruency,early,incongruent,-75,0.2627
+congruency,early,incongruent,-74,0.2652
+congruency,early,incongruent,-73,0.2677
+congruency,early,incongruent,-72,0.2702
+congruency,early,incongruent,-71,0.2729
+congruency,early,incongruent,-70,0.2755
+congruency,early,incongruent,-69,0.2782
+congruency,early,incongruent,-68,0.281
+congruency,early,incongruent,-67,0.2838
+congruency,early,incongruent,-66,0.2866
+congruency,early,incongruent,-65,0.2895
+congruency,early,incongruent,-64,0.2924
+congruency,early,incongruent,-63,0.2954
+congruency,early,incongruent,-62,0.2985
+congruency,early,incongruent,-61,0.3016
+congruency,early,incongruent,-60,0.3047
+congruency,early,incongruent,-59,0.3079
+congruency,early,incongruent,-58,0.3112
+congruency,early,incongruent,-57,0.3144
+congruency,early,incongruent,-56,0.3178
+congruency,early,incongruent,-55,0.3212
+congruency,early,incongruent,-54,0.3246
+congruency,early,incongruent,-53,0.3281
+congruency,early,incongruent,-52,0.3317
+congruency,early,incongruent,-51,0.3352
+congruency,early,incongruent,-50,0.3389
+congruency,early,incongruent,-49,0.3426
+congruency,early,incongruent,-48,0.3463
+congruency,early,incongruent,-47,0.3501
+congruency,early,incongruent,-46,0.3539
+congruency,early,incongruent,-45,0.3578
+congruency,early,incongruent,-44,0.3617
+congruency,early,incongruent,-43,0.3656
+congruency,early,incongruent,-42,0.3696
+congruency,early,incongruent,-41,0.3737
+congruency,early,incongruent,-40,0.3778
+congruency,early,incongruent,-39,0.3819
+congruency,early,incongruent,-38,0.3861
+congruency,early,incongruent,-37,0.3903
+congruency,early,incongruent,-36,0.3946
+congruency,early,incongruent,-35,0.3988
+congruency,early,incongruent,-34,0.4032
+congruency,early,incongruent,-33,0.4075
+congruency,early,incongruent,-32,0.4119
+congruency,early,incongruent,-31,0.4163
+congruency,early,incongruent,-30,0.4208
+congruency,early,incongruent,-29,0.4253
+congruency,early,incongruent,-28,0.4298
+congruency,early,incongruent,-27,0.4344
+congruency,early,incongruent,-26,0.4389
+congruency,early,incongruent,-25,0.4435
+congruency,early,incongruent,-24,0.4481
+congruency,early,incongruent,-23,0.4528
+congruency,early,incongruent,-22,0.4574
+congruency,early,incongruent,-21,0.4621
+congruency,early,incongruent,-20,0.4668
+congruency,early,incongruent,-19,0.4715
+congruency,early,incongruent,-18,0.4763
+congruency,early,incongruent,-17,0.481
+congruency,early,incongruent,-16,0.4858
+congruency,early,incongruent,-15,0.4905
+congruency,early,incongruent,-14,0.4953
+congruency,early,incongruent,-13,0.5
+congruency,early,incongruent,-12,0.5048
+congruency,early,incongruent,-11,0.5096
+congruency,early,incongruent,-10,0.5144
+congruency,early,incongruent,-9,0.5191
+congruency,early,incongruent,-8,0.5239
+congruency,early,incongruent,-7,0.5287
+congruency,early,incongruent,-6,0.5334
+congruency,early,incongruent,-5,0.5382
+congruency,early,incongruent,-4,0.5429
+congruency,early,incongruent,-3,0.5476
+congruency,early,incongruent,-2,0.5523
+congruency,early,incongruent,-1,0.557
+congruency,early,incongruent,0,0.5617
+congruency,early,incongruent,1,0.5664
+congruency,early,incongruent,2,0.571
+congruency,early,incongruent,3,0.5756
+congruency,early,incongruent,4,0.5802
+congruency,early,incongruent,5,0.5848
+congruency,early,incongruent,6,0.5893
+congruency,early,incongruent,7,0.5938
+congruency,early,incongruent,8,0.5983
+congruency,early,incongruent,9,0.6028
+congruency,early,incongruent,10,0.6072
+congruency,early,incongruent,11,0.6116
+congruency,early,incongruent,12,0.6159
+congruency,early,incongruent,13,0.6203
+congruency,early,incongruent,14,0.6245
+congruency,early,incongruent,15,0.6288
+congruency,early,incongruent,16,0.633
+congruency,early,incongruent,17,0.6372
+congruency,early,incongruent,18,0.6413
+congruency,early,incongruent,19,0.6454
+congruency,early,incongruent,20,0.6494
+congruency,early,incongruent,21,0.6534
+congruency,early,incongruent,22,0.6574
+congruency,early,incongruent,23,0.6613
+congruency,early,incongruent,24,0.6651
+congruency,early,incongruent,25,0.669
+congruency,early,incongruent,26,0.6727
+congruency,early,incongruent,27,0.6764
+congruency,early,incongruent,28,0.6801
+congruency,early,incongruent,29,0.6838
+congruency,early,incongruent,30,0.6873
+congruency,early,incongruent,31,0.6909
+congruency,early,incongruent,32,0.6943
+congruency,early,incongruent,33,0.6978
+congruency,early,incongruent,34,0.7012
+congruency,early,incongruent,35,0.7045
+congruency,early,incongruent,36,0.7078
+congruency,early,incongruent,37,0.711
+congruency,early,incongruent,38,0.7142
+congruency,early,incongruent,39,0.7173
+congruency,early,incongruent,40,0.7204
+congruency,early,incongruent,41,0.7235
+congruency,early,incongruent,42,0.7264
+congruency,early,incongruent,43,0.7294
+congruency,early,incongruent,44,0.7323
+congruency,early,incongruent,45,0.7351
+congruency,early,incongruent,46,0.7379
+congruency,early,incongruent,47,0.7406
+congruency,early,incongruent,48,0.7433
+congruency,early,incongruent,49,0.746
+congruency,early,incongruent,50,0.7486
+congruency,early,incongruent,51,0.7511
+congruency,early,incongruent,52,0.7536
+congruency,early,incongruent,53,0.7561
+congruency,early,incongruent,54,0.7585
+congruency,early,incongruent,55,0.7609
+congruency,early,incongruent,56,0.7632
+congruency,early,incongruent,57,0.7655
+congruency,early,incongruent,58,0.7677
+congruency,early,incongruent,59,0.7699
+congruency,early,incongruent,60,0.772
+congruency,early,incongruent,61,0.7741
+congruency,early,incongruent,62,0.7762
+congruency,early,incongruent,63,0.7782
+congruency,early,incongruent,64,0.7802
+congruency,early,incongruent,65,0.7821
+congruency,early,incongruent,66,0.784
+congruency,early,incongruent,67,0.7859
+congruency,early,incongruent,68,0.7877
+congruency,early,incongruent,69,0.7895
+congruency,early,incongruent,70,0.7912
+congruency,early,incongruent,71,0.7929
+congruency,early,incongruent,72,0.7946
+congruency,early,incongruent,73,0.7962
+congruency,early,incongruent,74,0.7978
+congruency,early,incongruent,75,0.7993
+congruency,early,incongruent,76,0.8009
+congruency,early,incongruent,77,0.8024
+congruency,early,incongruent,78,0.8038
+congruency,early,incongruent,79,0.8052
+congruency,early,incongruent,80,0.8066
+congruency,early,incongruent,81,0.808
+congruency,early,incongruent,82,0.8093
+congruency,early,incongruent,83,0.8106
+congruency,early,incongruent,84,0.8119
+congruency,early,incongruent,85,0.8131
+congruency,early,incongruent,86,0.8144
+congruency,early,incongruent,87,0.8155
+congruency,early,incongruent,88,0.8167
+congruency,early,incongruent,89,0.8178
+congruency,early,incongruent,90,0.8189
+congruency,early,incongruent,91,0.82
+congruency,early,incongruent,92,0.8211
+congruency,early,incongruent,93,0.8221
+congruency,early,incongruent,94,0.8231
+congruency,early,incongruent,95,0.8241
+congruency,early,incongruent,96,0.825
+congruency,early,incongruent,97,0.826
+congruency,early,incongruent,98,0.8269
+congruency,early,incongruent,99,0.8278
+congruency,early,incongruent,100,0.8286
+congruency,late,congruent,-100,0.1955
+congruency,late,congruent,-99,0.197
+congruency,late,congruent,-98,0.1985
+congruency,late,congruent,-97,0.2
+congruency,late,congruent,-96,0.2015
+congruency,late,congruent,-95,0.2031
+congruency,late,congruent,-94,0.2047
+congruency,late,congruent,-93,0.2063
+congruency,late,congruent,-92,0.2079
+congruency,late,congruent,-91,0.2096
+congruency,late,congruent,-90,0.2114
+congruency,late,congruent,-89,0.2131
+congruency,late,congruent,-88,0.2149
+congruency,late,congruent,-87,0.2167
+congruency,late,congruent,-86,0.2186
+congruency,late,congruent,-85,0.2204
+congruency,late,congruent,-84,0.2224
+congruency,late,congruent,-83,0.2243
+congruency,late,congruent,-82,0.2263
+congruency,late,congruent,-81,0.2283
+congruency,late,congruent,-80,0.2304
+congruency,late,congruent,-79,0.2325
+congruency,late,congruent,-78,0.2346
+congruency,late,congruent,-77,0.2368
+congruency,late,congruent,-76,0.239
+congruency,late,congruent,-75,0.2412
+congruency,late,congruent,-74,0.2435
+congruency,late,congruent,-73,0.2458
+congruency,late,congruent,-72,0.2482
+congruency,late,congruent,-71,0.2506
+congruency,late,congruent,-70,0.253
+congruency,late,congruent,-69,0.2555
+congruency,late,congruent,-68,0.258
+congruency,late,congruent,-67,0.2606
+congruency,late,congruent,-66,0.2632
+congruency,late,congruent,-65,0.2658
+congruency,late,congruent,-64,0.2685
+congruency,late,congruent,-63,0.2712
+congruency,late,congruent,-62,0.274
+congruency,late,congruent,-61,0.2768
+congruency,late,congruent,-60,0.2796
+congruency,late,congruent,-59,0.2825
+congruency,late,congruent,-58,0.2854
+congruency,late,congruent,-57,0.2883
+congruency,late,congruent,-56,0.2913
+congruency,late,congruent,-55,0.2944
+congruency,late,congruent,-54,0.2975
+congruency,late,congruent,-53,0.3006
+congruency,late,congruent,-52,0.3038
+congruency,late,congruent,-51,0.307
+congruency,late,congruent,-50,0.3102
+congruency,late,congruent,-49,0.3135
+congruency,late,congruent,-48,0.3168
+congruency,late,congruent,-47,0.3202
+congruency,late,congruent,-46,0.3236
+congruency,late,congruent,-45,0.327
+congruency,late,congruent,-44,0.3305
+congruency,late,congruent,-43,0.334
+congruency,late,congruent,-42,0.3376
+congruency,late,congruent,-41,0.3412
+congruency,late,congruent,-40,0.3448
+congruency,late,congruent,-39,0.3485
+congruency,late,congruent,-38,0.3522
+congruency,late,congruent,-37,0.356
+congruency,late,congruent,-36,0.3598
+congruency,late,congruent,-35,0.3636
+congruency,late,congruent,-34,0.3674
+congruency,late,congruent,-33,0.3713
+congruency,late,congruent,-32,0.3752
+congruency,late,congruent,-31,0.3792
+congruency,late,congruent,-30,0.3832
+congruency,late,congruent,-29,0.3872
+congruency,late,congruent,-28,0.3912
+congruency,late,congruent,-27,0.3953
+congruency,late,congruent,-26,0.3994
+congruency,late,congruent,-25,0.4036
+congruency,late,congruent,-24,0.4077
+congruency,late,congruent,-23,0.4119
+congruency,late,congruent,-22,0.4161
+congruency,late,congruent,-21,0.4203
+congruency,late,congruent,-20,0.4246
+congruency,late,congruent,-19,0.4289
+congruency,late,congruent,-18,0.4332
+congruency,late,congruent,-17,0.4375
+congruency,late,congruent,-16,0.4418
+congruency,late,congruent,-15,0.4462
+congruency,late,congruent,-14,0.4506
+congruency,late,congruent,-13,0.4549
+congruency,late,congruent,-12,0.4593
+congruency,late,congruent,-11,0.4638
+congruency,late,congruent,-10,0.4682
+congruency,late,congruent,-9,0.4726
+congruency,late,congruent,-8,0.4771
+congruency,late,congruent,-7,0.4815
+congruency,late,congruent,-6,0.486
+congruency,late,congruent,-5,0.4905
+congruency,late,congruent,-4,0.4949
+congruency,late,congruent,-3,0.4994
+congruency,late,congruent,-2,0.5039
+congruency,late,congruent,-1,0.5084
+congruency,late,congruent,0,0.5128
+congruency,late,congruent,1,0.5173
+congruency,late,congruent,2,0.5218
+congruency,late,congruent,3,0.5262
+congruency,late,congruent,4,0.5307
+congruency,late,congruent,5,0.5352
+congruency,late,congruent,6,0.5396
+congruency,late,congruent,7,0.544
+congruency,late,congruent,8,0.5485
+congruency,late,congruent,9,0.5529
+congruency,late,congruent,10,0.5573
+congruency,late,congruent,11,0.5617
+congruency,late,congruent,12,0.566
+congruency,late,congruent,13,0.5704
+congruency,late,congruent,14,0.5747
+congruency,late,congruent,15,0.5791
+congruency,late,congruent,16,0.5834
+congruency,late,congruent,17,0.5876
+congruency,late,congruent,18,0.5919
+congruency,late,congruent,19,0.5961
+congruency,late,congruent,20,0.6003
+congruency,late,congruent,21,0.6045
+congruency,late,congruent,22,0.6087
+congruency,late,congruent,23,0.6128
+congruency,late,congruent,24,0.6169
+congruency,late,congruent,25,0.621
+congruency,late,congruent,26,0.625
+congruency,late,congruent,27,0.6291
+congruency,late,congruent,28,0.633
+congruency,late,congruent,29,0.637
+congruency,late,congruent,30,0.6409
+congruency,late,congruent,31,0.6448
+congruency,late,congruent,32,0.6487
+congruency,late,congruent,33,0.6525
+congruency,late,congruent,34,0.6563
+congruency,late,congruent,35,0.66
+congruency,late,congruent,36,0.6637
+congruency,late,congruent,37,0.6674
+congruency,late,congruent,38,0.671
+congruency,late,congruent,39,0.6746
+congruency,late,congruent,40,0.6782
+congruency,late,congruent,41,0.6817
+congruency,late,congruent,42,0.6852
+congruency,late,congruent,43,0.6887
+congruency,late,congruent,44,0.6921
+congruency,late,congruent,45,0.6954
+congruency,late,congruent,46,0.6988
+congruency,late,congruent,47,0.702
+congruency,late,congruent,48,0.7053
+congruency,late,congruent,49,0.7085
+congruency,late,congruent,50,0.7117
+congruency,late,congruent,51,0.7148
+congruency,late,congruent,52,0.7179
+congruency,late,congruent,53,0.7209
+congruency,late,congruent,54,0.7239
+congruency,late,congruent,55,0.7269
+congruency,late,congruent,56,0.7298
+congruency,late,congruent,57,0.7327
+congruency,late,congruent,58,0.7355
+congruency,late,congruent,59,0.7383
+congruency,late,congruent,60,0.7411
+congruency,late,congruent,61,0.7438
+congruency,late,congruent,62,0.7465
+congruency,late,congruent,63,0.7491
+congruency,late,congruent,64,0.7517
+congruency,late,congruent,65,0.7543
+congruency,late,congruent,66,0.7568
+congruency,late,congruent,67,0.7593
+congruency,late,congruent,68,0.7617
+congruency,late,congruent,69,0.7641
+congruency,late,congruent,70,0.7664
+congruency,late,congruent,71,0.7688
+congruency,late,congruent,72,0.7711
+congruency,late,congruent,73,0.7733
+congruency,late,congruent,74,0.7755
+congruency,late,congruent,75,0.7777
+congruency,late,congruent,76,0.7798
+congruency,late,congruent,77,0.7819
+congruency,late,congruent,78,0.784
+congruency,late,congruent,79,0.786
+congruency,late,congruent,80,0.788
+congruency,late,congruent,81,0.7899
+congruency,late,congruent,82,0.7919
+congruency,late,congruent,83,0.7937
+congruency,late,congruent,84,0.7956
+congruency,late,congruent,85,0.7974
+congruency,late,congruent,86,0.7992
+congruency,late,congruent,87,0.801
+congruency,late,congruent,88,0.8027
+congruency,late,congruent,89,0.8044
+congruency,late,congruent,90,0.806
+congruency,late,congruent,91,0.8076
+congruency,late,congruent,92,0.8092
+congruency,late,congruent,93,0.8108
+congruency,late,congruent,94,0.8123
+congruency,late,congruent,95,0.8138
+congruency,late,congruent,96,0.8153
+congruency,late,congruent,97,0.8168
+congruency,late,congruent,98,0.8182
+congruency,late,congruent,99,0.8196
+congruency,late,congruent,100,0.821
+congruency,late,control,-100,0.1979
+congruency,late,control,-99,0.1993
+congruency,late,control,-98,0.2008
+congruency,late,control,-97,0.2022
+congruency,late,control,-96,0.2037
+congruency,late,control,-95,0.2053
+congruency,late,control,-94,0.2068
+congruency,late,control,-93,0.2084
+congruency,late,control,-92,0.21
+congruency,late,control,-91,0.2116
+congruency,late,control,-90,0.2133
+congruency,late,control,-89,0.215
+congruency,late,control,-88,0.2168
+congruency,late,control,-87,0.2185
+congruency,late,control,-86,0.2203
+congruency,late,control,-85,0.2221
+congruency,late,control,-84,0.224
+congruency,late,control,-83,0.2259
+congruency,late,control,-82,0.2278
+congruency,late,control,-81,0.2297
+congruency,late,control,-80,0.2317
+congruency,late,control,-79,0.2337
+congruency,late,control,-78,0.2358
+congruency,late,control,-77,0.2379
+congruency,late,control,-76,0.24
+congruency,late,control,-75,0.2421
+congruency,late,control,-74,0.2443
+congruency,late,control,-73,0.2465
+congruency,late,control,-72,0.2488
+congruency,late,control,-71,0.2511
+congruency,late,control,-70,0.2534
+congruency,late,control,-69,0.2558
+congruency,late,control,-68,0.2582
+congruency,late,control,-67,0.2606
+congruency,late,control,-66,0.2631
+congruency,late,control,-65,0.2656
+congruency,late,control,-64,0.2681
+congruency,late,control,-63,0.2707
+congruency,late,control,-62,0.2733
+congruency,late,control,-61,0.2759
+congruency,late,control,-60,0.2786
+congruency,late,control,-59,0.2814
+congruency,late,control,-58,0.2841
+congruency,late,control,-57,0.2869
+congruency,late,control,-56,0.2898
+congruency,late,control,-55,0.2926
+congruency,late,control,-54,0.2955
+congruency,late,control,-53,0.2985
+congruency,late,control,-52,0.3015
+congruency,late,control,-51,0.3045
+congruency,late,control,-50,0.3075
+congruency,late,control,-49,0.3106
+congruency,late,control,-48,0.3138
+congruency,late,control,-47,0.3169
+congruency,late,control,-46,0.3201
+congruency,late,control,-45,0.3234
+congruency,late,control,-44,0.3267
+congruency,late,control,-43,0.33
+congruency,late,control,-42,0.3333
+congruency,late,control,-41,0.3367
+congruency,late,control,-40,0.3401
+congruency,late,control,-39,0.3436
+congruency,late,control,-38,0.347
+congruency,late,control,-37,0.3506
+congruency,late,control,-36,0.3541
+congruency,late,control,-35,0.3577
+congruency,late,control,-34,0.3613
+congruency,late,control,-33,0.3649
+congruency,late,control,-32,0.3686
+congruency,late,control,-31,0.3723
+congruency,late,control,-30,0.3761
+congruency,late,control,-29,0.3798
+congruency,late,control,-28,0.3836
+congruency,late,control,-27,0.3874
+congruency,late,control,-26,0.3913
+congruency,late,control,-25,0.3952
+congruency,late,control,-24,0.3991
+congruency,late,control,-23,0.403
+congruency,late,control,-22,0.407
+congruency,late,control,-21,0.4109
+congruency,late,control,-20,0.4149
+congruency,late,control,-19,0.419
+congruency,late,control,-18,0.423
+congruency,late,control,-17,0.4271
+congruency,late,control,-16,0.4311
+congruency,late,control,-15,0.4352
+congruency,late,control,-14,0.4394
+congruency,late,control,-13,0.4435
+congruency,late,control,-12,0.4476
+congruency,late,control,-11,0.4518
+congruency,late,control,-10,0.456
+congruency,late,control,-9,0.4602
+congruency,late,control,-8,0.4644
+congruency,late,control,-7,0.4686
+congruency,late,control,-6,0.4728
+congruency,late,control,-5,0.477
+congruency,late,control,-4,0.4813
+congruency,late,control,-3,0.4855
+congruency,late,control,-2,0.4898
+congruency,late,control,-1,0.494
+congruency,late,control,0,0.4983
+congruency,late,control,1,0.5025
+congruency,late,control,2,0.5068
+congruency,late,control,3,0.5111
+congruency,late,control,4,0.5153
+congruency,late,control,5,0.5196
+congruency,late,control,6,0.5238
+congruency,late,control,7,0.5281
+congruency,late,control,8,0.5323
+congruency,late,control,9,0.5366
+congruency,late,control,10,0.5408
+congruency,late,control,11,0.545
+congruency,late,control,12,0.5492
+congruency,late,control,13,0.5534
+congruency,late,control,14,0.5576
+congruency,late,control,15,0.5618
+congruency,late,control,16,0.5659
+congruency,late,control,17,0.5701
+congruency,late,control,18,0.5742
+congruency,late,control,19,0.5783
+congruency,late,control,20,0.5824
+congruency,late,control,21,0.5865
+congruency,late,control,22,0.5905
+congruency,late,control,23,0.5946
+congruency,late,control,24,0.5986
+congruency,late,control,25,0.6026
+congruency,late,control,26,0.6066
+congruency,late,control,27,0.6105
+congruency,late,control,28,0.6144
+congruency,late,control,29,0.6183
+congruency,late,control,30,0.6222
+congruency,late,control,31,0.626
+congruency,late,control,32,0.6298
+congruency,late,control,33,0.6336
+congruency,late,control,34,0.6374
+congruency,late,control,35,0.6411
+congruency,late,control,36,0.6448
+congruency,late,control,37,0.6485
+congruency,late,control,38,0.6521
+congruency,late,control,39,0.6557
+congruency,late,control,40,0.6593
+congruency,late,control,41,0.6628
+congruency,late,control,42,0.6663
+congruency,late,control,43,0.6698
+congruency,late,control,44,0.6733
+congruency,late,control,45,0.6767
+congruency,late,control,46,0.68
+congruency,late,control,47,0.6834
+congruency,late,control,48,0.6867
+congruency,late,control,49,0.6899
+congruency,late,control,50,0.6932
+congruency,late,control,51,0.6963
+congruency,late,control,52,0.6995
+congruency,late,control,53,0.7026
+congruency,late,control,54,0.7057
+congruency,late,control,55,0.7088
+congruency,late,control,56,0.7118
+congruency,late,control,57,0.7147
+congruency,late,control,58,0.7177
+congruency,late,control,59,0.7206
+congruency,late,control,60,0.7234
+congruency,late,control,61,0.7263
+congruency,late,control,62,0.729
+congruency,late,control,63,0.7318
+congruency,late,control,64,0.7345
+congruency,late,control,65,0.7372
+congruency,late,control,66,0.7398
+congruency,late,control,67,0.7424
+congruency,late,control,68,0.745
+congruency,late,control,69,0.7475
+congruency,late,control,70,0.75
+congruency,late,control,71,0.7525
+congruency,late,control,72,0.7549
+congruency,late,control,73,0.7573
+congruency,late,control,74,0.7596
+congruency,late,control,75,0.762
+congruency,late,control,76,0.7642
+congruency,late,control,77,0.7665
+congruency,late,control,78,0.7687
+congruency,late,control,79,0.7709
+congruency,late,control,80,0.773
+congruency,late,control,81,0.7751
+congruency,late,control,82,0.7772
+congruency,late,control,83,0.7792
+congruency,late,control,84,0.7812
+congruency,late,control,85,0.7832
+congruency,late,control,86,0.7851
+congruency,late,control,87,0.787
+congruency,late,control,88,0.7889
+congruency,late,control,89,0.7908
+congruency,late,control,90,0.7926
+congruency,late,control,91,0.7944
+congruency,late,control,92,0.7961
+congruency,late,control,93,0.7978
+congruency,late,control,94,0.7995
+congruency,late,control,95,0.8012
+congruency,late,control,96,0.8028
+congruency,late,control,97,0.8044
+congruency,late,control,98,0.806
+congruency,late,control,99,0.8076
+congruency,late,control,100,0.8091
+congruency,late,incongruent,-100,0.2683
+congruency,late,incongruent,-99,0.2701
+congruency,late,incongruent,-98,0.272
+congruency,late,incongruent,-97,0.2739
+congruency,late,incongruent,-96,0.2759
+congruency,late,incongruent,-95,0.2778
+congruency,late,incongruent,-94,0.2798
+congruency,late,incongruent,-93,0.2818
+congruency,late,incongruent,-92,0.2838
+congruency,late,incongruent,-91,0.2859
+congruency,late,incongruent,-90,0.2879
+congruency,late,incongruent,-89,0.29
+congruency,late,incongruent,-88,0.2921
+congruency,late,incongruent,-87,0.2942
+congruency,late,incongruent,-86,0.2963
+congruency,late,incongruent,-85,0.2985
+congruency,late,incongruent,-84,0.3007
+congruency,late,incongruent,-83,0.3029
+congruency,late,incongruent,-82,0.3051
+congruency,late,incongruent,-81,0.3073
+congruency,late,incongruent,-80,0.3095
+congruency,late,incongruent,-79,0.3118
+congruency,late,incongruent,-78,0.3141
+congruency,late,incongruent,-77,0.3164
+congruency,late,incongruent,-76,0.3188
+congruency,late,incongruent,-75,0.3211
+congruency,late,incongruent,-74,0.3235
+congruency,late,incongruent,-73,0.3259
+congruency,late,incongruent,-72,0.3283
+congruency,late,incongruent,-71,0.3307
+congruency,late,incongruent,-70,0.3331
+congruency,late,incongruent,-69,0.3356
+congruency,late,incongruent,-68,0.3381
+congruency,late,incongruent,-67,0.3406
+congruency,late,incongruent,-66,0.3431
+congruency,late,incongruent,-65,0.3456
+congruency,late,incongruent,-64,0.3482
+congruency,late,incongruent,-63,0.3507
+congruency,late,incongruent,-62,0.3533
+congruency,late,incongruent,-61,0.3559
+congruency,late,incongruent,-60,0.3586
+congruency,late,incongruent,-59,0.3612
+congruency,late,incongruent,-58,0.3639
+congruency,late,incongruent,-57,0.3665
+congruency,late,incongruent,-56,0.3692
+congruency,late,incongruent,-55,0.3719
+congruency,late,incongruent,-54,0.3746
+congruency,late,incongruent,-53,0.3774
+congruency,late,incongruent,-52,0.3801
+congruency,late,incongruent,-51,0.3829
+congruency,late,incongruent,-50,0.3857
+congruency,late,incongruent,-49,0.3885
+congruency,late,incongruent,-48,0.3913
+congruency,late,incongruent,-47,0.3941
+congruency,late,incongruent,-46,0.397
+congruency,late,incongruent,-45,0.3998
+congruency,late,incongruent,-44,0.4027
+congruency,late,incongruent,-43,0.4056
+congruency,late,incongruent,-42,0.4084
+congruency,late,incongruent,-41,0.4114
+congruency,late,incongruent,-40,0.4143
+congruency,late,incongruent,-39,0.4172
+congruency,late,incongruent,-38,0.4201
+congruency,late,incongruent,-37,0.4231
+congruency,late,incongruent,-36,0.4261
+congruency,late,incongruent,-35,0.429
+congruency,late,incongruent,-34,0.432
+congruency,late,incongruent,-33,0.435
+congruency,late,incongruent,-32,0.438
+congruency,late,incongruent,-31,0.441
+congruency,late,incongruent,-30,0.444
+congruency,late,incongruent,-29,0.4471
+congruency,late,incongruent,-28,0.4501
+congruency,late,incongruent,-27,0.4531
+congruency,late,incongruent,-26,0.4562
+congruency,late,incongruent,-25,0.4592
+congruency,late,incongruent,-24,0.4623
+congruency,late,incongruent,-23,0.4654
+congruency,late,incongruent,-22,0.4685
+congruency,late,incongruent,-21,0.4715
+congruency,late,incongruent,-20,0.4746
+congruency,late,incongruent,-19,0.4777
+congruency,late,incongruent,-18,0.4808
+congruency,late,incongruent,-17,0.4839
+congruency,late,incongruent,-16,0.487
+congruency,late,incongruent,-15,0.4901
+congruency,late,incongruent,-14,0.4932
+congruency,late,incongruent,-13,0.4963
+congruency,late,incongruent,-12,0.4994
+congruency,late,incongruent,-11,0.5025
+congruency,late,incongruent,-10,0.5056
+congruency,late,incongruent,-9,0.5087
+congruency,late,incongruent,-8,0.5118
+congruency,late,incongruent,-7,0.5149
+congruency,late,incongruent,-6,0.518
+congruency,late,incongruent,-5,0.5212
+congruency,late,incongruent,-4,0.5243
+congruency,late,incongruent,-3,0.5274
+congruency,late,incongruent,-2,0.5305
+congruency,late,incongruent,-1,0.5335
+congruency,late,incongruent,0,0.5366
+congruency,late,incongruent,1,0.5397
+congruency,late,incongruent,2,0.5428
+congruency,late,incongruent,3,0.5459
+congruency,late,incongruent,4,0.5489
+congruency,late,incongruent,5,0.552
+congruency,late,incongruent,6,0.5551
+congruency,late,incongruent,7,0.5581
+congruency,late,incongruent,8,0.5612
+congruency,late,incongruent,9,0.5642
+congruency,late,incongruent,10,0.5672
+congruency,late,incongruent,11,0.5703
+congruency,late,incongruent,12,0.5733
+congruency,late,incongruent,13,0.5763
+congruency,late,incongruent,14,0.5793
+congruency,late,incongruent,15,0.5823
+congruency,late,incongruent,16,0.5852
+congruency,late,incongruent,17,0.5882
+congruency,late,incongruent,18,0.5912
+congruency,late,incongruent,19,0.5941
+congruency,late,incongruent,20,0.597
+congruency,late,incongruent,21,0.6
+congruency,late,incongruent,22,0.6029
+congruency,late,incongruent,23,0.6058
+congruency,late,incongruent,24,0.6087
+congruency,late,incongruent,25,0.6115
+congruency,late,incongruent,26,0.6144
+congruency,late,incongruent,27,0.6172
+congruency,late,incongruent,28,0.6201
+congruency,late,incongruent,29,0.6229
+congruency,late,incongruent,30,0.6257
+congruency,late,incongruent,31,0.6285
+congruency,late,incongruent,32,0.6312
+congruency,late,incongruent,33,0.634
+congruency,late,incongruent,34,0.6367
+congruency,late,incongruent,35,0.6395
+congruency,late,incongruent,36,0.6422
+congruency,late,incongruent,37,0.6449
+congruency,late,incongruent,38,0.6475
+congruency,late,incongruent,39,0.6502
+congruency,late,incongruent,40,0.6529
+congruency,late,incongruent,41,0.6555
+congruency,late,incongruent,42,0.6581
+congruency,late,incongruent,43,0.6607
+congruency,late,incongruent,44,0.6633
+congruency,late,incongruent,45,0.6658
+congruency,late,incongruent,46,0.6684
+congruency,late,incongruent,47,0.6709
+congruency,late,incongruent,48,0.6734
+congruency,late,incongruent,49,0.6759
+congruency,late,incongruent,50,0.6784
+congruency,late,incongruent,51,0.6808
+congruency,late,incongruent,52,0.6832
+congruency,late,incongruent,53,0.6856
+congruency,late,incongruent,54,0.688
+congruency,late,incongruent,55,0.6904
+congruency,late,incongruent,56,0.6928
+congruency,late,incongruent,57,0.6951
+congruency,late,incongruent,58,0.6974
+congruency,late,incongruent,59,0.6997
+congruency,late,incongruent,60,0.702
+congruency,late,incongruent,61,0.7043
+congruency,late,incongruent,62,0.7065
+congruency,late,incongruent,63,0.7087
+congruency,late,incongruent,64,0.7109
+congruency,late,incongruent,65,0.7131
+congruency,late,incongruent,66,0.7153
+congruency,late,incongruent,67,0.7174
+congruency,late,incongruent,68,0.7195
+congruency,late,incongruent,69,0.7216
+congruency,late,incongruent,70,0.7237
+congruency,late,incongruent,71,0.7258
+congruency,late,incongruent,72,0.7278
+congruency,late,incongruent,73,0.7298
+congruency,late,incongruent,74,0.7318
+congruency,late,incongruent,75,0.7338
+congruency,late,incongruent,76,0.7358
+congruency,late,incongruent,77,0.7377
+congruency,late,incongruent,78,0.7396
+congruency,late,incongruent,79,0.7416
+congruency,late,incongruent,80,0.7434
+congruency,late,incongruent,81,0.7453
+congruency,late,incongruent,82,0.7471
+congruency,late,incongruent,83,0.749
+congruency,late,incongruent,84,0.7508
+congruency,late,incongruent,85,0.7526
+congruency,late,incongruent,86,0.7543
+congruency,late,incongruent,87,0.7561
+congruency,late,incongruent,88,0.7578
+congruency,late,incongruent,89,0.7595
+congruency,late,incongruent,90,0.7612
+congruency,late,incongruent,91,0.7629
+congruency,late,incongruent,92,0.7646
+congruency,late,incongruent,93,0.7662
+congruency,late,incongruent,94,0.7678
+congruency,late,incongruent,95,0.7694
+congruency,late,incongruent,96,0.771
+congruency,late,incongruent,97,0.7726
+congruency,late,incongruent,98,0.7741
+congruency,late,incongruent,99,0.7756
+congruency,late,incongruent,100,0.7771
+congruency,middle,congruent,-100,0.1738
+congruency,middle,congruent,-99,0.1739
+congruency,middle,congruent,-98,0.1741
+congruency,middle,congruent,-97,0.1744
+congruency,middle,congruent,-96,0.1746
+congruency,middle,congruent,-95,0.1748
+congruency,middle,congruent,-94,0.1751
+congruency,middle,congruent,-93,0.1753
+congruency,middle,congruent,-92,0.1756
+congruency,middle,congruent,-91,0.1759
+congruency,middle,congruent,-90,0.1762
+congruency,middle,congruent,-89,0.1765
+congruency,middle,congruent,-88,0.1769
+congruency,middle,congruent,-87,0.1772
+congruency,middle,congruent,-86,0.1776
+congruency,middle,congruent,-85,0.178
+congruency,middle,congruent,-84,0.1784
+congruency,middle,congruent,-83,0.1789
+congruency,middle,congruent,-82,0.1794
+congruency,middle,congruent,-81,0.1799
+congruency,middle,congruent,-80,0.1804
+congruency,middle,congruent,-79,0.1809
+congruency,middle,congruent,-78,0.1815
+congruency,middle,congruent,-77,0.1821
+congruency,middle,congruent,-76,0.1828
+congruency,middle,congruent,-75,0.1835
+congruency,middle,congruent,-74,0.1842
+congruency,middle,congruent,-73,0.1849
+congruency,middle,congruent,-72,0.1857
+congruency,middle,congruent,-71,0.1866
+congruency,middle,congruent,-70,0.1875
+congruency,middle,congruent,-69,0.1884
+congruency,middle,congruent,-68,0.1894
+congruency,middle,congruent,-67,0.1904
+congruency,middle,congruent,-66,0.1915
+congruency,middle,congruent,-65,0.1926
+congruency,middle,congruent,-64,0.1938
+congruency,middle,congruent,-63,0.1951
+congruency,middle,congruent,-62,0.1964
+congruency,middle,congruent,-61,0.1978
+congruency,middle,congruent,-60,0.1993
+congruency,middle,congruent,-59,0.2008
+congruency,middle,congruent,-58,0.2025
+congruency,middle,congruent,-57,0.2042
+congruency,middle,congruent,-56,0.206
+congruency,middle,congruent,-55,0.2079
+congruency,middle,congruent,-54,0.2098
+congruency,middle,congruent,-53,0.2119
+congruency,middle,congruent,-52,0.2141
+congruency,middle,congruent,-51,0.2164
+congruency,middle,congruent,-50,0.2188
+congruency,middle,congruent,-49,0.2213
+congruency,middle,congruent,-48,0.2239
+congruency,middle,congruent,-47,0.2266
+congruency,middle,congruent,-46,0.2295
+congruency,middle,congruent,-45,0.2325
+congruency,middle,congruent,-44,0.2357
+congruency,middle,congruent,-43,0.239
+congruency,middle,congruent,-42,0.2424
+congruency,middle,congruent,-41,0.246
+congruency,middle,congruent,-40,0.2497
+congruency,middle,congruent,-39,0.2536
+congruency,middle,congruent,-38,0.2577
+congruency,middle,congruent,-37,0.262
+congruency,middle,congruent,-36,0.2664
+congruency,middle,congruent,-35,0.271
+congruency,middle,congruent,-34,0.2757
+congruency,middle,congruent,-33,0.2807
+congruency,middle,congruent,-32,0.2859
+congruency,middle,congruent,-31,0.2912
+congruency,middle,congruent,-30,0.2967
+congruency,middle,congruent,-29,0.3025
+congruency,middle,congruent,-28,0.3084
+congruency,middle,congruent,-27,0.3145
+congruency,middle,congruent,-26,0.3208
+congruency,middle,congruent,-25,0.3274
+congruency,middle,congruent,-24,0.3341
+congruency,middle,congruent,-23,0.341
+congruency,middle,congruent,-22,0.3481
+congruency,middle,congruent,-21,0.3555
+congruency,middle,congruent,-20,0.363
+congruency,middle,congruent,-19,0.3707
+congruency,middle,congruent,-18,0.3785
+congruency,middle,congruent,-17,0.3866
+congruency,middle,congruent,-16,0.3948
+congruency,middle,congruent,-15,0.4032
+congruency,middle,congruent,-14,0.4118
+congruency,middle,congruent,-13,0.4205
+congruency,middle,congruent,-12,0.4293
+congruency,middle,congruent,-11,0.4382
+congruency,middle,congruent,-10,0.4473
+congruency,middle,congruent,-9,0.4565
+congruency,middle,congruent,-8,0.4658
+congruency,middle,congruent,-7,0.4751
+congruency,middle,congruent,-6,0.4846
+congruency,middle,congruent,-5,0.4941
+congruency,middle,congruent,-4,0.5036
+congruency,middle,congruent,-3,0.5131
+congruency,middle,congruent,-2,0.5227
+congruency,middle,congruent,-1,0.5323
+congruency,middle,congruent,0,0.5419
+congruency,middle,congruent,1,0.5514
+congruency,middle,congruent,2,0.5609
+congruency,middle,congruent,3,0.5703
+congruency,middle,congruent,4,0.5797
+congruency,middle,congruent,5,0.589
+congruency,middle,congruent,6,0.5982
+congruency,middle,congruent,7,0.6072
+congruency,middle,congruent,8,0.6162
+congruency,middle,congruent,9,0.6251
+congruency,middle,congruent,10,0.6338
+congruency,middle,congruent,11,0.6423
+congruency,middle,congruent,12,0.6507
+congruency,middle,congruent,13,0.659
+congruency,middle,congruent,14,0.667
+congruency,middle,congruent,15,0.6749
+congruency,middle,congruent,16,0.6826
+congruency,middle,congruent,17,0.6901
+congruency,middle,congruent,18,0.6975
+congruency,middle,congruent,19,0.7046
+congruency,middle,congruent,20,0.7116
+congruency,middle,congruent,21,0.7183
+congruency,middle,congruent,22,0.7248
+congruency,middle,congruent,23,0.7312
+congruency,middle,congruent,24,0.7373
+congruency,middle,congruent,25,0.7433
+congruency,middle,congruent,26,0.749
+congruency,middle,congruent,27,0.7546
+congruency,middle,congruent,28,0.7599
+congruency,middle,congruent,29,0.7651
+congruency,middle,congruent,30,0.7701
+congruency,middle,congruent,31,0.7749
+congruency,middle,congruent,32,0.7795
+congruency,middle,congruent,33,0.7839
+congruency,middle,congruent,34,0.7881
+congruency,middle,congruent,35,0.7922
+congruency,middle,congruent,36,0.7962
+congruency,middle,congruent,37,0.7999
+congruency,middle,congruent,38,0.8035
+congruency,middle,congruent,39,0.807
+congruency,middle,congruent,40,0.8103
+congruency,middle,congruent,41,0.8134
+congruency,middle,congruent,42,0.8164
+congruency,middle,congruent,43,0.8193
+congruency,middle,congruent,44,0.8221
+congruency,middle,congruent,45,0.8247
+congruency,middle,congruent,46,0.8272
+congruency,middle,congruent,47,0.8296
+congruency,middle,congruent,48,0.8319
+congruency,middle,congruent,49,0.8341
+congruency,middle,congruent,50,0.8362
+congruency,middle,congruent,51,0.8382
+congruency,middle,congruent,52,0.8401
+congruency,middle,congruent,53,0.8419
+congruency,middle,congruent,54,0.8436
+congruency,middle,congruent,55,0.8452
+congruency,middle,congruent,56,0.8468
+congruency,middle,congruent,57,0.8483
+congruency,middle,congruent,58,0.8497
+congruency,middle,congruent,59,0.851
+congruency,middle,congruent,60,0.8523
+congruency,middle,congruent,61,0.8535
+congruency,middle,congruent,62,0.8546
+congruency,middle,congruent,63,0.8557
+congruency,middle,congruent,64,0.8567
+congruency,middle,congruent,65,0.8577
+congruency,middle,congruent,66,0.8587
+congruency,middle,congruent,67,0.8596
+congruency,middle,congruent,68,0.8604
+congruency,middle,congruent,69,0.8612
+congruency,middle,congruent,70,0.862
+congruency,middle,congruent,71,0.8627
+congruency,middle,congruent,72,0.8634
+congruency,middle,congruent,73,0.864
+congruency,middle,congruent,74,0.8646
+congruency,middle,congruent,75,0.8652
+congruency,middle,congruent,76,0.8658
+congruency,middle,congruent,77,0.8663
+congruency,middle,congruent,78,0.8668
+congruency,middle,congruent,79,0.8673
+congruency,middle,congruent,80,0.8677
+congruency,middle,congruent,81,0.8681
+congruency,middle,congruent,82,0.8685
+congruency,middle,congruent,83,0.8689
+congruency,middle,congruent,84,0.8693
+congruency,middle,congruent,85,0.8696
+congruency,middle,congruent,86,0.87
+congruency,middle,congruent,87,0.8703
+congruency,middle,congruent,88,0.8706
+congruency,middle,congruent,89,0.8708
+congruency,middle,congruent,90,0.8711
+congruency,middle,congruent,91,0.8714
+congruency,middle,congruent,92,0.8716
+congruency,middle,congruent,93,0.8718
+congruency,middle,congruent,94,0.872
+congruency,middle,congruent,95,0.8722
+congruency,middle,congruent,96,0.8724
+congruency,middle,congruent,97,0.8726
+congruency,middle,congruent,98,0.8728
+congruency,middle,congruent,99,0.8729
+congruency,middle,congruent,100,0.8731
+congruency,middle,control,-100,0.1786
+congruency,middle,control,-99,0.1789
+congruency,middle,control,-98,0.1793
+congruency,middle,control,-97,0.1797
+congruency,middle,control,-96,0.1801
+congruency,middle,control,-95,0.1805
+congruency,middle,control,-94,0.181
+congruency,middle,control,-93,0.1815
+congruency,middle,control,-92,0.1819
+congruency,middle,control,-91,0.1825
+congruency,middle,control,-90,0.183
+congruency,middle,control,-89,0.1835
+congruency,middle,control,-88,0.1841
+congruency,middle,control,-87,0.1847
+congruency,middle,control,-86,0.1853
+congruency,middle,control,-85,0.186
+congruency,middle,control,-84,0.1867
+congruency,middle,control,-83,0.1874
+congruency,middle,control,-82,0.1881
+congruency,middle,control,-81,0.1889
+congruency,middle,control,-80,0.1897
+congruency,middle,control,-79,0.1905
+congruency,middle,control,-78,0.1914
+congruency,middle,control,-77,0.1923
+congruency,middle,control,-76,0.1932
+congruency,middle,control,-75,0.1942
+congruency,middle,control,-74,0.1952
+congruency,middle,control,-73,0.1963
+congruency,middle,control,-72,0.1974
+congruency,middle,control,-71,0.1986
+congruency,middle,control,-70,0.1998
+congruency,middle,control,-69,0.201
+congruency,middle,control,-68,0.2023
+congruency,middle,control,-67,0.2037
+congruency,middle,control,-66,0.2051
+congruency,middle,control,-65,0.2066
+congruency,middle,control,-64,0.2081
+congruency,middle,control,-63,0.2097
+congruency,middle,control,-62,0.2113
+congruency,middle,control,-61,0.213
+congruency,middle,control,-60,0.2148
+congruency,middle,control,-59,0.2167
+congruency,middle,control,-58,0.2186
+congruency,middle,control,-57,0.2206
+congruency,middle,control,-56,0.2226
+congruency,middle,control,-55,0.2248
+congruency,middle,control,-54,0.227
+congruency,middle,control,-53,0.2293
+congruency,middle,control,-52,0.2317
+congruency,middle,control,-51,0.2342
+congruency,middle,control,-50,0.2367
+congruency,middle,control,-49,0.2394
+congruency,middle,control,-48,0.2422
+congruency,middle,control,-47,0.245
+congruency,middle,control,-46,0.248
+congruency,middle,control,-45,0.251
+congruency,middle,control,-44,0.2542
+congruency,middle,control,-43,0.2574
+congruency,middle,control,-42,0.2608
+congruency,middle,control,-41,0.2643
+congruency,middle,control,-40,0.2679
+congruency,middle,control,-39,0.2716
+congruency,middle,control,-38,0.2754
+congruency,middle,control,-37,0.2794
+congruency,middle,control,-36,0.2834
+congruency,middle,control,-35,0.2876
+congruency,middle,control,-34,0.2919
+congruency,middle,control,-33,0.2964
+congruency,middle,control,-32,0.3009
+congruency,middle,control,-31,0.3056
+congruency,middle,control,-30,0.3104
+congruency,middle,control,-29,0.3154
+congruency,middle,control,-28,0.3204
+congruency,middle,control,-27,0.3256
+congruency,middle,control,-26,0.331
+congruency,middle,control,-25,0.3364
+congruency,middle,control,-24,0.342
+congruency,middle,control,-23,0.3477
+congruency,middle,control,-22,0.3535
+congruency,middle,control,-21,0.3595
+congruency,middle,control,-20,0.3656
+congruency,middle,control,-19,0.3718
+congruency,middle,control,-18,0.3781
+congruency,middle,control,-17,0.3845
+congruency,middle,control,-16,0.391
+congruency,middle,control,-15,0.3977
+congruency,middle,control,-14,0.4044
+congruency,middle,control,-13,0.4113
+congruency,middle,control,-12,0.4182
+congruency,middle,control,-11,0.4252
+congruency,middle,control,-10,0.4324
+congruency,middle,control,-9,0.4396
+congruency,middle,control,-8,0.4468
+congruency,middle,control,-7,0.4542
+congruency,middle,control,-6,0.4616
+congruency,middle,control,-5,0.469
+congruency,middle,control,-4,0.4765
+congruency,middle,control,-3,0.4841
+congruency,middle,control,-2,0.4917
+congruency,middle,control,-1,0.4993
+congruency,middle,control,0,0.5069
+congruency,middle,control,1,0.5146
+congruency,middle,control,2,0.5223
+congruency,middle,control,3,0.5299
+congruency,middle,control,4,0.5376
+congruency,middle,control,5,0.5452
+congruency,middle,control,6,0.5528
+congruency,middle,control,7,0.5604
+congruency,middle,control,8,0.568
+congruency,middle,control,9,0.5755
+congruency,middle,control,10,0.583
+congruency,middle,control,11,0.5904
+congruency,middle,control,12,0.5977
+congruency,middle,control,13,0.605
+congruency,middle,control,14,0.6122
+congruency,middle,control,15,0.6194
+congruency,middle,control,16,0.6264
+congruency,middle,control,17,0.6334
+congruency,middle,control,18,0.6403
+congruency,middle,control,19,0.647
+congruency,middle,control,20,0.6537
+congruency,middle,control,21,0.6603
+congruency,middle,control,22,0.6667
+congruency,middle,control,23,0.673
+congruency,middle,control,24,0.6793
+congruency,middle,control,25,0.6854
+congruency,middle,control,26,0.6913
+congruency,middle,control,27,0.6972
+congruency,middle,control,28,0.7029
+congruency,middle,control,29,0.7086
+congruency,middle,control,30,0.714
+congruency,middle,control,31,0.7194
+congruency,middle,control,32,0.7246
+congruency,middle,control,33,0.7297
+congruency,middle,control,34,0.7347
+congruency,middle,control,35,0.7395
+congruency,middle,control,36,0.7442
+congruency,middle,control,37,0.7488
+congruency,middle,control,38,0.7533
+congruency,middle,control,39,0.7576
+congruency,middle,control,40,0.7619
+congruency,middle,control,41,0.7659
+congruency,middle,control,42,0.7699
+congruency,middle,control,43,0.7738
+congruency,middle,control,44,0.7775
+congruency,middle,control,45,0.7811
+congruency,middle,control,46,0.7846
+congruency,middle,control,47,0.788
+congruency,middle,control,48,0.7913
+congruency,middle,control,49,0.7945
+congruency,middle,control,50,0.7976
+congruency,middle,control,51,0.8006
+congruency,middle,control,52,0.8034
+congruency,middle,control,53,0.8062
+congruency,middle,control,54,0.8089
+congruency,middle,control,55,0.8115
+congruency,middle,control,56,0.814
+congruency,middle,control,57,0.8164
+congruency,middle,control,58,0.8187
+congruency,middle,control,59,0.8209
+congruency,middle,control,60,0.8231
+congruency,middle,control,61,0.8252
+congruency,middle,control,62,0.8272
+congruency,middle,control,63,0.8291
+congruency,middle,control,64,0.831
+congruency,middle,control,65,0.8328
+congruency,middle,control,66,0.8345
+congruency,middle,control,67,0.8362
+congruency,middle,control,68,0.8378
+congruency,middle,control,69,0.8393
+congruency,middle,control,70,0.8408
+congruency,middle,control,71,0.8422
+congruency,middle,control,72,0.8436
+congruency,middle,control,73,0.8449
+congruency,middle,control,74,0.8461
+congruency,middle,control,75,0.8474
+congruency,middle,control,76,0.8485
+congruency,middle,control,77,0.8496
+congruency,middle,control,78,0.8507
+congruency,middle,control,79,0.8517
+congruency,middle,control,80,0.8527
+congruency,middle,control,81,0.8537
+congruency,middle,control,82,0.8546
+congruency,middle,control,83,0.8555
+congruency,middle,control,84,0.8563
+congruency,middle,control,85,0.8571
+congruency,middle,control,86,0.8579
+congruency,middle,control,87,0.8587
+congruency,middle,control,88,0.8594
+congruency,middle,control,89,0.8601
+congruency,middle,control,90,0.8607
+congruency,middle,control,91,0.8613
+congruency,middle,control,92,0.862
+congruency,middle,control,93,0.8625
+congruency,middle,control,94,0.8631
+congruency,middle,control,95,0.8636
+congruency,middle,control,96,0.8641
+congruency,middle,control,97,0.8646
+congruency,middle,control,98,0.8651
+congruency,middle,control,99,0.8656
+congruency,middle,control,100,0.866
+congruency,middle,incongruent,-100,0.1908
+congruency,middle,incongruent,-99,0.1915
+congruency,middle,incongruent,-98,0.1922
+congruency,middle,incongruent,-97,0.1929
+congruency,middle,incongruent,-96,0.1937
+congruency,middle,incongruent,-95,0.1944
+congruency,middle,incongruent,-94,0.1953
+congruency,middle,incongruent,-93,0.1961
+congruency,middle,incongruent,-92,0.1969
+congruency,middle,incongruent,-91,0.1978
+congruency,middle,incongruent,-90,0.1987
+congruency,middle,incongruent,-89,0.1997
+congruency,middle,incongruent,-88,0.2006
+congruency,middle,incongruent,-87,0.2016
+congruency,middle,incongruent,-86,0.2027
+congruency,middle,incongruent,-85,0.2037
+congruency,middle,incongruent,-84,0.2048
+congruency,middle,incongruent,-83,0.206
+congruency,middle,incongruent,-82,0.2071
+congruency,middle,incongruent,-81,0.2083
+congruency,middle,incongruent,-80,0.2096
+congruency,middle,incongruent,-79,0.2109
+congruency,middle,incongruent,-78,0.2122
+congruency,middle,incongruent,-77,0.2135
+congruency,middle,incongruent,-76,0.2149
+congruency,middle,incongruent,-75,0.2164
+congruency,middle,incongruent,-74,0.2179
+congruency,middle,incongruent,-73,0.2194
+congruency,middle,incongruent,-72,0.221
+congruency,middle,incongruent,-71,0.2226
+congruency,middle,incongruent,-70,0.2243
+congruency,middle,incongruent,-69,0.226
+congruency,middle,incongruent,-68,0.2277
+congruency,middle,incongruent,-67,0.2296
+congruency,middle,incongruent,-66,0.2314
+congruency,middle,incongruent,-65,0.2334
+congruency,middle,incongruent,-64,0.2353
+congruency,middle,incongruent,-63,0.2374
+congruency,middle,incongruent,-62,0.2395
+congruency,middle,incongruent,-61,0.2416
+congruency,middle,incongruent,-60,0.2438
+congruency,middle,incongruent,-59,0.2461
+congruency,middle,incongruent,-58,0.2484
+congruency,middle,incongruent,-57,0.2508
+congruency,middle,incongruent,-56,0.2532
+congruency,middle,incongruent,-55,0.2558
+congruency,middle,incongruent,-54,0.2584
+congruency,middle,incongruent,-53,0.261
+congruency,middle,incongruent,-52,0.2637
+congruency,middle,incongruent,-51,0.2665
+congruency,middle,incongruent,-50,0.2694
+congruency,middle,incongruent,-49,0.2723
+congruency,middle,incongruent,-48,0.2753
+congruency,middle,incongruent,-47,0.2784
+congruency,middle,incongruent,-46,0.2815
+congruency,middle,incongruent,-45,0.2847
+congruency,middle,incongruent,-44,0.288
+congruency,middle,incongruent,-43,0.2914
+congruency,middle,incongruent,-42,0.2948
+congruency,middle,incongruent,-41,0.2984
+congruency,middle,incongruent,-40,0.302
+congruency,middle,incongruent,-39,0.3056
+congruency,middle,incongruent,-38,0.3094
+congruency,middle,incongruent,-37,0.3132
+congruency,middle,incongruent,-36,0.3171
+congruency,middle,incongruent,-35,0.3211
+congruency,middle,incongruent,-34,0.3252
+congruency,middle,incongruent,-33,0.3293
+congruency,middle,incongruent,-32,0.3336
+congruency,middle,incongruent,-31,0.3379
+congruency,middle,incongruent,-30,0.3422
+congruency,middle,incongruent,-29,0.3467
+congruency,middle,incongruent,-28,0.3512
+congruency,middle,incongruent,-27,0.3558
+congruency,middle,incongruent,-26,0.3605
+congruency,middle,incongruent,-25,0.3653
+congruency,middle,incongruent,-24,0.3701
+congruency,middle,incongruent,-23,0.375
+congruency,middle,incongruent,-22,0.38
+congruency,middle,incongruent,-21,0.385
+congruency,middle,incongruent,-20,0.3901
+congruency,middle,incongruent,-19,0.3953
+congruency,middle,incongruent,-18,0.4005
+congruency,middle,incongruent,-17,0.4058
+congruency,middle,incongruent,-16,0.4112
+congruency,middle,incongruent,-15,0.4166
+congruency,middle,incongruent,-14,0.4221
+congruency,middle,incongruent,-13,0.4276
+congruency,middle,incongruent,-12,0.4332
+congruency,middle,incongruent,-11,0.4388
+congruency,middle,incongruent,-10,0.4445
+congruency,middle,incongruent,-9,0.4502
+congruency,middle,incongruent,-8,0.456
+congruency,middle,incongruent,-7,0.4618
+congruency,middle,incongruent,-6,0.4676
+congruency,middle,incongruent,-5,0.4735
+congruency,middle,incongruent,-4,0.4793
+congruency,middle,incongruent,-3,0.4853
+congruency,middle,incongruent,-2,0.4912
+congruency,middle,incongruent,-1,0.4971
+congruency,middle,incongruent,0,0.5031
+congruency,middle,incongruent,1,0.5091
+congruency,middle,incongruent,2,0.5151
+congruency,middle,incongruent,3,0.5211
+congruency,middle,incongruent,4,0.5271
+congruency,middle,incongruent,5,0.533
+congruency,middle,incongruent,6,0.539
+congruency,middle,incongruent,7,0.545
+congruency,middle,incongruent,8,0.551
+congruency,middle,incongruent,9,0.5569
+congruency,middle,incongruent,10,0.5628
+congruency,middle,incongruent,11,0.5687
+congruency,middle,incongruent,12,0.5746
+congruency,middle,incongruent,13,0.5805
+congruency,middle,incongruent,14,0.5863
+congruency,middle,incongruent,15,0.5921
+congruency,middle,incongruent,16,0.5978
+congruency,middle,incongruent,17,0.6035
+congruency,middle,incongruent,18,0.6092
+congruency,middle,incongruent,19,0.6148
+congruency,middle,incongruent,20,0.6204
+congruency,middle,incongruent,21,0.6259
+congruency,middle,incongruent,22,0.6313
+congruency,middle,incongruent,23,0.6367
+congruency,middle,incongruent,24,0.6421
+congruency,middle,incongruent,25,0.6473
+congruency,middle,incongruent,26,0.6526
+congruency,middle,incongruent,27,0.6577
+congruency,middle,incongruent,28,0.6628
+congruency,middle,incongruent,29,0.6678
+congruency,middle,incongruent,30,0.6728
+congruency,middle,incongruent,31,0.6776
+congruency,middle,incongruent,32,0.6825
+congruency,middle,incongruent,33,0.6872
+congruency,middle,incongruent,34,0.6918
+congruency,middle,incongruent,35,0.6964
+congruency,middle,incongruent,36,0.7009
+congruency,middle,incongruent,37,0.7054
+congruency,middle,incongruent,38,0.7097
+congruency,middle,incongruent,39,0.714
+congruency,middle,incongruent,40,0.7182
+congruency,middle,incongruent,41,0.7223
+congruency,middle,incongruent,42,0.7264
+congruency,middle,incongruent,43,0.7303
+congruency,middle,incongruent,44,0.7342
+congruency,middle,incongruent,45,0.738
+congruency,middle,incongruent,46,0.7417
+congruency,middle,incongruent,47,0.7454
+congruency,middle,incongruent,48,0.749
+congruency,middle,incongruent,49,0.7525
+congruency,middle,incongruent,50,0.7559
+congruency,middle,incongruent,51,0.7592
+congruency,middle,incongruent,52,0.7625
+congruency,middle,incongruent,53,0.7657
+congruency,middle,incongruent,54,0.7688
+congruency,middle,incongruent,55,0.7719
+congruency,middle,incongruent,56,0.7748
+congruency,middle,incongruent,57,0.7778
+congruency,middle,incongruent,58,0.7806
+congruency,middle,incongruent,59,0.7834
+congruency,middle,incongruent,60,0.7861
+congruency,middle,incongruent,61,0.7887
+congruency,middle,incongruent,62,0.7912
+congruency,middle,incongruent,63,0.7937
+congruency,middle,incongruent,64,0.7962
+congruency,middle,incongruent,65,0.7985
+congruency,middle,incongruent,66,0.8009
+congruency,middle,incongruent,67,0.8031
+congruency,middle,incongruent,68,0.8053
+congruency,middle,incongruent,69,0.8074
+congruency,middle,incongruent,70,0.8095
+congruency,middle,incongruent,71,0.8115
+congruency,middle,incongruent,72,0.8135
+congruency,middle,incongruent,73,0.8154
+congruency,middle,incongruent,74,0.8172
+congruency,middle,incongruent,75,0.819
+congruency,middle,incongruent,76,0.8208
+congruency,middle,incongruent,77,0.8225
+congruency,middle,incongruent,78,0.8241
+congruency,middle,incongruent,79,0.8257
+congruency,middle,incongruent,80,0.8273
+congruency,middle,incongruent,81,0.8288
+congruency,middle,incongruent,82,0.8303
+congruency,middle,incongruent,83,0.8317
+congruency,middle,incongruent,84,0.8331
+congruency,middle,incongruent,85,0.8344
+congruency,middle,incongruent,86,0.8357
+congruency,middle,incongruent,87,0.837
+congruency,middle,incongruent,88,0.8382
+congruency,middle,incongruent,89,0.8394
+congruency,middle,incongruent,90,0.8406
+congruency,middle,incongruent,91,0.8417
+congruency,middle,incongruent,92,0.8428
+congruency,middle,incongruent,93,0.8439
+congruency,middle,incongruent,94,0.8449
+congruency,middle,incongruent,95,0.8459
+congruency,middle,incongruent,96,0.8468
+congruency,middle,incongruent,97,0.8478
+congruency,middle,incongruent,98,0.8487
+congruency,middle,incongruent,99,0.8495
+congruency,middle,incongruent,100,0.8504
+direction,early,control,-100,0.1736
+direction,early,control,-99,0.1742
+direction,early,control,-98,0.1748
+direction,early,control,-97,0.1754
+direction,early,control,-96,0.1761
+direction,early,control,-95,0.1768
+direction,early,control,-94,0.1775
+direction,early,control,-93,0.1782
+direction,early,control,-92,0.179
+direction,early,control,-91,0.1798
+direction,early,control,-90,0.1806
+direction,early,control,-89,0.1815
+direction,early,control,-88,0.1824
+direction,early,control,-87,0.1833
+direction,early,control,-86,0.1842
+direction,early,control,-85,0.1852
+direction,early,control,-84,0.1862
+direction,early,control,-83,0.1873
+direction,early,control,-82,0.1883
+direction,early,control,-81,0.1895
+direction,early,control,-80,0.1906
+direction,early,control,-79,0.1918
+direction,early,control,-78,0.1931
+direction,early,control,-77,0.1944
+direction,early,control,-76,0.1957
+direction,early,control,-75,0.1971
+direction,early,control,-74,0.1985
+direction,early,control,-73,0.2
+direction,early,control,-72,0.2015
+direction,early,control,-71,0.203
+direction,early,control,-70,0.2047
+direction,early,control,-69,0.2063
+direction,early,control,-68,0.2081
+direction,early,control,-67,0.2099
+direction,early,control,-66,0.2117
+direction,early,control,-65,0.2136
+direction,early,control,-64,0.2156
+direction,early,control,-63,0.2176
+direction,early,control,-62,0.2197
+direction,early,control,-61,0.2218
+direction,early,control,-60,0.2241
+direction,early,control,-59,0.2264
+direction,early,control,-58,0.2287
+direction,early,control,-57,0.2312
+direction,early,control,-56,0.2337
+direction,early,control,-55,0.2362
+direction,early,control,-54,0.2389
+direction,early,control,-53,0.2416
+direction,early,control,-52,0.2444
+direction,early,control,-51,0.2473
+direction,early,control,-50,0.2503
+direction,early,control,-49,0.2534
+direction,early,control,-48,0.2565
+direction,early,control,-47,0.2597
+direction,early,control,-46,0.2631
+direction,early,control,-45,0.2665
+direction,early,control,-44,0.27
+direction,early,control,-43,0.2735
+direction,early,control,-42,0.2772
+direction,early,control,-41,0.281
+direction,early,control,-40,0.2848
+direction,early,control,-39,0.2888
+direction,early,control,-38,0.2928
+direction,early,control,-37,0.297
+direction,early,control,-36,0.3012
+direction,early,control,-35,0.3055
+direction,early,control,-34,0.31
+direction,early,control,-33,0.3145
+direction,early,control,-32,0.3191
+direction,early,control,-31,0.3238
+direction,early,control,-30,0.3286
+direction,early,control,-29,0.3335
+direction,early,control,-28,0.3385
+direction,early,control,-27,0.3436
+direction,early,control,-26,0.3488
+direction,early,control,-25,0.354
+direction,early,control,-24,0.3594
+direction,early,control,-23,0.3648
+direction,early,control,-22,0.3703
+direction,early,control,-21,0.3759
+direction,early,control,-20,0.3816
+direction,early,control,-19,0.3874
+direction,early,control,-18,0.3932
+direction,early,control,-17,0.3991
+direction,early,control,-16,0.4051
+direction,early,control,-15,0.4112
+direction,early,control,-14,0.4173
+direction,early,control,-13,0.4234
+direction,early,control,-12,0.4297
+direction,early,control,-11,0.4359
+direction,early,control,-10,0.4423
+direction,early,control,-9,0.4486
+direction,early,control,-8,0.4551
+direction,early,control,-7,0.4615
+direction,early,control,-6,0.468
+direction,early,control,-5,0.4745
+direction,early,control,-4,0.4811
+direction,early,control,-3,0.4876
+direction,early,control,-2,0.4942
+direction,early,control,-1,0.5008
+direction,early,control,0,0.5074
+direction,early,control,1,0.514
+direction,early,control,2,0.5206
+direction,early,control,3,0.5272
+direction,early,control,4,0.5338
+direction,early,control,5,0.5403
+direction,early,control,6,0.5469
+direction,early,control,7,0.5534
+direction,early,control,8,0.5598
+direction,early,control,9,0.5663
+direction,early,control,10,0.5727
+direction,early,control,11,0.5791
+direction,early,control,12,0.5854
+direction,early,control,13,0.5917
+direction,early,control,14,0.5979
+direction,early,control,15,0.604
+direction,early,control,16,0.6101
+direction,early,control,17,0.6162
+direction,early,control,18,0.6221
+direction,early,control,19,0.628
+direction,early,control,20,0.6339
+direction,early,control,21,0.6396
+direction,early,control,22,0.6453
+direction,early,control,23,0.6509
+direction,early,control,24,0.6564
+direction,early,control,25,0.6618
+direction,early,control,26,0.6671
+direction,early,control,27,0.6724
+direction,early,control,28,0.6775
+direction,early,control,29,0.6826
+direction,early,control,30,0.6876
+direction,early,control,31,0.6924
+direction,early,control,32,0.6972
+direction,early,control,33,0.7019
+direction,early,control,34,0.7065
+direction,early,control,35,0.711
+direction,early,control,36,0.7154
+direction,early,control,37,0.7197
+direction,early,control,38,0.724
+direction,early,control,39,0.7281
+direction,early,control,40,0.7321
+direction,early,control,41,0.736
+direction,early,control,42,0.7399
+direction,early,control,43,0.7436
+direction,early,control,44,0.7473
+direction,early,control,45,0.7509
+direction,early,control,46,0.7543
+direction,early,control,47,0.7577
+direction,early,control,48,0.761
+direction,early,control,49,0.7642
+direction,early,control,50,0.7674
+direction,early,control,51,0.7704
+direction,early,control,52,0.7734
+direction,early,control,53,0.7762
+direction,early,control,54,0.779
+direction,early,control,55,0.7818
+direction,early,control,56,0.7844
+direction,early,control,57,0.787
+direction,early,control,58,0.7895
+direction,early,control,59,0.7919
+direction,early,control,60,0.7942
+direction,early,control,61,0.7965
+direction,early,control,62,0.7987
+direction,early,control,63,0.8009
+direction,early,control,64,0.8029
+direction,early,control,65,0.805
+direction,early,control,66,0.8069
+direction,early,control,67,0.8088
+direction,early,control,68,0.8106
+direction,early,control,69,0.8124
+direction,early,control,70,0.8141
+direction,early,control,71,0.8158
+direction,early,control,72,0.8174
+direction,early,control,73,0.819
+direction,early,control,74,0.8205
+direction,early,control,75,0.8219
+direction,early,control,76,0.8233
+direction,early,control,77,0.8247
+direction,early,control,78,0.826
+direction,early,control,79,0.8273
+direction,early,control,80,0.8285
+direction,early,control,81,0.8297
+direction,early,control,82,0.8309
+direction,early,control,83,0.832
+direction,early,control,84,0.8331
+direction,early,control,85,0.8341
+direction,early,control,86,0.8351
+direction,early,control,87,0.8361
+direction,early,control,88,0.8371
+direction,early,control,89,0.838
+direction,early,control,90,0.8388
+direction,early,control,91,0.8397
+direction,early,control,92,0.8405
+direction,early,control,93,0.8413
+direction,early,control,94,0.8421
+direction,early,control,95,0.8428
+direction,early,control,96,0.8435
+direction,early,control,97,0.8442
+direction,early,control,98,0.8449
+direction,early,control,99,0.8455
+direction,early,control,100,0.8461
+direction,early,left pulse,-100,0.1695
+direction,early,left pulse,-99,0.17
+direction,early,left pulse,-98,0.1705
+direction,early,left pulse,-97,0.171
+direction,early,left pulse,-96,0.1715
+direction,early,left pulse,-95,0.1721
+direction,early,left pulse,-94,0.1727
+direction,early,left pulse,-93,0.1733
+direction,early,left pulse,-92,0.1739
+direction,early,left pulse,-91,0.1746
+direction,early,left pulse,-90,0.1752
+direction,early,left pulse,-89,0.176
+direction,early,left pulse,-88,0.1767
+direction,early,left pulse,-87,0.1774
+direction,early,left pulse,-86,0.1782
+direction,early,left pulse,-85,0.179
+direction,early,left pulse,-84,0.1799
+direction,early,left pulse,-83,0.1808
+direction,early,left pulse,-82,0.1817
+direction,early,left pulse,-81,0.1826
+direction,early,left pulse,-80,0.1836
+direction,early,left pulse,-79,0.1846
+direction,early,left pulse,-78,0.1857
+direction,early,left pulse,-77,0.1868
+direction,early,left pulse,-76,0.1879
+direction,early,left pulse,-75,0.1891
+direction,early,left pulse,-74,0.1904
+direction,early,left pulse,-73,0.1916
+direction,early,left pulse,-72,0.1929
+direction,early,left pulse,-71,0.1943
+direction,early,left pulse,-70,0.1957
+direction,early,left pulse,-69,0.1972
+direction,early,left pulse,-68,0.1987
+direction,early,left pulse,-67,0.2003
+direction,early,left pulse,-66,0.2019
+direction,early,left pulse,-65,0.2036
+direction,early,left pulse,-64,0.2054
+direction,early,left pulse,-63,0.2072
+direction,early,left pulse,-62,0.209
+direction,early,left pulse,-61,0.211
+direction,early,left pulse,-60,0.213
+direction,early,left pulse,-59,0.2151
+direction,early,left pulse,-58,0.2172
+direction,early,left pulse,-57,0.2194
+direction,early,left pulse,-56,0.2217
+direction,early,left pulse,-55,0.2241
+direction,early,left pulse,-54,0.2265
+direction,early,left pulse,-53,0.229
+direction,early,left pulse,-52,0.2316
+direction,early,left pulse,-51,0.2343
+direction,early,left pulse,-50,0.2371
+direction,early,left pulse,-49,0.2399
+direction,early,left pulse,-48,0.2429
+direction,early,left pulse,-47,0.2459
+direction,early,left pulse,-46,0.2491
+direction,early,left pulse,-45,0.2523
+direction,early,left pulse,-44,0.2556
+direction,early,left pulse,-43,0.259
+direction,early,left pulse,-42,0.2625
+direction,early,left pulse,-41,0.2661
+direction,early,left pulse,-40,0.2698
+direction,early,left pulse,-39,0.2737
+direction,early,left pulse,-38,0.2776
+direction,early,left pulse,-37,0.2816
+direction,early,left pulse,-36,0.2857
+direction,early,left pulse,-35,0.29
+direction,early,left pulse,-34,0.2943
+direction,early,left pulse,-33,0.2988
+direction,early,left pulse,-32,0.3033
+direction,early,left pulse,-31,0.308
+direction,early,left pulse,-30,0.3127
+direction,early,left pulse,-29,0.3176
+direction,early,left pulse,-28,0.3226
+direction,early,left pulse,-27,0.3277
+direction,early,left pulse,-26,0.3329
+direction,early,left pulse,-25,0.3382
+direction,early,left pulse,-24,0.3436
+direction,early,left pulse,-23,0.3491
+direction,early,left pulse,-22,0.3547
+direction,early,left pulse,-21,0.3605
+direction,early,left pulse,-20,0.3663
+direction,early,left pulse,-19,0.3722
+direction,early,left pulse,-18,0.3782
+direction,early,left pulse,-17,0.3842
+direction,early,left pulse,-16,0.3904
+direction,early,left pulse,-15,0.3967
+direction,early,left pulse,-14,0.403
+direction,early,left pulse,-13,0.4094
+direction,early,left pulse,-12,0.4159
+direction,early,left pulse,-11,0.4225
+direction,early,left pulse,-10,0.4291
+direction,early,left pulse,-9,0.4358
+direction,early,left pulse,-8,0.4425
+direction,early,left pulse,-7,0.4493
+direction,early,left pulse,-6,0.4562
+direction,early,left pulse,-5,0.463
+direction,early,left pulse,-4,0.47
+direction,early,left pulse,-3,0.4769
+direction,early,left pulse,-2,0.4839
+direction,early,left pulse,-1,0.4909
+direction,early,left pulse,0,0.4979
+direction,early,left pulse,1,0.5049
+direction,early,left pulse,2,0.5119
+direction,early,left pulse,3,0.519
+direction,early,left pulse,4,0.526
+direction,early,left pulse,5,0.533
+direction,early,left pulse,6,0.54
+direction,early,left pulse,7,0.5469
+direction,early,left pulse,8,0.5539
+direction,early,left pulse,9,0.5608
+direction,early,left pulse,10,0.5676
+direction,early,left pulse,11,0.5744
+direction,early,left pulse,12,0.5812
+direction,early,left pulse,13,0.5879
+direction,early,left pulse,14,0.5946
+direction,early,left pulse,15,0.6012
+direction,early,left pulse,16,0.6077
+direction,early,left pulse,17,0.6141
+direction,early,left pulse,18,0.6205
+direction,early,left pulse,19,0.6268
+direction,early,left pulse,20,0.633
+direction,early,left pulse,21,0.6391
+direction,early,left pulse,22,0.6452
+direction,early,left pulse,23,0.6511
+direction,early,left pulse,24,0.657
+direction,early,left pulse,25,0.6627
+direction,early,left pulse,26,0.6684
+direction,early,left pulse,27,0.674
+direction,early,left pulse,28,0.6794
+direction,early,left pulse,29,0.6848
+direction,early,left pulse,30,0.69
+direction,early,left pulse,31,0.6952
+direction,early,left pulse,32,0.7002
+direction,early,left pulse,33,0.7051
+direction,early,left pulse,34,0.7099
+direction,early,left pulse,35,0.7147
+direction,early,left pulse,36,0.7193
+direction,early,left pulse,37,0.7238
+direction,early,left pulse,38,0.7282
+direction,early,left pulse,39,0.7324
+direction,early,left pulse,40,0.7366
+direction,early,left pulse,41,0.7407
+direction,early,left pulse,42,0.7447
+direction,early,left pulse,43,0.7485
+direction,early,left pulse,44,0.7523
+direction,early,left pulse,45,0.7559
+direction,early,left pulse,46,0.7595
+direction,early,left pulse,47,0.763
+direction,early,left pulse,48,0.7663
+direction,early,left pulse,49,0.7696
+direction,early,left pulse,50,0.7728
+direction,early,left pulse,51,0.7758
+direction,early,left pulse,52,0.7788
+direction,early,left pulse,53,0.7817
+direction,early,left pulse,54,0.7845
+direction,early,left pulse,55,0.7873
+direction,early,left pulse,56,0.7899
+direction,early,left pulse,57,0.7925
+direction,early,left pulse,58,0.7949
+direction,early,left pulse,59,0.7973
+direction,early,left pulse,60,0.7997
+direction,early,left pulse,61,0.8019
+direction,early,left pulse,62,0.8041
+direction,early,left pulse,63,0.8062
+direction,early,left pulse,64,0.8082
+direction,early,left pulse,65,0.8102
+direction,early,left pulse,66,0.8121
+direction,early,left pulse,67,0.8139
+direction,early,left pulse,68,0.8157
+direction,early,left pulse,69,0.8174
+direction,early,left pulse,70,0.8191
+direction,early,left pulse,71,0.8207
+direction,early,left pulse,72,0.8222
+direction,early,left pulse,73,0.8237
+direction,early,left pulse,74,0.8252
+direction,early,left pulse,75,0.8266
+direction,early,left pulse,76,0.8279
+direction,early,left pulse,77,0.8292
+direction,early,left pulse,78,0.8305
+direction,early,left pulse,79,0.8317
+direction,early,left pulse,80,0.8328
+direction,early,left pulse,81,0.8339
+direction,early,left pulse,82,0.835
+direction,early,left pulse,83,0.8361
+direction,early,left pulse,84,0.8371
+direction,early,left pulse,85,0.838
+direction,early,left pulse,86,0.8389
+direction,early,left pulse,87,0.8398
+direction,early,left pulse,88,0.8407
+direction,early,left pulse,89,0.8415
+direction,early,left pulse,90,0.8423
+direction,early,left pulse,91,0.8431
+direction,early,left pulse,92,0.8439
+direction,early,left pulse,93,0.8446
+direction,early,left pulse,94,0.8453
+direction,early,left pulse,95,0.8459
+direction,early,left pulse,96,0.8466
+direction,early,left pulse,97,0.8472
+direction,early,left pulse,98,0.8478
+direction,early,left pulse,99,0.8483
+direction,early,left pulse,100,0.8489
+direction,early,right pulse,-100,0.1767
+direction,early,right pulse,-99,0.1775
+direction,early,right pulse,-98,0.1784
+direction,early,right pulse,-97,0.1792
+direction,early,right pulse,-96,0.1801
+direction,early,right pulse,-95,0.1811
+direction,early,right pulse,-94,0.1821
+direction,early,right pulse,-93,0.1831
+direction,early,right pulse,-92,0.1841
+direction,early,right pulse,-91,0.1852
+direction,early,right pulse,-90,0.1864
+direction,early,right pulse,-89,0.1876
+direction,early,right pulse,-88,0.1888
+direction,early,right pulse,-87,0.1901
+direction,early,right pulse,-86,0.1914
+direction,early,right pulse,-85,0.1928
+direction,early,right pulse,-84,0.1942
+direction,early,right pulse,-83,0.1957
+direction,early,right pulse,-82,0.1972
+direction,early,right pulse,-81,0.1988
+direction,early,right pulse,-80,0.2005
+direction,early,right pulse,-79,0.2022
+direction,early,right pulse,-78,0.204
+direction,early,right pulse,-77,0.2059
+direction,early,right pulse,-76,0.2078
+direction,early,right pulse,-75,0.2098
+direction,early,right pulse,-74,0.2119
+direction,early,right pulse,-73,0.214
+direction,early,right pulse,-72,0.2162
+direction,early,right pulse,-71,0.2185
+direction,early,right pulse,-70,0.2209
+direction,early,right pulse,-69,0.2234
+direction,early,right pulse,-68,0.2259
+direction,early,right pulse,-67,0.2286
+direction,early,right pulse,-66,0.2313
+direction,early,right pulse,-65,0.2341
+direction,early,right pulse,-64,0.237
+direction,early,right pulse,-63,0.24
+direction,early,right pulse,-62,0.2432
+direction,early,right pulse,-61,0.2464
+direction,early,right pulse,-60,0.2497
+direction,early,right pulse,-59,0.2531
+direction,early,right pulse,-58,0.2566
+direction,early,right pulse,-57,0.2602
+direction,early,right pulse,-56,0.264
+direction,early,right pulse,-55,0.2678
+direction,early,right pulse,-54,0.2718
+direction,early,right pulse,-53,0.2759
+direction,early,right pulse,-52,0.2801
+direction,early,right pulse,-51,0.2844
+direction,early,right pulse,-50,0.2888
+direction,early,right pulse,-49,0.2933
+direction,early,right pulse,-48,0.298
+direction,early,right pulse,-47,0.3028
+direction,early,right pulse,-46,0.3077
+direction,early,right pulse,-45,0.3127
+direction,early,right pulse,-44,0.3178
+direction,early,right pulse,-43,0.3231
+direction,early,right pulse,-42,0.3285
+direction,early,right pulse,-41,0.334
+direction,early,right pulse,-40,0.3396
+direction,early,right pulse,-39,0.3453
+direction,early,right pulse,-38,0.3511
+direction,early,right pulse,-37,0.3571
+direction,early,right pulse,-36,0.3632
+direction,early,right pulse,-35,0.3693
+direction,early,right pulse,-34,0.3756
+direction,early,right pulse,-33,0.382
+direction,early,right pulse,-32,0.3884
+direction,early,right pulse,-31,0.395
+direction,early,right pulse,-30,0.4016
+direction,early,right pulse,-29,0.4084
+direction,early,right pulse,-28,0.4152
+direction,early,right pulse,-27,0.4221
+direction,early,right pulse,-26,0.4291
+direction,early,right pulse,-25,0.4361
+direction,early,right pulse,-24,0.4432
+direction,early,right pulse,-23,0.4504
+direction,early,right pulse,-22,0.4576
+direction,early,right pulse,-21,0.4649
+direction,early,right pulse,-20,0.4721
+direction,early,right pulse,-19,0.4795
+direction,early,right pulse,-18,0.4868
+direction,early,right pulse,-17,0.4942
+direction,early,right pulse,-16,0.5016
+direction,early,right pulse,-15,0.509
+direction,early,right pulse,-14,0.5164
+direction,early,right pulse,-13,0.5238
+direction,early,right pulse,-12,0.5312
+direction,early,right pulse,-11,0.5385
+direction,early,right pulse,-10,0.5459
+direction,early,right pulse,-9,0.5532
+direction,early,right pulse,-8,0.5604
+direction,early,right pulse,-7,0.5676
+direction,early,right pulse,-6,0.5748
+direction,early,right pulse,-5,0.5819
+direction,early,right pulse,-4,0.589
+direction,early,right pulse,-3,0.596
+direction,early,right pulse,-2,0.6029
+direction,early,right pulse,-1,0.6098
+direction,early,right pulse,0,0.6165
+direction,early,right pulse,1,0.6232
+direction,early,right pulse,2,0.6298
+direction,early,right pulse,3,0.6363
+direction,early,right pulse,4,0.6427
+direction,early,right pulse,5,0.649
+direction,early,right pulse,6,0.6552
+direction,early,right pulse,7,0.6613
+direction,early,right pulse,8,0.6673
+direction,early,right pulse,9,0.6731
+direction,early,right pulse,10,0.6789
+direction,early,right pulse,11,0.6845
+direction,early,right pulse,12,0.6901
+direction,early,right pulse,13,0.6955
+direction,early,right pulse,14,0.7008
+direction,early,right pulse,15,0.706
+direction,early,right pulse,16,0.711
+direction,early,right pulse,17,0.7159
+direction,early,right pulse,18,0.7208
+direction,early,right pulse,19,0.7255
+direction,early,right pulse,20,0.73
+direction,early,right pulse,21,0.7345
+direction,early,right pulse,22,0.7388
+direction,early,right pulse,23,0.7431
+direction,early,right pulse,24,0.7472
+direction,early,right pulse,25,0.7512
+direction,early,right pulse,26,0.755
+direction,early,right pulse,27,0.7588
+direction,early,right pulse,28,0.7625
+direction,early,right pulse,29,0.766
+direction,early,right pulse,30,0.7695
+direction,early,right pulse,31,0.7728
+direction,early,right pulse,32,0.7761
+direction,early,right pulse,33,0.7792
+direction,early,right pulse,34,0.7822
+direction,early,right pulse,35,0.7852
+direction,early,right pulse,36,0.788
+direction,early,right pulse,37,0.7908
+direction,early,right pulse,38,0.7934
+direction,early,right pulse,39,0.796
+direction,early,right pulse,40,0.7985
+direction,early,right pulse,41,0.8009
+direction,early,right pulse,42,0.8032
+direction,early,right pulse,43,0.8055
+direction,early,right pulse,44,0.8077
+direction,early,right pulse,45,0.8097
+direction,early,right pulse,46,0.8118
+direction,early,right pulse,47,0.8137
+direction,early,right pulse,48,0.8156
+direction,early,right pulse,49,0.8174
+direction,early,right pulse,50,0.8191
+direction,early,right pulse,51,0.8208
+direction,early,right pulse,52,0.8224
+direction,early,right pulse,53,0.824
+direction,early,right pulse,54,0.8255
+direction,early,right pulse,55,0.827
+direction,early,right pulse,56,0.8284
+direction,early,right pulse,57,0.8297
+direction,early,right pulse,58,0.831
+direction,early,right pulse,59,0.8322
+direction,early,right pulse,60,0.8334
+direction,early,right pulse,61,0.8346
+direction,early,right pulse,62,0.8357
+direction,early,right pulse,63,0.8368
+direction,early,right pulse,64,0.8378
+direction,early,right pulse,65,0.8388
+direction,early,right pulse,66,0.8397
+direction,early,right pulse,67,0.8406
+direction,early,right pulse,68,0.8415
+direction,early,right pulse,69,0.8424
+direction,early,right pulse,70,0.8432
+direction,early,right pulse,71,0.844
+direction,early,right pulse,72,0.8447
+direction,early,right pulse,73,0.8454
+direction,early,right pulse,74,0.8461
+direction,early,right pulse,75,0.8468
+direction,early,right pulse,76,0.8474
+direction,early,right pulse,77,0.848
+direction,early,right pulse,78,0.8486
+direction,early,right pulse,79,0.8492
+direction,early,right pulse,80,0.8497
+direction,early,right pulse,81,0.8503
+direction,early,right pulse,82,0.8508
+direction,early,right pulse,83,0.8512
+direction,early,right pulse,84,0.8517
+direction,early,right pulse,85,0.8521
+direction,early,right pulse,86,0.8526
+direction,early,right pulse,87,0.853
+direction,early,right pulse,88,0.8534
+direction,early,right pulse,89,0.8538
+direction,early,right pulse,90,0.8541
+direction,early,right pulse,91,0.8545
+direction,early,right pulse,92,0.8548
+direction,early,right pulse,93,0.8551
+direction,early,right pulse,94,0.8554
+direction,early,right pulse,95,0.8557
+direction,early,right pulse,96,0.856
+direction,early,right pulse,97,0.8563
+direction,early,right pulse,98,0.8565
+direction,early,right pulse,99,0.8568
+direction,early,right pulse,100,0.857
+direction,late,control,-100,0.1971
+direction,late,control,-99,0.1986
+direction,late,control,-98,0.2001
+direction,late,control,-97,0.2016
+direction,late,control,-96,0.2031
+direction,late,control,-95,0.2047
+direction,late,control,-94,0.2063
+direction,late,control,-93,0.208
+direction,late,control,-92,0.2096
+direction,late,control,-91,0.2113
+direction,late,control,-90,0.2131
+direction,late,control,-89,0.2148
+direction,late,control,-88,0.2166
+direction,late,control,-87,0.2184
+direction,late,control,-86,0.2203
+direction,late,control,-85,0.2221
+direction,late,control,-84,0.2241
+direction,late,control,-83,0.226
+direction,late,control,-82,0.228
+direction,late,control,-81,0.23
+direction,late,control,-80,0.232
+direction,late,control,-79,0.2341
+direction,late,control,-78,0.2362
+direction,late,control,-77,0.2384
+direction,late,control,-76,0.2406
+direction,late,control,-75,0.2428
+direction,late,control,-74,0.245
+direction,late,control,-73,0.2473
+direction,late,control,-72,0.2497
+direction,late,control,-71,0.252
+direction,late,control,-70,0.2544
+direction,late,control,-69,0.2568
+direction,late,control,-68,0.2593
+direction,late,control,-67,0.2618
+direction,late,control,-66,0.2644
+direction,late,control,-65,0.2669
+direction,late,control,-64,0.2695
+direction,late,control,-63,0.2722
+direction,late,control,-62,0.2749
+direction,late,control,-61,0.2776
+direction,late,control,-60,0.2804
+direction,late,control,-59,0.2832
+direction,late,control,-58,0.286
+direction,late,control,-57,0.2889
+direction,late,control,-56,0.2918
+direction,late,control,-55,0.2948
+direction,late,control,-54,0.2977
+direction,late,control,-53,0.3008
+direction,late,control,-52,0.3038
+direction,late,control,-51,0.3069
+direction,late,control,-50,0.3101
+direction,late,control,-49,0.3132
+direction,late,control,-48,0.3164
+direction,late,control,-47,0.3197
+direction,late,control,-46,0.323
+direction,late,control,-45,0.3263
+direction,late,control,-44,0.3296
+direction,late,control,-43,0.333
+direction,late,control,-42,0.3364
+direction,late,control,-41,0.3399
+direction,late,control,-40,0.3434
+direction,late,control,-39,0.3469
+direction,late,control,-38,0.3505
+direction,late,control,-37,0.3541
+direction,late,control,-36,0.3577
+direction,late,control,-35,0.3613
+direction,late,control,-34,0.365
+direction,late,control,-33,0.3687
+direction,late,control,-32,0.3725
+direction,late,control,-31,0.3763
+direction,late,control,-30,0.3801
+direction,late,control,-29,0.3839
+direction,late,control,-28,0.3878
+direction,late,control,-27,0.3917
+direction,late,control,-26,0.3956
+direction,late,control,-25,0.3995
+direction,late,control,-24,0.4035
+direction,late,control,-23,0.4075
+direction,late,control,-22,0.4115
+direction,late,control,-21,0.4155
+direction,late,control,-20,0.4196
+direction,late,control,-19,0.4236
+direction,late,control,-18,0.4277
+direction,late,control,-17,0.4319
+direction,late,control,-16,0.436
+direction,late,control,-15,0.4401
+direction,late,control,-14,0.4443
+direction,late,control,-13,0.4485
+direction,late,control,-12,0.4527
+direction,late,control,-11,0.4569
+direction,late,control,-10,0.4611
+direction,late,control,-9,0.4653
+direction,late,control,-8,0.4695
+direction,late,control,-7,0.4738
+direction,late,control,-6,0.478
+direction,late,control,-5,0.4823
+direction,late,control,-4,0.4866
+direction,late,control,-3,0.4908
+direction,late,control,-2,0.4951
+direction,late,control,-1,0.4994
+direction,late,control,0,0.5036
+direction,late,control,1,0.5079
+direction,late,control,2,0.5122
+direction,late,control,3,0.5164
+direction,late,control,4,0.5207
+direction,late,control,5,0.525
+direction,late,control,6,0.5292
+direction,late,control,7,0.5335
+direction,late,control,8,0.5377
+direction,late,control,9,0.5419
+direction,late,control,10,0.5462
+direction,late,control,11,0.5504
+direction,late,control,12,0.5546
+direction,late,control,13,0.5587
+direction,late,control,14,0.5629
+direction,late,control,15,0.5671
+direction,late,control,16,0.5712
+direction,late,control,17,0.5753
+direction,late,control,18,0.5794
+direction,late,control,19,0.5835
+direction,late,control,20,0.5876
+direction,late,control,21,0.5916
+direction,late,control,22,0.5956
+direction,late,control,23,0.5996
+direction,late,control,24,0.6036
+direction,late,control,25,0.6076
+direction,late,control,26,0.6115
+direction,late,control,27,0.6154
+direction,late,control,28,0.6193
+direction,late,control,29,0.6231
+direction,late,control,30,0.6269
+direction,late,control,31,0.6307
+direction,late,control,32,0.6345
+direction,late,control,33,0.6382
+direction,late,control,34,0.6419
+direction,late,control,35,0.6456
+direction,late,control,36,0.6492
+direction,late,control,37,0.6528
+direction,late,control,38,0.6564
+direction,late,control,39,0.6599
+direction,late,control,40,0.6634
+direction,late,control,41,0.6669
+direction,late,control,42,0.6703
+direction,late,control,43,0.6737
+direction,late,control,44,0.6771
+direction,late,control,45,0.6804
+direction,late,control,46,0.6837
+direction,late,control,47,0.687
+direction,late,control,48,0.6902
+direction,late,control,49,0.6934
+direction,late,control,50,0.6966
+direction,late,control,51,0.6997
+direction,late,control,52,0.7028
+direction,late,control,53,0.7058
+direction,late,control,54,0.7088
+direction,late,control,55,0.7118
+direction,late,control,56,0.7147
+direction,late,control,57,0.7176
+direction,late,control,58,0.7204
+direction,late,control,59,0.7233
+direction,late,control,60,0.726
+direction,late,control,61,0.7288
+direction,late,control,62,0.7315
+direction,late,control,63,0.7341
+direction,late,control,64,0.7368
+direction,late,control,65,0.7394
+direction,late,control,66,0.7419
+direction,late,control,67,0.7444
+direction,late,control,68,0.7469
+direction,late,control,69,0.7494
+direction,late,control,70,0.7518
+direction,late,control,71,0.7542
+direction,late,control,72,0.7565
+direction,late,control,73,0.7588
+direction,late,control,74,0.7611
+direction,late,control,75,0.7633
+direction,late,control,76,0.7655
+direction,late,control,77,0.7677
+direction,late,control,78,0.7698
+direction,late,control,79,0.7719
+direction,late,control,80,0.7739
+direction,late,control,81,0.776
+direction,late,control,82,0.778
+direction,late,control,83,0.7799
+direction,late,control,84,0.7818
+direction,late,control,85,0.7837
+direction,late,control,86,0.7856
+direction,late,control,87,0.7874
+direction,late,control,88,0.7892
+direction,late,control,89,0.791
+direction,late,control,90,0.7927
+direction,late,control,91,0.7945
+direction,late,control,92,0.7961
+direction,late,control,93,0.7978
+direction,late,control,94,0.7994
+direction,late,control,95,0.801
+direction,late,control,96,0.8026
+direction,late,control,97,0.8041
+direction,late,control,98,0.8056
+direction,late,control,99,0.8071
+direction,late,control,100,0.8085
+direction,late,left pulse,-100,0.2186
+direction,late,left pulse,-99,0.2202
+direction,late,left pulse,-98,0.2219
+direction,late,left pulse,-97,0.2235
+direction,late,left pulse,-96,0.2252
+direction,late,left pulse,-95,0.2269
+direction,late,left pulse,-94,0.2286
+direction,late,left pulse,-93,0.2304
+direction,late,left pulse,-92,0.2322
+direction,late,left pulse,-91,0.234
+direction,late,left pulse,-90,0.2358
+direction,late,left pulse,-89,0.2376
+direction,late,left pulse,-88,0.2395
+direction,late,left pulse,-87,0.2414
+direction,late,left pulse,-86,0.2434
+direction,late,left pulse,-85,0.2453
+direction,late,left pulse,-84,0.2473
+direction,late,left pulse,-83,0.2493
+direction,late,left pulse,-82,0.2514
+direction,late,left pulse,-81,0.2534
+direction,late,left pulse,-80,0.2555
+direction,late,left pulse,-79,0.2576
+direction,late,left pulse,-78,0.2598
+direction,late,left pulse,-77,0.262
+direction,late,left pulse,-76,0.2642
+direction,late,left pulse,-75,0.2664
+direction,late,left pulse,-74,0.2687
+direction,late,left pulse,-73,0.2709
+direction,late,left pulse,-72,0.2733
+direction,late,left pulse,-71,0.2756
+direction,late,left pulse,-70,0.278
+direction,late,left pulse,-69,0.2804
+direction,late,left pulse,-68,0.2828
+direction,late,left pulse,-67,0.2853
+direction,late,left pulse,-66,0.2877
+direction,late,left pulse,-65,0.2903
+direction,late,left pulse,-64,0.2928
+direction,late,left pulse,-63,0.2954
+direction,late,left pulse,-62,0.298
+direction,late,left pulse,-61,0.3006
+direction,late,left pulse,-60,0.3032
+direction,late,left pulse,-59,0.3059
+direction,late,left pulse,-58,0.3086
+direction,late,left pulse,-57,0.3114
+direction,late,left pulse,-56,0.3141
+direction,late,left pulse,-55,0.3169
+direction,late,left pulse,-54,0.3197
+direction,late,left pulse,-53,0.3226
+direction,late,left pulse,-52,0.3254
+direction,late,left pulse,-51,0.3283
+direction,late,left pulse,-50,0.3313
+direction,late,left pulse,-49,0.3342
+direction,late,left pulse,-48,0.3372
+direction,late,left pulse,-47,0.3402
+direction,late,left pulse,-46,0.3432
+direction,late,left pulse,-45,0.3463
+direction,late,left pulse,-44,0.3494
+direction,late,left pulse,-43,0.3525
+direction,late,left pulse,-42,0.3556
+direction,late,left pulse,-41,0.3587
+direction,late,left pulse,-40,0.3619
+direction,late,left pulse,-39,0.3651
+direction,late,left pulse,-38,0.3683
+direction,late,left pulse,-37,0.3716
+direction,late,left pulse,-36,0.3749
+direction,late,left pulse,-35,0.3781
+direction,late,left pulse,-34,0.3815
+direction,late,left pulse,-33,0.3848
+direction,late,left pulse,-32,0.3881
+direction,late,left pulse,-31,0.3915
+direction,late,left pulse,-30,0.3949
+direction,late,left pulse,-29,0.3983
+direction,late,left pulse,-28,0.4018
+direction,late,left pulse,-27,0.4052
+direction,late,left pulse,-26,0.4087
+direction,late,left pulse,-25,0.4122
+direction,late,left pulse,-24,0.4157
+direction,late,left pulse,-23,0.4192
+direction,late,left pulse,-22,0.4227
+direction,late,left pulse,-21,0.4262
+direction,late,left pulse,-20,0.4298
+direction,late,left pulse,-19,0.4334
+direction,late,left pulse,-18,0.437
+direction,late,left pulse,-17,0.4406
+direction,late,left pulse,-16,0.4442
+direction,late,left pulse,-15,0.4478
+direction,late,left pulse,-14,0.4514
+direction,late,left pulse,-13,0.4551
+direction,late,left pulse,-12,0.4587
+direction,late,left pulse,-11,0.4624
+direction,late,left pulse,-10,0.4661
+direction,late,left pulse,-9,0.4697
+direction,late,left pulse,-8,0.4734
+direction,late,left pulse,-7,0.4771
+direction,late,left pulse,-6,0.4808
+direction,late,left pulse,-5,0.4845
+direction,late,left pulse,-4,0.4882
+direction,late,left pulse,-3,0.4919
+direction,late,left pulse,-2,0.4956
+direction,late,left pulse,-1,0.4993
+direction,late,left pulse,0,0.503
+direction,late,left pulse,1,0.5067
+direction,late,left pulse,2,0.5104
+direction,late,left pulse,3,0.5141
+direction,late,left pulse,4,0.5178
+direction,late,left pulse,5,0.5215
+direction,late,left pulse,6,0.5252
+direction,late,left pulse,7,0.5289
+direction,late,left pulse,8,0.5326
+direction,late,left pulse,9,0.5363
+direction,late,left pulse,10,0.5399
+direction,late,left pulse,11,0.5436
+direction,late,left pulse,12,0.5473
+direction,late,left pulse,13,0.5509
+direction,late,left pulse,14,0.5546
+direction,late,left pulse,15,0.5582
+direction,late,left pulse,16,0.5618
+direction,late,left pulse,17,0.5654
+direction,late,left pulse,18,0.569
+direction,late,left pulse,19,0.5726
+direction,late,left pulse,20,0.5762
+direction,late,left pulse,21,0.5797
+direction,late,left pulse,22,0.5833
+direction,late,left pulse,23,0.5868
+direction,late,left pulse,24,0.5903
+direction,late,left pulse,25,0.5938
+direction,late,left pulse,26,0.5973
+direction,late,left pulse,27,0.6007
+direction,late,left pulse,28,0.6042
+direction,late,left pulse,29,0.6076
+direction,late,left pulse,30,0.611
+direction,late,left pulse,31,0.6144
+direction,late,left pulse,32,0.6178
+direction,late,left pulse,33,0.6211
+direction,late,left pulse,34,0.6244
+direction,late,left pulse,35,0.6277
+direction,late,left pulse,36,0.631
+direction,late,left pulse,37,0.6343
+direction,late,left pulse,38,0.6375
+direction,late,left pulse,39,0.6407
+direction,late,left pulse,40,0.6439
+direction,late,left pulse,41,0.6471
+direction,late,left pulse,42,0.6502
+direction,late,left pulse,43,0.6534
+direction,late,left pulse,44,0.6565
+direction,late,left pulse,45,0.6595
+direction,late,left pulse,46,0.6626
+direction,late,left pulse,47,0.6656
+direction,late,left pulse,48,0.6686
+direction,late,left pulse,49,0.6716
+direction,late,left pulse,50,0.6745
+direction,late,left pulse,51,0.6774
+direction,late,left pulse,52,0.6803
+direction,late,left pulse,53,0.6832
+direction,late,left pulse,54,0.686
+direction,late,left pulse,55,0.6888
+direction,late,left pulse,56,0.6916
+direction,late,left pulse,57,0.6943
+direction,late,left pulse,58,0.6971
+direction,late,left pulse,59,0.6998
+direction,late,left pulse,60,0.7024
+direction,late,left pulse,61,0.7051
+direction,late,left pulse,62,0.7077
+direction,late,left pulse,63,0.7103
+direction,late,left pulse,64,0.7128
+direction,late,left pulse,65,0.7154
+direction,late,left pulse,66,0.7179
+direction,late,left pulse,67,0.7204
+direction,late,left pulse,68,0.7228
+direction,late,left pulse,69,0.7252
+direction,late,left pulse,70,0.7276
+direction,late,left pulse,71,0.73
+direction,late,left pulse,72,0.7323
+direction,late,left pulse,73,0.7346
+direction,late,left pulse,74,0.7369
+direction,late,left pulse,75,0.7391
+direction,late,left pulse,76,0.7414
+direction,late,left pulse,77,0.7436
+direction,late,left pulse,78,0.7457
+direction,late,left pulse,79,0.7479
+direction,late,left pulse,80,0.75
+direction,late,left pulse,81,0.7521
+direction,late,left pulse,82,0.7541
+direction,late,left pulse,83,0.7561
+direction,late,left pulse,84,0.7582
+direction,late,left pulse,85,0.7601
+direction,late,left pulse,86,0.7621
+direction,late,left pulse,87,0.764
+direction,late,left pulse,88,0.7659
+direction,late,left pulse,89,0.7678
+direction,late,left pulse,90,0.7696
+direction,late,left pulse,91,0.7714
+direction,late,left pulse,92,0.7732
+direction,late,left pulse,93,0.775
+direction,late,left pulse,94,0.7768
+direction,late,left pulse,95,0.7785
+direction,late,left pulse,96,0.7802
+direction,late,left pulse,97,0.7818
+direction,late,left pulse,98,0.7835
+direction,late,left pulse,99,0.7851
+direction,late,left pulse,100,0.7867
+direction,late,right pulse,-100,0.261
+direction,late,right pulse,-99,0.2629
+direction,late,right pulse,-98,0.2648
+direction,late,right pulse,-97,0.2668
+direction,late,right pulse,-96,0.2688
+direction,late,right pulse,-95,0.2708
+direction,late,right pulse,-94,0.2729
+direction,late,right pulse,-93,0.2749
+direction,late,right pulse,-92,0.277
+direction,late,right pulse,-91,0.2791
+direction,late,right pulse,-90,0.2812
+direction,late,right pulse,-89,0.2834
+direction,late,right pulse,-88,0.2855
+direction,late,right pulse,-87,0.2877
+direction,late,right pulse,-86,0.2899
+direction,late,right pulse,-85,0.2922
+direction,late,right pulse,-84,0.2944
+direction,late,right pulse,-83,0.2967
+direction,late,right pulse,-82,0.299
+direction,late,right pulse,-81,0.3013
+direction,late,right pulse,-80,0.3037
+direction,late,right pulse,-79,0.306
+direction,late,right pulse,-78,0.3084
+direction,late,right pulse,-77,0.3108
+direction,late,right pulse,-76,0.3133
+direction,late,right pulse,-75,0.3157
+direction,late,right pulse,-74,0.3182
+direction,late,right pulse,-73,0.3207
+direction,late,right pulse,-72,0.3232
+direction,late,right pulse,-71,0.3257
+direction,late,right pulse,-70,0.3283
+direction,late,right pulse,-69,0.3309
+direction,late,right pulse,-68,0.3335
+direction,late,right pulse,-67,0.3361
+direction,late,right pulse,-66,0.3387
+direction,late,right pulse,-65,0.3414
+direction,late,right pulse,-64,0.344
+direction,late,right pulse,-63,0.3467
+direction,late,right pulse,-62,0.3495
+direction,late,right pulse,-61,0.3522
+direction,late,right pulse,-60,0.3549
+direction,late,right pulse,-59,0.3577
+direction,late,right pulse,-58,0.3605
+direction,late,right pulse,-57,0.3633
+direction,late,right pulse,-56,0.3662
+direction,late,right pulse,-55,0.369
+direction,late,right pulse,-54,0.3719
+direction,late,right pulse,-53,0.3747
+direction,late,right pulse,-52,0.3776
+direction,late,right pulse,-51,0.3806
+direction,late,right pulse,-50,0.3835
+direction,late,right pulse,-49,0.3864
+direction,late,right pulse,-48,0.3894
+direction,late,right pulse,-47,0.3924
+direction,late,right pulse,-46,0.3954
+direction,late,right pulse,-45,0.3984
+direction,late,right pulse,-44,0.4014
+direction,late,right pulse,-43,0.4044
+direction,late,right pulse,-42,0.4075
+direction,late,right pulse,-41,0.4106
+direction,late,right pulse,-40,0.4136
+direction,late,right pulse,-39,0.4167
+direction,late,right pulse,-38,0.4198
+direction,late,right pulse,-37,0.4229
+direction,late,right pulse,-36,0.4261
+direction,late,right pulse,-35,0.4292
+direction,late,right pulse,-34,0.4324
+direction,late,right pulse,-33,0.4355
+direction,late,right pulse,-32,0.4387
+direction,late,right pulse,-31,0.4419
+direction,late,right pulse,-30,0.445
+direction,late,right pulse,-29,0.4482
+direction,late,right pulse,-28,0.4514
+direction,late,right pulse,-27,0.4546
+direction,late,right pulse,-26,0.4579
+direction,late,right pulse,-25,0.4611
+direction,late,right pulse,-24,0.4643
+direction,late,right pulse,-23,0.4676
+direction,late,right pulse,-22,0.4708
+direction,late,right pulse,-21,0.474
+direction,late,right pulse,-20,0.4773
+direction,late,right pulse,-19,0.4805
+direction,late,right pulse,-18,0.4838
+direction,late,right pulse,-17,0.4871
+direction,late,right pulse,-16,0.4903
+direction,late,right pulse,-15,0.4936
+direction,late,right pulse,-14,0.4969
+direction,late,right pulse,-13,0.5001
+direction,late,right pulse,-12,0.5034
+direction,late,right pulse,-11,0.5067
+direction,late,right pulse,-10,0.5099
+direction,late,right pulse,-9,0.5132
+direction,late,right pulse,-8,0.5164
+direction,late,right pulse,-7,0.5197
+direction,late,right pulse,-6,0.523
+direction,late,right pulse,-5,0.5262
+direction,late,right pulse,-4,0.5295
+direction,late,right pulse,-3,0.5327
+direction,late,right pulse,-2,0.536
+direction,late,right pulse,-1,0.5392
+direction,late,right pulse,0,0.5424
+direction,late,right pulse,1,0.5457
+direction,late,right pulse,2,0.5489
+direction,late,right pulse,3,0.5521
+direction,late,right pulse,4,0.5553
+direction,late,right pulse,5,0.5585
+direction,late,right pulse,6,0.5617
+direction,late,right pulse,7,0.5649
+direction,late,right pulse,8,0.568
+direction,late,right pulse,9,0.5712
+direction,late,right pulse,10,0.5743
+direction,late,right pulse,11,0.5775
+direction,late,right pulse,12,0.5806
+direction,late,right pulse,13,0.5837
+direction,late,right pulse,14,0.5868
+direction,late,right pulse,15,0.5899
+direction,late,right pulse,16,0.593
+direction,late,right pulse,17,0.5961
+direction,late,right pulse,18,0.5992
+direction,late,right pulse,19,0.6022
+direction,late,right pulse,20,0.6052
+direction,late,right pulse,21,0.6082
+direction,late,right pulse,22,0.6112
+direction,late,right pulse,23,0.6142
+direction,late,right pulse,24,0.6172
+direction,late,right pulse,25,0.6201
+direction,late,right pulse,26,0.6231
+direction,late,right pulse,27,0.626
+direction,late,right pulse,28,0.6289
+direction,late,right pulse,29,0.6318
+direction,late,right pulse,30,0.6347
+direction,late,right pulse,31,0.6375
+direction,late,right pulse,32,0.6404
+direction,late,right pulse,33,0.6432
+direction,late,right pulse,34,0.646
+direction,late,right pulse,35,0.6488
+direction,late,right pulse,36,0.6515
+direction,late,right pulse,37,0.6543
+direction,late,right pulse,38,0.657
+direction,late,right pulse,39,0.6597
+direction,late,right pulse,40,0.6624
+direction,late,right pulse,41,0.665
+direction,late,right pulse,42,0.6677
+direction,late,right pulse,43,0.6703
+direction,late,right pulse,44,0.6729
+direction,late,right pulse,45,0.6755
+direction,late,right pulse,46,0.6781
+direction,late,right pulse,47,0.6806
+direction,late,right pulse,48,0.6831
+direction,late,right pulse,49,0.6856
+direction,late,right pulse,50,0.6881
+direction,late,right pulse,51,0.6906
+direction,late,right pulse,52,0.693
+direction,late,right pulse,53,0.6954
+direction,late,right pulse,54,0.6978
+direction,late,right pulse,55,0.7002
+direction,late,right pulse,56,0.7025
+direction,late,right pulse,57,0.7049
+direction,late,right pulse,58,0.7072
+direction,late,right pulse,59,0.7095
+direction,late,right pulse,60,0.7117
+direction,late,right pulse,61,0.714
+direction,late,right pulse,62,0.7162
+direction,late,right pulse,63,0.7184
+direction,late,right pulse,64,0.7206
+direction,late,right pulse,65,0.7227
+direction,late,right pulse,66,0.7249
+direction,late,right pulse,67,0.727
+direction,late,right pulse,68,0.7291
+direction,late,right pulse,69,0.7311
+direction,late,right pulse,70,0.7332
+direction,late,right pulse,71,0.7352
+direction,late,right pulse,72,0.7372
+direction,late,right pulse,73,0.7392
+direction,late,right pulse,74,0.7411
+direction,late,right pulse,75,0.7431
+direction,late,right pulse,76,0.745
+direction,late,right pulse,77,0.7469
+direction,late,right pulse,78,0.7488
+direction,late,right pulse,79,0.7506
+direction,late,right pulse,80,0.7524
+direction,late,right pulse,81,0.7543
+direction,late,right pulse,82,0.756
+direction,late,right pulse,83,0.7578
+direction,late,right pulse,84,0.7596
+direction,late,right pulse,85,0.7613
+direction,late,right pulse,86,0.763
+direction,late,right pulse,87,0.7647
+direction,late,right pulse,88,0.7664
+direction,late,right pulse,89,0.768
+direction,late,right pulse,90,0.7696
+direction,late,right pulse,91,0.7712
+direction,late,right pulse,92,0.7728
+direction,late,right pulse,93,0.7744
+direction,late,right pulse,94,0.7759
+direction,late,right pulse,95,0.7775
+direction,late,right pulse,96,0.779
+direction,late,right pulse,97,0.7805
+direction,late,right pulse,98,0.7819
+direction,late,right pulse,99,0.7834
+direction,late,right pulse,100,0.7848
+direction,middle,control,-100,0.1795
+direction,middle,control,-99,0.1799
+direction,middle,control,-98,0.1802
+direction,middle,control,-97,0.1806
+direction,middle,control,-96,0.181
+direction,middle,control,-95,0.1814
+direction,middle,control,-94,0.1819
+direction,middle,control,-93,0.1823
+direction,middle,control,-92,0.1828
+direction,middle,control,-91,0.1833
+direction,middle,control,-90,0.1838
+direction,middle,control,-89,0.1843
+direction,middle,control,-88,0.1849
+direction,middle,control,-87,0.1855
+direction,middle,control,-86,0.1861
+direction,middle,control,-85,0.1867
+direction,middle,control,-84,0.1874
+direction,middle,control,-83,0.188
+direction,middle,control,-82,0.1888
+direction,middle,control,-81,0.1895
+direction,middle,control,-80,0.1903
+direction,middle,control,-79,0.1911
+direction,middle,control,-78,0.1919
+direction,middle,control,-77,0.1928
+direction,middle,control,-76,0.1937
+direction,middle,control,-75,0.1947
+direction,middle,control,-74,0.1957
+direction,middle,control,-73,0.1967
+direction,middle,control,-72,0.1978
+direction,middle,control,-71,0.1989
+direction,middle,control,-70,0.2001
+direction,middle,control,-69,0.2013
+direction,middle,control,-68,0.2026
+direction,middle,control,-67,0.2039
+direction,middle,control,-66,0.2053
+direction,middle,control,-65,0.2067
+direction,middle,control,-64,0.2082
+direction,middle,control,-63,0.2097
+direction,middle,control,-62,0.2114
+direction,middle,control,-61,0.213
+direction,middle,control,-60,0.2148
+direction,middle,control,-59,0.2166
+direction,middle,control,-58,0.2184
+direction,middle,control,-57,0.2204
+direction,middle,control,-56,0.2224
+direction,middle,control,-55,0.2245
+direction,middle,control,-54,0.2267
+direction,middle,control,-53,0.2289
+direction,middle,control,-52,0.2313
+direction,middle,control,-51,0.2337
+direction,middle,control,-50,0.2362
+direction,middle,control,-49,0.2388
+direction,middle,control,-48,0.2415
+direction,middle,control,-47,0.2443
+direction,middle,control,-46,0.2472
+direction,middle,control,-45,0.2502
+direction,middle,control,-44,0.2533
+direction,middle,control,-43,0.2565
+direction,middle,control,-42,0.2598
+direction,middle,control,-41,0.2633
+direction,middle,control,-40,0.2668
+direction,middle,control,-39,0.2704
+direction,middle,control,-38,0.2742
+direction,middle,control,-37,0.2781
+direction,middle,control,-36,0.2821
+direction,middle,control,-35,0.2862
+direction,middle,control,-34,0.2905
+direction,middle,control,-33,0.2949
+direction,middle,control,-32,0.2994
+direction,middle,control,-31,0.304
+direction,middle,control,-30,0.3087
+direction,middle,control,-29,0.3136
+direction,middle,control,-28,0.3186
+direction,middle,control,-27,0.3238
+direction,middle,control,-26,0.329
+direction,middle,control,-25,0.3344
+direction,middle,control,-24,0.34
+direction,middle,control,-23,0.3456
+direction,middle,control,-22,0.3514
+direction,middle,control,-21,0.3573
+direction,middle,control,-20,0.3633
+direction,middle,control,-19,0.3695
+direction,middle,control,-18,0.3758
+direction,middle,control,-17,0.3821
+direction,middle,control,-16,0.3886
+direction,middle,control,-15,0.3953
+direction,middle,control,-14,0.402
+direction,middle,control,-13,0.4088
+direction,middle,control,-12,0.4157
+direction,middle,control,-11,0.4227
+direction,middle,control,-10,0.4298
+direction,middle,control,-9,0.437
+direction,middle,control,-8,0.4442
+direction,middle,control,-7,0.4516
+direction,middle,control,-6,0.459
+direction,middle,control,-5,0.4664
+direction,middle,control,-4,0.4739
+direction,middle,control,-3,0.4815
+direction,middle,control,-2,0.4891
+direction,middle,control,-1,0.4967
+direction,middle,control,0,0.5043
+direction,middle,control,1,0.512
+direction,middle,control,2,0.5197
+direction,middle,control,3,0.5274
+direction,middle,control,4,0.5351
+direction,middle,control,5,0.5427
+direction,middle,control,6,0.5504
+direction,middle,control,7,0.558
+direction,middle,control,8,0.5656
+direction,middle,control,9,0.5732
+direction,middle,control,10,0.5807
+direction,middle,control,11,0.5882
+direction,middle,control,12,0.5956
+direction,middle,control,13,0.6029
+direction,middle,control,14,0.6102
+direction,middle,control,15,0.6174
+direction,middle,control,16,0.6245
+direction,middle,control,17,0.6315
+direction,middle,control,18,0.6384
+direction,middle,control,19,0.6452
+direction,middle,control,20,0.652
+direction,middle,control,21,0.6586
+direction,middle,control,22,0.6651
+direction,middle,control,23,0.6715
+direction,middle,control,24,0.6778
+direction,middle,control,25,0.6839
+direction,middle,control,26,0.69
+direction,middle,control,27,0.6959
+direction,middle,control,28,0.7017
+direction,middle,control,29,0.7074
+direction,middle,control,30,0.7129
+direction,middle,control,31,0.7183
+direction,middle,control,32,0.7236
+direction,middle,control,33,0.7288
+direction,middle,control,34,0.7338
+direction,middle,control,35,0.7387
+direction,middle,control,36,0.7435
+direction,middle,control,37,0.7481
+direction,middle,control,38,0.7526
+direction,middle,control,39,0.757
+direction,middle,control,40,0.7613
+direction,middle,control,41,0.7654
+direction,middle,control,42,0.7694
+direction,middle,control,43,0.7733
+direction,middle,control,44,0.7771
+direction,middle,control,45,0.7808
+direction,middle,control,46,0.7843
+direction,middle,control,47,0.7878
+direction,middle,control,48,0.7911
+direction,middle,control,49,0.7943
+direction,middle,control,50,0.7974
+direction,middle,control,51,0.8004
+direction,middle,control,52,0.8034
+direction,middle,control,53,0.8062
+direction,middle,control,54,0.8089
+direction,middle,control,55,0.8115
+direction,middle,control,56,0.814
+direction,middle,control,57,0.8165
+direction,middle,control,58,0.8188
+direction,middle,control,59,0.8211
+direction,middle,control,60,0.8233
+direction,middle,control,61,0.8254
+direction,middle,control,62,0.8274
+direction,middle,control,63,0.8293
+direction,middle,control,64,0.8312
+direction,middle,control,65,0.833
+direction,middle,control,66,0.8348
+direction,middle,control,67,0.8365
+direction,middle,control,68,0.8381
+direction,middle,control,69,0.8396
+direction,middle,control,70,0.8411
+direction,middle,control,71,0.8426
+direction,middle,control,72,0.8439
+direction,middle,control,73,0.8453
+direction,middle,control,74,0.8465
+direction,middle,control,75,0.8478
+direction,middle,control,76,0.8489
+direction,middle,control,77,0.8501
+direction,middle,control,78,0.8512
+direction,middle,control,79,0.8522
+direction,middle,control,80,0.8532
+direction,middle,control,81,0.8542
+direction,middle,control,82,0.8551
+direction,middle,control,83,0.856
+direction,middle,control,84,0.8568
+direction,middle,control,85,0.8576
+direction,middle,control,86,0.8584
+direction,middle,control,87,0.8592
+direction,middle,control,88,0.8599
+direction,middle,control,89,0.8606
+direction,middle,control,90,0.8612
+direction,middle,control,91,0.8619
+direction,middle,control,92,0.8625
+direction,middle,control,93,0.8631
+direction,middle,control,94,0.8636
+direction,middle,control,95,0.8642
+direction,middle,control,96,0.8647
+direction,middle,control,97,0.8652
+direction,middle,control,98,0.8656
+direction,middle,control,99,0.8661
+direction,middle,control,100,0.8665
+direction,middle,left pulse,-100,0.1864
+direction,middle,left pulse,-99,0.1869
+direction,middle,left pulse,-98,0.1875
+direction,middle,left pulse,-97,0.188
+direction,middle,left pulse,-96,0.1886
+direction,middle,left pulse,-95,0.1892
+direction,middle,left pulse,-94,0.1899
+direction,middle,left pulse,-93,0.1905
+direction,middle,left pulse,-92,0.1912
+direction,middle,left pulse,-91,0.1919
+direction,middle,left pulse,-90,0.1926
+direction,middle,left pulse,-89,0.1934
+direction,middle,left pulse,-88,0.1942
+direction,middle,left pulse,-87,0.195
+direction,middle,left pulse,-86,0.1958
+direction,middle,left pulse,-85,0.1967
+direction,middle,left pulse,-84,0.1976
+direction,middle,left pulse,-83,0.1985
+direction,middle,left pulse,-82,0.1994
+direction,middle,left pulse,-81,0.2004
+direction,middle,left pulse,-80,0.2014
+direction,middle,left pulse,-79,0.2025
+direction,middle,left pulse,-78,0.2036
+direction,middle,left pulse,-77,0.2047
+direction,middle,left pulse,-76,0.2058
+direction,middle,left pulse,-75,0.207
+direction,middle,left pulse,-74,0.2083
+direction,middle,left pulse,-73,0.2096
+direction,middle,left pulse,-72,0.2109
+direction,middle,left pulse,-71,0.2122
+direction,middle,left pulse,-70,0.2137
+direction,middle,left pulse,-69,0.2151
+direction,middle,left pulse,-68,0.2166
+direction,middle,left pulse,-67,0.2182
+direction,middle,left pulse,-66,0.2198
+direction,middle,left pulse,-65,0.2214
+direction,middle,left pulse,-64,0.2231
+direction,middle,left pulse,-63,0.2249
+direction,middle,left pulse,-62,0.2267
+direction,middle,left pulse,-61,0.2285
+direction,middle,left pulse,-60,0.2305
+direction,middle,left pulse,-59,0.2324
+direction,middle,left pulse,-58,0.2345
+direction,middle,left pulse,-57,0.2366
+direction,middle,left pulse,-56,0.2387
+direction,middle,left pulse,-55,0.241
+direction,middle,left pulse,-54,0.2433
+direction,middle,left pulse,-53,0.2456
+direction,middle,left pulse,-52,0.2481
+direction,middle,left pulse,-51,0.2506
+direction,middle,left pulse,-50,0.2531
+direction,middle,left pulse,-49,0.2558
+direction,middle,left pulse,-48,0.2585
+direction,middle,left pulse,-47,0.2613
+direction,middle,left pulse,-46,0.2641
+direction,middle,left pulse,-45,0.2671
+direction,middle,left pulse,-44,0.2701
+direction,middle,left pulse,-43,0.2732
+direction,middle,left pulse,-42,0.2764
+direction,middle,left pulse,-41,0.2797
+direction,middle,left pulse,-40,0.283
+direction,middle,left pulse,-39,0.2864
+direction,middle,left pulse,-38,0.29
+direction,middle,left pulse,-37,0.2936
+direction,middle,left pulse,-36,0.2973
+direction,middle,left pulse,-35,0.301
+direction,middle,left pulse,-34,0.3049
+direction,middle,left pulse,-33,0.3088
+direction,middle,left pulse,-32,0.3129
+direction,middle,left pulse,-31,0.317
+direction,middle,left pulse,-30,0.3212
+direction,middle,left pulse,-29,0.3255
+direction,middle,left pulse,-28,0.3299
+direction,middle,left pulse,-27,0.3344
+direction,middle,left pulse,-26,0.339
+direction,middle,left pulse,-25,0.3436
+direction,middle,left pulse,-24,0.3484
+direction,middle,left pulse,-23,0.3532
+direction,middle,left pulse,-22,0.3581
+direction,middle,left pulse,-21,0.3631
+direction,middle,left pulse,-20,0.3682
+direction,middle,left pulse,-19,0.3734
+direction,middle,left pulse,-18,0.3786
+direction,middle,left pulse,-17,0.3839
+direction,middle,left pulse,-16,0.3893
+direction,middle,left pulse,-15,0.3948
+direction,middle,left pulse,-14,0.4004
+direction,middle,left pulse,-13,0.406
+direction,middle,left pulse,-12,0.4117
+direction,middle,left pulse,-11,0.4174
+direction,middle,left pulse,-10,0.4233
+direction,middle,left pulse,-9,0.4291
+direction,middle,left pulse,-8,0.4351
+direction,middle,left pulse,-7,0.4411
+direction,middle,left pulse,-6,0.4471
+direction,middle,left pulse,-5,0.4532
+direction,middle,left pulse,-4,0.4593
+direction,middle,left pulse,-3,0.4655
+direction,middle,left pulse,-2,0.4717
+direction,middle,left pulse,-1,0.4779
+direction,middle,left pulse,0,0.4842
+direction,middle,left pulse,1,0.4905
+direction,middle,left pulse,2,0.4968
+direction,middle,left pulse,3,0.5032
+direction,middle,left pulse,4,0.5095
+direction,middle,left pulse,5,0.5159
+direction,middle,left pulse,6,0.5223
+direction,middle,left pulse,7,0.5286
+direction,middle,left pulse,8,0.535
+direction,middle,left pulse,9,0.5414
+direction,middle,left pulse,10,0.5477
+direction,middle,left pulse,11,0.554
+direction,middle,left pulse,12,0.5603
+direction,middle,left pulse,13,0.5666
+direction,middle,left pulse,14,0.5729
+direction,middle,left pulse,15,0.5791
+direction,middle,left pulse,16,0.5853
+direction,middle,left pulse,17,0.5915
+direction,middle,left pulse,18,0.5976
+direction,middle,left pulse,19,0.6037
+direction,middle,left pulse,20,0.6097
+direction,middle,left pulse,21,0.6156
+direction,middle,left pulse,22,0.6215
+direction,middle,left pulse,23,0.6274
+direction,middle,left pulse,24,0.6332
+direction,middle,left pulse,25,0.6389
+direction,middle,left pulse,26,0.6446
+direction,middle,left pulse,27,0.6502
+direction,middle,left pulse,28,0.6557
+direction,middle,left pulse,29,0.6611
+direction,middle,left pulse,30,0.6665
+direction,middle,left pulse,31,0.6718
+direction,middle,left pulse,32,0.677
+direction,middle,left pulse,33,0.6821
+direction,middle,left pulse,34,0.6872
+direction,middle,left pulse,35,0.6921
+direction,middle,left pulse,36,0.697
+direction,middle,left pulse,37,0.7018
+direction,middle,left pulse,38,0.7065
+direction,middle,left pulse,39,0.7111
+direction,middle,left pulse,40,0.7156
+direction,middle,left pulse,41,0.7201
+direction,middle,left pulse,42,0.7244
+direction,middle,left pulse,43,0.7287
+direction,middle,left pulse,44,0.7329
+direction,middle,left pulse,45,0.737
+direction,middle,left pulse,46,0.741
+direction,middle,left pulse,47,0.7449
+direction,middle,left pulse,48,0.7487
+direction,middle,left pulse,49,0.7524
+direction,middle,left pulse,50,0.7561
+direction,middle,left pulse,51,0.7596
+direction,middle,left pulse,52,0.7631
+direction,middle,left pulse,53,0.7665
+direction,middle,left pulse,54,0.7698
+direction,middle,left pulse,55,0.7731
+direction,middle,left pulse,56,0.7762
+direction,middle,left pulse,57,0.7793
+direction,middle,left pulse,58,0.7823
+direction,middle,left pulse,59,0.7852
+direction,middle,left pulse,60,0.788
+direction,middle,left pulse,61,0.7908
+direction,middle,left pulse,62,0.7934
+direction,middle,left pulse,63,0.7961
+direction,middle,left pulse,64,0.7986
+direction,middle,left pulse,65,0.8011
+direction,middle,left pulse,66,0.8035
+direction,middle,left pulse,67,0.8058
+direction,middle,left pulse,68,0.8081
+direction,middle,left pulse,69,0.8103
+direction,middle,left pulse,70,0.8124
+direction,middle,left pulse,71,0.8145
+direction,middle,left pulse,72,0.8165
+direction,middle,left pulse,73,0.8184
+direction,middle,left pulse,74,0.8203
+direction,middle,left pulse,75,0.8222
+direction,middle,left pulse,76,0.824
+direction,middle,left pulse,77,0.8257
+direction,middle,left pulse,78,0.8274
+direction,middle,left pulse,79,0.829
+direction,middle,left pulse,80,0.8306
+direction,middle,left pulse,81,0.8321
+direction,middle,left pulse,82,0.8336
+direction,middle,left pulse,83,0.835
+direction,middle,left pulse,84,0.8364
+direction,middle,left pulse,85,0.8377
+direction,middle,left pulse,86,0.839
+direction,middle,left pulse,87,0.8403
+direction,middle,left pulse,88,0.8415
+direction,middle,left pulse,89,0.8427
+direction,middle,left pulse,90,0.8438
+direction,middle,left pulse,91,0.8449
+direction,middle,left pulse,92,0.846
+direction,middle,left pulse,93,0.847
+direction,middle,left pulse,94,0.848
+direction,middle,left pulse,95,0.849
+direction,middle,left pulse,96,0.8499
+direction,middle,left pulse,97,0.8509
+direction,middle,left pulse,98,0.8517
+direction,middle,left pulse,99,0.8526
+direction,middle,left pulse,100,0.8534
+direction,middle,right pulse,-100,0.1767
+direction,middle,right pulse,-99,0.1769
+direction,middle,right pulse,-98,0.1772
+direction,middle,right pulse,-97,0.1775
+direction,middle,right pulse,-96,0.1778
+direction,middle,right pulse,-95,0.1781
+direction,middle,right pulse,-94,0.1785
+direction,middle,right pulse,-93,0.1788
+direction,middle,right pulse,-92,0.1792
+direction,middle,right pulse,-91,0.1796
+direction,middle,right pulse,-90,0.18
+direction,middle,right pulse,-89,0.1805
+direction,middle,right pulse,-88,0.1809
+direction,middle,right pulse,-87,0.1814
+direction,middle,right pulse,-86,0.1819
+direction,middle,right pulse,-85,0.1825
+direction,middle,right pulse,-84,0.183
+direction,middle,right pulse,-83,0.1836
+direction,middle,right pulse,-82,0.1843
+direction,middle,right pulse,-81,0.1849
+direction,middle,right pulse,-80,0.1856
+direction,middle,right pulse,-79,0.1863
+direction,middle,right pulse,-78,0.1871
+direction,middle,right pulse,-77,0.1879
+direction,middle,right pulse,-76,0.1887
+direction,middle,right pulse,-75,0.1896
+direction,middle,right pulse,-74,0.1905
+direction,middle,right pulse,-73,0.1915
+direction,middle,right pulse,-72,0.1925
+direction,middle,right pulse,-71,0.1936
+direction,middle,right pulse,-70,0.1947
+direction,middle,right pulse,-69,0.1959
+direction,middle,right pulse,-68,0.1971
+direction,middle,right pulse,-67,0.1984
+direction,middle,right pulse,-66,0.1998
+direction,middle,right pulse,-65,0.2012
+direction,middle,right pulse,-64,0.2027
+direction,middle,right pulse,-63,0.2042
+direction,middle,right pulse,-62,0.2059
+direction,middle,right pulse,-61,0.2076
+direction,middle,right pulse,-60,0.2094
+direction,middle,right pulse,-59,0.2113
+direction,middle,right pulse,-58,0.2132
+direction,middle,right pulse,-57,0.2153
+direction,middle,right pulse,-56,0.2174
+direction,middle,right pulse,-55,0.2197
+direction,middle,right pulse,-54,0.222
+direction,middle,right pulse,-53,0.2245
+direction,middle,right pulse,-52,0.2271
+direction,middle,right pulse,-51,0.2298
+direction,middle,right pulse,-50,0.2325
+direction,middle,right pulse,-49,0.2355
+direction,middle,right pulse,-48,0.2385
+direction,middle,right pulse,-47,0.2417
+direction,middle,right pulse,-46,0.245
+direction,middle,right pulse,-45,0.2484
+direction,middle,right pulse,-44,0.252
+direction,middle,right pulse,-43,0.2558
+direction,middle,right pulse,-42,0.2596
+direction,middle,right pulse,-41,0.2637
+direction,middle,right pulse,-40,0.2678
+direction,middle,right pulse,-39,0.2722
+direction,middle,right pulse,-38,0.2767
+direction,middle,right pulse,-37,0.2814
+direction,middle,right pulse,-36,0.2862
+direction,middle,right pulse,-35,0.2912
+direction,middle,right pulse,-34,0.2964
+direction,middle,right pulse,-33,0.3018
+direction,middle,right pulse,-32,0.3073
+direction,middle,right pulse,-31,0.313
+direction,middle,right pulse,-30,0.3189
+direction,middle,right pulse,-29,0.325
+direction,middle,right pulse,-28,0.3312
+direction,middle,right pulse,-27,0.3376
+direction,middle,right pulse,-26,0.3442
+direction,middle,right pulse,-25,0.351
+direction,middle,right pulse,-24,0.3579
+direction,middle,right pulse,-23,0.3651
+direction,middle,right pulse,-22,0.3724
+direction,middle,right pulse,-21,0.3798
+direction,middle,right pulse,-20,0.3874
+direction,middle,right pulse,-19,0.3952
+direction,middle,right pulse,-18,0.4031
+direction,middle,right pulse,-17,0.4111
+direction,middle,right pulse,-16,0.4193
+direction,middle,right pulse,-15,0.4276
+direction,middle,right pulse,-14,0.436
+direction,middle,right pulse,-13,0.4445
+direction,middle,right pulse,-12,0.4532
+direction,middle,right pulse,-11,0.4619
+direction,middle,right pulse,-10,0.4707
+direction,middle,right pulse,-9,0.4795
+direction,middle,right pulse,-8,0.4885
+direction,middle,right pulse,-7,0.4974
+direction,middle,right pulse,-6,0.5064
+direction,middle,right pulse,-5,0.5155
+direction,middle,right pulse,-4,0.5245
+direction,middle,right pulse,-3,0.5335
+direction,middle,right pulse,-2,0.5426
+direction,middle,right pulse,-1,0.5516
+direction,middle,right pulse,0,0.5605
+direction,middle,right pulse,1,0.5695
+direction,middle,right pulse,2,0.5783
+direction,middle,right pulse,3,0.5871
+direction,middle,right pulse,4,0.5958
+direction,middle,right pulse,5,0.6044
+direction,middle,right pulse,6,0.6129
+direction,middle,right pulse,7,0.6214
+direction,middle,right pulse,8,0.6296
+direction,middle,right pulse,9,0.6378
+direction,middle,right pulse,10,0.6458
+direction,middle,right pulse,11,0.6537
+direction,middle,right pulse,12,0.6615
+direction,middle,right pulse,13,0.6691
+direction,middle,right pulse,14,0.6765
+direction,middle,right pulse,15,0.6837
+direction,middle,right pulse,16,0.6908
+direction,middle,right pulse,17,0.6978
+direction,middle,right pulse,18,0.7045
+direction,middle,right pulse,19,0.7111
+direction,middle,right pulse,20,0.7175
+direction,middle,right pulse,21,0.7237
+direction,middle,right pulse,22,0.7298
+direction,middle,right pulse,23,0.7357
+direction,middle,right pulse,24,0.7413
+direction,middle,right pulse,25,0.7469
+direction,middle,right pulse,26,0.7522
+direction,middle,right pulse,27,0.7574
+direction,middle,right pulse,28,0.7624
+direction,middle,right pulse,29,0.7672
+direction,middle,right pulse,30,0.7718
+direction,middle,right pulse,31,0.7763
+direction,middle,right pulse,32,0.7806
+direction,middle,right pulse,33,0.7848
+direction,middle,right pulse,34,0.7888
+direction,middle,right pulse,35,0.7927
+direction,middle,right pulse,36,0.7964
+direction,middle,right pulse,37,0.8
+direction,middle,right pulse,38,0.8034
+direction,middle,right pulse,39,0.8067
+direction,middle,right pulse,40,0.8098
+direction,middle,right pulse,41,0.8129
+direction,middle,right pulse,42,0.8158
+direction,middle,right pulse,43,0.8186
+direction,middle,right pulse,44,0.8212
+direction,middle,right pulse,45,0.8238
+direction,middle,right pulse,46,0.8262
+direction,middle,right pulse,47,0.8286
+direction,middle,right pulse,48,0.8308
+direction,middle,right pulse,49,0.833
+direction,middle,right pulse,50,0.835
+direction,middle,right pulse,51,0.837
+direction,middle,right pulse,52,0.8388
+direction,middle,right pulse,53,0.8406
+direction,middle,right pulse,54,0.8423
+direction,middle,right pulse,55,0.8439
+direction,middle,right pulse,56,0.8455
+direction,middle,right pulse,57,0.847
+direction,middle,right pulse,58,0.8484
+direction,middle,right pulse,59,0.8497
+direction,middle,right pulse,60,0.851
+direction,middle,right pulse,61,0.8523
+direction,middle,right pulse,62,0.8534
+direction,middle,right pulse,63,0.8545
+direction,middle,right pulse,64,0.8556
+direction,middle,right pulse,65,0.8566
+direction,middle,right pulse,66,0.8576
+direction,middle,right pulse,67,0.8585
+direction,middle,right pulse,68,0.8594
+direction,middle,right pulse,69,0.8602
+direction,middle,right pulse,70,0.861
+direction,middle,right pulse,71,0.8618
+direction,middle,right pulse,72,0.8625
+direction,middle,right pulse,73,0.8632
+direction,middle,right pulse,74,0.8638
+direction,middle,right pulse,75,0.8644
+direction,middle,right pulse,76,0.865
+direction,middle,right pulse,77,0.8656
+direction,middle,right pulse,78,0.8661
+direction,middle,right pulse,79,0.8666
+direction,middle,right pulse,80,0.8671
+direction,middle,right pulse,81,0.8676
+direction,middle,right pulse,82,0.868
+direction,middle,right pulse,83,0.8684
+direction,middle,right pulse,84,0.8688
+direction,middle,right pulse,85,0.8692
+direction,middle,right pulse,86,0.8696
+direction,middle,right pulse,87,0.8699
+direction,middle,right pulse,88,0.8702
+direction,middle,right pulse,89,0.8705
+direction,middle,right pulse,90,0.8708
+direction,middle,right pulse,91,0.8711
+direction,middle,right pulse,92,0.8714
+direction,middle,right pulse,93,0.8716
+direction,middle,right pulse,94,0.8719
+direction,middle,right pulse,95,0.8721
+direction,middle,right pulse,96,0.8723
+direction,middle,right pulse,97,0.8725
+direction,middle,right pulse,98,0.8727
+direction,middle,right pulse,99,0.8729
+direction,middle,right pulse,100,0.8731
