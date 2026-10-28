@@ -19,6 +19,9 @@ fits (<mouse>_<variant>_control.pkl), the common model from the first --fits_dir
 control-trial comparison scores E-generated data as E.
 --strategy --exact (amendment 13, item 5): the paper-exact Stine et al. 2020 models instead, integration (DDMx, first
 --fits_dir) and extrema detection (ESx, second), on nominal coherence input.
+--strategy --cross (amendment 14): the cross-family cells of the full recovery matrix over C, E, DDMx and ESx (each of
+C/E fitted to DDMx/ESx data and vice versa; 4 --fits_dir: C, E, DDMx, ESx). Generator labels and seeds are those of the
+pairwise runs, so the same synthetic datasets fill the within-family cells (F1a and --exact outputs).
 
 Usage:
     python -m scripts.ddm.model_recovery --list
@@ -65,8 +68,11 @@ def strategy_models(extrema_samples: bool = False, exact: bool = False) -> list[
     return EXACT_MODELS if exact else [COMMON, EXTREMA_SAMPLES] if extrema_samples else STRATEGY_MODELS
 
 
-def build_grid(inputs: dict, strategy: bool = False, extrema_samples: bool = False, exact: bool = False) -> list[dict]:
+def build_grid(inputs: dict, strategy: bool = False, extrema_samples: bool = False, exact: bool = False, cross: bool = False) -> list[dict]:
     mice = sorted(np.unique(inputs["subject_id"]))
+    if cross:
+        fams = [STRATEGY_MODELS, EXACT_MODELS]
+        return [{"mouse": m, "generator": g, "candidate": c, "replicate": r} for r in range(N_REPLICATES) for i, f in enumerate(fams) for g in f for c in fams[1 - i] for m in mice]
     models = strategy_models(extrema_samples, exact) if strategy else MODELS
     return [{"mouse": m, "generator": g, "candidate": c, "replicate": r} for r in range(N_REPLICATES) for g in models for c in models for m in mice]
 
@@ -113,7 +119,8 @@ def strategy_params(fits_dirs: list[Path], mouse: str, variant: str, fixed_guess
     Exact models: DDMx from the first folder, ESx from the second."""
     exact = variant in EXACT_MODELS
     stem = NOMINAL_VARIANT if exact else COMMON if variant == EXTREMA_SAMPLES else variant
-    path = fits_dirs[0 if variant in (COMMON, "DDMx") else 1] / f"{mouse}_{stem}_control.pkl"
+    folder = {COMMON: 0, EXTREMA: 1, "DDMx": 2, "ESx": 3}[variant] if len(fits_dirs) == 4 else 0 if variant in (COMMON, "DDMx") else 1
+    path = fits_dirs[folder] / f"{mouse}_{stem}_control.pkl"
     with open(path, "rb") as f:
         r = pickle.load(f)
     if bool(r.get("extrema_samples", False)) != (variant in (EXTREMA_SAMPLES, "ESx")):
@@ -141,16 +148,18 @@ def run_job(inputs: dict, job: dict, fits_dirs: list[Path], out_dir: Path, n_rep
         rows = rows[inputs["sched_pulse_type"][rows] == 0]
     rig = str(np.unique(inputs["data_source"][rows])[0])
     real, stimulus = select(inputs, rows, nominal=job["generator"] in EXACT_MODELS)
+    # each model sees its own input of the same trials: motion energy (C, E) or nominal coherence (DDMx, ESx)
+    fit_input = stimulus if (job["candidate"] in EXACT_MODELS) == (job["generator"] in EXACT_MODELS) else select(inputs, rows, nominal=job["candidate"] in EXACT_MODELS)[1]
     true_params = strategy_params(fits_dirs, job["mouse"], job["generator"], fixed_guess_bias) if strategy else generating_params(fits_dirs, job["mouse"], job["generator"], fixed_guess_bias)
 
     seed = zlib.crc32(f"{job['mouse']}|{job['generator']}|{job['replicate']}".encode())
     generator = make_model(job["generator"], rig, fixed_guess_bias, strategy, responded_data)
     train = synthesize(generator, true_params, stimulus, real["condition"], seed)
     test = synthesize(generator, true_params, stimulus, real["condition"], seed + 1)
-    train_stimulus, test_stimulus = stimulus, stimulus
+    train_stimulus, test_stimulus = fit_input, fit_input
     if responded_data:
-        train, train_stimulus = responded(train, stimulus)
-        test, test_stimulus = responded(test, stimulus)
+        train, train_stimulus = responded(train, fit_input)
+        test, test_stimulus = responded(test, fit_input)
 
     model = make_model(job["candidate"], rig, fixed_guess_bias, strategy, responded_data)
     t0 = time.time()
@@ -213,6 +222,7 @@ if __name__ == "__main__":
     parser.add_argument("--model_set", choices=list(MODEL_SETS), default="sv", help="with --strategy: sv (default) or nosv (amendment 12; implies --fixed_guess_bias)")
     parser.add_argument("--extrema_samples", action="store_true", help="with --strategy: discrete-sample extrema detection (ES) instead of E; second --fits_dir holds its fits")
     parser.add_argument("--strategy", action="store_true", help="common model vs E on control trials (fits_dir: common-model folder, then E folder)")
+    parser.add_argument("--cross", action="store_true", help="with --strategy: cross-family cells of the C/E/DDMx/ESx matrix (amendment 14); fits_dir: C, E, DDMx, ESx folders")
     parser.add_argument("--exact", action="store_true", help="with --strategy: paper-exact DDMx vs ESx (amendment 13); fits_dir: DDMx folder, then ESx folder")
     args = parser.parse_args()
 
@@ -223,8 +233,8 @@ if __name__ == "__main__":
     inputs = load_inputs(processed / args.inputs)
     if args.responded_only:
         inputs = responded_only(inputs)
-    grid = build_grid(inputs, args.strategy, args.extrema_samples, args.exact)
-    models = strategy_models(args.extrema_samples, args.exact) if args.strategy else MODELS
+    grid = build_grid(inputs, args.strategy, args.extrema_samples, args.exact, args.cross)
+    models = STRATEGY_MODELS + EXACT_MODELS if args.cross else strategy_models(args.extrema_samples, args.exact) if args.strategy else MODELS
     if args.list:
         print(f"{len(grid)} jobs: {len(np.unique(inputs['subject_id']))} mice x {len(models)} generators x {len(models)} candidates x {N_REPLICATES} replicates")
         print("models:", models)

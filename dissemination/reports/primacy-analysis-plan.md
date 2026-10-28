@@ -727,3 +727,22 @@ parameter at a bound set for another input scale), DDMx is refitted with drift_g
 All DDMx-dependent outputs (fits, pulse predictions at the three leads, the 80 recovery jobs) are rerun into new
 folders; the first results are kept and reported as superseded. DDMx's non-decision time at its lower bound 0 in
 13/60 fits is a natural bound (fast responses without a guess component), reported, not changed.
+
+---
+
+## Amendment 14 (2026-10-28, before any cross-family fit): full recovery matrix over C, E, DDMx, ESx
+
+**Requested by V. Thakur, 2026-10-28** ("humor me and do all comparison"), after the pairwise recoveries (F1a, ES, paper-exact)
+had been seen. Descriptive model recovery, not a statistical test; conclusion 1 (D006/D007) does not depend on it.
+Candidates: C (common model L0U0V1Z0G1), E (L1U0V1Z0G1, leak 20-200/s, capped fits), DDMx and ESx (amendment 13, DDMx
+with the gain-bound addendum). ES (amendment 10) is left out: the author judges its assumptions wrong (2026-10-28).
+
+1. **Data:** for each generator, mouse and replicate the synthetic control datasets of the pairwise runs (same generator
+   labels, seeds and generating fits), responded trials only, 50% cap; each model fitted with its own input on the same
+   trials (motion energy for C/E, nominal coherence for DDMx/ESx).
+2. **New fits:** the 160 cross-family cells (C, E fitted to DDMx/ESx data and DDMx, ESx fitted to C/E data); the
+   within-family cells come from recovery_strategy_resp_cap (C/E) and recovery_exact2_resp (DDMx/ESx).
+3. **Winner rule:** per dataset, the candidate with the lowest held-out NLL wins; if the runner-up is within 10, the
+   dataset counts as "not distinguished".
+4. **Reported:** confusion matrix P(winner | generator) with the not-distinguished share, and the inversion matrix
+   P(generator | winner) under equal prior weight on the four generators; per-generator counts out of 20.
