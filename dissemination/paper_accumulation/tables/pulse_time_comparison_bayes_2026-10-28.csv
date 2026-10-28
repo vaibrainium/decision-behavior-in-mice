@@ -1,0 +1,7 @@
+contrast,n_mice,mean_logodds,hdi_lo,hdi_hi,p_gt_0
+early - middle,10,0.1439,-0.0808,0.3714,0.8945
+early - late,6,0.0458,-0.2762,0.3738,0.6135
+middle - late,6,0.0379,-0.3049,0.3729,0.5762
+early (effect),10,0.4741,0.3123,0.6327,1.0
+middle (effect),10,0.3301,0.1753,0.4898,1.0
+late (effect),6,0.1718,-0.0653,0.3967,0.9215

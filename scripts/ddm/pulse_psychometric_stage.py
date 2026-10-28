@@ -43,7 +43,8 @@ def load_trials() -> pd.DataFrame:
     sym = pd.read_csv(PROCESSED / TRIAL_TABLE, low_memory=False, usecols=["trial_id", "signs_scheduled_symmetric"]).set_index("trial_id").signs_scheduled_symmetric
     keep = sym.reindex(inputs["agg_code"].astype(str)).to_numpy()
     assert not pd.isna(keep).any()
-    t = trial_table(inputs).assign(stage=np.abs(inputs["sched_pulse_type"]))
+    t = trial_table(inputs).assign(stage=np.abs(inputs["sched_pulse_type"]), trial_id=inputs["agg_code"].astype(str), rt=inputs["rt"],
+                                   rig=inputs["data_source"])
     print(f"{len(t)} responded trials; {int((~keep.astype(bool)).sum())} in asymmetric cells dropped")
     return t[keep.astype(bool)]
 
