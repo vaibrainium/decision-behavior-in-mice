@@ -63,6 +63,16 @@ model recovery.
         rsync -a /mnt/data/processed/ddm/recovery_datasets_cpu_2026-10-29/ vthakur@klone.hyak.uw.edu:/gscratch/walkerlab/vaibhav/mouse-pulse-data/processed/ddm/recovery_datasets_cpu_2026-10-29/
         (on Hyak: git pull to the ES-cells commit)
         sbatch --array=0-179 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.model_recovery,EXTRA_ARGS="--strategy --full --es_cells --responded_only --fits_dir ddm/fits_resp_final ddm/fits_resp_fast_only_leak20-200_cap ddm/fits_resp_nominal_ddm_g001 ddm/fits_resp_nominal_es ddm/fits_resp_fast_only_es_cap --datasets ddm/recovery_datasets_cpu_2026-10-29 --out_dir ddm/recovery_full_cpu_resp" --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+- [ ] 3c. Nominal-coherence refits of C, E, ES (D003; code --nominal_matched, smoke-tested PSUIM10 ccv0: PSUIM10 test
+      NLL ~31 like the motion-energy fits, small folds drop the RT term). Author runs (after git pull on Hyak):
+        sbatch --array=0-49 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.fit_mouse_ddm,EXTRA_ARGS="--responded_only --guess_model fast_only --nominal_input --nominal_matched --variants L0U0V1Z0G1 --splits ccv0 ccv1 ccv2 ccv3 ccv4 --out_dir ddm/fits_resp_nominal_matched_C" --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+        sbatch --array=0-49 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.fit_mouse_ddm,EXTRA_ARGS="--responded_only --guess_model fast_only --nominal_input --nominal_matched --variants L1U0V1Z0G1 --splits ccv0 ccv1 ccv2 ccv3 ccv4 --leak_bounds 20 200 --out_dir ddm/fits_resp_nominal_matched_E" --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+        sbatch --array=0-49 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.fit_mouse_ddm,EXTRA_ARGS="--responded_only --guess_model fast_only --nominal_input --nominal_matched --variants L0U0V1Z0G1 --splits ccv0 ccv1 ccv2 ccv3 ccv4 --extrema_samples --out_dir ddm/fits_resp_nominal_matched_ES" --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+      Comparison rule fixed now: per model, (NLL_nominal - NLL_ME) per 1,000 control trials, mice as unit, t and
+      Wilcoxon, Holm over 3; > 0 means the motion-energy input predicts better. Also C_nom vs E_nom / ES_nom ranking.
+      Scored with scripts/ddm/control_heldout.py (to add the _nom models).
+- [x] 3d. Held-out recomputation (scripts/ddm/control_heldout.py) reproduces heldout_per_trial_2026-10-28 exactly;
+      leave-one-mouse-out: all alternatives keep mean > 0 and max uncorrected p_t <= 0.037 (Wilcoxon <= 0.074).
 - [ ] 3b. Recovery analysis at the group-test level (D002 item 2) and motion-energy ablation (D002 item 3): definitions
       to be fixed here before any run.
 - [ ] 5. Seed np/ledger/numbers.csv with control-only rows (source file per row).
@@ -85,3 +95,4 @@ other two paper projects.
 - 2026-10-29: author submitted the 320-fit paired recovery: Slurm job 42579825 (out_dir ddm/recovery_full_cpu_resp). Next: pull, validity check (320 outputs, datasets_dir set, equal n_train/n_test per dataset), confusion matrix, THESIS rule.
 - 2026-10-29: D002 (author "ok"): ES added to recovery (180 jobs, same out_dir), group-level calibration, ME ablation. ES code + datasets done.
 - 2026-10-29: shuffled-ME ablation dropped before running: likelihood pools per coherence, shuffle within coherence = seed noise (reports/2026-10-29-likelihood-ignores-trial-me.md). D002 item 3 needs re-decision (choice/RT split local; nominal refits optional).
+- 2026-10-29: D003 recorded; nominal_matched code + control_heldout.py; held-out table provenance restored (exact reproduction).
