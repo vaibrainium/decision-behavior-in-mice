@@ -74,3 +74,9 @@ front end (separate plan); per-site interpretation (rig is a covariate only).
   (CLUSTER_DATA_PATH/processed has only ddm/); author to copy it (no ssh to Hyak from this machine). Analysis script
   scripts/me_filter_comparison.py tested on the mouse filter alone: reproduces pulse area 0.0448 / 0.0734 per unit
   (UCLA / UW) and hidden-coherence correlation 0.875 / 0.974. Next: steps 2-8 once the Hyak shards are synced back.
+- 2026-10-29: Hyak container lacks cv2; author chose a side-install on gscratch (opencv-python-headless 4.11.0.86,
+  --no-deps, PYTHONPATH /mnt/data/pylib). Shard resume added (a0261ef). Local check, 12 non-pulse trials at +-100%
+  (3 per rig x sign; scratchpad me_alias): okazawa literal reports the motion REVERSED on both rigs (raw mean ME at
+  +100% negative, at -100% positive; consistent across trials); okazawa_temporal and mouse have the right sign.
+  SUSPECTED cause: spatial aliasing (dots jump ~0.48-0.5 deg/frame, ~2/3 of the filter's 0.74 deg period). The
+  per-rig calibration divides by the (negative) slope and would hide this; the analysis now reports raw slopes.
