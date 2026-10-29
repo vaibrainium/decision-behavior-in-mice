@@ -29,7 +29,7 @@ project; `/src/dissemination/paper/` and `/src/dissemination/paper_accumulation/
 ## Fixed analysis rules (author, carried into this project)
 - Trials without a response by 5 s (no RT, or RT > 5 s) enter no analysis; model likelihoods are conditional on a response by 5 s.
 - Rig/site (UCLA vs UW) is a covariate only; results are never split or interpreted by site.
-- Common model: L0U0V1Z0G1 (drift variability sv, fast guesses, free guess bias), responded-only, 50% non-response cap (paper_accumulation D004/D005). The no-sv model is not discussed.
+- Common model: L0U0V1Z0G1 (drift variability sv, fast guesses, free guess bias), responded-only, 50% non-response cap (paper_accumulation D004/D005). The no-sv model is not discussed beyond one Methods sentence without numbers (D003): the sv model set was chosen after the no-sv comparison was seen, and the ranking depends on sv.
 - Group claims use per-1,000-trial held-out differences with mice as the unit (t and Wilcoxon, Holm, dz); summed totals secondary (D006, D008). Removing sv is not significant at group level; the text must not claim sv is needed (D008).
 - Free-leak fits not used (D009). Parameters come from **control-split** fits, not all-trial fits.
 - No claim that mice integrate rather than detect extrema unless the rerun recovery supports it (D007 condition b).
