@@ -38,7 +38,7 @@ pulse coherence held for the recorded pulse frames (as primacy.nominal_stimuli, 
 ## Steps
 - [x] 0. Author approval of model list, inputs, reps and cost; decision on families 11-12.
 - [x] 1. (if 11-12 approved) add nominal pulse input to fit_mouse_ddm.select; unit check on a few trials; commit, push.
-- [ ] 2. Hyak: per family, splits cv0-cv4 + all, 15 reps, cold start (warm starts match split names; the control-only
+- [x] 2. Hyak: per family, splits cv0-cv4 + all, 15 reps, cold start (warm starts match split names; the control-only
       folders have ccv/control splits only), NEW folders ddm/fits_joint_unfreeze_* (nothing old is written); 720 fits. Commands below.
 - [ ] 3. Pull fits; audit (non-response cap, parameters at bounds, failed fits).
 - [ ] 4. Model comparison on held-out NLL over all trials (summed over folds, per mouse, mice as unit; same rules as
@@ -78,3 +78,7 @@ env EXTRA_ARGS="$N --out_dir ddm/fits_joint_unfreeze_nominal_ddm" sbatch --array
 env EXTRA_ARGS="$N --extrema_samples --out_dir ddm/fits_joint_unfreeze_nominal_es" sbatch --array=0-59 --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
 ```
 - 2026-10-29: author renamed outputs to fits_joint_unfreeze_* (J1 -> fits_joint_unfreeze_integrators).
+- 2026-10-29: submitted by the author with scripts/slurm/submit_joint_unfreeze.sh (HEAD 82ab8e1; both input md5s OK):
+  J1_integrators 42560879 (0-359), J2_FB 42560880, J3_leak20-200 42560881, J4_leak0-200 42560882, J5_es 42560883,
+  J6_nominal_ddm 42560884, J7_nominal_es 42560885 (0-59 each). Next: when done, rsync processed/ddm/fits_joint_unfreeze_*
+  back (bash scripts/sync_ddm_data.sh pull), then step 3 audit.

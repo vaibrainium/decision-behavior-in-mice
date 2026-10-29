@@ -21,6 +21,7 @@ Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gat
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
+- plans/2026-10-29-joint-control-pulse-refits.md : all 12 model families refit on control + pulse trials (UCLA no-freeze inputs), 720 fits submitted 2026-10-29 (jobs 42560879-42560885) into new fits_joint_unfreeze_* folders; next: pull, audit, compare
 - plans/2026-10-28-full-recovery-matrix.md : ON HOLD (author); recovery rerun on fixed CPU datasets if it becomes necessary
 - plans/2026-10-26-v2-refits-and-strategy-recovery.md : responded-only refits + full point-3 re-run (amendment 9); commands ready; next: user syncs code, submits R1-R6 (460), then F1a (80) and P1-P4 (850)
 - plans/2026-10-26-paper-accumulation-variant.md : second paper version (accumulation-first) in dissemination/paper_accumulation/; G1 held; waiting on v2 refits + E-recovery (plans/2026-10-26-v2-refits-and-strategy-recovery.md)
