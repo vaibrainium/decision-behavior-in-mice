@@ -43,3 +43,4 @@ Hyak runs, CV over all mice (only if step 3 is promising).
   joint fits ran 114-226 iterations in ~1 h). No output written. Moved to Hyak and widened to all 10 mice, cv0-cv4 + all,
   sv and no-sv (120 jobs): scripts/slurm/submit_pulse_weight.sh. Steps 2 and 3b now = that array; step 3 adds held-out
   NLL vs the joint fits (same folds).
+- 2026-10-29: submitted by the author on Hyak (HEAD ee2995b): PW_pulse_weight 42579333 (0-119). Next: pull, step 3 readout.

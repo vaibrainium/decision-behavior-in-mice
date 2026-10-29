@@ -22,6 +22,7 @@ Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gat
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
+- plans/2026-10-29-pulse-weight-joint.md : free pulse weight, sv and no-sv, 10 mice cv + all; Hyak job 42579333 (120); next: pull, readout; then LCA illustration
 - plans/2026-10-29-control-paper.md : third paper (control trials only, Stine 2020 framing) in dissemination/paper_control/; G0 approved; descriptives done; next: author submits 320-fit paired recovery (commands in plan), S1 spine
 - plans/2026-10-28-full-recovery-matrix.md : ON HOLD (author); recovery rerun on fixed CPU datasets if it becomes necessary
 - plans/2026-10-26-v2-refits-and-strategy-recovery.md : responded-only refits + full point-3 re-run (amendment 9); commands ready; next: user syncs code, submits R1-R6 (460), then F1a (80) and P1-P4 (850)
