@@ -27,6 +27,8 @@ different draws for the same seed on different GPU models, so candidates fitted 
 (reports/2026-10-28-recovery-synthetic-data-mismatch.md). --make_datasets synthesizes every (mouse, generator, replicate)
 train/test pair once on the CPU and writes it with a sha256 manifest; --datasets makes each job load its pair from there
 (checked against the manifest) instead of synthesizing. --full gives the whole 4 x 4 grid over C, E, DDMx and ESx.
+--full --es_cells (control paper D002): only the 9 cells that involve ES (matched extrema samples) in the 5 x 5 grid over
+C, E, DDMx, ESx, ES (180 jobs); 5 --fits_dir: C, E, DDMx, ESx, ES.
 
 Usage:
     python -m scripts.ddm.model_recovery --list
@@ -74,11 +76,13 @@ def strategy_models(extrema_samples: bool = False, exact: bool = False) -> list[
     return EXACT_MODELS if exact else [COMMON, EXTREMA_SAMPLES] if extrema_samples else STRATEGY_MODELS
 
 
-def build_grid(inputs: dict, strategy: bool = False, extrema_samples: bool = False, exact: bool = False, cross: bool = False, full: bool = False) -> list[dict]:
+def build_grid(inputs: dict, strategy: bool = False, extrema_samples: bool = False, exact: bool = False, cross: bool = False, full: bool = False,
+               es_cells: bool = False) -> list[dict]:
     mice = sorted(np.unique(inputs["subject_id"]))
     if full:
-        models = STRATEGY_MODELS + EXACT_MODELS
-        return [{"mouse": m, "generator": g, "candidate": c, "replicate": r} for r in range(N_REPLICATES) for g in models for c in models for m in mice]
+        models = STRATEGY_MODELS + EXACT_MODELS + ([EXTREMA_SAMPLES] if es_cells else [])
+        return [{"mouse": m, "generator": g, "candidate": c, "replicate": r} for r in range(N_REPLICATES) for g in models for c in models for m in mice
+                if not es_cells or EXTREMA_SAMPLES in (g, c)]
     if cross:
         fams = [STRATEGY_MODELS, EXACT_MODELS]
         return [{"mouse": m, "generator": g, "candidate": c, "replicate": r} for r in range(N_REPLICATES) for i, f in enumerate(fams) for g in f for c in fams[1 - i] for m in mice]
@@ -128,7 +132,7 @@ def strategy_params(fits_dirs: list[Path], mouse: str, variant: str, fixed_guess
     Exact models: DDMx from the first folder, ESx from the second."""
     exact = variant in EXACT_MODELS
     stem = NOMINAL_VARIANT if exact else COMMON if variant == EXTREMA_SAMPLES else variant
-    folder = {COMMON: 0, EXTREMA: 1, "DDMx": 2, "ESx": 3}[variant] if len(fits_dirs) == 4 else 0 if variant in (COMMON, "DDMx") else 1
+    folder = {COMMON: 0, EXTREMA: 1, "DDMx": 2, "ESx": 3, EXTREMA_SAMPLES: 4}[variant] if len(fits_dirs) >= 4 else 0 if variant in (COMMON, "DDMx") else 1
     path = fits_dirs[folder] / f"{mouse}_{stem}_control.pkl"
     with open(path, "rb") as f:
         r = pickle.load(f)
@@ -292,6 +296,7 @@ if __name__ == "__main__":
     parser.add_argument("--cross", action="store_true", help="with --strategy: cross-family cells of the C/E/DDMx/ESx matrix (amendment 14); fits_dir: C, E, DDMx, ESx folders")
     parser.add_argument("--exact", action="store_true", help="with --strategy: paper-exact DDMx vs ESx (amendment 13); fits_dir: DDMx folder, then ESx folder")
     parser.add_argument("--full", action="store_true", help="with --strategy: the whole 4 x 4 grid over C, E, DDMx, ESx (4 --fits_dir: C, E, DDMx, ESx)")
+    parser.add_argument("--es_cells", action="store_true", help="with --full: only the ES cells of the 5 x 5 grid (5 --fits_dir: C, E, DDMx, ESx, ES)")
     parser.add_argument("--make_datasets", action="store_true", help="write the grid's synthetic datasets on the CPU into --datasets, then stop")
     parser.add_argument("--datasets", help="folder of pre-generated synthetic datasets (relative to processed); jobs load instead of synthesizing")
     args = parser.parse_args()
@@ -303,9 +308,9 @@ if __name__ == "__main__":
     inputs = load_inputs(processed / args.inputs)
     if args.responded_only:
         inputs = responded_only(inputs)
-    grid = build_grid(inputs, args.strategy, args.extrema_samples, args.exact, args.cross, args.full)
+    grid = build_grid(inputs, args.strategy, args.extrema_samples, args.exact, args.cross, args.full, args.es_cells)
     datasets_dir = processed / args.datasets if args.datasets else None
-    models = STRATEGY_MODELS + EXACT_MODELS if args.cross or args.full else strategy_models(args.extrema_samples, args.exact) if args.strategy else MODELS
+    models = STRATEGY_MODELS + EXACT_MODELS + ([EXTREMA_SAMPLES] if args.es_cells else []) if args.cross or args.full else strategy_models(args.extrema_samples, args.exact) if args.strategy else MODELS
     if args.make_datasets:
         make_datasets(inputs, grid, [processed / d for d in args.fits_dir], datasets_dir, args.fixed_guess_bias, args.strategy, args.responded_only)
     elif args.list:

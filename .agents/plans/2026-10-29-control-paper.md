@@ -58,6 +58,13 @@ model recovery.
         (on Hyak: git pull to >= 4dbef52)
         sbatch --array=0-319 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.model_recovery,EXTRA_ARGS="--strategy --full --responded_only --fits_dir ddm/fits_resp_final ddm/fits_resp_fast_only_leak20-200_cap ddm/fits_resp_nominal_ddm_g001 ddm/fits_resp_nominal_es --datasets ddm/recovery_datasets_cpu_2026-10-29 --out_dir ddm/recovery_full_cpu_resp" --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
         then: bash scripts/sync_ddm_data.sh pull; check every output has datasets_dir set and equal n_train/n_test per dataset.
+      ES extension (D002 item 1): 20 ES datasets added to the same folder (manifest now 100, all sha256 OK; ES CPU
+      synthesis deterministic, PSUIM10 two processes). Commands (author runs):
+        rsync -a /mnt/data/processed/ddm/recovery_datasets_cpu_2026-10-29/ vthakur@klone.hyak.uw.edu:/gscratch/walkerlab/vaibhav/mouse-pulse-data/processed/ddm/recovery_datasets_cpu_2026-10-29/
+        (on Hyak: git pull to the ES-cells commit)
+        sbatch --array=0-179 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.model_recovery,EXTRA_ARGS="--strategy --full --es_cells --responded_only --fits_dir ddm/fits_resp_final ddm/fits_resp_fast_only_leak20-200_cap ddm/fits_resp_nominal_ddm_g001 ddm/fits_resp_nominal_es ddm/fits_resp_fast_only_es_cap --datasets ddm/recovery_datasets_cpu_2026-10-29 --out_dir ddm/recovery_full_cpu_resp" --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
+- [ ] 3b. Recovery analysis at the group-test level (D002 item 2) and motion-energy ablation (D002 item 3): definitions
+      to be fixed here before any run.
 - [ ] 5. Seed np/ledger/numbers.csv with control-only rows (source file per row).
 - [ ] 6. S1 spine -> G1; S2 targeted lit search (Stine-style integration vs non-integration, mouse RDK) -> G2;
       S3 -> G3; S4-S8 per neuropaper workflow.
@@ -75,3 +82,5 @@ other two paper projects.
 - 2026-10-29: step 4 script scripts/ddm/control_descriptives.py. Real-data-only run done first (definitions unchanged
   after it); sign check: signal tracks signed coherence, pooled right-left N ~0.3% coh, fluctuation-only ~0.
 - 2026-10-29: descriptives done; kernel K1 null and underpowered (sim SD ~ effect); fast errors under-predicted by the common model (exploratory). Report written.
+- 2026-10-29: author submitted the 320-fit paired recovery: Slurm job 42579825 (out_dir ddm/recovery_full_cpu_resp). Next: pull, validity check (320 outputs, datasets_dir set, equal n_train/n_test per dataset), confusion matrix, THESIS rule.
+- 2026-10-29: D002 (author "ok"): ES added to recovery (180 jobs, same out_dir), group-level calibration, ME ablation. ES code + datasets done.
