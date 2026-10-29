@@ -1,0 +1,64 @@
+mouse,stage,effect,n_pulse,model
+DBM6,1,0.6545,321.0,data
+DBM6,2,2.51472,299.0,data
+DBM6,3,3.09808,305.0,data
+PSUIM6,1,9.25789,957.0,data
+PSUIM6,2,6.4139,879.0,data
+PSUIM7,1,12.80718,1119.0,data
+PSUIM7,2,8.37596,983.0,data
+DBM6,1,2.47644,17357.0,DDM limit (no sv)
+DBM6,2,2.74193,15900.0,DDM limit (no sv)
+DBM6,3,2.79325,15661.0,DDM limit (no sv)
+PSUIM6,1,2.00028,50993.0,DDM limit (no sv)
+PSUIM6,2,1.53563,45908.0,DDM limit (no sv)
+PSUIM7,1,2.88995,65977.0,DDM limit (no sv)
+PSUIM7,2,3.75789,57695.0,DDM limit (no sv)
+DBM6,1,2.72227,16328.0,race rho -0.5
+DBM6,2,2.77874,14719.0,race rho -0.5
+DBM6,3,3.10414,14319.0,race rho -0.5
+PSUIM6,1,1.82323,46840.0,race rho -0.5
+PSUIM6,2,1.42804,41895.0,race rho -0.5
+PSUIM7,1,3.16468,63167.0,race rho -0.5
+PSUIM7,2,3.92109,54795.0,race rho -0.5
+DBM6,1,3.13318,15489.0,race rho 0
+DBM6,2,3.24804,13854.0,race rho 0
+DBM6,3,3.60473,13362.0,race rho 0
+PSUIM6,1,2.18381,43573.0,race rho 0
+PSUIM6,2,1.90306,38936.0,race rho 0
+PSUIM7,1,3.67756,60985.0,race rho 0
+PSUIM7,2,4.07562,52646.0,race rho 0
+DBM6,1,2.45344,14526.0,LCA balanced k=beta=3
+DBM6,2,1.7654,12571.0,LCA balanced k=beta=3
+DBM6,3,1.6071,12062.0,LCA balanced k=beta=3
+PSUIM6,1,0.97332,32160.0,LCA balanced k=beta=3
+PSUIM6,2,0.5746,27850.0,LCA balanced k=beta=3
+PSUIM7,1,2.46986,64527.0,LCA balanced k=beta=3
+PSUIM7,2,3.05761,54140.0,LCA balanced k=beta=3
+DBM6,1,2.52457,13706.0,LCA leak-dominant k=6 beta=1
+DBM6,2,0.63832,11754.0,LCA leak-dominant k=6 beta=1
+DBM6,3,1.43549,11269.0,LCA leak-dominant k=6 beta=1
+PSUIM6,1,0.10866,43918.0,LCA leak-dominant k=6 beta=1
+PSUIM6,2,0.08113,37660.0,LCA leak-dominant k=6 beta=1
+PSUIM7,1,2.22741,63682.0,LCA leak-dominant k=6 beta=1
+PSUIM7,2,2.41166,52985.0,LCA leak-dominant k=6 beta=1
+DBM6,1,2.3461,16299.0,LCA inhibition-dominant k=1 beta=6
+DBM6,2,2.42367,14339.0,LCA inhibition-dominant k=1 beta=6
+DBM6,3,2.34827,13734.0,LCA inhibition-dominant k=1 beta=6
+PSUIM6,1,0.83671,39108.0,LCA inhibition-dominant k=1 beta=6
+PSUIM6,2,0.78661,34304.0,LCA inhibition-dominant k=1 beta=6
+PSUIM7,1,2.83561,64821.0,LCA inhibition-dominant k=1 beta=6
+PSUIM7,2,3.69204,55570.0,LCA inhibition-dominant k=1 beta=6
+DBM6,1,2.82436,17952.0,LCA + baseline k=beta=3
+DBM6,2,3.03335,16425.0,LCA + baseline k=beta=3
+DBM6,3,3.25039,16325.0,LCA + baseline k=beta=3
+PSUIM6,1,1.81026,49389.0,LCA + baseline k=beta=3
+PSUIM6,2,1.75455,45301.0,LCA + baseline k=beta=3
+PSUIM7,1,3.58406,66424.0,LCA + baseline k=beta=3
+PSUIM7,2,4.37022,59606.0,LCA + baseline k=beta=3
+DBM6,1,3.59597,18794.0,LCA + baseline k=4.5 beta=5.4 (KTS 2021)
+DBM6,2,3.28862,17518.0,LCA + baseline k=4.5 beta=5.4 (KTS 2021)
+DBM6,3,3.78604,18259.0,LCA + baseline k=4.5 beta=5.4 (KTS 2021)
+PSUIM6,1,2.10251,56210.0,LCA + baseline k=4.5 beta=5.4 (KTS 2021)
+PSUIM6,2,1.97066,51961.0,LCA + baseline k=4.5 beta=5.4 (KTS 2021)
+PSUIM7,1,3.56213,66383.0,LCA + baseline k=4.5 beta=5.4 (KTS 2021)
+PSUIM7,2,3.96087,60328.0,LCA + baseline k=4.5 beta=5.4 (KTS 2021)

@@ -35,6 +35,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-10-29-pulse-race-lca-illustration.md : race and LCA variants (incl. baseline LCA of Kirkpatrick et al. 2021), matched to control trials in 3 mice, predict 2.7-5.1 pp vs 13.1 pp observed; no reversal; architecture does not fix the size problem
 - reports/2026-10-29-likelihood-ignores-trial-me.md : held-out likelihood is pooled per coherence, so it never uses trial-by-trial motion energy (shuffle = seed noise); shuffled-ME ablation is a no-op; RT terms are ~80% of NLL
 - reports/2026-10-29-control-descriptives.md : control trials: RT falls with coherence (Holm 0.06), errors 118 ms faster (Holm 0.06; common model under-predicts, exploratory), ME kernel ~0.1-0.3% coh, null and underpowered; paired CPU recovery datasets ready (80, sha256)
 - reports/2026-10-29-joint-control-pulse-refits.md : 12 families refit on control + pulse trials: ranking unchanged (L1U1 -72 sum, 2/10 mice), parameters ~1.0x control fits (UCLA shift not reproduced); no family reproduces the pulse effect (2.3-4.5 vs 5.48 pp at 0.3-1.2 s); late reversal only with sv/leak; addendum: sv causes the reversal (dose-response, eta selection 10/10 mice) and also cuts the early effect 16.4 -> 5.2 pp at fixed gain

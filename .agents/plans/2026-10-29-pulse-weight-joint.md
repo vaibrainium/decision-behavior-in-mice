@@ -27,7 +27,7 @@ pulse trials, reproduces both the choice effect (0.3-1.2 s window 5.48 pp, no la
 - [ ] 3. Read out: fitted w, sv, drift_gain vs the joint fit; delta train NLL; simulate (pulse_joint_signatures
       statistics) the 0.3-1.2 / 1.2-5 s effects and the toward-pulse RT shift vs data.
 - [ ] 4. Decide (author): per-pulse-time weights, or stop.
-- [ ] 5. LCA illustration (author asked 2026-10-29): two accumulators with leak, inhibition, noise correlation; check it
+- [x] 5. LCA illustration (author asked 2026-10-29): two accumulators with leak, inhibition, noise correlation; check it
       equals the DDM in the limit; roughly matched to control trials in the same mice; pulse signatures vs data.
 - [ ] 3b. Comparison (author, 2026-10-29): same fit without sv (L0U0V0Z0G1 --pulse_weight, free guess bias, warm start
       from the joint no-sv fit), same mice, same out dir.
@@ -44,3 +44,5 @@ Hyak runs, CV over all mice (only if step 3 is promising).
   sv and no-sv (120 jobs): scripts/slurm/submit_pulse_weight.sh. Steps 2 and 3b now = that array; step 3 adds held-out
   NLL vs the joint fits (same folds).
 - 2026-10-29: submitted by the author on Hyak (HEAD ee2995b): PW_pulse_weight 42579333 (0-119). Next: pull, step 3 readout.
+- 2026-10-29: author OK'd the LCA illustration while the Hyak array runs (step 5 brought forward): scripts/ddm/pulse_lca_signatures.py; DDM-limit check 2000/2000 trials identical in each of PSUIM6, PSUIM7, DBM6. Full run started.
+- 2026-10-29: step 5 done (two runs; second adds baseline-input LCAs after the author shared Kirkpatrick et al. 2021, and fixes a x100 print bug): no race/LCA variant exceeds 5.1 pp vs 13.1 in data -> reports/2026-10-29-pulse-race-lca-illustration.md.
