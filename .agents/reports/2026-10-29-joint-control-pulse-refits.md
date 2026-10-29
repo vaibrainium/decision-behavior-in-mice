@@ -74,3 +74,27 @@ Inputs ddm/ddm_inputs_global_ucla_nofreeze.npz (md5 f18e0e6be3b78311e1f5fcdcaa4d
       {-1, -0.5, 0}, with and without inhibition, matched to control trials in PSUIM6/7 and DBM6; 1-2 h locally).
 - [ ] Check the sv-selection account of the reversal directly (primary model with sv fixed at 0 vs fitted, same mice).
 - [ ] Known issue on UCLA parameter shift: mark as not reproduced (ridge), pending author.
+
+## Addendum (same day): sv test
+Question (author: "let's test that first"): does between-trial drift variability sv cause the predicted late reversal?
+Method: scripts/ddm/pulse_sv_reversal.py. Primary joint "all" fit per mouse, simulator kernel directly, fast guesses
+left out; each responded pulse trial (symmetric cells, |coh| <= 36) simulated with and without its pulse, same diffusion
+noise and same eta; sv scaled 0 / 0.5 / 1 / 1.5 x fitted, all other parameters fixed; 30 reps, seed 0; 80 s on 32
+threads. Outputs dissemination/figures/qc/pulse_sv_reversal_2026-10-29{.png,.pdf,.csv,_twins.csv}.
+- VERIFIED, reversal follows sv: the late (1.2-5 s) paired effect is +1.81 / -0.19 / -1.69 / -2.17 pp at sv x 0 / 0.5 /
+  1 / 1.5, with 1 / 4 / 9 / 10 mice below 0. The one mouse negative at sv = 0 is PSUIM7 (-3.5 pp), so something else
+  contributes there.
+- VERIFIED, the selection signature is present: among late responses, eta (signed toward the pulse) is lower on the
+  pulse twin than on its no-pulse twin in 10/10 mice at every sv > 0 (-0.03 to -0.05 SD of eta); among early
+  responses it is higher (+0.04 to +0.17). The pulse ends eta-toward trials early, leaving eta-against trials late.
+- VERIFIED, and larger: sv also shrinks the early effect. With the fitted gain, the 0.3-1.2 s paired effect is
+  16.4 / 9.5 / 5.2 / 3.2 pp at sv x 0 / 0.5 / 1 / 1.5 (all 10 mice > 0 at each). When sv is large, trials are decided
+  mostly by their own eta, and a brief pulse rarely changes the outcome.
+- SUSPECTED: refitting without sv does not rescue the size (no-sv family 3.0 pp) because its fit lowers drift_gain
+  instead (drift_gain at the lower bound in 13/60 no-sv fits); the shallow psychometric function has to come either
+  from sv or from a low gain, and both attenuate the pulse. So the size problem is the ratio pulse / coherence
+  sensitivity, not sv as such.
+- SUSPECTED: fast guesses dilute the early window (paired, no guesses, fitted sv 5.2 pp vs 3.4 pp in the full joint
+  simulation with guesses); not separated from the paired-vs-control difference in the statistic.
+Next: a model where the pulse is weighted more than sustained coherence (transient sensitivity at the front end), or
+where the shallow psychometric comes from a source that does not attenuate pulses; author to decide.
