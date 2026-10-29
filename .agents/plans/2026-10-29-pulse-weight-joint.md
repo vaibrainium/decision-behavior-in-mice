@@ -29,6 +29,8 @@ pulse trials, reproduces both the choice effect (0.3-1.2 s window 5.48 pp, no la
 - [ ] 4. Decide (author): per-pulse-time weights, or stop.
 - [ ] 5. LCA illustration (author asked 2026-10-29): two accumulators with leak, inhibition, noise correlation; check it
       equals the DDM in the limit; roughly matched to control trials in the same mice; pulse signatures vs data.
+- [ ] 3b. Comparison (author, 2026-10-29): same fit without sv (L0U0V0Z0G1 --pulse_weight, free guess bias, warm start
+      from the joint no-sv fit), same mice, same out dir.
 - [ ] 6. Report addendum; STATUS.
 
 ## Out of scope
@@ -36,3 +38,8 @@ Hyak runs, CV over all mice (only if step 3 is promising).
 
 ## Log
 - 2026-10-29: author approved step 1-3 ("ok"); asked to add LCA families (step 5, after the weight check).
+- 2026-10-29: author asked for the no-sv comparison now ("start this now"); started 3 fits alongside the sv runs (CPU shared, both slower).
+- 2026-10-29: local fits stopped after ~1 h: CPU-only here, 20-50 min per optimizer iteration (Hyak jobs have a GPU;
+  joint fits ran 114-226 iterations in ~1 h). No output written. Moved to Hyak and widened to all 10 mice, cv0-cv4 + all,
+  sv and no-sv (120 jobs): scripts/slurm/submit_pulse_weight.sh. Steps 2 and 3b now = that array; step 3 adds held-out
+  NLL vs the joint fits (same folds).
