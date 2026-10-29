@@ -22,6 +22,11 @@ control-trial comparison scores E-generated data as E.
 --strategy --cross (amendment 14): the cross-family cells of the full recovery matrix over C, E, DDMx and ESx (each of
 C/E fitted to DDMx/ESx data and vice versa; 4 --fits_dir: C, E, DDMx, ESx). Generator labels and seeds are those of the
 pairwise runs, so the same synthetic datasets fill the within-family cells (F1a and --exact outputs).
+--make_datasets DIR / --datasets DIR (control-trial paper, plan 2026-10-29-control-paper.md step 3): GPU synthesis gave
+different draws for the same seed on different GPU models, so candidates fitted to "one" dataset saw different trials
+(reports/2026-10-28-recovery-synthetic-data-mismatch.md). --make_datasets synthesizes every (mouse, generator, replicate)
+train/test pair once on the CPU and writes it with a sha256 manifest; --datasets makes each job load its pair from there
+(checked against the manifest) instead of synthesizing. --full gives the whole 4 x 4 grid over C, E, DDMx and ESx.
 
 Usage:
     python -m scripts.ddm.model_recovery --list
@@ -30,6 +35,7 @@ On Slurm (500 jobs): sbatch --array=0-249 --export=ALL,JOB_OFFSET=0,MODULE=scrip
 """
 
 import argparse
+import hashlib
 import json
 import logging
 import pickle
@@ -68,8 +74,11 @@ def strategy_models(extrema_samples: bool = False, exact: bool = False) -> list[
     return EXACT_MODELS if exact else [COMMON, EXTREMA_SAMPLES] if extrema_samples else STRATEGY_MODELS
 
 
-def build_grid(inputs: dict, strategy: bool = False, extrema_samples: bool = False, exact: bool = False, cross: bool = False) -> list[dict]:
+def build_grid(inputs: dict, strategy: bool = False, extrema_samples: bool = False, exact: bool = False, cross: bool = False, full: bool = False) -> list[dict]:
     mice = sorted(np.unique(inputs["subject_id"]))
+    if full:
+        models = STRATEGY_MODELS + EXACT_MODELS
+        return [{"mouse": m, "generator": g, "candidate": c, "replicate": r} for r in range(N_REPLICATES) for g in models for c in models for m in mice]
     if cross:
         fams = [STRATEGY_MODELS, EXACT_MODELS]
         return [{"mouse": m, "generator": g, "candidate": c, "replicate": r} for r in range(N_REPLICATES) for i, f in enumerate(fams) for g in f for c in fams[1 - i] for m in mice]
@@ -141,8 +150,65 @@ def responded(data: dict, stimulus: np.ndarray) -> tuple[dict, np.ndarray]:
     return {k: v[keep] for k, v in data.items()}, stimulus[keep]
 
 
+def dataset_path(datasets_dir: Path, mouse: str, generator: str, replicate: int) -> Path:
+    return datasets_dir / f"{mouse}_gen-{generator}_rep{replicate}.npz"
+
+
+def sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def generate(inputs: dict, mouse: str, generator_variant: str, replicate: int, fits_dirs: list[Path], fixed_guess_bias: bool, strategy: bool,
+             responded_data: bool) -> tuple[dict, dict]:
+    """The unmasked train and test datasets of one (mouse, generator, replicate), synthesized as run_job always did."""
+    rows = np.flatnonzero(inputs["subject_id"] == mouse)
+    if strategy:
+        rows = rows[inputs["sched_pulse_type"][rows] == 0]
+    rig = str(np.unique(inputs["data_source"][rows])[0])
+    real, stimulus = select(inputs, rows, nominal=generator_variant in EXACT_MODELS)
+    true_params = strategy_params(fits_dirs, mouse, generator_variant, fixed_guess_bias) if strategy else generating_params(fits_dirs, mouse, generator_variant, fixed_guess_bias)
+    seed = zlib.crc32(f"{mouse}|{generator_variant}|{replicate}".encode())
+    generator = make_model(generator_variant, rig, fixed_guess_bias, strategy, responded_data)
+    train = synthesize(generator, true_params, stimulus, real["condition"], seed)
+    test = synthesize(generator, true_params, stimulus, real["condition"], seed + 1)
+    generator.simulator.clear_cache()
+    return train, test
+
+
+def make_datasets(inputs: dict, grid: list[dict], fits_dirs: list[Path], datasets_dir: Path, fixed_guess_bias: bool, strategy: bool, responded_data: bool) -> None:
+    """Write every (mouse, generator, replicate) pair of the grid once, plus manifest.json with sha256 and device."""
+    if DEVICE.type != "cpu":
+        raise RuntimeError("--make_datasets must run on the CPU (GPU draws depend on the GPU model)")
+    datasets_dir.mkdir(parents=True, exist_ok=True)
+    manifest_path = datasets_dir / "manifest.json"
+    manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
+    for mouse, gen, rep in sorted({(j["mouse"], j["generator"], j["replicate"]) for j in grid}):
+        path = dataset_path(datasets_dir, mouse, gen, rep)
+        if path.name in manifest and path.exists():
+            continue
+        train, test = generate(inputs, mouse, gen, rep, fits_dirs, fixed_guess_bias, strategy, responded_data)
+        np.savez(path, **{f"train_{k}": v for k, v in train.items()}, **{f"test_{k}": v for k, v in test.items()})
+        manifest[path.name] = {"sha256": sha256(path), "device": DEVICE.type, "n": len(train["choice"]),
+                               "n_train_responded": int((train["choice"] >= 0).sum()), "n_test_responded": int((test["choice"] >= 0).sum())}
+        manifest_path.write_text(json.dumps(manifest, indent=1, sort_keys=True))
+        logger.info("wrote %s %s", path.name, manifest[path.name])
+
+
+def load_dataset(datasets_dir: Path, mouse: str, generator_variant: str, replicate: int, condition: np.ndarray) -> tuple[dict, dict]:
+    path = dataset_path(datasets_dir, mouse, generator_variant, replicate)
+    expected = json.loads((datasets_dir / "manifest.json").read_text())[path.name]["sha256"]
+    if sha256(path) != expected:
+        raise ValueError(f"{path}: sha256 does not match the manifest")
+    with np.load(path) as f:
+        train, test = ({k: f[f"{part}_{k}"] for k in ("rt", "choice", "condition")} for part in ("train", "test"))
+    if not (np.array_equal(train["condition"], condition) and np.array_equal(test["condition"], condition)):
+        raise ValueError(f"{path}: trials do not match the inputs")
+    logger.info("synthetic data from %s (sha256 %s)", path, expected[:12])
+    return train, test
+
+
 def run_job(inputs: dict, job: dict, fits_dirs: list[Path], out_dir: Path, n_reps: int, max_iterations: int, fixed_guess_bias: bool = False, strategy: bool = False,
-            responded_data: bool = False) -> dict:
+            responded_data: bool = False, datasets_dir: Path | None = None) -> dict:
     rows = np.flatnonzero(inputs["subject_id"] == job["mouse"])
     if strategy:
         rows = rows[inputs["sched_pulse_type"][rows] == 0]
@@ -152,10 +218,10 @@ def run_job(inputs: dict, job: dict, fits_dirs: list[Path], out_dir: Path, n_rep
     fit_input = stimulus if (job["candidate"] in EXACT_MODELS) == (job["generator"] in EXACT_MODELS) else select(inputs, rows, nominal=job["candidate"] in EXACT_MODELS)[1]
     true_params = strategy_params(fits_dirs, job["mouse"], job["generator"], fixed_guess_bias) if strategy else generating_params(fits_dirs, job["mouse"], job["generator"], fixed_guess_bias)
 
-    seed = zlib.crc32(f"{job['mouse']}|{job['generator']}|{job['replicate']}".encode())
-    generator = make_model(job["generator"], rig, fixed_guess_bias, strategy, responded_data)
-    train = synthesize(generator, true_params, stimulus, real["condition"], seed)
-    test = synthesize(generator, true_params, stimulus, real["condition"], seed + 1)
+    if datasets_dir is not None:
+        train, test = load_dataset(datasets_dir, job["mouse"], job["generator"], job["replicate"], real["condition"])
+    else:
+        train, test = generate(inputs, job["mouse"], job["generator"], job["replicate"], fits_dirs, fixed_guess_bias, strategy, responded_data)
     train_stimulus, test_stimulus = fit_input, fit_input
     if responded_data:
         train, train_stimulus = responded(train, fit_input)
@@ -191,6 +257,7 @@ def run_job(inputs: dict, job: dict, fits_dirs: list[Path], out_dir: Path, n_rep
         "responded_only": responded_data,
         "n_train": len(train["choice"]),
         "n_test": len(test["choice"]),
+        "datasets_dir": None if datasets_dir is None else str(datasets_dir),
     }
     if job["candidate"] == job["generator"]:
         result["truth_test_nll"] = heldout_nll(model, true_params, test, test_stimulus, n_reps)
@@ -224,6 +291,9 @@ if __name__ == "__main__":
     parser.add_argument("--strategy", action="store_true", help="common model vs E on control trials (fits_dir: common-model folder, then E folder)")
     parser.add_argument("--cross", action="store_true", help="with --strategy: cross-family cells of the C/E/DDMx/ESx matrix (amendment 14); fits_dir: C, E, DDMx, ESx folders")
     parser.add_argument("--exact", action="store_true", help="with --strategy: paper-exact DDMx vs ESx (amendment 13); fits_dir: DDMx folder, then ESx folder")
+    parser.add_argument("--full", action="store_true", help="with --strategy: the whole 4 x 4 grid over C, E, DDMx, ESx (4 --fits_dir: C, E, DDMx, ESx)")
+    parser.add_argument("--make_datasets", action="store_true", help="write the grid's synthetic datasets on the CPU into --datasets, then stop")
+    parser.add_argument("--datasets", help="folder of pre-generated synthetic datasets (relative to processed); jobs load instead of synthesizing")
     args = parser.parse_args()
 
     if args.strategy:
@@ -233,9 +303,12 @@ if __name__ == "__main__":
     inputs = load_inputs(processed / args.inputs)
     if args.responded_only:
         inputs = responded_only(inputs)
-    grid = build_grid(inputs, args.strategy, args.extrema_samples, args.exact, args.cross)
-    models = STRATEGY_MODELS + EXACT_MODELS if args.cross else strategy_models(args.extrema_samples, args.exact) if args.strategy else MODELS
-    if args.list:
+    grid = build_grid(inputs, args.strategy, args.extrema_samples, args.exact, args.cross, args.full)
+    datasets_dir = processed / args.datasets if args.datasets else None
+    models = STRATEGY_MODELS + EXACT_MODELS if args.cross or args.full else strategy_models(args.extrema_samples, args.exact) if args.strategy else MODELS
+    if args.make_datasets:
+        make_datasets(inputs, grid, [processed / d for d in args.fits_dir], datasets_dir, args.fixed_guess_bias, args.strategy, args.responded_only)
+    elif args.list:
         print(f"{len(grid)} jobs: {len(np.unique(inputs['subject_id']))} mice x {len(models)} generators x {len(models)} candidates x {N_REPLICATES} replicates")
         print("models:", models)
     else:
@@ -244,4 +317,5 @@ if __name__ == "__main__":
             logger.info("skipping %s: output exists (use --force to refit)", job)
         else:
             logger.info("job %s: %s", args.job_id, job)
-            run_job(inputs, job, [processed / d for d in args.fits_dir], processed / args.out_dir, args.n_reps, args.max_iterations, args.fixed_guess_bias, args.strategy, args.responded_only)
+            run_job(inputs, job, [processed / d for d in args.fits_dir], processed / args.out_dir, args.n_reps, args.max_iterations, args.fixed_guess_bias, args.strategy, args.responded_only,
+                    datasets_dir)
