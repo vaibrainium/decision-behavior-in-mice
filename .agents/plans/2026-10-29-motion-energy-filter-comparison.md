@@ -70,3 +70,7 @@ front end (separate plan); per-site interpretation (rig is a covariate only).
   trials. Pilot (6 trials, local CPU): compute_mouse_me now filters time in blocks of y rows (max_elements; identical
   output, max diff 0); mouse filter reproduces stored pipeline ME (max rel diff 3e-7); okazawa literal ~16 s/trial on
   CPU (first unblocked try was OOM-killed), okazawa_temporal ~1 s/trial. Job script scripts/slurm/motion_energy_filter.slurm.
+- 2026-10-29: pushed (5c4e4fd, 4e1c231); Hyak session asked to run. Blocked: valid_data.csv not on Hyak
+  (CLUSTER_DATA_PATH/processed has only ddm/); author to copy it (no ssh to Hyak from this machine). Analysis script
+  scripts/me_filter_comparison.py tested on the mouse filter alone: reproduces pulse area 0.0448 / 0.0734 per unit
+  (UCLA / UW) and hidden-coherence correlation 0.875 / 0.974. Next: steps 2-8 once the Hyak shards are synced back.
