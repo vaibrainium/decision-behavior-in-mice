@@ -1,0 +1,451 @@
+mouse,choice,q,d_ms,variant,gain
+DBM6,against pulse,0.1,23.97,data,
+DBM6,against pulse,0.3,0.46,data,
+DBM6,against pulse,0.5,223.29,data,
+DBM6,against pulse,0.7,283.78,data,
+DBM6,against pulse,0.9,346.73,data,
+DBM6,toward pulse,0.1,-41.17,data,
+DBM6,toward pulse,0.3,-75.28,data,
+DBM6,toward pulse,0.5,-72.03,data,
+DBM6,toward pulse,0.7,-172.36,data,
+DBM6,toward pulse,0.9,-158.31,data,
+PSUIM6,against pulse,0.1,-15.58,data,
+PSUIM6,against pulse,0.3,150.45,data,
+PSUIM6,against pulse,0.5,160.61,data,
+PSUIM6,against pulse,0.7,182.5,data,
+PSUIM6,against pulse,0.9,-108.69,data,
+PSUIM6,toward pulse,0.1,1.13,data,
+PSUIM6,toward pulse,0.3,-98.76,data,
+PSUIM6,toward pulse,0.5,-381.48,data,
+PSUIM6,toward pulse,0.7,-477.75,data,
+PSUIM6,toward pulse,0.9,-323.3,data,
+PSUIM7,against pulse,0.1,-37.42,data,
+PSUIM7,against pulse,0.3,-32.02,data,
+PSUIM7,against pulse,0.5,-55.86,data,
+PSUIM7,against pulse,0.7,102.54,data,
+PSUIM7,against pulse,0.9,244.34,data,
+PSUIM7,toward pulse,0.1,18.01,data,
+PSUIM7,toward pulse,0.3,-13.26,data,
+PSUIM7,toward pulse,0.5,-98.96,data,
+PSUIM7,toward pulse,0.7,-231.02,data,
+PSUIM7,toward pulse,0.9,-618.88,data,
+PSUIM6,against pulse,0.1,8.86,base,1.0
+PSUIM6,against pulse,0.3,39.99,base,1.0
+PSUIM6,against pulse,0.5,67.87,base,1.0
+PSUIM6,against pulse,0.7,75.19,base,1.0
+PSUIM6,against pulse,0.9,70.62,base,1.0
+PSUIM6,toward pulse,0.1,-10.89,base,1.0
+PSUIM6,toward pulse,0.3,-39.83,base,1.0
+PSUIM6,toward pulse,0.5,-51.41,base,1.0
+PSUIM6,toward pulse,0.7,-76.49,base,1.0
+PSUIM6,toward pulse,0.9,-43.2,base,1.0
+PSUIM6,against pulse,0.1,41.46,base,4.0
+PSUIM6,against pulse,0.3,166.92,base,4.0
+PSUIM6,against pulse,0.5,237.43,base,4.0
+PSUIM6,against pulse,0.7,259.13,base,4.0
+PSUIM6,against pulse,0.9,200.74,base,4.0
+PSUIM6,toward pulse,0.1,-36.12,base,4.0
+PSUIM6,toward pulse,0.3,-154.54,base,4.0
+PSUIM6,toward pulse,0.5,-220.61,base,4.0
+PSUIM6,toward pulse,0.7,-280.15,base,4.0
+PSUIM6,toward pulse,0.9,-207.75,base,4.0
+PSUIM6,against pulse,0.1,26.7,leak 1/s,1.0
+PSUIM6,against pulse,0.3,77.07,leak 1/s,1.0
+PSUIM6,against pulse,0.5,116.79,leak 1/s,1.0
+PSUIM6,against pulse,0.7,140.34,leak 1/s,1.0
+PSUIM6,against pulse,0.9,98.11,leak 1/s,1.0
+PSUIM6,toward pulse,0.1,-13.0,leak 1/s,1.0
+PSUIM6,toward pulse,0.3,-58.28,leak 1/s,1.0
+PSUIM6,toward pulse,0.5,-105.55,leak 1/s,1.0
+PSUIM6,toward pulse,0.7,-142.11,leak 1/s,1.0
+PSUIM6,toward pulse,0.9,-95.27,leak 1/s,1.0
+PSUIM6,against pulse,0.1,109.12,leak 1/s,4.0
+PSUIM6,against pulse,0.3,289.58,leak 1/s,4.0
+PSUIM6,against pulse,0.5,381.32,leak 1/s,4.0
+PSUIM6,against pulse,0.7,394.67,leak 1/s,4.0
+PSUIM6,against pulse,0.9,248.77,leak 1/s,4.0
+PSUIM6,toward pulse,0.1,-58.79,leak 1/s,4.0
+PSUIM6,toward pulse,0.3,-216.58,leak 1/s,4.0
+PSUIM6,toward pulse,0.5,-417.85,leak 1/s,4.0
+PSUIM6,toward pulse,0.7,-636.49,leak 1/s,4.0
+PSUIM6,toward pulse,0.9,-546.49,leak 1/s,4.0
+PSUIM6,against pulse,0.1,24.6,leak 3/s,1.0
+PSUIM6,against pulse,0.3,96.49,leak 3/s,1.0
+PSUIM6,against pulse,0.5,133.76,leak 3/s,1.0
+PSUIM6,against pulse,0.7,139.12,leak 3/s,1.0
+PSUIM6,against pulse,0.9,94.55,leak 3/s,1.0
+PSUIM6,toward pulse,0.1,-10.48,leak 3/s,1.0
+PSUIM6,toward pulse,0.3,-71.2,leak 3/s,1.0
+PSUIM6,toward pulse,0.5,-138.56,leak 3/s,1.0
+PSUIM6,toward pulse,0.7,-141.24,leak 3/s,1.0
+PSUIM6,toward pulse,0.9,-113.41,leak 3/s,1.0
+PSUIM6,against pulse,0.1,101.8,leak 3/s,4.0
+PSUIM6,against pulse,0.3,302.85,leak 3/s,4.0
+PSUIM6,against pulse,0.5,356.64,leak 3/s,4.0
+PSUIM6,against pulse,0.7,327.17,leak 3/s,4.0
+PSUIM6,against pulse,0.9,199.0,leak 3/s,4.0
+PSUIM6,toward pulse,0.1,-27.46,leak 3/s,4.0
+PSUIM6,toward pulse,0.3,-221.26,leak 3/s,4.0
+PSUIM6,toward pulse,0.5,-520.32,leak 3/s,4.0
+PSUIM6,toward pulse,0.7,-931.14,leak 3/s,4.0
+PSUIM6,toward pulse,0.9,-868.4,leak 3/s,4.0
+PSUIM6,against pulse,0.1,9.54,leak 10/s,1.0
+PSUIM6,against pulse,0.3,91.37,leak 10/s,1.0
+PSUIM6,against pulse,0.5,136.46,leak 10/s,1.0
+PSUIM6,against pulse,0.7,158.09,leak 10/s,1.0
+PSUIM6,against pulse,0.9,165.29,leak 10/s,1.0
+PSUIM6,toward pulse,0.1,-3.94,leak 10/s,1.0
+PSUIM6,toward pulse,0.3,-63.45,leak 10/s,1.0
+PSUIM6,toward pulse,0.5,-183.64,leak 10/s,1.0
+PSUIM6,toward pulse,0.7,-258.23,leak 10/s,1.0
+PSUIM6,toward pulse,0.9,-211.29,leak 10/s,1.0
+PSUIM6,against pulse,0.1,-6.28,leak 10/s,4.0
+PSUIM6,against pulse,0.3,106.73,leak 10/s,4.0
+PSUIM6,against pulse,0.5,137.64,leak 10/s,4.0
+PSUIM6,against pulse,0.7,72.91,leak 10/s,4.0
+PSUIM6,against pulse,0.9,0.47,leak 10/s,4.0
+PSUIM6,toward pulse,0.1,-24.34,leak 10/s,4.0
+PSUIM6,toward pulse,0.3,-137.91,leak 10/s,4.0
+PSUIM6,toward pulse,0.5,-424.23,leak 10/s,4.0
+PSUIM6,toward pulse,0.7,-912.01,leak 10/s,4.0
+PSUIM6,toward pulse,0.9,-1858.3,leak 10/s,4.0
+PSUIM6,against pulse,0.1,19.63,urgency 0.3/s,1.0
+PSUIM6,against pulse,0.3,52.32,urgency 0.3/s,1.0
+PSUIM6,against pulse,0.5,74.75,urgency 0.3/s,1.0
+PSUIM6,against pulse,0.7,94.43,urgency 0.3/s,1.0
+PSUIM6,against pulse,0.9,69.41,urgency 0.3/s,1.0
+PSUIM6,toward pulse,0.1,-16.0,urgency 0.3/s,1.0
+PSUIM6,toward pulse,0.3,-44.79,urgency 0.3/s,1.0
+PSUIM6,toward pulse,0.5,-63.28,urgency 0.3/s,1.0
+PSUIM6,toward pulse,0.7,-73.3,urgency 0.3/s,1.0
+PSUIM6,toward pulse,0.9,-71.3,urgency 0.3/s,1.0
+PSUIM6,against pulse,0.1,71.8,urgency 0.3/s,4.0
+PSUIM6,against pulse,0.3,211.51,urgency 0.3/s,4.0
+PSUIM6,against pulse,0.5,278.43,urgency 0.3/s,4.0
+PSUIM6,against pulse,0.7,317.49,urgency 0.3/s,4.0
+PSUIM6,against pulse,0.9,250.08,urgency 0.3/s,4.0
+PSUIM6,toward pulse,0.1,-65.71,urgency 0.3/s,4.0
+PSUIM6,toward pulse,0.3,-188.59,urgency 0.3/s,4.0
+PSUIM6,toward pulse,0.5,-267.72,urgency 0.3/s,4.0
+PSUIM6,toward pulse,0.7,-329.49,urgency 0.3/s,4.0
+PSUIM6,toward pulse,0.9,-311.3,urgency 0.3/s,4.0
+PSUIM6,against pulse,0.1,9.72,urgency 1/s,1.0
+PSUIM6,against pulse,0.3,26.53,urgency 1/s,1.0
+PSUIM6,against pulse,0.5,33.95,urgency 1/s,1.0
+PSUIM6,against pulse,0.7,44.32,urgency 1/s,1.0
+PSUIM6,against pulse,0.9,59.37,urgency 1/s,1.0
+PSUIM6,toward pulse,0.1,-7.79,urgency 1/s,1.0
+PSUIM6,toward pulse,0.3,-20.0,urgency 1/s,1.0
+PSUIM6,toward pulse,0.5,-29.71,urgency 1/s,1.0
+PSUIM6,toward pulse,0.7,-34.71,urgency 1/s,1.0
+PSUIM6,toward pulse,0.9,-27.68,urgency 1/s,1.0
+PSUIM6,against pulse,0.1,26.45,urgency 1/s,4.0
+PSUIM6,against pulse,0.3,102.3,urgency 1/s,4.0
+PSUIM6,against pulse,0.5,131.51,urgency 1/s,4.0
+PSUIM6,against pulse,0.7,151.68,urgency 1/s,4.0
+PSUIM6,against pulse,0.9,138.03,urgency 1/s,4.0
+PSUIM6,toward pulse,0.1,-27.08,urgency 1/s,4.0
+PSUIM6,toward pulse,0.3,-91.67,urgency 1/s,4.0
+PSUIM6,toward pulse,0.5,-127.49,urgency 1/s,4.0
+PSUIM6,toward pulse,0.7,-151.57,urgency 1/s,4.0
+PSUIM6,toward pulse,0.9,-134.19,urgency 1/s,4.0
+PSUIM6,against pulse,0.1,7.2,urgency 3/s,1.0
+PSUIM6,against pulse,0.3,18.77,urgency 3/s,1.0
+PSUIM6,against pulse,0.5,24.28,urgency 3/s,1.0
+PSUIM6,against pulse,0.7,27.89,urgency 3/s,1.0
+PSUIM6,against pulse,0.9,24.87,urgency 3/s,1.0
+PSUIM6,toward pulse,0.1,-4.93,urgency 3/s,1.0
+PSUIM6,toward pulse,0.3,-13.21,urgency 3/s,1.0
+PSUIM6,toward pulse,0.5,-20.27,urgency 3/s,1.0
+PSUIM6,toward pulse,0.7,-25.08,urgency 3/s,1.0
+PSUIM6,toward pulse,0.9,-14.11,urgency 3/s,1.0
+PSUIM6,against pulse,0.1,28.9,urgency 3/s,4.0
+PSUIM6,against pulse,0.3,71.4,urgency 3/s,4.0
+PSUIM6,against pulse,0.5,94.57,urgency 3/s,4.0
+PSUIM6,against pulse,0.7,98.78,urgency 3/s,4.0
+PSUIM6,against pulse,0.9,80.77,urgency 3/s,4.0
+PSUIM6,toward pulse,0.1,-28.25,urgency 3/s,4.0
+PSUIM6,toward pulse,0.3,-66.36,urgency 3/s,4.0
+PSUIM6,toward pulse,0.5,-93.9,urgency 3/s,4.0
+PSUIM6,toward pulse,0.7,-110.61,urgency 3/s,4.0
+PSUIM6,toward pulse,0.9,-97.19,urgency 3/s,4.0
+PSUIM7,against pulse,0.1,-0.86,base,1.0
+PSUIM7,against pulse,0.3,20.08,base,1.0
+PSUIM7,against pulse,0.5,47.39,base,1.0
+PSUIM7,against pulse,0.7,72.31,base,1.0
+PSUIM7,against pulse,0.9,108.53,base,1.0
+PSUIM7,toward pulse,0.1,3.25,base,1.0
+PSUIM7,toward pulse,0.3,-12.92,base,1.0
+PSUIM7,toward pulse,0.5,-41.82,base,1.0
+PSUIM7,toward pulse,0.7,-68.57,base,1.0
+PSUIM7,toward pulse,0.9,-116.31,base,1.0
+PSUIM7,against pulse,0.1,-5.28,base,4.0
+PSUIM7,against pulse,0.3,81.68,base,4.0
+PSUIM7,against pulse,0.5,197.83,base,4.0
+PSUIM7,against pulse,0.7,308.26,base,4.0
+PSUIM7,against pulse,0.9,383.55,base,4.0
+PSUIM7,toward pulse,0.1,4.54,base,4.0
+PSUIM7,toward pulse,0.3,-54.03,base,4.0
+PSUIM7,toward pulse,0.5,-166.54,base,4.0
+PSUIM7,toward pulse,0.7,-325.87,base,4.0
+PSUIM7,toward pulse,0.9,-580.58,base,4.0
+PSUIM7,against pulse,0.1,1.5,leak 1/s,1.0
+PSUIM7,against pulse,0.3,36.42,leak 1/s,1.0
+PSUIM7,against pulse,0.5,85.73,leak 1/s,1.0
+PSUIM7,against pulse,0.7,127.45,leak 1/s,1.0
+PSUIM7,against pulse,0.9,174.31,leak 1/s,1.0
+PSUIM7,toward pulse,0.1,1.55,leak 1/s,1.0
+PSUIM7,toward pulse,0.3,-17.17,leak 1/s,1.0
+PSUIM7,toward pulse,0.5,-58.75,leak 1/s,1.0
+PSUIM7,toward pulse,0.7,-120.93,leak 1/s,1.0
+PSUIM7,toward pulse,0.9,-200.83,leak 1/s,1.0
+PSUIM7,against pulse,0.1,0.07,leak 1/s,4.0
+PSUIM7,against pulse,0.3,136.78,leak 1/s,4.0
+PSUIM7,against pulse,0.5,281.98,leak 1/s,4.0
+PSUIM7,against pulse,0.7,408.57,leak 1/s,4.0
+PSUIM7,against pulse,0.9,431.55,leak 1/s,4.0
+PSUIM7,toward pulse,0.1,3.2,leak 1/s,4.0
+PSUIM7,toward pulse,0.3,-65.93,leak 1/s,4.0
+PSUIM7,toward pulse,0.5,-200.7,leak 1/s,4.0
+PSUIM7,toward pulse,0.7,-460.47,leak 1/s,4.0
+PSUIM7,toward pulse,0.9,-1057.41,leak 1/s,4.0
+PSUIM7,against pulse,0.1,-0.11,leak 3/s,1.0
+PSUIM7,against pulse,0.3,18.55,leak 3/s,1.0
+PSUIM7,against pulse,0.5,66.94,leak 3/s,1.0
+PSUIM7,against pulse,0.7,100.99,leak 3/s,1.0
+PSUIM7,against pulse,0.9,85.98,leak 3/s,1.0
+PSUIM7,toward pulse,0.1,1.75,leak 3/s,1.0
+PSUIM7,toward pulse,0.3,-11.07,leak 3/s,1.0
+PSUIM7,toward pulse,0.5,-46.39,leak 3/s,1.0
+PSUIM7,toward pulse,0.7,-118.75,leak 3/s,1.0
+PSUIM7,toward pulse,0.9,-199.23,leak 3/s,1.0
+PSUIM7,against pulse,0.1,1.51,leak 3/s,4.0
+PSUIM7,against pulse,0.3,81.93,leak 3/s,4.0
+PSUIM7,against pulse,0.5,216.96,leak 3/s,4.0
+PSUIM7,against pulse,0.7,315.36,leak 3/s,4.0
+PSUIM7,against pulse,0.9,272.02,leak 3/s,4.0
+PSUIM7,toward pulse,0.1,3.95,leak 3/s,4.0
+PSUIM7,toward pulse,0.3,-38.34,leak 3/s,4.0
+PSUIM7,toward pulse,0.5,-131.79,leak 3/s,4.0
+PSUIM7,toward pulse,0.7,-392.81,leak 3/s,4.0
+PSUIM7,toward pulse,0.9,-1161.91,leak 3/s,4.0
+PSUIM7,against pulse,0.1,-0.51,leak 10/s,1.0
+PSUIM7,against pulse,0.3,16.11,leak 10/s,1.0
+PSUIM7,against pulse,0.5,86.0,leak 10/s,1.0
+PSUIM7,against pulse,0.7,136.72,leak 10/s,1.0
+PSUIM7,against pulse,0.9,138.8,leak 10/s,1.0
+PSUIM7,toward pulse,0.1,1.58,leak 10/s,1.0
+PSUIM7,toward pulse,0.3,-10.31,leak 10/s,1.0
+PSUIM7,toward pulse,0.5,-50.18,leak 10/s,1.0
+PSUIM7,toward pulse,0.7,-172.16,leak 10/s,1.0
+PSUIM7,toward pulse,0.9,-275.65,leak 10/s,1.0
+PSUIM7,against pulse,0.1,-8.82,leak 10/s,4.0
+PSUIM7,against pulse,0.3,-6.38,leak 10/s,4.0
+PSUIM7,against pulse,0.5,101.47,leak 10/s,4.0
+PSUIM7,against pulse,0.7,88.29,leak 10/s,4.0
+PSUIM7,against pulse,0.9,-192.11,leak 10/s,4.0
+PSUIM7,toward pulse,0.1,16.18,leak 10/s,4.0
+PSUIM7,toward pulse,0.3,-24.14,leak 10/s,4.0
+PSUIM7,toward pulse,0.5,-125.7,leak 10/s,4.0
+PSUIM7,toward pulse,0.7,-392.47,leak 10/s,4.0
+PSUIM7,toward pulse,0.9,-1571.58,leak 10/s,4.0
+PSUIM7,against pulse,0.1,-0.85,urgency 0.3/s,1.0
+PSUIM7,against pulse,0.3,29.57,urgency 0.3/s,1.0
+PSUIM7,against pulse,0.5,58.46,urgency 0.3/s,1.0
+PSUIM7,against pulse,0.7,88.97,urgency 0.3/s,1.0
+PSUIM7,against pulse,0.9,126.15,urgency 0.3/s,1.0
+PSUIM7,toward pulse,0.1,4.87,urgency 0.3/s,1.0
+PSUIM7,toward pulse,0.3,-15.21,urgency 0.3/s,1.0
+PSUIM7,toward pulse,0.5,-44.96,urgency 0.3/s,1.0
+PSUIM7,toward pulse,0.7,-77.98,urgency 0.3/s,1.0
+PSUIM7,toward pulse,0.9,-130.38,urgency 0.3/s,1.0
+PSUIM7,against pulse,0.1,-9.31,urgency 0.3/s,4.0
+PSUIM7,against pulse,0.3,101.28,urgency 0.3/s,4.0
+PSUIM7,against pulse,0.5,217.35,urgency 0.3/s,4.0
+PSUIM7,against pulse,0.7,318.85,urgency 0.3/s,4.0
+PSUIM7,against pulse,0.9,374.56,urgency 0.3/s,4.0
+PSUIM7,toward pulse,0.1,5.18,urgency 0.3/s,4.0
+PSUIM7,toward pulse,0.3,-71.17,urgency 0.3/s,4.0
+PSUIM7,toward pulse,0.5,-188.15,urgency 0.3/s,4.0
+PSUIM7,toward pulse,0.7,-351.81,urgency 0.3/s,4.0
+PSUIM7,toward pulse,0.9,-651.22,urgency 0.3/s,4.0
+PSUIM7,against pulse,0.1,-2.24,urgency 1/s,1.0
+PSUIM7,against pulse,0.3,24.07,urgency 1/s,1.0
+PSUIM7,against pulse,0.5,48.06,urgency 1/s,1.0
+PSUIM7,against pulse,0.7,70.26,urgency 1/s,1.0
+PSUIM7,against pulse,0.9,93.94,urgency 1/s,1.0
+PSUIM7,toward pulse,0.1,5.56,urgency 1/s,1.0
+PSUIM7,toward pulse,0.3,-12.36,urgency 1/s,1.0
+PSUIM7,toward pulse,0.5,-37.44,urgency 1/s,1.0
+PSUIM7,toward pulse,0.7,-59.37,urgency 1/s,1.0
+PSUIM7,toward pulse,0.9,-107.45,urgency 1/s,1.0
+PSUIM7,against pulse,0.1,-14.84,urgency 1/s,4.0
+PSUIM7,against pulse,0.3,79.12,urgency 1/s,4.0
+PSUIM7,against pulse,0.5,175.53,urgency 1/s,4.0
+PSUIM7,against pulse,0.7,250.15,urgency 1/s,4.0
+PSUIM7,against pulse,0.9,286.99,urgency 1/s,4.0
+PSUIM7,toward pulse,0.1,9.05,urgency 1/s,4.0
+PSUIM7,toward pulse,0.3,-62.47,urgency 1/s,4.0
+PSUIM7,toward pulse,0.5,-157.26,urgency 1/s,4.0
+PSUIM7,toward pulse,0.7,-283.99,urgency 1/s,4.0
+PSUIM7,toward pulse,0.9,-514.14,urgency 1/s,4.0
+PSUIM7,against pulse,0.1,-0.4,urgency 3/s,1.0
+PSUIM7,against pulse,0.3,4.17,urgency 3/s,1.0
+PSUIM7,against pulse,0.5,15.21,urgency 3/s,1.0
+PSUIM7,against pulse,0.7,23.67,urgency 3/s,1.0
+PSUIM7,against pulse,0.9,24.64,urgency 3/s,1.0
+PSUIM7,toward pulse,0.1,4.33,urgency 3/s,1.0
+PSUIM7,toward pulse,0.3,-3.86,urgency 3/s,1.0
+PSUIM7,toward pulse,0.5,-13.74,urgency 3/s,1.0
+PSUIM7,toward pulse,0.7,-26.33,urgency 3/s,1.0
+PSUIM7,toward pulse,0.9,-40.05,urgency 3/s,1.0
+PSUIM7,against pulse,0.1,-7.75,urgency 3/s,4.0
+PSUIM7,against pulse,0.3,18.35,urgency 3/s,4.0
+PSUIM7,against pulse,0.5,68.7,urgency 3/s,4.0
+PSUIM7,against pulse,0.7,97.17,urgency 3/s,4.0
+PSUIM7,against pulse,0.9,100.35,urgency 3/s,4.0
+PSUIM7,toward pulse,0.1,8.24,urgency 3/s,4.0
+PSUIM7,toward pulse,0.3,-19.66,urgency 3/s,4.0
+PSUIM7,toward pulse,0.5,-58.88,urgency 3/s,4.0
+PSUIM7,toward pulse,0.7,-107.03,urgency 3/s,4.0
+PSUIM7,toward pulse,0.9,-166.4,urgency 3/s,4.0
+DBM6,against pulse,0.1,-4.94,base,1.0
+DBM6,against pulse,0.3,28.43,base,1.0
+DBM6,against pulse,0.5,62.38,base,1.0
+DBM6,against pulse,0.7,93.13,base,1.0
+DBM6,against pulse,0.9,80.3,base,1.0
+DBM6,toward pulse,0.1,7.08,base,1.0
+DBM6,toward pulse,0.3,-13.13,base,1.0
+DBM6,toward pulse,0.5,-49.88,base,1.0
+DBM6,toward pulse,0.7,-99.89,base,1.0
+DBM6,toward pulse,0.9,-85.6,base,1.0
+DBM6,against pulse,0.1,-11.45,base,4.0
+DBM6,against pulse,0.3,116.94,base,4.0
+DBM6,against pulse,0.5,261.99,base,4.0
+DBM6,against pulse,0.7,368.06,base,4.0
+DBM6,against pulse,0.9,331.8,base,4.0
+DBM6,toward pulse,0.1,4.71,base,4.0
+DBM6,toward pulse,0.3,-98.98,base,4.0
+DBM6,toward pulse,0.5,-258.48,base,4.0
+DBM6,toward pulse,0.7,-422.43,base,4.0
+DBM6,toward pulse,0.9,-476.98,base,4.0
+DBM6,against pulse,0.1,-1.95,leak 1/s,1.0
+DBM6,against pulse,0.3,25.48,leak 1/s,1.0
+DBM6,against pulse,0.5,77.36,leak 1/s,1.0
+DBM6,against pulse,0.7,105.28,leak 1/s,1.0
+DBM6,against pulse,0.9,82.62,leak 1/s,1.0
+DBM6,toward pulse,0.1,-0.28,leak 1/s,1.0
+DBM6,toward pulse,0.3,-12.61,leak 1/s,1.0
+DBM6,toward pulse,0.5,-61.96,leak 1/s,1.0
+DBM6,toward pulse,0.7,-134.2,leak 1/s,1.0
+DBM6,toward pulse,0.9,-171.62,leak 1/s,1.0
+DBM6,against pulse,0.1,-2.11,leak 1/s,4.0
+DBM6,against pulse,0.3,124.82,leak 1/s,4.0
+DBM6,against pulse,0.5,294.3,leak 1/s,4.0
+DBM6,against pulse,0.7,390.52,leak 1/s,4.0
+DBM6,against pulse,0.9,303.12,leak 1/s,4.0
+DBM6,toward pulse,0.1,-7.02,leak 1/s,4.0
+DBM6,toward pulse,0.3,-80.74,leak 1/s,4.0
+DBM6,toward pulse,0.5,-259.03,leak 1/s,4.0
+DBM6,toward pulse,0.7,-577.16,leak 1/s,4.0
+DBM6,toward pulse,0.9,-838.55,leak 1/s,4.0
+DBM6,against pulse,0.1,-1.15,leak 3/s,1.0
+DBM6,against pulse,0.3,14.52,leak 3/s,1.0
+DBM6,against pulse,0.5,84.79,leak 3/s,1.0
+DBM6,against pulse,0.7,126.44,leak 3/s,1.0
+DBM6,against pulse,0.9,95.47,leak 3/s,1.0
+DBM6,toward pulse,0.1,0.05,leak 3/s,1.0
+DBM6,toward pulse,0.3,-13.78,leak 3/s,1.0
+DBM6,toward pulse,0.5,-56.07,leak 3/s,1.0
+DBM6,toward pulse,0.7,-149.79,leak 3/s,1.0
+DBM6,toward pulse,0.9,-136.61,leak 3/s,1.0
+DBM6,against pulse,0.1,-0.04,leak 3/s,4.0
+DBM6,against pulse,0.3,58.75,leak 3/s,4.0
+DBM6,against pulse,0.5,253.72,leak 3/s,4.0
+DBM6,against pulse,0.7,330.05,leak 3/s,4.0
+DBM6,against pulse,0.9,206.72,leak 3/s,4.0
+DBM6,toward pulse,0.1,-3.04,leak 3/s,4.0
+DBM6,toward pulse,0.3,-58.63,leak 3/s,4.0
+DBM6,toward pulse,0.5,-188.17,leak 3/s,4.0
+DBM6,toward pulse,0.7,-573.19,leak 3/s,4.0
+DBM6,toward pulse,0.9,-1090.37,leak 3/s,4.0
+DBM6,against pulse,0.1,8.78,leak 10/s,1.0
+DBM6,against pulse,0.3,110.22,leak 10/s,1.0
+DBM6,against pulse,0.5,198.95,leak 10/s,1.0
+DBM6,against pulse,0.7,222.0,leak 10/s,1.0
+DBM6,against pulse,0.9,180.58,leak 10/s,1.0
+DBM6,toward pulse,0.1,-15.74,leak 10/s,1.0
+DBM6,toward pulse,0.3,-61.09,leak 10/s,1.0
+DBM6,toward pulse,0.5,-184.99,leak 10/s,1.0
+DBM6,toward pulse,0.7,-556.93,leak 10/s,1.0
+DBM6,toward pulse,0.9,-863.65,leak 10/s,1.0
+DBM6,against pulse,0.1,-41.09,leak 10/s,4.0
+DBM6,against pulse,0.3,-100.89,leak 10/s,4.0
+DBM6,against pulse,0.5,-199.64,leak 10/s,4.0
+DBM6,against pulse,0.7,-482.17,leak 10/s,4.0
+DBM6,against pulse,0.9,-1319.39,leak 10/s,4.0
+DBM6,toward pulse,0.1,-31.56,leak 10/s,4.0
+DBM6,toward pulse,0.3,-105.65,leak 10/s,4.0
+DBM6,toward pulse,0.5,-205.63,leak 10/s,4.0
+DBM6,toward pulse,0.7,-558.83,leak 10/s,4.0
+DBM6,toward pulse,0.9,-1722.74,leak 10/s,4.0
+DBM6,against pulse,0.1,-5.82,urgency 0.3/s,1.0
+DBM6,against pulse,0.3,21.23,urgency 0.3/s,1.0
+DBM6,against pulse,0.5,36.78,urgency 0.3/s,1.0
+DBM6,against pulse,0.7,59.5,urgency 0.3/s,1.0
+DBM6,against pulse,0.9,7.06,urgency 0.3/s,1.0
+DBM6,toward pulse,0.1,5.64,urgency 0.3/s,1.0
+DBM6,toward pulse,0.3,-14.64,urgency 0.3/s,1.0
+DBM6,toward pulse,0.5,-36.72,urgency 0.3/s,1.0
+DBM6,toward pulse,0.7,-63.01,urgency 0.3/s,1.0
+DBM6,toward pulse,0.9,-102.36,urgency 0.3/s,1.0
+DBM6,against pulse,0.1,-12.19,urgency 0.3/s,4.0
+DBM6,against pulse,0.3,95.74,urgency 0.3/s,4.0
+DBM6,against pulse,0.5,164.47,urgency 0.3/s,4.0
+DBM6,against pulse,0.7,235.59,urgency 0.3/s,4.0
+DBM6,against pulse,0.9,169.26,urgency 0.3/s,4.0
+DBM6,toward pulse,0.1,4.5,urgency 0.3/s,4.0
+DBM6,toward pulse,0.3,-80.99,urgency 0.3/s,4.0
+DBM6,toward pulse,0.5,-170.21,urgency 0.3/s,4.0
+DBM6,toward pulse,0.7,-258.08,urgency 0.3/s,4.0
+DBM6,toward pulse,0.9,-325.79,urgency 0.3/s,4.0
+DBM6,against pulse,0.1,-5.6,urgency 1/s,1.0
+DBM6,against pulse,0.3,24.58,urgency 1/s,1.0
+DBM6,against pulse,0.5,52.93,urgency 1/s,1.0
+DBM6,against pulse,0.7,71.33,urgency 1/s,1.0
+DBM6,against pulse,0.9,78.9,urgency 1/s,1.0
+DBM6,toward pulse,0.1,6.07,urgency 1/s,1.0
+DBM6,toward pulse,0.3,-20.56,urgency 1/s,1.0
+DBM6,toward pulse,0.5,-49.21,urgency 1/s,1.0
+DBM6,toward pulse,0.7,-79.88,urgency 1/s,1.0
+DBM6,toward pulse,0.9,-99.98,urgency 1/s,1.0
+DBM6,against pulse,0.1,-20.05,urgency 1/s,4.0
+DBM6,against pulse,0.3,112.46,urgency 1/s,4.0
+DBM6,against pulse,0.5,192.77,urgency 1/s,4.0
+DBM6,against pulse,0.7,265.71,urgency 1/s,4.0
+DBM6,against pulse,0.9,223.77,urgency 1/s,4.0
+DBM6,toward pulse,0.1,4.0,urgency 1/s,4.0
+DBM6,toward pulse,0.3,-94.79,urgency 1/s,4.0
+DBM6,toward pulse,0.5,-201.61,urgency 1/s,4.0
+DBM6,toward pulse,0.7,-312.63,urgency 1/s,4.0
+DBM6,toward pulse,0.9,-429.97,urgency 1/s,4.0
+DBM6,against pulse,0.1,-5.24,urgency 3/s,1.0
+DBM6,against pulse,0.3,3.02,urgency 3/s,1.0
+DBM6,against pulse,0.5,22.82,urgency 3/s,1.0
+DBM6,against pulse,0.7,35.98,urgency 3/s,1.0
+DBM6,against pulse,0.9,29.39,urgency 3/s,1.0
+DBM6,toward pulse,0.1,3.09,urgency 3/s,1.0
+DBM6,toward pulse,0.3,-8.01,urgency 3/s,1.0
+DBM6,toward pulse,0.5,-19.8,urgency 3/s,1.0
+DBM6,toward pulse,0.7,-29.2,urgency 3/s,1.0
+DBM6,toward pulse,0.9,-33.52,urgency 3/s,1.0
+DBM6,against pulse,0.1,-15.94,urgency 3/s,4.0
+DBM6,against pulse,0.3,21.79,urgency 3/s,4.0
+DBM6,against pulse,0.5,88.09,urgency 3/s,4.0
+DBM6,against pulse,0.7,122.53,urgency 3/s,4.0
+DBM6,against pulse,0.9,102.38,urgency 3/s,4.0
+DBM6,toward pulse,0.1,5.19,urgency 3/s,4.0
+DBM6,toward pulse,0.3,-33.59,urgency 3/s,4.0
+DBM6,toward pulse,0.5,-72.22,urgency 3/s,4.0
+DBM6,toward pulse,0.7,-131.23,urgency 3/s,4.0
+DBM6,toward pulse,0.9,-173.18,urgency 3/s,4.0
