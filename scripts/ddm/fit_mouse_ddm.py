@@ -107,6 +107,10 @@ EXTREMA_SAMPLE_GAIN_MAX = 200.0
 # leak or urgency; the integrator starts midway (z = 0.5). Their kappa * (C - C0) is drift_gain * C + drift_offset, with
 # drift_offset bounds wide enough for |C0| <= NOMINAL_C0_MAX at any gain (C0 = -drift_offset / drift_gain).
 NOMINAL_VARIANT = "L0U0V0Z0G0"
+# Free pulse weight (plan 2026-10-29-pulse-weight-joint): drift input = no-pulse motion energy + w x pulse component on
+# pulse trials (controls have no pulse component); w = 1 is the model as built. The simulator calls the second channel's
+# weight noise_weight.
+PULSE_WEIGHT = ("noise_weight", (0.0, 20.0), 1.0)
 NOMINAL_C0_MAX = 0.3
 # Amendment 13 addendum: in nominal units the integration model's drift_gain sat at 0.5 (the motion-energy bound) in
 # 31/60 fits, so its lower bound is 0.01 (the extrema model, gains 3.7-13.1, keeps 0.5).
@@ -121,7 +125,7 @@ VARIANTS = ["".join(f"{f}{int(on)}" for f, on in zip(OPTIONAL_FREE_PARAMS, flags
 
 
 def make_params(variant: str, guess_model: str = "single", time_varying_gain: bool = False, signed_leak: bool = False, fixed_guess_bias: bool = False, leak_bounds: tuple[float, float] | None = None, drift_gain_max: float | None = None,
-                front_end: str | None = None, extrema_samples: bool = False, nominal_input: bool = False):
+                front_end: str | None = None, extrema_samples: bool = False, nominal_input: bool = False, pulse_weight: bool = False):
     free, fixed = dict(BASE_FREE_PARAMS), dict(FIXED_PARAMS)
     if nominal_input and (variant != NOMINAL_VARIANT or front_end or time_varying_gain):
         raise ValueError(f"nominal_input (amendment 13) is the paper-exact model: variant {NOMINAL_VARIANT}, no front end or gain decay")
@@ -139,6 +143,10 @@ def make_params(variant: str, guess_model: str = "single", time_varying_gain: bo
         free["drift_gain"] = FreeParam(BASE_FREE_PARAMS["drift_gain"].lower_bound, drift_gain_max)
     if time_varying_gain:
         free[GAIN_DECAY[0]] = FreeParam(*GAIN_DECAY[1])
+    if pulse_weight:
+        if nominal_input:
+            raise ValueError("pulse_weight is defined on the motion-energy input")
+        free[PULSE_WEIGHT[0]] = FreeParam(*PULSE_WEIGHT[1])
     flags = dict(zip(variant[0::2], map(int, variant[1::2])))
     if flags.get("G") and guess_model == "guess_lapse":
         fixed.update(LAPSE_WINDOW)
@@ -206,7 +214,7 @@ def cv_folds(condition: np.ndarray, n_folds: int, seed: int = 0) -> np.ndarray:
     return folds
 
 
-def select(inputs: dict, rows: np.ndarray, nominal: bool = False) -> tuple[dict, np.ndarray]:
+def select(inputs: dict, rows: np.ndarray, nominal: bool = False, pulse_weight: bool = False) -> tuple[dict, np.ndarray | tuple]:
     """Data and the 1 ms motion-energy input (S + N) of the given trials; with `nominal` (amendment 13), the trial's
     nominal signed coherence held from stimulus onset, plus the scheduled pulse coherence over the logged pulse frames on
     pulse trials (needs the pulse timing arrays)."""
@@ -225,6 +233,11 @@ def select(inputs: dict, rows: np.ndarray, nominal: bool = False) -> tuple[dict,
                 stop = int(round((inputs["pulse_onset_frame0"][r] + inputs["pulse_n_frames"][r]) / frame_rate / DT))
                 stimulus[i, start:stop] = inputs["pulse_coherence"][r]
         return data, stimulus
+    if pulse_weight:  # (no-pulse input, pulse component) for PULSE_WEIGHT; as primacy.gain_stimuli
+        rig = np.unique(inputs["data_source"][rows]).item()
+        without = inputs["signed_coherence"][rows, None] * inputs[f"onset_response_{rig}"][None, : inputs["signal"].shape[1]] + inputs["noise"][rows]
+        pulse = (inputs["signal"][rows] + inputs["noise"][rows]) - without
+        return data, (to_ms(without.astype(np.float32), frame_rate), to_ms(pulse.astype(np.float32), frame_rate))
     stimulus = to_ms(inputs["signal"][rows] + inputs["noise"][rows], frame_rate)
     return data, stimulus
 
@@ -253,7 +266,7 @@ def build_grid(inputs: dict, variants: list[str] | None = None, splits: list[str
 
 def default_value(name: str) -> float:
     """Value of an optional parameter when its mechanism is off (used to complete warm-start seeds)."""
-    for specs in [*OPTIONAL_FREE_PARAMS.values(), *GUESS_MODELS.values(), [GAIN_DECAY], *FRONT_ENDS.values()]:
+    for specs in [*OPTIONAL_FREE_PARAMS.values(), *GUESS_MODELS.values(), [GAIN_DECAY], [PULSE_WEIGHT], *FRONT_ENDS.values()]:
         for spec_name, _, off_value in specs:
             if spec_name == name:
                 return off_value
@@ -283,7 +296,7 @@ def output_path(out_dir: Path, job: dict) -> Path:
 
 
 def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations: int, guess_model: str = "single", warm_dirs: list[Path] | None = None, time_varying_gain: bool = False, signed_leak: bool = False, fixed_guess_bias: bool = False, leak_bounds: tuple[float, float] | None = None, drift_gain_max: float | None = None,
-            front_end: str | None = None, likelihood_params: dict = LIKELIHOOD_PARAMS, extrema_samples: bool = False, nominal_input: bool = False) -> dict:
+            front_end: str | None = None, likelihood_params: dict = LIKELIHOOD_PARAMS, extrema_samples: bool = False, nominal_input: bool = False, pulse_weight: bool = False) -> dict:
     mouse_rows = np.flatnonzero(inputs["subject_id"] == job["mouse"])
     is_control = inputs["sched_pulse_type"][mouse_rows] == 0
     split = job["split"]
@@ -303,12 +316,12 @@ def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations:
     if nominal_input and split == "control":
         test = None  # pulse trials need the pulse in nominal units (amendment 13, item 4), not built here
 
-    free, fixed = make_params(job["variant"], guess_model, time_varying_gain, signed_leak, fixed_guess_bias, leak_bounds, drift_gain_max, front_end, extrema_samples, nominal_input)
+    free, fixed = make_params(job["variant"], guess_model, time_varying_gain, signed_leak, fixed_guess_bias, leak_bounds, drift_gain_max, front_end, extrema_samples, nominal_input, pulse_weight)
     rigs = np.unique(inputs["data_source"][mouse_rows])
     assert len(rigs) == 1, f"{job['mouse']} has trials from {rigs}"
     min_rt = MIN_RT[rigs[0]]
     model = MouseDDM(free_params=free, fixed_params=fixed, device=DEVICE, likelihood_params=likelihood_params, censor_at=CENSOR_AT, min_rt=min_rt)
-    data, stimulus = select(inputs, train, nominal_input)
+    data, stimulus = select(inputs, train, nominal_input, pulse_weight)
     t0 = time.time()
     seeds, seeds_used = warm_start_seeds(job, list(free), warm_dirs or [])
     if seeds_used:
@@ -336,13 +349,14 @@ def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations:
         "front_end": front_end,
         "extrema_samples": extrema_samples,
         "nominal_input": nominal_input,
+        "pulse_weight": pulse_weight,
         "warm_start_seeds": seeds_used,
         "censor_at": CENSOR_AT,
         "min_rt": min_rt,
         "n_train_censored": int(inputs["censored"][train].sum()),
     }
     if test is not None and len(test):
-        test_data, test_stimulus = select(inputs, test, nominal_input)
+        test_data, test_stimulus = select(inputs, test, nominal_input, pulse_weight)
         result["n_test"] = len(test)
         result["test_nll"] = heldout_nll(model, fit["parameters"], test_data, test_stimulus, n_reps)
     model.simulator.clear_cache()
@@ -384,6 +398,7 @@ if __name__ == "__main__":
     parser.add_argument("--extrema_samples", action="store_true", help="discrete-sample extrema detection (amendment 10); use with a variant without leak or urgency")
     parser.add_argument("--drift_gain_max", type=float, help="upper bound of drift_gain (default 20); amendment 5: 200 for the extrema-detection model if its fits reach 20")
     parser.add_argument("--pulse_timing", default="ddm/pulse_timing_global.npz", help="scheduled pulse timing (build_pulse_timing.py); read only with --nominal_input, for pulse trials")
+    parser.add_argument("--pulse_weight", action="store_true", help="free weight on the pulse component of pulse trials (noise_weight; plan 2026-10-29-pulse-weight-joint)")
     parser.add_argument("--nominal_input", action="store_true", help=f"paper-exact Stine et al. 2020 models (amendment 13): nominal coherence input, variant {NOMINAL_VARIANT}; with --extrema_samples their extrema detector")
     args = parser.parse_args()
 
@@ -417,4 +432,4 @@ if __name__ == "__main__":
         else:
             logger.info("job %s: %s", args.job_id, job)
             run_job(inputs, job, processed / args.out_dir, args.n_reps, args.max_iterations, args.guess_model, [processed / d for d in args.warm_start_from], args.time_varying_gain, args.signed_leak, args.fixed_guess_bias, args.leak_bounds, args.drift_gain_max, args.front_end,
-                    RESPONDED_LIKELIHOOD_PARAMS if args.responded_only else LIKELIHOOD_PARAMS, args.extrema_samples, args.nominal_input)
+                    RESPONDED_LIKELIHOOD_PARAMS if args.responded_only else LIKELIHOOD_PARAMS, args.extrema_samples, args.nominal_input, args.pulse_weight)
