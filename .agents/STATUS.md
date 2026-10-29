@@ -1,7 +1,13 @@
 # Status
-Last updated: 2026-10-27 by Claude (pulse descriptive checks: asymmetry, lapse, readout bias)
+Last updated: 2026-10-29 by Claude (Fable 5.1; pulse tests of leak vs urgency: research + feasibility illustration)
 
 ## Current focus
+Leak vs urgency from pulse trials (author question 2026-10-28): research done, plan done. Verdict: existing descriptive
+signatures cannot separate them; the pulses are informative in principle (S1 profile separates leak >= 1 /s from the
+leak-free model by 2-10 SE in PSUIM6/7) but no family member reproduces the observed sustained 0.3-1.2 s effect without a
+late reversal, so a joint (L, u, w) fit would fail falsification before deciding L vs u. Route with stop rules proposed;
+author to fix thresholds (reports/2026-10-29-pulse-leak-vs-urgency.md; literature:
+dissemination/reports/pulse-leak-vs-urgency-literature-2026-10-29.md).
 S6 panel review complete: roadmap `dissemination/paper/np/panel/roadmap.md` (simulated major revision, 7 P0/14 P1/3 P2). Waiting at G5 for author disposition (`np/checkpoints/G5.md`).
 Manuscript-facing text converted to American spelling (D010; spine re-locked; `scripts/paper/americanize_spelling.py`); Fig 2 v6 / Fig 3 v5 re-exported with US labels (data identical). Plan done.
 G4 is approved and the exact N105–N107 Methods patch is applied. The manuscript has been assembled, independently
@@ -26,6 +32,10 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-10-29-ucla-pulse-me-nofreeze.md : removing the UCLA replay freeze raises the UCLA pulse x1.13-1.15 (UW/UCLA 1.65 -> 1.45, ~pulse length); new inputs ddm_inputs_global_ucla_nofreeze.npz; DDM kernel verified; pulse moves the fitted decision variable only 2-4% of the bound
+- reports/2026-10-29-pulse-descriptive-package.md : 10 mice: pulse effect in responses 0.3-1.2 s after the pulse 5.5 pp [0.8, 10.2] (Holm 0.08), none after 1.2 s (1.2 [-2.8, 5.2]); no reversal in PSUIM6/7 but DBM6 reverses; S2 uninformative
+- reports/2026-10-29-pulse-leak-vs-urgency.md : pulse tests of leak vs urgency: what was tried, literature verdict, feasibility illustration (SR1 passes in 2 dense mice; every variant mis-predicts the 0.9-1.2 s bin and the late window), calibrated route with stop rules SR1-SR5
+- ../dissemination/reports/pulse-leak-vs-urgency-literature-2026-10-29.md : literature synthesis (62 DOIs): first-order pulse signatures are shared by all bounded integrators; leak identifiable only above ~1 /s with NDT pinned; design S1-S3 + (L, u, w) inference + recovery grid
 - reports/2026-10-28-pulse-time-comparison.md : no within-mouse change of the pulse effect across pulse times (Bayes early-middle 0.14 log-odds [-0.08, 0.37]; per-mouse Holm >= 0.27); late looks smaller only because its 6 mice have small effects throughout
 - reports/2026-10-28-pulse-direction-by-time.md : right vs left pulse per pulse time; bias differs (early -17.1% coh, Holm 0.047 over 6, post hoc family; middle -12.4, Holm 0.10; late n.s.), slope does not
 - reports/2026-10-28-pulse-psychometric-parameter-bootstrap.md : per-stage bootstrap on psychometric bias/slope; early congruent-incongruent slope +0.040 (Holm 0.022) and early right-pulse bias -15.1% (Holm 0.011); rest n.s.
@@ -80,6 +90,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - ../dissemination/reports/motion-energy-methods.md : motion-energy method review and corrections
 
 ## Known issues
+- 2026-10-29: all-trial (control + pulse) responded-only fits differ from control-only fits in the 4 UCLA mice (median ratio a 0.82, drift_gain 0.85, sv 0.76, ndt 1.9) but not in UW (about 1.0). The parameter table parameters_common_model_resp_2026-10-27.md uses the all-trial fits. Cause not identified: UCLA pulse ME understated only 1.13-1.20x (reports/2026-10-29-ucla-pulse-me-nofreeze.md; refit deferred) or pulse misfit pressure; rig and mouse are confounded. Until resolved, compare mice on control-split fits or show both.
 - 2026-10-28: all strategy recoveries (F1a, ES, ESx/DDMx, cross matrix) are unpaired: synthetic data differ between candidates (63/80 datasets). F1a k = 5 / THESIS_B provisional (reports/2026-10-28-recovery-synthetic-data-mismatch.md). Old 500-fit variant recovery also suspect (GPU synthesis; not checkable). Fix + rerun pinned by author; do not cite recovery results meanwhile.
 - 2026-10-27 author rule: trials without a response by 5 s (435 no RT + 4,102 RT > 5 s = 4,537) must not enter any analysis. All existing DDM fits, gates, calibration, pulse-gain diagnostics and the primary pulse contrast (1,709 unresponded) included them; superseded for the accumulation-first paper by responded-only refits (--responded_only). The first paper version is not yet redone.
 - DDM inputs label 48 UCLA no-response pulse trials as controls (direction lost in notebook 0.0); the 15 trials dropped for invalid duration are responses during the pulse (outcome-dependent). Existing inputs unchanged (pulse-data report).
