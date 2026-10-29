@@ -8,6 +8,8 @@ nominal % coherence on non-pulse trials after the 9-frame warm-up; global poolin
 
 Per filter:
   tuning      preferred SF, TF and speed of the filters (peaks of the quadrature pairs' amplitude spectra)
+              and the raw calibration slope per rig: a negative slope means the filter reports the dots' motion reversed
+              (calibration flips it back), e.g. from spatial aliasing when dots jump more than half the filter's period per frame
   coherence   calibrated mean ME per rig x coherence; SD of trial-mean ME at 0% (noise in % coherence units) and its
               correlation with the hidden coherence (net dot motion at onset, methods report 5.1)
   pulse       ME response to a pulse per 100% change, per rig (as scripts/ddm/build_ddm_inputs.pulse_response):
@@ -209,7 +211,7 @@ def main(filters: dict):
     for name, directory in filters.items():
         x, params, slopes = load_filter(directory, data)
         print(f"{name}: slopes {slopes}")
-        tune.append({"filter": name, **tuning(params)})
+        tune.append({"filter": name, **tuning(params), **{f"raw_slope_{rig}": v for rig, v in slopes.items()}})  # negative = direction reversed before calibration
         coh_rows += coherence_table(name, x, data, hidden)
         p, c = pulse_table(name, x, data)
         pulse_rows += p
