@@ -208,14 +208,23 @@ def cv_folds(condition: np.ndarray, n_folds: int, seed: int = 0) -> np.ndarray:
 
 def select(inputs: dict, rows: np.ndarray, nominal: bool = False) -> tuple[dict, np.ndarray]:
     """Data and the 1 ms motion-energy input (S + N) of the given trials; with `nominal` (amendment 13), the trial's
-    nominal signed coherence held from stimulus onset, defined for control trials only."""
+    nominal signed coherence held from stimulus onset, plus the scheduled pulse coherence over the logged pulse frames on
+    pulse trials (needs the pulse timing arrays)."""
     frame_rate = int(inputs["frame_rate"])
     data = {"rt": inputs["rt"][rows], "choice": inputs["choice"][rows], "condition": inputs["condition"][rows]}
     if nominal:
-        if (inputs["sched_pulse_type"][rows] != 0).any():
-            raise ValueError("nominal input is defined here for control trials only")
         n_steps = int(round(inputs["signal"].shape[1] / frame_rate / DT))
-        return data, np.repeat(inputs["signed_coherence"][rows, None].astype(np.float32), n_steps, axis=1)
+        stimulus = np.repeat(inputs["signed_coherence"][rows, None].astype(np.float32), n_steps, axis=1)
+        pulsed = np.flatnonzero(inputs["sched_pulse_type"][rows] != 0)
+        if len(pulsed):  # joint fits (plan 2026-10-29-joint-control-pulse-refits): scheduled pulse coherence over the
+            if "pulse_onset_frame0" not in inputs:  # logged pulse frames, no lead (as primacy.nominal_stimuli, lead 0)
+                raise ValueError("nominal input with pulse trials needs --pulse_timing (scripts/ddm/build_pulse_timing.py)")
+            for i in pulsed:
+                r = rows[i]
+                start = int(round(inputs["pulse_onset_frame0"][r] / frame_rate / DT))
+                stop = int(round((inputs["pulse_onset_frame0"][r] + inputs["pulse_n_frames"][r]) / frame_rate / DT))
+                stimulus[i, start:stop] = inputs["pulse_coherence"][r]
+        return data, stimulus
     stimulus = to_ms(inputs["signal"][rows] + inputs["noise"][rows], frame_rate)
     return data, stimulus
 
@@ -374,12 +383,18 @@ if __name__ == "__main__":
     parser.add_argument("--responded_only", action="store_true", help="drop trials without a response by 5 s; likelihood conditional on a response")
     parser.add_argument("--extrema_samples", action="store_true", help="discrete-sample extrema detection (amendment 10); use with a variant without leak or urgency")
     parser.add_argument("--drift_gain_max", type=float, help="upper bound of drift_gain (default 20); amendment 5: 200 for the extrema-detection model if its fits reach 20")
+    parser.add_argument("--pulse_timing", default="ddm/pulse_timing_global.npz", help="scheduled pulse timing (build_pulse_timing.py); read only with --nominal_input, for pulse trials")
     parser.add_argument("--nominal_input", action="store_true", help=f"paper-exact Stine et al. 2020 models (amendment 13): nominal coherence input, variant {NOMINAL_VARIANT}; with --extrema_samples their extrema detector")
     args = parser.parse_args()
 
     processed = Path(dir_config.data.processed)
     args.out_dir = args.out_dir or (("ddm/fits_guess" if args.guess_model == "single" else f"ddm/fits_guess_{args.guess_model}") + ("_W" if args.time_varying_gain else "") + ("_NL" if args.signed_leak else "") + ("_FB" if args.fixed_guess_bias else "") + (f"_leak{args.leak_bounds[0]:g}-{args.leak_bounds[1]:g}" if args.leak_bounds else "") + (f"_gain{args.drift_gain_max:g}" if args.drift_gain_max else "") + (f"_fe-{args.front_end}" if args.front_end else "") + ("_nominal" if args.nominal_input else ""))
     inputs = load_inputs(processed / args.inputs)
+    if args.nominal_input and (processed / args.pulse_timing).exists():
+        with np.load(processed / args.pulse_timing) as f:
+            if not np.array_equal(f["agg_code"], inputs["agg_code"]):
+                raise ValueError(f"{args.pulse_timing} is not aligned with {args.inputs}")
+            inputs = {**inputs, **{k: f[k] for k in ("pulse_onset_frame0", "pulse_n_frames", "pulse_coherence")}}
     if args.responded_only:
         inputs = responded_only(inputs)
     grid = build_grid(inputs, args.variants, args.splits)
