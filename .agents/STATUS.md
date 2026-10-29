@@ -35,6 +35,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-10-29-heldout-choice-rt-split.md : held-out table reproduced by control_heldout.py; C advantage mostly RT terms (vs ES choice part ~0); small consistent choice advantage over E only; robust to leave-one-mouse-out
 - reports/2026-10-29-pulse-race-lca-illustration.md : race and LCA variants (incl. baseline LCA of Kirkpatrick et al. 2021), matched to control trials in 3 mice, predict 2.7-5.1 pp vs 13.1 pp observed; no reversal; architecture does not fix the size problem
 - reports/2026-10-29-likelihood-ignores-trial-me.md : held-out likelihood is pooled per coherence, so it never uses trial-by-trial motion energy (shuffle = seed noise); shuffled-ME ablation is a no-op; RT terms are ~80% of NLL
 - reports/2026-10-29-control-descriptives.md : control trials: RT falls with coherence (Holm 0.06), errors 118 ms faster (Holm 0.06; common model under-predicts, exploratory), ME kernel ~0.1-0.3% coh, null and underpowered; paired CPU recovery datasets ready (80, sha256)
