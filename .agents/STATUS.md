@@ -22,6 +22,7 @@ Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gat
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
+- plans/2026-10-29-control-paper.md : third paper (control trials only, Stine 2020 framing) in dissemination/paper_control/; G0 approved; descriptives done; next: author submits 320-fit paired recovery (commands in plan), S1 spine
 - plans/2026-10-28-full-recovery-matrix.md : ON HOLD (author); recovery rerun on fixed CPU datasets if it becomes necessary
 - plans/2026-10-26-v2-refits-and-strategy-recovery.md : responded-only refits + full point-3 re-run (amendment 9); commands ready; next: user syncs code, submits R1-R6 (460), then F1a (80) and P1-P4 (850)
 - plans/2026-10-26-paper-accumulation-variant.md : second paper version (accumulation-first) in dissemination/paper_accumulation/; G1 held; waiting on v2 refits + E-recovery (plans/2026-10-26-v2-refits-and-strategy-recovery.md)
@@ -33,6 +34,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-10-29-control-descriptives.md : control trials: RT falls with coherence (Holm 0.06), errors 118 ms faster (Holm 0.06; common model under-predicts, exploratory), ME kernel ~0.1-0.3% coh, null and underpowered; paired CPU recovery datasets ready (80, sha256)
 - reports/2026-10-29-joint-control-pulse-refits.md : 12 families refit on control + pulse trials: ranking unchanged (L1U1 -72 sum, 2/10 mice), parameters ~1.0x control fits (UCLA shift not reproduced); no family reproduces the pulse effect (2.3-4.5 vs 5.48 pp at 0.3-1.2 s); late reversal only with sv/leak; addendum: sv causes the reversal (dose-response, eta selection 10/10 mice) and also cuts the early effect 16.4 -> 5.2 pp at fixed gain
 - reports/2026-10-29-ucla-pulse-me-nofreeze.md : removing the UCLA replay freeze raises the UCLA pulse x1.13-1.15 (UW/UCLA 1.65 -> 1.45, ~pulse length); new inputs ddm_inputs_global_ucla_nofreeze.npz; DDM kernel verified; pulse moves the fitted decision variable only 2-4% of the bound
 - reports/2026-10-29-pulse-descriptive-package.md : 10 mice: pulse effect in responses 0.3-1.2 s after the pulse 5.5 pp [0.8, 10.2] (Holm 0.08), none after 1.2 s (1.2 [-2.8, 5.2]); no reversal in PSUIM6/7 but DBM6 reverses; S2 uninformative
@@ -93,6 +95,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 
 ## Known issues
 - 2026-10-29: all-trial (control + pulse) responded-only fits differ from control-only fits in the 4 UCLA mice (median ratio a 0.82, drift_gain 0.85, sv 0.76, ndt 1.9) but not in UW (about 1.0). The parameter table parameters_common_model_resp_2026-10-27.md uses the all-trial fits. UPDATE 2026-10-29: not reproduced by the joint no-freeze refits (primary ratios ~1.0; equal-NLL fits with different parameters = ridge; reports/2026-10-29-joint-control-pulse-refits.md). Cause not identified: UCLA pulse ME understated only 1.13-1.20x (reports/2026-10-29-ucla-pulse-me-nofreeze.md; refit deferred) or pulse misfit pressure; rig and mouse are confounded. Until resolved, compare mice on control-split fits or show both.
+- 2026-10-29: paired-recovery fix implemented (4dbef52; CPU datasets in processed/ddm/recovery_datasets_cpu_2026-10-29); rerun not yet submitted.
 - 2026-10-28: all strategy recoveries (F1a, ES, ESx/DDMx, cross matrix) are unpaired: synthetic data differ between candidates (63/80 datasets). F1a k = 5 / THESIS_B provisional (reports/2026-10-28-recovery-synthetic-data-mismatch.md). Old 500-fit variant recovery also suspect (GPU synthesis; not checkable). Fix + rerun pinned by author; do not cite recovery results meanwhile.
 - 2026-10-27 author rule: trials without a response by 5 s (435 no RT + 4,102 RT > 5 s = 4,537) must not enter any analysis. All existing DDM fits, gates, calibration, pulse-gain diagnostics and the primary pulse contrast (1,709 unresponded) included them; superseded for the accumulation-first paper by responded-only refits (--responded_only). The first paper version is not yet redone.
 - DDM inputs label 48 UCLA no-response pulse trials as controls (direction lost in notebook 0.0); the 15 trials dropped for invalid duration are responses during the pulse (outcome-dependent). Existing inputs unchanged (pulse-data report).

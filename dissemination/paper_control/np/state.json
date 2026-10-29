@@ -1,0 +1,119 @@
+{
+  "title": "How mice decide about dynamic random-dot motion: control-trial evidence (placeholder)",
+  "created": "2026-10-29T19:54:07",
+  "stage": "S1_spine",
+  "gates": {
+    "G0": {
+      "approved": true,
+      "at": "2026-10-29T19:57:51",
+      "note": "V. Thakur: \"you choose\" (G0 questions 1-5 delegated; choices in D001)"
+    },
+    "G1": {
+      "approved": false,
+      "at": null,
+      "note": ""
+    },
+    "G2": {
+      "approved": false,
+      "at": null,
+      "note": ""
+    },
+    "G3": {
+      "approved": false,
+      "at": null,
+      "note": ""
+    },
+    "G4": {
+      "approved": false,
+      "at": null,
+      "note": ""
+    },
+    "G5": {
+      "approved": false,
+      "at": null,
+      "note": ""
+    },
+    "G6": {
+      "approved": false,
+      "at": null,
+      "note": ""
+    },
+    "G7": {
+      "approved": false,
+      "at": null,
+      "note": ""
+    }
+  },
+  "sections": {
+    "methods": {
+      "status": "pending",
+      "version": 0,
+      "review_rounds": 0,
+      "verdict": null,
+      "target_words": null
+    },
+    "results": {
+      "status": "pending",
+      "version": 0,
+      "review_rounds": 0,
+      "verdict": null,
+      "target_words": null
+    },
+    "figure_legends": {
+      "status": "pending",
+      "version": 0,
+      "review_rounds": 0,
+      "verdict": null,
+      "target_words": null
+    },
+    "discussion": {
+      "status": "pending",
+      "version": 0,
+      "review_rounds": 0,
+      "verdict": null,
+      "target_words": null
+    },
+    "introduction": {
+      "status": "pending",
+      "version": 0,
+      "review_rounds": 0,
+      "verdict": null,
+      "target_words": null
+    },
+    "title_abstract": {
+      "status": "pending",
+      "version": 0,
+      "review_rounds": 0,
+      "verdict": null,
+      "target_words": null
+    }
+  },
+  "section_order": [
+    "title_abstract",
+    "introduction",
+    "results",
+    "discussion",
+    "methods",
+    "figure_legends"
+  ],
+  "limits": {
+    "max_section_rounds": 2,
+    "max_panel_rounds": 1,
+    "min_verified_sources": 25
+  },
+  "spine_hash": null,
+  "history": [
+    {
+      "at": "2026-10-29T19:54:07",
+      "event": "init"
+    },
+    {
+      "at": "2026-10-29T19:57:51",
+      "event": "gate G0 approved: V. Thakur: \"you choose\" (G0 questions 1-5 delegated; choices in D001)"
+    },
+    {
+      "at": "2026-10-29T19:57:51",
+      "event": "advance S0_intake -> S1_spine"
+    }
+  ]
+}

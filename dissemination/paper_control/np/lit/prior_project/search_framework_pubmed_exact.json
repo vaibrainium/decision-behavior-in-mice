@@ -1,0 +1,302 @@
+{
+  "access_date": "2026-10-24",
+  "lookups": [
+    {
+      "doi": "10.1523/JNEUROSCI.4761-07.2008",
+      "hits": 1,
+      "pmids": [
+        "18354005"
+      ]
+    },
+    {
+      "doi": "10.1523/JNEUROSCI.4684-04.2005",
+      "hits": 1,
+      "pmids": [
+        "16280581"
+      ]
+    },
+    {
+      "doi": "10.1126/science.1233912",
+      "hits": 1,
+      "pmids": [
+        "23559254"
+      ]
+    },
+    {
+      "doi": "10.1146/annurev.neuro.29.051605.113038",
+      "hits": 1,
+      "pmids": [
+        "17600525"
+      ]
+    },
+    {
+      "doi": "10.1037/0033-295X.113.4.700",
+      "hits": 1,
+      "pmids": [
+        "17014301"
+      ]
+    },
+    {
+      "doi": "10.1037/0033-295X.108.3.550",
+      "hits": 1,
+      "pmids": [
+        "11488378"
+      ]
+    },
+    {
+      "doi": "10.1038/s41467-018-05797-y",
+      "hits": 1,
+      "pmids": [
+        "30154467"
+      ]
+    },
+    {
+      "doi": "10.1523/ENEURO.0169-18.2018",
+      "hits": 1,
+      "pmids": [
+        "30406190"
+      ]
+    },
+    {
+      "doi": "10.1162/neco.2008.12-06-420",
+      "hits": 1,
+      "pmids": [
+        "18085991"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "pmid": "18354005",
+      "title": "Bounded integration in parietal cortex underlies decisions even when viewing duration is dictated by the environment.",
+      "abstract": "Decisions about sensory stimuli are often based on an accumulation of evidence in time. When subjects control stimulus duration, the decision terminates when the accumulated evidence reaches a criterion level. Under many natural circumstances and in many laboratory settings, the environment, rather than the subject, controls the stimulus duration. In these settings, it is generally assumed that subjects commit to a choice at the end of the stimulus stream. Indeed, failure to benefit from the full stream of information is interpreted as a sign of imperfect accumulation or memory leak. Contrary to these assumptions, we show that monkeys performing a direction discrimination task commit to a choice when the accumulated evidence reaches a threshold level (or bound), sometimes long before the end of stimulus. This bounded accumulation of evidence is reflected in the activity of neurons in the lateral intraparietal cortex. Thus, the readout of visual cortex embraces a termination rule to limit processing even when potentially useful information is available.",
+      "journal": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+      "authors": [
+        "Roozbeh Kiani",
+        "Timothy D Hanks",
+        "Michael N Shadlen"
+      ],
+      "dois": [
+        "10.1523/JNEUROSCI.4761-07.2008"
+      ]
+    },
+    {
+      "pmid": "16280581",
+      "title": "Neural activity in macaque parietal cortex reflects temporal integration of visual motion signals during perceptual decision making.",
+      "abstract": "Decision-making often requires the accumulation and maintenance of evidence over time. Although the neural signals underlying sensory processing have been studied extensively, little is known about how the brain accrues and holds these sensory signals to guide later actions. Previous work has suggested that neural activity in the lateral intraparietal area (LIP) of the monkey brain reflects the formation of perceptual decisions in a random dot direction-discrimination task in which monkeys communicate their decisions with eye-movement responses. We tested the hypothesis that decision-related neural activity in LIP represents the time integral of the momentary motion \"evidence.\" By briefly perturbing the strength of the visual motion stimulus during the formation of perceptual decisions, we tested whether this LIP activity reflected a persistent, integrated \"memory\" of these brief sensory events. We found that the responses of LIP neurons reflected substantial temporal integration. Brief pulses had persistent effects on both the monkeys' choices and the responses of neurons in LIP, lasting up to 800 ms after appearance. These results demonstrate that LIP is involved in neural time integration underlying the accumulation of evidence in this task. Additional analyses suggest that decision-related LIP responses, as well as behavioral choices and reaction times, can be explained by near-perfect time integration that stops when a criterion amount of evidence has been accumulated. Temporal integration may be a fundamental computation underlying higher cognitive functions that are dissociated from immediate sensory inputs or motor outputs.",
+      "journal": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+      "authors": [
+        "Alexander C Huk",
+        "Michael N Shadlen"
+      ],
+      "dois": [
+        "10.1523/JNEUROSCI.4684-04.2005"
+      ]
+    },
+    {
+      "pmid": "23559254",
+      "title": "Rats and humans can optimally accumulate evidence for decision-making.",
+      "abstract": "The gradual and noisy accumulation of evidence is a fundamental component of decision-making, with noise playing a key role as the source of variability and errors. However, the origins of this noise have never been determined. We developed decision-making tasks in which sensory evidence is delivered in randomly timed pulses, and analyzed the resulting data with models that use the richly detailed information of each trial's pulse timing to distinguish between different decision-making mechanisms. This analysis allowed measurement of the magnitude of noise in the accumulator's memory, separately from noise associated with incoming sensory evidence. In our tasks, the accumulator's memory was noiseless, for both rats and humans. In contrast, the addition of new sensory evidence was the primary source of variability. We suggest our task and modeling approach as a powerful method for revealing internal properties of decision-making processes.",
+      "journal": "Science (New York, N.Y.)",
+      "authors": [
+        "Bingni W Brunton",
+        "Matthew M Botvinick",
+        "Carlos D Brody"
+      ],
+      "dois": [
+        "10.1126/science.1233912"
+      ]
+    },
+    {
+      "pmid": "17600525",
+      "title": "The neural basis of decision making.",
+      "abstract": "The study of decision making spans such varied fields as neuroscience, psychology, economics, statistics, political science, and computer science. Despite this diversity of applications, most decisions share common elements including deliberation and commitment. Here we evaluate recent progress in understanding how these basic elements of decision formation are implemented in the brain. We focus on simple decisions that can be studied in the laboratory but emphasize general principles likely to extend to other settings.",
+      "journal": "Annual review of neuroscience",
+      "authors": [
+        "Joshua I Gold",
+        "Michael N Shadlen"
+      ],
+      "dois": [
+        "10.1146/annurev.neuro.29.051605.113038"
+      ]
+    },
+    {
+      "pmid": "17014301",
+      "title": "The physics of optimal decision making: a formal analysis of models of performance in two-alternative forced-choice tasks.",
+      "abstract": "In this article, the authors consider optimal decision making in two-alternative forced-choice (TAFC) tasks. They begin by analyzing 6 models of TAFC decision making and show that all but one can be reduced to the drift diffusion model, implementing the statistically optimal algorithm (most accurate for a given speed or fastest for a given accuracy). They prove further that there is always an optimal trade-off between speed and accuracy that maximizes various reward functions, including reward rate (percentage of correct responses per unit time), as well as several other objective functions, including ones weighted for accuracy. They use these findings to address empirical data and make novel predictions about performance under optimality.",
+      "journal": "Psychological review",
+      "authors": [
+        "Rafal Bogacz",
+        "Eric Brown",
+        "Jeff Moehlis",
+        "Philip Holmes",
+        "Jonathan D Cohen"
+      ],
+      "dois": [
+        "10.1037/0033-295X.113.4.700"
+      ]
+    },
+    {
+      "pmid": "11488378",
+      "title": "The time course of perceptual choice: the leaky, competing accumulator model.",
+      "abstract": "The time course of perceptual choice is discussed in a model of gradual, leaky, stochastic, and competitive information accumulation in nonlinear decision units. Special cases of the model match a classical diffusion process, but leakage and competition work together to address several challenges to existing diffusion, random walk, and accumulator models. The model accounts for data from choice tasks using both time-controlled (e.g., response signal) and standard reaction time paradigms and its adequacy compares favorably with other approaches. A new paradigm that controls the time of arrival of information supporting different choice alternatives provides further support. The model captures choice behavior regardless of the number of alternatives, accounting for the log-linear relation between reaction time and number of alternatives (Hick's law) and explains a complex pattern of visual and contextual priming in visual word identification.",
+      "journal": "Psychological review",
+      "authors": [
+        "M Usher",
+        "J L McClelland"
+      ],
+      "dois": [
+        "10.1037/0033-295x.108.3.550"
+      ]
+    },
+    {
+      "pmid": "30154467",
+      "title": "Psychophysical reverse correlation reflects both sensory and decision-making processes.",
+      "abstract": "Goal-directed behavior depends on both sensory mechanisms that gather information from the outside world and decision-making mechanisms that select appropriate behavior based on that sensory information. Psychophysical reverse correlation is commonly used to quantify how fluctuations of sensory stimuli influence behavior and is generally believed to uncover the spatiotemporal weighting functions of sensory processes. Here we show that reverse correlations also reflect decision-making processes and can deviate significantly from the true sensory filters. Specifically, changes of decision bound and mechanisms of evidence integration systematically alter psychophysical reverse correlations. Similarly, trial-to-trial variability of sensory and motor delays and decision times causes systematic distortions in psychophysical kernels that should not be attributed to sensory mechanisms. We show that ignoring details of the decision-making process results in misinterpretation of reverse correlations, but proper use of these details turns reverse correlation into a powerful method for studying both sensory and decision-making mechanisms.",
+      "journal": "Nature communications",
+      "authors": [
+        "Gouki Okazawa",
+        "Long Sha",
+        "Braden A Purcell",
+        "Roozbeh Kiani"
+      ],
+      "dois": [
+        "10.1038/s41467-018-05797-y",
+        "10.1016/j.neuron.2016.12.041",
+        "10.1016/j.cobeha.2016.06.008",
+        "10.1038/nn886",
+        "10.1038/44409",
+        "10.1167/2.1.8",
+        "10.1167/8.16.10",
+        "10.1167/8.1.22",
+        "10.1080/713663221",
+        "10.1126/science.175.4027.1276",
+        "10.1146/annurev.neuro.29.051605.113038",
+        "10.1162/neco.2008.12-06-420",
+        "10.1016/0022-2496(88)90043-0",
+        "10.1016/j.neuron.2012.08.030",
+        "10.7554/eLife.02260",
+        "10.1037/0033-295X.108.3.550",
+        "10.1016/j.neuron.2014.12.015",
+        "10.1016/S0896-6273(02)01092-9",
+        "10.1037/0033-295X.113.4.700",
+        "10.1167/5.5.1",
+        "10.1038/ncomms7177",
+        "10.1523/JNEUROSCI.4761-07.2008",
+        "10.1126/science.1233912",
+        "10.1016/S0960-9822(00)00523-6",
+        "10.1038/nature07821",
+        "10.1073/pnas.0507259103",
+        "10.1038/377059a0",
+        "10.3758/BF03194023",
+        "10.1016/j.neuron.2015.12.027",
+        "10.1523/JNEUROSCI.1844-09.2009",
+        "10.1038/nn.2123",
+        "10.1523/JNEUROSCI.5613-10.2011",
+        "10.1523/JNEUROSCI.5948-11.2012",
+        "10.1016/j.neuron.2008.09.021",
+        "10.1016/j.cub.2017.06.047",
+        "10.1016/j.cub.2012.07.043",
+        "10.1016/0042-6989(81)90180-2",
+        "10.1016/j.neunet.2006.05.042",
+        "10.1037/rev0000019",
+        "10.1364/JOSAA.2.000284",
+        "10.3389/fnint.2012.00079",
+        "10.1038/nature08275",
+        "10.1111/j.0956-7976.2004.00752.x",
+        "10.1073/pnas.1214269109",
+        "10.1016/j.neunet.2006.05.038",
+        "10.1523/JNEUROSCI.2410-14.2015",
+        "10.1523/JNEUROSCI.4156-11.2012",
+        "10.1523/JNEUROSCI.2894-10.2010",
+        "10.1152/jn.00393.2006",
+        "10.1037/0033-295X.114.2.376",
+        "10.1016/j.neuron.2015.02.014",
+        "10.1523/JNEUROSCI.2929-08.2008",
+        "10.1371/journal.pcbi.1002086",
+        "10.1016/0001-6918(79)90026-X",
+        "10.1016/j.jmp.2017.10.004",
+        "10.1017/S0952523800010269",
+        "10.1016/j.neuron.2013.06.041",
+        "10.1038/nn893",
+        "10.1163/156856897X00357",
+        "10.1016/j.psychres.2008.05.006"
+      ]
+    },
+    {
+      "pmid": "30406190",
+      "title": "Strategic and Dynamic Temporal Weighting for Perceptual Decisions in Humans and Macaques.",
+      "abstract": "Perceptual decision-making is often modeled as the accumulation of sensory evidence over time. Recent studies using psychophysical reverse correlation have shown that even though the sensory evidence is stationary over time, subjects may exhibit a time-varying weighting strategy, weighting some stimulus epochs more heavily than others. While previous work has explained time-varying weighting as a consequence of static decision mechanisms (e.g., decision bound or leak), here we show that time-varying weighting can reflect strategic adaptation to stimulus statistics, and thus can readily take a number of forms. We characterized the temporal weighting strategies of humans and macaques performing a motion discrimination task in which the amount of information carried by the motion stimulus was manipulated over time. Both species could adapt their temporal weighting strategy to match the time-varying statistics of the sensory stimulus. When early stimulus epochs had higher mean motion strength than late, subjects adopted a pronounced early weighting strategy, where early information was weighted more heavily in guiding perceptual decisions. When the mean motion strength was greater in later stimulus epochs, in contrast, subjects shifted to a marked late weighting strategy. These results demonstrate that perceptual decisions involve a temporally flexible weighting process in both humans and monkeys, and introduce a paradigm with which to manipulate sensory weighting in decision-making tasks.",
+      "journal": "eNeuro",
+      "authors": [
+        "Aaron J Levi",
+        "Jacob L Yates",
+        "Alexander C Huk",
+        "Leor N Katz"
+      ],
+      "dois": [
+        "10.1523/ENEURO.0169-18.2018",
+        "10.1016/j.conb.2009.06.008",
+        "10.1523/JNEUROSCI.0554-04.2004",
+        "10.1016/j.neuron.2008.09.021",
+        "10.1037/0033-295X.113.4.700",
+        "10.1038/s41593-018-0089-1",
+        "10.1017/S095252380000715X",
+        "10.1371/journal.pcbi.1004667",
+        "10.1152/jn.00264.2015",
+        "10.1016/j.neuron.2014.01.020",
+        "10.1038/nn.2123",
+        "10.1038/nn.2501",
+        "10.1523/JNEUROSCI.1844-09.2009",
+        "10.1111/j.1460-9568.2006.05221.x",
+        "10.7554/eLife.05457",
+        "10.3389/fninf.2012.00001",
+        "10.1523/JNEUROSCI.2574-09.2009",
+        "10.1038/nn.2983",
+        "10.1037/0033-295X.96.2.267",
+        "10.1038/nature01057",
+        "10.1167/6.4.10",
+        "10.1146/annurev.neuro.29.051605.113038",
+        "10.1523/JNEUROSCI.5613-10.2011",
+        "10.7554/eLife.02260",
+        "10.1167/4.12.1",
+        "10.1523/JNEUROSCI.4684-04.2005",
+        "10.1146/annurev-neuro-072116-031508",
+        "10.1523/JNEUROSCI.0032-15.2015",
+        "10.1038/nature18617",
+        "10.1101/269159",
+        "10.1523/JNEUROSCI.4761-07.2008",
+        "10.1126/science.1169405",
+        "10.1167/7.7.5",
+        "10.1016/j.tics.2006.05.003",
+        "10.1523/JNEUROSCI.0105-17.2017",
+        "10.1038/nn.4403",
+        "10.1016/j.neuron.2008.06.024",
+        "10.1523/JNEUROSCI.08-06-02201.1988",
+        "10.1038/nature07821",
+        "10.1101/195792",
+        "10.1101/273680",
+        "10.1523/JNEUROSCI.5305-03.2004",
+        "10.1016/j.cub.2013.04.039",
+        "10.1101/232702",
+        "10.7554/eLife.11308",
+        "10.3389/fnins.2012.00079",
+        "10.1037//0033-295X.108.3.550",
+        "10.1038/nn.4611"
+      ]
+    },
+    {
+      "pmid": "18085991",
+      "title": "The diffusion decision model: theory and data for two-choice decision tasks.",
+      "abstract": "The diffusion decision model allows detailed explanations of behavior in two-choice discrimination tasks. In this article, the model is reviewed to show how it translates behavioral data-accuracy, mean response times, and response time distributions-into components of cognitive processing. Three experiments are used to illustrate experimental manipulations of three components: stimulus difficulty affects the quality of information on which a decision is based; instructions emphasizing either speed or accuracy affect the criterial amounts of information that a subject requires before initiating a response; and the relative proportions of the two stimuli affect biases in drift rate and starting point. The experiments also illustrate the strong constraints that ensure the model is empirically testable and potentially falsifiable. The broad range of applications of the model is also reviewed, including research in the domains of aging and neurophysiology.",
+      "journal": "Neural computation",
+      "authors": [
+        "Roger Ratcliff",
+        "Gail McKoon"
+      ],
+      "dois": [
+        "10.1162/neco.2008.12-06-420"
+      ]
+    }
+  ]
+}
