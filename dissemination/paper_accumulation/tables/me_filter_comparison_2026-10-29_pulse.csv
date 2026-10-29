@@ -1,0 +1,3 @@
+filter,rig,pulse_frames,n_trials,peak,time_to_peak_ms,area_s,nominal_area_s,step_time_to_half_ms
+mouse,ucla,3,6027,27.2087,133.3333,4.4749,0.05,183.3333
+mouse,uw,4,5449,42.0284,133.3333,7.3428,0.0667,183.3333
