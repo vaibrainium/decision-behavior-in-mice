@@ -101,8 +101,18 @@ def main(gpu_id, shard, num_shards, num_workers, checkpoint_every, limit=None, q
     rows = rows[shard::num_shards]
     if limit is not None:
         rows = rows[:limit]
+    # resume a preempted shard from its last checkpoint (same filter only)
+    results = {}
+    shard_path = out_dir / f"me_shard_{shard}.pkl"
+    if shard_path.exists():
+        with open(shard_path, "rb") as f:
+            previous = pickle.load(f)
+        if previous["params"] != params or previous["n_frames"] != N_FRAMES:
+            raise ValueError(f"{shard_path} was computed with different settings; use another --out-dir")
+        results = previous["me"]
+        rows = [r for r in rows if r["agg_code"] not in results]
     total = len(rows)
-    print(f"[shard {shard}/{num_shards} gpu {gpu_id}] {total} trials queued, filter {filter_name}", flush=True)
+    print(f"[shard {shard}/{num_shards} gpu {gpu_id}] {total} trials queued, {len(results)} resumed from checkpoint, filter {filter_name}", flush=True)
 
     device = torch.device(f"cuda:{gpu_id}" if torch.cuda.is_available() else "cpu")
     kernels = mouse_me_kernels_torch(device, params)
@@ -113,7 +123,6 @@ def main(gpu_id, shard, num_shards, num_workers, checkpoint_every, limit=None, q
     for w in workers:
         w.start()
 
-    results = {}
     t0 = time.time()
     done_workers = 0
     i = 0
