@@ -1,5 +1,5 @@
 # Plan: refit all DDM variants on all responded trials (control + pulse together)
-Status: active
+Status: done
 Created: 2026-10-29 by Claude (Opus 5.5)
 Related: reports/2026-10-29-pulse-leak-vs-urgency.md, reports/2026-10-29-pulse-descriptive-package.md,
 reports/2026-10-29-ucla-pulse-me-nofreeze.md, plans/2026-10-26-v2-refits-and-strategy-recovery.md (the control-only set)
@@ -40,13 +40,13 @@ pulse coherence held for the recorded pulse frames (as primacy.nominal_stimuli, 
 - [x] 1. (if 11-12 approved) add nominal pulse input to fit_mouse_ddm.select; unit check on a few trials; commit, push.
 - [x] 2. Hyak: per family, splits cv0-cv4 + all, 15 reps, cold start (warm starts match split names; the control-only
       folders have ccv/control splits only), NEW folders ddm/fits_joint_unfreeze_* (nothing old is written); 720 fits. Commands below.
-- [ ] 3. Pull fits; audit (non-response cap, parameters at bounds, failed fits).
-- [ ] 4. Model comparison on held-out NLL over all trials (summed over folds, per mouse, mice as unit; same rules as
+- [x] 3. Pull fits; audit (non-response cap, parameters at bounds, failed fits).
+- [x] 4. Model comparison on held-out NLL over all trials (summed over folds, per mouse, mice as unit; same rules as
       the control-only selection), next to the control-only ranking.
-- [ ] 5. Parameter shifts: all-trial vs control fits, per family and mouse (rig as covariate only).
-- [ ] 6. Pulse signatures: simulate each all-trial fit on the real schedules; S1 profile, window effects, RT shifts
+- [x] 5. Parameter shifts: all-trial vs control fits, per family and mouse (rig as covariate only).
+- [x] 6. Pulse signatures: simulate each all-trial fit on the real schedules; S1 profile, window effects, RT shifts
       vs data (scripts/ddm/pulse_descriptive_package.py statistics).
-- [ ] 7. Report; STATUS.
+- [x] 7. Report; STATUS. -> reports/2026-10-29-joint-control-pulse-refits.md
 
 ## Out of scope
 Free pulse gain (separate option, see log), recovery runs, manuscript changes.
@@ -82,3 +82,10 @@ env EXTRA_ARGS="$N --extrema_samples --out_dir ddm/fits_joint_unfreeze_nominal_e
   J1_integrators 42560879 (0-359), J2_FB 42560880, J3_leak20-200 42560881, J4_leak0-200 42560882, J5_es 42560883,
   J6_nominal_ddm 42560884, J7_nominal_es 42560885 (0-59 each). Next: when done, rsync processed/ddm/fits_joint_unfreeze_*
   back (bash scripts/sync_ddm_data.sh pull), then step 3 audit.
+- 2026-10-29: 720/720 fits pulled. Steps 3-5 by scripts/ddm/compare_joint_refits.py (outputs
+  dissemination/figures/qc/joint_refits_*_2026-10-29.csv): no failed fits, none at the iteration cap, nested checks pass
+  (1 FB fit 17 NLL above primary). Ranking as control-only except urgency (control -17, joint +18 vs primary);
+  L1U1 best in sum (-72) but beyond 10 NLL in 2/10 mice. Known UCLA parameter shift not reproduced (primary joint/control
+  median ratios ~1.0); old and new all-trial PSUIM6 fits equal NLL with different parameters (ridge). Step 6 running
+  (scripts/ddm/pulse_joint_signatures.py, cache in the session scratchpad).
+- 2026-10-29: step 6 done (29 min, 30 reps): no family reaches the 0.3-1.2 s effect (2.3-4.5 vs 5.48 pp); reversal only with sv/leak. Report written; plan done.

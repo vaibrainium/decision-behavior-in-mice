@@ -1,0 +1,13 @@
+family,n_fits,n_mice,failed,iter_cap,any_bound,bounds,median_fit_min,max_fit_min
+primary,60,10,0,0,10,guess_tau:hi x7; sv:hi x2; ndt:lo x1,21.9,100.2
+no_sv,60,10,0,0,22,drift_gain:lo x13; guess_tau:hi x9; guess_bias:lo x1; ndt:lo x1,12.8,47.6
+no_guess,60,10,0,0,23,ndt:lo x15; drift_gain:lo x6; sv:lo x4; sv:hi x2,9.8,34.7
+leak,60,10,0,0,9,guess_tau:hi x7; leak_rate:lo x1; z:hi x1,48.3,188.2
+urgency,60,10,0,0,12,guess_tau:hi x6; sv:hi x3; a:hi x2; ndt:lo x1,34.0,126.2
+leak_urgency,60,10,0,0,14,guess_tau:hi x8; sv:hi x5; leak_rate:lo x2,65.5,235.5
+fixed_guess_bias,60,10,0,0,14,guess_tau:hi x11; ndt:lo x3; sv:hi x2,18.5,61.2
+extrema_E_leak20-200,60,10,0,0,20,guess_tau:hi x6; a:lo x6; leak_rate:lo x4; sv:lo x3; drift_offset:hi x2; ndt:hi x1; p_guess:lo x1; leak_rate:hi x1; sv:hi x1,43.2,210.7
+free_leak_0-200,60,10,0,0,36,leak_rate:lo x29; guess_tau:hi x8; sv:hi x2,54.9,251.5
+extrema_sampling_ES,60,10,0,0,17,guess_tau:hi x8; drift_offset:hi x6; sv:hi x3; p_guess:lo x1; sv:lo x1; guess_tau:lo x1,8.4,27.7
+stine_nominal_DDM,60,10,0,0,16,ndt:lo x16,3.5,10.0
+stine_nominal_ES,60,10,0,0,0,,2.5,9.5
