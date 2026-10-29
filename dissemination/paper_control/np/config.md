@@ -52,7 +52,7 @@ Agents only report results from these files. Inventory with status in `np/input_
 - Model recovery: [PENDING: paired rerun, plan `/src/.agents/plans/2026-10-29-control-paper.md` step 3].
 - Kernels and RT distributions: [PENDING: new analyses, same plan].
 - Methods notes: [MISSING: animal/training protocol, ethics/IACUC details].
-- Key papers: stine2020differentiating (model paper). 44 verified sources copied from paper_accumulation (`np/ledger/sources.csv`, notes in `np/lit/notes/`, prior searches in `np/lit/prior_project/`).
+- Key papers: stine2020differentiating (model paper). Author-supplied 2026-10-29: Kirkpatrick, Turner & Sederberg 2021, Psychological Review 128(6):1051-1087, doi 10.1037/rev0000284 (accumulator dependency: DDM/FFI vs LCA vs race/LBA; equal-evidence RDK); verify and add at S2. 44 verified sources copied from paper_accumulation (`np/ledger/sources.csv`, notes in `np/lit/notes/`, prior searches in `np/lit/prior_project/`).
 - Zotero library or folder: [MISSING: none identified]
 
 ## People and policy

@@ -84,3 +84,4 @@ other two paper projects.
 - 2026-10-29: descriptives done; kernel K1 null and underpowered (sim SD ~ effect); fast errors under-predicted by the common model (exploratory). Report written.
 - 2026-10-29: author submitted the 320-fit paired recovery: Slurm job 42579825 (out_dir ddm/recovery_full_cpu_resp). Next: pull, validity check (320 outputs, datasets_dir set, equal n_train/n_test per dataset), confusion matrix, THESIS rule.
 - 2026-10-29: D002 (author "ok"): ES added to recovery (180 jobs, same out_dir), group-level calibration, ME ablation. ES code + datasets done.
+- 2026-10-29: shuffled-ME ablation dropped before running: likelihood pools per coherence, shuffle within coherence = seed noise (reports/2026-10-29-likelihood-ignores-trial-me.md). D002 item 3 needs re-decision (choice/RT split local; nominal refits optional).
