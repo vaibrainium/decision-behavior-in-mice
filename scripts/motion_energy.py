@@ -196,6 +196,33 @@ MOUSE_ME_PARAMS = {
     "dt_s": 1 / 60,
 }
 
+# Comparison filters (.agents/plans/2026-10-29-motion-energy-filter-comparison.md), same equations and code path.
+# Okazawa et al. (2018) Methods (= Kiani et al. 2008): sigma_c 0.35 deg, omega_g 0.05 deg, k 60 /s, tuned to MT and
+# 5 deg/s dots. Needs a fine grid; extents +-3 sigma, time to < 1% of peak.
+OKAZAWA_ME_PARAMS = {
+    "sigma_c_deg": 0.35,
+    "sigma_g_deg": 0.05,
+    "k_per_s": 60.0,
+    "dx_deg": 0.1,
+    "x_extent_deg": 1.05,
+    "y_extent_deg": 0.15,
+    "t_extent_s": 0.35,
+    "dt_s": 1 / 60,
+}
+# Okazawa's temporal filter (k 60 /s, TF ~ 0.071 k = 4.3 Hz) with the spatial filter rescaled to keep the preferred
+# speed at the dot speed (~30 deg/s): SF 4.3 / 30.2 = 0.141 c/deg, sigma_c ~ 0.477 / SF = 3.4 deg.
+OKAZAWA_TEMPORAL_ME_PARAMS = {
+    "sigma_c_deg": 3.4,
+    "sigma_g_deg": 1.7,
+    "k_per_s": 60.0,
+    "dx_deg": 0.5,
+    "x_extent_deg": 10.2,
+    "y_extent_deg": 5.1,
+    "t_extent_s": 0.35,
+    "dt_s": 1 / 60,
+}
+ME_FILTERS = {"mouse": MOUSE_ME_PARAMS, "okazawa": OKAZAWA_ME_PARAMS, "okazawa_temporal": OKAZAWA_TEMPORAL_ME_PARAMS}
+
 
 def render_stimulus_deg(rig, rdk, pars, n_frames, ppd, dx_deg=MOUSE_ME_PARAMS["dx_deg"]):
     """Replay a trial's RDK at native resolution and area-average each frame onto a dx_deg grid.
@@ -264,12 +291,13 @@ def mouse_me_kernels_torch(device, params=MOUSE_ME_PARAMS):
     return {name: torch.tensor(k, dtype=torch.float32, device=device).reshape(-1, 1, k.shape[-1]) for name, k in kernels.items()}
 
 
-def compute_mouse_me(stimulus, kernels):
+def compute_mouse_me(stimulus, kernels, max_elements=None):
     """Net motion energy of a (T, ny, nx) stimulus tensor; positive = rightward (+x).
 
     A uint8 stimulus from render_stimulus_deg is scaled to [0, 1] first. `kernels` comes from mouse_me_kernels_torch. Uses true convolution (kernels flipped for
     F.conv1d), zero padding in space and causal zero padding in time, so output frame t depends
     only on frames <= t and the output has the same shape as the input.
+    `max_elements` caps the size of the temporal-filter output held at once (y rows processed in blocks; same result).
     """
     if stimulus.dtype == torch.uint8:
         stimulus = stimulus.float() / 255
@@ -281,12 +309,16 @@ def compute_mouse_me(stimulus, kernels):
     s = F.conv1d(s, gy, padding=gy.shape[-1] // 2).reshape(T, W, H).permute(0, 2, 1)
     # x: f1, f2 -> (T, H, 2, W)
     s = F.conv1d(s.reshape(T * H, 1, W), fx.flip(-1), padding=fx.shape[-1] // 2).reshape(T, H, 2, W)
-    # t: g1, g2, causal -> (H, 2, W, 2, T), indexed [y, a, x, b, t]
-    s = s.permute(1, 2, 3, 0).reshape(H * 2 * W, 1, T)
-    s = F.conv1d(F.pad(s, (gt.shape[-1] - 1, 0)), gt.flip(-1)).reshape(H, 2, W, 2, T)
-
-    me = 4 * (s[:, 0, :, 0] * s[:, 1, :, 1] - s[:, 0, :, 1] * s[:, 1, :, 0])
-    return me.permute(2, 0, 1)
+    # t: g1, g2, causal -> (H, 2, W, 2, T), indexed [y, a, x, b, t]; in blocks of y rows to bound memory on fine grids
+    s = s.permute(1, 2, 3, 0)
+    rows = H if max_elements is None else max(1, max_elements // (2 * W * 2 * T))
+    me = []
+    for y0 in range(0, H, rows):
+        b = s[y0 : y0 + rows]
+        h = b.shape[0]
+        b = F.conv1d(F.pad(b.reshape(h * 2 * W, 1, T), (gt.shape[-1] - 1, 0)), gt.flip(-1)).reshape(h, 2, W, 2, T)
+        me.append(4 * (b[:, 0, :, 0] * b[:, 1, :, 1] - b[:, 0, :, 1] * b[:, 1, :, 0]))
+    return torch.cat(me).permute(2, 0, 1)
 
 
 def pool_mouse_me(me):
