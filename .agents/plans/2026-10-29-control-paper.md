@@ -75,8 +75,21 @@ model recovery.
       leave-one-mouse-out: all alternatives keep mean > 0 and max uncorrected p_t <= 0.037 (Wilcoxon <= 0.074).
 - [ ] 3b. Recovery analysis at the group-test level (D002 item 2) and motion-energy ablation (D002 item 3): definitions
       to be fixed here before any run.
+      **Definitions fixed 2026-10-30 after G1 (D004), before any recovery likelihood is read:**
+      Input: recovery_full_cpu_resp/*.pkl (validity checked: 320, paired, datasets_dir set). Per dataset (mouse,
+      generator, replicate) and alternative X in {E, ES, DDMx, ESx}: d = (test_nll_X - test_nll_C) / n_test * 1000
+      (> 0: C predicts better; one held-out split per dataset, unlike the 5-fold real data). Cohorts: all 2^10 = 1,024
+      choices of one replicate per mouse (enumerated, not sampled). Per cohort: one-sample t over the 10 mice per X,
+      Holm over the 4 alternatives; reproduces for X if mean d_X > 0 and Holm p_X < 0.05. X separated if
+      P(reproduce | X-generated) <= 0.10 and P(reproduce | C-generated) >= 0.50. Decisive: E and ES -> variant A
+      (both), I_E / I_ES (one), B (neither). Secondary: per-dataset counts d * n_test / 1000 > 10 NLL (C favored) with
+      Clopper-Pearson 95% CIs; full confusion of best-fitting candidate per dataset.
+      While ES fits are missing: Holm over the 4 is not computable. Provisional E result reported under Bonferroni x4
+      (p_E * 4 < 0.05; conservative, always >= Holm-4) and under Holm over the 3 available (anti-conservative);
+      decision only if both give the same verdict, else wait for ES. Final verdict only with all 4.
+      Script: scripts/ddm/recovery_cohorts.py; tables dissemination/paper_control/tables/recovery_*_2026-10-30.csv.
 - [ ] 5. Seed np/ledger/numbers.csv with control-only rows (source file per row).
-- [ ] 6. S1 spine -> G1; S2 targeted lit search (Stine-style integration vs non-integration, mouse RDK) -> G2;
+- [ ] 6. [S1 + G1 done 2026-10-30, D004] S1 spine -> G1; S2 targeted lit search (Stine-style integration vs non-integration, mouse RDK) -> G2;
       S3 -> G3; S4-S8 per neuropaper workflow.
 - [ ] 7. Verify: integrity audit PASS; every number traces to a control-only, responded-only source.
 
@@ -96,3 +109,4 @@ other two paper projects.
 - 2026-10-29: D002 (author "ok"): ES added to recovery (180 jobs, same out_dir), group-level calibration, ME ablation. ES code + datasets done.
 - 2026-10-29: shuffled-ME ablation dropped before running: likelihood pools per coherence, shuffle within coherence = seed noise (reports/2026-10-29-likelihood-ignores-trial-me.md). D002 item 3 needs re-decision (choice/RT split local; nominal refits optional).
 - 2026-10-29: D003 recorded; nominal_matched code + control_heldout.py; held-out table provenance restored (exact reproduction).
+- 2026-10-30: G1 approved (D004, "approve"); spine locked; S2. 3b definitions fixed, then recovery_cohorts.py on 42579825: valid; E separated (Holm-3 and Bonferroni-4 agree), provisional until ES cells (reports/2026-10-30-paired-recovery-cohorts.md). Next: author submits ES cells + nominal refits; S2 literature.
