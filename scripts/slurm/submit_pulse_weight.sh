@@ -13,7 +13,7 @@ n=$(ls "$D"/fits_joint_unfreeze_integrators/*_L0U0V[01]Z0G1_*.pkl | wc -l)
 ARRAY=0-119
 if [[ "${1:-}" == "--cv" ]]; then
   ARRAY=0-99
-  n_cv=$(ls "$D"/fits_joint_unfreeze_pulse_weight/*_cv?.pkl 2>/dev/null | wc -l)
+  n_cv=$(find "$D"/fits_joint_unfreeze_pulse_weight -name "*_cv?.pkl" | wc -l)
   [[ "$n_cv" -eq 0 ]] || { echo "STOP: $n_cv cv fits already exist; not submitting"; exit 1; }
 elif [[ -e "$D/fits_joint_unfreeze_pulse_weight" ]]; then echo "STOP: fits_joint_unfreeze_pulse_weight already exists; not submitting"; exit 1; fi
 mkdir -p slurm-logs
