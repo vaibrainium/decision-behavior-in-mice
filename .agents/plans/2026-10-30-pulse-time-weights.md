@@ -20,7 +20,7 @@ fits on held-out NLL (summed over mice, mice as unit), and the across-mouse orde
 - [x] 2. Checks (scripts/ddm/check_pulse_time_weights.py, DBM13 and PSUIM10): channel sum = single-channel input (1.2e-7);
       NLL at weights 1 = joint fit NLL (1600.3638, 808.7197); equal weights 1.7 = shared weight NLL (1604.5359, 808.8249);
       warm-start seeds copy w; torch backend runs. Smoke fit DBM13 cv0 (2 reps, 1 iteration) saved with test_nll.
-- [ ] 3. Hyak: scripts/slurm/submit_pulse_time_weights.sh (120 jobs, out ddm/fits_joint_unfreeze_pulse_time_weights).
+- [x] 3. Hyak: scripts/slurm/submit_pulse_time_weights.sh (120 jobs, out ddm/fits_joint_unfreeze_pulse_time_weights).
 - [ ] 4. Readout: held-out NLL vs shared-weight and joint fits (same folds); weights per mouse; ordering early > middle
       (> late) across mice (sign test / Wilcoxon on paired weights, Holm); weights at bounds.
 - [ ] 5. If weights differ: simulate pulse window effects with fitted weights vs data (pulse_joint_signatures statistics).
@@ -32,3 +32,4 @@ Pooled (across-mouse) weights; other model families.
 ## Log
 - 2026-10-30: first check run found my strict zip broke the existing two-channel path (shared weight NLL inf); fixed
   before commit, all checks rerun and passing.
+- 2026-10-30: submitted by the author on Hyak (HEAD 89f14d2): PTW_pulse_time_weights 42623428 (0-119). Next: pull, step 4.
