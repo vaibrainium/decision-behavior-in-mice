@@ -49,7 +49,7 @@ Hyak runs, CV over all mice (only if step 3 is promising).
 - 2026-10-30: 42579333 returned only the 20 "all" fits: every cv task (0-99) crashed in heldout_nll after fitting
   (stimulus.shape on the two-channel tuple; my bug, not caught by the smoke test, which used split all). Fixed in 4940d67
   (pushed); rerun with `bash scripts/slurm/submit_pulse_weight.sh --cv` (tasks 0-99; "all" outputs untouched).
-  "All" fits: w stays ~1 (17/20 within 1.05; no-sv PSUIM5 1.65, PSUIM6 1.34, PSUIM10 4.5 at n=425); train NLL vs joint
+  "All" fits: w stays ~1 (16/20 within 1.05; sv DBM13 1.33; no-sv PSUIM5 1.65, PSUIM6 1.34, PSUIM10 4.5 at n=425); train NLL vs joint
   -0.0 to -7.3, no mouse beyond 10. NLL profile over w (other params fixed, eval seed, scratchpad pw/profile_w.py):
   flat within MC noise for w 0.5-3 in DBM6/PSUIM6, rises from w=4; PSUIM7 rises from w=2 (+45 at 2, +330 at 4).
   Optimizer not stuck: the joint likelihood does not support amplifying the pulse.
