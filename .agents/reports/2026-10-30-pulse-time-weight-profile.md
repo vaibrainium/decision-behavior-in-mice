@@ -40,10 +40,32 @@ ddm/pulse_timing_global.npz.
 ## Caveats
 - Other parameters fixed: a refit could trade the weight against drift_gain or sv and gain more (or less).
 - Train NLL, one bin at a time; no penalty for the extra parameters; MC noise ~10 per mouse.
-- The likelihood (condition = coherence x pulse type, 9 RT bins) does not condition on pulse time or on RT relative to
-  the pulse, which is where a pulse-time effect would show; it is a weak test of pulse weighting.
+- CORRECTION (same day): the likelihood already has one cell per pulse time. |sched_pulse_type| is the pulse-time bin
+  (UCLA 1-2, UW 1-3; sign = direction), and condition = coherence x pulse type. An earlier version of this report said
+  otherwise. VERIFIED (crosstab of sched_pulse_type against pulse_timing_global.npz onsets). The per-mouse flatness is a
+  data-size limit, not a binning problem.
+
+## Addendum: pooled across mice (author chose "option 3"; option 3 turned out to be the existing likelihood)
+Profiles summed over mice by pulse time (early: UCLA 0.02-0.12 s with UW 0.05 s; middle: UCLA 0.20-0.30 s with UW 0.23 s;
+late: UW 0.42 s only). Rig only aligns the times. Same CSV; computed inline from it (sum of NLL minus baseline over mice).
+VERIFIED numbers; interpretation SUSPECTED (fixed parameters, coarse grid).
+
+| model | pulse time | w=0 | 0.5 | 1 | 1.5 | 2 | 3 | mice |
+|---|---|---|---|---|---|---|---|---|
+| sv | early | +71.3 | +23.5 | 0 | -12.8 | -3.8 | +25.4 | 10 |
+| sv | middle | +19.0 | +6.6 | 0 | +11.6 | +46.6 | +114.1 | 10 |
+| sv | late | -4.6 | -4.9 | 0 | +0.2 | +3.5 | +20.3 | 6 |
+| no sv | early | +59.3 | +25.5 | 0 | -4.8 | -0.8 | +24.9 | 10 |
+| no sv | middle | +18.9 | +4.8 | 0 | -9.9 | +4.3 | +68.3 | 10 |
+| no sv | late | +2.9 | -0.2 | 0 | +6.2 | +6.0 | +19.1 | 6 |
+
+- sv: best w early 1.5, middle 1.0, late 0.5; leave-one-mouse-out best w unchanged for early in 9/10 drops and middle
+  in 9/10. Ordering early >= middle >= late (primacy-like).
+- no sv: early 1.5, middle 1.5, late 0.5.
+- Gains are small: ~13 NLL summed over 10 mice for the early weight (sv); a 1.5x early weight would not by itself close
+  the 3 vs 5.5 pp gap (not simulated).
 
 ## Open questions and next steps
-- [ ] Author decision: (a) stop; (b) fit two weights (early, later) only in PSUIM6 and PSUIM7 on Hyak (4 jobs per model,
-      all + cv), to see if the early > late hint survives held-out; (c) change the likelihood so pulse trials are binned by
-      pulse time (and RT relative to pulse) before any weight fitting.
+- [ ] Author decision: fit per-pulse-time weights (early / middle / late, aligned across rigs) per mouse on Hyak, judged by
+      held-out NLL summed over mice and the across-mouse ordering of weights; or stop. Needs a per-bin weight in
+      fit_mouse_ddm (not implemented).
