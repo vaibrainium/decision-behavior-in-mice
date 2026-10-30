@@ -1,5 +1,5 @@
 # Plan: free pulse weight in the joint fit (then LCA illustration)
-Status: active
+Status: done
 Created: 2026-10-29 by Claude (Opus 5.5)
 Related reports: reports/2026-10-29-joint-control-pulse-refits.md (incl. sv addendum),
 reports/2026-10-23-pulse-tau-pilot-20261023T191030Z_fa8de8b.md (w_choice / w_joint = 2.33 with control-only parameters)
@@ -22,16 +22,16 @@ pulse trials, reproduces both the choice effect (0.3-1.2 s window 5.48 pp, no la
 ## Steps
 - [x] 1. fit_mouse_ddm --pulse_weight: free noise_weight in [0, 20] on the pulse component (two-channel input);
       check w = 1 equals the single-channel input (max diff 1.2e-7) and controls carry no pulse component.
-- [ ] 2. Fit locally: PSUIM6, PSUIM7, DBM6, L0U0V1Z0G1, split all, 15 reps, warm start from
+- [x] 2. Fit locally: PSUIM6, PSUIM7, DBM6, L0U0V1Z0G1, split all, 15 reps, warm start from
       ddm/fits_joint_unfreeze_integrators, out ddm/fits_joint_unfreeze_pulse_weight.
-- [ ] 3. Read out: fitted w, sv, drift_gain vs the joint fit; delta train NLL; simulate (pulse_joint_signatures
+- [x] 3. Read out: fitted w, sv, drift_gain vs the joint fit; delta train NLL; simulate (pulse_joint_signatures
       statistics) the 0.3-1.2 / 1.2-5 s effects and the toward-pulse RT shift vs data.
 - [ ] 4. Decide (author): per-pulse-time weights, or stop.
 - [x] 5. LCA illustration (author asked 2026-10-29): two accumulators with leak, inhibition, noise correlation; check it
       equals the DDM in the limit; roughly matched to control trials in the same mice; pulse signatures vs data.
-- [ ] 3b. Comparison (author, 2026-10-29): same fit without sv (L0U0V0Z0G1 --pulse_weight, free guess bias, warm start
+- [x] 3b. Comparison (author, 2026-10-29): same fit without sv (L0U0V0Z0G1 --pulse_weight, free guess bias, warm start
       from the joint no-sv fit), same mice, same out dir.
-- [ ] 6. Report addendum; STATUS.
+- [x] 6. Report addendum; STATUS.
 
 ## Out of scope
 Hyak runs, CV over all mice (only if step 3 is promising).
@@ -55,3 +55,6 @@ Hyak runs, CV over all mice (only if step 3 is promising).
   Optimizer not stuck: the joint likelihood does not support amplifying the pulse.
 - 2026-10-30: cv rerun submitted by the author (HEAD 1ec65e4; first attempt exited silently, ls under pipefail, fixed):
   PW_pulse_weight 42591827 (tasks 0-99). Next: pull, held-out NLL vs joint fits, simulated pulse effects (step 3).
+- 2026-10-30: cv fits pulled (120/120). Steps 2, 3, 3b, 6 done (scripts/ddm/compare_pulse_weight.py): pulse weight adds
+  nothing held-out (sum +14.8 sv, +8.8 no-sv; 0/10 mice better by 10); w ~1. Simulation of signatures skipped (w ~1 = joint
+  fits). Step 4 left to the author (recommend stop). -> reports/2026-10-30-pulse-weight-joint.md
