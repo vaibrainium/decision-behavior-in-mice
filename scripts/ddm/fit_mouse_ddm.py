@@ -248,7 +248,7 @@ def heldout_nll(model: MouseDDM, params: dict, data: dict, stimulus: np.ndarray,
     np.random.seed(seed)
     model.simulator.clear_cache()
     model._labels = data["condition"]
-    model.precompute(*stimulus.shape, n_reps=n_reps)
+    model.precompute(*model._stimulus_shape(stimulus), n_reps=n_reps)
     result = model._simulate_condition(stimulus, params, n_reps)
     if result is None:
         return float("inf")
