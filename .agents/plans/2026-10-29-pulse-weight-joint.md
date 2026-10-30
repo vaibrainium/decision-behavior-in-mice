@@ -46,3 +46,10 @@ Hyak runs, CV over all mice (only if step 3 is promising).
 - 2026-10-29: submitted by the author on Hyak (HEAD ee2995b): PW_pulse_weight 42579333 (0-119). Next: pull, step 3 readout.
 - 2026-10-29: author OK'd the LCA illustration while the Hyak array runs (step 5 brought forward): scripts/ddm/pulse_lca_signatures.py; DDM-limit check 2000/2000 trials identical in each of PSUIM6, PSUIM7, DBM6. Full run started.
 - 2026-10-29: step 5 done (two runs; second adds baseline-input LCAs after the author shared Kirkpatrick et al. 2021, and fixes a x100 print bug): no race/LCA variant exceeds 5.1 pp vs 13.1 in data -> reports/2026-10-29-pulse-race-lca-illustration.md.
+- 2026-10-30: 42579333 returned only the 20 "all" fits: every cv task (0-99) crashed in heldout_nll after fitting
+  (stimulus.shape on the two-channel tuple; my bug, not caught by the smoke test, which used split all). Fixed in 4940d67
+  (pushed); rerun with `bash scripts/slurm/submit_pulse_weight.sh --cv` (tasks 0-99; "all" outputs untouched).
+  "All" fits: w stays ~1 (17/20 within 1.05; no-sv PSUIM5 1.65, PSUIM6 1.34, PSUIM10 4.5 at n=425); train NLL vs joint
+  -0.0 to -7.3, no mouse beyond 10. NLL profile over w (other params fixed, eval seed, scratchpad pw/profile_w.py):
+  flat within MC noise for w 0.5-3 in DBM6/PSUIM6, rises from w=4; PSUIM7 rises from w=2 (+45 at 2, +330 at 4).
+  Optimizer not stuck: the joint likelihood does not support amplifying the pulse.
