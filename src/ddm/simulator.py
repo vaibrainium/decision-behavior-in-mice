@@ -8,6 +8,8 @@ from numba import jit, prange
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Weights of the extra channels of a tuple stimulus (signal, channel 1, channel 2, ...), in order; a missing weight is 1.
+CHANNEL_WEIGHTS = ("noise_weight", "noise_weight_2", "noise_weight_3")
 
 # ---------------------------------------------------------------------------
 # Private backends
@@ -134,8 +136,11 @@ class _NumbaSimulator:
         unit_sz: np.ndarray | None = None,
     ) -> tuple[np.ndarray, np.ndarray]:
         if isinstance(stimulus, tuple):
-            signal, stim_noise = stimulus
-            stimulus = np.asarray(signal, dtype=np.float32) + float(params.get("noise_weight", 1.0)) * np.asarray(stim_noise, dtype=np.float32)
+            signal, *channels = stimulus
+            assert len(channels) <= len(CHANNEL_WEIGHTS), f"{len(channels)} extra channels; weights for {len(CHANNEL_WEIGHTS)}"
+            stimulus = np.asarray(signal, dtype=np.float32)
+            for name, channel in zip(CHANNEL_WEIGHTS, channels):
+                stimulus = stimulus + float(params.get(name, 1.0)) * np.asarray(channel, dtype=np.float32)
         if stimulus.size == 0:
             return np.array([], dtype=np.float32), np.array([], dtype=np.float32)
         stim = np.asarray(stimulus, dtype=np.float32)
@@ -217,9 +222,12 @@ class _TorchSimulator:
     ) -> tuple[np.ndarray, np.ndarray]:
         dev = self.device
         if isinstance(stimulus, tuple):
-            # two channels: drift input = signal + noise_weight * noise
-            signal, stim_noise = (c.to(dev, dtype=torch.float32) if isinstance(c, torch.Tensor) else self._to_device(c, f"stimulus_{i}") for i, c in enumerate(stimulus))
-            stim = signal + float(params.get("noise_weight", 1.0)) * stim_noise
+            # (signal, channel, ...): drift input = signal + sum of CHANNEL_WEIGHTS[k] * channel k
+            signal, *channels = (c.to(dev, dtype=torch.float32) if isinstance(c, torch.Tensor) else self._to_device(c, f"stimulus_{i}") for i, c in enumerate(stimulus))
+            assert len(channels) <= len(CHANNEL_WEIGHTS), f"{len(channels)} extra channels; weights for {len(CHANNEL_WEIGHTS)}"
+            stim = signal
+            for name, channel in zip(CHANNEL_WEIGHTS, channels):
+                stim = stim + float(params.get(name, 1.0)) * channel
         elif isinstance(stimulus, torch.Tensor):
             stim = stimulus.to(dev, dtype=torch.float32)
         else:
@@ -415,7 +423,7 @@ class DriftDiffusionSimulator:
         """Simulate one decision per trial.
 
         `stimulus` is (n_trials, n_timepoints), or a (signal, noise) tuple of such arrays whose drift input is
-        signal + params["noise_weight"] * noise. `labels` gives each trial's condition (e.g. coherence) for the
+        signal + params["noise_weight"] * noise; further channels take the later CHANNEL_WEIGHTS. `labels` gives each trial's condition (e.g. coherence) for the
         likelihood; without it the first stimulus sample is used, which is only right for a constant stimulus.
         """
         rt, choice = self._backend.simulate_trials(stimulus, params, unit_noise=unit_noise, unit_sv=unit_sv, unit_sz=unit_sz)
