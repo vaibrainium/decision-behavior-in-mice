@@ -53,3 +53,5 @@ Hyak runs, CV over all mice (only if step 3 is promising).
   -0.0 to -7.3, no mouse beyond 10. NLL profile over w (other params fixed, eval seed, scratchpad pw/profile_w.py):
   flat within MC noise for w 0.5-3 in DBM6/PSUIM6, rises from w=4; PSUIM7 rises from w=2 (+45 at 2, +330 at 4).
   Optimizer not stuck: the joint likelihood does not support amplifying the pulse.
+- 2026-10-30: cv rerun submitted by the author (HEAD 1ec65e4; first attempt exited silently, ls under pipefail, fixed):
+  PW_pulse_weight 42591827 (tasks 0-99). Next: pull, held-out NLL vs joint fits, simulated pulse effects (step 3).
