@@ -42,7 +42,37 @@ Comparison: `.venv/bin/python -m scripts.ddm.compare_pulse_time_weights`.
 - Pulse-time bins are only ~0.2 s apart (early vs middle); late exists in 6 UW mice.
 - Simulated pulse effects with the fitted weights were not run (step 5: weights differ only in PSUIM6, PSUIM7 no-sv).
 
+## Addendum: simulated pulse effects with the fitted weights (PSUIM6, PSUIM7; author OK 2026-10-31)
+Joint fit (weights 1) vs per-time fit, each simulated on the mouse's responded trials, 30 reps, seed 0; statistics as
+pulse_joint_signatures (pulse_descriptive_package definitions; |coh| <= 36, symmetric cells), per pulse time and pooled.
+Source: scripts/ddm/pulse_time_weight_signatures.py, dissemination/figures/qc/pulse_time_weight_signatures_2026-10-31_{pooled,per_pulse_time}.csv.
+VERIFIED numbers.
+
+| mouse | model | weights (early, middle) | early 0.3-1.2 s | middle 0.3-1.2 s | RT shift toward pulse |
+|---|---|---|---|---|---|
+| PSUIM6 | data | | 18.3 pp | 12.6 pp | -350 ms |
+| PSUIM6 | sv joint | 1, 1 | 4.0 | 3.0 | -59 |
+| PSUIM6 | sv per-time | 3.16, 1.05 | 11.5 | 3.6 | -129 |
+| PSUIM6 | no-sv joint | 1, 1 | 4.7 | 4.2 | -38 |
+| PSUIM6 | no-sv per-time | 2.65, 1.19 | 10.6 | 4.8 | -91 |
+| PSUIM7 | data | | 15.4 | 11.1 | -96 |
+| PSUIM7 | sv (per-time = joint) | 1, 1 | 3.2 | 4.1 | -62 |
+| PSUIM7 | no-sv joint | 1, 1 | 4.1 | 5.2 | -22 |
+| PSUIM7 | no-sv per-time | 2.11, 0.96 | 8.2 | 4.9 | -44 |
+
+- Where the early weight moves, it closes about half of the early-pulse gap (PSUIM6 sv 4.0 -> 11.5 vs 18.3) and doubles the
+  RT shift, with control accuracy and median RT unchanged (acc 36%: 0.757 -> 0.767, data 0.813; median RT 1.69 -> 1.71 s,
+  data 1.69). The middle pulse stays at 3.6-4.9 pp vs 11-13 pp in the data in every model: the fit does not raise it.
+- Late-window (1.2-5 s) effects stay near the joint fits (sv PSUIM7 still -4.4/-4.8 pp vs data -1.0/-0.9).
+- Note: the data effects here (PSUIM6 pooled 15.5 pp) use this script's selection (|coh| <= 36, symmetric cells, pooled
+  stages); the LCA illustration's per-time numbers used a different selection and are not comparable.
+- Reading: even in the mouse with the most data, a per-time weight takes the early pulse halfway and leaves the middle
+  pulse at ~1/3 of the data, at the likelihood optimum. Pulse weighting alone cannot reproduce the pulse effect under the
+  joint choice + RT fit. SUSPECTED as a general statement (2 mice).
+
 ## Open questions and next steps
-- [ ] Optional: simulate PSUIM6 with its fitted weights to see if an early weight ~3 brings the predicted 0.3-1.2 s
-      effect up to its data (9.3 pp early in that mouse) and keeps the RT fit.
-- [ ] The pulse-weight line ends here unless the author wants the PSUIM6 check: no shared or per-time weight helps across mice.
+- [x] PSUIM6/PSUIM7 simulation with fitted weights (addendum).
+- [ ] The pulse-weight line ends here: no shared or per-time weight reproduces the effect across mice, or fully in PSUIM6.
+- [ ] What else limits it? In the fits the RT distributions hold the weight down: the pulse-trial RT distributions would
+      have to shift by -350 ms (PSUIM6) for the observed choice effect, which no weight produces. Candidate: a pulse
+      effect on timing (e.g. the pulse also triggers commitment), not only on evidence.
