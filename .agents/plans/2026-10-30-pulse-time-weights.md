@@ -1,5 +1,5 @@
 # Plan: fit a separate pulse weight per pulse time
-Status: active
+Status: done
 Created: 2026-10-30 by Claude (Opus 5.5)
 Related reports: reports/2026-10-30-pulse-time-weight-profile.md (pooled profile: sv early ~1.5, middle ~1, late ~0.5),
 reports/2026-10-30-pulse-weight-joint.md (shared weight ~1, no held-out gain)
@@ -21,10 +21,10 @@ fits on held-out NLL (summed over mice, mice as unit), and the across-mouse orde
       NLL at weights 1 = joint fit NLL (1600.3638, 808.7197); equal weights 1.7 = shared weight NLL (1604.5359, 808.8249);
       warm-start seeds copy w; torch backend runs. Smoke fit DBM13 cv0 (2 reps, 1 iteration) saved with test_nll.
 - [x] 3. Hyak: scripts/slurm/submit_pulse_time_weights.sh (120 jobs, out ddm/fits_joint_unfreeze_pulse_time_weights).
-- [ ] 4. Readout: held-out NLL vs shared-weight and joint fits (same folds); weights per mouse; ordering early > middle
+- [x] 4. Readout: held-out NLL vs shared-weight and joint fits (same folds); weights per mouse; ordering early > middle
       (> late) across mice (sign test / Wilcoxon on paired weights, Holm); weights at bounds.
-- [ ] 5. If weights differ: simulate pulse window effects with fitted weights vs data (pulse_joint_signatures statistics).
-- [ ] 6. Report; STATUS.
+- [ ] 5. (skipped; weights differ in PSUIM6 only, offered to the author) If weights differ: simulate pulse window effects with fitted weights vs data (pulse_joint_signatures statistics).
+- [x] 6. Report; STATUS.
 
 ## Out of scope
 Pooled (across-mouse) weights; other model families.
@@ -33,3 +33,4 @@ Pooled (across-mouse) weights; other model families.
 - 2026-10-30: first check run found my strict zip broke the existing two-channel path (shared weight NLL inf); fixed
   before commit, all checks rerun and passing.
 - 2026-10-30: submitted by the author on Hyak (HEAD 89f14d2): PTW_pulse_time_weights 42623428 (0-119). Next: pull, step 4.
+- 2026-10-31: 120/120 fits pulled. No held-out gain, no ordering across mice; PSUIM6 early weight ~3. -> reports/2026-10-31-pulse-time-weights.md

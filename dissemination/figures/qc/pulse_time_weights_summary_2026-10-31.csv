@@ -1,0 +1,11 @@
+sv,test,n_mice,sum,median,n_better_by_10,n_worse_by_10,p,n_positive,p_holm
+no_sv,heldout time_w - joint,10,-8.395659514024032,0.2860139559723507,0.0,0.0,0.845703125,,1.0
+no_sv,heldout time_w - shared_w,10,-17.233878370146442,-0.5299892976526053,1.0,0.0,0.193359375,,1.0
+no_sv,w_early - w_middle (all-trial fits),10,2.9968829984378966,0.011330300423601614,,,0.322265625,5.0,1.0
+no_sv,w_middle - w_late (all-trial fits),6,-0.31838134195237167,0.0013152179180936363,,,0.625,4.0,1.0
+no_sv,w_early - w_late (all-trial fits),6,0.2435927515587858,0.013697391799748715,,,0.1875,4.0,1.0
+sv,heldout time_w - joint,10,-2.0213797041500925,0.46090602051441465,1.0,1.0,0.921875,,1.0
+sv,heldout time_w - shared_w,10,-16.771516577247553,0.35987951886136216,1.0,0.0,1.0,,1.0
+sv,w_early - w_middle (all-trial fits),10,2.91013532387487,0.0030969018014351812,,,0.25,6.0,1.0
+sv,w_middle - w_late (all-trial fits),6,-0.5961319414301602,0.0,,,0.875,2.0,1.0
+sv,w_early - w_late (all-trial fits),6,0.1661240240240125,0.0,,,0.625,2.0,1.0
