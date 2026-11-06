@@ -1,4 +1,5 @@
 #!/bin/bash
+# SUPERSEDED 2026-11-06 by scripts/slurm/autosubmit.py (slot-based, retries timeouts with more time). Do not run.
 # Submit the batches left over from submit_mapping_accumulator.sh (refused by QOSMaxSubmitJobPerUserLimit on 2026-11-06)
 # and the nominal coherence joint fits (submit_joint_nominal.sh, not yet run), only as far as the queue limit allows.
 # Plans: .agents/plans/2026-11-06-input-mapping-x-accumulator.md, .agents/plans/2026-11-06-nominal-coherence-joint-fits.md

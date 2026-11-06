@@ -65,3 +65,10 @@ per-site interpretation (rig is a covariate only).
   each batch once).
 - 2026-11-06: P1_power_ccv submitted (43013411). N4, M_norm_integrators and N1-N3 waiting (459 queued). Script now
   submits M_norm_integrators (240) and N1 (300) in 60-task chunks (same grid; indices unchanged).
+- 2026-11-06: author asked for slot-based auto-submission with time limits from expected runtimes and retries with
+  more time. scripts/slurm/make_task_table.py -> tasks_2026-11-06.csv (1,260 tasks; limits from finished fits of the
+  same mouse and variant, x p90 slowdown: norm 8.3, nominal 1.77-2.26, power assumed 2.0; x1.5 + 15 min; 1-16 h).
+  scripts/slurm/autosubmit.py (stdlib; tmux --watch): fills LIMIT - queued slots in priority order, rounds limits up to
+  1/2/3/4/6/8/12/16/24/32/48 h, retries failures (TIMEOUT doubles the limit, max 48 h, 3 attempts), imports the jobs
+  submitted earlier. Tested with stub squeue/sacct/sbatch: slot filling, timeout retry, just-submitted tasks counted,
+  squeue failure survives --watch. submit_remaining_2026-11-06.sh superseded.
