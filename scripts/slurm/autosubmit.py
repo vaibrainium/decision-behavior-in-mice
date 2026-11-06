@@ -16,7 +16,7 @@ Run from the repo root on Hyak (bash):
     python3 scripts/slurm/autosubmit.py                     # one pass
     tmux new -s autosubmit 'python3 scripts/slurm/autosubmit.py --watch 10'   # every 10 min until all are done
     python3 scripts/slurm/autosubmit.py --shrink_pending    # also lower the 16 h limit of imported tasks still pending
-Settings (environment): LIMIT (500), MAX_HOURS (48), MAX_ATTEMPTS (3), DDM_DIR (Hyak processed/ddm).
+Settings (environment): LIMIT (500), MAX_HOURS (48), MAX_ATTEMPTS (3), PROCESSED_DIR (Hyak processed; task outputs are relative to it, e.g. ddm/fits_...).
 Use only this script for these batches from now on (not submit_remaining_2026-11-06.sh).
 """
 
@@ -37,7 +37,7 @@ SLURM_SCRIPT = "scripts/slurm/fit_mouse_ddm.slurm"
 LIMIT = int(os.environ.get("LIMIT", 500))
 MAX_HOURS = float(os.environ.get("MAX_HOURS", 48))
 MAX_ATTEMPTS = int(os.environ.get("MAX_ATTEMPTS", 3))
-DDM_DIR = Path(os.environ.get("DDM_DIR", "/gscratch/walkerlab/vaibhav/mouse-pulse-data/processed/ddm"))
+PROCESSED_DIR = Path(os.environ.get("PROCESSED_DIR", "/gscratch/walkerlab/vaibhav/mouse-pulse-data/processed"))
 BUCKETS = [1, 2, 3, 4, 6, 8, 12, 16, 24, 32, 48]  # time limits are rounded up to these, so a batch becomes a few arrays
 GRACE_SECONDS = 300  # a just-submitted task may not be visible in squeue yet
 # submitted 2026-11-06 before this script (all with --time=16:00:00): batch -> [(job id, first index, last index)]
@@ -132,7 +132,7 @@ def one_pass(tasks, state, dry_run, shrink_pending):
     for k, s in state.items():
         if s["status"] in ("done", "gave_up"):
             continue
-        if (DDM_DIR / tasks[k]["out"]).exists():
+        if (PROCESSED_DIR / tasks[k]["out"]).exists():
             s["status"] = "done"
         elif s["status"] == "submitted" and f"{s['job']}_{tasks[k]['index']}" not in q and now - s["submitted_at"] > GRACE_SECONDS:
             gone.append(k)
@@ -141,7 +141,7 @@ def one_pass(tasks, state, dry_run, shrink_pending):
         for k in gone:
             s = state[k]
             reason = st.get(f"{s['job']}_{tasks[k]['index']}", "UNKNOWN")
-            if reason == "COMPLETED" and not (DDM_DIR / tasks[k]["out"]).exists():
+            if reason == "COMPLETED" and not (PROCESSED_DIR / tasks[k]["out"]).exists():
                 reason = "COMPLETED_NO_OUTPUT"
             new_time = min(MAX_HOURS, s["time_hours"] * 2) if reason == "TIMEOUT" else s["time_hours"]
             s["history"].append(f"job {s['job']}: {reason} at {s['time_hours']} h")
@@ -217,6 +217,9 @@ def main():
     if not TASKS.exists():
         sys.exit(f"{TASKS} not found; run from the repo root after git pull")
     tasks = load_tasks()
+    folders = {(PROCESSED_DIR / t["out"]).parent for t in tasks.values()}
+    if not any(f.is_dir() for f in folders):  # wrong base path would make every finished fit look failed
+        sys.exit("none of the output folders exists under {}; check PROCESSED_DIR".format(PROCESSED_DIR))
     STATE.parent.mkdir(exist_ok=True)
     state = json.loads(STATE.read_text()) if STATE.exists() else initial_state(tasks)
     while True:
