@@ -28,7 +28,12 @@ sub() {
 # priority order: completes the control-only power prediction first, then the bird-style nominal power fit
 sub P1_power_ccv 0-49 50 "$P"
 sub N4_nominal_power 0-59 60 "$N --front_end power --variants L0U0V1Z0G1 --out_dir ddm/fits_joint_nominal_power"
-sub M_norm_integrators 0-239 240 "$J --front_end norm --variants L0U0V1Z0G1 L1U0V1Z0G1 L0U1V1Z0G1 L1U1V1Z0G1 --out_dir ddm/fits_joint_norm_integrators"
-sub N1_nominal_integrators 0-299 300 "$N --variants L0U0V1Z0G1 L0U0V0Z0G1 L1U0V1Z0G1 L0U1V1Z0G1 L1U1V1Z0G1 --out_dir ddm/fits_joint_nominal_integrators"
+# large arrays in chunks of 60 tasks so they fit under the queue limit as it drains (same grid, so the indices are stable)
+for lo in 0 60 120 180; do
+  sub M_norm_integrators_$lo-$((lo + 59)) $lo-$((lo + 59)) 60 "$J --front_end norm --variants L0U0V1Z0G1 L1U0V1Z0G1 L0U1V1Z0G1 L1U1V1Z0G1 --out_dir ddm/fits_joint_norm_integrators"
+done
+for lo in 0 60 120 180 240; do
+  sub N1_nominal_integrators_$lo-$((lo + 59)) $lo-$((lo + 59)) 60 "$N --variants L0U0V1Z0G1 L0U0V0Z0G1 L1U0V1Z0G1 L0U1V1Z0G1 L1U1V1Z0G1 --out_dir ddm/fits_joint_nominal_integrators"
+done
 sub N2_nominal_leak20-200 0-59 60 "$N --variants L1U0V1Z0G1 --leak_bounds 20 200 --out_dir ddm/fits_joint_nominal_leak20-200"
 sub N3_nominal_es 0-59 60 "$N --variants L0U0V1Z0G1 --extrema_samples --out_dir ddm/fits_joint_nominal_es"

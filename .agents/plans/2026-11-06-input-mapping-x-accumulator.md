@@ -63,3 +63,5 @@ per-site interpretation (rig is a covariate only).
   QOSMaxSubmitJobPerUserLimit (~500 queued tasks): M_norm_integrators, P1_power_ccv, N4. Do not rerun
   submit_mapping_accumulator.sh (P1 folder will exist); use scripts/slurm/submit_remaining_2026-11-06.sh (queue-aware,
   each batch once).
+- 2026-11-06: P1_power_ccv submitted (43013411). N4, M_norm_integrators and N1-N3 waiting (459 queued). Script now
+  submits M_norm_integrators (240) and N1 (300) in 60-task chunks (same grid; indices unchanged).
