@@ -56,3 +56,7 @@ its own amendment); per-site interpretation (rig is a covariate only).
 - 2026-11-06: step 1 done: PSUIM10 cv0 primary (2 iterations, 2 reps) runs; n_train 327 + n_test 98 = 425 responded
   trials incl. pulse, n_train_censored 0, nominal_input and nominal_matched set. Step 2: submit_joint_nominal.sh written;
   local md5s of both inputs match the script; grids 300 / 60 / 60 (--list). Next: author git pull + submits on Hyak.
+- 2026-11-06: added N4 (author "amend them"): nominal input + power-law mapping, primary model, joint, 60 fits; the
+  bird-paper analogue (compressive coherence-to-drift mapping on the coherence sequence). Submitted from
+  scripts/slurm/submit_mapping_accumulator.sh; compared under rule 5a (vs nominal linear primary) and with the
+  mapping plan (plans/2026-11-06-input-mapping-x-accumulator.md).

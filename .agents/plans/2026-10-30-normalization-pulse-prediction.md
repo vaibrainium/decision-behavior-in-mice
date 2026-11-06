@@ -71,3 +71,6 @@ in amendment 7, which shrinks the pulse); per-site interpretation (rig is a cova
   -2.29 (no worse). RT shift toward pulse -40.9 ms vs data -28.0, reference -24.7. Reading: normalization raises the
   predicted pulse effect about uniformly (overshoots DBM12/13/14, still under PSUIM5/7), so it does not track which mice
   respond strongly. Under the rule: not "captures better" (error not lower), pending PSUIM6.
+- 2026-11-06: author: add the static power-law mapping under the no-response rule. Control-only power fits (P1, frozen
+  pulse prediction under this plan's step 5 rule) and the mapping x accumulator joint fits are in
+  plans/2026-11-06-input-mapping-x-accumulator.md (submit_mapping_accumulator.sh). This plan stays norm-only.
