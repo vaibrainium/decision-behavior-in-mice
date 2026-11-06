@@ -1,0 +1,190 @@
+model,mouse,bin,effect,n_pulse
+data,DBM12,0.0,2.18559,150.0
+data,DBM12,1.0,-4.64903,81.0
+data,DBM12,2.0,-2.14552,47.0
+data,DBM12,3.0,-5.27023,39.0
+data,DBM12,4.0,-7.48414,44.0
+data,DBM12,5.0,3.2963,30.0
+data,DBM12,6.0,-16.60562,25.0
+data,DBM13,0.0,3.03571,40.0
+data,DBM13,1.0,-0.77688,43.0
+data,DBM13,2.0,6.13616,29.0
+data,DBM13,3.0,10.70707,15.0
+data,DBM13,4.0,4.74359,20.0
+data,DBM13,5.0,6.26566,19.0
+data,DBM13,6.0,1.66667,30.0
+data,DBM14,0.0,-4.27855,42.0
+data,DBM14,1.0,1.9471,38.0
+data,DBM14,2.0,-10.67308,25.0
+data,DBM14,3.0,12.34127,30.0
+data,DBM14,4.0,-11.92833,34.0
+data,DBM14,5.0,2.60417,24.0
+data,DBM14,6.0,1.25388,40.0
+data,DBM15,0.0,8.86069,51.0
+data,DBM15,1.0,0.34297,46.0
+data,DBM15,2.0,6.6371,51.0
+data,DBM15,3.0,-0.57401,44.0
+data,DBM15,4.0,12.99603,42.0
+data,DBM15,5.0,9.71655,42.0
+data,DBM15,6.0,-3.01156,39.0
+data,DBM5,0.0,0.36375,137.0
+data,DBM5,1.0,8.41028,139.0
+data,DBM5,2.0,3.63573,117.0
+data,DBM5,3.0,1.21973,116.0
+data,DBM5,4.0,0.02298,82.0
+data,DBM5,5.0,8.29688,64.0
+data,DBM5,6.0,-5.94553,100.0
+data,DBM6,0.0,12.073,164.0
+data,DBM6,1.0,11.30919,137.0
+data,DBM6,2.0,7.96204,111.0
+data,DBM6,3.0,-6.0922,139.0
+data,DBM6,4.0,-3.16617,137.0
+data,DBM6,5.0,-5.96053,106.0
+data,DBM6,6.0,-6.56743,131.0
+data,PSUIM10,0.0,13.33333,9.0
+data,PSUIM10,1.0,-2.19048,25.0
+data,PSUIM10,2.0,5.92105,19.0
+data,PSUIM10,3.0,15.65844,27.0
+data,PSUIM10,4.0,-2.07039,23.0
+data,PSUIM10,5.0,19.38272,18.0
+data,PSUIM10,6.0,16.74948,23.0
+data,PSUIM5,0.0,-5.67068,52.0
+data,PSUIM5,1.0,15.02312,74.0
+data,PSUIM5,2.0,12.75152,105.0
+data,PSUIM5,3.0,9.33587,92.0
+data,PSUIM5,4.0,2.43665,101.0
+data,PSUIM5,5.0,3.71035,126.0
+data,PSUIM5,6.0,-3.08509,161.0
+data,PSUIM7,0.0,10.89372,667.0
+data,PSUIM7,1.0,16.48511,535.0
+data,PSUIM7,2.0,13.23814,280.0
+data,PSUIM7,3.0,-1.13979,176.0
+data,PSUIM7,4.0,4.6662,119.0
+data,PSUIM7,5.0,-6.63079,128.0
+data,PSUIM7,6.0,-0.23549,197.0
+"primary, control-only fit",DBM12,0.0,4.41712,3556.0
+"primary, control-only fit",DBM12,1.0,-1.13417,2188.0
+"primary, control-only fit",DBM12,2.0,-0.57708,1364.0
+"primary, control-only fit",DBM12,3.0,-1.7655,1226.0
+"primary, control-only fit",DBM12,4.0,-4.00489,1171.0
+"primary, control-only fit",DBM12,5.0,-4.35018,876.0
+"primary, control-only fit",DBM12,6.0,-3.14109,1002.0
+"primary, control-only fit",DBM13,0.0,4.78836,851.0
+"primary, control-only fit",DBM13,1.0,3.76148,768.0
+"primary, control-only fit",DBM13,2.0,-2.3949,635.0
+"primary, control-only fit",DBM13,3.0,-1.51208,676.0
+"primary, control-only fit",DBM13,4.0,2.42016,712.0
+"primary, control-only fit",DBM13,5.0,1.1316,583.0
+"primary, control-only fit",DBM13,6.0,0.99108,635.0
+"primary, control-only fit",DBM14,0.0,2.60294,1028.0
+"primary, control-only fit",DBM14,1.0,2.11449,715.0
+"primary, control-only fit",DBM14,2.0,1.80736,600.0
+"primary, control-only fit",DBM14,3.0,3.6134,709.0
+"primary, control-only fit",DBM14,4.0,2.15552,847.0
+"primary, control-only fit",DBM14,5.0,2.37499,867.0
+"primary, control-only fit",DBM14,6.0,-1.02991,1048.0
+"primary, control-only fit",DBM15,0.0,1.71596,1085.0
+"primary, control-only fit",DBM15,1.0,1.34574,1096.0
+"primary, control-only fit",DBM15,2.0,3.72752,1033.0
+"primary, control-only fit",DBM15,3.0,-2.06279,1034.0
+"primary, control-only fit",DBM15,4.0,-2.76315,1130.0
+"primary, control-only fit",DBM15,5.0,-4.32145,979.0
+"primary, control-only fit",DBM15,6.0,-1.07294,1142.0
+"primary, control-only fit",DBM5,0.0,3.77832,3174.0
+"primary, control-only fit",DBM5,1.0,7.15013,3053.0
+"primary, control-only fit",DBM5,2.0,2.79131,2971.0
+"primary, control-only fit",DBM5,3.0,-0.34715,2939.0
+"primary, control-only fit",DBM5,4.0,0.80595,2909.0
+"primary, control-only fit",DBM5,5.0,-2.71595,2142.0
+"primary, control-only fit",DBM5,6.0,-2.44227,2261.0
+"primary, control-only fit",DBM6,0.0,6.95814,3816.0
+"primary, control-only fit",DBM6,1.0,4.95521,3686.0
+"primary, control-only fit",DBM6,2.0,3.98153,3299.0
+"primary, control-only fit",DBM6,3.0,1.14162,3425.0
+"primary, control-only fit",DBM6,4.0,-1.61998,3451.0
+"primary, control-only fit",DBM6,5.0,-1.74062,2782.0
+"primary, control-only fit",DBM6,6.0,-3.43573,3158.0
+"primary, control-only fit",PSUIM10,0.0,0.88522,202.0
+"primary, control-only fit",PSUIM10,1.0,0.88794,383.0
+"primary, control-only fit",PSUIM10,2.0,2.49117,483.0
+"primary, control-only fit",PSUIM10,3.0,1.73389,537.0
+"primary, control-only fit",PSUIM10,4.0,-1.04623,561.0
+"primary, control-only fit",PSUIM10,5.0,-1.93095,511.0
+"primary, control-only fit",PSUIM10,6.0,-0.24226,562.0
+"primary, control-only fit",PSUIM5,0.0,3.73531,1243.0
+"primary, control-only fit",PSUIM5,1.0,6.32578,1307.0
+"primary, control-only fit",PSUIM5,2.0,3.94411,1612.0
+"primary, control-only fit",PSUIM5,3.0,1.16312,2237.0
+"primary, control-only fit",PSUIM5,4.0,-0.20123,2785.0
+"primary, control-only fit",PSUIM5,5.0,-0.73505,2865.0
+"primary, control-only fit",PSUIM5,6.0,0.16352,3621.0
+"primary, control-only fit",PSUIM7,0.0,5.47897,15333.0
+"primary, control-only fit",PSUIM7,1.0,2.43239,11978.0
+"primary, control-only fit",PSUIM7,2.0,-0.72212,8046.0
+"primary, control-only fit",PSUIM7,3.0,-1.8356,6785.0
+"primary, control-only fit",PSUIM7,4.0,-2.82032,5999.0
+"primary, control-only fit",PSUIM7,5.0,-5.81923,4504.0
+"primary, control-only fit",PSUIM7,6.0,-4.38356,4804.0
+"primary + normalization, control-only fit",DBM12,0.0,6.12804,3594.0
+"primary + normalization, control-only fit",DBM12,1.0,-1.1323,2226.0
+"primary + normalization, control-only fit",DBM12,2.0,-0.59732,1438.0
+"primary + normalization, control-only fit",DBM12,3.0,-3.82492,1255.0
+"primary + normalization, control-only fit",DBM12,4.0,-4.86421,1167.0
+"primary + normalization, control-only fit",DBM12,5.0,-5.92731,904.0
+"primary + normalization, control-only fit",DBM12,6.0,-3.32177,974.0
+"primary + normalization, control-only fit",DBM13,0.0,6.59266,911.0
+"primary + normalization, control-only fit",DBM13,1.0,5.67095,775.0
+"primary + normalization, control-only fit",DBM13,2.0,-1.24808,665.0
+"primary + normalization, control-only fit",DBM13,3.0,-1.21522,704.0
+"primary + normalization, control-only fit",DBM13,4.0,1.03308,695.0
+"primary + normalization, control-only fit",DBM13,5.0,-2.05703,566.0
+"primary + normalization, control-only fit",DBM13,6.0,0.44289,611.0
+"primary + normalization, control-only fit",DBM14,0.0,4.43359,1060.0
+"primary + normalization, control-only fit",DBM14,1.0,5.70215,778.0
+"primary + normalization, control-only fit",DBM14,2.0,3.37146,655.0
+"primary + normalization, control-only fit",DBM14,3.0,4.78163,767.0
+"primary + normalization, control-only fit",DBM14,4.0,2.31801,901.0
+"primary + normalization, control-only fit",DBM14,5.0,-0.36932,898.0
+"primary + normalization, control-only fit",DBM14,6.0,-1.6695,960.0
+"primary + normalization, control-only fit",DBM15,0.0,2.05813,1314.0
+"primary + normalization, control-only fit",DBM15,1.0,9.17711,1210.0
+"primary + normalization, control-only fit",DBM15,2.0,5.47006,1006.0
+"primary + normalization, control-only fit",DBM15,3.0,4.22153,1135.0
+"primary + normalization, control-only fit",DBM15,4.0,1.59348,1344.0
+"primary + normalization, control-only fit",DBM15,5.0,-0.92027,1130.0
+"primary + normalization, control-only fit",DBM15,6.0,-0.12804,1248.0
+"primary + normalization, control-only fit",DBM5,0.0,4.59725,3156.0
+"primary + normalization, control-only fit",DBM5,1.0,7.32032,3138.0
+"primary + normalization, control-only fit",DBM5,2.0,1.88483,2971.0
+"primary + normalization, control-only fit",DBM5,3.0,1.22979,2985.0
+"primary + normalization, control-only fit",DBM5,4.0,0.57618,2927.0
+"primary + normalization, control-only fit",DBM5,5.0,-3.64399,2170.0
+"primary + normalization, control-only fit",DBM5,6.0,-2.88944,2351.0
+"primary + normalization, control-only fit",DBM6,0.0,8.49985,4344.0
+"primary + normalization, control-only fit",DBM6,1.0,9.37482,4106.0
+"primary + normalization, control-only fit",DBM6,2.0,6.08689,3435.0
+"primary + normalization, control-only fit",DBM6,3.0,5.22563,3802.0
+"primary + normalization, control-only fit",DBM6,4.0,1.94167,4025.0
+"primary + normalization, control-only fit",DBM6,5.0,0.59198,3384.0
+"primary + normalization, control-only fit",DBM6,6.0,0.73887,3185.0
+"primary + normalization, control-only fit",PSUIM10,0.0,0.1061,246.0
+"primary + normalization, control-only fit",PSUIM10,1.0,2.28446,480.0
+"primary + normalization, control-only fit",PSUIM10,2.0,2.29858,471.0
+"primary + normalization, control-only fit",PSUIM10,3.0,3.07062,527.0
+"primary + normalization, control-only fit",PSUIM10,4.0,-1.41472,569.0
+"primary + normalization, control-only fit",PSUIM10,5.0,-2.47123,510.0
+"primary + normalization, control-only fit",PSUIM10,6.0,-1.95114,580.0
+"primary + normalization, control-only fit",PSUIM5,0.0,3.36691,1174.0
+"primary + normalization, control-only fit",PSUIM5,1.0,6.96675,1236.0
+"primary + normalization, control-only fit",PSUIM5,2.0,4.55498,1595.0
+"primary + normalization, control-only fit",PSUIM5,3.0,0.73459,2302.0
+"primary + normalization, control-only fit",PSUIM5,4.0,-0.30169,2845.0
+"primary + normalization, control-only fit",PSUIM5,5.0,-0.96964,2708.0
+"primary + normalization, control-only fit",PSUIM5,6.0,-0.75681,3584.0
+"primary + normalization, control-only fit",PSUIM7,0.0,7.84911,15639.0
+"primary + normalization, control-only fit",PSUIM7,1.0,3.28735,12724.0
+"primary + normalization, control-only fit",PSUIM7,2.0,-0.08331,8412.0
+"primary + normalization, control-only fit",PSUIM7,3.0,-2.94159,6942.0
+"primary + normalization, control-only fit",PSUIM7,4.0,-4.62578,5868.0
+"primary + normalization, control-only fit",PSUIM7,5.0,-7.27768,4303.0
+"primary + normalization, control-only fit",PSUIM7,6.0,-7.39083,4422.0

@@ -1,0 +1,28 @@
+model,mouse,acc_36,rt50,sim_nonresp_share
+data,DBM12,,0.8048,
+data,DBM13,0.6,1.0963,
+data,DBM14,0.7342,1.3145,
+data,DBM15,0.5735,1.3023,
+data,DBM5,0.657,1.2187,
+data,DBM6,0.7149,1.2976,
+data,PSUIM10,0.75,1.5689,
+data,PSUIM5,0.8062,1.909,
+data,PSUIM7,0.7579,0.9306,
+"primary, control-only fit",DBM12,,0.8226,0.0625
+"primary, control-only fit",DBM13,0.6036,1.2533,0.1355
+"primary, control-only fit",DBM14,0.6574,1.341,0.1127
+"primary, control-only fit",DBM15,0.6126,1.439,0.1649
+"primary, control-only fit",DBM5,0.6347,1.2758,0.1103
+"primary, control-only fit",DBM6,0.6777,1.3277,0.1199
+"primary, control-only fit",PSUIM10,0.7045,1.6342,0.1711
+"primary, control-only fit",PSUIM5,0.7529,1.9141,0.2007
+"primary, control-only fit",PSUIM7,0.6979,0.9615,0.0609
+"primary + normalization, control-only fit",DBM12,,0.8415,0.0626
+"primary + normalization, control-only fit",DBM13,0.6339,1.2252,0.1362
+"primary + normalization, control-only fit",DBM14,0.7125,1.3237,0.0976
+"primary + normalization, control-only fit",DBM15,0.6949,1.4234,0.0744
+"primary + normalization, control-only fit",DBM5,0.6411,1.2828,0.1052
+"primary + normalization, control-only fit",DBM6,0.7532,1.3484,0.0367
+"primary + normalization, control-only fit",PSUIM10,0.7439,1.6527,0.1771
+"primary + normalization, control-only fit",PSUIM5,0.7722,1.901,0.2156
+"primary + normalization, control-only fit",PSUIM7,0.7402,0.9493,0.0542
