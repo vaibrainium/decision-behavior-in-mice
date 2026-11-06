@@ -1,0 +1,4 @@
+model,mouse,acc_36,rt50,sim_nonresp_share
+data,PSUIM6,0.8128,1.6897,
+"primary, control-only fit",PSUIM6,0.7673,1.7535,0.1513
+"primary + normalization, control-only fit",PSUIM6,0.8259,1.7285,0.1347

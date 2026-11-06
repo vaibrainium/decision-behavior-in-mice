@@ -1,0 +1,4 @@
+model,mouse,0.3-1.2,1.2-5,rt_shift_toward_ms,err_0.3-1.2,err_1.2-5
+data,PSUIM6,15.4952,1.6233,-349.6069,0.0,0.0
+"primary, control-only fit",PSUIM6,3.8172,-0.0933,-64.25,-11.678,-1.7166
+"primary + normalization, control-only fit",PSUIM6,5.3007,0.0036,-85.6232,-10.1946,-1.6197

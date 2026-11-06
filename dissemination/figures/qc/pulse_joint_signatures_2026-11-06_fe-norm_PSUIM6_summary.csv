@@ -1,0 +1,4 @@
+model,0.3-1.2,1.2-5,rt_shift_toward_ms,err_0.3-1.2,err_1.2-5,rmse_0.3-1.2,mice_late_negative,max_nonresp
+data,15.4952,1.6233,-349.6069,0.0,0.0,0.0,0,
+"primary, control-only fit",3.8172,-0.0933,-64.25,-11.678,-1.7166,11.678,1,0.1513
+"primary + normalization, control-only fit",5.3007,0.0036,-85.6232,-10.1946,-1.6197,10.1946,0,0.1347

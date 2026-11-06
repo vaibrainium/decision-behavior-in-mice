@@ -1,0 +1,22 @@
+model,mouse,bin,effect,n_pulse
+data,PSUIM6,0.0,13.28049,250.0
+data,PSUIM6,1.0,17.95448,296.0
+data,PSUIM6,2.0,10.48043,209.0
+data,PSUIM6,3.0,1.90061,213.0
+data,PSUIM6,4.0,5.27162,251.0
+data,PSUIM6,5.0,-1.62882,220.0
+data,PSUIM6,6.0,0.71691,397.0
+"primary, control-only fit",PSUIM6,0.0,3.69415,4927.0
+"primary, control-only fit",PSUIM6,1.0,3.5702,4719.0
+"primary, control-only fit",PSUIM6,2.0,3.95344,4806.0
+"primary, control-only fit",PSUIM6,3.0,1.77602,5939.0
+"primary, control-only fit",PSUIM6,4.0,-0.17543,7423.0
+"primary, control-only fit",PSUIM6,5.0,0.27613,7120.0
+"primary, control-only fit",PSUIM6,6.0,-1.47612,9128.0
+"primary + normalization, control-only fit",PSUIM6,0.0,6.3578,5214.0
+"primary + normalization, control-only fit",PSUIM6,1.0,5.42337,4944.0
+"primary + normalization, control-only fit",PSUIM6,2.0,4.17191,5040.0
+"primary + normalization, control-only fit",PSUIM6,3.0,2.71347,6280.0
+"primary + normalization, control-only fit",PSUIM6,4.0,0.46113,7657.0
+"primary + normalization, control-only fit",PSUIM6,5.0,-0.22478,7189.0
+"primary + normalization, control-only fit",PSUIM6,6.0,-2.05362,9163.0
