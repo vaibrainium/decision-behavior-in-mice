@@ -34,10 +34,12 @@ from scripts.ddm.pulse_psychometric import OUT
 
 N_REPS, SEED = 30, 0
 REFERENCE = "primary, control-only fit"
+FE_NORM = "primary + normalization, control-only fit"  # plan 2026-10-30-normalization-pulse-prediction
 OPTIONS = {  # family -> make_model options (as the fits)
     "fixed_guess_bias": dict(fixed_guess_bias=True), "extrema_E_leak20-200": dict(leak_bounds=(20, 200)),
     "free_leak_0-200": dict(leak_bounds=(0, 200)), "extrema_sampling_ES": dict(extrema_samples=True),
-    "stine_nominal_DDM": dict(nominal_input=True), "stine_nominal_ES": dict(nominal_input=True, extrema_samples=True)}
+    "stine_nominal_DDM": dict(nominal_input=True), "stine_nominal_ES": dict(nominal_input=True, extrema_samples=True),
+    FE_NORM: dict(front_end="norm")}
 
 
 def simulate(fam: str, path: Path, inputs: dict, obs: pd.DataFrame, mouse: str, cache: Path) -> pd.DataFrame:
@@ -48,9 +50,11 @@ def simulate(fam: str, path: Path, inputs: dict, obs: pd.DataFrame, mouse: str, 
         r = pickle.load(f)
     opt = {"fixed_guess_bias": False} | OPTIONS.get(fam, {})
     assert bool(r.get("fixed_guess_bias")) == opt["fixed_guess_bias"] and bool(r.get("nominal_input")) == opt.get("nominal_input", False)
+    assert r.get("front_end") == opt.get("front_end")
     rig = obs.loc[obs.mouse == mouse, "rig"].iloc[0]
     model = make_model(r["variant"], rig, opt["fixed_guess_bias"], leak_bounds=opt.get("leak_bounds"), responded=True,
-                       extrema_samples=opt.get("extrema_samples", False), nominal_input=opt.get("nominal_input", False))
+                       extrema_samples=opt.get("extrema_samples", False), nominal_input=opt.get("nominal_input", False),
+                       front_end=opt.get("front_end"))
     rows = np.flatnonzero(inputs["subject_id"] == mouse)  # all responded trials, for the non-response share
     data, stim = select(inputs, rows, nominal=opt.get("nominal_input", False))
     sim = simulate_outcomes(model, r["parameters"], stim, data["condition"], N_REPS, SEED)
@@ -87,16 +91,21 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--cache", type=Path, required=True)
     ap.add_argument("--families", nargs="*", default=list(FAMILIES))
+    ap.add_argument("--fe_norm", action="store_true", help="add the control-only fit with the normalization front end (fits_resp_fast_only_fe-norm)")
+    ap.add_argument("--tag", default="", help="appended to the output names")
+    ap.add_argument("--mice", nargs="*", help="subset of mice (default all); per-mouse simulations do not depend on the others")
     args = ap.parse_args()
     inputs = load_inputs(DDM / "ddm_inputs_global_ucla_nofreeze.npz")
     with np.load(DDM / "pulse_timing_global.npz") as f:
         assert np.array_equal(f["agg_code"], inputs["agg_code"])
         inputs = {**inputs, **{k: f[k] for k in ("pulse_onset_frame0", "pulse_n_frames", "pulse_coherence")}}
     inputs = responded_only(inputs)
-    mice = sorted(set(inputs["subject_id"]))
+    mice = sorted(args.mice or set(inputs["subject_id"]))
     obs = observed(inputs, mice)
     onsets = pseudo_onsets(obs)
     models = {REFERENCE: lambda m: DDM / "fits_resp_final" / f"{m}_L0U0V1Z0G1_control.pkl"}
+    if args.fe_norm:
+        models[FE_NORM] = lambda m: DDM / "fits_resp_fast_only_fe-norm" / f"{m}_L0U0V1Z0G1_control.pkl"
     for fam in args.families:
         models[fam] = lambda m, fam=fam: DDM / FAMILIES[fam][0] / f"{m}_{FAMILIES[fam][1]}_all.pkl"
     results = {"data": stats_of(obs, onsets)}
@@ -124,7 +133,7 @@ def main():
           + "\n\n" + win.pivot(index="mouse", columns="model", values="1.2-5").round(1).to_string())
     print("\n== control trials: accuracy at 36% and median RT; simulated non-response share\n" + ctl.pivot(index="mouse", columns="model", values="sim_nonresp_share").round(3).to_string())
 
-    stem = OUT / f"pulse_joint_signatures_{date.today().isoformat()}"
+    stem = OUT / f"pulse_joint_signatures_{date.today().isoformat()}{args.tag}"
     win.round(4).to_csv(f"{stem}_windows.csv", index=False)
     prof.round(5).to_csv(f"{stem}_profile.csv", index=False)
     ctl.round(4).to_csv(f"{stem}_control.csv", index=False)
