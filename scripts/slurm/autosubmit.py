@@ -1,5 +1,5 @@
 """Queue-aware submission of the 2026-11-06 fit batches (plans/2026-11-06-input-mapping-x-accumulator.md,
-plans/2026-11-06-nominal-coherence-joint-fits.md). Standard library only, so it runs on the Hyak login node.
+plans/2026-11-06-nominal-coherence-joint-fits.md). Standard library only and Python 3.6 compatible (the Hyak login node python3).
 
 Each pass:
   1. a tracked task whose output file exists is done;
@@ -52,16 +52,16 @@ OLD_NAMES = {"P1_power_ccv": ("P1_power", 0, 49), "N4_nominal_power": ("N4_nomin
              "N2_nominal_leak20-200": ("N2_nominal_leak20-200", 0, 59), "N3_nominal_es": ("N3_nominal_es", 0, 59)}
 
 
-def run(cmd: list[str], env: dict | None = None) -> str:
-    return subprocess.run(cmd, check=True, capture_output=True, text=True, env=env).stdout
+def run(cmd, env=None):
+    return subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True, env=env).stdout
 
 
-def load_tasks() -> dict:
+def load_tasks():
     with open(TASKS) as f:
         return {f"{r['batch']}:{r['index']}": r for r in csv.DictReader(f)}
 
 
-def old_done_entries() -> list[tuple[str, int, int, str]]:
+def old_done_entries():
     """(batch, first, last, job id) from submit_remaining_2026-11-06.sh's record, including its 60-task chunks."""
     out = []
     if OLD_DONE.exists():
@@ -76,7 +76,7 @@ def old_done_entries() -> list[tuple[str, int, int, str]]:
     return out
 
 
-def initial_state(tasks: dict) -> dict:
+def initial_state(tasks):
     state = {k: {"status": "pending", "job": None, "time_hours": float(t["time_hours"]), "attempts": 0, "submitted_at": 0, "history": []}
              for k, t in tasks.items()}
     entries = [(b, lo, hi, job) for b, spans in IMPORTED.items() for job, lo, hi in spans] + old_done_entries()
@@ -88,19 +88,19 @@ def initial_state(tasks: dict) -> dict:
     return state
 
 
-def save(state: dict) -> None:
+def save(state):
     tmp = STATE.with_suffix(".tmp")
     tmp.write_text(json.dumps(state, indent=0))
     tmp.replace(STATE)
 
 
-def queue() -> dict[str, str]:
+def queue():
     """Your queued and running array tasks: '<job>_<index>' -> state (PENDING, RUNNING, ...)."""
     lines = run(["squeue", "-u", os.environ["USER"], "-h", "-r", "-o", "%i %T"]).split("\n")
     return dict(line.split()[:2] for line in lines if line.strip())
 
 
-def sacct_states(ids: list[str]) -> dict[str, str]:
+def sacct_states(ids):
     states = {}
     for i in range(0, len(ids), 200):
         out = run(["sacct", "-n", "-X", "-P", "-o", "JobID,State", "-j", ",".join(ids[i:i + 200])])
@@ -110,11 +110,11 @@ def sacct_states(ids: list[str]) -> dict[str, str]:
     return states
 
 
-def bucket(hours: float) -> float:
+def bucket(hours):
     return next((b for b in BUCKETS if b >= hours), BUCKETS[-1])
 
 
-def ranges(idx: list[int]) -> str:
+def ranges(idx):
     idx, parts, start = sorted(idx), [], None
     for a, b in zip(idx, idx[1:] + [None]):
         start = a if start is None else start
@@ -124,7 +124,7 @@ def ranges(idx: list[int]) -> str:
     return ",".join(parts)
 
 
-def one_pass(tasks: dict, state: dict, dry_run: bool, shrink_pending: bool) -> bool:
+def one_pass(tasks, state, dry_run, shrink_pending):
     q = queue()
     now = time.time()
     # 1-2: done / failed
@@ -213,7 +213,7 @@ def main():
     ap.add_argument("--dry_run", action="store_true", help="print what one pass would do; change nothing")
     ap.add_argument("--shrink_pending", action="store_true", help="lower the 16 h limit of imported tasks still pending to the table estimate")
     args = ap.parse_args()
-    sys.stdout.reconfigure(line_buffering=True)  # readable live in tmux / a log file
+    sys.stdout = os.fdopen(sys.stdout.fileno(), "w", 1)  # line-buffered: readable live in tmux / a log file (Python 3.6)
     if not TASKS.exists():
         sys.exit(f"{TASKS} not found; run from the repo root after git pull")
     tasks = load_tasks()
