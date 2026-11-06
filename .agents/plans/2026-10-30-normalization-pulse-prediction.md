@@ -1,5 +1,5 @@
 # Plan: does a divisive-normalization front end, fitted to control trials only, predict the pulse effect?
-Status: active
+Status: done (report reports/2026-11-06-normalization-pulse-prediction.md)
 Created: 2026-10-30 by Claude (Opus 5.5)
 Related reports: reports/2026-10-29-joint-control-pulse-refits.md; reports/2026-10-30-pulse-weight-joint.md;
 reports/2026-10-29-huk-shadlen-replication.md; plans/2026-10-25-amendment-7-normalization.md (abandoned; F2 defined there)
@@ -37,9 +37,9 @@ without a front end.
       sbatch --array=50-59 --export=ALL,JOB_OFFSET=0,MODULE=scripts.ddm.fit_mouse_ddm,EXTRA_ARGS="--responded_only --guess_model fast_only --front_end norm --variants L0U0V1Z0G1 --splits ccv0 ccv1 ccv2 ccv3 ccv4 control --inputs ddm/ddm_inputs_global_ucla_nofreeze.npz --out_dir ddm/fits_resp_fast_only_fe-norm --n_reps 50" --time=16:00:00 scripts/slurm/fit_mouse_ddm.slurm
       (grid checked with --list: 0-49 ccv0-4, 50-59 control.)
 - [x] 3. Audit: 60 fits, n_train = responded control count, fe_beta / fe_tau at bounds counted.
-- [ ] 4. Prediction: simulate each control-split fit on all responded trials of the mouse (nofreeze inputs, 30 reps,
+- [x] 4. Prediction: simulate each control-split fit on all responded trials of the mouse (nofreeze inputs, 30 reps,
       seed 0, the pulse_joint_signatures statistic). Write the prediction table, commit it, then compare.
-- [ ] 5. Comparison (rule fixed here, 2026-10-30, before any F2 fit exists):
+- [x] 5. Comparison (rule fixed here, 2026-10-30, before any F2 fit exists):
       Primary: per mouse |predicted - observed| pulse effect in the 0.3-1.2 s window, F2 vs reference; paired
       Wilcoxon over 10 mice, two-sided, plus mean difference and dz.
       F2 "captures the pulse better" if the error is lower (p < 0.05) AND the mean predicted effect moves toward
@@ -48,7 +48,7 @@ without a front end.
       Secondary (descriptive, no test): Spearman of predicted vs observed per-mouse effects; 1.2-5 s window; toward-pulse
       RT shift; held-out control NLL F2 minus reference (ccv, per 1,000 control trials); fe_beta per mouse.
       If fe_beta ~ 0 (< 0.05) in >= 7/10 mice, report "control trials do not ask for normalization" and stop.
-- [ ] 6. Report and STATUS.
+- [x] 6. Report and STATUS.
 
 ## Out of scope
 Fitting the front end on pulse trials (circular); filter retuning (filter plan); other front ends (power was compressive
@@ -74,3 +74,6 @@ in amendment 7, which shrinks the pulse); per-site interpretation (rig is a cova
 - 2026-11-06: author: add the static power-law mapping under the no-response rule. Control-only power fits (P1, frozen
   pulse prediction under this plan's step 5 rule) and the mapping x accumulator joint fits are in
   plans/2026-11-06-input-mapping-x-accumulator.md (submit_mapping_accumulator.sh). This plan stays norm-only.
+- 2026-11-06: PSUIM6 control fit synced (42621773_58 had completed 10-31). Audit passes. Frozen prediction committed
+  3b24367. Final 10-mouse comparison: mean 3.25 -> 4.71 pp (data 5.48); |error| change -0.17 pp, Wilcoxon p 0.92; NOT
+  "captures better". Report written; plan done.
