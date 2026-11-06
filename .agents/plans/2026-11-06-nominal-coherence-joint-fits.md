@@ -60,3 +60,5 @@ its own amendment); per-site interpretation (rig is a covariate only).
   bird-paper analogue (compressive coherence-to-drift mapping on the coherence sequence). Submitted from
   scripts/slurm/submit_mapping_accumulator.sh; compared under rule 5a (vs nominal linear primary) and with the
   mapping plan (plans/2026-11-06-input-mapping-x-accumulator.md).
+- 2026-11-06: not yet submitted. N1-N3 moved into scripts/slurm/submit_remaining_2026-11-06.sh (queue-aware, after the
+  mapping batches); do not also run submit_joint_nominal.sh.

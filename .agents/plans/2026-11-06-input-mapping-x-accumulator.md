@@ -58,3 +58,8 @@ per-site interpretation (rig is a covariate only).
 ## Log
 - 2026-11-06: plan written ("yes, amend them"). Code check: make_params accepts power/norm with every accumulator,
   E leak bounds, extrema samples and nominal_matched; the simulator applies the front end before all model paths.
+- 2026-11-06: author submitted (Hyak, at efdd33a): M_power_integrators 43010287 (240), M_power_leak20-200 43010288,
+  M_power_es 43010289, M_norm_leak20-200 43010290, M_norm_es 43010291, P1_power_control 43010292 (10). Refused by
+  QOSMaxSubmitJobPerUserLimit (~500 queued tasks): M_norm_integrators, P1_power_ccv, N4. Do not rerun
+  submit_mapping_accumulator.sh (P1 folder will exist); use scripts/slurm/submit_remaining_2026-11-06.sh (queue-aware,
+  each batch once).
