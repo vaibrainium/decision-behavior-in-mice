@@ -72,3 +72,14 @@ per-site interpretation (rig is a covariate only).
   1/2/3/4/6/8/12/16/24/32/48 h, retries failures (TIMEOUT doubles the limit, max 48 h, 3 attempts), imports the jobs
   submitted earlier. Tested with stub squeue/sacct/sbatch: slot filling, timeout retry, just-submitted tasks counted,
   squeue failure survives --watch. submit_remaining_2026-11-06.sh superseded.
+- 2026-11-07: step 3 code: scripts/ddm/compare_mapping_accumulator.py (audit, rules A, B, nominal 5a; partial data
+  reported as such); pulse_joint_signatures: EXTRA_FAMILIES (power/norm/nominal joint "all" fits) and --fe_power (P1);
+  primacy.make_model(nominal_matched=). Tested on the real linear fits plus fake mapping folders (scratch output only):
+  the linear ranking reproduces the 2026-10-29 report exactly; rule A detects a planted -50/mouse shift.
+- 2026-11-07: ISSUE for the author (rule not changed): on the existing linear fits, rule B's test (each integrator vs
+  E and ES, paired Wilcoxon, Holm within mapping) already fails: summed differences -300 to -590 favour the integrators
+  but rest on 4-6 mice (Holm p 0.06-0.92). So rule B would say "mapping-dependent" even if every mapping agreed with
+  linear. Also the code compared no_sv too, which is not in this plan's integrator list (no power/norm no_sv fits).
+  Options to decide BEFORE the power/norm results are synced: keep B; or B' = robustness as agreement with linear
+  (same best family; each integrator-vs-extrema summed difference keeps its sign and stays beyond 10 NLL in the same
+  number of mice +-1); or use the control paper's paired-cohort rule (D004) for C > E per mapping.

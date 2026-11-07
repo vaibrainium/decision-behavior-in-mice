@@ -35,11 +35,35 @@ from scripts.ddm.pulse_psychometric import OUT
 N_REPS, SEED = 30, 0
 REFERENCE = "primary, control-only fit"
 FE_NORM = "primary + normalization, control-only fit"  # plan 2026-10-30-normalization-pulse-prediction
+FE_POWER = "primary + power law, control-only fit"  # plan 2026-11-06-input-mapping-x-accumulator, P1
+# joint "all" fits of plans 2026-11-06-input-mapping-x-accumulator and -nominal-coherence-joint-fits: family -> (folder, variant)
+EXTRA_FAMILIES = {
+    **{f"{fe}_{name}": (f"fits_joint_{fe}_integrators", var) for fe in ("power", "norm")
+       for name, var in [("primary", "L0U0V1Z0G1"), ("leak", "L1U0V1Z0G1"), ("urgency", "L0U1V1Z0G1"), ("leak_urgency", "L1U1V1Z0G1")]},
+    **{f"{fe}_extrema_E_leak20-200": (f"fits_joint_{fe}_leak20-200", "L1U0V1Z0G1") for fe in ("power", "norm", "nominal")},
+    **{f"{fe}_extrema_sampling_ES": (f"fits_joint_{fe}_es", "L0U0V1Z0G1") for fe in ("power", "norm", "nominal")},
+    **{f"nominal_{name}": ("fits_joint_nominal_integrators", var) for name, var in
+       [("primary", "L0U0V1Z0G1"), ("no_sv", "L0U0V0Z0G1"), ("leak", "L1U0V1Z0G1"), ("urgency", "L0U1V1Z0G1"), ("leak_urgency", "L1U1V1Z0G1")]},
+    "nominal_power_primary": ("fits_joint_nominal_power", "L0U0V1Z0G1"),
+}
 OPTIONS = {  # family -> make_model options (as the fits)
     "fixed_guess_bias": dict(fixed_guess_bias=True), "extrema_E_leak20-200": dict(leak_bounds=(20, 200)),
     "free_leak_0-200": dict(leak_bounds=(0, 200)), "extrema_sampling_ES": dict(extrema_samples=True),
     "stine_nominal_DDM": dict(nominal_input=True), "stine_nominal_ES": dict(nominal_input=True, extrema_samples=True),
-    FE_NORM: dict(front_end="norm")}
+    FE_NORM: dict(front_end="norm"), FE_POWER: dict(front_end="power")}
+for _fam in EXTRA_FAMILIES:
+    _opt = {}
+    if _fam.startswith(("power_", "nominal_power")):
+        _opt["front_end"] = "power"
+    if _fam.startswith("norm_"):
+        _opt["front_end"] = "norm"
+    if _fam.startswith("nominal_"):
+        _opt.update(nominal_input=True, nominal_matched=True)
+    if "extrema_E" in _fam:
+        _opt["leak_bounds"] = (20, 200)
+    if "extrema_sampling" in _fam:
+        _opt["extrema_samples"] = True
+    OPTIONS[_fam] = _opt
 
 
 def simulate(fam: str, path: Path, inputs: dict, obs: pd.DataFrame, mouse: str, cache: Path) -> pd.DataFrame:
@@ -50,11 +74,11 @@ def simulate(fam: str, path: Path, inputs: dict, obs: pd.DataFrame, mouse: str, 
         r = pickle.load(f)
     opt = {"fixed_guess_bias": False} | OPTIONS.get(fam, {})
     assert bool(r.get("fixed_guess_bias")) == opt["fixed_guess_bias"] and bool(r.get("nominal_input")) == opt.get("nominal_input", False)
-    assert r.get("front_end") == opt.get("front_end")
+    assert r.get("front_end") == opt.get("front_end") and bool(r.get("nominal_matched")) == opt.get("nominal_matched", False)
     rig = obs.loc[obs.mouse == mouse, "rig"].iloc[0]
     model = make_model(r["variant"], rig, opt["fixed_guess_bias"], leak_bounds=opt.get("leak_bounds"), responded=True,
                        extrema_samples=opt.get("extrema_samples", False), nominal_input=opt.get("nominal_input", False),
-                       front_end=opt.get("front_end"))
+                       front_end=opt.get("front_end"), nominal_matched=opt.get("nominal_matched", False))
     rows = np.flatnonzero(inputs["subject_id"] == mouse)  # all responded trials, for the non-response share
     data, stim = select(inputs, rows, nominal=opt.get("nominal_input", False))
     sim = simulate_outcomes(model, r["parameters"], stim, data["condition"], N_REPS, SEED)
@@ -91,6 +115,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--cache", type=Path, required=True)
     ap.add_argument("--families", nargs="*", default=list(FAMILIES))
+    ap.add_argument("--fe_power", action="store_true", help="add the control-only fit with the power-law front end (fits_resp_fast_only_fe-power_v2)")
     ap.add_argument("--fe_norm", action="store_true", help="add the control-only fit with the normalization front end (fits_resp_fast_only_fe-norm)")
     ap.add_argument("--tag", default="", help="appended to the output names")
     ap.add_argument("--mice", nargs="*", help="subset of mice (default all); per-mouse simulations do not depend on the others")
@@ -106,8 +131,11 @@ def main():
     models = {REFERENCE: lambda m: DDM / "fits_resp_final" / f"{m}_L0U0V1Z0G1_control.pkl"}
     if args.fe_norm:
         models[FE_NORM] = lambda m: DDM / "fits_resp_fast_only_fe-norm" / f"{m}_L0U0V1Z0G1_control.pkl"
+    if args.fe_power:
+        models[FE_POWER] = lambda m: DDM / "fits_resp_fast_only_fe-power_v2" / f"{m}_L0U0V1Z0G1_control.pkl"
     for fam in args.families:
-        models[fam] = lambda m, fam=fam: DDM / FAMILIES[fam][0] / f"{m}_{FAMILIES[fam][1]}_all.pkl"
+        folder, variant = (FAMILIES.get(fam) or EXTRA_FAMILIES[fam])[:2]
+        models[fam] = lambda m, folder=folder, variant=variant: DDM / folder / f"{m}_{variant}_all.pkl"
     results = {"data": stats_of(obs, onsets)}
     nonresp = {}
     for name, path in models.items():
