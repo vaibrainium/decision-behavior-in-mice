@@ -22,8 +22,9 @@ Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gat
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
-- plans/2026-10-29-pulse-weight-joint.md : free pulse weight, sv and no-sv, 10 mice cv + all; Hyak job 42579333 (120); next: pull, readout; then LCA illustration
-- plans/2026-10-29-control-paper.md : third paper (control trials only, Stine 2020 framing) in dissemination/paper_control/; G0 approved; descriptives done; paired recovery submitted (job 42579825); S1 spine drafted, devil's advocate running
+- plans/2026-11-06-input-mapping-x-accumulator.md : power/norm x 6 accumulators + power control-only prediction; 490 fits running, rest via scripts/slurm/submit_remaining_2026-11-06.sh
+- plans/2026-11-06-nominal-coherence-joint-fits.md : coherence-sequence fits (420) queued behind the mapping batches
+- plans/2026-10-29-control-paper.md : third paper (control trials only, Stine 2020 framing) in dissemination/paper_control/; G1 approved 2026-10-30 (D004), spine locked, stage S2; paired recovery 42579825 analysed: E separated (provisional, ES fits not yet submitted)
 - plans/2026-10-28-full-recovery-matrix.md : ON HOLD (author); recovery rerun on fixed CPU datasets if it becomes necessary
 - plans/2026-10-26-v2-refits-and-strategy-recovery.md : responded-only refits + full point-3 re-run (amendment 9); commands ready; next: user syncs code, submits R1-R6 (460), then F1a (80) and P1-P4 (850)
 - plans/2026-10-26-paper-accumulation-variant.md : second paper version (accumulation-first) in dissemination/paper_accumulation/; G1 held; waiting on v2 refits + E-recovery (plans/2026-10-26-v2-refits-and-strategy-recovery.md)
@@ -35,6 +36,14 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-11-06-normalization-pulse-prediction.md : normalization fitted to control trials raises the mean predicted pulse effect (3.25 -> 4.71 pp, data 5.48) but not per mouse (Wilcoxon p 0.92); not better under the pre-set rule
+- reports/2026-10-31-pulse-time-weights.md : per-pulse-time weights: no held-out gain, no early>late ordering across mice; PSUIM6 alone fits early w ~3
+- reports/2026-10-30-pulse-time-weight-profile.md : per-pulse-time weights: likelihood flat in 8/10 mice; early > late hint only in PSUIM6/PSUIM7
+- reports/2026-10-29-huk-shadlen-replication.md (2026-10-30 additions) : congruent and incongruent pulse effects equal and opposite (one directional term, shared term n.s.); pulse kept (gamma x T flat at 15 %coh x s) to ~1.2 s after onset, then lost (Holm <= .027); pulse worth ~3x its motion energy
+- reports/2026-10-30-pulse-weight-joint.md : free pulse weight stays ~1, no held-out gain (sv or no-sv); data do not ask for a stronger pulse when RTs are fitted
+- reports/2026-10-30-paired-recovery-cohorts.md : paired recovery valid (320); E separated at cohort level (0/1,024 E-generated vs 1,024/1,024 C-generated reproduce C>E); DDMx/ESx comparisons not diagnostic; ES pending
+- reports/2026-10-29-huk-shadlen-replication.md : Huk & Shadlen 2005 analyses on mice: pulse = 11.9% coherence equivalent (theirs 1.6%), no separate RT effect (delta p 0.90), 9/10 mice positive; affects choices 0.3-1.2 s after onset, none earlier, fades after ~1.2-1.8 s; diffusion fits mean RT poorly
+- reports/2026-10-29-behavior-exploration.md : 50/298 sessions, 10/14 mice kept (77% of pulse trials excluded with sessions); late (>5 s) choices as accurate as on-time; 0.3 s RT floor with fast guesses; lose-repeat history 8/10 mice (as large as pulse); pulse effect stable across sessions
 - reports/2026-10-29-heldout-choice-rt-split.md : held-out table reproduced by control_heldout.py; C advantage mostly RT terms (vs ES choice part ~0); small consistent choice advantage over E only; robust to leave-one-mouse-out
 - reports/2026-10-29-pulse-race-lca-illustration.md : race and LCA variants (incl. baseline LCA of Kirkpatrick et al. 2021), matched to control trials in 3 mice, predict 2.7-5.1 pp vs 13.1 pp observed; no reversal; architecture does not fix the size problem
 - reports/2026-10-29-likelihood-ignores-trial-me.md : held-out likelihood is pooled per coherence, so it never uses trial-by-trial motion energy (shuffle = seed noise); shuffled-ME ablation is a no-op; RT terms are ~80% of NLL
@@ -98,8 +107,9 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - ../dissemination/reports/motion-energy-methods.md : motion-energy method review and corrections
 
 ## Known issues
+- Choices after 5 s (13.7% of trials) are stimulus-driven (accuracy equal to on-time); "no response" is a misnomer. RT floor 0.3 s. Choice-history effects not in any model (reports/2026-10-29-behavior-exploration.md).
 - 2026-10-29: all-trial (control + pulse) responded-only fits differ from control-only fits in the 4 UCLA mice (median ratio a 0.82, drift_gain 0.85, sv 0.76, ndt 1.9) but not in UW (about 1.0). The parameter table parameters_common_model_resp_2026-10-27.md uses the all-trial fits. UPDATE 2026-10-29: not reproduced by the joint no-freeze refits (primary ratios ~1.0; equal-NLL fits with different parameters = ridge; reports/2026-10-29-joint-control-pulse-refits.md). Cause not identified: UCLA pulse ME understated only 1.13-1.20x (reports/2026-10-29-ucla-pulse-me-nofreeze.md; refit deferred) or pulse misfit pressure; rig and mouse are confounded. Until resolved, compare mice on control-split fits or show both.
-- 2026-10-29: paired-recovery fix implemented (4dbef52; CPU datasets in processed/ddm/recovery_datasets_cpu_2026-10-29); rerun not yet submitted.
+- 2026-10-29: paired-recovery fix implemented (4dbef52); rerun 42579825 done and valid (reports/2026-10-30-paired-recovery-cohorts.md); ES cells (180) not yet submitted.
 - 2026-10-28: all strategy recoveries (F1a, ES, ESx/DDMx, cross matrix) are unpaired: synthetic data differ between candidates (63/80 datasets). F1a k = 5 / THESIS_B provisional (reports/2026-10-28-recovery-synthetic-data-mismatch.md). Old 500-fit variant recovery also suspect (GPU synthesis; not checkable). Fix + rerun pinned by author; do not cite recovery results meanwhile.
 - 2026-10-27 author rule: trials without a response by 5 s (435 no RT + 4,102 RT > 5 s = 4,537) must not enter any analysis. All existing DDM fits, gates, calibration, pulse-gain diagnostics and the primary pulse contrast (1,709 unresponded) included them; superseded for the accumulation-first paper by responded-only refits (--responded_only). The first paper version is not yet redone.
 - DDM inputs label 48 UCLA no-response pulse trials as controls (direction lost in notebook 0.0); the 15 trials dropped for invalid duration are responses during the pulse (outcome-dependent). Existing inputs unchanged (pulse-data report).
