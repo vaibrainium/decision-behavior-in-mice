@@ -87,3 +87,9 @@ per-site interpretation (rig is a covariate only).
   suspended, not applied). Rules to be discussed once all results are in. compare_mapping_accumulator.py reports
   descriptives only (sums, medians, mice beyond 10 NLL, uncorrected p as descriptives; no verdicts, no Holm). The
   rule-B issue logged 2026-11-07 is moot for now; keep it for the rules discussion.
+- 2026-11-08: author: see which running tasks were restarted (preempted on ckpt-all) and move long ones to the lab
+  GPUs. Added scripts/slurm/task_report.py (read-only: restarts from scontrol, hours lost from sacct --duplicates,
+  expected hours from the task table; writes candidates) and autosubmit.py --to_lab FILE (cancels listed queued tasks,
+  resubmits them on gpu-a100 / walkerlab, LAB_LIMIT 8 at a time, longest expected first; RUNNING tasks only with
+  --include_running; state re-read under a lock every pass, so it is safe while --watch runs). Tested with stub Slurm
+  commands (report, dry run, move, lab cap with another lab job present, ordering).

@@ -16,12 +16,20 @@ Run from the repo root on Hyak (bash):
     python3 scripts/slurm/autosubmit.py                     # one pass
     tmux new -s autosubmit 'python3 scripts/slurm/autosubmit.py --watch 10'   # every 10 min until all are done
     python3 scripts/slurm/autosubmit.py --shrink_pending    # also lower the 16 h limit of imported tasks still pending
-Settings (environment): LIMIT (500), MAX_HOURS (48), MAX_ATTEMPTS (3), PROCESSED_DIR (Hyak processed; task outputs are relative to it, e.g. ddm/fits_...).
+    python3 scripts/slurm/autosubmit.py --to_lab slurm-logs/to_lab.txt [--include_running]   # see task_report.py
+Moving to the lab partition (--to_lab FILE, one batch:index per line): each listed task still queued is cancelled and
+put back as pending with partition LAB_PARTITION / account LAB_ACCOUNT; later passes submit it there, at most LAB_LIMIT
+of your tasks in that partition at a time. RUNNING tasks are skipped unless --include_running (their progress is lost:
+fits do not checkpoint). Safe while a --watch loop runs: every pass re-reads the state under a lock.
+Settings (environment): LIMIT (500), MAX_HOURS (48), MAX_ATTEMPTS (3), PROCESSED_DIR (Hyak processed; task outputs are
+relative to it, e.g. ddm/fits_...), LAB_PARTITION (gpu-a100), LAB_ACCOUNT (walkerlab), LAB_LIMIT (8).
 Use only this script for these batches from now on (not submit_remaining_2026-11-06.sh).
 """
 
 import argparse
+import contextlib
 import csv
+import fcntl
 import json
 import os
 import subprocess
@@ -32,11 +40,15 @@ from pathlib import Path
 
 TASKS = Path("scripts/slurm/tasks_2026-11-06.csv")
 STATE = Path("slurm-logs/autosubmit_state.json")
+LOCK = Path("slurm-logs/autosubmit.lock")
 OLD_DONE = Path("slurm-logs/submitted_2026-11-06.txt")  # written by submit_remaining_2026-11-06.sh
 SLURM_SCRIPT = "scripts/slurm/fit_mouse_ddm.slurm"
 LIMIT = int(os.environ.get("LIMIT", 500))
 MAX_HOURS = float(os.environ.get("MAX_HOURS", 48))
 MAX_ATTEMPTS = int(os.environ.get("MAX_ATTEMPTS", 3))
+LAB_PARTITION = os.environ.get("LAB_PARTITION", "gpu-a100")
+LAB_ACCOUNT = os.environ.get("LAB_ACCOUNT", "walkerlab")
+LAB_LIMIT = int(os.environ.get("LAB_LIMIT", 8))
 PROCESSED_DIR = Path(os.environ.get("PROCESSED_DIR", "/gscratch/walkerlab/vaibhav/mouse-pulse-data/processed"))
 BUCKETS = [1, 2, 3, 4, 6, 8, 12, 16, 24, 32, 48]  # time limits are rounded up to these, so a batch becomes a few arrays
 GRACE_SECONDS = 300  # a just-submitted task may not be visible in squeue yet
@@ -95,9 +107,52 @@ def save(state):
 
 
 def queue():
-    """Your queued and running array tasks: '<job>_<index>' -> state (PENDING, RUNNING, ...)."""
-    lines = run(["squeue", "-u", os.environ["USER"], "-h", "-r", "-o", "%i %T"]).split("\n")
-    return dict(line.split()[:2] for line in lines if line.strip())
+    """Your queued and running array tasks: '<job>_<index>' -> (state, partition)."""
+    lines = run(["squeue", "-u", os.environ["USER"], "-h", "-r", "-o", "%i %T %P"]).split("\n")
+    return {f[0]: (f[1], f[2]) for f in (line.split() for line in lines if line.strip())}
+
+
+@contextlib.contextmanager
+def locked():
+    """Exclusive lock around a read-modify-write of the state file (watch loop vs --to_lab)."""
+    LOCK.parent.mkdir(exist_ok=True)
+    with open(LOCK, "w") as f:
+        fcntl.flock(f, fcntl.LOCK_EX)
+        try:
+            yield
+        finally:
+            fcntl.flock(f, fcntl.LOCK_UN)
+
+
+def load_state(tasks):
+    return json.loads(STATE.read_text()) if STATE.exists() else initial_state(tasks)
+
+
+def to_lab(tasks, state, keys, include_running, dry_run):
+    q = queue()
+    for k in keys:
+        if k not in state:
+            print(f"{k}: unknown task, skipped")
+            continue
+        s = state[k]
+        jid = f"{s['job']}_{tasks[k]['index']}" if s["status"] == "submitted" else None
+        qstate = q.get(jid, (None, None))[0] if jid else None
+        if s["status"] in ("done", "gave_up") or s.get("partition") == LAB_PARTITION:
+            print(f"{k}: {s['status']}{' (already lab)' if s.get('partition') == LAB_PARTITION else ''}, skipped")
+            continue
+        if qstate == "RUNNING" and not include_running:
+            print(f"{k}: RUNNING as {jid}, skipped (--include_running to cancel it and lose its progress)")
+            continue
+        print(f"{k}: {'cancel ' + jid + ' (' + str(qstate) + ') and ' if qstate else ''}move to {LAB_PARTITION}")
+        if dry_run:
+            continue
+        if qstate:
+            run(["scancel", jid])
+        s["history"].append(f"moved to {LAB_PARTITION}" + (f" (cancelled {jid}, {qstate})" if qstate else ""))
+        timed_out = any("TIMEOUT" in h for h in s["history"])  # keep a doubled limit; otherwise back to the table's
+        s.update(status="pending", job=None, partition=LAB_PARTITION, account=LAB_ACCOUNT,
+                 time_hours=s["time_hours"] if timed_out else float(tasks[k]["time_hours"]),
+                 attempts=max(0, s["attempts"] - (1 if qstate else 0)))  # our cancel is not a failed attempt
 
 
 def sacct_states(ids):
@@ -154,7 +209,7 @@ def one_pass(tasks, state, dry_run, shrink_pending):
         for k, s in state.items():
             jid = f"{s['job']}_{tasks[k]['index']}" if s["status"] == "submitted" else None
             want = float(tasks[k]["time_hours"])
-            if jid and q.get(jid) == "PENDING" and s["time_hours"] > want and s["attempts"] == 1:
+            if jid and q.get(jid, (None,))[0] == "PENDING" and s["time_hours"] > want and s["attempts"] == 1:
                 cmd = ["scontrol", "update", f"JobId={jid}", f"TimeLimit={int(want * 60)}"]
                 if dry_run:
                     print("would run:", " ".join(cmd))
@@ -169,19 +224,27 @@ def one_pass(tasks, state, dry_run, shrink_pending):
     unseen = sum(1 for k, s in state.items() if s["status"] == "submitted" and now - s["submitted_at"] <= GRACE_SECONDS
                  and f"{s['job']}_{tasks[k]['index']}" not in q)
     free = LIMIT - len(q) - unseen
+    lab_unseen = sum(1 for k, s in state.items() if s["status"] == "submitted" and s.get("partition") == LAB_PARTITION
+                     and now - s["submitted_at"] <= GRACE_SECONDS and f"{s['job']}_{tasks[k]['index']}" not in q)
+    lab_free = LAB_LIMIT - sum(1 for st, part in q.values() if part == LAB_PARTITION) - lab_unseen
     pending = sorted((k for k, s in state.items() if s["status"] == "pending"),
                      key=lambda k: (int(tasks[k]["priority"]), tasks[k]["batch"], int(tasks[k]["index"])))
-    take = pending[:max(0, free)]
+    # lab tasks: longest expected first (they gain most from a partition without preemption), into the lab slots;
+    # then the rest in priority order; every task also takes a slot of the overall limit
+    lab = sorted((k for k in pending if state[k].get("partition") == LAB_PARTITION), key=lambda k: -float(tasks[k]["est_hours"]))
+    take = lab[:max(0, min(lab_free, free))]
+    take += [k for k in pending if state[k].get("partition") != LAB_PARTITION][:max(0, free - len(take))]
     groups = defaultdict(list)
     for k in take:
         t = tasks[k]
         state[k]["time_hours"] = min(MAX_HOURS, bucket(state[k]["time_hours"]))
-        groups[(t["batch"], state[k]["time_hours"], t["args"])].append(int(t["index"]))
+        groups[(t["batch"], state[k]["time_hours"], t["args"], state[k].get("partition"), state[k].get("account"))].append(int(t["index"]))
     refused = False
-    for (batch, hours, args), idx in groups.items():
-        cmd = ["sbatch", "--parsable", f"--array={ranges(idx)}", f"--time={int(round(hours * 60))}", SLURM_SCRIPT]
+    for (batch, hours, args, part, account), idx in groups.items():
+        where = ["-p", part, "-A", account] if part else []
+        cmd = ["sbatch", "--parsable", *where, f"--array={ranges(idx)}", f"--time={int(round(hours * 60))}", SLURM_SCRIPT]
         if dry_run:
-            print(f"would submit {batch}: {len(idx)} tasks, {hours} h: {' '.join(cmd)}  EXTRA_ARGS='{args}'")
+            print(f"would submit {batch}: {len(idx)} tasks, {hours} h{', ' + part if part else ''}: {' '.join(cmd)}  EXTRA_ARGS='{args}'")
             continue
         try:
             job = run(cmd, env={**os.environ, "EXTRA_ARGS": args, "JOB_OFFSET": "0"}).strip().split(";")[0]
@@ -193,7 +256,7 @@ def one_pass(tasks, state, dry_run, shrink_pending):
             s = state[f"{batch}:{i}"]
             s.update(status="submitted", job=job, attempts=s["attempts"] + 1, submitted_at=time.time())
             s["history"].append(f"submitted job {job} at {hours} h")
-        print(f"submitted {batch}: {len(idx)} tasks, {hours} h, job {job}")
+        print(f"submitted {batch}: {len(idx)} tasks, {hours} h{', ' + part if part else ''}, job {job}")
     # summary
     counts = defaultdict(lambda: defaultdict(int))
     for k, s in state.items():
@@ -212,6 +275,8 @@ def main():
     ap.add_argument("--watch", type=float, metavar="MINUTES", help="repeat every MINUTES until every task is done or given up")
     ap.add_argument("--dry_run", action="store_true", help="print what one pass would do; change nothing")
     ap.add_argument("--shrink_pending", action="store_true", help="lower the 16 h limit of imported tasks still pending to the table estimate")
+    ap.add_argument("--to_lab", type=Path, metavar="FILE", help="move the tasks listed in FILE (batch:index per line) to the lab partition")
+    ap.add_argument("--include_running", action="store_true", help="with --to_lab: also cancel RUNNING tasks (their progress is lost)")
     args = ap.parse_args()
     sys.stdout = os.fdopen(sys.stdout.fileno(), "w", 1)  # line-buffered: readable live in tmux / a log file (Python 3.6)
     if not TASKS.exists():
@@ -221,17 +286,26 @@ def main():
     if not any(f.is_dir() for f in folders):  # wrong base path would make every finished fit look failed
         sys.exit("none of the output folders exists under {}; check PROCESSED_DIR".format(PROCESSED_DIR))
     STATE.parent.mkdir(exist_ok=True)
-    state = json.loads(STATE.read_text()) if STATE.exists() else initial_state(tasks)
+    if args.to_lab:
+        keys = [line.split("#")[0].strip() for line in args.to_lab.read_text().splitlines()]
+        with locked():
+            state = load_state(tasks)
+            to_lab(tasks, state, [k for k in keys if k], args.include_running, args.dry_run)
+            if not args.dry_run:
+                save(state)
+        return
     while True:
-        try:
-            busy = one_pass(tasks, state, args.dry_run, args.shrink_pending)
-        except (subprocess.CalledProcessError, OSError) as e:  # e.g. slurmctld busy: keep the state, try next pass
-            if not args.watch:
-                raise
-            print(f"{time.strftime('%Y-%m-%d %H:%M')} pass failed ({e}); retrying in {args.watch} min")
-            busy = True
-        if not args.dry_run:
-            save(state)
+        with locked():  # re-read every pass: --to_lab may have changed the state since
+            state = load_state(tasks)
+            try:
+                busy = one_pass(tasks, state, args.dry_run, args.shrink_pending)
+            except (subprocess.CalledProcessError, OSError) as e:  # e.g. slurmctld busy: keep the state, try next pass
+                if not args.watch:
+                    raise
+                print(f"{time.strftime('%Y-%m-%d %H:%M')} pass failed ({e}); retrying in {args.watch} min")
+                busy = True
+            if not args.dry_run:
+                save(state)
         if not args.watch or args.dry_run or not busy:
             break
         time.sleep(args.watch * 60)
