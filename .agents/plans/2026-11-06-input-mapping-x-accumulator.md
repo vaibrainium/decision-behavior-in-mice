@@ -93,3 +93,15 @@ per-site interpretation (rig is a covariate only).
   resubmits them on gpu-a100 / walkerlab, LAB_LIMIT 8 at a time, longest expected first; RUNNING tasks only with
   --include_running; state re-read under a lock every pass, so it is safe while --watch runs). Tested with stub Slurm
   commands (report, dry run, move, lab cap with another lab job present, ordering).
+- 2026-11-07 (Hyak time): restart check (author, read-only scontrol/sacct): 27 queued tasks restarted at least once;
+  48 tasks lost earlier attempts, 373.5 h in total. Two patterns: early ckpt preemptions (~2-3 h lost each, mostly
+  43010290 = M_norm_leak20-200) and attempts ending at ~8.1 h in 15 tasks (43010290_59 TIMEOUT at an 8:00:00 limit;
+  queue showed 9:05:00 limits for jobs submitted at 9-16 h). SUSPECTED: ckpt-all ends jobs at ~8 h; not confirmed
+  (sinfo -p ckpt-all not yet checked). If true, fits longer than ~8 h cannot finish on ckpt-all (no checkpointing).
+- 2026-11-07: queue down to 26 tasks. Moved 43010290_28, _29, _48 (each preempted 3x, ~24.6 h lost; 52 s into a new
+  attempt) to the lab GPUs keeping their job IDs (autosubmit keeps tracking them):
+    scontrol requeuehold <id>; scontrol update JobId=<id> Partition=gpu-a100 Account=gpu-a100-walkerlab QOS=normal;
+    scontrol release <id>   (then a ~2 min requeue BeginTime delay)
+  Notes: the lab association is gpu-a100-walkerlab with QOS normal (ckpt jobs carry account ckpt-walkerlab, QOS ckpt;
+  sbatch -A walkerlab -p gpu-a100 is translated at submission, scontrol update needs the full names); gpu-a100 has no
+  time limit; walkerlab has 8 A100s. All three RUNNING on gpu-a100 (g3081, g3083, g3084).
