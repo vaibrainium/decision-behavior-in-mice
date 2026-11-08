@@ -12,13 +12,18 @@ override keys as needed. validate_params() checks required fields.
 """
 
 from __future__ import annotations
+import hashlib
 import logging
+import os
+import pickle
 import warnings
 from dataclasses import dataclass
+from pathlib import Path
 import numpy as np
 import pandas as pd
 import torch
-from scipy.optimize import differential_evolution, minimize
+from scipy.optimize import OptimizeResult, minimize
+from scipy.optimize._differentialevolution import DifferentialEvolutionSolver
 from scipy.stats import qmc
 
 from .simulator import DriftDiffusionSimulator
@@ -318,6 +323,7 @@ class DecisionModel:
         tol: float = 0.01,
         atol: float = 0.0,
         seeds: list[np.ndarray] | None = None,
+        checkpoint: str | Path | None = None,
     ) -> dict:
         """
         Fit parameters via differential evolution, then a gradient-free local
@@ -331,8 +337,15 @@ class DecisionModel:
         tol * |mean NLL|). The default relative tol stops once the spread is within 1% of the NLL, which for
         thousands of trials is coarser than the NLL differences between models; use tol=0 and an absolute atol.
 
+        `checkpoint`: file for resuming an interrupted fit (preemption, requeue, time limit). The DE state (population,
+        its NLLs, the DE random generator, evaluation count, running best) is written atomically after every
+        generation, and the DE result once DE ends (a restart then repeats only the refinement). On start, a checkpoint
+        whose fingerprint (fit keys, bounds, settings, seed, data, stimulus, seeds) matches is resumed; any other is
+        ignored. The objective is deterministic (common random numbers), so a resumed fit gives the same result as an
+        uninterrupted one on the same hardware. The caller deletes the file once the result is saved.
+
         Returns dict with keys: success, parameters, likelihood,
-        n_iterations, optimization_result.
+        n_iterations, optimization_result, resumed_from_generation (None if not resumed; -1 = from the refinement).
         """
         if verbose:
             logger.info("Starting optimization (%s)...", type(self).__name__)
@@ -365,17 +378,14 @@ class DecisionModel:
             return nll
 
         iteration = [0]
-
-        def callback(xk: np.ndarray, convergence: float) -> None:
-            iteration[0] += 1
-            params_str = "  ".join(f"{k}={v:.4f}" for k, v in zip(self.fit_keys, best_vals[0]))
-            logger.info(
-                "Iter %3d | NLL=%.4f | convergence=%.4f | %s",
-                iteration[0],
-                best_nll[0],
-                convergence,
-                params_str,
+        ckpt = Path(checkpoint) if checkpoint is not None else None
+        fingerprint = None
+        if ckpt is not None:
+            fingerprint = _fit_fingerprint(
+                fit_keys=list(self.fit_keys), bounds=bounds, max_iterations=max_iterations, n_reps=n_reps, l1_weight=l1_weight,
+                tol=tol, atol=atol, seed=self.seed, popsize=15, data=data, stimulus=stimulus, labels=labels, seeds=seeds,
             )
+        state = _load_checkpoint(ckpt, fingerprint)
 
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
@@ -387,24 +397,42 @@ class DecisionModel:
                 for i, x in enumerate(seeds[: len(pop)]):
                     pop[i] = np.clip(np.asarray(x, dtype=float), lo, hi)
                 init = pop
-            de_result = differential_evolution(
-                objective,
-                bounds=bounds,
-                init=init,
-                maxiter=max_iterations,
-                popsize=15,  # modest bump from 10; cheap insurance for the
-                # 9-10 dim space, not the main fix.
-                seed=self.seed,
-                tol=tol,
-                atol=atol,
-                polish=False,  # the built-in polish is L-BFGS-B, which needs
-                # finite-difference gradients. On a CRN
-                # simulation objective those are ~0 for
-                # sub-dt perturbations, so the polish is at
-                # best a no-op and at worst misleading.
-                disp=False,
-                callback=callback if verbose else None,
-            )
+
+            if state is not None and state["stage"] == "refine":
+                de_result = state["de_result"]
+                best_nll[0], best_vals[0] = state["best_nll"], state["best_vals"]
+                resumed_from = -1
+                logger.info("Resuming from checkpoint %s: DE done (%d generations), refinement restarts", ckpt.name, de_result.nit)
+            else:
+                # As scipy's differential_evolution(seed=...), run step by step so that the state can be saved. The
+                # function wraps exactly this solver; tests/test_fit_checkpoint.py checks the two give the same result.
+                solver = DifferentialEvolutionSolver(
+                    objective,
+                    bounds=bounds,
+                    init=init,
+                    maxiter=max_iterations,
+                    popsize=15,  # modest bump from 10; cheap insurance for the
+                    # 9-10 dim space, not the main fix.
+                    rng=np.random.RandomState(self.seed),  # = differential_evolution(seed=int), the legacy generator
+                    tol=tol,
+                    atol=atol,
+                    polish=False,  # the built-in polish is L-BFGS-B, which needs
+                    # finite-difference gradients. On a CRN
+                    # simulation objective those are ~0 for
+                    # sub-dt perturbations, so the polish is at
+                    # best a no-op and at worst misleading.
+                    disp=False,
+                )
+                resumed_from = None
+                if state is not None:
+                    _restore_solver(solver, state)
+                    best_nll[0], best_vals[0] = state["best_nll"], state["best_vals"]
+                    iteration[0] = resumed_from = state["generation"]
+                    logger.info("Resuming from checkpoint %s at generation %d (NLL %.4f)", ckpt.name, resumed_from, best_nll[0])
+                de_result = self._run_de(solver, max_iterations, iteration, best_nll, best_vals, verbose, ckpt, fingerprint)
+                if ckpt is not None:
+                    _save_checkpoint(ckpt, {"fingerprint": fingerprint, "stage": "refine", "de_result": de_result,
+                                            "best_nll": best_nll[0], "best_vals": best_vals[0]})
 
             # Local refinement with a gradient-free simplex method that tolerates
             # the piecewise-constant structure of the simulation objective.
@@ -453,7 +481,106 @@ class DecisionModel:
             "n_iterations": int(getattr(de_result, "nit", 0)),
             "optimization_result": de_result,
             "refine_result": refine_result,
+            "resumed_from_generation": resumed_from,
         }
+
+    def _run_de(self, solver, max_iterations, iteration, best_nll, best_vals, verbose, ckpt, fingerprint) -> OptimizeResult:
+        """scipy's DifferentialEvolutionSolver.solve() loop (scipy 1.15, polish off, no constraints, no maxfun),
+        continuing from generation iteration[0], with a checkpoint after each generation that does not end the run."""
+        if np.all(np.isinf(solver.population_energies)):  # fresh start: initial energies, as solve() does
+            solver.feasible, solver.constraint_violation = solver._calculate_population_feasibilities(solver.population)
+            solver.population_energies[solver.feasible] = solver._calculate_population_energies(solver.population[solver.feasible])
+            solver._promote_lowest_energy()
+        warning_flag, message = False, "Optimization terminated successfully."
+        nit = iteration[0]
+        if nit >= max_iterations:
+            warning_flag, message = True, "Maximum number of iterations has been exceeded."
+        while nit < max_iterations:
+            next(solver)
+            nit += 1
+            iteration[0] = nit
+            if verbose:
+                params_str = "  ".join(f"{k}={v:.4f}" for k, v in zip(self.fit_keys, best_vals[0]))
+                c = solver.tol / (solver.convergence + np.finfo(float).eps)
+                logger.info("Iter %3d | NLL=%.4f | convergence=%.4f | %s", nit, best_nll[0], c, params_str)
+            if solver.converged():
+                break
+            if nit >= max_iterations:
+                warning_flag, message = True, "Maximum number of iterations has been exceeded."
+                break
+            if ckpt is not None:
+                _save_checkpoint(ckpt, {"fingerprint": fingerprint, "stage": "de", "generation": nit, **_solver_state(solver),
+                                        "best_nll": best_nll[0], "best_vals": None if best_vals[0] is None else best_vals[0].copy()})
+        return solver._result(nit=nit, message=message, warning_flag=warning_flag)
+
+
+_SOLVER_STATE = ("population", "population_energies", "feasible", "constraint_violation", "_nfev", "_random_population_index")
+# _random_population_index: shuffled in place when drawing mutation partners, so it carries over between generations
+
+
+def _solver_state(solver: DifferentialEvolutionSolver) -> dict:
+    """Everything a DE generation changes (scipy 1.15, 'immediate' updating): the rest of the solver is fixed by its
+    arguments."""
+    state = {k: np.copy(getattr(solver, k)) if isinstance(getattr(solver, k), np.ndarray) else getattr(solver, k) for k in _SOLVER_STATE}
+    state["rng_state"] = solver.random_number_generator.get_state()
+    return state
+
+
+def _restore_solver(solver: DifferentialEvolutionSolver, state: dict) -> None:
+    for k in _SOLVER_STATE:
+        setattr(solver, k, np.copy(state[k]) if isinstance(state[k], np.ndarray) else state[k])
+    solver.random_number_generator.set_state(state["rng_state"])
+
+
+def _fit_fingerprint(**parts) -> str:
+    """Hash of everything that determines a fit, so a checkpoint is only resumed by the same fit."""
+    h = hashlib.sha256()
+
+    def add(x):
+        if isinstance(x, dict):
+            for k in sorted(x):
+                h.update(str(k).encode())
+                add(x[k])
+        elif isinstance(x, (list, tuple)):
+            h.update(f"[{len(x)}".encode())
+            for v in x:
+                add(v)
+        elif isinstance(x, (np.ndarray, torch.Tensor)):
+            a = np.ascontiguousarray(x.detach().cpu().numpy() if isinstance(x, torch.Tensor) else x)
+            h.update(f"{a.dtype}{a.shape}".encode())
+            h.update(a.tobytes())
+        elif isinstance(x, (pd.Series, pd.DataFrame)):
+            add(x.to_numpy())
+        else:
+            h.update(repr(x).encode())
+
+    add(parts)
+    return h.hexdigest()
+
+
+def _save_checkpoint(path: Path, state: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_name(path.name + ".tmp")
+    with open(tmp, "wb") as f:
+        pickle.dump(state, f)
+        f.flush()
+        os.fsync(f.fileno())
+    tmp.replace(path)  # atomic: a kill during the write leaves the previous checkpoint
+
+
+def _load_checkpoint(path: Path | None, fingerprint: str | None) -> dict | None:
+    if path is None or not path.exists():
+        return None
+    try:
+        with open(path, "rb") as f:
+            state = pickle.load(f)
+    except Exception as e:  # truncated or unreadable: start over
+        logger.warning("Ignoring unreadable checkpoint %s (%s); starting from scratch", path, e)
+        return None
+    if state.get("fingerprint") != fingerprint:
+        logger.warning("Ignoring checkpoint %s: made by a different fit (settings, data or seeds differ); starting from scratch", path)
+        return None
+    return state
 
     def simulate(
         self,

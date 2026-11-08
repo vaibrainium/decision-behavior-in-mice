@@ -20,7 +20,7 @@ REMOTE="${REMOTE:-vthakur@klone.hyak.uw.edu:/gscratch/walkerlab/vaibhav/mouse-pu
 INPUTS=(ddm_inputs_global.npz ddm_inputs_global_ucla_nofreeze.npz pulse_timing_global.npz)
 INPUT_DIRS=(recovery_datasets_*)  # synthetic recovery datasets (CPU, sha256 manifest); glob relative to LOCAL_DDM
 # fit outputs = everything except the inputs
-FIT_FILTER=(--exclude='*.tmp')  # .tmp: fits being written (renamed when complete)
+FIT_FILTER=(--exclude='*.tmp' --exclude='*.ckpt')  # .tmp: fits being written (renamed when complete); .ckpt: resume state of running fits
 for f in "${INPUTS[@]}"; do FIT_FILTER+=(--exclude="/$f"); done
 FIT_FILTER+=(--exclude='/recovery_datasets_*/')
 

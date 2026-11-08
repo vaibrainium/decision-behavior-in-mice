@@ -317,6 +317,10 @@ def output_path(out_dir: Path, job: dict) -> Path:
     return out_dir / f"{job['mouse']}_{job['variant']}_{job['split']}.pkl"
 
 
+def checkpoint_path(out_dir: Path, job: dict) -> Path:
+    return output_path(out_dir, job).with_suffix(".ckpt")
+
+
 def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations: int, guess_model: str = "single", warm_dirs: list[Path] | None = None, time_varying_gain: bool = False, signed_leak: bool = False, fixed_guess_bias: bool = False, leak_bounds: tuple[float, float] | None = None, drift_gain_max: float | None = None,
             front_end: str | None = None, likelihood_params: dict = LIKELIHOOD_PARAMS, extrema_samples: bool = False, nominal_input: bool = False, pulse_weight: bool = False,
             nominal_matched: bool = False, pulse_time_weights: bool = False) -> dict:
@@ -350,7 +354,9 @@ def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations:
     seeds, seeds_used = warm_start_seeds(job, list(free), warm_dirs or [])
     if seeds_used:
         logger.info("warm start from %d fits: %s", len(seeds_used), seeds_used)
-    fit = model.fit(data=data, stimulus=stimulus, labels=data["condition"], n_reps=n_reps, max_iterations=max_iterations, l1_weight=0.0, verbose=True, seeds=seeds, **DE_TOL)
+    ckpt = checkpoint_path(out_dir, job)  # resumes a preempted / requeued / timed-out attempt of this fit
+    fit = model.fit(data=data, stimulus=stimulus, labels=data["condition"], n_reps=n_reps, max_iterations=max_iterations, l1_weight=0.0, verbose=True, seeds=seeds,
+                    checkpoint=ckpt, **DE_TOL)
     result = {
         **job,
         "n_train": len(train),
@@ -377,6 +383,7 @@ def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations:
         "pulse_weight": pulse_weight,
         "n_pulse_times": n_times,
         "warm_start_seeds": seeds_used,
+        "resumed_from_generation": fit["resumed_from_generation"],  # None = not resumed; -1 = DE done, refinement redone
         "censor_at": CENSOR_AT,
         "min_rt": min_rt,
         "n_train_censored": int(inputs["censored"][train].sum()),
@@ -393,6 +400,7 @@ def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations:
     with open(tmp, "wb") as f:
         pickle.dump(result, f)
     tmp.replace(path)  # atomic: a preempted job never leaves a partial result that a rerun would skip
+    ckpt.unlink(missing_ok=True)
     logger.info("saved %s: %s", path.name, json.dumps({k: result[k] for k in ("train_nll", "test_nll", "fit_seconds") if k in result}))
     return result
 
