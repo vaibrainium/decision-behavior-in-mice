@@ -52,3 +52,7 @@ Checkpointing inside Nelder-Mead (short relative to DE); model_recovery / primac
   43015177_35 DBM6 cv0 at generation 553 (after a 3:52 preemption), 8 others at generations 142-215 at 05:47. The ~8 h
   ckpt-all cutoff is now VERIFIED as a pattern: 8 jobs started 2026-11-07 21:42:55 were all REQUEUED at elapsed 08:02:06-07
   (same moment); 43030945_235 earlier lost attempts of 08:06 and 08:12. Fits needing > 8 h finish over several attempts.
+- 2026-11-08: BUG found and fixed: c902211 placed the module-level helpers inside DecisionModel, turning simulate() into
+  dead code (AttributeError in pulse_joint_signatures). Fits unaffected (fit/heldout never call simulate; real-fit test
+  passed); any simulation from fitted parameters with code between c902211 and the fix failed loudly (no silent wrong
+  numbers). The explore_partial pulse run predates c902211 (module imported before the edit). Test now checks the methods.
