@@ -48,3 +48,7 @@ Checkpointing inside Nelder-Mead (short relative to DE); model_recovery / primac
   last attempt only. Next: step 4 (author pulls on Hyak, runs the toy test in the container to confirm scipy 1.15).
 - 2026-11-08: author ran tests.test_fit_checkpoint in the Hyak container on a compute node (srun job 43051219): both
   toy checks ok (singularity cannot start on the login node: /var/run/slurm mount). Plan done; no report needed beyond this log.
+- 2026-11-08: in use on Hyak (author's sacct + logs): 9 of 9 checked norm fits resumed from their checkpoints, e.g.
+  43015177_35 DBM6 cv0 at generation 553 (after a 3:52 preemption), 8 others at generations 142-215 at 05:47. The ~8 h
+  ckpt-all cutoff is now VERIFIED as a pattern: 8 jobs started 2026-11-07 21:42:55 were all REQUEUED at elapsed 08:02:06-07
+  (same moment); 43030945_235 earlier lost attempts of 08:06 and 08:12. Fits needing > 8 h finish over several attempts.
