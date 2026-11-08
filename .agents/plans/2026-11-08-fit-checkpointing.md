@@ -1,5 +1,5 @@
 # Plan: checkpoint and resume DDM fits
-Status: active
+Status: done
 Created: 2026-11-08 by Claude (Opus 5.5)
 Related reports: none yet. Context: plans/2026-11-06-input-mapping-x-accumulator.md log (ckpt-all preemptions, 373.5 h lost)
 
@@ -20,7 +20,7 @@ interrupted.
 ## Assumptions
 - Same GPU model on restart gives bit-identical objectives; a different GPU model may differ in the last float bits
   (true already without checkpoints: a restarted fit can land on another GPU).
-- Hyak runs the same scipy (uv.lock pins 1.15.3; the container is built from it). SUSPECTED, author to confirm.
+- Hyak runs the same scipy (uv.lock pins 1.15.3). VERIFIED 2026-11-08: toy tests pass in the Hyak container (srun job 43051219).
 
 ## Steps
 - [x] 1. DecisionModel.fit: run DifferentialEvolutionSolver directly (same arguments as differential_evolution), optional
@@ -32,7 +32,7 @@ interrupted.
 - [x] 3. Verify locally: (a) no checkpoint: identical to scipy differential_evolution on a toy function and to the old
       code on a short real fit; (b) interrupted after k generations then resumed: identical result to uninterrupted
       (real fit, small max_iterations); (c) mismatched checkpoint ignored; (d) interrupt during refinement resumes there.
-- [ ] 4. Commit; give the author the pull command. Pending tasks pick it up; running tasks get it at their next restart.
+- [x] 4. Commit; give the author the pull command. Pending tasks pick it up; running tasks get it at their next restart.
 
 ## Out of scope
 Checkpointing inside Nelder-Mead (short relative to DE); model_recovery / primacy_sensitivity (they can pass a path later).
@@ -46,3 +46,5 @@ Checkpointing inside Nelder-Mead (short relative to DE); model_recovery / primac
   generation 3, resumed after DE all give train 591.1979745571091 / test 56.36794951275008, identical to the pre-change code
   run from the command line; a checkpoint of another fit is ignored. Sync script excludes *.ckpt. fit_seconds now = the
   last attempt only. Next: step 4 (author pulls on Hyak, runs the toy test in the container to confirm scipy 1.15).
+- 2026-11-08: author ran tests.test_fit_checkpoint in the Hyak container on a compute node (srun job 43051219): both
+  toy checks ok (singularity cannot start on the login node: /var/run/slurm mount). Plan done; no report needed beyond this log.
