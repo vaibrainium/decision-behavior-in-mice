@@ -133,3 +133,8 @@ per-site interpretation (rig is a covariate only).
   data 0.07-0.78 (highest power_leak 0.78, power_leak_urgency 0.74; lowest norm ES 0.07). 1.2-5 s window: data +1.22, 3
   mice < 0; integrators -0.7 to -2.8 with 7-10 mice < 0; extrema -1.5 to +0.25. Descriptive only; CSVs
   dissemination/figures/qc/pulse_joint_signatures_2026-11-08_explore_partial_*.csv.
+- 2026-11-08: held-out comparison complete (compare_mapping_accumulator --tag _heldout_complete; all cv folds for every
+  family, 10 mice; only norm leak_urgency PSUIM6 "all" still running, used for parameters/pulse only). norm - linear:
+  -54 (primary) to -197 (ES), 2-3 mice better by >10, 0-1 worse; power - linear -39 to -122. Integrators beat E/ES under
+  every mapping incl. norm (-258 to -478). Best per mapping: leak_urgency (linear, power, norm), leak (nominal).
+  fe_beta at its lower bound (0 = no normalization) in 5-11 of 60 fits per norm family. Descriptive only.
