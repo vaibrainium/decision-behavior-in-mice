@@ -513,6 +513,32 @@ class DecisionModel:
                                         "best_nll": best_nll[0], "best_vals": None if best_vals[0] is None else best_vals[0].copy()})
         return solver._result(nit=nit, message=message, warning_flag=warning_flag)
 
+    def simulate(
+        self,
+        stimulus: np.ndarray | tuple,
+        params: dict | None = None,
+        n_reps: int = 1,
+        seed: int | None = None,
+        labels: np.ndarray | None = None,
+    ) -> pd.DataFrame:
+        """Forward pass with fresh noise: one row per simulated trial with rt, choice, signed_coherence (the
+        trial's label) and trial (index of the input trial). Fast guesses (p_guess) are included; `censor_at` and
+        `min_rt` are not applied here."""
+        if params is None:
+            raise ValueError("Must provide params for simulation.")
+        validate_params(params)
+        if n_reps < 1:
+            raise ValueError("n_reps must be >= 1")
+
+        self._set_seed(seed if seed is not None else self.seed)
+        n_trials = self._stimulus_shape(stimulus)[0]
+        simulations = []
+        for rep in range(n_reps):
+            sim = self.simulator.simulate_trials(stimulus, params, labels=labels)
+            sim = apply_guesses(sim, params, np.random.uniform(size=(n_trials, 3)))
+            simulations.append(sim.assign(trial=np.arange(n_trials), rep=rep))
+        return pd.concat(simulations, ignore_index=True)
+
 
 _SOLVER_STATE = ("population", "population_energies", "feasible", "constraint_violation", "_nfev", "_random_population_index")
 # _random_population_index: shuffled in place when drawing mutation partners, so it carries over between generations
@@ -581,29 +607,3 @@ def _load_checkpoint(path: Path | None, fingerprint: str | None) -> dict | None:
         logger.warning("Ignoring checkpoint %s: made by a different fit (settings, data or seeds differ); starting from scratch", path)
         return None
     return state
-
-    def simulate(
-        self,
-        stimulus: np.ndarray | tuple,
-        params: dict | None = None,
-        n_reps: int = 1,
-        seed: int | None = None,
-        labels: np.ndarray | None = None,
-    ) -> pd.DataFrame:
-        """Forward pass with fresh noise: one row per simulated trial with rt, choice, signed_coherence (the
-        trial's label) and trial (index of the input trial). Fast guesses (p_guess) are included; `censor_at` and
-        `min_rt` are not applied here."""
-        if params is None:
-            raise ValueError("Must provide params for simulation.")
-        validate_params(params)
-        if n_reps < 1:
-            raise ValueError("n_reps must be >= 1")
-
-        self._set_seed(seed if seed is not None else self.seed)
-        n_trials = self._stimulus_shape(stimulus)[0]
-        simulations = []
-        for rep in range(n_reps):
-            sim = self.simulator.simulate_trials(stimulus, params, labels=labels)
-            sim = apply_guesses(sim, params, np.random.uniform(size=(n_trials, 3)))
-            simulations.append(sim.assign(trial=np.arange(n_trials), rep=rep))
-        return pd.concat(simulations, ignore_index=True)

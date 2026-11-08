@@ -61,6 +61,14 @@ def same(a, b):
     assert np.array_equal(a.population, b.population) and np.array_equal(a.population_energies, b.population_energies)
 
 
+def test_class_intact():
+    """Regression (2026-11-08): the checkpoint helpers were once inserted inside DecisionModel, which silently turned
+    simulate() into dead code; fitting still worked."""
+    for name in ("fit", "_run_de", "simulate", "_simulate_condition", "_map_outcomes", "precompute"):
+        assert callable(getattr(DecisionModel, name, None)), f"DecisionModel.{name} missing"
+    print("ok: DecisionModel methods present")
+
+
 def test_matches_scipy():
     for maxiter in (0, 1, 7, 300):  # 300: stops on convergence
         ref = differential_evolution(rosen, BOUNDS, maxiter=maxiter, seed=42, **SETTINGS)
@@ -182,6 +190,7 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--real", action="store_true", help="also run the real-fit test (needs processed data, ~10 min)")
     args = ap.parse_args()
+    test_class_intact()
     test_matches_scipy()
     test_resume()
     if args.real:
