@@ -110,3 +110,8 @@ per-site interpretation (rig is a covariate only).
   scontrol update (gpu-a100 / gpu-a100-walkerlab / normal, same job ID); failed tasks (timeout etc.) resubmitted on
   gpu-a100 (doubled limit after a timeout); tasks moved by hand recognised from squeue. In-place moves ignore LAB_LIMIT
   (the job is already queued); new lab submissions respect it. Stub-tested (4 cases). Author moved 43015177_38 by hand.
+- 2026-11-08: requeued ckpt tasks restart within minutes (31 idle ckpt GPUs), so the BeginTime-only failover missed
+  them: 10 tasks (43030945_199/228/229/235/237/238/239, 43030614_178/179, 43034740_9) were back at 18-55 min after a
+  second ~8 h loss (9 of them had lost ~8.1 h before). Strengthens the SUSPECTED ~8 h limit on ckpt-all for these fits.
+  Author given the scontrol loop to move the 10 now. autosubmit failover now also moves tasks that restarted on the
+  shared partition and have run < FAILOVER_MAX_RUN_MIN (60) min (requeuehold, update, release); stub-tested.

@@ -18,7 +18,8 @@ Run from the repo root on Hyak (bash):
     python3 scripts/slurm/autosubmit.py --shrink_pending    # also lower the 16 h limit of imported tasks still pending
     python3 scripts/slurm/autosubmit.py --to_lab slurm-logs/to_lab.txt [--include_running]   # see task_report.py
 Failover (--failover_to_lab, e.g. with --watch): a task requeued after preemption on the shared partition (PENDING,
-reason BeginTime) is moved in place with scontrol update (Partition LAB_PARTITION, Account LAB_UPDATE_ACCOUNT, QOS
+reason BeginTime), or one that has restarted there and has been running less than FAILOVER_MAX_RUN_MIN (60) minutes
+(requeuehold first; those minutes are lost), is moved in place with scontrol update (Partition LAB_PARTITION, Account LAB_UPDATE_ACCOUNT, QOS
 LAB_QOS; same job ID); a task that failed there (timeout, node failure, ...) is resubmitted on the lab partition (doubled
 limit after a timeout). Running tasks are left alone. Tasks moved by hand are recognised from squeue.
 Moving to the lab partition (--to_lab FILE, one batch:index per line): each listed task still queued is cancelled and
@@ -36,6 +37,7 @@ import csv
 import fcntl
 import json
 import os
+import re
 import subprocess
 import sys
 import time
@@ -55,6 +57,7 @@ LAB_ACCOUNT = os.environ.get("LAB_ACCOUNT", "walkerlab")
 LAB_LIMIT = int(os.environ.get("LAB_LIMIT", 8))
 LAB_UPDATE_ACCOUNT = os.environ.get("LAB_UPDATE_ACCOUNT", "gpu-a100-walkerlab")  # scontrol update needs the full association
 LAB_QOS = os.environ.get("LAB_QOS", "normal")
+FAILOVER_MAX_RUN_MIN = float(os.environ.get("FAILOVER_MAX_RUN_MIN", 60))  # restarted tasks running shorter than this move too
 PROCESSED_DIR = Path(os.environ.get("PROCESSED_DIR", "/gscratch/walkerlab/vaibhav/mouse-pulse-data/processed"))
 BUCKETS = [1, 2, 3, 4, 6, 8, 12, 16, 24, 32, 48]  # time limits are rounded up to these, so a batch becomes a few arrays
 GRACE_SECONDS = 300  # a just-submitted task may not be visible in squeue yet
@@ -112,10 +115,34 @@ def save(state):
     tmp.replace(STATE)
 
 
+def minutes(t):
+    """squeue run time [D-]HH:MM:SS or MM:SS -> minutes."""
+    days, _, rest = t.rpartition("-")
+    parts = [float(x) for x in rest.split(":")]
+    while len(parts) < 3:
+        parts.insert(0, 0.0)
+    return (float(days) if days else 0.0) * 1440 + parts[0] * 60 + parts[1] + parts[2] / 60
+
+
 def queue():
-    """Your queued and running array tasks: '<job>_<index>' -> (state, partition, reason)."""
-    lines = run(["squeue", "-u", os.environ["USER"], "-h", "-r", "-o", "%i %T %P %r"]).split("\n")
-    return {f[0]: (f[1], f[2], f[3] if len(f) > 3 else "") for f in (line.split() for line in lines if line.strip())}
+    """Your queued and running array tasks: '<job>_<index>' -> (state, partition, reason, run minutes)."""
+    lines = run(["squeue", "-u", os.environ["USER"], "-h", "-r", "-o", "%i %T %P %M %r"]).split("\n")
+    return {f[0]: (f[1], f[2], f[4] if len(f) > 4 else "", minutes(f[3])) for f in (line.split() for line in lines if line.strip())}
+
+
+def restarts(array_ids):
+    """'<job>_<index>' -> Restarts, from scontrol (one call per array job)."""
+    out = {}
+    for a in array_ids:
+        try:
+            text = run(["scontrol", "show", "job", "-o", a])
+        except subprocess.CalledProcessError:
+            continue
+        for line in text.splitlines():
+            m_job, m_task, m_r = (re.search(p, line) for p in (r"ArrayJobId=(\d+)", r"ArrayTaskId=(\d+)\b", r"Restarts=(\d+)"))
+            if m_job and m_task and m_r:
+                out[f"{m_job.group(1)}_{m_task.group(1)}"] = int(m_r.group(1))
+    return out
 
 
 @contextlib.contextmanager
@@ -197,22 +224,36 @@ def one_pass(tasks, state, dry_run, shrink_pending, failover=False):
                 s["history"].append(f"found on {LAB_PARTITION}")
     # failover: a task requeued after preemption on the shared partition (pending, reason BeginTime) moves in place to
     # the lab partition; it keeps its job ID, and nothing more is lost (the preemption already discarded its progress)
+    # a requeued task usually restarts on the shared partition within minutes, so also move tasks that have restarted
+    # and have been running less than FAILOVER_MAX_RUN_MIN (requeuehold -> update -> release; only those minutes lost)
     if failover:
+        on_shared = {}
         for k, s in state.items():
             jid = f"{s['job']}_{tasks[k]['index']}" if s["status"] == "submitted" else None
-            st, part, reason = q.get(jid, (None, None, None)) if jid else (None, None, None)
-            if st == "PENDING" and part != LAB_PARTITION and reason == "BeginTime":
-                cmd = ["scontrol", "update", f"JobId={jid}", f"Partition={LAB_PARTITION}", f"Account={LAB_UPDATE_ACCOUNT}", f"QOS={LAB_QOS}"]
-                if dry_run:
-                    print("would run:", " ".join(cmd))
-                    continue
-                try:
-                    run(cmd)
-                    s.update(partition=LAB_PARTITION, account=LAB_ACCOUNT)
-                    s["history"].append(f"requeued on {part}; moved to {LAB_PARTITION} in place")
-                    print(f"failover: {k} ({jid}) requeued on {part}, moved to {LAB_PARTITION}")
-                except subprocess.CalledProcessError as e:
-                    print(f"failover: scontrol update failed for {jid}: {e.stderr.strip()}")
+            if jid and jid in q and q[jid][1] != LAB_PARTITION:
+                on_shared[jid] = k
+        rs = restarts(sorted({j.split("_")[0] for j, k in on_shared.items() if q[j][0] == "RUNNING"}))
+        for jid, k in on_shared.items():
+            s = state[k]
+            st, part, reason, run_min = q[jid]
+            requeued = st == "PENDING" and reason == "BeginTime"
+            restarted = st == "RUNNING" and rs.get(jid, 0) >= 1 and run_min < FAILOVER_MAX_RUN_MIN
+            if not (requeued or restarted):
+                continue
+            update = ["scontrol", "update", f"JobId={jid}", f"Partition={LAB_PARTITION}", f"Account={LAB_UPDATE_ACCOUNT}", f"QOS={LAB_QOS}"]
+            cmds = [update] if requeued else [["scontrol", "requeuehold", jid], update, ["scontrol", "release", jid]]
+            what = "requeued" if requeued else f"restarted ({rs.get(jid)}x), running {run_min:.0f} min"
+            if dry_run:
+                print(f"would move {k} ({jid}, {what}):", " ; ".join(" ".join(c) for c in cmds))
+                continue
+            try:
+                for c in cmds:
+                    run(c)
+                s.update(partition=LAB_PARTITION, account=LAB_ACCOUNT)
+                s["history"].append(f"{what} on {part}; moved to {LAB_PARTITION} in place")
+                print(f"failover: {k} ({jid}) {what} on {part}, moved to {LAB_PARTITION}")
+            except subprocess.CalledProcessError as e:
+                print(f"failover: {' '.join(c)} failed for {jid}: {e.stderr.strip()}; if it is held, run: scontrol release {jid}")
     # 1-2: done / failed
     gone = []
     for k, s in state.items():
