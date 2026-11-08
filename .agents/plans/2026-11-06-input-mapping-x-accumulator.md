@@ -115,3 +115,13 @@ per-site interpretation (rig is a covariate only).
   second ~8 h loss (9 of them had lost ~8.1 h before). Strengthens the SUSPECTED ~8 h limit on ckpt-all for these fits.
   Author given the scontrol loop to move the 10 now. autosubmit failover now also moves tasks that restarted on the
   shared partition and have run < FAILOVER_MAX_RUN_MIN (60) min (requeuehold, update, release); stub-tested.
+- 2026-11-08: synced 1,235 fits (norm integrators 224/240, norm E 51/60 still running). EXPLORATORY, PARTIAL descriptives
+  (`compare_mapping_accumulator --tag _partial`; dissemination/figures/qc/mapping_accumulator_*_2026-11-08_partial.csv):
+  audit: no failed fit, none at the iteration cap. Power - linear: every accumulator better in the sum (-39 primary to
+  -122 leak+urgency), 2-4 mice better by >10, 0-2 worse; fe_gamma compressive in most mice (0.58-0.70 in PSUIM6/7,
+  DBM6, DBM12; >1 in DBM13). Integrators beat E and ES by -240 to -590 summed under linear, power and nominal (4-7 mice
+  better by >10, 0-2 worse). Under norm the gap looked small (-13 to -44) but only 7 mice are complete there; on the
+  same 7 mice linear gives -36 to -82, so the shrinkage is mostly the missing DBM6/PSUIM6/PSUIM7. Best family:
+  leak+urgency (linear, power, norm), leak (nominal). Nominal - ME: primary +117 (4 mice worse by >10, 0 better), LU
+  +69, no_sv -164, ES -59; nominal + power vs nominal primary -127 (3 better, 0 worse); nominal + power vs linear ME
+  primary -9.6, vs power ME primary +29.4. Pulse signatures of the complete families running (tag _explore_partial).
