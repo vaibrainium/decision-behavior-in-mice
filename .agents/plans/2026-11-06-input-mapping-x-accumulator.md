@@ -83,3 +83,7 @@ per-site interpretation (rig is a covariate only).
   Options to decide BEFORE the power/norm results are synced: keep B; or B' = robustness as agreement with linear
   (same best family; each integrator-vs-extrema summed difference keeps its sign and stays beyond 10 NLL in the same
   number of mice +-1); or use the control paper's paired-cohort rule (D004) for C > E per mapping.
+- 2026-11-08: AUTHOR DECISION: exploratory analysis; no decision rules for now (the comparison rules written above are
+  suspended, not applied). Rules to be discussed once all results are in. compare_mapping_accumulator.py reports
+  descriptives only (sums, medians, mice beyond 10 NLL, uncorrected p as descriptives; no verdicts, no Holm). The
+  rule-B issue logged 2026-11-07 is moot for now; keep it for the rules discussion.

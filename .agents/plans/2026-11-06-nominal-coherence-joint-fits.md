@@ -62,3 +62,7 @@ its own amendment); per-site interpretation (rig is a covariate only).
   mapping plan (plans/2026-11-06-input-mapping-x-accumulator.md).
 - 2026-11-06: not yet submitted. N1-N3 moved into scripts/slurm/submit_remaining_2026-11-06.sh (queue-aware, after the
   mapping batches); do not also run submit_joint_nominal.sh.
+- 2026-11-08: AUTHOR DECISION: exploratory analysis; no decision rules for now (the comparison rules written above are
+  suspended, not applied). Rules to be discussed once all results are in. compare_mapping_accumulator.py reports
+  descriptives only (sums, medians, mice beyond 10 NLL, uncorrected p as descriptives; no verdicts, no Holm). The
+  rule-B issue logged 2026-11-07 is moot for now; keep it for the rules discussion.
