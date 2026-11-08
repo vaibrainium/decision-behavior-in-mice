@@ -125,3 +125,11 @@ per-site interpretation (rig is a covariate only).
   leak+urgency (linear, power, norm), leak (nominal). Nominal - ME: primary +117 (4 mice worse by >10, 0 better), LU
   +69, no_sv -164, ES -59; nominal + power vs nominal primary -127 (3 better, 0 worse); nominal + power vs linear ME
   primary -9.6, vs power ME primary +29.4. Pulse signatures of the complete families running (tag _explore_partial).
+- 2026-11-08: exploratory pulse signatures (pulse_joint_signatures --fe_power --tag _explore_partial; 30 reps, seed 0;
+  24 families complete for 10 mice incl. norm_primary, norm ES; other norm families wait for the last 23 fits). Window
+  0.3-1.2 s, data 5.48 pp: linear integrators 3.08-3.85, power integrators 3.70-4.20, nominal integrators 2.33-3.55,
+  norm_primary 4.49; extrema families 4.03-6.29 (power E 6.10, norm ES 6.29). P1 (power, control-only fit) 3.72 vs
+  linear control-only 3.25. Per-mouse RMSE 5.3-6.9 pp for every family (data per mouse -4.2 to 15.5); across-mouse r with
+  data 0.07-0.78 (highest power_leak 0.78, power_leak_urgency 0.74; lowest norm ES 0.07). 1.2-5 s window: data +1.22, 3
+  mice < 0; integrators -0.7 to -2.8 with 7-10 mice < 0; extrema -1.5 to +0.25. Descriptive only; CSVs
+  dissemination/figures/qc/pulse_joint_signatures_2026-11-08_explore_partial_*.csv.
