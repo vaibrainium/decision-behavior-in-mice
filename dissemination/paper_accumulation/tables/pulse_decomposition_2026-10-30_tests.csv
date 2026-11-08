@@ -1,0 +1,3 @@
+test,chi2,df,p,n_boot_ok
+all shared S_b = 0,91.04170571751813,7,7.559037755082361e-17,300
+directional D_b equal across bins,276.50627776679863,6,8.790772961906828e-57,300
