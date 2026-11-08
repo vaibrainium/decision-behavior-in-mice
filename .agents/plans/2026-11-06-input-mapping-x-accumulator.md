@@ -105,3 +105,8 @@ per-site interpretation (rig is a covariate only).
   Notes: the lab association is gpu-a100-walkerlab with QOS normal (ckpt jobs carry account ckpt-walkerlab, QOS ckpt;
   sbatch -A walkerlab -p gpu-a100 is translated at submission, scontrol update needs the full names); gpu-a100 has no
   time limit; walkerlab has 8 A100s. All three RUNNING on gpu-a100 (g3081, g3083, g3084).
+- 2026-11-08: author: tasks that fail on the shared partition continue on walkerlab; running ones are left to finish.
+  autosubmit --failover_to_lab: requeued-after-preemption tasks (PENDING, BeginTime, ckpt-all) moved in place by
+  scontrol update (gpu-a100 / gpu-a100-walkerlab / normal, same job ID); failed tasks (timeout etc.) resubmitted on
+  gpu-a100 (doubled limit after a timeout); tasks moved by hand recognised from squeue. In-place moves ignore LAB_LIMIT
+  (the job is already queued); new lab submissions respect it. Stub-tested (4 cases). Author moved 43015177_38 by hand.

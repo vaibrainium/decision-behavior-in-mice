@@ -17,6 +17,10 @@ Run from the repo root on Hyak (bash):
     tmux new -s autosubmit 'python3 scripts/slurm/autosubmit.py --watch 10'   # every 10 min until all are done
     python3 scripts/slurm/autosubmit.py --shrink_pending    # also lower the 16 h limit of imported tasks still pending
     python3 scripts/slurm/autosubmit.py --to_lab slurm-logs/to_lab.txt [--include_running]   # see task_report.py
+Failover (--failover_to_lab, e.g. with --watch): a task requeued after preemption on the shared partition (PENDING,
+reason BeginTime) is moved in place with scontrol update (Partition LAB_PARTITION, Account LAB_UPDATE_ACCOUNT, QOS
+LAB_QOS; same job ID); a task that failed there (timeout, node failure, ...) is resubmitted on the lab partition (doubled
+limit after a timeout). Running tasks are left alone. Tasks moved by hand are recognised from squeue.
 Moving to the lab partition (--to_lab FILE, one batch:index per line): each listed task still queued is cancelled and
 put back as pending with partition LAB_PARTITION / account LAB_ACCOUNT; later passes submit it there, at most LAB_LIMIT
 of your tasks in that partition at a time. RUNNING tasks are skipped unless --include_running (their progress is lost:
@@ -49,6 +53,8 @@ MAX_ATTEMPTS = int(os.environ.get("MAX_ATTEMPTS", 3))
 LAB_PARTITION = os.environ.get("LAB_PARTITION", "gpu-a100")
 LAB_ACCOUNT = os.environ.get("LAB_ACCOUNT", "walkerlab")
 LAB_LIMIT = int(os.environ.get("LAB_LIMIT", 8))
+LAB_UPDATE_ACCOUNT = os.environ.get("LAB_UPDATE_ACCOUNT", "gpu-a100-walkerlab")  # scontrol update needs the full association
+LAB_QOS = os.environ.get("LAB_QOS", "normal")
 PROCESSED_DIR = Path(os.environ.get("PROCESSED_DIR", "/gscratch/walkerlab/vaibhav/mouse-pulse-data/processed"))
 BUCKETS = [1, 2, 3, 4, 6, 8, 12, 16, 24, 32, 48]  # time limits are rounded up to these, so a batch becomes a few arrays
 GRACE_SECONDS = 300  # a just-submitted task may not be visible in squeue yet
@@ -107,9 +113,9 @@ def save(state):
 
 
 def queue():
-    """Your queued and running array tasks: '<job>_<index>' -> (state, partition)."""
-    lines = run(["squeue", "-u", os.environ["USER"], "-h", "-r", "-o", "%i %T %P"]).split("\n")
-    return {f[0]: (f[1], f[2]) for f in (line.split() for line in lines if line.strip())}
+    """Your queued and running array tasks: '<job>_<index>' -> (state, partition, reason)."""
+    lines = run(["squeue", "-u", os.environ["USER"], "-h", "-r", "-o", "%i %T %P %r"]).split("\n")
+    return {f[0]: (f[1], f[2], f[3] if len(f) > 3 else "") for f in (line.split() for line in lines if line.strip())}
 
 
 @contextlib.contextmanager
@@ -179,9 +185,34 @@ def ranges(idx):
     return ",".join(parts)
 
 
-def one_pass(tasks, state, dry_run, shrink_pending):
+def one_pass(tasks, state, dry_run, shrink_pending, failover=False):
     q = queue()
     now = time.time()
+    # record the partition tasks are actually on (e.g. moved by hand with scontrol update)
+    for k, s in state.items():
+        if s["status"] == "submitted":
+            part = q.get(f"{s['job']}_{tasks[k]['index']}", (None, None))[1]
+            if part == LAB_PARTITION and s.get("partition") != LAB_PARTITION:
+                s.update(partition=LAB_PARTITION, account=LAB_ACCOUNT)
+                s["history"].append(f"found on {LAB_PARTITION}")
+    # failover: a task requeued after preemption on the shared partition (pending, reason BeginTime) moves in place to
+    # the lab partition; it keeps its job ID, and nothing more is lost (the preemption already discarded its progress)
+    if failover:
+        for k, s in state.items():
+            jid = f"{s['job']}_{tasks[k]['index']}" if s["status"] == "submitted" else None
+            st, part, reason = q.get(jid, (None, None, None)) if jid else (None, None, None)
+            if st == "PENDING" and part != LAB_PARTITION and reason == "BeginTime":
+                cmd = ["scontrol", "update", f"JobId={jid}", f"Partition={LAB_PARTITION}", f"Account={LAB_UPDATE_ACCOUNT}", f"QOS={LAB_QOS}"]
+                if dry_run:
+                    print("would run:", " ".join(cmd))
+                    continue
+                try:
+                    run(cmd)
+                    s.update(partition=LAB_PARTITION, account=LAB_ACCOUNT)
+                    s["history"].append(f"requeued on {part}; moved to {LAB_PARTITION} in place")
+                    print(f"failover: {k} ({jid}) requeued on {part}, moved to {LAB_PARTITION}")
+                except subprocess.CalledProcessError as e:
+                    print(f"failover: scontrol update failed for {jid}: {e.stderr.strip()}")
     # 1-2: done / failed
     gone = []
     for k, s in state.items():
@@ -204,6 +235,9 @@ def one_pass(tasks, state, dry_run, shrink_pending):
                 s["status"] = "gave_up"
             else:
                 s.update(status="pending", job=None, time_hours=new_time)
+                if failover and s.get("partition") != LAB_PARTITION:  # failed on the shared partition: retry on the lab's
+                    s.update(partition=LAB_PARTITION, account=LAB_ACCOUNT)
+                    s["history"].append(f"retry on {LAB_PARTITION} (failover)")
     # optional: lower the limit of imported tasks still pending to the table estimate (helps backfill; can only decrease)
     if shrink_pending:
         for k, s in state.items():
@@ -226,7 +260,7 @@ def one_pass(tasks, state, dry_run, shrink_pending):
     free = LIMIT - len(q) - unseen
     lab_unseen = sum(1 for k, s in state.items() if s["status"] == "submitted" and s.get("partition") == LAB_PARTITION
                      and now - s["submitted_at"] <= GRACE_SECONDS and f"{s['job']}_{tasks[k]['index']}" not in q)
-    lab_free = LAB_LIMIT - sum(1 for st, part in q.values() if part == LAB_PARTITION) - lab_unseen
+    lab_free = LAB_LIMIT - sum(1 for v in q.values() if v[1] == LAB_PARTITION) - lab_unseen
     pending = sorted((k for k, s in state.items() if s["status"] == "pending"),
                      key=lambda k: (int(tasks[k]["priority"]), tasks[k]["batch"], int(tasks[k]["index"])))
     # lab tasks: longest expected first (they gain most from a partition without preemption), into the lab slots;
@@ -277,6 +311,7 @@ def main():
     ap.add_argument("--shrink_pending", action="store_true", help="lower the 16 h limit of imported tasks still pending to the table estimate")
     ap.add_argument("--to_lab", type=Path, metavar="FILE", help="move the tasks listed in FILE (batch:index per line) to the lab partition")
     ap.add_argument("--include_running", action="store_true", help="with --to_lab: also cancel RUNNING tasks (their progress is lost)")
+    ap.add_argument("--failover_to_lab", action="store_true", help="tasks preempted (requeued) or failed on the shared partition continue on the lab partition")
     args = ap.parse_args()
     sys.stdout = os.fdopen(sys.stdout.fileno(), "w", 1)  # line-buffered: readable live in tmux / a log file (Python 3.6)
     if not TASKS.exists():
@@ -298,7 +333,7 @@ def main():
         with locked():  # re-read every pass: --to_lab may have changed the state since
             state = load_state(tasks)
             try:
-                busy = one_pass(tasks, state, args.dry_run, args.shrink_pending)
+                busy = one_pass(tasks, state, args.dry_run, args.shrink_pending, args.failover_to_lab)
             except (subprocess.CalledProcessError, OSError) as e:  # e.g. slurmctld busy: keep the state, try next pass
                 if not args.watch:
                     raise
