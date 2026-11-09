@@ -80,6 +80,6 @@ Outputs: pulse_joint_signatures_2026-11-09_sv0_*.csv, pulse_effect_bootstrap_202
   chi-square is not better (20-31 on 10 df). Refitting without sv costs +317 held-out NLL (linear).
 - Revises finding 5 above: the reversal needs sv (selection of slow trials on a persistent per-trial drift); leak and
   urgency amplify it. The data's late effect (+1.2) lies between the fitted-sv models (-0.9 to -2.9) and sv = 0
-  (+0.6 to +1.7). SUSPECTED implication: the persistent across-trial variability the RTs need is partly not a
-  per-trial drift offset (e.g. a starting-point or bound variability, or session-level drift), which would not select
-  against the pulse in the same way; untested.
+  (+0.6 to +1.7). OPEN: whether a smaller sv, or a different form of across-trial variability, fits RTs and the late
+  pulse effect together. Any persistent per-trial difference (drift, starting point) can select against the pulse in
+  slow trials, so this needs simulation, not argument; untested.
