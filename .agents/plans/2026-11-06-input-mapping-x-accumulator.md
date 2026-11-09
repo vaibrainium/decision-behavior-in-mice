@@ -138,3 +138,7 @@ per-site interpretation (rig is a covariate only).
   -54 (primary) to -197 (ES), 2-3 mice better by >10, 0-1 worse; power - linear -39 to -122. Integrators beat E/ES under
   every mapping incl. norm (-258 to -478). Best per mapping: leak_urgency (linear, power, norm), leak (nominal).
   fe_beta at its lower bound (0 = no normalization) in 5-11 of 60 fits per norm family. Descriptive only.
+- 2026-11-09: norm pulse signatures (pulse_joint_signatures --tag _explore_norm, after the simulate() fix 84a4b0b;
+  primary 3.43 and norm_primary 4.49 reproduce the earlier run exactly). 0.3-1.2 s (data 5.48): norm_leak 5.33,
+  norm_urgency 4.26, norm E 5.86; per-mouse RMSE 5.58-5.78; r with data 0.39-0.59; 1.2-5 s: -0.77 to -2.19, mice < 0:
+  4-10. norm_leak_urgency waits for PSUIM6 "all". Descriptive only.

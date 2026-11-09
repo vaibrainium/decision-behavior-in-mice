@@ -1,0 +1,71 @@
+model,mouse,acc_36,rt50,sim_nonresp_share
+data,DBM12,,0.8048,
+data,DBM13,0.6,1.0963,
+data,DBM14,0.7342,1.3145,
+data,DBM15,0.5735,1.3023,
+data,DBM5,0.657,1.2187,
+data,DBM6,0.7149,1.2976,
+data,PSUIM10,0.75,1.5689,
+data,PSUIM5,0.8062,1.909,
+data,PSUIM6,0.8128,1.6897,
+data,PSUIM7,0.7579,0.9306,
+"primary, control-only fit",DBM12,,0.8226,0.0625
+"primary, control-only fit",DBM13,0.6036,1.2533,0.1355
+"primary, control-only fit",DBM14,0.6574,1.341,0.1127
+"primary, control-only fit",DBM15,0.6126,1.439,0.1649
+"primary, control-only fit",DBM5,0.6347,1.2758,0.1103
+"primary, control-only fit",DBM6,0.6777,1.3277,0.1199
+"primary, control-only fit",PSUIM10,0.7045,1.6342,0.1711
+"primary, control-only fit",PSUIM5,0.7529,1.9141,0.2007
+"primary, control-only fit",PSUIM6,0.7673,1.7535,0.1513
+"primary, control-only fit",PSUIM7,0.6979,0.9615,0.0609
+primary,DBM12,,0.8028,0.0501
+primary,DBM13,0.5918,1.1096,0.0876
+primary,DBM14,0.6758,1.4312,0.1667
+primary,DBM15,0.6281,1.4627,0.1673
+primary,DBM5,0.6328,1.2568,0.0805
+primary,DBM6,0.6788,1.3426,0.1316
+primary,PSUIM10,0.682,1.6337,0.174
+primary,PSUIM5,0.762,1.919,0.1924
+primary,PSUIM6,0.7567,1.694,0.1457
+primary,PSUIM7,0.7006,0.9155,0.0451
+norm_primary,DBM12,,0.7894,0.0535
+norm_primary,DBM13,0.5939,1.1148,0.1288
+norm_primary,DBM14,0.7308,1.3045,0.0884
+norm_primary,DBM15,0.6265,1.4027,0.1672
+norm_primary,DBM5,0.6244,1.2505,0.095
+norm_primary,DBM6,0.7223,1.3292,0.0499
+norm_primary,PSUIM10,0.7063,1.766,0.1869
+norm_primary,PSUIM5,0.8028,1.8166,0.1165
+norm_primary,PSUIM6,0.8175,1.6695,0.1331
+norm_primary,PSUIM7,0.7244,0.9195,0.0463
+norm_leak,DBM12,,0.775,0.1221
+norm_leak,DBM13,0.6061,1.147,0.0904
+norm_leak,DBM14,0.7087,1.3081,0.2241
+norm_leak,DBM15,0.6395,1.4254,0.0602
+norm_leak,DBM5,0.6574,1.1819,0.2631
+norm_leak,DBM6,0.7183,1.2811,0.2138
+norm_leak,PSUIM10,0.7258,1.7872,0.2584
+norm_leak,PSUIM5,0.7987,1.822,0.2311
+norm_leak,PSUIM6,0.8238,1.6647,0.1388
+norm_leak,PSUIM7,0.7384,0.9364,0.0619
+norm_urgency,DBM12,,0.7871,0.0678
+norm_urgency,DBM13,0.5904,1.0921,0.1126
+norm_urgency,DBM14,0.699,1.2972,0.2631
+norm_urgency,DBM15,0.6366,1.4012,0.1305
+norm_urgency,DBM5,0.6344,1.231,0.1716
+norm_urgency,DBM6,0.7259,1.3241,0.0966
+norm_urgency,PSUIM10,0.7175,1.7206,0.0572
+norm_urgency,PSUIM5,0.7907,1.7991,0.1125
+norm_urgency,PSUIM6,0.8205,1.6102,0.2142
+norm_urgency,PSUIM7,0.7403,0.9349,0.064
+norm_extrema_E_leak20-200,DBM12,,0.7431,0.2426
+norm_extrema_E_leak20-200,DBM13,0.6325,1.0797,0.0763
+norm_extrema_E_leak20-200,DBM14,0.7003,1.4021,0.1784
+norm_extrema_E_leak20-200,DBM15,0.6551,1.4202,0.0773
+norm_extrema_E_leak20-200,DBM5,0.6353,1.2615,0.0365
+norm_extrema_E_leak20-200,DBM6,0.7287,1.3261,0.0437
+norm_extrema_E_leak20-200,PSUIM10,0.7973,1.5908,0.0636
+norm_extrema_E_leak20-200,PSUIM5,0.7568,1.825,0.1763
+norm_extrema_E_leak20-200,PSUIM6,0.8143,1.6325,0.138
+norm_extrema_E_leak20-200,PSUIM7,0.7287,0.8827,0.0519
