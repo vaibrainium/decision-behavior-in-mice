@@ -107,6 +107,8 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--n_boot", type=int, default=2000)
     ap.add_argument("--block", type=int, default=50)
+    ap.add_argument("--runs", nargs="*", default=MODEL_RUNS, help="pulse_joint_signatures output stems (in OUT) whose windows CSVs hold the model predictions")
+    ap.add_argument("--tag", default="", help="appended to the output names")
     args = ap.parse_args()
     inputs = responded_only(load_inputs(DDM / "ddm_inputs_global_ucla_nofreeze.npz"))
     mice = sorted(set(inputs["subject_id"]))
@@ -158,7 +160,7 @@ def main():
     het = pd.DataFrame(het)
 
     # models
-    win = pd.concat([pd.read_csv(OUT / f"{run}_windows.csv") for run in MODEL_RUNS])
+    win = pd.concat([pd.read_csv(OUT / f"{run}_windows.csv") for run in args.runs])
     win = win[win.model != "data"].drop_duplicates(["model", "mouse"])
     se_m = {w: boots["trial"][:, :, j].std(axis=0, ddof=1) for j, w in enumerate(WINDOWS)}
     lo_m = {w: np.nanpercentile(boots["trial"][:, :, j], 2.5, axis=0) for j, w in enumerate(WINDOWS)}
@@ -186,7 +188,7 @@ def main():
           + data.round(2).to_string(index=False))
     print("\n== heterogeneity across mice (Cochran's Q with trial-bootstrap SEs)\n" + het.round(3).to_string(index=False))
     print("\n== models vs data (trial bootstrap; chi2 = sum over mice of z^2, df = 10)\n" + models.round(3).to_string(index=False))
-    stem = OUT / f"pulse_effect_bootstrap_{date.today().isoformat()}"
+    stem = OUT / f"pulse_effect_bootstrap_{date.today().isoformat()}{args.tag}"
     data.to_csv(f"{stem}_data.csv", index=False)
     het.to_csv(f"{stem}_heterogeneity.csv", index=False)
     models.to_csv(f"{stem}_models.csv", index=False)

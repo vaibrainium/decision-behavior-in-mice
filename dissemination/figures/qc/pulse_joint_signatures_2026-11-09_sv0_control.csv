@@ -1,0 +1,181 @@
+model,mouse,acc_36,rt50,sim_nonresp_share
+data,DBM12,,0.8048,
+data,DBM13,0.6,1.0963,
+data,DBM14,0.7342,1.3145,
+data,DBM15,0.5735,1.3023,
+data,DBM5,0.657,1.2187,
+data,DBM6,0.7149,1.2976,
+data,PSUIM10,0.75,1.5689,
+data,PSUIM5,0.8062,1.909,
+data,PSUIM6,0.8128,1.6897,
+data,PSUIM7,0.7579,0.9306,
+"primary, control-only fit",DBM12,,0.8226,0.0625
+"primary, control-only fit",DBM13,0.6036,1.2533,0.1355
+"primary, control-only fit",DBM14,0.6574,1.341,0.1127
+"primary, control-only fit",DBM15,0.6126,1.439,0.1649
+"primary, control-only fit",DBM5,0.6347,1.2758,0.1103
+"primary, control-only fit",DBM6,0.6777,1.3277,0.1199
+"primary, control-only fit",PSUIM10,0.7045,1.6342,0.1711
+"primary, control-only fit",PSUIM5,0.7529,1.9141,0.2007
+"primary, control-only fit",PSUIM6,0.7673,1.7535,0.1513
+"primary, control-only fit",PSUIM7,0.6979,0.9615,0.0609
+primary,DBM12,,0.8028,0.0501
+primary,DBM13,0.5918,1.1096,0.0876
+primary,DBM14,0.6758,1.4312,0.1667
+primary,DBM15,0.6281,1.4627,0.1673
+primary,DBM5,0.6328,1.2568,0.0805
+primary,DBM6,0.6788,1.3426,0.1316
+primary,PSUIM10,0.682,1.6337,0.174
+primary,PSUIM5,0.762,1.919,0.1924
+primary,PSUIM6,0.7567,1.694,0.1457
+primary,PSUIM7,0.7006,0.9155,0.0451
+leak,DBM12,,0.8052,0.0866
+leak,DBM13,0.5868,1.1413,0.2477
+leak,DBM14,0.6929,1.1991,0.3411
+leak,DBM15,0.6104,1.4293,0.1388
+leak,DBM5,0.6445,1.1613,0.2404
+leak,DBM6,0.6862,1.2901,0.2805
+leak,PSUIM10,0.7124,1.7756,0.2135
+leak,PSUIM5,0.7879,1.8372,0.2812
+leak,PSUIM6,0.7754,1.6282,0.2254
+leak,PSUIM7,0.707,0.9115,0.1004
+urgency,DBM12,,0.7822,0.0747
+urgency,DBM13,0.5832,1.1636,0.1221
+urgency,DBM14,0.6728,1.2934,0.2819
+urgency,DBM15,0.6161,1.4953,0.1541
+urgency,DBM5,0.6396,1.2354,0.1688
+urgency,DBM6,0.6942,1.3484,0.2015
+urgency,PSUIM10,0.701,1.695,0.0787
+urgency,PSUIM5,0.7301,1.8593,0.151
+urgency,PSUIM6,0.7823,1.6927,0.2259
+urgency,PSUIM7,0.7014,0.9284,0.05
+leak_urgency,DBM12,,0.7904,0.0774
+leak_urgency,DBM13,0.5747,1.0802,0.058
+leak_urgency,DBM14,0.6604,1.2569,0.2914
+leak_urgency,DBM15,0.595,1.4436,0.2796
+leak_urgency,DBM5,0.6356,1.2042,0.1679
+leak_urgency,DBM6,0.6924,1.2914,0.2905
+leak_urgency,PSUIM10,0.6909,1.6545,0.0496
+leak_urgency,PSUIM5,0.7198,1.8411,0.1272
+leak_urgency,PSUIM6,0.7902,1.6209,0.3373
+leak_urgency,PSUIM7,0.6947,0.9104,0.0721
+power_primary,DBM12,,0.7892,0.0571
+power_primary,DBM13,0.5464,1.1472,0.1053
+power_primary,DBM14,0.6995,1.3969,0.1605
+power_primary,DBM15,0.5989,1.4091,0.1381
+power_primary,DBM5,0.635,1.2507,0.0814
+power_primary,DBM6,0.7157,1.3319,0.0895
+power_primary,PSUIM10,0.6916,1.6431,0.1801
+power_primary,PSUIM5,0.7945,1.9243,0.1786
+power_primary,PSUIM6,0.809,1.6083,0.1725
+power_primary,PSUIM7,0.7366,0.9225,0.0456
+power_leak_urgency,DBM12,,0.7842,0.109
+power_leak_urgency,DBM13,0.563,1.0865,0.0599
+power_leak_urgency,DBM14,0.698,1.3021,0.2984
+power_leak_urgency,DBM15,0.6285,1.3944,0.1143
+power_leak_urgency,DBM5,0.6393,1.1989,0.219
+power_leak_urgency,DBM6,0.7151,1.2952,0.274
+power_leak_urgency,PSUIM10,0.7131,1.6813,0.0795
+power_leak_urgency,PSUIM5,0.7633,1.8545,0.1225
+power_leak_urgency,PSUIM6,0.7957,1.5736,0.1648
+power_leak_urgency,PSUIM7,0.7275,0.9155,0.049
+norm_leak_urgency,DBM12,,0.7874,0.1066
+norm_leak_urgency,DBM13,0.6048,1.0892,0.0726
+norm_leak_urgency,DBM14,0.7496,1.2731,0.2518
+norm_leak_urgency,DBM15,0.628,1.4632,0.1541
+norm_leak_urgency,DBM5,0.6207,1.2064,0.2047
+norm_leak_urgency,DBM6,0.7002,1.3166,0.2177
+norm_leak_urgency,PSUIM10,0.7379,1.689,0.0802
+norm_leak_urgency,PSUIM5,0.7572,1.9522,0.1836
+norm_leak_urgency,PSUIM6,0.8037,1.6246,0.2756
+norm_leak_urgency,PSUIM7,0.7351,0.9324,0.0449
+nominal_primary,DBM12,,0.8208,0.0466
+nominal_primary,DBM13,0.5901,1.2206,0.1391
+nominal_primary,DBM14,0.6554,1.3186,0.1626
+nominal_primary,DBM15,0.6049,1.4469,0.1802
+nominal_primary,DBM5,0.6272,1.282,0.1006
+nominal_primary,DBM6,0.6684,1.3748,0.1437
+nominal_primary,PSUIM10,0.6832,1.8006,0.2007
+nominal_primary,PSUIM5,0.7653,1.8543,0.1192
+nominal_primary,PSUIM6,0.7893,1.7056,0.0906
+nominal_primary,PSUIM7,0.686,0.9541,0.0368
+primary [sv=0],DBM12,,0.9331,0.1425
+primary [sv=0],DBM13,0.8225,1.7656,0.254
+primary [sv=0],DBM14,0.817,1.8217,0.2969
+primary [sv=0],DBM15,0.8805,2.4762,0.4194
+primary [sv=0],DBM5,0.8287,1.8118,0.1822
+primary [sv=0],DBM6,0.8725,2.2494,0.2715
+primary [sv=0],PSUIM10,0.908,2.3297,0.2691
+primary [sv=0],PSUIM5,0.9194,2.631,0.323
+primary [sv=0],PSUIM6,0.9158,2.2755,0.2418
+primary [sv=0],PSUIM7,0.868,1.2725,0.0778
+leak [sv=0],DBM12,,0.7895,0.2253
+leak [sv=0],DBM13,0.7524,0.6686,0.6127
+leak [sv=0],DBM14,0.7369,0.5552,0.56
+leak [sv=0],DBM15,0.7552,1.7573,0.2456
+leak [sv=0],DBM5,0.7758,0.8304,0.4487
+leak [sv=0],DBM6,0.8362,1.2231,0.5059
+leak [sv=0],PSUIM10,0.9274,2.5821,0.3796
+leak [sv=0],PSUIM5,0.9243,2.3802,0.4358
+leak [sv=0],PSUIM6,0.9285,2.1292,0.3557
+leak [sv=0],PSUIM7,0.8615,1.2495,0.1758
+urgency [sv=0],DBM12,,0.8027,0.2011
+urgency [sv=0],DBM13,0.8005,1.9696,0.3336
+urgency [sv=0],DBM14,0.7801,1.0422,0.4737
+urgency [sv=0],DBM15,0.8808,2.6788,0.4178
+urgency [sv=0],DBM5,0.8152,1.3398,0.3523
+urgency [sv=0],DBM6,0.88,2.0764,0.4087
+urgency [sv=0],PSUIM10,0.837,2.072,0.1116
+urgency [sv=0],PSUIM5,0.9177,2.7433,0.287
+urgency [sv=0],PSUIM6,0.9274,2.4717,0.3863
+urgency [sv=0],PSUIM7,0.8603,1.2664,0.0884
+leak_urgency [sv=0],DBM12,,0.8288,0.207
+leak_urgency [sv=0],DBM13,0.798,2.3262,0.1878
+leak_urgency [sv=0],DBM14,0.7387,0.5724,0.5343
+leak_urgency [sv=0],DBM15,0.7757,1.2945,0.5992
+leak_urgency [sv=0],DBM5,0.8024,1.0627,0.3557
+leak_urgency [sv=0],DBM6,0.8354,1.137,0.5182
+leak_urgency [sv=0],PSUIM10,0.7991,2.0055,0.0643
+leak_urgency [sv=0],PSUIM5,0.9191,3.0351,0.2527
+leak_urgency [sv=0],PSUIM6,0.9142,2.4819,0.5612
+leak_urgency [sv=0],PSUIM7,0.8399,1.2214,0.1199
+power_primary [sv=0],DBM12,,0.9986,0.1015
+power_primary [sv=0],DBM13,0.6799,1.8772,0.2954
+power_primary [sv=0],DBM14,0.8344,1.8819,0.2703
+power_primary [sv=0],DBM15,0.7814,1.9761,0.2825
+power_primary [sv=0],DBM5,0.835,1.8157,0.1769
+power_primary [sv=0],DBM6,0.8709,1.8571,0.1379
+power_primary [sv=0],PSUIM10,0.9117,2.3416,0.2814
+power_primary [sv=0],PSUIM5,0.9196,2.4043,0.2556
+power_primary [sv=0],PSUIM6,0.9411,2.5033,0.2059
+power_primary [sv=0],PSUIM7,0.8775,1.2405,0.0678
+power_leak_urgency [sv=0],DBM12,,0.7707,0.2341
+power_leak_urgency [sv=0],DBM13,0.7707,2.179,0.2078
+power_leak_urgency [sv=0],DBM14,0.8024,0.9068,0.4909
+power_leak_urgency [sv=0],DBM15,0.8144,1.9244,0.2201
+power_leak_urgency [sv=0],DBM5,0.7863,0.7941,0.4502
+power_leak_urgency [sv=0],DBM6,0.8658,1.7051,0.4917
+power_leak_urgency [sv=0],PSUIM10,0.896,2.1518,0.1189
+power_leak_urgency [sv=0],PSUIM5,0.9417,2.7545,0.1823
+power_leak_urgency [sv=0],PSUIM6,0.9474,2.3566,0.2237
+power_leak_urgency [sv=0],PSUIM7,0.8682,1.1955,0.0723
+norm_leak_urgency [sv=0],DBM12,,0.7955,0.2229
+norm_leak_urgency [sv=0],DBM13,0.8347,2.0137,0.1893
+norm_leak_urgency [sv=0],DBM14,0.8439,1.6386,0.3713
+norm_leak_urgency [sv=0],DBM15,0.8813,2.5062,0.3915
+norm_leak_urgency [sv=0],DBM5,0.7804,0.8492,0.4358
+norm_leak_urgency [sv=0],DBM6,0.8847,2.1346,0.4138
+norm_leak_urgency [sv=0],PSUIM10,0.9265,2.12,0.1147
+norm_leak_urgency [sv=0],PSUIM5,0.918,2.7002,0.2871
+norm_leak_urgency [sv=0],PSUIM6,0.9313,2.7226,0.4135
+norm_leak_urgency [sv=0],PSUIM7,0.8485,1.1634,0.0605
+nominal_primary [sv=0],DBM12,,0.8536,0.1287
+nominal_primary [sv=0],DBM13,0.8532,2.1991,0.4174
+nominal_primary [sv=0],DBM14,0.7777,1.2986,0.3191
+nominal_primary [sv=0],DBM15,0.8346,2.2324,0.4404
+nominal_primary [sv=0],DBM5,0.8178,1.731,0.2212
+nominal_primary [sv=0],DBM6,0.862,2.1993,0.285
+nominal_primary [sv=0],PSUIM10,0.9163,2.5661,0.3443
+nominal_primary [sv=0],PSUIM5,0.8524,2.0693,0.158
+nominal_primary [sv=0],PSUIM6,0.7927,1.6966,0.0945
+nominal_primary [sv=0],PSUIM7,0.8296,1.1785,0.0688

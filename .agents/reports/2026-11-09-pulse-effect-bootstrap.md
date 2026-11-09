@@ -63,3 +63,23 @@ Inputs: ddm_inputs_global_ucla_nofreeze.npz (responded trials), trial table via 
       contributions to the late reversal; refitting without sv is not indicated by these numbers.
 - [ ] Correct the wording "integrators predict too small a mean effect" in the mapping report's summary when results
       are written up (the mean shortfall is within the data CI for motion-energy integrators).
+
+## Addendum 2026-11-09: sv = 0 counterfactual (author: "ok do it")
+Fitted "all" parameters unchanged except sv set to 0, simulated as before (30 reps, seed 0).
+Commands: `.venv/bin/python -m scripts.ddm.pulse_joint_signatures --cache <dir> --tag _sv0 --override sv=0 --families
+primary leak urgency leak_urgency power_primary power_leak_urgency norm_leak_urgency nominal_primary`;
+`.venv/bin/python -m scripts.ddm.pulse_effect_bootstrap --runs pulse_joint_signatures_2026-11-09_sv0 --tag _sv0`.
+Outputs: pulse_joint_signatures_2026-11-09_sv0_*.csv, pulse_effect_bootstrap_2026-11-09_sv0_models.csv.
+- VERIFIED: with sv = 0 the late reversal disappears in every model, including leak, urgency and leak+urgency:
+  late effect +0.57 to +1.66 pp (0-1 mice negative) vs -0.86 to -2.90 (7-10 mice negative) with the fitted sv. All
+  inside the data CI (-1.0 to 3.4).
+- VERIFIED: leak/urgency still lower the late effect without sv (linear: primary +1.66, leak +0.69, urgency +1.39,
+  leak+urgency +0.57), i.e. they amplify but do not create the reversal.
+- VERIFIED: the counterfactual is not a usable model: the early effect drops to 1.7-3.3 pp (mostly below the data CI
+  3.2-7.9), simulated non-response share rises to 0.42-0.61 in the worst mouse (0.18-0.34 with sv), and per-mouse late
+  chi-square is not better (20-31 on 10 df). Refitting without sv costs +317 held-out NLL (linear).
+- Revises finding 5 above: the reversal needs sv (selection of slow trials on a persistent per-trial drift); leak and
+  urgency amplify it. The data's late effect (+1.2) lies between the fitted-sv models (-0.9 to -2.9) and sv = 0
+  (+0.6 to +1.7). SUSPECTED implication: the persistent across-trial variability the RTs need is partly not a
+  per-trial drift offset (e.g. a starting-point or bound variability, or session-level drift), which would not select
+  against the pulse in the same way; untested.

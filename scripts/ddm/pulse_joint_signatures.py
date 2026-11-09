@@ -66,13 +66,16 @@ for _fam in EXTRA_FAMILIES:
     OPTIONS[_fam] = _opt
 
 
-def simulate(fam: str, path: Path, inputs: dict, obs: pd.DataFrame, mouse: str, cache: Path) -> pd.DataFrame:
+def simulate(fam: str, path: Path, inputs: dict, obs: pd.DataFrame, mouse: str, cache: Path, override: dict | None = None) -> pd.DataFrame:
+    """override: parameter values replacing the fitted ones (counterfactual, e.g. {'sv': 0.0}); the family name then
+    carries the override (e.g. 'leak [sv=0]') and so does the cache file."""
     out = cache / f"{fam.replace(' ', '_').replace(',', '')}_{mouse}.pkl"
     if out.exists():
         return pickle.load(open(out, "rb"))
     with open(path, "rb") as f:
         r = pickle.load(f)
-    opt = {"fixed_guess_bias": False} | OPTIONS.get(fam, {})
+    base = fam.split(" [")[0]  # counterfactual families: '<family> [name=value,...]'
+    opt = {"fixed_guess_bias": False} | OPTIONS.get(base, {})
     assert bool(r.get("fixed_guess_bias")) == opt["fixed_guess_bias"] and bool(r.get("nominal_input")) == opt.get("nominal_input", False)
     assert r.get("front_end") == opt.get("front_end") and bool(r.get("nominal_matched")) == opt.get("nominal_matched", False)
     rig = obs.loc[obs.mouse == mouse, "rig"].iloc[0]
@@ -81,7 +84,11 @@ def simulate(fam: str, path: Path, inputs: dict, obs: pd.DataFrame, mouse: str, 
                        front_end=opt.get("front_end"), nominal_matched=opt.get("nominal_matched", False))
     rows = np.flatnonzero(inputs["subject_id"] == mouse)  # all responded trials, for the non-response share
     data, stim = select(inputs, rows, nominal=opt.get("nominal_input", False))
-    sim = simulate_outcomes(model, r["parameters"], stim, data["condition"], N_REPS, SEED)
+    params = dict(r["parameters"])
+    for k, v in (override or {}).items():
+        assert k in params, f"{k} not a parameter of {fam}"
+        params[k] = v
+    sim = simulate_outcomes(model, params, stim, data["condition"], N_REPS, SEED)
     keep = obs[obs.mouse == mouse].set_index("row")
     rr = rows[sim.trial.to_numpy()]
     res = pd.DataFrame({"row": rr, "choice_raw": sim.choice.to_numpy(), "rt": sim.rt.to_numpy()})
@@ -118,6 +125,8 @@ def main():
     ap.add_argument("--fe_power", action="store_true", help="add the control-only fit with the power-law front end (fits_resp_fast_only_fe-power_v2)")
     ap.add_argument("--fe_norm", action="store_true", help="add the control-only fit with the normalization front end (fits_resp_fast_only_fe-norm)")
     ap.add_argument("--tag", default="", help="appended to the output names")
+    ap.add_argument("--override", nargs="*", default=[], metavar="NAME=VALUE",
+                    help="counterfactual: also simulate each listed family with these parameters replaced (fitted values otherwise), e.g. sv=0")
     ap.add_argument("--mice", nargs="*", help="subset of mice (default all); per-mouse simulations do not depend on the others")
     args = ap.parse_args()
     inputs = load_inputs(DDM / "ddm_inputs_global_ucla_nofreeze.npz")
@@ -136,10 +145,17 @@ def main():
     for fam in args.families:
         folder, variant = (FAMILIES.get(fam) or EXTRA_FAMILIES[fam])[:2]
         models[fam] = lambda m, folder=folder, variant=variant: DDM / folder / f"{m}_{variant}_all.pkl"
+    override = {k: float(v) for k, v in (o.split("=") for o in args.override)}
+    overrides = {}
+    if override:
+        tag = ",".join(f"{k}={v:g}" for k, v in override.items())
+        for fam in args.families:
+            models[f"{fam} [{tag}]"] = models[fam]
+            overrides[f"{fam} [{tag}]"] = override
     results = {"data": stats_of(obs, onsets)}
     nonresp = {}
     for name, path in models.items():
-        sims = [simulate(name, path(m), inputs, obs, m, args.cache) for m in mice]
+        sims = [simulate(name, path(m), inputs, obs, m, args.cache, overrides.get(name)) for m in mice]
         nonresp[name] = {m: s.attrs.get("nonresp", np.nan) for m, s in zip(mice, sims)}
         results[name] = stats_of(pd.concat(sims, ignore_index=True), onsets)
         print(f"simulated {name}", flush=True)
