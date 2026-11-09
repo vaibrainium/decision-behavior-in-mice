@@ -1,0 +1,28 @@
+mapping,accumulator,n_fits,n_mice,mice_all_folds,has_all_split,failed,iter_cap,bounds
+linear,primary,60,10,10,10,0,0,guess_tau:hi x7; sv:hi x2; ndt:lo x1
+linear,no_sv,60,10,10,10,0,0,drift_gain:lo x13; guess_tau:hi x9; guess_bias:lo x1; ndt:lo x1
+linear,leak,60,10,10,10,0,0,guess_tau:hi x7; leak_rate:lo x1; z:hi x1
+linear,urgency,60,10,10,10,0,0,guess_tau:hi x6; sv:hi x3; a:hi x2; ndt:lo x1
+linear,leak_urgency,60,10,10,10,0,0,guess_tau:hi x8; sv:hi x5; leak_rate:lo x2
+linear,E,60,10,10,10,0,0,guess_tau:hi x6; a:lo x6; leak_rate:lo x4; sv:lo x3; drift_offset:hi x2; ndt:hi x1; p_guess:lo x1; leak_rate:hi x1; sv:hi x1
+linear,ES,60,10,10,10,0,0,guess_tau:hi x8; drift_offset:hi x6; sv:hi x3; p_guess:lo x1; sv:lo x1; guess_tau:lo x1
+power,primary,60,10,10,10,0,0,guess_tau:hi x10; sv:hi x4; ndt:lo x2; a:hi x1
+power,leak,60,10,10,10,0,0,guess_tau:hi x6; leak_rate:lo x3; sv:hi x1
+power,urgency,60,10,10,10,0,0,guess_tau:hi x8; ndt:lo x4; sv:hi x4; a:hi x1
+power,leak_urgency,60,10,10,10,0,0,sv:hi x7; guess_tau:hi x7; leak_rate:lo x1; a:hi x1; fe_gamma:lo x1
+power,E,60,10,10,10,0,0,leak_rate:lo x4; guess_tau:hi x2; sv:lo x1; guess_tau:lo x1; ndt:hi x1; sv:hi x1; fe_gamma:lo x1
+power,ES,60,10,10,10,0,0,drift_offset:hi x10; guess_tau:hi x5; sv:hi x5; sv:lo x2; ndt:hi x1
+norm,primary,60,10,10,10,0,0,fe_beta:lo x11; guess_tau:hi x10; fe_tau:lo x3; fe_tau:hi x1
+norm,leak,60,10,10,10,0,0,fe_beta:lo x8; guess_tau:hi x5; leak_rate:lo x2; fe_tau:lo x2; fe_tau:hi x1
+norm,urgency,60,10,10,10,0,0,guess_tau:hi x10; fe_beta:lo x9; fe_tau:lo x5; sv:hi x2
+norm,leak_urgency,60,10,10,10,0,0,fe_beta:lo x11; guess_tau:hi x8; fe_tau:lo x4; sv:hi x4; leak_rate:lo x1; drift_offset:hi x1
+norm,E,60,10,10,10,0,0,guess_tau:hi x9; fe_tau:lo x6; fe_beta:lo x5; a:lo x5; leak_rate:lo x3; sv:hi x2; sv:lo x2; drift_offset:lo x1; fe_tau:hi x1
+norm,ES,60,10,10,10,0,0,drift_offset:hi x11; fe_tau:lo x4; sv:hi x3; guess_tau:hi x3; fe_beta:lo x2; sv:lo x1; ndt:hi x1
+nominal,primary,60,10,10,10,0,0,guess_tau:hi x8; sv:lo x2; ndt:lo x2
+nominal,no_sv,60,10,10,10,0,0,guess_tau:hi x8
+nominal,leak,60,10,10,10,0,0,guess_tau:hi x7; leak_rate:lo x2; sv:hi x1
+nominal,urgency,60,10,10,10,0,0,guess_tau:hi x8; sv:hi x4; ndt:lo x1
+nominal,leak_urgency,60,10,10,10,0,0,guess_tau:hi x13; sv:hi x4
+nominal,E,60,10,10,10,0,0,a:lo x7; guess_tau:hi x5; drift_offset:lo x3; sv:lo x2; ndt:hi x2; drift_offset:hi x2; leak_rate:lo x1
+nominal,ES,60,10,10,10,0,0,ndt:hi x5; guess_tau:hi x5; sv:hi x4
+nominal_power,primary,60,10,10,10,0,0,guess_tau:hi x11; ndt:lo x2; sv:hi x1

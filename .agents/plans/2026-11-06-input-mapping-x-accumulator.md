@@ -1,5 +1,5 @@
 # Plan: input mapping x accumulator (is the accumulator conclusion robust to how motion maps to drift?)
-Status: active
+Status: done
 Created: 2026-11-06 by Claude (Opus 5.5)
 Related: plans/2026-10-30-normalization-pulse-prediction.md (norm, control-only prediction);
 plans/2026-11-06-nominal-coherence-joint-fits.md (nominal input); reports/2026-10-29-joint-control-pulse-refits.md
@@ -142,3 +142,5 @@ per-site interpretation (rig is a covariate only).
   primary 3.43 and norm_primary 4.49 reproduce the earlier run exactly). 0.3-1.2 s (data 5.48): norm_leak 5.33,
   norm_urgency 4.26, norm E 5.86; per-mouse RMSE 5.58-5.78; r with data 0.39-0.59; 1.2-5 s: -0.77 to -2.19, mice < 0:
   4-10. norm_leak_urgency waits for PSUIM6 "all". Descriptive only.
+- 2026-11-09: all 1,260 fits in; final descriptive comparison and pulse signatures done (exploratory, rules
+  suspended). Report: reports/2026-11-09-mapping-accumulator-exploratory.md. Plan closed; rules discussion with the author is the next step.

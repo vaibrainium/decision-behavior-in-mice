@@ -1,7 +1,11 @@
 # Status
-Last updated: 2026-10-29 by Claude (Opus 5.5; joint control + pulse refits)
+Last updated: 2026-11-09 by Claude (Opus 5.5; mapping x accumulator exploratory results, fit checkpointing)
 
 ## Current focus
+Mapping x accumulator + nominal-coherence fits complete (1,260; exploratory, no rules): power/norm mappings fit slightly better
+than linear, integrators beat E/ES under every mapping, no family reproduces the pulse effect per mouse; all integrators
+predict a late reversal (reports/2026-11-09-mapping-accumulator-exploratory.md). Next: rules discussion with the author.
+Fits now checkpoint every DE generation and resume after preemption (plans/2026-11-08-fit-checkpointing.md; ckpt-all requeues at ~8 h).
 Joint control + pulse refits done (reports/2026-10-29-joint-control-pulse-refits.md): fitting pulses does not make any family reproduce the pulse effect; next decision: race-model illustration (author).
 Leak vs urgency from pulse trials (author question 2026-10-28): research done, plan done. Verdict: existing descriptive
 signatures cannot separate them; the pulses are informative in principle (S1 profile separates leak >= 1 /s from the
@@ -22,8 +26,6 @@ Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gat
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
-- plans/2026-11-06-input-mapping-x-accumulator.md : power/norm x 6 accumulators + power control-only prediction; 490 fits running, rest via scripts/slurm/submit_remaining_2026-11-06.sh
-- plans/2026-11-06-nominal-coherence-joint-fits.md : coherence-sequence fits (420) queued behind the mapping batches
 - plans/2026-10-29-control-paper.md : third paper (control trials only, Stine 2020 framing) in dissemination/paper_control/; G1 approved 2026-10-30 (D004), spine locked, stage S2; paired recovery 42579825 analysed: E separated (provisional, ES fits not yet submitted)
 - plans/2026-10-28-full-recovery-matrix.md : ON HOLD (author); recovery rerun on fixed CPU datasets if it becomes necessary
 - plans/2026-10-26-v2-refits-and-strategy-recovery.md : responded-only refits + full point-3 re-run (amendment 9); commands ready; next: user syncs code, submits R1-R6 (460), then F1a (80) and P1-P4 (850)
@@ -36,6 +38,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-11-09-mapping-accumulator-exploratory.md : power/norm mappings slightly better than linear (2-4 mice); integrators beat E/ES under all mappings; no family reproduces the per-mouse pulse effect; late reversal in all integrators (exploratory)
 - reports/2026-11-06-normalization-pulse-prediction.md : normalization fitted to control trials raises the mean predicted pulse effect (3.25 -> 4.71 pp, data 5.48) but not per mouse (Wilcoxon p 0.92); not better under the pre-set rule
 - reports/2026-10-31-pulse-time-weights.md : per-pulse-time weights: no held-out gain, no early>late ordering across mice; PSUIM6 alone fits early w ~3
 - reports/2026-10-30-pulse-time-weight-profile.md : per-pulse-time weights: likelihood flat in 8/10 mice; early > late hint only in PSUIM6/PSUIM7

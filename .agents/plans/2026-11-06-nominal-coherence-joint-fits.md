@@ -1,5 +1,5 @@
 # Plan: DDM families fitted on the nominal coherence sequence (control + pulse trials)
-Status: active
+Status: done
 Created: 2026-11-06 by Claude (Opus 5.5)
 Related reports: reports/2026-10-29-joint-control-pulse-refits.md (motion-energy joint fits);
 reports/2026-10-30-es-recovery-partial-and-nominal-refits.md (nominal vs ME on control trials: no difference);
@@ -66,3 +66,5 @@ its own amendment); per-site interpretation (rig is a covariate only).
   suspended, not applied). Rules to be discussed once all results are in. compare_mapping_accumulator.py reports
   descriptives only (sums, medians, mice beyond 10 NLL, uncorrected p as descriptives; no verdicts, no Holm). The
   rule-B issue logged 2026-11-07 is moot for now; keep it for the rules discussion.
+- 2026-11-09: all 1,260 fits in; final descriptive comparison and pulse signatures done (exploratory, rules
+  suspended). Report: reports/2026-11-09-mapping-accumulator-exploratory.md. Plan closed; rules discussion with the author is the next step.
