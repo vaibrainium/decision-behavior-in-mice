@@ -1,0 +1,279 @@
+<title>Pulse-Task Fit Browser</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: lab-notebook browser. Sticky sidebar of model tabs (grouped by input mapping) beside a grid of small-multiple
+   panels: 7 conditions across, pooled first, then one row per mouse. Data = ink points with error bars, model = line. */
+:root {
+  --bg: #f4f6f8; --panel: #ffffff; --ink: #18212b; --muted: #5d6b7a; --rule: #d5dce3;
+  --accent: #1d6fa5;            /* model line, selected tab */
+  --left: #b4462f; --right: #2b7a52; --ctrl: #8a96a3;
+  --sel-bg: #e3eef6; --best: #e6f2ea; --best-ink: #1f5e3c;
+  --f-body: "Public Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #11161c; --panel: #182029; --ink: #e3e9ef; --muted: #93a1b0; --rule: #2c3846;
+  --accent: #5fb0e8; --left: #ec7c63; --right: #5cc490; --ctrl: #7d8a98;
+  --sel-bg: #1c3347; --best: #183427; --best-ink: #8fdcb0; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #11161c; --panel: #182029; --ink: #e3e9ef; --muted: #93a1b0; --rule: #2c3846;
+  --accent: #5fb0e8; --left: #ec7c63; --right: #5cc490; --ctrl: #7d8a98;
+  --sel-bg: #1c3347; --best: #183427; --best-ink: #8fdcb0; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 14px; line-height: 1.45 }
+.wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 20px 40px }
+header.top { display: grid; gap: 6px; margin-bottom: 18px; max-width: 980px }
+header.top h1 { font-size: 22px; margin: 0; letter-spacing: -0.01em; text-wrap: balance }
+header.top p { margin: 0; color: var(--muted); max-width: 75ch }
+.layout { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 22px; align-items: start }
+nav.side { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 10px); max-height: calc(100vh - 20px); overflow-y: auto;
+  background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 10px }
+nav.side h2 { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 12px 6px 4px; font-weight: 600 }
+nav.side h2:first-child { margin-top: 2px }
+nav.side button { display: block; width: 100%; text-align: left; font: inherit; font-size: 13px; color: var(--ink); background: none;
+  border: 0; border-radius: 5px; padding: 5px 8px; cursor: pointer }
+nav.side button:hover { background: var(--sel-bg) }
+nav.side button[aria-selected="true"] { background: var(--sel-bg); color: var(--accent); font-weight: 600 }
+nav.side button:focus-visible, .seg button:focus-visible, th button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px }
+nav.side .nll { font-weight: 600 }
+main { min-width: 0; display: grid; gap: 18px }
+.head { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: baseline; justify-content: space-between }
+.head h2 { margin: 0; font-size: 19px }
+.head .sub { color: var(--muted); font-size: 12.5px }
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; background: var(--panel) }
+.seg button { font: inherit; font-size: 12.5px; padding: 5px 11px; border: 0; background: none; color: var(--muted); cursor: pointer }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--panel) }
+.stats { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 12.5px; color: var(--muted) }
+.stats b { font-family: var(--f-mono); color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums }
+section.block { background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 14px }
+section.block > h3 { margin: 0 0 10px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted) }
+.row { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px }
+.row.big { gap: 10px }
+.mouse { display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: 8px; align-items: center; padding-block: 6px; border-top: 1px solid var(--rule) }
+.mouse:first-of-type { border-top: 0 }
+.mouse .name { font-family: var(--f-mono); font-size: 12px; font-weight: 600 }
+.mouse .name small { display: block; color: var(--muted); font-weight: 400 }
+.panel { min-width: 0 }
+.panel .t { font-size: 11.5px; font-weight: 600; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+.panel .t.left { color: var(--left) } .panel .t.right { color: var(--right) } .panel .t.control { color: var(--muted) }
+svg.chart { display: block; width: 100%; height: auto; overflow: visible }
+svg .axis { stroke: var(--rule); stroke-width: 1 } svg .tick { fill: var(--muted); font-family: var(--f-mono); font-size: 9px }
+svg .ref { stroke: var(--rule); stroke-dasharray: 2 3 }
+svg .mline { fill: none; stroke: var(--accent); stroke-width: 2 }
+svg .cline { fill: none; stroke: var(--ctrl); stroke-width: 1.2; stroke-dasharray: 3 3 }
+svg .dpt { fill: var(--ink) } svg .dbar { stroke: var(--ink); stroke-width: 1 }
+svg .cpt { fill: var(--ctrl) }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12px; color: var(--muted); align-items: center }
+.legend i { display: inline-block; width: 18px; height: 0; border-top: 2px solid var(--accent); vertical-align: middle; margin-right: 5px }
+.legend i.c { border-top: 1.5px dashed var(--ctrl) } .legend i.d { width: 7px; height: 7px; border: 0; border-radius: 50%; background: var(--ink) }
+.note { font-size: 12px; color: var(--muted); max-width: 90ch; margin: 0 }
+.tablewrap { overflow-x: auto }
+table { border-collapse: collapse; font-size: 12.5px; font-variant-numeric: tabular-nums; min-width: 100% }
+th, td { padding: 5px 8px; border-bottom: 1px solid var(--rule); text-align: right; white-space: nowrap }
+th:first-child, td:first-child { text-align: left; position: sticky; left: 0; background: var(--panel) }
+td { font-family: var(--f-mono) } td:first-child { font-family: var(--f-body) }
+th button { font: inherit; font-weight: 600; color: var(--ink); background: none; border: 0; cursor: pointer; padding: 0 }
+td.best { background: var(--best); color: var(--best-ink); font-weight: 600 }
+td.grp { text-align: left; font-family: var(--f-body); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); padding-top: 12px; position: static }
+tr.cf td { color: var(--muted) }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: minmax(0, 1fr) }
+  nav.side { position: static; max-height: 260px }
+  .row { grid-template-columns: repeat(4, minmax(0, 1fr)) }
+  .mouse { grid-template-columns: minmax(0, 1fr) }
+}
+@media (max-width: 480px) { .row { grid-template-columns: repeat(2, minmax(0, 1fr)) } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>Pulse-task fit browser</h1>
+    <p>Data and model, split by trial type: control trials and pulses early, middle or late in the trial toward the left or right. Choice is P(right) against signed coherence (positive = rightward); RT is the mean response time of responded trials. Points: data ± 1 SE. Line: model simulation (30 repetitions of each mouse's own trials). Dashed grey: the model's control-trial curve, for reference in the pulse panels. Coherences up to ±36% (all pulse trials); responded trials only.</p>
+  </header>
+  <div class="layout">
+    <nav class="side" id="side" aria-label="Models"></nav>
+    <main id="main"></main>
+  </div>
+</div>
+
+<script>
+const D = /*__DATA__*/null;
+const COL = Object.fromEntries(D.columns.map((c, i) => [c, i]));
+const COND_LABEL = {"control": "Control", "early left": "Early pulse, left", "early right": "Early pulse, right",
+  "middle left": "Middle pulse, left", "middle right": "Middle pulse, right", "late left": "Late pulse, left", "late right": "Late pulse, right"};
+const state = { tab: "nll", measure: "p", nllView: "heldout" };
+try { const s = JSON.parse(localStorage.getItem("fitbrowser") || "{}"); Object.assign(state, s); } catch (e) {}
+function save() { try { localStorage.setItem("fitbrowser", JSON.stringify(state)); } catch (e) {} }
+const el = (tag, attrs = {}, ...kids) => { const e = document.createElement(tag); for (const [k, v] of Object.entries(attrs)) { if (k === "class") e.className = v; else if (k === "text") e.textContent = v; else e.setAttribute(k, v); } for (const k of kids) if (k) e.append(k); return e; };
+const NS = "http://www.w3.org/2000/svg";
+const sv = (tag, attrs = {}) => { const e = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v); return e; };
+const fmt = (v, d = 1) => v == null || !isFinite(v) ? "–" : v.toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+
+/* ---------- index of NLL by family ---------- */
+const NLL = {};
+for (const r of D.nll) { if (!NLL[r.family]) NLL[r.family] = {}; NLL[r.family][r.mouse] = r; }
+function totals(fam) {
+  const rs = Object.values(NLL[fam] || {});
+  const sum = (k) => rs.every(r => r[k] != null) && rs.length === D.mice.length ? rs.reduce((a, r) => a + r[k], 0) : null;
+  return { heldout: sum("heldout_nll"), n_heldout: sum("n_heldout"), fitted: sum("fitted_nll"), n_fitted: sum("n_fitted"),
+           pulse: sum("pulse_test_nll"), n_pulse: sum("n_pulse_test"), k: rs.length ? rs[0].k : null };
+}
+
+/* ---------- sidebar ---------- */
+function buildSide() {
+  const side = document.getElementById("side");
+  side.replaceChildren();
+  side.append(el("h2", { text: "Comparison" }));
+  side.append(tabButton("nll", "Log likelihood (all models)", "nll"));
+  for (const g of D.groups) {
+    side.append(el("h2", { text: g.label.replace(/ \(.*\)$/, "") }));
+    for (const f of g.families) side.append(tabButton(f, D.families[f].label));
+  }
+}
+function tabButton(id, label, cls) {
+  const b = el("button", { type: "button", id: "tab-" + id.replace(/[^a-zA-Z0-9]+/g, "-"), "aria-selected": String(state.tab === id), text: label });
+  if (cls) b.className = cls;
+  b.addEventListener("click", () => { state.tab = id; save(); render(); });
+  return b;
+}
+
+/* ---------- charts ---------- */
+function rows(table, cond) { return (table || []).filter(r => r[COL.cond] === cond).sort((a, b) => a[COL.coh] - b[COL.coh]); }
+function yRange(measure, tables) {
+  if (measure === "p") return [0, 1];
+  let lo = Infinity, hi = -Infinity;
+  for (const t of tables) for (const r of t || []) { const v = r[COL.rt], s = r[COL.se_rt] || 0; if (v != null) { lo = Math.min(lo, v - s); hi = Math.max(hi, v + s); } }
+  if (!isFinite(lo)) return [0, 1];
+  const pad = (hi - lo) * 0.08 || 0.1;
+  return [Math.max(0, lo - pad), hi + pad];
+}
+function chart(cond, dataT, modelT, measure, yr, opts) {
+  const W = 200, H = opts.big ? 150 : 118, L = 30, R = 6, T = 6, B = 18;
+  const x = v => L + (v + 40) / 80 * (W - L - R);
+  const y = v => T + (1 - (v - yr[0]) / (yr[1] - yr[0])) * (H - T - B);
+  const s = sv("svg", { viewBox: `0 0 ${W} ${H}`, class: "chart", role: "img", "aria-label": `${COND_LABEL[cond]}: data and model` });
+  s.append(sv("line", { x1: L, x2: W - R, y1: H - B, y2: H - B, class: "axis" }), sv("line", { x1: L, x2: L, y1: T, y2: H - B, class: "axis" }));
+  for (const c of [-36, -18, 0, 18, 36]) { const t = sv("text", { x: x(c), y: H - 5, "text-anchor": "middle", class: "tick" }); t.textContent = c; s.append(t); }
+  const yt = measure === "p" ? [0, 0.5, 1] : [yr[0], (yr[0] + yr[1]) / 2, yr[1]];
+  for (const v of yt) { const t = sv("text", { x: L - 4, y: y(v) + 3, "text-anchor": "end", class: "tick" }); t.textContent = measure === "p" ? v : v.toFixed(2); s.append(t); }
+  if (measure === "p") s.append(sv("line", { x1: L, x2: W - R, y1: y(0.5), y2: y(0.5), class: "ref" }));
+  s.append(sv("line", { x1: x(0), x2: x(0), y1: T, y2: H - B, class: "ref" }));
+  const key = measure === "p" ? COL.p : COL.rt, se = measure === "p" ? COL.se_p : COL.se_rt;
+  const path = (rs, cls) => { const pts = rs.filter(r => r[key] != null).map(r => `${x(r[COL.coh]).toFixed(1)},${y(r[key]).toFixed(1)}`); if (pts.length > 1) s.append(sv("polyline", { points: pts.join(" "), class: cls })); };
+  if (cond !== "control") path(rows(modelT, "control"), "cline");
+  path(rows(modelT, cond), "mline");
+  for (const r of rows(dataT, cond)) {
+    if (r[key] == null) continue;
+    const cx = x(r[COL.coh]), e = r[se] || 0;
+    s.append(sv("line", { x1: cx, x2: cx, y1: y(Math.min(yr[1], r[key] + e)), y2: y(Math.max(yr[0], r[key] - e)), class: "dbar" }));
+    const c = sv("circle", { cx, cy: y(r[key]), r: opts.big ? 2.8 : 2.3, class: "dpt" });
+    const m = rows(modelT, cond).find(q => q[COL.coh] === r[COL.coh]);
+    const tt = sv("title"); tt.textContent = `${COND_LABEL[cond]}, coherence ${r[COL.coh]}%: data ${measure === "p" ? r[key].toFixed(3) : r[key].toFixed(3) + " s"} ± ${e.toFixed(3)} (n=${r[COL.n]})` + (m ? `; model ${m[key].toFixed(3)}` : "");
+    c.append(tt); s.append(c);
+  }
+  return s;
+}
+function panelRow(dataT, modelT, measure, big) {
+  const yr = yRange(measure, [dataT, modelT]);
+  const row = el("div", { class: "row" + (big ? " big" : "") });
+  for (const cond of D.conditions) {
+    const side = cond === "control" ? "control" : cond.split(" ")[1];
+    const n = rows(dataT, cond).reduce((a, r) => a + r[COL.n], 0);
+    row.append(el("div", { class: "panel" }, el("div", { class: "t " + side, text: `${COND_LABEL[cond]} · n=${n}` }), chart(cond, dataT, modelT, measure, yr, { big })));
+  }
+  return row;
+}
+
+/* ---------- model tab ---------- */
+function modelView(fam) {
+  const F = D.families[fam], tot = totals(fam);
+  const frag = document.createDocumentFragment();
+  const isCtl = F.group.startsWith("Control-only"), isCf = F.group.startsWith("Counterfactual");
+  const head = el("div", { class: "head" }, el("div", {}, el("h2", { id: "model-title", text: F.label }), el("div", { class: "sub", text: F.group })));
+  const seg = el("div", { class: "seg", role: "group", "aria-label": "Measure" });
+  for (const [k, l] of [["p", "Choice: P(right)"], ["rt", "RT: mean (s)"]]) {
+    const b = el("button", { type: "button", "aria-pressed": String(state.measure === k), text: l });
+    b.addEventListener("click", () => { state.measure = k; save(); render(); }); seg.append(b);
+  }
+  head.append(el("div", { class: "controls" }, seg));
+  frag.append(head);
+  const st = el("div", { class: "stats" });
+  if (isCf) st.append(el("span", { text: "Not a fitted model: the fitted parameters with sv set to 0, simulated. No likelihood." }));
+  else if (isCtl) st.append(el("span", {}, "Fitted NLL (control trials) ", el("b", { text: fmt(tot.fitted) })), el("span", {}, "Held-out NLL on pulse trials ", el("b", { text: fmt(tot.pulse) })), el("span", {}, "Free parameters ", el("b", { text: tot.k ?? "–" })));
+  else st.append(el("span", {}, "Held-out NLL, cv0–cv4 summed over 10 mice ", el("b", { text: fmt(tot.heldout) })), el("span", {}, "Fitted NLL (all trials) ", el("b", { text: fmt(tot.fitted) })), el("span", {}, "Free parameters ", el("b", { text: tot.k ?? "–" })));
+  frag.append(st);
+  frag.append(el("div", { class: "legend" }, el("span", {}, el("i", { class: "d" }), "data ± 1 SE"), el("span", {}, el("i"), "model"), el("span", {}, el("i", { class: "c" }), "model, control trials (reference)")));
+  const agg = el("section", { class: "block", id: "pooled" }, el("h3", { text: "All mice pooled" }));
+  agg.append(panelRow(D.data.all, F.all, state.measure, true));
+  frag.append(agg);
+  const per = el("section", { class: "block", id: "per-mouse" }, el("h3", { text: "Each mouse" }));
+  for (const m of D.mice) {
+    const r = (NLL[fam] || {})[m];
+    const sub = r ? (r.kind === "joint" ? `held-out ${fmt(r.heldout_nll)}` : `pulse test ${fmt(r.pulse_test_nll)}`) : `${D.n_trials[m]} trials`;
+    per.append(el("div", { class: "mouse", id: "mouse-" + m }, el("div", { class: "name" }, m, el("small", { text: sub })), panelRow(D.data[m], F[m], state.measure, false)));
+  }
+  frag.append(per);
+  return frag;
+}
+
+/* ---------- NLL tab ---------- */
+function nllView() {
+  const frag = document.createDocumentFragment();
+  const views = { heldout: ["Held-out (cv0–cv4)", "heldout_nll"], fitted: ["Fitted, all trials", "fitted_nll"], per1k: ["Held-out per 1,000 trials", null] };
+  const head = el("div", { class: "head" }, el("div", {}, el("h2", { text: "Negative log likelihood" }), el("div", { class: "sub", text: "Actual values, not differences. Lower is better." })));
+  const seg = el("div", { class: "seg", role: "group", "aria-label": "Likelihood" });
+  for (const [k, [l]] of Object.entries(views)) { const b = el("button", { type: "button", "aria-pressed": String(state.nllView === k), text: l }); b.addEventListener("click", () => { state.nllView = k; save(); render(); }); seg.append(b); }
+  head.append(el("div", { class: "controls" }, seg));
+  frag.append(head);
+  frag.append(el("p", { class: "note", text: "The likelihood is the fitting objective: censored quantile quasi-likelihood of choice and RT, responded trials. Held-out: each mouse's trials split into five folds; each fold predicted by a fit to the other four, NLL summed over folds (all trials predicted once). Fitted: the fit to all trials (no penalty for parameters). Values are comparable across models only when the trials are the same: the n row gives the held-out trial count per model, and models with different counts are marked. Highlighted: lowest value in each column. Click a column name to sort." }));
+  const fams = D.groups.flatMap(g => g.families.map(f => [g, f])).filter(([g]) => !g.label.startsWith("Control-only") && !g.label.startsWith("Counterfactual"));
+  const refN = totals("primary").n_heldout;
+  const val = (f, m) => { const r = (NLL[f] || {})[m]; if (!r) return null; if (state.nllView === "fitted") return r.fitted_nll; if (state.nllView === "per1k") return r.heldout_nll != null ? r.heldout_nll / r.n_heldout * 1000 : null; return r.heldout_nll; };
+  const tot = f => { const t = totals(f); if (state.nllView === "fitted") return t.fitted; if (state.nllView === "per1k") return t.heldout != null ? t.heldout / t.n_heldout * 1000 : null; return t.heldout; };
+  const cols = [["total", "All mice"], ...D.mice.map(m => [m, m]), ["k", "Params"], ["n", "n held-out"]];
+  const sort = state.nllSort || "total";
+  const block = el("section", { class: "block", id: "nll-joint" }, el("h3", { text: "Models fitted to all trials" }));
+  const wrap = el("div", { class: "tablewrap" }), table = el("table"), thead = el("thead"), tr = el("tr");
+  tr.append(el("th", { text: "Model" }));
+  for (const [k, l] of cols) { const b = el("button", { type: "button", text: l + (sort === k ? " ▲" : "") }); b.addEventListener("click", () => { state.nllSort = k; save(); render(); }); tr.append(el("th", {}, b)); }
+  thead.append(tr); table.append(thead);
+  const get = (f, k) => k === "total" ? tot(f) : k === "k" ? totals(f).k : k === "n" ? totals(f).n_heldout : val(f, k);
+  const best = {}; for (const [k] of cols) if (k !== "k" && k !== "n") { const vs = fams.map(([, f]) => get(f, k)).filter(v => v != null); best[k] = Math.min(...vs); }
+  let ordered = fams;
+  if (sort !== "model") ordered = [...fams].sort((a, b) => (get(a[1], sort) ?? Infinity) - (get(b[1], sort) ?? Infinity));
+  const tb = el("tbody");
+  for (const [g, f] of ordered) {
+    const r = el("tr");
+    r.append(el("td", { text: `${D.families[f].label} · ${g.label.replace("All trials, ", "")}` }));
+    for (const [k] of cols) {
+      const v = get(f, k);
+      const c = el("td", { text: k === "k" ? (v ?? "–") : k === "n" ? (v == null ? "–" : v.toLocaleString("en-US") + (refN != null && v !== refN ? " ≠" : "")) : fmt(v, state.nllView === "per1k" ? 2 : 1) });
+      if (best[k] != null && v != null && v === best[k] && k !== "k" && k !== "n") c.className = "best";
+      r.append(c);
+    }
+    tb.append(r);
+  }
+  table.append(tb); wrap.append(table); block.append(wrap); frag.append(block);
+
+  const cb = el("section", { class: "block", id: "nll-control" }, el("h3", { text: "Models fitted to control trials only" }));
+  cb.append(el("p", { class: "note", text: "Fitted on control trials; pulse trials are held out entirely. Not comparable with the table above (different trials)." }));
+  const w2 = el("div", { class: "tablewrap" }), t2 = el("table"), h2 = el("tr");
+  h2.append(el("th", { text: "Model" }), el("th", { text: "Fitted NLL, control" }), el("th", { text: "Held-out NLL, pulse trials" }), el("th", { text: "per 1,000 pulse trials" }), el("th", { text: "n pulse" }));
+  t2.append(el("thead", {}, h2));
+  const b2 = el("tbody");
+  for (const f of D.groups[0].families) { const t = totals(f); b2.append(el("tr", {}, el("td", { text: D.families[f].label }), el("td", { text: fmt(t.fitted) }), el("td", { text: fmt(t.pulse) }), el("td", { text: t.pulse != null ? fmt(t.pulse / t.n_pulse * 1000, 2) : "–" }), el("td", { text: t.n_pulse ?? "–" }))); }
+  t2.append(b2); w2.append(t2); cb.append(w2); frag.append(cb);
+  return frag;
+}
+
+function render() {
+  if (state.tab !== "nll" && !D.families[state.tab]) state.tab = "nll";
+  for (const b of document.querySelectorAll("nav.side button")) b.setAttribute("aria-selected", String(b.id === "tab-" + state.tab.replace(/[^a-zA-Z0-9]+/g, "-")));
+  const main = document.getElementById("main");
+  main.replaceChildren(state.tab === "nll" ? nllView() : modelView(state.tab));
+}
+buildSide();
+render();
+</script>
