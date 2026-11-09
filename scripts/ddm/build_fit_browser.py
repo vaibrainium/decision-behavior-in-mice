@@ -17,19 +17,30 @@ Outputs: dissemination/figures/qc/fit_browser_<date>.json and the HTML page.
 
 import argparse
 import json
+import os
+
+os.environ.setdefault("OMP_NUM_THREADS", "1")  # tiny fits: threaded BLAS only adds overhead
+os.environ.setdefault("OPENBLAS_NUM_THREADS", "1")
+os.environ.setdefault("MKL_NUM_THREADS", "1")
 from datetime import date
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from scipy import optimize, stats
 
 from scripts.ddm.compare_joint_refits import DDM, FAMILIES, FOLDS, load
 from scripts.ddm.fit_mouse_ddm import load_inputs, responded_only
 from scripts.ddm.pulse_joint_signatures import EXTRA_FAMILIES, FE_NORM, FE_POWER, REFERENCE, simulate
+import scripts.ddm.pulse_leak_urgency_signatures as PLU
 from scripts.ddm.pulse_leak_urgency_signatures import observed
 from scripts.ddm.pulse_psychometric import OUT
 
 STAGES = {1: "early", 2: "middle", 3: "late"}
+MAX_COH = 100  # all coherences, incl. the +-100% trials (pulse trials exist there too); symmetric cells as elsewhere
+RT_EDGES = np.round(np.r_[np.arange(0.3, 2.0, 0.1), 2.0, 2.25, 2.5, 3.0, 4.0, 5.0], 3)
+N_BOOT = 200  # data psychometric-fit CIs (resampling trials within each coherence)
+PSY_PARAMS = ["bias", "sigma", "lapse_left", "lapse_right"]  # bias = -PSE (% coherence, + = rightward); lapses from control
 CONDITIONS = ["control"] + [f"{st} {side}" for st in ("early", "middle", "late") for side in ("left", "right")]
 CONTROL_ONLY = {  # name: (folder, variant)
     REFERENCE: ("fits_resp_final", "L0U0V1Z0G1"),
@@ -72,7 +83,8 @@ def condition(t: pd.DataFrame) -> pd.Series:
 
 def summarize(t: pd.DataFrame) -> list[list]:
     """Rows [condition, coh, n, p_right, se_p, rt_mean, se_rt] for one table of trials."""
-    t = t.assign(cond=condition(t), right=(t.choice == 1).astype(float))
+    if "cond" not in t:
+        t = t.assign(cond=condition(t), right=(t.choice == 1).astype(float))
     g = t.groupby(["cond", "coh"])
     out = []
     for (c, coh), x in g:
@@ -81,6 +93,105 @@ def summarize(t: pd.DataFrame) -> list[list]:
         out.append([c, int(coh), n, round(p, 4), round(float(np.sqrt(p * (1 - p) / n)), 4), round(x.rt.mean(), 4),
                     round(x.rt.std(ddof=1) / np.sqrt(n), 4) if n > 1 else None])
     return out
+
+
+def _psy(c, mu, sig, gl, gr):
+    """P(right) = gl + (1 - gl - gr) * Phi((c - mu) / sig); c in % coherence. gl: lapse toward right at strong leftward
+    motion (the floor), gr: lapse toward left at strong rightward motion."""
+    return gl + (1 - gl - gr) * stats.norm.cdf((c - mu) / sig)
+
+
+def _nll(c, k, n, mu, sig, gl, gr):
+    p = np.clip(_psy(c, mu, sig, gl, gr), 1e-9, 1 - 1e-9)
+    return -np.sum(k * np.log(p) + (n - k) * np.log(1 - p))
+
+
+def fit_psy(c, k, n, lapses=None, x0=None) -> np.ndarray:
+    """Maximum likelihood on binomial counts. lapses None: fit [mu, sigma, gl, gr]; else fit [mu, sigma] with the lapses
+    fixed. sigma 0.5-500 % coherence, lapses 0-0.5, mu -100..100."""
+    if lapses is None:
+        f = lambda x: _nll(c, k, n, *x)
+        starts, bounds = ([x0] if x0 is not None else [[0, 15, .05, .05], [-10, 30, .1, .1], [10, 30, .1, .1], [0, 60, .02, .02]]), [(-100, 100), (0.5, 500), (0, 0.5), (0, 0.5)]
+    else:
+        f = lambda x: _nll(c, k, n, x[0], x[1], *lapses)
+        starts, bounds = ([x0] if x0 is not None else [[0, 15], [-15, 30], [15, 30], [0, 60]]), [(-100, 100), (0.5, 500)]
+    best = None
+    for x in starts:
+        r = optimize.minimize(f, x, method="L-BFGS-B", bounds=bounds)
+        if best is None or r.fun < best.fun:
+            best = r
+    return best.x
+
+
+def counts(t: pd.DataFrame, cond: str) -> tuple:
+    """(coh, n_right, n) for the psychometric fit. Pulse trials at +-100% exist only with the pulse opposing the motion
+    (left pulse at +100, right pulse at -100); at the other end a pulse condition borrows the control trials at that
+    coherence (author 2026-11-09: "use 100 coh if no pulse at that"), so every curve is anchored at both ends."""
+    x = t[t.cond == cond].groupby("coh").right.agg(["sum", "size"])
+    if cond != "control":
+        ctl = t[t.cond == "control"].groupby("coh").right.agg(["sum", "size"])
+        for c in (-MAX_COH, MAX_COH):
+            if c not in x.index and c in ctl.index:
+                x.loc[c] = ctl.loc[c]
+        x = x.sort_index()
+    return x.index.to_numpy(float), x["sum"].to_numpy(float), x["size"].to_numpy(float)
+
+
+def _fit_all(cnt: dict, x0: dict | None = None) -> dict:
+    """Control: 4 parameters. Pulse conditions: mu and sigma with the control lapses fixed (lapses are stimulus-independent;
+    the pulse conditions have too few trials to separate lapses from bias). Returns {cond: [bias, sigma, gl, gr]} with
+    bias = -mu (rightward shift of the curve in % coherence: positive = more rightward choices)."""
+    out = {}
+    ctl = fit_psy(*cnt["control"], x0=None if x0 is None else x0["control"])
+    out["control"] = ctl
+    for cond, (c, k, n) in cnt.items():
+        if cond != "control":
+            mu, sig = fit_psy(c, k, n, lapses=ctl[2:], x0=None if x0 is None else x0[cond][:2])
+            out[cond] = np.r_[mu, sig, ctl[2:]]
+    return out
+
+
+def psy_fits(t: pd.DataFrame, rng=None) -> dict:
+    """{condition: {"est": [bias, sigma, lapse_left, lapse_right], "lo", "hi" (95% bootstrap, data only)}}."""
+    cnt = {cond: counts(t, cond) for cond in CONDITIONS}
+    cnt = {k: v for k, v in cnt.items() if len(v[0]) >= 3}
+    if "control" not in cnt:
+        return {}
+    est = _fit_all(cnt)
+    sign = lambda v: np.r_[-v[0], v[1:]]
+    res = {cond: {"est": [round(float(x), 4) for x in sign(v)]} for cond, v in est.items()}
+    if rng is not None:
+        boots = {cond: [] for cond in est}
+        for _ in range(N_BOOT):
+            bc = {cond: (c, rng.binomial(n.astype(int), k / n).astype(float), n) for cond, (c, k, n) in cnt.items()}
+            b = _fit_all(bc, x0=est)
+            for cond in est:
+                boots[cond].append(sign(b[cond]))
+        for cond in est:
+            bs = np.array(boots[cond])
+            res[cond]["lo"] = [round(float(x), 4) for x in np.percentile(bs, 2.5, axis=0)]
+            res[cond]["hi"] = [round(float(x), 4) for x in np.percentile(bs, 97.5, axis=0)]
+    return res
+
+
+def rt_hists(t: pd.DataFrame) -> dict:
+    """{condition: [correct density per bin, error density per bin]}: defective densities (per s), i.e. count in the bin /
+    (all non-zero-coherence trials of the condition x bin width), so correct + error areas sum to 1. 0% excluded."""
+    t = t[t.coh != 0]
+    w = np.diff(RT_EDGES)
+    out = {}
+    for cond, x in t.groupby("cond"):
+        corr = x.choice.to_numpy() == np.sign(x.coh.to_numpy())
+        rt = x.rt.to_numpy()
+        hc = np.histogram(rt[corr], RT_EDGES)[0] / (len(x) * w)
+        he = np.histogram(rt[~corr], RT_EDGES)[0] / (len(x) * w)
+        out[cond] = [[round(float(v), 4) for v in hc], [round(float(v), 4) for v in he], int(len(x)), round(float(corr.mean()), 4)]
+    return out
+
+
+def describe(t: pd.DataFrame, rng=None) -> dict:
+    t = t.assign(cond=condition(t), right=(t.choice == 1).astype(float))
+    return {"rows": summarize(t), "psy": psy_fits(t, rng), "rt": rt_hists(t)}
 
 
 def nll_table(families: list[str], mice: list[str]) -> list[dict]:
@@ -132,7 +243,10 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--cache", type=Path, required=True)
     ap.add_argument("--template", type=Path, default=Path("scripts/ddm/fit_browser_template.html"))
-    ap.add_argument("--html", type=Path, required=True)
+    ap.add_argument("--html", type=Path)
+    ap.add_argument("--families", nargs="*", help="only these families (with --sim_only: fill the cache in parallel runs)")
+    ap.add_argument("--sim_only", action="store_true", help="simulate into the cache and stop")
+    ap.add_argument("--tag", default="", help="appended to the JSON name")
     args = ap.parse_args()
     inputs = load_inputs(DDM / "ddm_inputs_global_ucla_nofreeze.npz")
     with np.load(DDM / "pulse_timing_global.npz") as f:
@@ -140,28 +254,42 @@ def main():
         inputs = {**inputs, **{k: f[k] for k in ("pulse_onset_frame0", "pulse_n_frames", "pulse_coherence")}}
     inputs = responded_only(inputs)
     mice = sorted(set(inputs["subject_id"]))
+    PLU.MAX_ABS_COH = MAX_COH  # observed() reads it at call time
     obs = observed(inputs, mice)
 
-    data = {"all": summarize(obs), **{m: summarize(obs[obs.mouse == m]) for m in mice}}
+    members_all = [(g, f, l) for g, ms in GROUPS for f, l in ms if not args.families or f in args.families]
+    if args.sim_only:
+        for _, fam, _ in members_all:
+            override = {"sv": 0.0} if fam.endswith("[sv=0]") else None
+            for m in mice:
+                simulate(fam, fit_path(fam)(m), inputs, obs, m, args.cache, override)
+            print(f"simulated {fam}", flush=True)
+        return
+    rng = np.random.default_rng(0)
+    data = {"all": describe(obs, rng), **{m: describe(obs[obs.mouse == m], rng) for m in mice}}
+    print("data done", flush=True)
     fams, groups = {}, []
     for glabel, members in GROUPS:
         keys = []
         for fam, label in members:
+            if args.families and fam not in args.families:
+                continue
             override = {"sv": 0.0} if fam.endswith("[sv=0]") else None
             path = fit_path(fam)
             sims = [simulate(fam, path(m), inputs, obs, m, args.cache, override) for m in mice]
             allsim = pd.concat(sims, ignore_index=True)
-            fams[fam] = {"label": label, "group": glabel, "all": summarize(allsim),
-                         **{m: summarize(s) for m, s in zip(mice, sims)}}
+            fams[fam] = {"label": label, "group": glabel, "all": describe(allsim), **{m: describe(sm) for m, sm in zip(mice, sims)}}
             keys.append(fam)
             print(f"summarized {fam}", flush=True)
-        groups.append({"label": glabel, "families": keys})
+        if keys:
+            groups.append({"label": glabel, "families": keys})
     nll = nll_table(list(fams), mice)
     payload = {"made": date.today().isoformat(), "mice": mice, "conditions": CONDITIONS, "columns": ["cond", "coh", "n", "p", "se_p", "rt", "se_rt"],
+               "rt_edges": RT_EDGES.tolist(), "psy_params": PSY_PARAMS, "max_coh": MAX_COH,
                "data": data, "families": fams, "groups": groups, "nll": nll,
                "n_trials": {m: int((obs.mouse == m).sum()) for m in mice}}
     js = json.dumps(clean(payload), separators=(",", ":"), allow_nan=False)
-    out = OUT / f"fit_browser_{date.today().isoformat()}.json"
+    out = OUT / f"fit_browser_{date.today().isoformat()}{args.tag}.json"
     out.write_text(js)
     html = args.template.read_text().replace("/*__DATA__*/null", js)
     args.html.write_text(html)

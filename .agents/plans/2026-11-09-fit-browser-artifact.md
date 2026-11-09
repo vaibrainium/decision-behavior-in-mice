@@ -39,3 +39,12 @@ New fits; interpretation.
   counterfactuals). Checks: held-out totals equal mapping_accumulator_heldout_nll_2026-11-09_final.csv (5 families
   compared exactly); n held-out 25,493 for all 32 joint families; control-only pulse test n 11,479; page script passes
   a syntax check. Data JSON: dissemination/figures/qc/fit_browser_2026-11-09.json.
+- 2026-11-09: v2 (author: "fit the psychometric function to data and model ... (use 100 coh if no pulse at that). Also,
+  plot correct and incorrect rt distribution"). All coherences incl. +-100% (symmetric cells; models re-simulated, 30
+  reps). Psychometric fit per condition: P(right) = gl + (1-gl-gr) Phi((c-mu)/sigma), ML; lapses fitted on control and
+  shared; bias = -mu; data CIs from 200 binomial bootstrap resamples. Pulse trials at +-100% exist only with the pulse
+  against the motion, so each pulse condition borrows the control trials at the missing +-100% end (without this the
+  late slopes were sigma 78-88, CI up to 126; with it 48-52). RT: defective densities, correct/error, 0% excluded.
+  Checks: NLL table identical to v1; pooled data biases control -1.08, early L/R -6.40/+18.41, middle L/R -3.82/+9.21,
+  late L/R -1.2/+9.7; RT densities integrate to 1.000 (data and models); no sigma at bound; script syntax OK.
+  Same URL (version 2). Data JSON: dissemination/figures/qc/fit_browser_2026-11-09_v2.json (v1 kept). Build: 6 min.
