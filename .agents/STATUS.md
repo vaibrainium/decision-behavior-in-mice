@@ -38,6 +38,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-11-09-pulse-effect-bootstrap.md : data pulse mean has CI 3.2-7.9 pp (ME integrators inside); per-mouse spread real (I^2 0.83) and unexplained by every family; late reversal of leak/urgency integrators outside the data CI, sv-only integrators inside
 - reports/2026-11-09-mapping-accumulator-exploratory.md : power/norm mappings slightly better than linear (2-4 mice); integrators beat E/ES under all mappings; no family reproduces the per-mouse pulse effect; late reversal in all integrators (exploratory)
 - reports/2026-11-06-normalization-pulse-prediction.md : normalization fitted to control trials raises the mean predicted pulse effect (3.25 -> 4.71 pp, data 5.48) but not per mouse (Wilcoxon p 0.92); not better under the pre-set rule
 - reports/2026-10-31-pulse-time-weights.md : per-pulse-time weights: no held-out gain, no early>late ordering across mice; PSUIM6 alone fits early w ~3
