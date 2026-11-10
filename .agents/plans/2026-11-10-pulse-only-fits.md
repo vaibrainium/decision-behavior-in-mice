@@ -71,3 +71,8 @@ A new objective (e.g. extra weight on pulse-trial choices); decision rules.
   needed. Past the cap a task ends (requeue or TIMEOUT); autosubmit resubmits and the fit resumes from its checkpoint.
 - 2026-11-10: author ran --to_lab for the 12 PLU 16 h tasks: 4 were pending on ckpt-all (43088811_8/_18,
   43089137_48/_58) and were cancelled; all 12 now pending for gpu-a100 (submitted by the pulse_lu loop, 8 at a time).
+- 2026-11-10: the lab array 43089435 waited on "ReqNodeNotAvail, Reserved for maintenance" (16 h limit overlaps a
+  gpu-a100 maintenance reservation). Author: submit them on the shared partition (fits checkpoint). Added autosubmit
+  --now FILE: cancels still-PENDING submissions of the listed tasks, clears the lab flag, sbatches them at once on the
+  default partition (ahead of table order). Tested with stub squeue/sbatch/scancel on a copy of the state: 8 cancelled,
+  12 submitted in one array (--time=960, no -p), state submitted / attempts 1 / no partition; dry run changed nothing.

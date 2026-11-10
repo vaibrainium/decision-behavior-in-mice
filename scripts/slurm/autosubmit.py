@@ -17,6 +17,7 @@ Run from the repo root on Hyak (bash):
     tmux new -s autosubmit 'python3 scripts/slurm/autosubmit.py --watch 10'   # every 10 min until all are done
     python3 scripts/slurm/autosubmit.py --shrink_pending    # also lower the 16 h limit of imported tasks still pending
     python3 scripts/slurm/autosubmit.py --to_lab slurm-logs/to_lab.txt [--include_running]   # see task_report.py
+    python3 scripts/slurm/autosubmit.py --now FILE      # submit these tasks now on the shared partition (cancels PENDING lab copies)
     python3 scripts/slurm/autosubmit.py --tasks scripts/slurm/tasks_2026-11-10_pulse.csv --state slurm-logs/autosubmit_state_pulse.json --watch 10
         # another task table: its own state and lock file, so two loops can run side by side
 Failover (--failover_to_lab, e.g. with --watch): a task requeued after preemption on the shared partition (PENDING,
@@ -192,6 +193,48 @@ def to_lab(tasks, state, keys, include_running, dry_run):
                  attempts=max(0, s["attempts"] - (1 if qstate else 0)))  # our cancel is not a failed attempt
 
 
+def submit_now(tasks, state, keys, dry_run):
+    """Submit the listed tasks now on the default (shared) partition, ahead of the table order: a still-PENDING
+    submission is cancelled first (nothing has run, and fits checkpoint anyway); RUNNING / done tasks are left alone.
+    The lab flag is cleared, so later retries go to the shared partition too."""
+    q = queue()
+    groups = defaultdict(list)
+    for k in keys:
+        if k not in state:
+            print(f"{k}: unknown task, skipped")
+            continue
+        s = state[k]
+        jid = f"{s['job']}_{tasks[k]['index']}" if s["status"] == "submitted" else None
+        qstate = q.get(jid, (None,))[0] if jid else None
+        if s["status"] in ("done", "gave_up") or (s["status"] == "submitted" and qstate != "PENDING"):
+            print(f"{k}: {s['status']}{' ' + str(qstate) if qstate else ''}, skipped")
+            continue
+        print(f"{k}: {'cancel ' + jid + ' (PENDING) and ' if qstate else ''}submit now on the shared partition")
+        if dry_run:
+            continue
+        if qstate:
+            run(["scancel", jid])
+            s["history"].append(f"cancelled {jid} (PENDING) to submit now on the shared partition")
+            s["attempts"] = max(0, s["attempts"] - 1)
+        s.pop("partition", None)
+        s.pop("account", None)
+        s.update(status="pending", job=None, time_hours=min(MAX_HOURS, bucket(float(tasks[k]["time_hours"]))))
+        groups[(tasks[k]["batch"], s["time_hours"], tasks[k]["args"])].append(k)
+    for (batch, hours, args), ks in groups.items():
+        idx = sorted(int(tasks[k]["index"]) for k in ks)
+        cmd = ["sbatch", "--parsable", f"--array={ranges(idx)}", f"--time={int(round(hours * 60))}", SLURM_SCRIPT]
+        try:
+            job = run(cmd, env={**os.environ, "EXTRA_ARGS": args, "JOB_OFFSET": "0"}).strip().split(";")[0]
+        except subprocess.CalledProcessError as e:
+            print(f"{batch}: sbatch refused ({e.stderr.strip()}); the tasks stay pending for the watch loop")
+            continue
+        for k in ks:
+            s = state[k]
+            s.update(status="submitted", job=job, attempts=s["attempts"] + 1, submitted_at=time.time())
+            s["history"].append(f"submitted job {job} at {hours} h (--now)")
+        print(f"submitted {batch}: {len(idx)} tasks, {hours} h, job {job}")
+
+
 def sacct_states(ids):
     states = {}
     for i in range(0, len(ids), 200):
@@ -356,6 +399,7 @@ def main():
     ap.add_argument("--dry_run", action="store_true", help="print what one pass would do; change nothing")
     ap.add_argument("--shrink_pending", action="store_true", help="lower the 16 h limit of imported tasks still pending to the table estimate")
     ap.add_argument("--to_lab", type=Path, metavar="FILE", help="move the tasks listed in FILE (batch:index per line) to the lab partition")
+    ap.add_argument("--now", type=Path, metavar="FILE", help="submit the tasks listed in FILE (batch:index per line) now on the shared partition, ahead of the order")
     ap.add_argument("--include_running", action="store_true", help="with --to_lab: also cancel RUNNING tasks (their progress is lost)")
     ap.add_argument("--tasks", type=Path, default=TASKS, help="task table (default %(default)s)")
     ap.add_argument("--state", type=Path, default=STATE, help="state file; use one per task table (default %(default)s)")
@@ -374,11 +418,14 @@ def main():
     if not any(f.is_dir() or f.parent.is_dir() for f in folders):  # wrong base path would make every finished fit look failed
         sys.exit("none of the output folders exists under {}; check PROCESSED_DIR".format(PROCESSED_DIR))
     STATE.parent.mkdir(exist_ok=True)
-    if args.to_lab:
-        keys = [line.split("#")[0].strip() for line in args.to_lab.read_text().splitlines()]
+    if args.to_lab or args.now:
+        keys = [line.split("#")[0].strip() for line in (args.to_lab or args.now).read_text().splitlines()]
         with locked():
             state = load_state(tasks)
-            to_lab(tasks, state, [k for k in keys if k], args.include_running, args.dry_run)
+            if args.now:
+                submit_now(tasks, state, [k for k in keys if k], args.dry_run)
+            else:
+                to_lab(tasks, state, [k for k in keys if k], args.include_running, args.dry_run)
             if not args.dry_run:
                 save(state)
         return
