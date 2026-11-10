@@ -66,3 +66,6 @@ A new objective (e.g. extra weight on pulse-trial choices); decision rules.
   PSUIM7, with/without sv) are queued in their own 16 h arrays: scontrol top (fallback: Nice=100 on the other pending
   arrays). PLU 16 h tasks (12; power leak-only PSUIM6) not yet submitted: autosubmit --to_lab
   scripts/slurm/to_lab_pulse_lu_long_2026-11-10.txt (lab tasks are submitted first, LAB_LIMIT 8 at a time).
+- 2026-11-10: the 48 PO 16 h tasks were already submitted (job 43085922) and RUNNING: ckpt-all shows their limit as
+  9:05:00 (partition cap; same as seen 2026-11-07), so filtering squeue on 16:00:00 found nothing. scontrol top not
+  needed. Past the cap a task ends (requeue or TIMEOUT); autosubmit resubmits and the fit resumes from its checkpoint.
