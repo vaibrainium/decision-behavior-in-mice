@@ -18,6 +18,7 @@ Run from the repo root on Hyak (bash):
     python3 scripts/slurm/autosubmit.py --shrink_pending    # also lower the 16 h limit of imported tasks still pending
     python3 scripts/slurm/autosubmit.py --to_lab slurm-logs/to_lab.txt [--include_running]   # see task_report.py
     python3 scripts/slurm/autosubmit.py --now FILE      # submit these tasks now on the shared partition (cancels PENDING lab copies)
+    python3 scripts/slurm/autosubmit.py --cap_pending 6 # lower PENDING tasks' limit to 6 h (e.g. before maintenance); state follows
     python3 scripts/slurm/autosubmit.py --tasks scripts/slurm/tasks_2026-11-10_pulse.csv --state slurm-logs/autosubmit_state_pulse.json --watch 10
         # another task table: its own state and lock file, so two loops can run side by side
 Failover (--failover_to_lab, e.g. with --watch): a task requeued after preemption on the shared partition (PENDING,
@@ -235,6 +236,33 @@ def submit_now(tasks, state, keys, dry_run):
         print(f"submitted {batch}: {len(idx)} tasks, {hours} h, job {job}")
 
 
+def cap_pending(tasks, state, hours, dry_run):
+    """Lower the time limit of this table's PENDING tasks to `hours` (e.g. so they fit before a maintenance
+    reservation; fits checkpoint, so a task cut short times out, is resubmitted with twice the limit and resumes).
+    Slurm and the state are changed together, so the doubling starts from the new limit. The cut is not a failed
+    attempt (attempts - 1). RUNNING tasks are left alone; limits can only be lowered by users."""
+    q = queue()
+    n = 0
+    for k, s in state.items():
+        jid = "{}_{}".format(s["job"], tasks[k]["index"]) if s["status"] == "submitted" else None
+        if not jid or q.get(jid, (None,))[0] != "PENDING" or s["time_hours"] <= hours:
+            continue
+        cmd = ["scontrol", "update", "JobId=" + jid, "TimeLimit={}".format(int(round(hours * 60)))]
+        if dry_run:
+            print("would run:", " ".join(cmd), "  ({}, was {} h)".format(k, s["time_hours"]))
+            n += 1
+            continue
+        try:
+            run(cmd)
+        except subprocess.CalledProcessError as e:
+            print("scontrol failed for {} ({}): {}".format(jid, k, e.stderr.strip()))
+            continue
+        s["history"].append("time limit lowered {} -> {} h while pending (--cap_pending)".format(s["time_hours"], hours))
+        s.update(time_hours=float(hours), attempts=max(0, s["attempts"] - 1))
+        n += 1
+    print("{} pending tasks {}capped at {} h".format(n, "would be " if dry_run else "", hours))
+
+
 def sacct_states(ids):
     states = {}
     for i in range(0, len(ids), 200):
@@ -404,6 +432,7 @@ def main():
     ap.add_argument("--tasks", type=Path, default=TASKS, help="task table (default %(default)s)")
     ap.add_argument("--state", type=Path, default=STATE, help="state file; use one per task table (default %(default)s)")
     ap.add_argument("--failover_to_lab", action="store_true", help="tasks preempted (requeued) or failed on the shared partition continue on the lab partition")
+    ap.add_argument("--cap_pending", type=float, metavar="HOURS", help="lower the time limit of this table's PENDING tasks to HOURS (e.g. before a maintenance reservation); the state follows")
     args = ap.parse_args()
     if args.tasks != TASKS and args.state == STATE:
         sys.exit("--tasks other than the default needs its own --state file")
@@ -418,6 +447,13 @@ def main():
     if not any(f.is_dir() or f.parent.is_dir() for f in folders):  # wrong base path would make every finished fit look failed
         sys.exit("none of the output folders exists under {}; check PROCESSED_DIR".format(PROCESSED_DIR))
     STATE.parent.mkdir(exist_ok=True)
+    if args.cap_pending:
+        with locked():
+            state = load_state(tasks)
+            cap_pending(tasks, state, args.cap_pending, args.dry_run)
+            if not args.dry_run:
+                save(state)
+        return
     if args.to_lab or args.now:
         keys = [line.split("#")[0].strip() for line in (args.to_lab or args.now).read_text().splitlines()]
         with locked():
