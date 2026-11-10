@@ -1,5 +1,5 @@
 # Plan: Test the urgency-gating (UGM) corner of the leak + urgency model
-Status: active (step 4: waiting for the author to submit on Hyak)
+Status: active (step 4 done: submitting on Hyak; next: step 5 after sync)
 Created: 2026-11-10 by Claude (Opus 5.5)
 Related reports: reports/2026-10-29-pulse-leak-vs-urgency.md, reports/2026-10-22-leak-urgency-diagnosis.md,
 reports/2026-11-09-mapping-accumulator-exploratory.md; literature: dissemination/reports/pulse-leak-vs-urgency-literature-2026-10-29.md
@@ -45,7 +45,7 @@ misfit for each (L, u) pair, plus a report saying whether the UGM corner is rule
       the same input (>4 h -> 16 h: 96 tasks, power). Indices verified against build_grid (0 mismatches).
 - [x] 3b. Norm input appended (UGM_{joint,pulse}_norm, rows 481-720; first 480 rows byte-identical; 0 index
       mismatches; limits from fits_joint_norm_integrators L1U1V1Z0G1: 168 of 240 at 16 h). Smoke fit norm + ugm OK.
-- [ ] 4. Author: pull and submit on Hyak (720 tasks):
+- [x] 4. Author: pull and submit on Hyak (720 tasks):
       python3 scripts/slurm/autosubmit.py --tasks scripts/slurm/tasks_2026-11-10_ugm.csv --state slurm-logs/autosubmit_state_ugm.json --watch 10
       (--dry_run first). Do not change the table once pulled.
 - [ ] 5. Sync; check bound-hitting (leak at 2 or 20, urgency at 0 or 50, drift_gain at 50, a at 9.5) and convergence.
@@ -72,3 +72,7 @@ misfit for each (L, u) pair, plus a report saying whether the UGM corner is rule
   to lift).
 - 2026-11-10: author added the normalized input to the same table. Appended as new batches (not regenerated in
   place) so any already-pulled batch:index stays valid.
+- 2026-11-10: author submitted (loop --watch 10, state slurm-logs/autosubmit_state_ugm.json; 2026-11-09 20:10 Hyak time):
+  first pass 333 tasks: UGM_joint_linear all 120 (jobs 43092429-43092433), UGM_joint_norm all 120 (43092434-43092436),
+  UGM_joint_power 93 (43092437-43092441); 27 joint power and all pulse-only batches pending for free slots.
+  autosubmit grouped the table limits into 2/3/4/6/8/16 h arrays.
