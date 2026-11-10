@@ -69,3 +69,5 @@ A new objective (e.g. extra weight on pulse-trial choices); decision rules.
 - 2026-11-10: the 48 PO 16 h tasks were already submitted (job 43085922) and RUNNING: ckpt-all shows their limit as
   9:05:00 (partition cap; same as seen 2026-11-07), so filtering squeue on 16:00:00 found nothing. scontrol top not
   needed. Past the cap a task ends (requeue or TIMEOUT); autosubmit resubmits and the fit resumes from its checkpoint.
+- 2026-11-10: author ran --to_lab for the 12 PLU 16 h tasks: 4 were pending on ckpt-all (43088811_8/_18,
+  43089137_48/_58) and were cancelled; all 12 now pending for gpu-a100 (submitted by the pulse_lu loop, 8 at a time).
