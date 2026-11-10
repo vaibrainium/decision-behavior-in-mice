@@ -8,18 +8,18 @@
 :root {
   --bg: #f4f6f8; --panel: #ffffff; --ink: #18212b; --muted: #5d6b7a; --rule: #d5dce3;
   --accent: #1d6fa5; --accent-soft: rgba(29, 111, 165, 0.16);
-  --left: #b4462f; --right: #2b7a52; --ctrl: #8a96a3; --err: #b4462f; --data-fill: rgba(24, 33, 43, 0.16);
+  --left: #c0392b; --right: #2f62b0; --ctrl: #8a96a3; --err: #b4462f; --data-fill: rgba(24, 33, 43, 0.16);
   --sel-bg: #e3eef6; --best: #e6f2ea; --best-ink: #1f5e3c;
   --f-body: "Public Sans", "Segoe UI", system-ui, sans-serif;
   --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #11161c; --panel: #182029; --ink: #e3e9ef; --muted: #93a1b0; --rule: #2c3846;
-  --accent: #5fb0e8; --accent-soft: rgba(95, 176, 232, 0.2); --left: #ec7c63; --right: #5cc490; --ctrl: #7d8a98; --err: #ec7c63;
+  --accent: #5fb0e8; --accent-soft: rgba(95, 176, 232, 0.2); --left: #ef7b6a; --right: #74a4ec; --ctrl: #7d8a98; --err: #ec7c63;
   --data-fill: rgba(227, 233, 239, 0.18); --sel-bg: #1c3347; --best: #183427; --best-ink: #8fdcb0; color-scheme: dark } }
 :root[data-theme="dark"] {
   --bg: #11161c; --panel: #182029; --ink: #e3e9ef; --muted: #93a1b0; --rule: #2c3846;
-  --accent: #5fb0e8; --accent-soft: rgba(95, 176, 232, 0.2); --left: #ec7c63; --right: #5cc490; --ctrl: #7d8a98; --err: #ec7c63;
+  --accent: #5fb0e8; --accent-soft: rgba(95, 176, 232, 0.2); --left: #ef7b6a; --right: #74a4ec; --ctrl: #7d8a98; --err: #ec7c63;
   --data-fill: rgba(227, 233, 239, 0.18); --sel-bg: #1c3347; --best: #183427; --best-ink: #8fdcb0; color-scheme: dark }
 body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 14px; line-height: 1.45 }
 .wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 20px 40px }
@@ -51,6 +51,14 @@ section.block { background: var(--panel); border: 1px solid var(--rule); border-
 section.block > h3 { margin: 0 0 10px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted) }
 .row { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 8px }
 .row.big { gap: 10px }
+.row4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px }
+svg .s-right { stroke: var(--right) } svg .s-left { stroke: var(--left) } svg .s-control { stroke: var(--ink) }
+svg .f-right { fill: var(--right) } svg .f-left { fill: var(--left) } svg .f-control { fill: var(--ink) }
+svg .gd { fill: none; stroke-width: 1.8 } svg .gm { fill: none; stroke-width: 1.5; stroke-dasharray: 5 3 }
+svg .gmp { fill: var(--panel); stroke-width: 1.2 } svg .gbar { stroke-width: 1 }
+.legend i.rd { border-top-color: var(--right) } .legend i.ld { border-top-color: var(--left) } .legend i.gm { border-top: 2px dashed var(--muted) } .legend i.gd { border-top: 2px solid var(--muted) }
+.legend i.mo { width: 7px; height: 7px; border: 1.2px solid var(--muted); border-radius: 50%; background: none }
+.legend i.do { width: 7px; height: 7px; border: 0; border-radius: 50%; background: var(--muted) }
 .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px }
 .grid5 { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px }
 .mouse { display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: 8px; align-items: center; padding-block: 6px; border-top: 1px solid var(--rule) }
@@ -59,6 +67,7 @@ section.block > h3 { margin: 0 0 10px; font-size: 13px; text-transform: uppercas
 .mouse .name small { display: block; color: var(--muted); font-weight: 400 }
 .panel { min-width: 0 }
 .panel .t { font-size: 11.5px; font-weight: 600; margin-bottom: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+.panel .s.left { color: var(--left) } .panel .s.right { color: var(--right) }
 .panel .t.left { color: var(--left) } .panel .t.right { color: var(--right) } .panel .t.control { color: var(--muted) }
 .panel .s { font-family: var(--f-mono); font-size: 10px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-variant-numeric: tabular-nums }
 svg.chart { display: block; width: 100%; height: auto; overflow: visible }
@@ -93,6 +102,7 @@ td.best { background: var(--best); color: var(--best-ink); font-weight: 600 }
   .layout { grid-template-columns: minmax(0, 1fr) }
   nav.side { position: static; max-height: 260px }
   .row { grid-template-columns: repeat(4, minmax(0, 1fr)) }
+  .row4 { grid-template-columns: repeat(2, minmax(0, 1fr)) }
   .mouse { grid-template-columns: minmax(0, 1fr) }
   .grid2 { grid-template-columns: minmax(0, 1fr) }
 }
@@ -153,13 +163,9 @@ function tabButton(id, label, cls) {
   return b;
 }
 
-/* ---------- coherence axis: levels evenly spaced, piecewise-linear between ---------- */
-const LEVELS = [-100, -36, -18, -9, 0, 9, 18, 36, 100];
-function cohPos(c) { // 0..1
-  if (c <= LEVELS[0]) return 0; if (c >= LEVELS[LEVELS.length - 1]) return 1;
-  for (let i = 0; i < LEVELS.length - 1; i++) if (c <= LEVELS[i + 1]) return (i + (c - LEVELS[i]) / (LEVELS[i + 1] - LEVELS[i])) / (LEVELS.length - 1);
-  return 1;
-}
+/* ---------- coherence axis: linear, -100..100 ---------- */
+const cohPos = c => (Math.max(-100, Math.min(100, c)) + 100) / 200;
+const COH_TICKS = [-100, -36, 0, 36, 100];
 const psyP = (c, p) => p[2] + (1 - p[3] - p[2]) / (1 + Math.exp(-p[1] * (c - p[0]))); // pmf_utils logit_4, p = [mean, beta, lapse_rate, guess_rate]
 const rowsOf = (d, cond) => (d && d.rows || []).filter(r => r[COL.cond] === cond).sort((a, b) => a[COL.coh] - b[COL.coh]);
 
@@ -169,56 +175,6 @@ function frame(W, H, L, B, T, R) {
   return s;
 }
 
-/* psychometric panel */
-function psyChart(cond, dd, md, big) {
-  const W = 210, H = big ? 158 : 124, L = 26, R = 6, T = 6, B = 18;
-  const x = c => L + cohPos(c) * (W - L - R), y = v => T + (1 - v) * (H - T - B);
-  const s = frame(W, H, L, B, T, R);
-  s.setAttribute("aria-label", `${COND_LABEL[cond]}: P(right) vs coherence, data and model with fitted curves`);
-  for (const c of [-100, -36, 0, 36, 100]) s.append(txt(x(c), H - 5, c, "tick"));
-  for (const v of [0, 0.5, 1]) s.append(txt(L - 4, y(v) + 3, v, "tick", "end"));
-  s.append(sv("line", { x1: L, x2: W - R, y1: y(0.5), y2: y(0.5), class: "ref" }), sv("line", { x1: x(0), x2: x(0), y1: T, y2: H - B, class: "ref" }));
-  const curve = (p, cls) => { if (!p || p.some(v => v == null)) return; const pts = []; for (let i = 0; i <= 120; i++) { const c = -100 + 200 * i / 120; pts.push(`${x(c).toFixed(1)},${y(psyP(c, p)).toFixed(1)}`); } s.append(sv("polyline", { points: pts.join(" "), class: cls })); };
-  const mp = md && md.psy[cond], dp = dd && dd.psy[cond], mc = md && md.psy.control;
-  if (cond !== "control" && mc) curve(mc.est, "cfit");
-  if (dp) curve(dp.est, "dfit");
-  if (mp) curve(mp.est, "mfit");
-  for (const r of rowsOf(md, cond)) s.append(sv("circle", { cx: x(r[COL.coh]), cy: y(r[COL.p]), r: big ? 2.6 : 2.1, class: "mpt" }));
-  const mrows = rowsOf(md, cond);
-  for (const r of rowsOf(dd, cond)) {
-    const cx = x(r[COL.coh]), e = r[COL.se_p] || 0;
-    s.append(sv("line", { x1: cx, x2: cx, y1: y(Math.min(1, r[COL.p] + e)), y2: y(Math.max(0, r[COL.p] - e)), class: "dbar" }));
-    const c = sv("circle", { cx, cy: y(r[COL.p]), r: big ? 2.7 : 2.2, class: "dpt" });
-    const m = mrows.find(q => q[COL.coh] === r[COL.coh]);
-    const t = sv("title"); t.textContent = `${COND_LABEL[cond]}, coherence ${r[COL.coh]}%: data P(right) ${r[COL.p].toFixed(3)} ± ${e.toFixed(3)} (n=${r[COL.n]})${m ? `; model ${m[COL.p].toFixed(3)}` : ""}`;
-    c.append(t); s.append(c);
-  }
-  return s;
-}
-
-/* mean RT panel */
-function rtChart(cond, dd, md, yr, big) {
-  const W = 210, H = big ? 150 : 118, L = 30, R = 6, T = 6, B = 18;
-  const x = c => L + cohPos(c) * (W - L - R), y = v => T + (1 - (v - yr[0]) / (yr[1] - yr[0])) * (H - T - B);
-  const s = frame(W, H, L, B, T, R);
-  s.setAttribute("aria-label", `${COND_LABEL[cond]}: mean RT vs coherence, data and model`);
-  for (const c of [-100, -36, 0, 36, 100]) s.append(txt(x(c), H - 5, c, "tick"));
-  for (const v of [yr[0], (yr[0] + yr[1]) / 2, yr[1]]) s.append(txt(L - 4, y(v) + 3, v.toFixed(2), "tick", "end"));
-  s.append(sv("line", { x1: x(0), x2: x(0), y1: T, y2: H - B, class: "ref" }));
-  const line = (rs, cls) => { const p = rs.filter(r => r[COL.rt] != null).map(r => `${x(r[COL.coh]).toFixed(1)},${y(r[COL.rt]).toFixed(1)}`); if (p.length > 1) s.append(sv("polyline", { points: p.join(" "), class: cls })); };
-  if (cond !== "control") line(rowsOf(md, "control"), "cfit");
-  line(rowsOf(md, cond), "mfit");
-  const mrows = rowsOf(md, cond);
-  for (const r of rowsOf(dd, cond)) {
-    const cx = x(r[COL.coh]), e = r[COL.se_rt] || 0;
-    s.append(sv("line", { x1: cx, x2: cx, y1: y(Math.min(yr[1], r[COL.rt] + e)), y2: y(Math.max(yr[0], r[COL.rt] - e)), class: "dbar" }));
-    const c = sv("circle", { cx, cy: y(r[COL.rt]), r: big ? 2.7 : 2.2, class: "dpt" });
-    const m = mrows.find(q => q[COL.coh] === r[COL.coh]);
-    const t = sv("title"); t.textContent = `${COND_LABEL[cond]}, coherence ${r[COL.coh]}%: data mean RT ${r[COL.rt].toFixed(3)} s ± ${e.toFixed(3)} (n=${r[COL.n]})${m ? `; model ${m[COL.rt].toFixed(3)} s` : ""}`;
-    c.append(t); s.append(c);
-  }
-  return s;
-}
 function rtRange(tabs) {
   let lo = Infinity, hi = -Infinity;
   for (const d of tabs) for (const r of (d && d.rows) || []) { const v = r[COL.rt], e = r[COL.se_rt] || 0; if (v != null) { lo = Math.min(lo, v - e); hi = Math.max(hi, v + e); } }
@@ -251,8 +207,58 @@ function rtdChart(cond, dd, md, ymax, big) {
 }
 function rtdMax(tabs) { let m = 0; for (const d of tabs) for (const h of Object.values((d && d.rt) || {})) for (const v of h[0].concat(h[1])) m = Math.max(m, v); return m || 1; }
 
+/* grouped panels (psychometric, mean RT): control, then early / middle / late with left and right overlaid */
+const STAGES = [["control", ["control"]], ["Early pulse", ["early left", "early right"]], ["Middle pulse", ["middle left", "middle right"]], ["Late pulse", ["late left", "late right"]]];
+function groupChart(view, conds, dd, md, yr, big) {
+  const W = 240, H = big ? 190 : 150, L = 30, R = 6, T = 6, B = 18;
+  const isP = view === "psy", lo = isP ? 0 : yr[0], hi = isP ? 1 : yr[1], val = isP ? COL.p : COL.rt, se = isP ? COL.se_p : COL.se_rt;
+  const x = c => L + cohPos(c) * (W - L - R), y = v => T + (1 - (v - lo) / (hi - lo)) * (H - T - B);
+  const s = frame(W, H, L, B, T, R);
+  s.setAttribute("aria-label", `${conds.map(c => COND_LABEL[c]).join(" and ")}: ${isP ? "P(right)" : "mean RT"} vs coherence, data (filled, solid fit) and model (open, dashed)`);
+  for (const c of COH_TICKS) s.append(txt(x(c), H - 5, c, "tick"));
+  for (const v of isP ? [0, 0.5, 1] : [lo, (lo + hi) / 2, hi]) s.append(txt(L - 4, y(v) + 3, isP ? v : v.toFixed(2), "tick", "end"));
+  if (isP) s.append(sv("line", { x1: L, x2: W - R, y1: y(0.5), y2: y(0.5), class: "ref" }));
+  s.append(sv("line", { x1: x(0), x2: x(0), y1: T, y2: H - B, class: "ref" }));
+  for (const cond of conds) {
+    const k = sideOf(cond);
+    const curve = (p, cls) => { if (!p || p.some(v => v == null)) return; const pts = []; for (let i = 0; i <= 160; i++) { const c = -100 + 200 * i / 160; pts.push(`${x(c).toFixed(1)},${y(psyP(c, p)).toFixed(1)}`); } s.append(sv("polyline", { points: pts.join(" "), class: `${cls} s-${k}` })); };
+    const line = (rs, cls) => { const p = rs.filter(r => r[val] != null).map(r => `${x(r[COL.coh]).toFixed(1)},${y(r[val]).toFixed(1)}`); if (p.length > 1) s.append(sv("polyline", { points: p.join(" "), class: `${cls} s-${k}` })); };
+    if (isP) { const a = dd && dd.psy[cond], b = md && md.psy[cond]; if (b) curve(b.est, "gm"); if (a) curve(a.est, "gd"); }
+    else { line(rowsOf(md, cond), "gm"); line(rowsOf(dd, cond), "gd"); }
+    const mrows = rowsOf(md, cond);
+    for (const r of mrows) if (r[val] != null) s.append(sv("circle", { cx: x(r[COL.coh]), cy: y(r[val]), r: big ? 2.6 : 2.1, class: `gmp s-${k}` }));
+    for (const r of rowsOf(dd, cond)) {
+      if (r[val] == null) continue;
+      const cx = x(r[COL.coh]), e = r[se] || 0;
+      s.append(sv("line", { x1: cx, x2: cx, y1: y(Math.min(hi, r[val] + e)), y2: y(Math.max(lo, r[val] - e)), class: `gbar s-${k}` }));
+      const c = sv("circle", { cx, cy: y(r[val]), r: big ? 2.8 : 2.3, class: `f-${k}` });
+      const m = mrows.find(q => q[COL.coh] === r[COL.coh]);
+      const t = sv("title"); t.textContent = `${COND_LABEL[cond]}, coherence ${r[COL.coh]}%: data ${isP ? `P(right) ${r[val].toFixed(3)} ± ${e.toFixed(3)}` : `mean RT ${r[val].toFixed(3)} s ± ${e.toFixed(3)}`} (n=${r[COL.n]})${m && m[val] != null ? `; model ${m[val].toFixed(3)}` : ""}`;
+      c.append(t); s.append(c);
+    }
+  }
+  return s;
+}
+function stageRow(view, dd, md, big) {
+  const row = el("div", { class: "row4" });
+  const yr = view === "rt" ? rtRange([dd, md]) : null;
+  for (const [title, conds] of STAGES) {
+    const sub = conds.map(c => {
+      const n = rowsOf(dd, c).reduce((a, r) => a + r[COL.n], 0);
+      if (view !== "psy") return `${conds.length > 1 ? sideOf(c) + " " : ""}n=${n}`;
+      const a = dd && dd.psy[c], b = md && md.psy[c];
+      return `${conds.length > 1 ? sideOf(c) + ": " : ""}mean ${a ? fmt(a.est[0]) : "–"} | ${b ? fmt(b.est[0]) : "–"} (n=${n})`;
+    });
+    const head = el("div", { class: "t" }, title === "control" ? "Control" : title);
+    const subs = conds.map((c, i) => el("div", { class: "s " + sideOf(c), text: sub[i] }));
+    row.append(el("div", { class: "panel" }, head, ...subs, groupChart(view, conds, dd, md, yr, big)));
+  }
+  return row;
+}
+
 /* one row of 7 panels */
 function conditionRow(view, dd, md, big) {
+  if (view === "psy" || view === "rt") return stageRow(view, dd, md, big);
   const row = el("div", { class: "row" + (big ? " big" : "") });
   const yr = view === "rt" ? rtRange([dd, md]) : null, ym = view === "rtd" ? rtdMax([dd, md]) : null;
   for (const cond of D.conditions) {
@@ -260,7 +266,7 @@ function conditionRow(view, dd, md, big) {
     let sub = "";
     if (view === "psy") { const a = dd && dd.psy[cond], b = md && md.psy[cond]; sub = `mean ${a ? fmt(a.est[0]) : "–"} | ${b ? fmt(b.est[0]) : "–"}`; }
     if (view === "rtd") { const a = dd && dd.rt[cond], b = md && md.rt[cond]; sub = `correct ${a ? fmt(a[3] * 100, 0) : "–"}% | ${b ? fmt(b[3] * 100, 0) : "–"}%`; }
-    const chart = view === "psy" ? psyChart(cond, dd, md, big) : view === "rt" ? rtChart(cond, dd, md, yr, big) : rtdChart(cond, dd, md, ym, big);
+    const chart = rtdChart(cond, dd, md, ym, big);
     row.append(el("div", { class: "panel" }, el("div", { class: "t " + sideOf(cond), text: `${COND_LABEL[cond]} · n=${n}` }), sub ? el("div", { class: "s", text: sub + " (data | model)" }) : null, chart));
   }
   return row;
@@ -303,15 +309,15 @@ function parBlock(dd, md, big) {
 
 /* ---------- model tab ---------- */
 const LEGENDS = {
-  psy: [["d", "data ± 1 SE"], ["df", "data fit"], ["m", "model (simulated)"], ["", "model fit"], ["c", "model fit, control (reference)"]],
-  rt: [["d", "data ± 1 SE"], ["", "model"], ["c", "model, control (reference)"]],
+  psy: [["rd", "rightward pulse"], ["ld", "leftward pulse"], ["do", "data ± 1 SE"], ["gd", "data fit"], ["mo", "model (simulated)"], ["gm", "model fit"]],
+  rt: [["rd", "rightward pulse"], ["ld", "leftward pulse"], ["do", "data ± 1 SE"], ["gd", "data"], ["mo", "model (simulated)"], ["gm", "model"]],
   rtd: [["box", "data"], ["", "model, correct"], ["e", "model, errors"]],
   par: [["d", "data, 95% bootstrap CI"], ["dia", "model"]],
 };
 const VIEW_NOTES = {
-  psy: "Fit: your psychometric function (src/utils/pmf_utils.py, model logit_4 as in config/main.yaml): P(right) = lapse_rate + (1 − guess_rate − lapse_rate) / (1 + exp(−beta·(coherence − mean))), weighted least squares on the proportion right per coherence with weights √n, default bounds (mean ±100, beta 1e-5–30, lapse and guess 1e-5–0.4). Every condition is fitted on its own with all four parameters free. Pulse trials at ±100% exist only with the pulse against the motion (left pulse at +100%, right pulse at −100%); at the other end each pulse condition's fit uses the control trials at that coherence (not plotted as points). Same procedure for data and model. Panel subtitle: fitted mean, data | model. x axis: coherence levels evenly spaced.",
+  psy: "Fit: your psychometric function (src/utils/pmf_utils.py, model logit_4 as in config/main.yaml): P(right) = lapse_rate + (1 − guess_rate − lapse_rate) / (1 + exp(−beta·(coherence − mean))), weighted least squares on the proportion right per coherence with weights √n, default bounds (mean ±100, beta 1e-5–30, lapse and guess 1e-5–0.4). Every condition is fitted on its own with all four parameters free. Pulse trials at ±100% exist only with the pulse against the motion (left pulse at +100%, right pulse at −100%); at the other end each pulse condition's fit uses the control trials at that coherence (not plotted as points). Same procedure for data and model. Panels: control, then early, middle and late pulses with left (red) and right (blue) overlaid; subtitles give the fitted mean, data | model. Linear coherence axis.",
   rtd: "Correct responses above the line, errors below, as defective densities (per s): each condition's correct and error areas sum to 1, so their relative size shows accuracy. 0% coherence excluded (no correct answer). All other coherences of the condition pooled; the model uses the same trials as the data. Log time axis, 0.3–5 s.",
-  rt: "Mean response time of responded trials per coherence.",
+  rt: "Mean response time of responded trials per coherence. Linear coherence axis.",
   par: "Fitted psychometric parameters per condition (see Psychometric fits). Data CIs: 200 bootstrap resamples (binomial, within each coherence), each refitted with the same method. With four free parameters and 8 coherences, lapse/guess trade off against mean in conditions with few trials (late pulses, single mice): read wide CIs there as poorly constrained fits.",
 };
 function modelView(fam) {

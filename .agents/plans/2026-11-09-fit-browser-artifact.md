@@ -56,3 +56,8 @@ New fits; interpretation.
   0.147, guess 0.120); NLL and RT data identical to v2; 0 failed fits; syntax OK. Caveat shown on the page: with 4 free
   parameters, late-pulse and single-mouse fits are poorly constrained (lapse/guess trade off with mean; e.g. pooled late
   left guess 0.27, mean -17.7, CI -34 to -4). JSON: fit_browser_2026-11-10_v3.json. Same URL, version 3.
+- 2026-11-10: v3.1 (author: "why is x-axis not linear? also, make 4 plots"). The evenly spaced coherence axis was my
+  choice (to separate 0-36%); now linear -100..100. Psychometric and mean-RT views: 4 panels (control; early, middle,
+  late with left red / right blue overlaid; data filled + solid fit, model open + dashed). RT distributions keep 7
+  panels. Template only; HTML filled from fit_browser_2026-11-10_v3.json (data unchanged). Checks: syntax; page script
+  run in node with a DOM stub over 2 families x 4 views: no exceptions, no NaN coordinates. Same URL.
