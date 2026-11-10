@@ -1,0 +1,13 @@
+# PLU tasks with 16 h limits (power leak-only PSUIM6, with and without sv): submit first, on the lab GPUs
+PLU_power:8  # PSUIM6 L1U0V1Z0G1 pcv0
+PLU_power:18  # PSUIM6 L1U0V0Z0G1 pcv0
+PLU_power:48  # PSUIM6 L1U0V1Z0G1 pcv1
+PLU_power:58  # PSUIM6 L1U0V0Z0G1 pcv1
+PLU_power:88  # PSUIM6 L1U0V1Z0G1 pcv2
+PLU_power:98  # PSUIM6 L1U0V0Z0G1 pcv2
+PLU_power:128  # PSUIM6 L1U0V1Z0G1 pcv3
+PLU_power:138  # PSUIM6 L1U0V0Z0G1 pcv3
+PLU_power:168  # PSUIM6 L1U0V1Z0G1 pcv4
+PLU_power:178  # PSUIM6 L1U0V0Z0G1 pcv4
+PLU_power:208  # PSUIM6 L1U0V1Z0G1 pulse
+PLU_power:218  # PSUIM6 L1U0V0Z0G1 pulse
