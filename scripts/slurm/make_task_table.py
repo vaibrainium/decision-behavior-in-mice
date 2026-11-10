@@ -12,7 +12,7 @@ limit for a task that times out.
 Run locally (needs the synced fits): python -m scripts.slurm.make_task_table
 Writes scripts/slurm/tasks_<date>.csv (a new file per date).
 
---pulse: the pulse-only fits of plans/2026-11-10-pulse-only-fits.md (linear and power x primary / leak+urgency, with and
+--pulse: the pulse-only fits of plans/2026-11-10-pulse-only-fits.md (linear and power x primary / leak / urgency / leak+urgency, with and
 without sv, splits pcv0-pcv4 + pulse) -> scripts/slurm/tasks_<date>_pulse.csv. Time limits (author 2026-11-10: 16 h only
 for the fits that needed long before): a task whose earlier counterpart (same mouse, input mapping and accumulator, with
 sv, joint fits, slowest split) took more than LONG_HOURS gets 16 h; the others get limit(that runtime).
@@ -76,7 +76,7 @@ def limit(hours: float) -> float:
 
 LONG_HOURS = 4.0
 PULSE_SPLITS = ["pcv0", "pcv1", "pcv2", "pcv3", "pcv4", "pulse"]
-PULSE_VARIANTS = ["L0U0V1Z0G1", "L0U0V0Z0G1", "L1U1V1Z0G1", "L1U1V0Z0G1"]
+PULSE_VARIANTS = ["L0U0V1Z0G1", "L0U0V0Z0G1", "L1U0V1Z0G1", "L1U0V0Z0G1", "L0U1V1Z0G1", "L0U1V0Z0G1", "L1U1V1Z0G1", "L1U1V0Z0G1"]
 PJ = "--responded_only --guess_model fast_only --inputs ddm/ddm_inputs_global_ucla_nofreeze.npz --n_reps 15"
 # name, priority, args, folder of the earlier joint fits used for the runtime
 PULSE_BATCHES = [

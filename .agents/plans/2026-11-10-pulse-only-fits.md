@@ -24,8 +24,8 @@ can the family reproduce the pulse behaviour when it is not also constrained by 
 ## Steps
 - [x] 1. fit_mouse_ddm.py: add split "pulse" (train pulse trials, test control trials) and optionally "pcv0-pcv4"
       (5-fold CV within pulse trials), outside ALL_SPLITS so existing job ids are unchanged. Local smoke test.
-- [x] 2a. Scope (author 2026-11-10): linear and power x primary and leak+urgency, each with and without sv
-      (L0U0V1Z0G1, L0U0V0Z0G1, L1U1V1Z0G1, L1U1V0Z0G1); splits pcv0-pcv4 + pulse; checkpointing on. 480 tasks:
+- [x] 2a. Scope (author 2026-11-10): linear and power x primary, leak, urgency and leak+urgency, each with and without
+      sv (8 variants); splits pcv0-pcv4 + pulse; checkpointing on. 960 tasks:
       scripts/slurm/tasks_2026-11-10_pulse.csv (make_task_table --pulse), out ddm/fits_pulse_{linear,power}_integrators.
 - [ ] 2b. Author submits with autosubmit --tasks/--state (own state + lock file).
 - [ ] 3. Sync; simulate the pulse-only fits; add a "Pulse-only fits" group to the fit browser.
@@ -51,3 +51,6 @@ A new objective (e.g. extra weight on pulse-trial choices); decision rules.
   and accumulator (with sv; slowest split) > 4 h -> 16 h (power leak+urgency, with and without sv: DBM6 6.6, PSUIM5
   4.1, PSUIM6 6.1, PSUIM7 4.7 h; 48 tasks); others limit(runtime) = 1-6.5 h. Task indices verified against
   build_grid. autosubmit.py: --tasks / --state (own lock), so this loop runs beside the old one.
+- 2026-11-10: author added leak only and urgency only (linear and power); with and without sv as for the others
+  (assumed, stated to the author). Table regenerated before any submission (indices changed; the 480-task version was
+  never pushed or submitted): 960 tasks, 16 h for 60 (adds power leak PSUIM6, before 4.8 h, with and without sv).
