@@ -76,3 +76,4 @@ A new objective (e.g. extra weight on pulse-trial choices); decision rules.
   --now FILE: cancels still-PENDING submissions of the listed tasks, clears the lab flag, sbatches them at once on the
   default partition (ahead of table order). Tested with stub squeue/sbatch/scancel on a copy of the state: 8 cancelled,
   12 submitted in one array (--time=960, no -p), state submitted / attempts 1 / no partition; dry run changed nothing.
+- 2026-11-10: author ran --now: 8 lab copies cancelled, all 12 PLU 16 h tasks submitted on the shared partition as job 43089560.
