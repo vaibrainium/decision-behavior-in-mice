@@ -117,7 +117,7 @@ def pulse_main(table):
 
 # Urgency-gating variant (plan 2026-11-10-ugm-corner-leak-urgency): fit_mouse_ddm --ugm on leak + urgency with and without
 # sv, linear and power input, joint fits (cv0-cv4, all) and pulse-only fits (pcv0-pcv4, pulse) -> tasks_2026-11-10_ugm.csv
-# (own autosubmit state). Runtime from the same mouse's joint L1U1V1Z0G1 fit with the same input (slowest split).
+# (own autosubmit state); norm input appended as UGM_{joint,pulse}_norm. Runtime from the same mouse's joint L1U1V1Z0G1 fit with the same input (slowest split).
 UGM_VARIANTS = ["L1U1V1Z0G1", "L1U1V0Z0G1"]
 UGM_ARGS = PJ + " --ugm"
 
@@ -129,6 +129,9 @@ def ugm_batches():
     for mapping, fe, analog in [("linear", "", "fits_joint_unfreeze_integrators"), ("power", " --front_end power", "fits_joint_power_integrators")]:
         for kind, splits in [("joint", joint), ("pulse", pulse)]:
             out.append((f"UGM_{kind}_{mapping}", 0, f"{UGM_ARGS}{fe} --variants {v} --splits {' '.join(splits)} --out_dir ddm/fits_{kind}_{mapping}_ugm", splits, analog))
+    # Normalized input (author 2026-11-10), appended after the first 480 rows so their batch:index never change.
+    for kind, splits in [("joint", joint), ("pulse", pulse)]:
+        out.append((f"UGM_{kind}_norm", 0, f"{UGM_ARGS} --front_end norm --variants {v} --splits {' '.join(splits)} --out_dir ddm/fits_{kind}_norm_ugm", splits, "fits_joint_norm_integrators"))
     return out
 
 
@@ -144,7 +147,9 @@ def ugm_main():
                          "est_hours": round(base, 2), "time_hours": FIRST_MAX_HOURS if base > LONG_HOURS else limit(base), "args": args})
     df = pd.DataFrame(rows)
     out = Path(__file__).with_name("tasks_2026-11-10_ugm.csv")
-    assert not out.exists(), f"{out} exists; not overwriting"
+    if out.exists():  # only appending is allowed: the committed rows must come back unchanged
+        old = pd.read_csv(out)
+        assert df.head(len(old)).astype(str).reset_index(drop=True).equals(old.astype(str)), f"{out}: existing rows would change; not overwriting"
     df.to_csv(out, index=False)
     print(df.groupby(["batch", "time_hours"]).size().to_string())
     print(f"\n{len(df)} tasks -> {out}")
