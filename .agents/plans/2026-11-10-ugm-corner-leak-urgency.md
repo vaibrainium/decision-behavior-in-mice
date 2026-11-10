@@ -76,3 +76,8 @@ misfit for each (L, u) pair, plus a report saying whether the UGM corner is rule
   first pass 333 tasks: UGM_joint_linear all 120 (jobs 43092429-43092433), UGM_joint_norm all 120 (43092434-43092436),
   UGM_joint_power 93 (43092437-43092441); 27 joint power and all pulse-only batches pending for free slots.
   autosubmit grouped the table limits into 2/3/4/6/8/16 h arrays.
+- 2026-11-10: Hyak maintenance reservation November10_Maintenance 2026-11-10 09:00 to 2026-11-11 09:00 blocked the
+  long arrays (ReqNodeNotAvail). Added autosubmit --cap_pending HOURS (b7bcbb6; lowers PENDING tasks' limit in Slurm and
+  state together, cut not counted as an attempt; stub-tested). Author ran it with 11.0 h: 34 UGM tasks capped (joint
+  power 16 h array 43092441; dry run listed 35, one started running in between); PO/PLU had none above 11 h.
+  Capped fits that do not converge time out, are resubmitted at 22 h and resume from their checkpoints after maintenance.
