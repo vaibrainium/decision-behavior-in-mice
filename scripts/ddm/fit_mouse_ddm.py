@@ -20,6 +20,8 @@ Model space: leak, urgency (time_constant), sv, sz and fast guesses each on/off 
     split = "cv<k>"   train on all folds but k (stratified by condition), score held-out NLL on fold k
     split = "all"     fit all trials (parameters for reporting)
     split = "control" fit control trials only (for predicting pulse trials out of sample: primacy test)
+    split = "pulse"   fit pulse trials only, score control trials out of sample (plan 2026-11-10-pulse-only-fits)
+    split = "pcv<k>"  5-fold CV within pulse trials (stratified by condition)
 
 Usage:
     python -m scripts.ddm.fit_mouse_ddm --list                  # print the job grid size
@@ -273,6 +275,8 @@ ALL_SPLITS = [f"cv{k}" for k in range(N_FOLDS)] + ["all", "control"]
 # Cross-validation within control trials only (plan step 3.3: does the model choice depend on pulse trials?).
 # Not in ALL_SPLITS, so the default grid and its job ids are unchanged; request with --splits ccv0 ... ccv4.
 CONTROL_CV_SPLITS = [f"ccv{k}" for k in range(N_FOLDS)]
+# Pulse-only fits (plan 2026-11-10-pulse-only-fits), also outside ALL_SPLITS: --splits pcv0 ... pcv4 pulse.
+PULSE_SPLITS = [f"pcv{k}" for k in range(N_FOLDS)] + ["pulse"]
 
 
 def n_pulse_times(inputs: dict, rows: np.ndarray) -> int:
@@ -338,6 +342,12 @@ def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations:
         control_rows = mouse_rows[is_control]
         folds = cv_folds(inputs["condition"][control_rows], N_FOLDS)
         train, test = control_rows[folds != int(split[3:])], control_rows[folds == int(split[3:])]
+    elif split == "pulse":
+        train, test = mouse_rows[~is_control], mouse_rows[is_control]
+    elif split.startswith("pcv"):
+        pulse_rows = mouse_rows[~is_control]
+        folds = cv_folds(inputs["condition"][pulse_rows], N_FOLDS)
+        train, test = pulse_rows[folds != int(split[3:])], pulse_rows[folds == int(split[3:])]
     else:
         raise ValueError(f"unknown split {split}")
     if nominal_input and split == "control":
@@ -419,7 +429,7 @@ if __name__ == "__main__":
     parser.add_argument("--list", action="store_true")
     parser.add_argument("--force", action="store_true", help="refit even if the output exists")
     parser.add_argument("--variants", nargs="*", help="restrict the grid to these variants")
-    parser.add_argument("--splits", nargs="*", help="restrict the grid to these splits (default: cv0-cv4, all, control; also ccv0-ccv4, CV within control trials)")
+    parser.add_argument("--splits", nargs="*", help="restrict the grid to these splits (default: cv0-cv4, all, control; also ccv0-ccv4, CV within control trials; pcv0-pcv4 and pulse, pulse trials only)")
     parser.add_argument("--job_file", help="text file of grid job ids (one per line, in the full or restricted grid); --job_id then indexes this list")
     parser.add_argument("--guess_model", default="single", choices=list(GUESS_MODELS), help="form of the guess factor G (plan step 2)")
     parser.add_argument("--warm_start_from", nargs="*", default=[], help="fit folders (relative to processed) whose fits of this variant and its nested variants seed the optimizer")

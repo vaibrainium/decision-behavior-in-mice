@@ -11,6 +11,11 @@ limit for a task that times out.
 
 Run locally (needs the synced fits): python -m scripts.slurm.make_task_table
 Writes scripts/slurm/tasks_<date>.csv (a new file per date).
+
+--pulse: the pulse-only fits of plans/2026-11-10-pulse-only-fits.md (linear and power x primary / leak+urgency, with and
+without sv, splits pcv0-pcv4 + pulse) -> scripts/slurm/tasks_<date>_pulse.csv. Time limits (author 2026-11-10: 16 h only
+for the fits that needed long before): a task whose earlier counterpart (same mouse, input mapping and accumulator, with
+sv, joint fits, slowest split) took more than LONG_HOURS gets 16 h; the others get limit(that runtime).
 """
 
 import datetime
@@ -69,7 +74,42 @@ def limit(hours: float) -> float:
     return min(FIRST_MAX_HOURS, max(MIN_HOURS, math.ceil((hours * BUFFER + OVERHEAD) * 2) / 2))
 
 
+LONG_HOURS = 4.0
+PULSE_SPLITS = ["pcv0", "pcv1", "pcv2", "pcv3", "pcv4", "pulse"]
+PULSE_VARIANTS = ["L0U0V1Z0G1", "L0U0V0Z0G1", "L1U1V1Z0G1", "L1U1V0Z0G1"]
+PJ = "--responded_only --guess_model fast_only --inputs ddm/ddm_inputs_global_ucla_nofreeze.npz --n_reps 15"
+# name, priority, args, folder of the earlier joint fits used for the runtime
+PULSE_BATCHES = [
+    ("PO_linear", 0, f"{PJ} --variants {' '.join(PULSE_VARIANTS)} --splits {' '.join(PULSE_SPLITS)} --out_dir ddm/fits_pulse_linear_integrators", "fits_joint_unfreeze_integrators"),
+    ("PO_power", 0, f"{PJ} --front_end power --variants {' '.join(PULSE_VARIANTS)} --splits {' '.join(PULSE_SPLITS)} --out_dir ddm/fits_pulse_power_integrators", "fits_joint_power_integrators"),
+]
+
+
+def pulse_main():
+    inputs = load_inputs(DDM / "ddm_inputs_global_ucla_nofreeze.npz")
+    rows = []
+    for name, prio, args, analog in PULSE_BATCHES:
+        prev = fit_hours(analog).groupby(["mouse", "variant"]).hours.max()
+        out_dir = args.split("--out_dir ")[1].split()[0]
+        for i, job in enumerate(build_grid(inputs, PULSE_VARIANTS, PULSE_SPLITS)):
+            with_sv = job["variant"].replace("V0", "V1")  # no-sv: the same accumulator with sv (slower; no power no-sv fits)
+            base = prev[(job["mouse"], with_sv)]
+            rows.append({"batch": name, "priority": prio, "index": i, **job, "out": f"{out_dir}/{job['mouse']}_{job['variant']}_{job['split']}.pkl",
+                         "est_hours": round(base, 2), "time_hours": FIRST_MAX_HOURS if base > LONG_HOURS else limit(base), "args": args})
+    df = pd.DataFrame(rows)
+    out = Path(__file__).with_name(f"tasks_{datetime.date.today():%Y-%m-%d}_pulse.csv")
+    assert not out.exists(), f"{out} exists; not overwriting"
+    df.to_csv(out, index=False)
+    long = df[df.time_hours >= FIRST_MAX_HOURS].drop_duplicates(["batch", "mouse", "variant"])
+    print(df.groupby(["batch", "time_hours"]).size().to_string())
+    print("16 h:", ", ".join(f"{r.batch} {r.mouse} {r.variant} (before {r.est_hours} h)" for r in long.itertuples()))
+    print(f"\n{len(df)} tasks -> {out}")
+
+
 def main():
+    import sys
+    if "--pulse" in sys.argv:
+        return pulse_main()
     inputs = load_inputs(DDM / "ddm_inputs_global_ucla_nofreeze.npz")
     analogs = {kind: fit_hours(folder).groupby(["mouse", "variant"]).hours.max() for kind, folder in ANALOG.items()}
     ctl = fit_hours("fits_resp_fast_only").query("variant == 'L0U0V1Z0G1'").groupby("mouse").hours.max()  # 15 reps, ccv

@@ -17,6 +17,8 @@ Run from the repo root on Hyak (bash):
     tmux new -s autosubmit 'python3 scripts/slurm/autosubmit.py --watch 10'   # every 10 min until all are done
     python3 scripts/slurm/autosubmit.py --shrink_pending    # also lower the 16 h limit of imported tasks still pending
     python3 scripts/slurm/autosubmit.py --to_lab slurm-logs/to_lab.txt [--include_running]   # see task_report.py
+    python3 scripts/slurm/autosubmit.py --tasks scripts/slurm/tasks_2026-11-10_pulse.csv --state slurm-logs/autosubmit_state_pulse.json --watch 10
+        # another task table: its own state and lock file, so two loops can run side by side
 Failover (--failover_to_lab, e.g. with --watch): a task requeued after preemption on the shared partition (PENDING,
 reason BeginTime), or one that has restarted there and has been running less than FAILOVER_MAX_RUN_MIN (60) minutes
 (requeuehold first; those minutes are lost), is moved in place with scontrol update (Partition LAB_PARTITION, Account LAB_UPDATE_ACCOUNT, QOS
@@ -103,6 +105,8 @@ def initial_state(tasks):
     entries = [(b, lo, hi, job) for b, spans in IMPORTED.items() for job, lo, hi in spans] + old_done_entries()
     for batch, lo, hi, job in entries:
         for i in range(lo, hi + 1):
+            if f"{batch}:{i}" not in state:  # another task table (--tasks): nothing to import
+                continue
             s = state[f"{batch}:{i}"]
             s.update(status="submitted", job=job, time_hours=16.0, attempts=1, submitted_at=0)
             s["history"].append(f"imported job {job}")
@@ -346,20 +350,28 @@ def one_pass(tasks, state, dry_run, shrink_pending, failover=False):
 
 
 def main():
+    global TASKS, STATE, LOCK
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--watch", type=float, metavar="MINUTES", help="repeat every MINUTES until every task is done or given up")
     ap.add_argument("--dry_run", action="store_true", help="print what one pass would do; change nothing")
     ap.add_argument("--shrink_pending", action="store_true", help="lower the 16 h limit of imported tasks still pending to the table estimate")
     ap.add_argument("--to_lab", type=Path, metavar="FILE", help="move the tasks listed in FILE (batch:index per line) to the lab partition")
     ap.add_argument("--include_running", action="store_true", help="with --to_lab: also cancel RUNNING tasks (their progress is lost)")
+    ap.add_argument("--tasks", type=Path, default=TASKS, help="task table (default %(default)s)")
+    ap.add_argument("--state", type=Path, default=STATE, help="state file; use one per task table (default %(default)s)")
     ap.add_argument("--failover_to_lab", action="store_true", help="tasks preempted (requeued) or failed on the shared partition continue on the lab partition")
     args = ap.parse_args()
+    if args.tasks != TASKS and args.state == STATE:
+        sys.exit("--tasks other than the default needs its own --state file")
+    if args.state != STATE:  # the default keeps slurm-logs/autosubmit.lock (a running loop holds it)
+        LOCK = args.state.with_suffix(".lock")
+    TASKS, STATE = args.tasks, args.state
     sys.stdout = os.fdopen(sys.stdout.fileno(), "w", 1)  # line-buffered: readable live in tmux / a log file (Python 3.6)
     if not TASKS.exists():
         sys.exit(f"{TASKS} not found; run from the repo root after git pull")
     tasks = load_tasks()
     folders = {(PROCESSED_DIR / t["out"]).parent for t in tasks.values()}
-    if not any(f.is_dir() for f in folders):  # wrong base path would make every finished fit look failed
+    if not any(f.is_dir() or f.parent.is_dir() for f in folders):  # wrong base path would make every finished fit look failed
         sys.exit("none of the output folders exists under {}; check PROCESSED_DIR".format(PROCESSED_DIR))
     STATE.parent.mkdir(exist_ok=True)
     if args.to_lab:
