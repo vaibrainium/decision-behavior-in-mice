@@ -83,6 +83,19 @@ def _simulate_ddm_trials_numba(
     return rt, choice
 
 
+def normalized_urgency(params: dict) -> dict:
+    """urgency_ref > 0 (s): the urgency gain is (1 + u t) / (1 + u urgency_ref), i.e. 1 at t = urgency_ref, so `a` stays
+    on the scale of the decision variable at that time even for large u (u -> inf: gain proportional to t, the
+    zero-intercept urgency of the urgency-gating model, Cisek et al. 2009). Implemented exactly by scaling the bound:
+    the backends cross when (E - z a)(1 + u t) >= (1 - z) a or <= -z a, and E - z a does not depend on a (leak acts on the
+    displacement from the start), so dividing the gain by c is the same as multiplying a by c. Returns params unchanged
+    when urgency_ref is absent or 0."""
+    ref = float(params.get("urgency_ref", 0.0))
+    if ref <= 0.0:
+        return params
+    return {**params, "a": float(params["a"]) * (1.0 + float(params["time_constant"]) * ref)}
+
+
 def front_end_active(params: dict) -> bool:
     """True if a visual front-end transform (primacy plan, amendment 7) changes the input."""
     return float(params.get("fe_gamma", 1.0)) != 1.0 or float(params.get("fe_beta", 0.0)) != 0.0
@@ -426,6 +439,7 @@ class DriftDiffusionSimulator:
         signal + params["noise_weight"] * noise; further channels take the later CHANNEL_WEIGHTS. `labels` gives each trial's condition (e.g. coherence) for the
         likelihood; without it the first stimulus sample is used, which is only right for a constant stimulus.
         """
+        params = normalized_urgency(params)
         rt, choice = self._backend.simulate_trials(stimulus, params, unit_noise=unit_noise, unit_sv=unit_sv, unit_sz=unit_sz)
         if labels is None:
             if isinstance(stimulus, tuple):
