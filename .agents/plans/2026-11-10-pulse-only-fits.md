@@ -29,7 +29,8 @@ can the family reproduce the pulse behaviour when it is not also constrained by 
       tasks_2026-11-10_pulse.csv (PO_*, primary + leak+urgency, 480, submitted; state autosubmit_state_pulse.json) and
       tasks_2026-11-10_pulse_lu.csv (PLU_*, leak only + urgency only, 480; state autosubmit_state_pulse_lu.json).
 - [x] 2b. PO table submitted by the author (loop in tmux 'pulse'; 21 done at 2026-11-09 16:58 Hyak time).
-- [ ] 2c. Author starts the PLU loop (tmux 'pulse_lu').
+- [x] 2c. PLU loop started by the author (tmux 'pulse_lu'; dry run 2026-11-09 17:09 Hyak time: 480 pending, queue 431/500).
+      Both loops share the 500 limit; an sbatch refused by the QOS limit leaves its tasks pending for the next pass.
 - [ ] 3. Sync; simulate the pulse-only fits; add a "Pulse-only fits" group to the fit browser.
 - [ ] 4. Compare: pulse signatures vs data (psychometric shifts per condition, early/late window effect, per-mouse
       chi-square); parameters pulse-only vs all vs control-only; control-trial NLL out of sample.
