@@ -115,8 +115,45 @@ def pulse_main(table):
     print(f"\n{len(df)} tasks -> {out}")
 
 
+# Urgency-gating variant (plan 2026-11-10-ugm-corner-leak-urgency): fit_mouse_ddm --ugm on leak + urgency with and without
+# sv, linear and power input, joint fits (cv0-cv4, all) and pulse-only fits (pcv0-pcv4, pulse) -> tasks_2026-11-10_ugm.csv
+# (own autosubmit state). Runtime from the same mouse's joint L1U1V1Z0G1 fit with the same input (slowest split).
+UGM_VARIANTS = ["L1U1V1Z0G1", "L1U1V0Z0G1"]
+UGM_ARGS = PJ + " --ugm"
+
+
+def ugm_batches():
+    v = " ".join(UGM_VARIANTS)
+    joint, pulse = ["cv0", "cv1", "cv2", "cv3", "cv4", "all"], PULSE_SPLITS
+    out = []
+    for mapping, fe, analog in [("linear", "", "fits_joint_unfreeze_integrators"), ("power", " --front_end power", "fits_joint_power_integrators")]:
+        for kind, splits in [("joint", joint), ("pulse", pulse)]:
+            out.append((f"UGM_{kind}_{mapping}", 0, f"{UGM_ARGS}{fe} --variants {v} --splits {' '.join(splits)} --out_dir ddm/fits_{kind}_{mapping}_ugm", splits, analog))
+    return out
+
+
+def ugm_main():
+    inputs = load_inputs(DDM / "ddm_inputs_global_ucla_nofreeze.npz")
+    rows = []
+    for name, prio, args, splits, analog in ugm_batches():
+        prev = fit_hours(analog).groupby(["mouse", "variant"]).hours.max()
+        out_dir = args.split("--out_dir ")[1].split()[0]
+        for i, job in enumerate(build_grid(inputs, UGM_VARIANTS, splits)):
+            base = prev[(job["mouse"], "L1U1V1Z0G1")]
+            rows.append({"batch": name, "priority": prio, "index": i, **job, "out": f"{out_dir}/{job['mouse']}_{job['variant']}_{job['split']}.pkl",
+                         "est_hours": round(base, 2), "time_hours": FIRST_MAX_HOURS if base > LONG_HOURS else limit(base), "args": args})
+    df = pd.DataFrame(rows)
+    out = Path(__file__).with_name("tasks_2026-11-10_ugm.csv")
+    assert not out.exists(), f"{out} exists; not overwriting"
+    df.to_csv(out, index=False)
+    print(df.groupby(["batch", "time_hours"]).size().to_string())
+    print(f"\n{len(df)} tasks -> {out}")
+
+
 def main():
     import sys
+    if "--ugm" in sys.argv:
+        return ugm_main()
     for table in PULSE_TABLES:
         if f"--{table}" in sys.argv:
             return pulse_main(table)
