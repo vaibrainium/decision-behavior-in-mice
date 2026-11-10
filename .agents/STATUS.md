@@ -26,7 +26,7 @@ Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gat
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
-- plans/2026-11-10-ugm-corner-leak-urgency.md : urgency-gating (Cisek 2009) variant of L1U1 (--ugm, normalized urgency); 480-task table tasks_2026-11-10_ugm.csv ready; next: author submits on Hyak
+- plans/2026-11-10-ugm-corner-leak-urgency.md : urgency-gating (Cisek 2009) variant of L1U1 (--ugm, normalized urgency); 720-task table tasks_2026-11-10_ugm.csv (linear, power, norm) ready; next: author submits on Hyak
 - plans/2026-10-29-control-paper.md : third paper (control trials only, Stine 2020 framing) in dissemination/paper_control/; G1 approved 2026-10-30 (D004), spine locked, stage S2; paired recovery 42579825 analysed: E separated (provisional, ES fits not yet submitted)
 - plans/2026-10-28-full-recovery-matrix.md : ON HOLD (author); recovery rerun on fixed CPU datasets if it becomes necessary
 - plans/2026-10-26-v2-refits-and-strategy-recovery.md : responded-only refits + full point-3 re-run (amendment 9); commands ready; next: user syncs code, submits R1-R6 (460), then F1a (80) and P1-P4 (850)

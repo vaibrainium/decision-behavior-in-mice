@@ -43,7 +43,9 @@ misfit for each (L, u) pair, plus a report saying whether the UGM corner is rule
       {linear,power}; L1U1V1Z0G1 and L1U1V0Z0G1; joint splits cv0-cv4 + all, pulse splits pcv0-pcv4 + pulse; 480 tasks;
       out ddm/fits_{joint,pulse}_{linear,power}_ugm). Time limits from the same mouse's joint L1U1V1Z0G1 fit with
       the same input (>4 h -> 16 h: 96 tasks, power). Indices verified against build_grid (0 mismatches).
-- [ ] 4. Author: pull and submit on Hyak:
+- [x] 3b. Norm input appended (UGM_{joint,pulse}_norm, rows 481-720; first 480 rows byte-identical; 0 index
+      mismatches; limits from fits_joint_norm_integrators L1U1V1Z0G1: 168 of 240 at 16 h). Smoke fit norm + ugm OK.
+- [ ] 4. Author: pull and submit on Hyak (720 tasks):
       python3 scripts/slurm/autosubmit.py --tasks scripts/slurm/tasks_2026-11-10_ugm.csv --state slurm-logs/autosubmit_state_ugm.json --watch 10
       (--dry_run first). Do not change the table once pulled.
 - [ ] 5. Sync; check bound-hitting (leak at 2 or 20, urgency at 0 or 50, drift_gain at 50, a at 9.5) and convergence.
@@ -56,7 +58,7 @@ misfit for each (L, u) pair, plus a report saying whether the UGM corner is rule
 ## Out of scope
 - A full refit of all mice (only if step 7 says the corner is viable).
 - A policy (speed-accuracy) manipulation test; the design has none.
-- Control-only splits, norm and nominal inputs (can be added as a new table).
+- Control-only splits and nominal input (can be added as a new table).
 - Noise injected after the filter (an alternative UGM variant with different variance growth).
 - Rig-split interpretation.
 
@@ -68,3 +70,5 @@ misfit for each (L, u) pair, plus a report saying whether the UGM corner is rule
   urgency with and without sv, linear and power input, joint and pulse-only splits (480 tasks); stated to the author.
   Assumption change: urgency_ref replaces the u = 20 approximation; a < 10 limit kept (normalization makes it unnecessary
   to lift).
+- 2026-11-10: author added the normalized input to the same table. Appended as new batches (not regenerated in
+  place) so any already-pulled batch:index stays valid.
