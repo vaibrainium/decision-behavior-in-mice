@@ -101,6 +101,15 @@ SIGNED_LEAK_BOUNDS = (-1.0, 5.0)
 # Leak range of the extrema-detection model (primacy plan, amendment 4): time constant 5-50 ms, so the decision variable
 # tracks recent motion energy and a bound crossing is a threshold crossing by momentary evidence.
 EXTREMA_LEAK_BOUNDS = (20.0, 200.0)
+# Urgency-gating model (Cisek et al. 2009; plan 2026-11-10-ugm-corner-leak-urgency), as a region of L1U1: a short
+# low-pass filter (leak 2-20 /s, time constant 50-500 ms; the UGM papers use 100-250 ms) times a strong urgency.
+# Urgency gain normalized to 1 at UGM_URGENCY_REF s (simulator.normalized_urgency), so `a` keeps its range and large u
+# approaches the zero-intercept urgency (gain proportional to t); drift_gain may reach UGM_GAIN_MAX because the filtered
+# signal is about drift_gain * ME / leak.
+UGM_LEAK_BOUNDS = (2.0, 20.0)
+UGM_URGENCY_BOUNDS = (0.0, 50.0)
+UGM_URGENCY_REF = 1.0
+UGM_GAIN_MAX = 50.0
 # Discrete-sample extrema detection (Stine et al. 2020; primacy plan, amendment 10): each 1 ms evidence sample is compared
 # with +-b per-step noise SDs and nothing is accumulated; a and z are unused, drift_gain may reach 200.
 EXTREMA_SAMPLE_BOUND = ("extrema_bound", (2.0, 5.0))
@@ -131,11 +140,20 @@ VARIANTS = ["".join(f"{f}{int(on)}" for f, on in zip(OPTIONAL_FREE_PARAMS, flags
 
 def make_params(variant: str, guess_model: str = "single", time_varying_gain: bool = False, signed_leak: bool = False, fixed_guess_bias: bool = False, leak_bounds: tuple[float, float] | None = None, drift_gain_max: float | None = None,
                 front_end: str | None = None, extrema_samples: bool = False, nominal_input: bool = False, pulse_weight: bool = False, nominal_matched: bool = False,
-                n_pulse_times: int = 0):
+                n_pulse_times: int = 0, ugm: bool = False):
     """n_pulse_times > 0: a free weight per pulse time (PULSE_TIME_WEIGHTS) instead of pulse_weight's shared one.
     nominal_matched (control paper D003): nominal coherence input with any variant (sv, guesses, z as in the motion-energy
-    model), so the motion-energy models can be compared with their own nominal-input versions."""
+    model), so the motion-energy models can be compared with their own nominal-input versions.
+    ugm: urgency-gating region of a leak + urgency variant (UGM_* bounds, normalized urgency)."""
     free, fixed = dict(BASE_FREE_PARAMS), dict(FIXED_PARAMS)
+    if ugm:
+        if variant[1] != "1" or variant[3] != "1":
+            raise ValueError("ugm needs leak and urgency (L1U1...)")
+        if leak_bounds is not None or signed_leak or extrema_samples:
+            raise ValueError("ugm sets its own leak bounds; not with leak_bounds, signed_leak or extrema_samples")
+        leak_bounds = UGM_LEAK_BOUNDS
+        drift_gain_max = UGM_GAIN_MAX if drift_gain_max is None else drift_gain_max
+        fixed["urgency_ref"] = FixedParam(UGM_URGENCY_REF)
     if nominal_input and not nominal_matched and (variant != NOMINAL_VARIANT or front_end or time_varying_gain):
         raise ValueError(f"nominal_input (amendment 13) is the paper-exact model: variant {NOMINAL_VARIANT}, no front end or gain decay")
     if extrema_samples:
@@ -172,6 +190,8 @@ def make_params(variant: str, guess_model: str = "single", time_varying_gain: bo
                 bounds = SIGNED_LEAK_BOUNDS
             if name == "leak_rate" and leak_bounds is not None:
                 bounds = tuple(leak_bounds)
+            if name == "time_constant" and ugm:
+                bounds = UGM_URGENCY_BOUNDS
             if flags[factor] and not (name == "guess_bias" and fixed_guess_bias):
                 free[name] = FreeParam(*bounds)
             else:
@@ -327,7 +347,7 @@ def checkpoint_path(out_dir: Path, job: dict) -> Path:
 
 def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations: int, guess_model: str = "single", warm_dirs: list[Path] | None = None, time_varying_gain: bool = False, signed_leak: bool = False, fixed_guess_bias: bool = False, leak_bounds: tuple[float, float] | None = None, drift_gain_max: float | None = None,
             front_end: str | None = None, likelihood_params: dict = LIKELIHOOD_PARAMS, extrema_samples: bool = False, nominal_input: bool = False, pulse_weight: bool = False,
-            nominal_matched: bool = False, pulse_time_weights: bool = False) -> dict:
+            nominal_matched: bool = False, pulse_time_weights: bool = False, ugm: bool = False) -> dict:
     mouse_rows = np.flatnonzero(inputs["subject_id"] == job["mouse"])
     is_control = inputs["sched_pulse_type"][mouse_rows] == 0
     split = job["split"]
@@ -354,7 +374,7 @@ def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations:
         test = None  # pulse trials need the pulse in nominal units (amendment 13, item 4), not built here
 
     n_times = n_pulse_times(inputs, mouse_rows) if pulse_time_weights else 0
-    free, fixed = make_params(job["variant"], guess_model, time_varying_gain, signed_leak, fixed_guess_bias, leak_bounds, drift_gain_max, front_end, extrema_samples, nominal_input, pulse_weight, nominal_matched, n_times)
+    free, fixed = make_params(job["variant"], guess_model, time_varying_gain, signed_leak, fixed_guess_bias, leak_bounds, drift_gain_max, front_end, extrema_samples, nominal_input, pulse_weight, nominal_matched, n_times, ugm)
     rigs = np.unique(inputs["data_source"][mouse_rows])
     assert len(rigs) == 1, f"{job['mouse']} has trials from {rigs}"
     min_rt = MIN_RT[rigs[0]]
@@ -392,6 +412,7 @@ def run_job(inputs: dict, job: dict, out_dir: Path, n_reps: int, max_iterations:
         "nominal_matched": nominal_matched,
         "pulse_weight": pulse_weight,
         "n_pulse_times": n_times,
+        "ugm": ugm,  # parameters["urgency_ref"] > 0: urgency gain normalized (simulator.normalized_urgency)
         "warm_start_seeds": seeds_used,
         "resumed_from_generation": fit["resumed_from_generation"],  # None = not resumed; -1 = DE done, refinement redone
         "censor_at": CENSOR_AT,
@@ -446,10 +467,11 @@ if __name__ == "__main__":
     parser.add_argument("--pulse_weight", action="store_true", help="free weight on the pulse component of pulse trials (noise_weight; plan 2026-10-29-pulse-weight-joint)")
     parser.add_argument("--pulse_time_weights", action="store_true", help="a free pulse weight per pulse time (PULSE_TIME_WEIGHTS; plan 2026-10-30-pulse-time-weights)")
     parser.add_argument("--nominal_input", action="store_true", help=f"paper-exact Stine et al. 2020 models (amendment 13): nominal coherence input, variant {NOMINAL_VARIANT}; with --extrema_samples their extrema detector")
+    parser.add_argument("--ugm", action="store_true", help="urgency-gating model (Cisek et al. 2009) as a region of L1U1: leak 2-20 /s, urgency 0-50 /s normalized at 1 s, drift_gain up to 50 (plan 2026-11-10-ugm-corner-leak-urgency)")
     args = parser.parse_args()
 
     processed = Path(dir_config.data.processed)
-    args.out_dir = args.out_dir or (("ddm/fits_guess" if args.guess_model == "single" else f"ddm/fits_guess_{args.guess_model}") + ("_W" if args.time_varying_gain else "") + ("_NL" if args.signed_leak else "") + ("_FB" if args.fixed_guess_bias else "") + (f"_leak{args.leak_bounds[0]:g}-{args.leak_bounds[1]:g}" if args.leak_bounds else "") + (f"_gain{args.drift_gain_max:g}" if args.drift_gain_max else "") + (f"_fe-{args.front_end}" if args.front_end else "") + ("_nominal" if args.nominal_input else ""))
+    args.out_dir = args.out_dir or (("ddm/fits_guess" if args.guess_model == "single" else f"ddm/fits_guess_{args.guess_model}") + ("_W" if args.time_varying_gain else "") + ("_NL" if args.signed_leak else "") + ("_FB" if args.fixed_guess_bias else "") + (f"_leak{args.leak_bounds[0]:g}-{args.leak_bounds[1]:g}" if args.leak_bounds else "") + (f"_gain{args.drift_gain_max:g}" if args.drift_gain_max else "") + (f"_fe-{args.front_end}" if args.front_end else "") + ("_nominal" if args.nominal_input else "") + ("_ugm" if args.ugm else ""))
     inputs = load_inputs(processed / args.inputs)
     if args.nominal_input and (processed / args.pulse_timing).exists():
         with np.load(processed / args.pulse_timing) as f:
@@ -479,4 +501,4 @@ if __name__ == "__main__":
             logger.info("job %s: %s", args.job_id, job)
             run_job(inputs, job, processed / args.out_dir, args.n_reps, args.max_iterations, args.guess_model, [processed / d for d in args.warm_start_from], args.time_varying_gain, args.signed_leak, args.fixed_guess_bias, args.leak_bounds, args.drift_gain_max, args.front_end,
                     RESPONDED_LIKELIHOOD_PARAMS if args.responded_only else LIKELIHOOD_PARAMS, args.extrema_samples, args.nominal_input, args.pulse_weight,
-                    args.nominal_matched, args.pulse_time_weights)
+                    args.nominal_matched, args.pulse_time_weights, args.ugm)
