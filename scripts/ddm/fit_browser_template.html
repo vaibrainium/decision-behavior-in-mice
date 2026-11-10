@@ -102,7 +102,7 @@ td.best { background: var(--best); color: var(--best-ink); font-weight: 600 }
 <div class="wrap">
   <header class="top">
     <h1>Pulse-task fit browser</h1>
-    <p>Data and model by trial type: control trials, and pulses early, middle or late in the trial toward the left or right. Each model is simulated on every mouse's own responded trials (30 repetitions). All coherences including ±100% (pulse trials exist there too); trials from the symmetric pulse design, as in the pulse analyses. Positive coherence and positive bias = rightward.</p>
+    <p>Data and model by trial type: control trials, and pulses early, middle or late in the trial toward the left or right. Each model is simulated on every mouse's own responded trials (30 repetitions). All coherences including ±100% (pulse trials exist there too); trials from the symmetric pulse design, as in the pulse analyses. Positive coherence = rightward motion; a negative psychometric mean = rightward bias.</p>
   </header>
   <div class="layout">
     <nav class="side" id="side" aria-label="Models"></nav>
@@ -160,9 +160,7 @@ function cohPos(c) { // 0..1
   for (let i = 0; i < LEVELS.length - 1; i++) if (c <= LEVELS[i + 1]) return (i + (c - LEVELS[i]) / (LEVELS[i + 1] - LEVELS[i])) / (LEVELS.length - 1);
   return 1;
 }
-function erf(x) { const s = Math.sign(x); x = Math.abs(x); const t = 1 / (1 + 0.3275911 * x); const y = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-x * x); return s * y; }
-const Phi = z => 0.5 * (1 + erf(z / Math.SQRT2));
-const psyP = (c, p) => p[2] + (1 - p[2] - p[3]) * Phi((c + p[0]) / p[1]); // p = [bias(=-mu), sigma, gl, gr]
+const psyP = (c, p) => p[2] + (1 - p[3] - p[2]) / (1 + Math.exp(-p[1] * (c - p[0]))); // pmf_utils logit_4, p = [mean, beta, lapse_rate, guess_rate]
 const rowsOf = (d, cond) => (d && d.rows || []).filter(r => r[COL.cond] === cond).sort((a, b) => a[COL.coh] - b[COL.coh]);
 
 function frame(W, H, L, B, T, R) {
@@ -180,7 +178,7 @@ function psyChart(cond, dd, md, big) {
   for (const c of [-100, -36, 0, 36, 100]) s.append(txt(x(c), H - 5, c, "tick"));
   for (const v of [0, 0.5, 1]) s.append(txt(L - 4, y(v) + 3, v, "tick", "end"));
   s.append(sv("line", { x1: L, x2: W - R, y1: y(0.5), y2: y(0.5), class: "ref" }), sv("line", { x1: x(0), x2: x(0), y1: T, y2: H - B, class: "ref" }));
-  const curve = (p, cls) => { if (!p) return; const pts = []; for (let i = 0; i <= 120; i++) { const c = -100 + 200 * i / 120; pts.push(`${x(c).toFixed(1)},${y(psyP(c, p)).toFixed(1)}`); } s.append(sv("polyline", { points: pts.join(" "), class: cls })); };
+  const curve = (p, cls) => { if (!p || p.some(v => v == null)) return; const pts = []; for (let i = 0; i <= 120; i++) { const c = -100 + 200 * i / 120; pts.push(`${x(c).toFixed(1)},${y(psyP(c, p)).toFixed(1)}`); } s.append(sv("polyline", { points: pts.join(" "), class: cls })); };
   const mp = md && md.psy[cond], dp = dd && dd.psy[cond], mc = md && md.psy.control;
   if (cond !== "control" && mc) curve(mc.est, "cfit");
   if (dp) curve(dp.est, "dfit");
@@ -260,7 +258,7 @@ function conditionRow(view, dd, md, big) {
   for (const cond of D.conditions) {
     const n = rowsOf(dd, cond).reduce((a, r) => a + r[COL.n], 0);
     let sub = "";
-    if (view === "psy") { const a = dd && dd.psy[cond], b = md && md.psy[cond]; sub = `bias ${a ? fmt(a.est[0]) : "–"} | ${b ? fmt(b.est[0]) : "–"}`; }
+    if (view === "psy") { const a = dd && dd.psy[cond], b = md && md.psy[cond]; sub = `mean ${a ? fmt(a.est[0]) : "–"} | ${b ? fmt(b.est[0]) : "–"}`; }
     if (view === "rtd") { const a = dd && dd.rt[cond], b = md && md.rt[cond]; sub = `correct ${a ? fmt(a[3] * 100, 0) : "–"}% | ${b ? fmt(b[3] * 100, 0) : "–"}%`; }
     const chart = view === "psy" ? psyChart(cond, dd, md, big) : view === "rt" ? rtChart(cond, dd, md, yr, big) : rtdChart(cond, dd, md, ym, big);
     row.append(el("div", { class: "panel" }, el("div", { class: "t " + sideOf(cond), text: `${COND_LABEL[cond]} · n=${n}` }), sub ? el("div", { class: "s", text: sub + " (data | model)" }) : null, chart));
@@ -268,11 +266,12 @@ function conditionRow(view, dd, md, big) {
   return row;
 }
 
+const ok = (d, c, pi) => { const v = d && d.psy[c]; return v && v.est[pi] != null ? v : null; };
 /* parameter chart: one parameter across the 7 conditions, data with 95% CI and model */
 function parChart(dd, md, pi, title, big) {
   const W = 260, H = big ? 150 : 120, L = 32, R = 6, T = 14, B = 18;
   const vals = [];
-  for (const c of D.conditions) { const a = dd && dd.psy[c], b = md && md.psy[c]; if (a) { vals.push(a.est[pi]); if (a.lo) vals.push(a.lo[pi], a.hi[pi]); } if (b) vals.push(b.est[pi]); }
+  for (const c of D.conditions) { const a = ok(dd, c, pi), b = ok(md, c, pi); if (a) { vals.push(a.est[pi]); if (a.lo && a.lo[pi] != null) vals.push(a.lo[pi], a.hi[pi]); } if (b) vals.push(b.est[pi]); }
   let lo = Math.min(...vals), hi = Math.max(...vals); if (pi === 0) { lo = Math.min(lo, 0); hi = Math.max(hi, 0); } if (!isFinite(lo)) { lo = 0; hi = 1; }
   const pad = (hi - lo) * 0.1 || 1; lo -= pad; hi += pad;
   const x = i => L + (i + 0.5) / D.conditions.length * (W - L - R), y = v => T + (1 - (v - lo) / (hi - lo)) * (H - T - B);
@@ -280,12 +279,12 @@ function parChart(dd, md, pi, title, big) {
   s.setAttribute("aria-label", `${title} by condition, data with 95% CI and model`);
   s.append(txt(L, 9, title, "lab", "start"));
   if (pi === 0) s.append(sv("line", { x1: L, x2: W - R, y1: y(0), y2: y(0), class: "ref" }));
-  for (const v of [lo + pad, hi - pad]) s.append(txt(L - 4, y(v) + 3, fmt(v, Math.abs(hi - lo) < 3 ? 2 : 0), "tick", "end"));
+  for (const v of [lo + pad, hi - pad]) s.append(txt(L - 4, y(v) + 3, fmt(v, Math.abs(hi - lo) < 0.3 ? 3 : Math.abs(hi - lo) < 3 ? 2 : 0), "tick", "end"));
   D.conditions.forEach((c, i) => {
     s.append(txt(x(i), H - 5, COND_SHORT[c], "tick"));
-    const a = dd && dd.psy[c], b = md && md.psy[c];
+    const a = ok(dd, c, pi), b = ok(md, c, pi);
     if (a) {
-      if (a.lo) s.append(sv("line", { x1: x(i) - 3, x2: x(i) - 3, y1: y(a.lo[pi]), y2: y(a.hi[pi]), class: "ci" }));
+      if (a.lo && a.lo[pi] != null) s.append(sv("line", { x1: x(i) - 3, x2: x(i) - 3, y1: y(a.lo[pi]), y2: y(a.hi[pi]), class: "ci" }));
       const d = sv("circle", { cx: x(i) - 3, cy: y(a.est[pi]), r: 2.8, class: "dpt" });
       const t = sv("title"); t.textContent = `${COND_LABEL[c]}: data ${fmt(a.est[pi], 2)}${a.lo ? ` (95% CI ${fmt(a.lo[pi], 2)} to ${fmt(a.hi[pi], 2)})` : ""}; model ${b ? fmt(b.est[pi], 2) : "–"}`; d.append(t); s.append(d);
     }
@@ -295,10 +294,11 @@ function parChart(dd, md, pi, title, big) {
 }
 function parBlock(dd, md, big) {
   const g = el("div", { class: "grid2" });
-  g.append(el("div", { class: "panel" }, parChart(dd, md, 0, "Bias (% coherence, + = rightward)", big)), el("div", { class: "panel" }, parChart(dd, md, 1, "Slope σ (% coherence; lower = steeper)", big)));
-  const a = dd && dd.psy.control, b = md && md.psy.control;
-  const lap = el("p", { class: "note", text: `Lapses (from control trials, shared by all conditions): toward right at strong left motion ${a ? fmt(a.est[2] * 100) : "–"}% data, ${b ? fmt(b.est[2] * 100) : "–"}% model; toward left at strong right motion ${a ? fmt(a.est[3] * 100) : "–"}% data, ${b ? fmt(b.est[3] * 100) : "–"}% model.` });
-  return [g, lap];
+  g.append(el("div", { class: "panel" }, parChart(dd, md, 0, "mean (% coherence at the midpoint; − = rightward bias)", big)),
+           el("div", { class: "panel" }, parChart(dd, md, 1, "beta (slope, 1/% coherence; higher = steeper)", big)),
+           el("div", { class: "panel" }, parChart(dd, md, 2, "lapse_rate (floor: P(right) at strong leftward motion)", big)),
+           el("div", { class: "panel" }, parChart(dd, md, 3, "guess_rate (1 − ceiling at strong rightward motion)", big)));
+  return [g];
 }
 
 /* ---------- model tab ---------- */
@@ -309,10 +309,10 @@ const LEGENDS = {
   par: [["d", "data, 95% bootstrap CI"], ["dia", "model"]],
 };
 const VIEW_NOTES = {
-  psy: "Fit: P(right) = λL + (1 − λL − λR)·Φ((coherence + bias)/σ), maximum likelihood. Lapses λL, λR are fitted on control trials and shared by the pulse conditions (they are stimulus-independent, and the pulse conditions have too few trials to separate them from bias); each condition gets its own bias and slope. Pulse trials at ±100% exist only with the pulse against the motion (left pulse at +100%, right pulse at −100%); at the other end each pulse condition's fit uses the control trials at that coherence (not plotted as points), so every curve is anchored at both ends. Same procedure for data and model. Panel subtitle: fitted bias, data | model. x axis: coherence levels evenly spaced.",
+  psy: "Fit: your psychometric function (src/utils/pmf_utils.py, model logit_4 as in config/main.yaml): P(right) = lapse_rate + (1 − guess_rate − lapse_rate) / (1 + exp(−beta·(coherence − mean))), weighted least squares on the proportion right per coherence with weights √n, default bounds (mean ±100, beta 1e-5–30, lapse and guess 1e-5–0.4). Every condition is fitted on its own with all four parameters free. Pulse trials at ±100% exist only with the pulse against the motion (left pulse at +100%, right pulse at −100%); at the other end each pulse condition's fit uses the control trials at that coherence (not plotted as points). Same procedure for data and model. Panel subtitle: fitted mean, data | model. x axis: coherence levels evenly spaced.",
   rtd: "Correct responses above the line, errors below, as defective densities (per s): each condition's correct and error areas sum to 1, so their relative size shows accuracy. 0% coherence excluded (no correct answer). All other coherences of the condition pooled; the model uses the same trials as the data. Log time axis, 0.3–5 s.",
   rt: "Mean response time of responded trials per coherence.",
-  par: "Fitted psychometric parameters per condition (see Psychometric fits). Data CIs: 200 bootstrap resamples of trials within each coherence, refitting lapses and all conditions each time.",
+  par: "Fitted psychometric parameters per condition (see Psychometric fits). Data CIs: 200 bootstrap resamples (binomial, within each coherence), each refitted with the same method. With four free parameters and 8 coherences, lapse/guess trade off against mean in conditions with few trials (late pulses, single mice): read wide CIs there as poorly constrained fits.",
 };
 function modelView(fam) {
   const F = D.families[fam], tot = totals(fam);

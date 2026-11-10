@@ -3,8 +3,9 @@
 For every fitted family (control-only fits, joint all-trial fits under each input mapping, and the sv = 0 counterfactuals),
 per group (all mice pooled, then each mouse), per condition (control; early / middle / late x left / right pulse) and
 signed coherence: n, P(right), mean RT (s) with binomial / sample SEs, for the data and for the model simulation
-(pulse_joint_signatures.simulate: 30 reps, seed 0, the mouse's own responded trials, symmetric cells, |coh| <= 36;
-cached). Conventions: coh > 0 and pulse sign +1 = rightward.
+(pulse_joint_signatures.simulate: 30 reps, seed 0, the mouse's own responded trials, symmetric cells, all coherences;
+cached). Conventions: coh > 0 and pulse sign +1 = rightward. Psychometric fits per condition with the author's method
+(src/utils/pmf_utils.fit_psychometric_function, logit_4); correct / error RT histograms (defective densities).
 
 NLL table: the fitting objective (censored quantile QMLE, responded trials): held-out = sum of test NLL over cv0-cv4 per
 mouse (joint families); fitted = train NLL of the "all" fit; control-only fits: train NLL on control trials and test NLL
@@ -27,7 +28,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from scipy import optimize, stats
+from src.utils.pmf_utils import fit_psychometric_function
 
 from scripts.ddm.compare_joint_refits import DDM, FAMILIES, FOLDS, load
 from scripts.ddm.fit_mouse_ddm import load_inputs, responded_only
@@ -40,7 +41,7 @@ STAGES = {1: "early", 2: "middle", 3: "late"}
 MAX_COH = 100  # all coherences, incl. the +-100% trials (pulse trials exist there too); symmetric cells as elsewhere
 RT_EDGES = np.round(np.r_[np.arange(0.3, 2.0, 0.1), 2.0, 2.25, 2.5, 3.0, 4.0, 5.0], 3)
 N_BOOT = 200  # data psychometric-fit CIs (resampling trials within each coherence)
-PSY_PARAMS = ["bias", "sigma", "lapse_left", "lapse_right"]  # bias = -PSE (% coherence, + = rightward); lapses from control
+PSY_PARAMS = ["mean", "beta", "lapse_rate", "guess_rate"]  # pmf_utils logit_4 coefs: mean = 50% point (% coh), beta = slope
 CONDITIONS = ["control"] + [f"{st} {side}" for st in ("early", "middle", "late") for side in ("left", "right")]
 CONTROL_ONLY = {  # name: (folder, variant)
     REFERENCE: ("fits_resp_final", "L0U0V1Z0G1"),
@@ -95,32 +96,16 @@ def summarize(t: pd.DataFrame) -> list[list]:
     return out
 
 
-def _psy(c, mu, sig, gl, gr):
-    """P(right) = gl + (1 - gl - gr) * Phi((c - mu) / sig); c in % coherence. gl: lapse toward right at strong leftward
-    motion (the floor), gr: lapse toward left at strong rightward motion."""
-    return gl + (1 - gl - gr) * stats.norm.cdf((c - mu) / sig)
-
-
-def _nll(c, k, n, mu, sig, gl, gr):
-    p = np.clip(_psy(c, mu, sig, gl, gr), 1e-9, 1 - 1e-9)
-    return -np.sum(k * np.log(p) + (n - k) * np.log(1 - p))
-
-
-def fit_psy(c, k, n, lapses=None, x0=None) -> np.ndarray:
-    """Maximum likelihood on binomial counts. lapses None: fit [mu, sigma, gl, gr]; else fit [mu, sigma] with the lapses
-    fixed. sigma 0.5-500 % coherence, lapses 0-0.5, mu -100..100."""
-    if lapses is None:
-        f = lambda x: _nll(c, k, n, *x)
-        starts, bounds = ([x0] if x0 is not None else [[0, 15, .05, .05], [-10, 30, .1, .1], [10, 30, .1, .1], [0, 60, .02, .02]]), [(-100, 100), (0.5, 500), (0, 0.5), (0, 0.5)]
-    else:
-        f = lambda x: _nll(c, k, n, x[0], x[1], *lapses)
-        starts, bounds = ([x0] if x0 is not None else [[0, 15], [-15, 30], [15, 30], [0, 60]]), [(-100, 100), (0.5, 500)]
-    best = None
-    for x in starts:
-        r = optimize.minimize(f, x, method="L-BFGS-B", bounds=bounds)
-        if best is None or r.fun < best.fun:
-            best = r
-    return best.x
+def fit_psy(c, k, n) -> np.ndarray:
+    """The author's psychometric fit (src/utils/pmf_utils.py, model "logit_4" as in config/main.yaml):
+    P(right) = lapse + (1 - guess - lapse) / (1 + exp(-beta (c - mean))), weighted least squares on the proportion
+    right per coherence with weights sqrt(n), default bounds. Returns [mean, beta, lapse_rate, guess_rate]; NaN if the
+    fit fails."""
+    try:
+        f = fit_psychometric_function(c, k / n, trial_counts=n, model_type="logit_4")
+    except (RuntimeError, ValueError):
+        return np.full(4, np.nan)
+    return np.array([f.coefs_[x] for x in ("mean", "var", "lapse_rate", "guess_rate")])
 
 
 def counts(t: pd.DataFrame, cond: str) -> tuple:
@@ -137,40 +122,20 @@ def counts(t: pd.DataFrame, cond: str) -> tuple:
     return x.index.to_numpy(float), x["sum"].to_numpy(float), x["size"].to_numpy(float)
 
 
-def _fit_all(cnt: dict, x0: dict | None = None) -> dict:
-    """Control: 4 parameters. Pulse conditions: mu and sigma with the control lapses fixed (lapses are stimulus-independent;
-    the pulse conditions have too few trials to separate lapses from bias). Returns {cond: [bias, sigma, gl, gr]} with
-    bias = -mu (rightward shift of the curve in % coherence: positive = more rightward choices)."""
-    out = {}
-    ctl = fit_psy(*cnt["control"], x0=None if x0 is None else x0["control"])
-    out["control"] = ctl
-    for cond, (c, k, n) in cnt.items():
-        if cond != "control":
-            mu, sig = fit_psy(c, k, n, lapses=ctl[2:], x0=None if x0 is None else x0[cond][:2])
-            out[cond] = np.r_[mu, sig, ctl[2:]]
-    return out
-
-
 def psy_fits(t: pd.DataFrame, rng=None) -> dict:
-    """{condition: {"est": [bias, sigma, lapse_left, lapse_right], "lo", "hi" (95% bootstrap, data only)}}."""
+    """{condition: {"est": [mean, beta, lapse_rate, guess_rate], "lo", "hi" (95% bootstrap, data only)}}; each condition
+    fitted on its own, all four parameters free."""
     cnt = {cond: counts(t, cond) for cond in CONDITIONS}
-    cnt = {k: v for k, v in cnt.items() if len(v[0]) >= 3}
-    if "control" not in cnt:
-        return {}
-    est = _fit_all(cnt)
-    sign = lambda v: np.r_[-v[0], v[1:]]
-    res = {cond: {"est": [round(float(x), 4) for x in sign(v)]} for cond, v in est.items()}
+    cnt = {k: v for k, v in cnt.items() if len(v[0]) >= 4}
+    est = {cond: fit_psy(*v) for cond, v in cnt.items()}
+    rnd = lambda v: [None if not np.isfinite(x) else round(float(x), 5) for x in v]
+    res = {cond: {"est": rnd(v)} for cond, v in est.items()}
     if rng is not None:
-        boots = {cond: [] for cond in est}
-        for _ in range(N_BOOT):
-            bc = {cond: (c, rng.binomial(n.astype(int), k / n).astype(float), n) for cond, (c, k, n) in cnt.items()}
-            b = _fit_all(bc, x0=est)
-            for cond in est:
-                boots[cond].append(sign(b[cond]))
-        for cond in est:
-            bs = np.array(boots[cond])
-            res[cond]["lo"] = [round(float(x), 4) for x in np.percentile(bs, 2.5, axis=0)]
-            res[cond]["hi"] = [round(float(x), 4) for x in np.percentile(bs, 97.5, axis=0)]
+        for cond, (c, k, n) in cnt.items():
+            bs = np.array([fit_psy(c, rng.binomial(n.astype(int), k / n).astype(float), n) for _ in range(N_BOOT)])
+            res[cond]["lo"] = rnd(np.nanpercentile(bs, 2.5, axis=0))
+            res[cond]["hi"] = rnd(np.nanpercentile(bs, 97.5, axis=0))
+            res[cond]["n_failed"] = int(np.isnan(bs[:, 0]).sum())
     return res
 
 

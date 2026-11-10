@@ -48,3 +48,11 @@ New fits; interpretation.
   Checks: NLL table identical to v1; pooled data biases control -1.08, early L/R -6.40/+18.41, middle L/R -3.82/+9.21,
   late L/R -1.2/+9.7; RT densities integrate to 1.000 (data and models); no sigma at bound; script syntax OK.
   Same URL (version 2). Data JSON: dissemination/figures/qc/fit_browser_2026-11-09_v2.json (v1 kept). Build: 6 min.
+- 2026-11-10: v3 (author: "use my psychometric fit method"). Psychometric fits now call
+  src/utils/pmf_utils.fit_psychometric_function(model_type="logit_4", default bounds; config/main.yaml psych_model):
+  lapse + (1-guess-lapse)/(1+exp(-beta(c-mean))), WLS on proportions with weights sqrt(n), each condition fitted alone
+  with 4 free parameters (no shared lapses). Borrowed control +-100% end kept. Bootstrap: 200 binomial resamples refit
+  the same way. Checks: pooled control fit equals a direct call on the summary rows (mean 1.161, beta 0.051, lapse
+  0.147, guess 0.120); NLL and RT data identical to v2; 0 failed fits; syntax OK. Caveat shown on the page: with 4 free
+  parameters, late-pulse and single-mouse fits are poorly constrained (lapse/guess trade off with mean; e.g. pooled late
+  left guess 0.27, mean -17.7, CI -34 to -4). JSON: fit_browser_2026-11-10_v3.json. Same URL, version 3.
