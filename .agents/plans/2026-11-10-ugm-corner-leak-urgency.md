@@ -86,3 +86,7 @@ misfit for each (L, u) pair, plus a report saying whether the UGM corner is rule
   the remaining 389 tasks submitted (arrays 43112068-43112083). One start-up failure (UGM_joint_power:117, PSUIM5
   L1U1V0Z0G1 all; FAILED after 9 s: Lmod cache rename race in ~/.cache/lmod when many jobs start at once); the loop
   retries it; no other task hit it. If it repeats: rm -rf ~/.cache/lmod, or retry `module load` in fit_mouse_ddm.slurm.
+- 2026-11-11: (Claude, pulse-only session) after the Hyak restart, synced UGM fits: 313/720 (joint linear 120/120, joint
+  norm 102/120, joint power 91/120, all three pulse-only batches 0/120). Synced files all valid (12 resumed from a
+  checkpoint). Missing 407: 47 joint, 360 pulse-only; 164 of them have 16 h table limits. To resume: restart the ugm
+  autosubmit loop (state slurm-logs/autosubmit_state_ugm.json); fits resume from their .ckpt files on gscratch.

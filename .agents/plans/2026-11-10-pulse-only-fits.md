@@ -31,6 +31,7 @@ can the family reproduce the pulse behaviour when it is not also constrained by 
 - [x] 2b. PO table submitted by the author (loop in tmux 'pulse'; 21 done at 2026-11-09 16:58 Hyak time).
 - [x] 2c. PLU loop started by the author (tmux 'pulse_lu'; dry run 2026-11-09 17:09 Hyak time: 480 pending, queue 431/500).
       Both loops share the 500 limit; an sbatch refused by the QOS limit leaves its tasks pending for the next pass.
+- [x] 3a. Fits finished and synced (2026-11-11).
 - [ ] 3. Sync; simulate the pulse-only fits; add a "Pulse-only fits" group to the fit browser.
 - [ ] 4. Compare: pulse signatures vs data (psychometric shifts per condition, early/late window effect, per-mouse
       chi-square); parameters pulse-only vs all vs control-only; control-trial NLL out of sample.
@@ -77,3 +78,7 @@ A new objective (e.g. extra weight on pulse-trial choices); decision rules.
   default partition (ahead of table order). Tested with stub squeue/sbatch/scancel on a copy of the state: 8 cancelled,
   12 submitted in one array (--time=960, no -p), state submitted / attempts 1 / no partition; dry run changed nothing.
 - 2026-11-10: author ran --now: 8 lab copies cancelled, all 12 PLU 16 h tasks submitted on the shared partition as job 43089560.
+- 2026-11-11: after the Hyak restart the author synced: all 960 pulse-only fits present (PO 480, PLU 480), all load,
+  name = content (mouse, variant, split, front end), finite train/test NLL, n_test of the pulse split = controls;
+  25 resumed from a checkpoint; fit time median 0.3-0.4 h, max 3.7 h (none above its limit). No .ckpt/.tmp left.
+  Nothing to resume. Next: step 3 (simulate, fit browser group).
