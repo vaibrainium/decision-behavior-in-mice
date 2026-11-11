@@ -1,0 +1,61 @@
+model,mouse,0.3-1.2,1.2-5,rt_shift_toward_ms,err_0.3-1.2,err_1.2-5
+data,DBM12,-0.5061,-7.903,-92.7704,0.0,0.0
+data,DBM13,1.0891,4.5467,157.1347,0.0,0.0
+data,DBM14,-4.2403,0.2525,-85.0328,0.0,0.0
+data,DBM15,4.3493,3.1768,96.3025,0.0,0.0
+data,DBM5,3.8957,1.1761,-34.7249,0.0,0.0
+data,DBM6,10.1769,-4.8445,-52.8769,0.0,0.0
+data,PSUIM10,0.6582,12.9101,72.5839,0.0,0.0
+data,PSUIM5,10.3783,2.212,-216.9771,0.0,0.0
+data,PSUIM6,15.4952,1.6233,-349.6069,0.0,0.0
+data,PSUIM7,13.4754,-0.9534,-96.0409,0.0,0.0
+"primary, control-only fit",DBM12,2.0597,-3.3315,-29.3581,2.5658,4.5715
+"primary, control-only fit",DBM13,2.4084,0.5955,-11.8326,1.3193,-3.9512
+"primary, control-only fit",DBM14,2.3569,1.5801,81.1453,6.5973,1.3275
+"primary, control-only fit",DBM15,2.292,-2.5594,-22.5214,-2.0574,-5.7362
+"primary, control-only fit",DBM5,4.4958,-1.0094,-36.1517,0.6001,-2.1856
+"primary, control-only fit",DBM6,5.2457,-1.3012,-41.5659,-4.9312,3.5433
+"primary, control-only fit",PSUIM10,2.1215,-0.5737,-70.2932,1.4633,-13.4838
+"primary, control-only fit",PSUIM5,4.5142,0.0736,-35.5907,-5.8642,-2.1384
+"primary, control-only fit",PSUIM6,3.8172,-0.0933,-64.25,-11.678,-1.7166
+"primary, control-only fit",PSUIM7,3.1731,-3.5366,-56.0058,-10.3023,-2.5831
+pulse_power_urgency,DBM12,1.7059,-1.4213,-20.457,2.2121,6.4817
+pulse_power_urgency,DBM13,3.9806,-1.2091,-21.606,2.8915,-5.7558
+pulse_power_urgency,DBM14,4.3162,-2.0435,-66.6731,8.5565,-2.2961
+pulse_power_urgency,DBM15,0.7198,-1.9839,-26.163,-3.6296,-5.1607
+pulse_power_urgency,DBM5,4.5178,-1.2513,-42.1504,0.6221,-2.4275
+pulse_power_urgency,DBM6,6.5102,0.3644,-49.1084,-3.6667,5.2089
+pulse_power_urgency,PSUIM10,8.077,2.4942,29.1122,7.4188,-10.4159
+pulse_power_urgency,PSUIM5,6.1597,0.3418,-86.3104,-4.2186,-1.8702
+pulse_power_urgency,PSUIM6,4.9866,-0.9751,-87.7284,-10.5086,-2.5984
+pulse_power_urgency,PSUIM7,4.7195,-6.0782,-47.821,-8.7559,-5.1247
+pulse_power_urgency_no_sv,DBM12,0.9642,-0.0316,3.3058,1.4704,7.8714
+pulse_power_urgency_no_sv,DBM13,0.9308,0.4852,15.4567,-0.1583,-4.0615
+pulse_power_urgency_no_sv,DBM14,4.6895,0.9439,-23.2826,8.9298,0.6913
+pulse_power_urgency_no_sv,DBM15,2.2654,0.3798,-7.282,-2.0839,-2.7969
+pulse_power_urgency_no_sv,DBM5,3.7167,1.5201,28.1955,-0.179,0.3439
+pulse_power_urgency_no_sv,DBM6,5.0933,1.3311,-26.9943,-5.0836,6.1755
+pulse_power_urgency_no_sv,PSUIM10,6.5342,4.3237,-16.4283,5.876,-8.5864
+pulse_power_urgency_no_sv,PSUIM5,3.4877,0.8468,-55.9221,-6.8906,-1.3651
+pulse_power_urgency_no_sv,PSUIM6,4.8882,1.3809,-35.257,-10.607,-0.2424
+pulse_power_urgency_no_sv,PSUIM7,5.4686,0.5987,-19.4566,-8.0068,1.5522
+pulse_power_leak_urgency,DBM12,3.5382,-3.4357,-13.4038,4.0444,4.4673
+pulse_power_leak_urgency,DBM13,2.9245,-0.9422,-30.7302,1.8354,-5.4889
+pulse_power_leak_urgency,DBM14,3.2039,-2.493,-84.4603,7.4443,-2.7456
+pulse_power_leak_urgency,DBM15,1.1857,-2.1055,-41.1195,-3.1636,-5.2822
+pulse_power_leak_urgency,DBM5,5.8995,-3.422,-33.465,2.0037,-4.5982
+pulse_power_leak_urgency,DBM6,6.4981,-2.1067,-68.2713,-3.6787,2.7378
+pulse_power_leak_urgency,PSUIM10,8.5622,-2.4727,-38.2446,7.904,-15.3829
+pulse_power_leak_urgency,PSUIM5,5.5729,-2.3831,-84.6035,-4.8055,-4.595
+pulse_power_leak_urgency,PSUIM6,3.449,-1.6915,-81.8917,-12.0463,-3.3148
+pulse_power_leak_urgency,PSUIM7,4.314,-7.5499,-55.8885,-9.1614,-6.5965
+pulse_power_leak_urgency_no_sv,DBM12,0.5465,0.0772,7.292,1.0526,7.9802
+pulse_power_leak_urgency_no_sv,DBM13,0.5743,1.979,60.73,-0.5148,-2.5677
+pulse_power_leak_urgency_no_sv,DBM14,5.2065,-0.0317,-28.2708,9.4468,-0.2842
+pulse_power_leak_urgency_no_sv,DBM15,1.6011,0.4687,-1.916,-2.7482,-2.708
+pulse_power_leak_urgency_no_sv,DBM5,3.3409,1.5174,35.0457,-0.5548,0.3413
+pulse_power_leak_urgency_no_sv,DBM6,5.6638,1.4218,-41.5267,-4.5131,6.2663
+pulse_power_leak_urgency_no_sv,PSUIM10,9.7371,3.3079,45.6425,9.079,-9.6023
+pulse_power_leak_urgency_no_sv,PSUIM5,4.0733,0.9355,-41.4712,-6.3051,-1.2764
+pulse_power_leak_urgency_no_sv,PSUIM6,5.9954,0.9467,-54.2028,-9.4999,-0.6766
+pulse_power_leak_urgency_no_sv,PSUIM7,5.512,0.5721,-19.2478,-7.9634,1.5256

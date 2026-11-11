@@ -143,7 +143,7 @@ for (const r of D.nll) { if (!NLL[r.family]) NLL[r.family] = {}; NLL[r.family][r
 function totals(fam) {
   const rs = Object.values(NLL[fam] || {});
   const sum = k => rs.length === D.mice.length && rs.every(r => r[k] != null) ? rs.reduce((a, r) => a + r[k], 0) : null;
-  return { heldout: sum("heldout_nll"), n_heldout: sum("n_heldout"), fitted: sum("fitted_nll"), pulse: sum("pulse_test_nll"), n_pulse: sum("n_pulse_test"), k: rs.length ? rs[0].k : null };
+  return { heldout: sum("heldout_nll"), n_heldout: sum("n_heldout"), fitted: sum("fitted_nll"), pulse: sum("pulse_test_nll"), n_pulse: sum("n_pulse_test"), ctest: sum("control_test_nll"), n_ctest: sum("n_control_test"), k: rs.length ? rs[0].k : null };
 }
 
 /* ---------- sidebar ---------- */
@@ -322,7 +322,7 @@ const VIEW_NOTES = {
 };
 function modelView(fam) {
   const F = D.families[fam], tot = totals(fam);
-  const isCtl = F.group.startsWith("Control-only"), isCf = F.group.startsWith("Counterfactual");
+  const isCtl = F.group.startsWith("Control-only"), isCf = F.group.startsWith("Counterfactual"), isPo = F.group.startsWith("Pulse-only");
   const frag = document.createDocumentFragment();
   const head = el("div", { class: "head" }, el("div", {}, el("h2", { id: "model-title", text: F.label }), el("div", { class: "sub", text: F.group })));
   const seg = el("div", { class: "seg", role: "group", "aria-label": "View" });
@@ -332,6 +332,7 @@ function modelView(fam) {
   const st = el("div", { class: "stats" });
   if (isCf) st.append(el("span", { text: "Not a fitted model: the fitted parameters with sv set to 0, simulated. No likelihood." }));
   else if (isCtl) st.append(el("span", {}, "Fitted NLL (control trials) ", el("b", { text: fmt(tot.fitted) })), el("span", {}, "Held-out NLL, pulse trials ", el("b", { text: fmt(tot.pulse) })), el("span", {}, "Free parameters ", el("b", { text: tot.k ?? "–" })));
+  else if (isPo) st.append(el("span", {}, "Held-out NLL, pulse trials (pcv0–pcv4) ", el("b", { text: fmt(tot.heldout) })), el("span", {}, "Fitted NLL, pulse trials ", el("b", { text: fmt(tot.fitted) })), el("span", {}, "Predicted NLL, control trials ", el("b", { text: fmt(tot.ctest) })), el("span", {}, "Free parameters ", el("b", { text: tot.k ?? "–" })));
   else st.append(el("span", {}, "Held-out NLL, cv0–cv4, 10 mice ", el("b", { text: fmt(tot.heldout) })), el("span", {}, "Fitted NLL, all trials ", el("b", { text: fmt(tot.fitted) })), el("span", {}, "Free parameters ", el("b", { text: tot.k ?? "–" })));
   frag.append(st);
   const lg = el("div", { class: "legend" });
@@ -369,33 +370,38 @@ function nllView() {
   for (const [k, l] of Object.entries(views)) { const b = el("button", { type: "button", "aria-pressed": String(state.nllView === k), text: l }); b.addEventListener("click", () => { state.nllView = k; save(); render(); }); seg.append(b); }
   head.append(el("div", { class: "controls" }, seg));
   frag.append(head, el("p", { class: "note", text: "The likelihood is the fitting objective: censored quantile quasi-likelihood of choice and RT, responded trials (all coherences, all trials). Held-out: each mouse's trials are split into five folds, each fold predicted by a fit to the other four, NLL summed over folds, so every trial is predicted once. Fitted: the fit to all trials (no penalty for parameters). Values are comparable across models only for the same trials; the n column gives the held-out trial count and marks any model that differs (≠). Highlighted: lowest value in each column. Click a column name to sort." }));
-  const fams = D.groups.flatMap(g => g.families.map(f => [g, f])).filter(([g]) => !g.label.startsWith("Control-only") && !g.label.startsWith("Counterfactual"));
-  const refN = totals("primary").n_heldout;
-  const val = (f, m) => { const r = (NLL[f] || {})[m]; if (!r) return null; if (state.nllView === "fitted") return r.fitted_nll; if (state.nllView === "per1k") return r.heldout_nll != null ? r.heldout_nll / r.n_heldout * 1000 : null; return r.heldout_nll; };
-  const tot = f => { const t = totals(f); if (state.nllView === "fitted") return t.fitted; if (state.nllView === "per1k") return t.heldout != null ? t.heldout / t.n_heldout * 1000 : null; return t.heldout; };
-  const cols = [["total", "All mice"], ...D.mice.map(m => [m, m]), ["k", "Params"], ["n", "n held-out"]];
-  const get = (f, k) => k === "total" ? tot(f) : k === "k" ? totals(f).k : k === "n" ? totals(f).n_heldout : val(f, k);
-  const block = el("section", { class: "block", id: "nll-joint" }, el("h3", { text: "Models fitted to all trials" }));
-  const wrap = el("div", { class: "tablewrap" }), table = el("table"), tr = el("tr");
-  const mb = el("button", { type: "button", text: "Model" + (state.nllSort === "model" ? " ▲" : "") }); mb.addEventListener("click", () => { state.nllSort = "model"; save(); render(); });
-  tr.append(el("th", {}, mb));
-  for (const [k, l] of cols) { const b = el("button", { type: "button", text: l + (state.nllSort === k ? " ▲" : "") }); b.addEventListener("click", () => { state.nllSort = k; save(); render(); }); tr.append(el("th", {}, b)); }
-  table.append(el("thead", {}, tr));
-  const best = {}; for (const [k] of cols) if (k !== "k" && k !== "n") { const vs = fams.map(([, f]) => get(f, k)).filter(v => v != null); best[k] = vs.length ? Math.min(...vs) : null; }
-  const ordered = state.nllSort === "model" ? fams : [...fams].sort((a, b) => (get(a[1], state.nllSort) ?? Infinity) - (get(b[1], state.nllSort) ?? Infinity));
-  const tb = el("tbody");
-  for (const [g, f] of ordered) {
-    const r = el("tr");
-    r.append(el("td", { text: `${D.families[f].label} · ${g.label.replace("All trials, ", "")}` }));
-    for (const [k] of cols) {
-      const v = get(f, k);
-      const c = el("td", { text: k === "k" ? (v ?? "–") : k === "n" ? (v == null ? "–" : v.toLocaleString("en-US") + (refN != null && v !== refN ? " ≠" : "")) : fmt(v, state.nllView === "per1k" ? 2 : 1) });
-      if (k !== "k" && k !== "n" && v != null && v === best[k]) c.className = "best";
-      r.append(c);
+  const fams = D.groups.flatMap(g => g.families.map(f => [g, f])).filter(([g]) => g.label.startsWith("All trials"));
+  const pfams = D.groups.flatMap(g => g.families.map(f => [g, f])).filter(([g]) => g.label.startsWith("Pulse-only"));
+  function tableBlock(fams, refN, id, title, note, withCtl) {
+    const val = (f, m) => { const r = (NLL[f] || {})[m]; if (!r) return null; if (state.nllView === "fitted") return r.fitted_nll; if (state.nllView === "per1k") return r.heldout_nll != null ? r.heldout_nll / r.n_heldout * 1000 : null; return r.heldout_nll; };
+    const tot = f => { const t = totals(f); if (state.nllView === "fitted") return t.fitted; if (state.nllView === "per1k") return t.heldout != null ? t.heldout / t.n_heldout * 1000 : null; return t.heldout; };
+    const cols = [["total", "All mice"], ...D.mice.map(m => [m, m]), ...(withCtl ? [["ctl", "Control trials, predicted"]] : []), ["k", "Params"], ["n", "n held-out"]];
+    const get = (f, k) => k === "total" ? tot(f) : k === "ctl" ? totals(f).ctest : k === "k" ? totals(f).k : k === "n" ? totals(f).n_heldout : val(f, k);
+    const block = el("section", { class: "block", id }, el("h3", { text: title }), note ? el("p", { class: "note", text: note }) : null);
+    const wrap = el("div", { class: "tablewrap" }), table = el("table"), tr = el("tr");
+    const mb = el("button", { type: "button", text: "Model" + (state.nllSort === "model" ? " ▲" : "") }); mb.addEventListener("click", () => { state.nllSort = "model"; save(); render(); });
+    tr.append(el("th", {}, mb));
+    for (const [k, l] of cols) { const b = el("button", { type: "button", text: l + (state.nllSort === k ? " ▲" : "") }); b.addEventListener("click", () => { state.nllSort = k; save(); render(); }); tr.append(el("th", {}, b)); }
+    table.append(el("thead", {}, tr));
+    const best = {}; for (const [k] of cols) if (k !== "k" && k !== "n") { const vs = fams.map(([, f]) => get(f, k)).filter(v => v != null); best[k] = vs.length ? Math.min(...vs) : null; }
+    const ordered = state.nllSort === "model" ? fams : [...fams].sort((a, b) => (get(a[1], state.nllSort) ?? Infinity) - (get(b[1], state.nllSort) ?? Infinity));
+    const tb = el("tbody");
+    for (const [g, f] of ordered) {
+      const r = el("tr");
+      r.append(el("td", { text: `${D.families[f].label} · ${g.label.replace("All trials, ", "").replace(/^Pulse-only fits, /, "").replace(/ \(.*\)$/, "")}` }));
+      for (const [k] of cols) {
+        const v = get(f, k);
+        const c = el("td", { text: k === "k" ? (v ?? "–") : k === "n" ? (v == null ? "–" : v.toLocaleString("en-US") + (refN != null && v !== refN ? " ≠" : "")) : fmt(v, state.nllView === "per1k" ? 2 : 1) });
+        if (k !== "k" && k !== "n" && v != null && v === best[k]) c.className = "best";
+        r.append(c);
+      }
+      tb.append(r);
     }
-    tb.append(r);
+    table.append(tb); wrap.append(table); block.append(wrap); return block;
   }
-  table.append(tb); wrap.append(table); block.append(wrap); frag.append(block);
+  frag.append(tableBlock(fams, totals("primary").n_heldout, "nll-joint", "Models fitted to all trials", null, false));
+  if (pfams.length) frag.append(tableBlock(pfams, totals(pfams[0][1]).n_heldout, "nll-pulse", "Models fitted to pulse trials only",
+    "Fitted on pulse trials only. Held-out: five folds within pulse trials (pcv0–pcv4), summed; Fitted: the fit to all pulse trials; Control trials, predicted: that fit scoring every control trial it never saw (summed over mice; one column, the same in every view). Comparable within this table only: not with the table above (different trials) and not with the control-only fits' pulse-trial NLL (same trials, but scored in one block rather than five folds, and this objective's value per trial depends on how many trials each cell has).", true));
   const cb = el("section", { class: "block", id: "nll-control" }, el("h3", { text: "Models fitted to control trials only" }),
     el("p", { class: "note", text: "Fitted on control trials; pulse trials held out entirely. Not comparable with the table above (different trials)." }));
   const w2 = el("div", { class: "tablewrap" }), t2 = el("table"), h2 = el("tr");

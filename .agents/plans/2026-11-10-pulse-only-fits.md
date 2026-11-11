@@ -1,5 +1,5 @@
 # Plan: fit the DDM families on pulse trials only
-Status: active (step 2: waiting for the author to submit on Hyak)
+Status: done (report reports/2026-11-11-pulse-only-fits.md)
 Created: 2026-11-10 by Claude (Opus 5.5)
 Related reports: reports/2026-11-09-pulse-effect-bootstrap.md, reports/2026-10-30-pulse-weight-joint.md,
 reports/2026-10-31-pulse-time-weights.md, reports/2026-11-09-mapping-accumulator-exploratory.md
@@ -32,10 +32,10 @@ can the family reproduce the pulse behaviour when it is not also constrained by 
 - [x] 2c. PLU loop started by the author (tmux 'pulse_lu'; dry run 2026-11-09 17:09 Hyak time: 480 pending, queue 431/500).
       Both loops share the 500 limit; an sbatch refused by the QOS limit leaves its tasks pending for the next pass.
 - [x] 3a. Fits finished and synced (2026-11-11).
-- [ ] 3. Sync; simulate the pulse-only fits; add a "Pulse-only fits" group to the fit browser.
-- [ ] 4. Compare: pulse signatures vs data (psychometric shifts per condition, early/late window effect, per-mouse
+- [x] 3. Sync; simulate the pulse-only fits; add a "Pulse-only fits" group to the fit browser.
+- [x] 4. Compare: pulse signatures vs data (psychometric shifts per condition, early/late window effect, per-mouse
       chi-square); parameters pulse-only vs all vs control-only; control-trial NLL out of sample.
-- [ ] 5. Report.
+- [x] 5. Report.
 
 ## Interpretation, fixed before results
 - Pulse-only fit still misses the pulse signatures -> the family cannot produce them with any parameters (structural).
@@ -82,3 +82,6 @@ A new objective (e.g. extra weight on pulse-trial choices); decision rules.
   name = content (mouse, variant, split, front end), finite train/test NLL, n_test of the pulse split = controls;
   25 resumed from a checkpoint; fit time median 0.3-0.4 h, max 3.7 h (none above its limit). No .ckpt/.tmp left.
   Nothing to resume. Next: step 3 (simulate, fit browser group).
+- 2026-11-11: steps 3-5 done. Pulse-only families registered (pulse_joint_signatures.PULSE_ONLY_FAMILIES, model_path);
+  fit browser v4 data (59 families; NLL tab gets a pulse-only table; earlier content unchanged, checked) published as
+  artifact version 5. Signatures (|coh| <= 36 cache) + bootstrap (_pulseonly) + compare_pulse_only.py. Report written.

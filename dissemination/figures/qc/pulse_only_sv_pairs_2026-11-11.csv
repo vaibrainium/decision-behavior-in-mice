@@ -1,0 +1,9 @@
+mapping,model,heldout_no_sv_minus_sv,mice_no_sv_better10,mice_no_sv_worse10,control_pred_no_sv_minus_sv
+linear,primary,24.82,0,1,228.21
+linear,leak,54.81,0,1,479.28
+linear,urgency,48.3,1,3,216.64
+linear,leak_urgency,61.44,1,2,319.67
+power,primary,65.46,1,3,277.17
+power,leak,68.12,0,2,348.45
+power,urgency,44.05,2,3,158.77
+power,leak_urgency,66.78,1,3,586.83

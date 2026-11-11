@@ -1,0 +1,421 @@
+model,mouse,bin,effect,n_pulse
+data,DBM12,0.0,2.18559,150.0
+data,DBM12,1.0,-4.64903,81.0
+data,DBM12,2.0,-2.14552,47.0
+data,DBM12,3.0,-5.27023,39.0
+data,DBM12,4.0,-7.48414,44.0
+data,DBM12,5.0,3.2963,30.0
+data,DBM12,6.0,-16.60562,25.0
+data,DBM13,0.0,3.03571,40.0
+data,DBM13,1.0,-0.77688,43.0
+data,DBM13,2.0,6.13616,29.0
+data,DBM13,3.0,10.70707,15.0
+data,DBM13,4.0,4.74359,20.0
+data,DBM13,5.0,6.26566,19.0
+data,DBM13,6.0,1.66667,30.0
+data,DBM14,0.0,-4.27855,42.0
+data,DBM14,1.0,1.9471,38.0
+data,DBM14,2.0,-10.67308,25.0
+data,DBM14,3.0,12.34127,30.0
+data,DBM14,4.0,-11.92833,34.0
+data,DBM14,5.0,2.60417,24.0
+data,DBM14,6.0,1.25388,40.0
+data,DBM15,0.0,8.86069,51.0
+data,DBM15,1.0,0.34297,46.0
+data,DBM15,2.0,6.6371,51.0
+data,DBM15,3.0,-0.57401,44.0
+data,DBM15,4.0,12.99603,42.0
+data,DBM15,5.0,9.71655,42.0
+data,DBM15,6.0,-3.01156,39.0
+data,DBM5,0.0,0.36375,137.0
+data,DBM5,1.0,8.41028,139.0
+data,DBM5,2.0,3.63573,117.0
+data,DBM5,3.0,1.21973,116.0
+data,DBM5,4.0,0.02298,82.0
+data,DBM5,5.0,8.29688,64.0
+data,DBM5,6.0,-5.94553,100.0
+data,DBM6,0.0,12.073,164.0
+data,DBM6,1.0,11.30919,137.0
+data,DBM6,2.0,7.96204,111.0
+data,DBM6,3.0,-6.0922,139.0
+data,DBM6,4.0,-3.16617,137.0
+data,DBM6,5.0,-5.96053,106.0
+data,DBM6,6.0,-6.56743,131.0
+data,PSUIM10,0.0,13.33333,9.0
+data,PSUIM10,1.0,-2.19048,25.0
+data,PSUIM10,2.0,5.92105,19.0
+data,PSUIM10,3.0,15.65844,27.0
+data,PSUIM10,4.0,-2.07039,23.0
+data,PSUIM10,5.0,19.38272,18.0
+data,PSUIM10,6.0,16.74948,23.0
+data,PSUIM5,0.0,-5.67068,52.0
+data,PSUIM5,1.0,15.02312,74.0
+data,PSUIM5,2.0,12.75152,105.0
+data,PSUIM5,3.0,9.33587,92.0
+data,PSUIM5,4.0,2.43665,101.0
+data,PSUIM5,5.0,3.71035,126.0
+data,PSUIM5,6.0,-3.08509,161.0
+data,PSUIM6,0.0,13.28049,250.0
+data,PSUIM6,1.0,17.95448,296.0
+data,PSUIM6,2.0,10.48043,209.0
+data,PSUIM6,3.0,1.90061,213.0
+data,PSUIM6,4.0,5.27162,251.0
+data,PSUIM6,5.0,-1.62882,220.0
+data,PSUIM6,6.0,0.71691,397.0
+data,PSUIM7,0.0,10.89372,667.0
+data,PSUIM7,1.0,16.48511,535.0
+data,PSUIM7,2.0,13.23814,280.0
+data,PSUIM7,3.0,-1.13979,176.0
+data,PSUIM7,4.0,4.6662,119.0
+data,PSUIM7,5.0,-6.63079,128.0
+data,PSUIM7,6.0,-0.23549,197.0
+"primary, control-only fit",DBM12,0.0,4.41712,3556.0
+"primary, control-only fit",DBM12,1.0,-1.13417,2188.0
+"primary, control-only fit",DBM12,2.0,-0.57708,1364.0
+"primary, control-only fit",DBM12,3.0,-1.7655,1226.0
+"primary, control-only fit",DBM12,4.0,-4.00489,1171.0
+"primary, control-only fit",DBM12,5.0,-4.35018,876.0
+"primary, control-only fit",DBM12,6.0,-3.14109,1002.0
+"primary, control-only fit",DBM13,0.0,4.78836,851.0
+"primary, control-only fit",DBM13,1.0,3.76148,768.0
+"primary, control-only fit",DBM13,2.0,-2.3949,635.0
+"primary, control-only fit",DBM13,3.0,-1.51208,676.0
+"primary, control-only fit",DBM13,4.0,2.42016,712.0
+"primary, control-only fit",DBM13,5.0,1.1316,583.0
+"primary, control-only fit",DBM13,6.0,0.99108,635.0
+"primary, control-only fit",DBM14,0.0,2.60294,1028.0
+"primary, control-only fit",DBM14,1.0,2.11449,715.0
+"primary, control-only fit",DBM14,2.0,1.80736,600.0
+"primary, control-only fit",DBM14,3.0,3.6134,709.0
+"primary, control-only fit",DBM14,4.0,2.15552,847.0
+"primary, control-only fit",DBM14,5.0,2.37499,867.0
+"primary, control-only fit",DBM14,6.0,-1.02991,1048.0
+"primary, control-only fit",DBM15,0.0,1.71596,1085.0
+"primary, control-only fit",DBM15,1.0,1.34574,1096.0
+"primary, control-only fit",DBM15,2.0,3.72752,1033.0
+"primary, control-only fit",DBM15,3.0,-2.06279,1034.0
+"primary, control-only fit",DBM15,4.0,-2.76315,1130.0
+"primary, control-only fit",DBM15,5.0,-4.32145,979.0
+"primary, control-only fit",DBM15,6.0,-1.07294,1142.0
+"primary, control-only fit",DBM5,0.0,3.77832,3174.0
+"primary, control-only fit",DBM5,1.0,7.15013,3053.0
+"primary, control-only fit",DBM5,2.0,2.79131,2971.0
+"primary, control-only fit",DBM5,3.0,-0.34715,2939.0
+"primary, control-only fit",DBM5,4.0,0.80595,2909.0
+"primary, control-only fit",DBM5,5.0,-2.71595,2142.0
+"primary, control-only fit",DBM5,6.0,-2.44227,2261.0
+"primary, control-only fit",DBM6,0.0,6.95814,3816.0
+"primary, control-only fit",DBM6,1.0,4.95521,3686.0
+"primary, control-only fit",DBM6,2.0,3.98153,3299.0
+"primary, control-only fit",DBM6,3.0,1.14162,3425.0
+"primary, control-only fit",DBM6,4.0,-1.61998,3451.0
+"primary, control-only fit",DBM6,5.0,-1.74062,2782.0
+"primary, control-only fit",DBM6,6.0,-3.43573,3158.0
+"primary, control-only fit",PSUIM10,0.0,0.88522,202.0
+"primary, control-only fit",PSUIM10,1.0,0.88794,383.0
+"primary, control-only fit",PSUIM10,2.0,2.49117,483.0
+"primary, control-only fit",PSUIM10,3.0,1.73389,537.0
+"primary, control-only fit",PSUIM10,4.0,-1.04623,561.0
+"primary, control-only fit",PSUIM10,5.0,-1.93095,511.0
+"primary, control-only fit",PSUIM10,6.0,-0.24226,562.0
+"primary, control-only fit",PSUIM5,0.0,3.73531,1243.0
+"primary, control-only fit",PSUIM5,1.0,6.32578,1307.0
+"primary, control-only fit",PSUIM5,2.0,3.94411,1612.0
+"primary, control-only fit",PSUIM5,3.0,1.16312,2237.0
+"primary, control-only fit",PSUIM5,4.0,-0.20123,2785.0
+"primary, control-only fit",PSUIM5,5.0,-0.73505,2865.0
+"primary, control-only fit",PSUIM5,6.0,0.16352,3621.0
+"primary, control-only fit",PSUIM6,0.0,3.69415,4927.0
+"primary, control-only fit",PSUIM6,1.0,3.5702,4719.0
+"primary, control-only fit",PSUIM6,2.0,3.95344,4806.0
+"primary, control-only fit",PSUIM6,3.0,1.77602,5939.0
+"primary, control-only fit",PSUIM6,4.0,-0.17543,7423.0
+"primary, control-only fit",PSUIM6,5.0,0.27613,7120.0
+"primary, control-only fit",PSUIM6,6.0,-1.47612,9128.0
+"primary, control-only fit",PSUIM7,0.0,5.47897,15333.0
+"primary, control-only fit",PSUIM7,1.0,2.43239,11978.0
+"primary, control-only fit",PSUIM7,2.0,-0.72212,8046.0
+"primary, control-only fit",PSUIM7,3.0,-1.8356,6785.0
+"primary, control-only fit",PSUIM7,4.0,-2.82032,5999.0
+"primary, control-only fit",PSUIM7,5.0,-5.81923,4504.0
+"primary, control-only fit",PSUIM7,6.0,-4.38356,4804.0
+pulse_linear_urgency,DBM12,0.0,5.79793,3884.0
+pulse_linear_urgency,DBM12,1.0,-1.1293,2352.0
+pulse_linear_urgency,DBM12,2.0,-2.06764,1492.0
+pulse_linear_urgency,DBM12,3.0,-1.85574,1245.0
+pulse_linear_urgency,DBM12,4.0,-3.8618,1066.0
+pulse_linear_urgency,DBM12,5.0,-4.30944,768.0
+pulse_linear_urgency,DBM12,6.0,-3.75216,726.0
+pulse_linear_urgency,DBM13,0.0,3.74982,899.0
+pulse_linear_urgency,DBM13,1.0,3.97334,672.0
+pulse_linear_urgency,DBM13,2.0,-0.20615,552.0
+pulse_linear_urgency,DBM13,3.0,-0.11268,627.0
+pulse_linear_urgency,DBM13,4.0,-0.79731,650.0
+pulse_linear_urgency,DBM13,5.0,1.08546,580.0
+pulse_linear_urgency,DBM13,6.0,-0.4238,680.0
+pulse_linear_urgency,DBM14,0.0,3.92445,999.0
+pulse_linear_urgency,DBM14,1.0,2.51112,728.0
+pulse_linear_urgency,DBM14,2.0,0.73397,691.0
+pulse_linear_urgency,DBM14,3.0,-3.95897,727.0
+pulse_linear_urgency,DBM14,4.0,-0.16812,762.0
+pulse_linear_urgency,DBM14,5.0,1.39225,687.0
+pulse_linear_urgency,DBM14,6.0,-0.69793,744.0
+pulse_linear_urgency,DBM15,0.0,5.60654,1190.0
+pulse_linear_urgency,DBM15,1.0,1.96949,1168.0
+pulse_linear_urgency,DBM15,2.0,2.62896,1031.0
+pulse_linear_urgency,DBM15,3.0,-2.25491,1074.0
+pulse_linear_urgency,DBM15,4.0,-2.06815,1100.0
+pulse_linear_urgency,DBM15,5.0,-3.46525,1002.0
+pulse_linear_urgency,DBM15,6.0,-4.99014,1084.0
+pulse_linear_urgency,DBM5,0.0,1.98997,3452.0
+pulse_linear_urgency,DBM5,1.0,8.46805,2923.0
+pulse_linear_urgency,DBM5,2.0,3.65255,2660.0
+pulse_linear_urgency,DBM5,3.0,2.00926,2720.0
+pulse_linear_urgency,DBM5,4.0,0.63287,2736.0
+pulse_linear_urgency,DBM5,5.0,-2.13831,2151.0
+pulse_linear_urgency,DBM5,6.0,-2.19155,2100.0
+pulse_linear_urgency,DBM6,0.0,5.82632,3395.0
+pulse_linear_urgency,DBM6,1.0,5.9836,3313.0
+pulse_linear_urgency,DBM6,2.0,3.55708,3163.0
+pulse_linear_urgency,DBM6,3.0,1.30663,3159.0
+pulse_linear_urgency,DBM6,4.0,0.39729,3351.0
+pulse_linear_urgency,DBM6,5.0,-1.43021,2641.0
+pulse_linear_urgency,DBM6,6.0,-1.06285,2771.0
+pulse_linear_urgency,PSUIM10,0.0,0.8495,1038.0
+pulse_linear_urgency,PSUIM10,1.0,8.09643,480.0
+pulse_linear_urgency,PSUIM10,2.0,17.97114,905.0
+pulse_linear_urgency,PSUIM10,3.0,7.275,711.0
+pulse_linear_urgency,PSUIM10,4.0,-3.4529,300.0
+pulse_linear_urgency,PSUIM10,5.0,1.93782,43.0
+pulse_linear_urgency,PSUIM10,6.0,50.0,5.0
+pulse_linear_urgency,PSUIM5,0.0,3.72538,1086.0
+pulse_linear_urgency,PSUIM5,1.0,6.58887,1263.0
+pulse_linear_urgency,PSUIM5,2.0,4.25172,1512.0
+pulse_linear_urgency,PSUIM5,3.0,-0.72219,2111.0
+pulse_linear_urgency,PSUIM5,4.0,-0.00268,2577.0
+pulse_linear_urgency,PSUIM5,5.0,-1.24756,2528.0
+pulse_linear_urgency,PSUIM5,6.0,-0.29909,3125.0
+pulse_linear_urgency,PSUIM6,0.0,3.89249,5416.0
+pulse_linear_urgency,PSUIM6,1.0,3.58107,5442.0
+pulse_linear_urgency,PSUIM6,2.0,1.64967,5181.0
+pulse_linear_urgency,PSUIM6,3.0,1.4059,5904.0
+pulse_linear_urgency,PSUIM6,4.0,-0.50256,6614.0
+pulse_linear_urgency,PSUIM6,5.0,-0.80985,6016.0
+pulse_linear_urgency,PSUIM6,6.0,-1.72589,7233.0
+pulse_linear_urgency,PSUIM7,0.0,5.60023,18578.0
+pulse_linear_urgency,PSUIM7,1.0,3.83323,14443.0
+pulse_linear_urgency,PSUIM7,2.0,-1.79396,8206.0
+pulse_linear_urgency,PSUIM7,3.0,-3.44368,6187.0
+pulse_linear_urgency,PSUIM7,4.0,-4.71043,5088.0
+pulse_linear_urgency,PSUIM7,5.0,-6.93136,3531.0
+pulse_linear_urgency,PSUIM7,6.0,-6.87444,3434.0
+pulse_linear_urgency_no_sv,DBM12,0.0,0.54833,3761.0
+pulse_linear_urgency_no_sv,DBM12,1.0,2.04565,1967.0
+pulse_linear_urgency_no_sv,DBM12,2.0,2.07064,1283.0
+pulse_linear_urgency_no_sv,DBM12,3.0,-0.17707,1237.0
+pulse_linear_urgency_no_sv,DBM12,4.0,-0.39612,1062.0
+pulse_linear_urgency_no_sv,DBM12,5.0,0.97616,870.0
+pulse_linear_urgency_no_sv,DBM12,6.0,2.12901,673.0
+pulse_linear_urgency_no_sv,DBM13,0.0,0.10921,1247.0
+pulse_linear_urgency_no_sv,DBM13,1.0,-0.1276,898.0
+pulse_linear_urgency_no_sv,DBM13,2.0,4.04326,532.0
+pulse_linear_urgency_no_sv,DBM13,3.0,1.80504,534.0
+pulse_linear_urgency_no_sv,DBM13,4.0,-0.98426,671.0
+pulse_linear_urgency_no_sv,DBM13,5.0,1.01514,670.0
+pulse_linear_urgency_no_sv,DBM13,6.0,1.19919,632.0
+pulse_linear_urgency_no_sv,DBM14,0.0,0.76674,892.0
+pulse_linear_urgency_no_sv,DBM14,1.0,7.71771,776.0
+pulse_linear_urgency_no_sv,DBM14,2.0,6.47407,620.0
+pulse_linear_urgency_no_sv,DBM14,3.0,1.24674,681.0
+pulse_linear_urgency_no_sv,DBM14,4.0,2.8799,709.0
+pulse_linear_urgency_no_sv,DBM14,5.0,-1.28667,700.0
+pulse_linear_urgency_no_sv,DBM14,6.0,-0.16234,577.0
+pulse_linear_urgency_no_sv,DBM15,0.0,3.25653,1566.0
+pulse_linear_urgency_no_sv,DBM15,1.0,4.62704,1149.0
+pulse_linear_urgency_no_sv,DBM15,2.0,2.22004,1021.0
+pulse_linear_urgency_no_sv,DBM15,3.0,0.62454,1258.0
+pulse_linear_urgency_no_sv,DBM15,4.0,-1.47954,1395.0
+pulse_linear_urgency_no_sv,DBM15,5.0,0.90198,1170.0
+pulse_linear_urgency_no_sv,DBM15,6.0,-0.27088,1020.0
+pulse_linear_urgency_no_sv,DBM5,0.0,0.01575,3637.0
+pulse_linear_urgency_no_sv,DBM5,1.0,6.9011,3413.0
+pulse_linear_urgency_no_sv,DBM5,2.0,6.74661,3058.0
+pulse_linear_urgency_no_sv,DBM5,3.0,2.31727,3212.0
+pulse_linear_urgency_no_sv,DBM5,4.0,0.79922,2980.0
+pulse_linear_urgency_no_sv,DBM5,5.0,1.06298,2279.0
+pulse_linear_urgency_no_sv,DBM5,6.0,2.75716,2142.0
+pulse_linear_urgency_no_sv,DBM6,0.0,3.43888,3858.0
+pulse_linear_urgency_no_sv,DBM6,1.0,7.6258,3534.0
+pulse_linear_urgency_no_sv,DBM6,2.0,5.01489,3142.0
+pulse_linear_urgency_no_sv,DBM6,3.0,3.71966,3286.0
+pulse_linear_urgency_no_sv,DBM6,4.0,1.33442,3484.0
+pulse_linear_urgency_no_sv,DBM6,5.0,0.10533,3099.0
+pulse_linear_urgency_no_sv,DBM6,6.0,0.20341,3501.0
+pulse_linear_urgency_no_sv,PSUIM10,0.0,-0.2605,907.0
+pulse_linear_urgency_no_sv,PSUIM10,1.0,4.84892,387.0
+pulse_linear_urgency_no_sv,PSUIM10,2.0,16.32404,870.0
+pulse_linear_urgency_no_sv,PSUIM10,3.0,5.88147,884.0
+pulse_linear_urgency_no_sv,PSUIM10,4.0,-0.55724,439.0
+pulse_linear_urgency_no_sv,PSUIM10,5.0,3.76004,84.0
+pulse_linear_urgency_no_sv,PSUIM10,6.0,70.0,2.0
+pulse_linear_urgency_no_sv,PSUIM5,0.0,3.40209,1827.0
+pulse_linear_urgency_no_sv,PSUIM5,1.0,3.2339,1740.0
+pulse_linear_urgency_no_sv,PSUIM5,2.0,2.40786,1862.0
+pulse_linear_urgency_no_sv,PSUIM5,3.0,2.6683,2347.0
+pulse_linear_urgency_no_sv,PSUIM5,4.0,1.0344,3222.0
+pulse_linear_urgency_no_sv,PSUIM5,5.0,1.16282,3190.0
+pulse_linear_urgency_no_sv,PSUIM5,6.0,0.53802,4063.0
+pulse_linear_urgency_no_sv,PSUIM6,0.0,5.68019,6606.0
+pulse_linear_urgency_no_sv,PSUIM6,1.0,3.91997,5829.0
+pulse_linear_urgency_no_sv,PSUIM6,2.0,3.9804,5149.0
+pulse_linear_urgency_no_sv,PSUIM6,3.0,2.60961,5944.0
+pulse_linear_urgency_no_sv,PSUIM6,4.0,1.2799,7479.0
+pulse_linear_urgency_no_sv,PSUIM6,5.0,1.29956,7219.0
+pulse_linear_urgency_no_sv,PSUIM6,6.0,0.81752,8758.0
+pulse_linear_urgency_no_sv,PSUIM7,0.0,4.22784,17492.0
+pulse_linear_urgency_no_sv,PSUIM7,1.0,7.33015,12424.0
+pulse_linear_urgency_no_sv,PSUIM7,2.0,3.28688,8063.0
+pulse_linear_urgency_no_sv,PSUIM7,3.0,1.32228,7417.0
+pulse_linear_urgency_no_sv,PSUIM7,4.0,0.01365,6408.0
+pulse_linear_urgency_no_sv,PSUIM7,5.0,0.67523,4561.0
+pulse_linear_urgency_no_sv,PSUIM7,6.0,0.23849,3653.0
+pulse_linear_leak_urgency,DBM12,0.0,5.38429,3913.0
+pulse_linear_leak_urgency,DBM12,1.0,-2.09683,2228.0
+pulse_linear_leak_urgency,DBM12,2.0,-1.4057,1342.0
+pulse_linear_leak_urgency,DBM12,3.0,-1.82414,1145.0
+pulse_linear_leak_urgency,DBM12,4.0,-4.01933,1066.0
+pulse_linear_leak_urgency,DBM12,5.0,-4.10298,832.0
+pulse_linear_leak_urgency,DBM12,6.0,-2.31158,940.0
+pulse_linear_leak_urgency,DBM13,0.0,0.65,948.0
+pulse_linear_leak_urgency,DBM13,1.0,7.41729,713.0
+pulse_linear_leak_urgency,DBM13,2.0,3.01185,495.0
+pulse_linear_leak_urgency,DBM13,3.0,-2.28724,564.0
+pulse_linear_leak_urgency,DBM13,4.0,-3.94692,601.0
+pulse_linear_leak_urgency,DBM13,5.0,-4.35116,482.0
+pulse_linear_leak_urgency,DBM13,6.0,1.85655,553.0
+pulse_linear_leak_urgency,DBM14,0.0,8.81097,1194.0
+pulse_linear_leak_urgency,DBM14,1.0,2.74023,952.0
+pulse_linear_leak_urgency,DBM14,2.0,-5.67212,646.0
+pulse_linear_leak_urgency,DBM14,3.0,-3.69706,685.0
+pulse_linear_leak_urgency,DBM14,4.0,-3.66711,754.0
+pulse_linear_leak_urgency,DBM14,5.0,-0.3527,845.0
+pulse_linear_leak_urgency,DBM14,6.0,-2.40598,1211.0
+pulse_linear_leak_urgency,DBM15,0.0,3.14647,1352.0
+pulse_linear_leak_urgency,DBM15,1.0,-1.08595,1185.0
+pulse_linear_leak_urgency,DBM15,2.0,-0.5395,1020.0
+pulse_linear_leak_urgency,DBM15,3.0,-3.4865,1138.0
+pulse_linear_leak_urgency,DBM15,4.0,-3.18062,1333.0
+pulse_linear_leak_urgency,DBM15,5.0,-2.16691,1300.0
+pulse_linear_leak_urgency,DBM15,6.0,-1.86589,1430.0
+pulse_linear_leak_urgency,DBM5,0.0,1.03425,3190.0
+pulse_linear_leak_urgency,DBM5,1.0,13.28982,2933.0
+pulse_linear_leak_urgency,DBM5,2.0,3.44449,2536.0
+pulse_linear_leak_urgency,DBM5,3.0,-2.48467,2320.0
+pulse_linear_leak_urgency,DBM5,4.0,-3.56366,2113.0
+pulse_linear_leak_urgency,DBM5,5.0,-3.79381,1786.0
+pulse_linear_leak_urgency,DBM5,6.0,-3.20618,2465.0
+pulse_linear_leak_urgency,DBM6,0.0,6.2844,3315.0
+pulse_linear_leak_urgency,DBM6,1.0,5.22844,3131.0
+pulse_linear_leak_urgency,DBM6,2.0,2.29316,2900.0
+pulse_linear_leak_urgency,DBM6,3.0,0.46127,2916.0
+pulse_linear_leak_urgency,DBM6,4.0,-1.53562,2936.0
+pulse_linear_leak_urgency,DBM6,5.0,-1.52114,2586.0
+pulse_linear_leak_urgency,DBM6,6.0,-2.1692,3217.0
+pulse_linear_leak_urgency,PSUIM10,0.0,0.40275,1041.0
+pulse_linear_leak_urgency,PSUIM10,1.0,8.71879,336.0
+pulse_linear_leak_urgency,PSUIM10,2.0,15.25161,814.0
+pulse_linear_leak_urgency,PSUIM10,3.0,6.43771,819.0
+pulse_linear_leak_urgency,PSUIM10,4.0,-0.02379,373.0
+pulse_linear_leak_urgency,PSUIM10,5.0,0.21467,55.0
+pulse_linear_leak_urgency,PSUIM10,6.0,66.66667,3.0
+pulse_linear_leak_urgency,PSUIM5,0.0,3.87775,1026.0
+pulse_linear_leak_urgency,PSUIM5,1.0,7.2311,1140.0
+pulse_linear_leak_urgency,PSUIM5,2.0,2.89931,1493.0
+pulse_linear_leak_urgency,PSUIM5,3.0,1.1436,1878.0
+pulse_linear_leak_urgency,PSUIM5,4.0,-2.27869,2233.0
+pulse_linear_leak_urgency,PSUIM5,5.0,-1.50528,2189.0
+pulse_linear_leak_urgency,PSUIM5,6.0,-2.09878,3195.0
+pulse_linear_leak_urgency,PSUIM6,0.0,6.27084,4804.0
+pulse_linear_leak_urgency,PSUIM6,1.0,5.04118,4556.0
+pulse_linear_leak_urgency,PSUIM6,2.0,-0.0644,4090.0
+pulse_linear_leak_urgency,PSUIM6,3.0,-1.16271,4588.0
+pulse_linear_leak_urgency,PSUIM6,4.0,-2.86952,5090.0
+pulse_linear_leak_urgency,PSUIM6,5.0,-3.6863,4999.0
+pulse_linear_leak_urgency,PSUIM6,6.0,-0.94625,8034.0
+pulse_linear_leak_urgency,PSUIM7,0.0,3.99606,18261.0
+pulse_linear_leak_urgency,PSUIM7,1.0,8.26407,13485.0
+pulse_linear_leak_urgency,PSUIM7,2.0,-4.7154,7304.0
+pulse_linear_leak_urgency,PSUIM7,3.0,-6.79941,5462.0
+pulse_linear_leak_urgency,PSUIM7,4.0,-7.70395,4679.0
+pulse_linear_leak_urgency,PSUIM7,5.0,-7.46824,3778.0
+pulse_linear_leak_urgency,PSUIM7,6.0,-5.85565,5077.0
+pulse_linear_leak_urgency_no_sv,DBM12,0.0,1.10447,3814.0
+pulse_linear_leak_urgency_no_sv,DBM12,1.0,0.63877,2005.0
+pulse_linear_leak_urgency_no_sv,DBM12,2.0,-1.10889,1381.0
+pulse_linear_leak_urgency_no_sv,DBM12,3.0,-0.16773,1175.0
+pulse_linear_leak_urgency_no_sv,DBM12,4.0,0.52293,1158.0
+pulse_linear_leak_urgency_no_sv,DBM12,5.0,-2.61675,926.0
+pulse_linear_leak_urgency_no_sv,DBM12,6.0,2.29528,975.0
+pulse_linear_leak_urgency_no_sv,DBM13,0.0,1.24168,1159.0
+pulse_linear_leak_urgency_no_sv,DBM13,1.0,0.80884,778.0
+pulse_linear_leak_urgency_no_sv,DBM13,2.0,6.05396,408.0
+pulse_linear_leak_urgency_no_sv,DBM13,3.0,0.12714,502.0
+pulse_linear_leak_urgency_no_sv,DBM13,4.0,0.14185,624.0
+pulse_linear_leak_urgency_no_sv,DBM13,5.0,-0.70197,675.0
+pulse_linear_leak_urgency_no_sv,DBM13,6.0,1.40516,834.0
+pulse_linear_leak_urgency_no_sv,DBM14,0.0,0.95207,949.0
+pulse_linear_leak_urgency_no_sv,DBM14,1.0,9.27454,760.0
+pulse_linear_leak_urgency_no_sv,DBM14,2.0,4.82696,588.0
+pulse_linear_leak_urgency_no_sv,DBM14,3.0,1.80868,589.0
+pulse_linear_leak_urgency_no_sv,DBM14,4.0,0.08326,632.0
+pulse_linear_leak_urgency_no_sv,DBM14,5.0,-0.45731,620.0
+pulse_linear_leak_urgency_no_sv,DBM14,6.0,-4.10879,616.0
+pulse_linear_leak_urgency_no_sv,DBM15,0.0,2.43737,1490.0
+pulse_linear_leak_urgency_no_sv,DBM15,1.0,4.54996,1290.0
+pulse_linear_leak_urgency_no_sv,DBM15,2.0,2.52633,1114.0
+pulse_linear_leak_urgency_no_sv,DBM15,3.0,2.02119,1310.0
+pulse_linear_leak_urgency_no_sv,DBM15,4.0,-0.74944,1369.0
+pulse_linear_leak_urgency_no_sv,DBM15,5.0,0.05119,1194.0
+pulse_linear_leak_urgency_no_sv,DBM15,6.0,2.12296,1134.0
+pulse_linear_leak_urgency_no_sv,DBM5,0.0,-0.15841,3831.0
+pulse_linear_leak_urgency_no_sv,DBM5,1.0,4.63523,3547.0
+pulse_linear_leak_urgency_no_sv,DBM5,2.0,9.50665,2879.0
+pulse_linear_leak_urgency_no_sv,DBM5,3.0,0.56197,2717.0
+pulse_linear_leak_urgency_no_sv,DBM5,4.0,-0.36994,2688.0
+pulse_linear_leak_urgency_no_sv,DBM5,5.0,0.64375,2130.0
+pulse_linear_leak_urgency_no_sv,DBM5,6.0,0.6004,2070.0
+pulse_linear_leak_urgency_no_sv,DBM6,0.0,7.51581,3980.0
+pulse_linear_leak_urgency_no_sv,DBM6,1.0,6.67763,3493.0
+pulse_linear_leak_urgency_no_sv,DBM6,2.0,5.3136,2982.0
+pulse_linear_leak_urgency_no_sv,DBM6,3.0,2.58282,3096.0
+pulse_linear_leak_urgency_no_sv,DBM6,4.0,1.22907,3380.0
+pulse_linear_leak_urgency_no_sv,DBM6,5.0,-0.03749,2981.0
+pulse_linear_leak_urgency_no_sv,DBM6,6.0,1.00511,3372.0
+pulse_linear_leak_urgency_no_sv,PSUIM10,0.0,-0.613,849.0
+pulse_linear_leak_urgency_no_sv,PSUIM10,1.0,8.56481,195.0
+pulse_linear_leak_urgency_no_sv,PSUIM10,2.0,13.83951,822.0
+pulse_linear_leak_urgency_no_sv,PSUIM10,3.0,5.43923,837.0
+pulse_linear_leak_urgency_no_sv,PSUIM10,4.0,0.17003,439.0
+pulse_linear_leak_urgency_no_sv,PSUIM10,5.0,4.6975,85.0
+pulse_linear_leak_urgency_no_sv,PSUIM10,6.0,50.0,2.0
+pulse_linear_leak_urgency_no_sv,PSUIM5,0.0,6.6061,1561.0
+pulse_linear_leak_urgency_no_sv,PSUIM5,1.0,2.61741,1808.0
+pulse_linear_leak_urgency_no_sv,PSUIM5,2.0,2.8166,1996.0
+pulse_linear_leak_urgency_no_sv,PSUIM5,3.0,2.5291,2498.0
+pulse_linear_leak_urgency_no_sv,PSUIM5,4.0,0.87849,3322.0
+pulse_linear_leak_urgency_no_sv,PSUIM5,5.0,0.3064,3335.0
+pulse_linear_leak_urgency_no_sv,PSUIM5,6.0,0.70257,4103.0
+pulse_linear_leak_urgency_no_sv,PSUIM6,0.0,4.82035,7108.0
+pulse_linear_leak_urgency_no_sv,PSUIM6,1.0,6.75647,6236.0
+pulse_linear_leak_urgency_no_sv,PSUIM6,2.0,4.15547,5502.0
+pulse_linear_leak_urgency_no_sv,PSUIM6,3.0,3.14268,6269.0
+pulse_linear_leak_urgency_no_sv,PSUIM6,4.0,0.8149,7469.0
+pulse_linear_leak_urgency_no_sv,PSUIM6,5.0,0.00496,7060.0
+pulse_linear_leak_urgency_no_sv,PSUIM6,6.0,0.33306,8341.0
+pulse_linear_leak_urgency_no_sv,PSUIM7,0.0,4.70205,17296.0
+pulse_linear_leak_urgency_no_sv,PSUIM7,1.0,7.89014,12742.0
+pulse_linear_leak_urgency_no_sv,PSUIM7,2.0,2.94879,8444.0
+pulse_linear_leak_urgency_no_sv,PSUIM7,3.0,1.2164,7741.0
+pulse_linear_leak_urgency_no_sv,PSUIM7,4.0,0.45336,6689.0
+pulse_linear_leak_urgency_no_sv,PSUIM7,5.0,0.40667,4588.0
+pulse_linear_leak_urgency_no_sv,PSUIM7,6.0,0.88308,3626.0

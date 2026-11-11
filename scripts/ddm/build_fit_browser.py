@@ -32,7 +32,7 @@ from src.utils.pmf_utils import fit_psychometric_function
 
 from scripts.ddm.compare_joint_refits import DDM, FAMILIES, FOLDS, load
 from scripts.ddm.fit_mouse_ddm import load_inputs, responded_only
-from scripts.ddm.pulse_joint_signatures import EXTRA_FAMILIES, FE_NORM, FE_POWER, REFERENCE, simulate
+from scripts.ddm.pulse_joint_signatures import EXTRA_FAMILIES, FE_NORM, FE_POWER, PULSE_ONLY_FAMILIES, REFERENCE, model_path, simulate
 import scripts.ddm.pulse_leak_urgency_signatures as PLU
 from scripts.ddm.pulse_leak_urgency_signatures import observed
 from scripts.ddm.pulse_psychometric import OUT
@@ -41,6 +41,7 @@ STAGES = {1: "early", 2: "middle", 3: "late"}
 MAX_COH = 100  # all coherences, incl. the +-100% trials (pulse trials exist there too); symmetric cells as elsewhere
 RT_EDGES = np.round(np.r_[np.arange(0.3, 2.0, 0.1), 2.0, 2.25, 2.5, 3.0, 4.0, 5.0], 3)
 N_BOOT = 200  # data psychometric-fit CIs (resampling trials within each coherence)
+PULSE_FOLDS = [f"pcv{k}" for k in range(5)]
 PSY_PARAMS = ["mean", "beta", "lapse_rate", "guess_rate"]  # pmf_utils logit_4 coefs: mean = 50% point (% coh), beta = slope
 CONDITIONS = ["control"] + [f"{st} {side}" for st in ("early", "middle", "late") for side in ("left", "right")]
 CONTROL_ONLY = {  # name: (folder, variant)
@@ -50,6 +51,9 @@ CONTROL_ONLY = {  # name: (folder, variant)
 }
 ACC = [("primary", "Integrator (sv)"), ("no_sv", "Integrator, no sv"), ("leak", "Leak"), ("urgency", "Urgency"),
        ("leak_urgency", "Leak + urgency"), ("extrema_E_leak20-200", "Extrema detection (E)"), ("extrema_sampling_ES", "Extrema sampling (ES)")]
+PULSE_ONLY_LABELS = [("primary", "Integrator (sv)"), ("no_sv", "Integrator, no sv"), ("leak", "Leak"), ("leak_no_sv", "Leak, no sv"),
+                     ("urgency", "Urgency"), ("urgency_no_sv", "Urgency, no sv"), ("leak_urgency", "Leak + urgency"),
+                     ("leak_urgency_no_sv", "Leak + urgency, no sv")]
 GROUPS = [  # (group label, [(family key, display label)])
     ("Control-only fits (fitted on control trials; pulses predicted)",
      [(REFERENCE, "Integrator, linear"), (FE_POWER, "Integrator, power law"), (FE_NORM, "Integrator, normalization")]),
@@ -59,6 +63,10 @@ GROUPS = [  # (group label, [(family key, display label)])
     ("All trials, normalization", [(f"norm_{k}", l) for k, l in ACC if k != "no_sv"]),
     ("All trials, coherence sequence", [(f"nominal_{k}", l) for k, l in ACC]
      + [("nominal_power_primary", "Integrator, power law"), ("stine_nominal_DDM", "Stine 2020 DDM"), ("stine_nominal_ES", "Stine 2020 ES")]),
+    ("Pulse-only fits, linear motion energy (fitted on pulse trials; controls predicted)",
+     [(f"pulse_linear_{k}", l) for k, l in PULSE_ONLY_LABELS]),
+    ("Pulse-only fits, power law (fitted on pulse trials; controls predicted)",
+     [(f"pulse_power_{k}", l) for k, l in PULSE_ONLY_LABELS]),
     ("Counterfactual: fitted parameters with sv = 0 (not fitted)",
      [(f"{k} [sv=0]", l) for k, l in [("primary", "Integrator, linear"), ("leak", "Leak, linear"), ("urgency", "Urgency, linear"),
                                        ("leak_urgency", "Leak + urgency, linear"), ("power_primary", "Integrator, power law"),
@@ -72,8 +80,7 @@ def fit_path(fam: str):
     if base in CONTROL_ONLY:
         folder, variant = CONTROL_ONLY[base]
         return lambda m: DDM / folder / f"{m}_{variant}_control.pkl"
-    folder, variant = (FAMILIES.get(base) or EXTRA_FAMILIES[base])[:2]
-    return lambda m: DDM / folder / f"{m}_{variant}_all.pkl"
+    return model_path(base)
 
 
 def condition(t: pd.DataFrame) -> pd.Series:
@@ -174,6 +181,23 @@ def nll_table(families: list[str], mice: list[str]) -> list[dict]:
                     rows.append({"family": fam, "mouse": m, "kind": "control_only", "fitted_nll": r.train_nll, "n_fitted": int(r.n_train),
                                  "pulse_test_nll": r.test_nll, "n_pulse_test": int(r.n_test) if r.n_test == r.n_test else None,
                                  "k": len(r.free_parameters)})
+            continue
+        if fam in PULSE_ONLY_FAMILIES:  # held-out = pcv0-pcv4 test NLL (pulse trials); fitted and control test from "pulse"
+            folder, variant = PULSE_ONLY_FAMILIES[fam]
+            df = load(folder, variant)
+            cv = df[df.split.isin(PULSE_FOLDS)]
+            nf = cv.groupby("mouse").split.nunique()
+            ho, nt = cv.groupby("mouse").test_nll.sum(), cv.groupby("mouse").n_test.sum()
+            pf = df[df.split == "pulse"].set_index("mouse")
+            for m in mice:
+                full = m in ho and nf[m] == len(PULSE_FOLDS)
+                rows.append({"family": fam, "mouse": m, "kind": "pulse_only",
+                             "heldout_nll": float(ho[m]) if full else None, "n_heldout": int(nt[m]) if full else None,
+                             "fitted_nll": float(pf.loc[m, "train_nll"]) if m in pf.index else None,
+                             "n_fitted": int(pf.loc[m, "n_train"]) if m in pf.index else None,
+                             "control_test_nll": float(pf.loc[m, "test_nll"]) if m in pf.index else None,
+                             "n_control_test": int(pf.loc[m, "n_test"]) if m in pf.index else None,
+                             "k": len(pf.loc[m, "free_parameters"]) if m in pf.index else None})
             continue
         folder, variant = (FAMILIES.get(fam) or EXTRA_FAMILIES[fam])[:2]
         df = load(folder, variant)

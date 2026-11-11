@@ -1,0 +1,61 @@
+model,mouse,acc_36,rt50,sim_nonresp_share
+data,DBM12,,0.8048,
+data,DBM13,0.6,1.0963,
+data,DBM14,0.7342,1.3145,
+data,DBM15,0.5735,1.3023,
+data,DBM5,0.657,1.2187,
+data,DBM6,0.7149,1.2976,
+data,PSUIM10,0.75,1.5689,
+data,PSUIM5,0.8062,1.909,
+data,PSUIM6,0.8128,1.6897,
+data,PSUIM7,0.7579,0.9306,
+"primary, control-only fit",DBM12,,0.8226,0.0625
+"primary, control-only fit",DBM13,0.6036,1.2533,0.1355
+"primary, control-only fit",DBM14,0.6574,1.341,0.1127
+"primary, control-only fit",DBM15,0.6126,1.439,0.1649
+"primary, control-only fit",DBM5,0.6347,1.2758,0.1103
+"primary, control-only fit",DBM6,0.6777,1.3277,0.1199
+"primary, control-only fit",PSUIM10,0.7045,1.6342,0.1711
+"primary, control-only fit",PSUIM5,0.7529,1.9141,0.2007
+"primary, control-only fit",PSUIM6,0.7673,1.7535,0.1513
+"primary, control-only fit",PSUIM7,0.6979,0.9615,0.0609
+pulse_linear_urgency,DBM12,,0.7914,0.0525
+pulse_linear_urgency,DBM13,0.5881,1.2528,0.1756
+pulse_linear_urgency,DBM14,0.6675,1.3127,0.1857
+pulse_linear_urgency,DBM15,0.6546,1.3527,0.1213
+pulse_linear_urgency,DBM5,0.6415,1.2052,0.1075
+pulse_linear_urgency,DBM6,0.6777,1.3387,0.1745
+pulse_linear_urgency,PSUIM10,0.7256,0.9052,0.0
+pulse_linear_urgency,PSUIM5,0.7558,1.8618,0.2514
+pulse_linear_urgency,PSUIM6,0.754,1.5649,0.1845
+pulse_linear_urgency,PSUIM7,0.6915,0.8632,0.0347
+pulse_linear_urgency_no_sv,DBM12,,0.786,0.0847
+pulse_linear_urgency_no_sv,DBM13,0.6001,1.0696,0.0713
+pulse_linear_urgency_no_sv,DBM14,0.7235,1.2994,0.2114
+pulse_linear_urgency_no_sv,DBM15,0.6443,1.324,0.013
+pulse_linear_urgency_no_sv,DBM5,0.6642,1.2125,0.0407
+pulse_linear_urgency_no_sv,DBM6,0.7222,1.3834,0.1084
+pulse_linear_urgency_no_sv,PSUIM10,0.7615,1.102,0.0
+pulse_linear_urgency_no_sv,PSUIM5,0.7857,1.8556,0.0828
+pulse_linear_urgency_no_sv,PSUIM6,0.8005,1.5879,0.0936
+pulse_linear_urgency_no_sv,PSUIM7,0.7346,0.9211,0.0222
+pulse_linear_leak_urgency,DBM12,,0.7732,0.0456
+pulse_linear_leak_urgency,DBM13,0.6052,1.0973,0.1978
+pulse_linear_leak_urgency,DBM14,0.6848,1.3495,0.0801
+pulse_linear_leak_urgency,DBM15,0.6142,1.4567,0.0174
+pulse_linear_leak_urgency,DBM5,0.6515,1.1735,0.1718
+pulse_linear_leak_urgency,DBM6,0.6649,1.345,0.2033
+pulse_linear_leak_urgency,PSUIM10,0.7436,0.9324,0.0
+pulse_linear_leak_urgency,PSUIM5,0.7465,1.8629,0.2977
+pulse_linear_leak_urgency,PSUIM6,0.7893,1.6192,0.2611
+pulse_linear_leak_urgency,PSUIM7,0.7046,0.864,0.0507
+pulse_linear_leak_urgency_no_sv,DBM12,,0.788,0.0504
+pulse_linear_leak_urgency_no_sv,DBM13,0.5813,1.0316,0.0584
+pulse_linear_leak_urgency_no_sv,DBM14,0.719,1.2261,0.2327
+pulse_linear_leak_urgency_no_sv,DBM15,0.6369,1.4075,0.0277
+pulse_linear_leak_urgency_no_sv,DBM5,0.6431,1.1478,0.0688
+pulse_linear_leak_urgency_no_sv,DBM6,0.7513,1.368,0.1267
+pulse_linear_leak_urgency_no_sv,PSUIM10,0.7654,1.0761,0.0
+pulse_linear_leak_urgency_no_sv,PSUIM5,0.806,1.9123,0.0829
+pulse_linear_leak_urgency_no_sv,PSUIM6,0.7825,1.5429,0.0831
+pulse_linear_leak_urgency_no_sv,PSUIM7,0.7431,0.949,0.0243

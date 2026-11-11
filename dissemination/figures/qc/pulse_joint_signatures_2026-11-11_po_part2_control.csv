@@ -1,0 +1,61 @@
+model,mouse,acc_36,rt50,sim_nonresp_share
+data,DBM12,,0.8048,
+data,DBM13,0.6,1.0963,
+data,DBM14,0.7342,1.3145,
+data,DBM15,0.5735,1.3023,
+data,DBM5,0.657,1.2187,
+data,DBM6,0.7149,1.2976,
+data,PSUIM10,0.75,1.5689,
+data,PSUIM5,0.8062,1.909,
+data,PSUIM6,0.8128,1.6897,
+data,PSUIM7,0.7579,0.9306,
+"primary, control-only fit",DBM12,,0.8226,0.0625
+"primary, control-only fit",DBM13,0.6036,1.2533,0.1355
+"primary, control-only fit",DBM14,0.6574,1.341,0.1127
+"primary, control-only fit",DBM15,0.6126,1.439,0.1649
+"primary, control-only fit",DBM5,0.6347,1.2758,0.1103
+"primary, control-only fit",DBM6,0.6777,1.3277,0.1199
+"primary, control-only fit",PSUIM10,0.7045,1.6342,0.1711
+"primary, control-only fit",PSUIM5,0.7529,1.9141,0.2007
+"primary, control-only fit",PSUIM6,0.7673,1.7535,0.1513
+"primary, control-only fit",PSUIM7,0.6979,0.9615,0.0609
+pulse_power_primary,DBM12,,0.8001,0.0558
+pulse_power_primary,DBM13,0.6242,1.0942,0.1338
+pulse_power_primary,DBM14,0.7255,1.3574,0.1384
+pulse_power_primary,DBM15,0.5724,1.4183,0.1249
+pulse_power_primary,DBM5,0.6491,1.2204,0.0892
+pulse_power_primary,DBM6,0.6849,1.3764,0.0775
+pulse_power_primary,PSUIM10,0.7235,0.8042,0.0038
+pulse_power_primary,PSUIM5,0.7612,1.8786,0.2129
+pulse_power_primary,PSUIM6,0.8101,1.5257,0.0954
+pulse_power_primary,PSUIM7,0.7281,0.8806,0.0311
+pulse_power_no_sv,DBM12,,0.8035,0.0153
+pulse_power_no_sv,DBM13,0.5871,1.0692,0.0436
+pulse_power_no_sv,DBM14,0.6846,1.3695,0.0687
+pulse_power_no_sv,DBM15,0.6015,1.4447,0.0616
+pulse_power_no_sv,DBM5,0.6625,1.1978,0.0295
+pulse_power_no_sv,DBM6,0.7422,1.3671,0.0442
+pulse_power_no_sv,PSUIM10,0.7699,0.9923,0.0013
+pulse_power_no_sv,PSUIM5,0.8143,1.8539,0.1079
+pulse_power_no_sv,PSUIM6,0.7932,1.5887,0.0765
+pulse_power_no_sv,PSUIM7,0.7334,0.9379,0.0073
+pulse_power_leak,DBM12,,0.8185,0.0745
+pulse_power_leak,DBM13,0.5827,1.1467,0.1667
+pulse_power_leak,DBM14,0.7067,1.2515,0.2232
+pulse_power_leak,DBM15,0.6224,1.3473,0.2056
+pulse_power_leak,DBM5,0.6604,1.1938,0.2164
+pulse_power_leak,DBM6,0.733,1.3244,0.2307
+pulse_power_leak,PSUIM10,0.7308,0.7348,0.0005
+pulse_power_leak,PSUIM5,0.7975,1.845,0.3376
+pulse_power_leak,PSUIM6,0.79,1.5163,0.1951
+pulse_power_leak,PSUIM7,0.7338,0.883,0.0696
+pulse_power_leak_no_sv,DBM12,,0.759,0.0174
+pulse_power_leak_no_sv,DBM13,0.5595,1.2116,0.1053
+pulse_power_leak_no_sv,DBM14,0.721,1.4429,0.161
+pulse_power_leak_no_sv,DBM15,0.5725,1.4492,0.0761
+pulse_power_leak_no_sv,DBM5,0.6654,1.2098,0.0257
+pulse_power_leak_no_sv,DBM6,0.7661,1.4184,0.0599
+pulse_power_leak_no_sv,PSUIM10,0.7506,0.9523,0.0008
+pulse_power_leak_no_sv,PSUIM5,0.8371,1.8894,0.1483
+pulse_power_leak_no_sv,PSUIM6,0.7906,1.5814,0.0768
+pulse_power_leak_no_sv,PSUIM7,0.7348,0.9317,0.0071

@@ -1,0 +1,421 @@
+model,mouse,bin,effect,n_pulse
+data,DBM12,0.0,2.18559,150.0
+data,DBM12,1.0,-4.64903,81.0
+data,DBM12,2.0,-2.14552,47.0
+data,DBM12,3.0,-5.27023,39.0
+data,DBM12,4.0,-7.48414,44.0
+data,DBM12,5.0,3.2963,30.0
+data,DBM12,6.0,-16.60562,25.0
+data,DBM13,0.0,3.03571,40.0
+data,DBM13,1.0,-0.77688,43.0
+data,DBM13,2.0,6.13616,29.0
+data,DBM13,3.0,10.70707,15.0
+data,DBM13,4.0,4.74359,20.0
+data,DBM13,5.0,6.26566,19.0
+data,DBM13,6.0,1.66667,30.0
+data,DBM14,0.0,-4.27855,42.0
+data,DBM14,1.0,1.9471,38.0
+data,DBM14,2.0,-10.67308,25.0
+data,DBM14,3.0,12.34127,30.0
+data,DBM14,4.0,-11.92833,34.0
+data,DBM14,5.0,2.60417,24.0
+data,DBM14,6.0,1.25388,40.0
+data,DBM15,0.0,8.86069,51.0
+data,DBM15,1.0,0.34297,46.0
+data,DBM15,2.0,6.6371,51.0
+data,DBM15,3.0,-0.57401,44.0
+data,DBM15,4.0,12.99603,42.0
+data,DBM15,5.0,9.71655,42.0
+data,DBM15,6.0,-3.01156,39.0
+data,DBM5,0.0,0.36375,137.0
+data,DBM5,1.0,8.41028,139.0
+data,DBM5,2.0,3.63573,117.0
+data,DBM5,3.0,1.21973,116.0
+data,DBM5,4.0,0.02298,82.0
+data,DBM5,5.0,8.29688,64.0
+data,DBM5,6.0,-5.94553,100.0
+data,DBM6,0.0,12.073,164.0
+data,DBM6,1.0,11.30919,137.0
+data,DBM6,2.0,7.96204,111.0
+data,DBM6,3.0,-6.0922,139.0
+data,DBM6,4.0,-3.16617,137.0
+data,DBM6,5.0,-5.96053,106.0
+data,DBM6,6.0,-6.56743,131.0
+data,PSUIM10,0.0,13.33333,9.0
+data,PSUIM10,1.0,-2.19048,25.0
+data,PSUIM10,2.0,5.92105,19.0
+data,PSUIM10,3.0,15.65844,27.0
+data,PSUIM10,4.0,-2.07039,23.0
+data,PSUIM10,5.0,19.38272,18.0
+data,PSUIM10,6.0,16.74948,23.0
+data,PSUIM5,0.0,-5.67068,52.0
+data,PSUIM5,1.0,15.02312,74.0
+data,PSUIM5,2.0,12.75152,105.0
+data,PSUIM5,3.0,9.33587,92.0
+data,PSUIM5,4.0,2.43665,101.0
+data,PSUIM5,5.0,3.71035,126.0
+data,PSUIM5,6.0,-3.08509,161.0
+data,PSUIM6,0.0,13.28049,250.0
+data,PSUIM6,1.0,17.95448,296.0
+data,PSUIM6,2.0,10.48043,209.0
+data,PSUIM6,3.0,1.90061,213.0
+data,PSUIM6,4.0,5.27162,251.0
+data,PSUIM6,5.0,-1.62882,220.0
+data,PSUIM6,6.0,0.71691,397.0
+data,PSUIM7,0.0,10.89372,667.0
+data,PSUIM7,1.0,16.48511,535.0
+data,PSUIM7,2.0,13.23814,280.0
+data,PSUIM7,3.0,-1.13979,176.0
+data,PSUIM7,4.0,4.6662,119.0
+data,PSUIM7,5.0,-6.63079,128.0
+data,PSUIM7,6.0,-0.23549,197.0
+"primary, control-only fit",DBM12,0.0,4.41712,3556.0
+"primary, control-only fit",DBM12,1.0,-1.13417,2188.0
+"primary, control-only fit",DBM12,2.0,-0.57708,1364.0
+"primary, control-only fit",DBM12,3.0,-1.7655,1226.0
+"primary, control-only fit",DBM12,4.0,-4.00489,1171.0
+"primary, control-only fit",DBM12,5.0,-4.35018,876.0
+"primary, control-only fit",DBM12,6.0,-3.14109,1002.0
+"primary, control-only fit",DBM13,0.0,4.78836,851.0
+"primary, control-only fit",DBM13,1.0,3.76148,768.0
+"primary, control-only fit",DBM13,2.0,-2.3949,635.0
+"primary, control-only fit",DBM13,3.0,-1.51208,676.0
+"primary, control-only fit",DBM13,4.0,2.42016,712.0
+"primary, control-only fit",DBM13,5.0,1.1316,583.0
+"primary, control-only fit",DBM13,6.0,0.99108,635.0
+"primary, control-only fit",DBM14,0.0,2.60294,1028.0
+"primary, control-only fit",DBM14,1.0,2.11449,715.0
+"primary, control-only fit",DBM14,2.0,1.80736,600.0
+"primary, control-only fit",DBM14,3.0,3.6134,709.0
+"primary, control-only fit",DBM14,4.0,2.15552,847.0
+"primary, control-only fit",DBM14,5.0,2.37499,867.0
+"primary, control-only fit",DBM14,6.0,-1.02991,1048.0
+"primary, control-only fit",DBM15,0.0,1.71596,1085.0
+"primary, control-only fit",DBM15,1.0,1.34574,1096.0
+"primary, control-only fit",DBM15,2.0,3.72752,1033.0
+"primary, control-only fit",DBM15,3.0,-2.06279,1034.0
+"primary, control-only fit",DBM15,4.0,-2.76315,1130.0
+"primary, control-only fit",DBM15,5.0,-4.32145,979.0
+"primary, control-only fit",DBM15,6.0,-1.07294,1142.0
+"primary, control-only fit",DBM5,0.0,3.77832,3174.0
+"primary, control-only fit",DBM5,1.0,7.15013,3053.0
+"primary, control-only fit",DBM5,2.0,2.79131,2971.0
+"primary, control-only fit",DBM5,3.0,-0.34715,2939.0
+"primary, control-only fit",DBM5,4.0,0.80595,2909.0
+"primary, control-only fit",DBM5,5.0,-2.71595,2142.0
+"primary, control-only fit",DBM5,6.0,-2.44227,2261.0
+"primary, control-only fit",DBM6,0.0,6.95814,3816.0
+"primary, control-only fit",DBM6,1.0,4.95521,3686.0
+"primary, control-only fit",DBM6,2.0,3.98153,3299.0
+"primary, control-only fit",DBM6,3.0,1.14162,3425.0
+"primary, control-only fit",DBM6,4.0,-1.61998,3451.0
+"primary, control-only fit",DBM6,5.0,-1.74062,2782.0
+"primary, control-only fit",DBM6,6.0,-3.43573,3158.0
+"primary, control-only fit",PSUIM10,0.0,0.88522,202.0
+"primary, control-only fit",PSUIM10,1.0,0.88794,383.0
+"primary, control-only fit",PSUIM10,2.0,2.49117,483.0
+"primary, control-only fit",PSUIM10,3.0,1.73389,537.0
+"primary, control-only fit",PSUIM10,4.0,-1.04623,561.0
+"primary, control-only fit",PSUIM10,5.0,-1.93095,511.0
+"primary, control-only fit",PSUIM10,6.0,-0.24226,562.0
+"primary, control-only fit",PSUIM5,0.0,3.73531,1243.0
+"primary, control-only fit",PSUIM5,1.0,6.32578,1307.0
+"primary, control-only fit",PSUIM5,2.0,3.94411,1612.0
+"primary, control-only fit",PSUIM5,3.0,1.16312,2237.0
+"primary, control-only fit",PSUIM5,4.0,-0.20123,2785.0
+"primary, control-only fit",PSUIM5,5.0,-0.73505,2865.0
+"primary, control-only fit",PSUIM5,6.0,0.16352,3621.0
+"primary, control-only fit",PSUIM6,0.0,3.69415,4927.0
+"primary, control-only fit",PSUIM6,1.0,3.5702,4719.0
+"primary, control-only fit",PSUIM6,2.0,3.95344,4806.0
+"primary, control-only fit",PSUIM6,3.0,1.77602,5939.0
+"primary, control-only fit",PSUIM6,4.0,-0.17543,7423.0
+"primary, control-only fit",PSUIM6,5.0,0.27613,7120.0
+"primary, control-only fit",PSUIM6,6.0,-1.47612,9128.0
+"primary, control-only fit",PSUIM7,0.0,5.47897,15333.0
+"primary, control-only fit",PSUIM7,1.0,2.43239,11978.0
+"primary, control-only fit",PSUIM7,2.0,-0.72212,8046.0
+"primary, control-only fit",PSUIM7,3.0,-1.8356,6785.0
+"primary, control-only fit",PSUIM7,4.0,-2.82032,5999.0
+"primary, control-only fit",PSUIM7,5.0,-5.81923,4504.0
+"primary, control-only fit",PSUIM7,6.0,-4.38356,4804.0
+pulse_linear_primary,DBM12,0.0,3.88696,3885.0
+pulse_linear_primary,DBM12,1.0,0.35909,2471.0
+pulse_linear_primary,DBM12,2.0,-0.60372,1552.0
+pulse_linear_primary,DBM12,3.0,-2.54242,1231.0
+pulse_linear_primary,DBM12,4.0,-2.56618,1043.0
+pulse_linear_primary,DBM12,5.0,-2.3242,759.0
+pulse_linear_primary,DBM12,6.0,-4.98163,715.0
+pulse_linear_primary,DBM13,0.0,4.90457,1072.0
+pulse_linear_primary,DBM13,1.0,5.2385,786.0
+pulse_linear_primary,DBM13,2.0,0.40802,653.0
+pulse_linear_primary,DBM13,3.0,-2.76105,635.0
+pulse_linear_primary,DBM13,4.0,-2.83546,618.0
+pulse_linear_primary,DBM13,5.0,2.38196,534.0
+pulse_linear_primary,DBM13,6.0,-0.8988,566.0
+pulse_linear_primary,DBM14,0.0,3.20454,947.0
+pulse_linear_primary,DBM14,1.0,2.33116,801.0
+pulse_linear_primary,DBM14,2.0,3.08124,773.0
+pulse_linear_primary,DBM14,3.0,-3.6915,845.0
+pulse_linear_primary,DBM14,4.0,0.51973,877.0
+pulse_linear_primary,DBM14,5.0,1.04154,744.0
+pulse_linear_primary,DBM14,6.0,-1.27729,853.0
+pulse_linear_primary,DBM15,0.0,0.93667,1129.0
+pulse_linear_primary,DBM15,1.0,1.00733,1029.0
+pulse_linear_primary,DBM15,2.0,2.11823,922.0
+pulse_linear_primary,DBM15,3.0,2.81428,1062.0
+pulse_linear_primary,DBM15,4.0,-4.01716,1167.0
+pulse_linear_primary,DBM15,5.0,-3.48872,1080.0
+pulse_linear_primary,DBM15,6.0,-2.98038,1286.0
+pulse_linear_primary,DBM5,0.0,3.65602,3407.0
+pulse_linear_primary,DBM5,1.0,8.26418,3219.0
+pulse_linear_primary,DBM5,2.0,2.2879,3040.0
+pulse_linear_primary,DBM5,3.0,1.61313,3011.0
+pulse_linear_primary,DBM5,4.0,-0.6536,2770.0
+pulse_linear_primary,DBM5,5.0,-3.77241,1968.0
+pulse_linear_primary,DBM5,6.0,-2.75727,2086.0
+pulse_linear_primary,DBM6,0.0,6.83097,3832.0
+pulse_linear_primary,DBM6,1.0,5.7544,3781.0
+pulse_linear_primary,DBM6,2.0,3.86032,3363.0
+pulse_linear_primary,DBM6,3.0,1.68301,3672.0
+pulse_linear_primary,DBM6,4.0,-0.32564,3869.0
+pulse_linear_primary,DBM6,5.0,-0.9546,3155.0
+pulse_linear_primary,DBM6,6.0,-1.80382,3442.0
+pulse_linear_primary,PSUIM10,0.0,0.24506,1045.0
+pulse_linear_primary,PSUIM10,1.0,9.94123,459.0
+pulse_linear_primary,PSUIM10,2.0,18.97841,849.0
+pulse_linear_primary,PSUIM10,3.0,6.15816,571.0
+pulse_linear_primary,PSUIM10,4.0,1.14264,295.0
+pulse_linear_primary,PSUIM10,5.0,-5.10767,94.0
+pulse_linear_primary,PSUIM10,6.0,-4.55887,45.0
+pulse_linear_primary,PSUIM5,0.0,2.63307,1391.0
+pulse_linear_primary,PSUIM5,1.0,6.38821,1485.0
+pulse_linear_primary,PSUIM5,2.0,5.21348,1898.0
+pulse_linear_primary,PSUIM5,3.0,2.19034,2481.0
+pulse_linear_primary,PSUIM5,4.0,-0.85182,3050.0
+pulse_linear_primary,PSUIM5,5.0,-1.05541,2724.0
+pulse_linear_primary,PSUIM5,6.0,-2.07042,3335.0
+pulse_linear_primary,PSUIM6,0.0,3.71123,5643.0
+pulse_linear_primary,PSUIM6,1.0,2.75964,5759.0
+pulse_linear_primary,PSUIM6,2.0,2.13693,5541.0
+pulse_linear_primary,PSUIM6,3.0,0.8231,6222.0
+pulse_linear_primary,PSUIM6,4.0,-0.28881,6911.0
+pulse_linear_primary,PSUIM6,5.0,-1.2793,6087.0
+pulse_linear_primary,PSUIM6,6.0,-2.98445,7328.0
+pulse_linear_primary,PSUIM7,0.0,5.87921,17216.0
+pulse_linear_primary,PSUIM7,1.0,3.84256,14246.0
+pulse_linear_primary,PSUIM7,2.0,-0.70074,8560.0
+pulse_linear_primary,PSUIM7,3.0,-2.86522,6513.0
+pulse_linear_primary,PSUIM7,4.0,-5.20572,5235.0
+pulse_linear_primary,PSUIM7,5.0,-7.4374,3773.0
+pulse_linear_primary,PSUIM7,6.0,-7.7793,3618.0
+pulse_linear_no_sv,DBM12,0.0,0.4417,3945.0
+pulse_linear_no_sv,DBM12,1.0,2.02252,2047.0
+pulse_linear_no_sv,DBM12,2.0,1.95077,1421.0
+pulse_linear_no_sv,DBM12,3.0,0.40888,1389.0
+pulse_linear_no_sv,DBM12,4.0,0.11565,1300.0
+pulse_linear_no_sv,DBM12,5.0,-0.82989,1011.0
+pulse_linear_no_sv,DBM12,6.0,2.75599,848.0
+pulse_linear_no_sv,DBM13,0.0,0.41322,1349.0
+pulse_linear_no_sv,DBM13,1.0,-1.48853,926.0
+pulse_linear_no_sv,DBM13,2.0,3.47337,511.0
+pulse_linear_no_sv,DBM13,3.0,1.17236,519.0
+pulse_linear_no_sv,DBM13,4.0,0.45251,638.0
+pulse_linear_no_sv,DBM13,5.0,0.70069,656.0
+pulse_linear_no_sv,DBM13,6.0,1.1693,628.0
+pulse_linear_no_sv,DBM14,0.0,1.52954,956.0
+pulse_linear_no_sv,DBM14,1.0,6.87358,717.0
+pulse_linear_no_sv,DBM14,2.0,0.46312,609.0
+pulse_linear_no_sv,DBM14,3.0,3.15889,712.0
+pulse_linear_no_sv,DBM14,4.0,-1.31883,925.0
+pulse_linear_no_sv,DBM14,5.0,-1.523,904.0
+pulse_linear_no_sv,DBM14,6.0,0.63239,1151.0
+pulse_linear_no_sv,DBM15,0.0,2.09477,1249.0
+pulse_linear_no_sv,DBM15,1.0,6.15793,1169.0
+pulse_linear_no_sv,DBM15,2.0,2.51499,1043.0
+pulse_linear_no_sv,DBM15,3.0,1.15176,1215.0
+pulse_linear_no_sv,DBM15,4.0,-0.70457,1313.0
+pulse_linear_no_sv,DBM15,5.0,0.07352,1134.0
+pulse_linear_no_sv,DBM15,6.0,0.61632,1232.0
+pulse_linear_no_sv,DBM5,0.0,-0.65813,3957.0
+pulse_linear_no_sv,DBM5,1.0,7.59964,3226.0
+pulse_linear_no_sv,DBM5,2.0,3.4869,2699.0
+pulse_linear_no_sv,DBM5,3.0,2.20178,2916.0
+pulse_linear_no_sv,DBM5,4.0,1.38945,2962.0
+pulse_linear_no_sv,DBM5,5.0,0.82085,2547.0
+pulse_linear_no_sv,DBM5,6.0,2.3185,2468.0
+pulse_linear_no_sv,DBM6,0.0,6.21721,4377.0
+pulse_linear_no_sv,DBM6,1.0,6.53787,3844.0
+pulse_linear_no_sv,DBM6,2.0,3.47343,3427.0
+pulse_linear_no_sv,DBM6,3.0,2.75883,3660.0
+pulse_linear_no_sv,DBM6,4.0,1.11052,3912.0
+pulse_linear_no_sv,DBM6,5.0,-0.08966,3380.0
+pulse_linear_no_sv,DBM6,6.0,0.40779,3563.0
+pulse_linear_no_sv,PSUIM10,0.0,-0.04113,634.0
+pulse_linear_no_sv,PSUIM10,1.0,10.28254,275.0
+pulse_linear_no_sv,PSUIM10,2.0,22.95869,891.0
+pulse_linear_no_sv,PSUIM10,3.0,4.94007,544.0
+pulse_linear_no_sv,PSUIM10,4.0,0.02965,265.0
+pulse_linear_no_sv,PSUIM10,5.0,1.76531,87.0
+pulse_linear_no_sv,PSUIM10,6.0,-4.68864,24.0
+pulse_linear_no_sv,PSUIM5,0.0,1.56394,1506.0
+pulse_linear_no_sv,PSUIM5,1.0,6.19855,1613.0
+pulse_linear_no_sv,PSUIM5,2.0,2.5867,1876.0
+pulse_linear_no_sv,PSUIM5,3.0,2.83189,2482.0
+pulse_linear_no_sv,PSUIM5,4.0,0.40424,3247.0
+pulse_linear_no_sv,PSUIM5,5.0,1.25977,3184.0
+pulse_linear_no_sv,PSUIM5,6.0,0.30086,3964.0
+pulse_linear_no_sv,PSUIM6,0.0,5.44799,6989.0
+pulse_linear_no_sv,PSUIM6,1.0,3.83244,6363.0
+pulse_linear_no_sv,PSUIM6,2.0,3.83923,5639.0
+pulse_linear_no_sv,PSUIM6,3.0,2.50019,6397.0
+pulse_linear_no_sv,PSUIM6,4.0,1.39943,7926.0
+pulse_linear_no_sv,PSUIM6,5.0,0.94781,7448.0
+pulse_linear_no_sv,PSUIM6,6.0,1.16702,8512.0
+pulse_linear_no_sv,PSUIM7,0.0,4.68655,17513.0
+pulse_linear_no_sv,PSUIM7,1.0,7.56397,12481.0
+pulse_linear_no_sv,PSUIM7,2.0,3.03894,8365.0
+pulse_linear_no_sv,PSUIM7,3.0,1.37745,7949.0
+pulse_linear_no_sv,PSUIM7,4.0,0.5142,6928.0
+pulse_linear_no_sv,PSUIM7,5.0,0.81517,4680.0
+pulse_linear_no_sv,PSUIM7,6.0,-0.09318,3245.0
+pulse_linear_leak,DBM12,0.0,4.75956,3502.0
+pulse_linear_leak,DBM12,1.0,-0.40706,2198.0
+pulse_linear_leak,DBM12,2.0,-1.51017,1416.0
+pulse_linear_leak,DBM12,3.0,-2.19031,1181.0
+pulse_linear_leak,DBM12,4.0,-2.9648,1100.0
+pulse_linear_leak,DBM12,5.0,-2.02938,828.0
+pulse_linear_leak,DBM12,6.0,-3.61518,885.0
+pulse_linear_leak,DBM13,0.0,1.34876,1016.0
+pulse_linear_leak,DBM13,1.0,7.45594,765.0
+pulse_linear_leak,DBM13,2.0,3.4099,558.0
+pulse_linear_leak,DBM13,3.0,-5.16093,575.0
+pulse_linear_leak,DBM13,4.0,-1.8569,586.0
+pulse_linear_leak,DBM13,5.0,-3.74197,440.0
+pulse_linear_leak,DBM13,6.0,-0.05321,506.0
+pulse_linear_leak,DBM14,0.0,12.4732,960.0
+pulse_linear_leak,DBM14,1.0,0.90127,889.0
+pulse_linear_leak,DBM14,2.0,-2.67345,611.0
+pulse_linear_leak,DBM14,3.0,-2.69266,700.0
+pulse_linear_leak,DBM14,4.0,-3.69881,640.0
+pulse_linear_leak,DBM14,5.0,-0.85298,552.0
+pulse_linear_leak,DBM14,6.0,-1.8492,658.0
+pulse_linear_leak,DBM15,0.0,1.42575,1186.0
+pulse_linear_leak,DBM15,1.0,2.07784,1041.0
+pulse_linear_leak,DBM15,2.0,1.12183,964.0
+pulse_linear_leak,DBM15,3.0,2.21296,1045.0
+pulse_linear_leak,DBM15,4.0,-4.10715,1135.0
+pulse_linear_leak,DBM15,5.0,-3.85663,1011.0
+pulse_linear_leak,DBM15,6.0,-3.02977,1218.0
+pulse_linear_leak,DBM5,0.0,1.23981,3109.0
+pulse_linear_leak,DBM5,1.0,10.80232,2952.0
+pulse_linear_leak,DBM5,2.0,4.05899,2470.0
+pulse_linear_leak,DBM5,3.0,-1.02818,2287.0
+pulse_linear_leak,DBM5,4.0,-1.1579,2182.0
+pulse_linear_leak,DBM5,5.0,-2.7056,1883.0
+pulse_linear_leak,DBM5,6.0,-3.21918,2444.0
+pulse_linear_leak,DBM6,0.0,7.86269,3871.0
+pulse_linear_leak,DBM6,1.0,9.29042,3548.0
+pulse_linear_leak,DBM6,2.0,2.22049,2840.0
+pulse_linear_leak,DBM6,3.0,0.88618,2940.0
+pulse_linear_leak,DBM6,4.0,-2.50045,3116.0
+pulse_linear_leak,DBM6,5.0,-1.06057,2658.0
+pulse_linear_leak,DBM6,6.0,-1.71051,3423.0
+pulse_linear_leak,PSUIM10,0.0,0.95217,399.0
+pulse_linear_leak,PSUIM10,1.0,3.29308,991.0
+pulse_linear_leak,PSUIM10,2.0,17.62726,1173.0
+pulse_linear_leak,PSUIM10,3.0,-3.65244,773.0
+pulse_linear_leak,PSUIM10,4.0,-5.57604,425.0
+pulse_linear_leak,PSUIM10,5.0,-6.44955,185.0
+pulse_linear_leak,PSUIM10,6.0,-10.10056,113.0
+pulse_linear_leak,PSUIM5,0.0,1.97513,1042.0
+pulse_linear_leak,PSUIM5,1.0,8.94217,991.0
+pulse_linear_leak,PSUIM5,2.0,2.5161,1231.0
+pulse_linear_leak,PSUIM5,3.0,2.60299,1583.0
+pulse_linear_leak,PSUIM5,4.0,-0.33202,2084.0
+pulse_linear_leak,PSUIM5,5.0,-0.4064,2031.0
+pulse_linear_leak,PSUIM5,6.0,-2.17907,3074.0
+pulse_linear_leak,PSUIM6,0.0,5.54665,4937.0
+pulse_linear_leak,PSUIM6,1.0,5.3659,4402.0
+pulse_linear_leak,PSUIM6,2.0,1.57573,3952.0
+pulse_linear_leak,PSUIM6,3.0,0.50668,4529.0
+pulse_linear_leak,PSUIM6,4.0,-2.03212,5123.0
+pulse_linear_leak,PSUIM6,5.0,-2.95675,4784.0
+pulse_linear_leak,PSUIM6,6.0,-1.42932,6522.0
+pulse_linear_leak,PSUIM7,0.0,5.50588,17386.0
+pulse_linear_leak,PSUIM7,1.0,5.86399,13826.0
+pulse_linear_leak,PSUIM7,2.0,-3.59922,7734.0
+pulse_linear_leak,PSUIM7,3.0,-5.7773,5773.0
+pulse_linear_leak,PSUIM7,4.0,-6.62711,4821.0
+pulse_linear_leak,PSUIM7,5.0,-8.52028,3509.0
+pulse_linear_leak,PSUIM7,6.0,-6.22211,3960.0
+pulse_linear_leak_no_sv,DBM12,0.0,1.25554,3912.0
+pulse_linear_leak_no_sv,DBM12,1.0,0.82915,2013.0
+pulse_linear_leak_no_sv,DBM12,2.0,-0.58313,1360.0
+pulse_linear_leak_no_sv,DBM12,3.0,0.43038,1173.0
+pulse_linear_leak_no_sv,DBM12,4.0,-0.00936,1178.0
+pulse_linear_leak_no_sv,DBM12,5.0,-2.09418,983.0
+pulse_linear_leak_no_sv,DBM12,6.0,0.9432,1048.0
+pulse_linear_leak_no_sv,DBM13,0.0,2.06053,1102.0
+pulse_linear_leak_no_sv,DBM13,1.0,-0.44352,770.0
+pulse_linear_leak_no_sv,DBM13,2.0,8.7142,440.0
+pulse_linear_leak_no_sv,DBM13,3.0,0.32776,529.0
+pulse_linear_leak_no_sv,DBM13,4.0,0.34162,614.0
+pulse_linear_leak_no_sv,DBM13,5.0,-1.31173,643.0
+pulse_linear_leak_no_sv,DBM13,6.0,1.42094,786.0
+pulse_linear_leak_no_sv,DBM14,0.0,0.94063,1011.0
+pulse_linear_leak_no_sv,DBM14,1.0,7.02217,763.0
+pulse_linear_leak_no_sv,DBM14,2.0,4.58437,604.0
+pulse_linear_leak_no_sv,DBM14,3.0,1.48593,662.0
+pulse_linear_leak_no_sv,DBM14,4.0,0.37691,759.0
+pulse_linear_leak_no_sv,DBM14,5.0,-2.4582,867.0
+pulse_linear_leak_no_sv,DBM14,6.0,-1.77302,1114.0
+pulse_linear_leak_no_sv,DBM15,0.0,1.67471,1464.0
+pulse_linear_leak_no_sv,DBM15,1.0,6.86125,1069.0
+pulse_linear_leak_no_sv,DBM15,2.0,1.58485,832.0
+pulse_linear_leak_no_sv,DBM15,3.0,0.29131,956.0
+pulse_linear_leak_no_sv,DBM15,4.0,1.65945,1228.0
+pulse_linear_leak_no_sv,DBM15,5.0,-1.44216,1085.0
+pulse_linear_leak_no_sv,DBM15,6.0,0.53662,1373.0
+pulse_linear_leak_no_sv,DBM5,0.0,-0.13706,3692.0
+pulse_linear_leak_no_sv,DBM5,1.0,6.67954,3263.0
+pulse_linear_leak_no_sv,DBM5,2.0,6.79215,2769.0
+pulse_linear_leak_no_sv,DBM5,3.0,1.71476,2983.0
+pulse_linear_leak_no_sv,DBM5,4.0,-0.31472,2998.0
+pulse_linear_leak_no_sv,DBM5,5.0,1.21244,2569.0
+pulse_linear_leak_no_sv,DBM5,6.0,1.74372,2620.0
+pulse_linear_leak_no_sv,DBM6,0.0,3.75171,4380.0
+pulse_linear_leak_no_sv,DBM6,1.0,8.7551,3963.0
+pulse_linear_leak_no_sv,DBM6,2.0,4.83984,3516.0
+pulse_linear_leak_no_sv,DBM6,3.0,3.48712,3616.0
+pulse_linear_leak_no_sv,DBM6,4.0,1.39626,3960.0
+pulse_linear_leak_no_sv,DBM6,5.0,-0.1657,3282.0
+pulse_linear_leak_no_sv,DBM6,6.0,-0.08906,3445.0
+pulse_linear_leak_no_sv,PSUIM10,0.0,0.32468,564.0
+pulse_linear_leak_no_sv,PSUIM10,1.0,13.38938,321.0
+pulse_linear_leak_no_sv,PSUIM10,2.0,17.66381,855.0
+pulse_linear_leak_no_sv,PSUIM10,3.0,3.75331,589.0
+pulse_linear_leak_no_sv,PSUIM10,4.0,2.61952,335.0
+pulse_linear_leak_no_sv,PSUIM10,5.0,5.77747,158.0
+pulse_linear_leak_no_sv,PSUIM10,6.0,-6.86314,55.0
+pulse_linear_leak_no_sv,PSUIM5,0.0,0.85678,1584.0
+pulse_linear_leak_no_sv,PSUIM5,1.0,8.09501,1887.0
+pulse_linear_leak_no_sv,PSUIM5,2.0,3.07181,1959.0
+pulse_linear_leak_no_sv,PSUIM5,3.0,2.09884,2405.0
+pulse_linear_leak_no_sv,PSUIM5,4.0,0.98258,3064.0
+pulse_linear_leak_no_sv,PSUIM5,5.0,1.30148,2975.0
+pulse_linear_leak_no_sv,PSUIM5,6.0,0.54464,3869.0
+pulse_linear_leak_no_sv,PSUIM6,0.0,4.09474,7091.0
+pulse_linear_leak_no_sv,PSUIM6,1.0,6.65416,6032.0
+pulse_linear_leak_no_sv,PSUIM6,2.0,4.18681,5348.0
+pulse_linear_leak_no_sv,PSUIM6,3.0,3.22765,6187.0
+pulse_linear_leak_no_sv,PSUIM6,4.0,0.95024,7586.0
+pulse_linear_leak_no_sv,PSUIM6,5.0,-0.28697,7297.0
+pulse_linear_leak_no_sv,PSUIM6,6.0,0.31191,8717.0
+pulse_linear_leak_no_sv,PSUIM7,0.0,4.34781,17651.0
+pulse_linear_leak_no_sv,PSUIM7,1.0,7.70153,12553.0
+pulse_linear_leak_no_sv,PSUIM7,2.0,2.49246,8394.0
+pulse_linear_leak_no_sv,PSUIM7,3.0,0.77869,7874.0
+pulse_linear_leak_no_sv,PSUIM7,4.0,-0.03677,7032.0
+pulse_linear_leak_no_sv,PSUIM7,5.0,0.59878,4751.0
+pulse_linear_leak_no_sv,PSUIM7,6.0,1.49753,3304.0

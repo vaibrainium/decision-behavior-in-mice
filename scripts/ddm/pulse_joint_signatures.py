@@ -46,6 +46,10 @@ EXTRA_FAMILIES = {
        [("primary", "L0U0V1Z0G1"), ("no_sv", "L0U0V0Z0G1"), ("leak", "L1U0V1Z0G1"), ("urgency", "L0U1V1Z0G1"), ("leak_urgency", "L1U1V1Z0G1")]},
     "nominal_power_primary": ("fits_joint_nominal_power", "L0U0V1Z0G1"),
 }
+# pulse-only fits (plan 2026-11-10-pulse-only-fits): split "pulse" (all pulse trials of the mouse); family -> (folder, variant)
+PULSE_ONLY_VARIANTS = [("primary", "L0U0V1Z0G1"), ("no_sv", "L0U0V0Z0G1"), ("leak", "L1U0V1Z0G1"), ("leak_no_sv", "L1U0V0Z0G1"),
+                       ("urgency", "L0U1V1Z0G1"), ("urgency_no_sv", "L0U1V0Z0G1"), ("leak_urgency", "L1U1V1Z0G1"), ("leak_urgency_no_sv", "L1U1V0Z0G1")]
+PULSE_ONLY_FAMILIES = {f"pulse_{fe}_{name}": (f"fits_pulse_{fe}_integrators", var) for fe in ("linear", "power") for name, var in PULSE_ONLY_VARIANTS}
 OPTIONS = {  # family -> make_model options (as the fits)
     "fixed_guess_bias": dict(fixed_guess_bias=True), "extrema_E_leak20-200": dict(leak_bounds=(20, 200)),
     "free_leak_0-200": dict(leak_bounds=(0, 200)), "extrema_sampling_ES": dict(extrema_samples=True),
@@ -64,6 +68,17 @@ for _fam in EXTRA_FAMILIES:
     if "extrema_sampling" in _fam:
         _opt["extrema_samples"] = True
     OPTIONS[_fam] = _opt
+for _fam in PULSE_ONLY_FAMILIES:
+    OPTIONS[_fam] = dict(front_end="power") if _fam.startswith("pulse_power_") else {}
+
+
+def model_path(fam: str):
+    """Fit file per mouse: joint families use the "all" fit, pulse-only families the "pulse" fit."""
+    if fam in PULSE_ONLY_FAMILIES:
+        folder, variant = PULSE_ONLY_FAMILIES[fam]
+        return lambda m: DDM / folder / f"{m}_{variant}_pulse.pkl"
+    folder, variant = (FAMILIES.get(fam) or EXTRA_FAMILIES[fam])[:2]
+    return lambda m: DDM / folder / f"{m}_{variant}_all.pkl"
 
 
 def simulate(fam: str, path: Path, inputs: dict, obs: pd.DataFrame, mouse: str, cache: Path, override: dict | None = None) -> pd.DataFrame:
@@ -143,8 +158,7 @@ def main():
     if args.fe_power:
         models[FE_POWER] = lambda m: DDM / "fits_resp_fast_only_fe-power_v2" / f"{m}_L0U0V1Z0G1_control.pkl"
     for fam in args.families:
-        folder, variant = (FAMILIES.get(fam) or EXTRA_FAMILIES[fam])[:2]
-        models[fam] = lambda m, folder=folder, variant=variant: DDM / folder / f"{m}_{variant}_all.pkl"
+        models[fam] = model_path(fam)
     override = {k: float(v) for k, v in (o.split("=") for o in args.override)}
     overrides = {}
     if override:
