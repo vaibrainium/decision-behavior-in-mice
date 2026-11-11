@@ -1,0 +1,61 @@
+model,mouse,acc_36,rt50,sim_nonresp_share
+data,DBM12,,0.8048,
+data,DBM13,0.6,1.0963,
+data,DBM14,0.7342,1.3145,
+data,DBM15,0.5735,1.3023,
+data,DBM5,0.657,1.2187,
+data,DBM6,0.7149,1.2976,
+data,PSUIM10,0.75,1.5689,
+data,PSUIM5,0.8062,1.909,
+data,PSUIM6,0.8128,1.6897,
+data,PSUIM7,0.7579,0.9306,
+"primary, control-only fit",DBM12,,0.8226,0.0625
+"primary, control-only fit",DBM13,0.6036,1.2533,0.1355
+"primary, control-only fit",DBM14,0.6574,1.341,0.1127
+"primary, control-only fit",DBM15,0.6126,1.439,0.1649
+"primary, control-only fit",DBM5,0.6347,1.2758,0.1103
+"primary, control-only fit",DBM6,0.6777,1.3277,0.1199
+"primary, control-only fit",PSUIM10,0.7045,1.6342,0.1711
+"primary, control-only fit",PSUIM5,0.7529,1.9141,0.2007
+"primary, control-only fit",PSUIM6,0.7673,1.7535,0.1513
+"primary, control-only fit",PSUIM7,0.6979,0.9615,0.0609
+pulse_power_ugm,DBM12,,0.8073,0.0781
+pulse_power_ugm,DBM13,0.6368,1.0846,0.0489
+pulse_power_ugm,DBM14,0.7072,1.133,0.1405
+pulse_power_ugm,DBM15,0.5802,1.4299,0.0075
+pulse_power_ugm,DBM5,0.6525,1.1748,0.1224
+pulse_power_ugm,DBM6,0.6652,1.3473,0.0448
+pulse_power_ugm,PSUIM10,0.741,1.0131,0.0
+pulse_power_ugm,PSUIM5,0.7502,2.1043,0.1628
+pulse_power_ugm,PSUIM6,0.7922,1.5235,0.3292
+pulse_power_ugm,PSUIM7,0.7095,0.8707,0.0417
+pulse_power_ugm_no_sv,DBM12,,0.7791,0.0227
+pulse_power_ugm_no_sv,DBM13,0.565,0.8758,0.0003
+pulse_power_ugm_no_sv,DBM14,0.6954,1.3646,0.1142
+pulse_power_ugm_no_sv,DBM15,0.5954,1.411,0.0195
+pulse_power_ugm_no_sv,DBM5,0.6541,1.2127,0.0271
+pulse_power_ugm_no_sv,DBM6,0.7442,1.3992,0.0507
+pulse_power_ugm_no_sv,PSUIM10,0.7423,0.5174,0.0
+pulse_power_ugm_no_sv,PSUIM5,0.7827,2.0754,0.067
+pulse_power_ugm_no_sv,PSUIM6,0.7953,1.6339,0.0867
+pulse_power_ugm_no_sv,PSUIM7,0.7458,0.9329,0.0064
+pulse_norm_ugm,DBM12,,0.7993,0.1356
+pulse_norm_ugm,DBM13,0.62,1.2292,0.1125
+pulse_norm_ugm,DBM14,0.7296,1.3413,0.0531
+pulse_norm_ugm,DBM15,0.5886,1.4514,0.0061
+pulse_norm_ugm,DBM5,0.6437,1.1388,0.2259
+pulse_norm_ugm,DBM6,0.6995,1.2811,0.422
+pulse_norm_ugm,PSUIM10,0.6801,1.4351,0.0
+pulse_norm_ugm,PSUIM5,0.7787,2.14,0.1672
+pulse_norm_ugm,PSUIM6,0.7912,1.5119,0.2162
+pulse_norm_ugm,PSUIM7,0.6999,0.8862,0.0815
+pulse_norm_ugm_no_sv,DBM12,,0.7975,0.0395
+pulse_norm_ugm_no_sv,DBM13,0.6207,1.2509,0.1004
+pulse_norm_ugm_no_sv,DBM14,0.6609,1.0584,0.01
+pulse_norm_ugm_no_sv,DBM15,0.6527,1.5316,0.0305
+pulse_norm_ugm_no_sv,DBM5,0.6479,1.1827,0.0251
+pulse_norm_ugm_no_sv,DBM6,0.7619,1.4459,0.0488
+pulse_norm_ugm_no_sv,PSUIM10,0.725,1.0336,0.0
+pulse_norm_ugm_no_sv,PSUIM5,0.7872,1.8819,0.068
+pulse_norm_ugm_no_sv,PSUIM6,0.8076,1.5727,0.079
+pulse_norm_ugm_no_sv,PSUIM7,0.7394,0.8702,0.0158

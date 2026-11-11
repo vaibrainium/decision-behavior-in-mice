@@ -1,0 +1,61 @@
+model,mouse,acc_36,rt50,sim_nonresp_share
+data,DBM12,,0.8048,
+data,DBM13,0.6,1.0963,
+data,DBM14,0.7342,1.3145,
+data,DBM15,0.5735,1.3023,
+data,DBM5,0.657,1.2187,
+data,DBM6,0.7149,1.2976,
+data,PSUIM10,0.75,1.5689,
+data,PSUIM5,0.8062,1.909,
+data,PSUIM6,0.8128,1.6897,
+data,PSUIM7,0.7579,0.9306,
+"primary, control-only fit",DBM12,,0.8226,0.0625
+"primary, control-only fit",DBM13,0.6036,1.2533,0.1355
+"primary, control-only fit",DBM14,0.6574,1.341,0.1127
+"primary, control-only fit",DBM15,0.6126,1.439,0.1649
+"primary, control-only fit",DBM5,0.6347,1.2758,0.1103
+"primary, control-only fit",DBM6,0.6777,1.3277,0.1199
+"primary, control-only fit",PSUIM10,0.7045,1.6342,0.1711
+"primary, control-only fit",PSUIM5,0.7529,1.9141,0.2007
+"primary, control-only fit",PSUIM6,0.7673,1.7535,0.1513
+"primary, control-only fit",PSUIM7,0.6979,0.9615,0.0609
+linear_ugm,DBM12,,0.7862,0.0459
+linear_ugm,DBM13,0.5747,1.0841,0.0371
+linear_ugm,DBM14,0.6781,1.269,0.3156
+linear_ugm,DBM15,0.6041,1.4492,0.0121
+linear_ugm,DBM5,0.6425,1.1731,0.2328
+linear_ugm,DBM6,0.722,1.3236,0.3114
+linear_ugm,PSUIM10,0.6898,1.8833,0.0125
+linear_ugm,PSUIM5,0.7036,1.9053,0.0791
+linear_ugm,PSUIM6,0.7755,1.6599,0.3411
+linear_ugm,PSUIM7,0.69,0.901,0.0528
+linear_ugm_no_sv,DBM12,,0.7921,0.0106
+linear_ugm_no_sv,DBM13,0.576,1.2346,0.0882
+linear_ugm_no_sv,DBM14,0.6875,1.4003,0.0996
+linear_ugm_no_sv,DBM15,0.6039,1.4171,0.0613
+linear_ugm_no_sv,DBM5,0.6441,1.2262,0.0336
+linear_ugm_no_sv,DBM6,0.7061,1.3909,0.0336
+linear_ugm_no_sv,PSUIM10,0.7104,1.9832,0.0034
+linear_ugm_no_sv,PSUIM5,0.7673,1.9287,0.0575
+linear_ugm_no_sv,PSUIM6,0.7918,1.7422,0.116
+linear_ugm_no_sv,PSUIM7,0.7364,0.9825,0.013
+power_ugm,DBM12,,0.8077,0.0614
+power_ugm,DBM13,0.6159,1.1426,0.0186
+power_ugm,DBM14,0.7021,1.2249,0.3039
+power_ugm,DBM15,0.6125,1.5037,0.0121
+power_ugm,DBM5,0.6543,1.1565,0.2364
+power_ugm,DBM6,0.7156,1.2886,0.223
+power_ugm,PSUIM10,0.6972,1.8068,0.0128
+power_ugm,PSUIM5,0.7756,1.91,0.071
+power_ugm,PSUIM6,0.7937,1.6079,0.2078
+power_ugm,PSUIM7,0.7283,0.9075,0.0549
+power_ugm_no_sv,DBM12,,0.7654,0.024
+power_ugm_no_sv,DBM13,0.5745,1.2645,0.1078
+power_ugm_no_sv,DBM14,0.7147,1.4456,0.1146
+power_ugm_no_sv,DBM15,0.6019,1.3989,0.0665
+power_ugm_no_sv,DBM5,0.6351,1.2285,0.0317
+power_ugm_no_sv,DBM6,0.7355,1.2757,0.044
+power_ugm_no_sv,PSUIM10,0.7714,1.6976,0.0155
+power_ugm_no_sv,PSUIM5,0.799,1.8988,0.05
+power_ugm_no_sv,PSUIM6,0.8222,1.6985,0.0483
+power_ugm_no_sv,PSUIM7,0.7423,0.945,0.01

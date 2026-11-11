@@ -1,5 +1,5 @@
 # Status
-Last updated: 2026-11-09 by Claude (Opus 5.5; mapping x accumulator exploratory results, fit checkpointing)
+Last updated: 2026-11-11 by Claude (Opus 5.5; pulse-only fits, UGM region fits)
 
 ## Current focus
 Mapping x accumulator + nominal-coherence fits complete (1,260; exploratory, no rules): power/norm mappings fit slightly better
@@ -26,7 +26,6 @@ Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gat
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
-- plans/2026-11-10-ugm-corner-leak-urgency.md : urgency-gating (Cisek 2009) variant of L1U1 (--ugm, normalized urgency); 720-task table tasks_2026-11-10_ugm.csv (linear, power, norm) submitting on Hyak (333 in first pass, jobs 43092429-41); next: sync, check bounds
 - plans/2026-10-29-control-paper.md : third paper (control trials only, Stine 2020 framing) in dissemination/paper_control/; G1 approved 2026-10-30 (D004), spine locked, stage S2; paired recovery 42579825 analysed: E separated (provisional, ES fits not yet submitted)
 - plans/2026-10-28-full-recovery-matrix.md : ON HOLD (author); recovery rerun on fixed CPU datasets if it becomes necessary
 - plans/2026-10-26-v2-refits-and-strategy-recovery.md : responded-only refits + full point-3 re-run (amendment 9); commands ready; next: user syncs code, submits R1-R6 (460), then F1a (80) and P1-P4 (850)
@@ -39,6 +38,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-11-11-ugm-corner.md : free UGM-region fits avoid the corner (0/120 full-data fits); with sv late reversal outside data CI, no sv passes the pulse but NLL within 10 of best in 3/10 (joint) mice; corner proper untested by a fixed grid
 - reports/2026-11-11-pulse-only-fits.md : fitting pulse trials only does not fix the pulse misfit (per-mouse spread; late reversal with sv); no-sv matches pulse means but fits worse; pulse-trial fits have longer ndt, more guesses
 - reports/2026-11-09-pulse-effect-bootstrap.md : data pulse mean has CI 3.2-7.9 pp (ME integrators inside); per-mouse spread real (I^2 0.83) and unexplained by every family; late reversal of leak/urgency integrators outside the data CI, sv-only integrators inside
 - reports/2026-11-09-mapping-accumulator-exploratory.md : power/norm mappings slightly better than linear (2-4 mice); integrators beat E/ES under all mappings; no family reproduces the per-mouse pulse effect; late reversal in all integrators (exploratory)

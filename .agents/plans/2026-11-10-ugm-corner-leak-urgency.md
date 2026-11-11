@@ -1,5 +1,5 @@
 # Plan: Test the urgency-gating (UGM) corner of the leak + urgency model
-Status: active (step 5 done; next: step 6, criteria to be confirmed by the author before the NLL comparison)
+Status: done (report reports/2026-11-11-ugm-corner.md)
 Created: 2026-11-10 by Claude (Opus 5.5)
 Related reports: reports/2026-10-29-pulse-leak-vs-urgency.md, reports/2026-10-22-leak-urgency-diagnosis.md,
 reports/2026-11-09-mapping-accumulator-exploratory.md; literature: dissemination/reports/pulse-leak-vs-urgency-literature-2026-10-29.md
@@ -49,11 +49,11 @@ misfit for each (L, u) pair, plus a report saying whether the UGM corner is rule
       python3 scripts/slurm/autosubmit.py --tasks scripts/slurm/tasks_2026-11-10_ugm.csv --state slurm-logs/autosubmit_state_ugm.json --watch 10
       (--dry_run first). Do not change the table once pulled.
 - [x] 5. Sync; check bound-hitting (leak at 2 or 20, urgency at 0 or 50, drift_gain at 50, a at 9.5) and convergence.
-- [ ] 6. Compare with the standard L1U1 (same splits, same input): held-out NLL per mouse (joint CV and pulse CV),
+- [x] 6. Compare with the standard L1U1 (same splits, same input): held-out NLL per mouse (joint CV and pulse CV),
       fitted leak and urgency, pulse profile and late-window effect (simulate fits; add to fit browser).
       Viability criteria for the UGM (author to confirm before looking): held-out NLL within 10 units of the best
       integrator per mouse, and pulse profile without a late reversal outside the data CI.
-- [ ] 7. Report; update STATUS.
+- [x] 7. Report; update STATUS.
 
 ## Out of scope
 - A full refit of all mice (only if step 7 says the corner is viable).
@@ -101,3 +101,11 @@ misfit for each (L, u) pair, plus a report saying whether the UGM corner is rule
   sv at its upper bound in 50 fits (with-sv variants). Reading (descriptive): given the freedom, the likelihood pulls
   these fits back toward slow leak and weak urgency. Step 6 decides whether the corner is ruled out (NLL cost).
   Note: the pulse-only norm UGM fits have no standard pulse-only norm counterpart (pulse-only fits were linear and power).
+- 2026-11-11: author confirmed the step 6 criteria as written, before any NLL or pulse comparison was looked at:
+  UGM viable for a mouse if held-out NLL is within 10 units of the best integrator for that mouse (same input, same
+  CV splits), and the family's pulse profile has no late reversal outside the data CI.
+- 2026-11-11: steps 6-7 done. primacy.make_model takes ugm; UGM families registered (pulse_joint_signatures.UGM_FAMILIES,
+  UGM_PULSE_FAMILIES); rescoring reproduces stored test NLL (<= 0.08). compare_ugm.py (NLL vs best standard integrator,
+  same trials checked); signatures _ugm_part0-2 + bootstrap _ugm; fit browser v5 data (71 families, earlier content
+  identical) published as artifact version 6. Deviation: no standard pulse-only norm fits, so pulse-only norm UGM is
+  described, not compared. Free fits avoid the corner, so the criteria tested the region edge (see report).

@@ -1,0 +1,13 @@
+kind,input,model,ugm_heldout,best_std_heldout,d_vs_best_sum,d_vs_best_median,d_vs_best_min,d_vs_best_max,mice_viable_nll,d_vs_std_leak_urgency_sum,mice_better10_than_std_lu,mice_worse10_than_std_lu,n_mice
+joint,linear,ugm,52545.24,52429.39,115.85,10.09,-7.59,26.78,5,70.33,0.0,3.0,10
+joint,linear,ugm_no_sv,53003.23,52429.39,573.84,20.29,3.14,315.52,3,0.0,0.0,0.0,10
+joint,power,ugm,52416.91,52318.94,97.97,7.65,-1.59,28.41,7,64.53,0.0,3.0,10
+joint,power,ugm_no_sv,52937.39,52318.94,618.45,19.03,-7.5,328.63,3,0.0,0.0,0.0,10
+joint,norm,ugm,52438.64,52345.25,93.39,5.57,-9.12,29.73,7,48.73,1.0,3.0,10
+joint,norm,ugm_no_sv,52542.31,52345.25,197.07,15.19,-3.73,72.7,3,0.0,0.0,0.0,10
+pulse,linear,ugm,16946.2,16840.74,105.46,9.18,0.99,22.45,6,47.16,0.0,2.0,10
+pulse,linear,ugm_no_sv,17006.37,16840.74,165.63,8.38,1.5,91.46,7,45.89,0.0,2.0,10
+pulse,power,ugm,16909.54,16858.33,51.21,7.54,-11.14,13.93,7,-15.85,1.0,0.0,10
+pulse,power,ugm_no_sv,17042.19,16858.33,183.86,8.15,-3.06,87.89,6,50.03,0.0,2.0,10
+pulse,norm,ugm,16931.17,,,,,,,,,,10
+pulse,norm,ugm_no_sv,16889.94,,,,,,,,,,10
