@@ -1,0 +1,64 @@
+family,kind,group,label,k,n,nll,aic,bic,heldout,mice_best_aic,mice_best_bic,d_aic,rank_aic,d_bic,rank_bic,d_heldout,rank_heldout,mice_best_heldout_nll
+"primary + power law, control-only fit",control_only,Control-only fits,"Integrator, power law",10,14014,39206.83,78613.66,79097.72,,3,1,2.93,2,0.0,1,,,
+"primary, control-only fit",control_only,Control-only fits,"Integrator, linear",9,14014,39260.61,78701.22,79136.87,,3,8,90.49,3,39.15,2,,,
+"primary + normalization, control-only fit",control_only,Control-only fits,"Integrator, normalization",11,14014,39195.36,78610.73,79143.19,,4,1,0.0,1,45.48,3,,,
+norm_leak,joint,"All trials, normalization",Leak,12,25493,69618.24,139476.49,140135.72,52444.77,1,1,0.0,1,0.0,1,92.39,6,0.0
+power_leak_urgency,joint,"All trials, power law",Leak + urgency,12,25493,69632.53,139505.07,140164.3,52352.38,1,1,28.58,3,28.58,2,0.0,1,2.0
+power_leak,joint,"All trials, power law",Leak,11,25493,69670.38,139560.76,140165.05,52433.58,3,1,84.27,4,29.33,3,81.2,4,0.0
+norm_leak_urgency,joint,"All trials, normalization",Leak + urgency,13,25493,69617.58,139495.17,140209.33,52389.9,1,0,18.68,2,73.62,4,37.52,2,0.0
+power_primary,joint,"All trials, power law",Integrator (sv),10,25493,69743.61,139687.21,140236.57,52508.11,1,1,210.73,10,100.85,5,155.73,11,0.0
+norm_primary,joint,"All trials, normalization",Integrator (sv),11,25493,69715.86,139651.73,140256.02,52493.6,1,1,175.24,6,120.31,6,141.22,10,0.0
+leak_urgency,joint,"All trials, linear motion energy",Leak + urgency,11,25493,69723.35,139666.7,140270.99,52474.91,0,0,190.21,8,135.27,7,122.53,8,1.0
+leak,joint,"All trials, linear motion energy",Leak,10,25493,69766.47,139732.94,140282.3,52531.94,0,2,256.46,11,146.59,8,179.56,13,0.0
+power_urgency,joint,"All trials, power law",Urgency,11,25493,69729.65,139679.3,140283.59,52455.54,0,0,202.81,9,147.88,9,103.16,7,1.0
+norm_urgency,joint,"All trials, normalization",Urgency,12,25493,69697.77,139635.53,140294.76,52476.98,0,0,159.05,5,159.05,10,124.6,9,2.0
+power_ugm,joint,"All trials, urgency-gating region","Leak + urgency, UGM region, power law",12,25493,69710.24,139660.49,140319.72,52416.91,0,0,184.0,7,184.0,11,64.53,3,0.0
+nominal_leak_urgency,joint,"All trials, coherence sequence",Leak + urgency,11,25493,69767.16,139754.32,140358.61,52544.31,1,0,277.83,12,222.89,12,191.93,16,0.0
+nominal_leak,joint,"All trials, coherence sequence",Leak,10,25493,69805.05,139810.11,140359.47,52524.69,0,0,333.62,13,223.75,13,172.31,12,0.0
+primary,joint,"All trials, linear motion energy",Integrator (sv),9,25493,69859.47,139898.94,140393.36,52547.18,0,1,422.46,17,257.65,14,194.8,18,0.0
+urgency,joint,"All trials, linear motion energy",Urgency,10,25493,69826.27,139852.54,140401.9,52564.92,0,0,376.06,15,266.18,15,212.54,19,0.0
+fixed_guess_bias,joint,"All trials, linear motion energy","Integrator, guess bias fixed",8,25493,69916.94,139993.89,140433.38,52567.95,1,2,517.4,19,297.66,16,215.57,20,0.0
+linear_ugm,joint,"All trials, urgency-gating region","Leak + urgency, UGM region, linear",11,25493,69811.67,139843.34,140447.63,52545.24,0,0,366.85,14,311.92,17,192.86,17,1.0
+nominal_power_primary,joint,"All trials, coherence sequence","Integrator, power law",10,25493,69884.96,139969.92,140519.28,52537.53,0,0,493.43,18,383.56,18,185.15,14,0.0
+nominal_urgency,joint,"All trials, coherence sequence",Urgency,10,25493,69915.16,140030.31,140579.67,52604.23,0,0,553.82,21,443.95,19,251.85,21,0.0
+nominal_primary,joint,"All trials, coherence sequence",Integrator (sv),9,25493,69960.64,140101.27,140595.7,52664.22,0,0,624.79,22,459.98,20,311.83,23,0.0
+norm_ugm,joint,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization",13,25493,69816.61,139893.23,140607.39,52438.64,0,0,416.74,16,471.68,21,86.26,5,1.0
+norm_ugm_no_sv,joint,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",12,25493,69887.3,140014.61,140673.84,52542.31,0,0,538.12,20,538.12,22,189.93,15,0.0
+nominal_no_sv,joint,"All trials, coherence sequence","Integrator, no sv",8,25493,70049.72,140259.44,140698.93,52700.48,0,0,782.96,23,563.21,23,348.1,24,0.0
+free_leak_0-200,joint,"All trials, linear motion energy",Free leak 0-200 /s,10,25493,70052.77,140305.54,140854.89,52643.98,0,0,829.05,24,719.18,24,291.6,22,0.0
+no_sv,joint,"All trials, linear motion energy","Integrator, no sv",8,25493,70236.89,140633.78,141073.26,52864.49,0,0,1157.29,27,937.55,25,512.11,27,1.0
+power_extrema_E_leak20-200,joint,"All trials, power law",Extrema detection (E),11,25493,70178.74,140577.48,141181.77,52780.33,0,0,1100.99,26,1046.06,26,427.95,26,0.0
+norm_extrema_E_leak20-200,joint,"All trials, normalization",Extrema detection (E),12,25493,70163.32,140566.65,141225.88,52752.08,0,0,1090.16,25,1090.16,27,399.7,25,0.0
+nominal_extrema_E_leak20-200,joint,"All trials, coherence sequence",Extrema detection (E),10,25493,70289.63,140779.25,141328.61,52905.44,0,0,1302.77,29,1192.9,28,553.06,30,0.0
+power_ugm_no_sv,joint,"All trials, urgency-gating region","Leak + urgency, UGM region, power law, no sv",11,25493,70267.51,140755.03,141359.32,52937.39,0,0,1278.54,28,1223.6,29,585.01,31,0.0
+norm_extrema_sampling_ES,joint,"All trials, normalization",Extrema sampling (ES),10,25493,70334.19,140868.38,141417.74,52867.72,0,0,1391.9,30,1282.03,30,515.34,28,0.0
+nominal_extrema_sampling_ES,joint,"All trials, coherence sequence",Extrema sampling (ES),8,25493,70419.36,140998.72,141438.2,53005.77,0,0,1522.23,34,1302.49,31,653.39,34,1.0
+extrema_E_leak20-200,joint,"All trials, linear motion energy",Extrema detection (E),10,25493,70351.99,140903.98,141453.33,52875.15,0,0,1427.49,31,1317.62,32,522.77,29,0.0
+linear_ugm_no_sv,joint,"All trials, urgency-gating region","Leak + urgency, UGM region, linear, no sv",10,25493,70359.29,140918.59,141467.95,53003.23,0,0,1442.1,32,1332.23,33,650.85,33,0.0
+power_extrema_sampling_ES,joint,"All trials, power law",Extrema sampling (ES),9,25493,70400.65,140981.3,141475.72,52945.87,0,0,1504.81,33,1340.0,34,593.49,32,0.0
+extrema_sampling_ES,joint,"All trials, linear motion energy",Extrema sampling (ES),8,25493,70534.31,141228.62,141668.11,53064.74,0,0,1752.13,35,1532.39,35,712.36,35,0.0
+no_guess,joint,"All trials, linear motion energy","Integrator, no fast guesses",6,25493,70691.2,141502.4,141832.01,53080.3,0,0,2025.91,36,1696.29,36,727.92,36,0.0
+stine_nominal_DDM,joint,"All trials, coherence sequence",Stine 2020 DDM,4,25493,71281.2,142642.4,142862.14,53405.44,0,0,3165.91,37,2726.43,37,1053.06,37,0.0
+stine_nominal_ES,joint,"All trials, coherence sequence",Stine 2020 ES,4,25493,71437.81,142955.61,143175.36,53508.42,0,0,3479.13,38,3039.64,38,1156.04,38,0.0
+pulse_linear_leak,pulse_only,"Pulse-only fits, linear motion energy",Leak,10,11479,30430.31,61060.62,61534.5,16918.34,0,1,46.16,5,0.0,1,28.4,5,1.0
+pulse_power_leak,pulse_only,"Pulse-only fits, power law",Leak,11,11479,30397.23,61014.46,61535.73,16926.0,0,2,0.0,1,1.23,2,36.06,8,0.0
+pulse_power_primary,pulse_only,"Pulse-only fits, power law",Integrator (sv),10,11479,30445.87,61091.73,61565.61,16912.4,0,0,77.27,7,31.11,3,22.46,4,0.0
+pulse_linear_leak_urgency,pulse_only,"Pulse-only fits, linear motion energy",Leak + urgency,11,11479,30414.69,61049.38,61570.65,16899.04,0,0,34.92,4,36.15,4,9.1,2,2.0
+pulse_power_leak_urgency,pulse_only,"Pulse-only fits, power law",Leak + urgency,12,11479,30389.82,61019.64,61588.3,16925.39,3,0,5.18,2,53.8,5,35.45,7,0.0
+pulse_linear_primary,pulse_only,"Pulse-only fits, linear motion energy",Integrator (sv),9,11479,30495.26,61170.52,61597.02,16932.64,1,2,156.06,11,62.52,6,42.7,10,0.0
+pulse_power_urgency,pulse_only,"Pulse-only fits, power law",Urgency,11,11479,30428.99,61077.97,61599.24,16941.71,1,0,63.51,6,64.74,7,51.76,11,0.0
+pulse_linear_urgency,pulse_only,"Pulse-only fits, linear motion energy",Urgency,10,11479,30480.85,61161.69,61635.57,16919.48,1,0,147.23,10,101.07,8,29.54,6,0.0
+pulse_linear_ugm,pulse_only,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear",11,11479,30452.96,61125.92,61647.19,16946.2,0,0,111.46,9,112.69,9,56.26,12,0.0
+pulse_norm_ugm,pulse_only,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization",13,11479,30388.05,61036.1,61652.15,16931.17,2,1,21.64,3,117.65,10,41.23,9,0.0
+pulse_power_ugm,pulse_only,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law",12,11479,30433.44,61106.87,61675.53,16909.54,0,0,92.41,8,141.03,11,19.6,3,2.0
+pulse_linear_urgency_no_sv,pulse_only,"Pulse-only fits, linear motion energy","Urgency, no sv",9,11479,30570.21,61320.42,61746.91,16967.78,0,0,305.96,14,212.41,12,77.84,15,1.0
+pulse_linear_no_sv,pulse_only,"Pulse-only fits, linear motion energy","Integrator, no sv",8,11479,30614.08,61388.15,61767.26,16957.46,1,2,373.69,19,232.76,13,67.52,13,1.0
+pulse_power_no_sv,pulse_only,"Pulse-only fits, power law","Integrator, no sv",9,11479,30591.57,61363.15,61789.64,16977.86,0,0,348.68,17,255.14,14,87.92,17,1.0
+pulse_power_urgency_no_sv,pulse_only,"Pulse-only fits, power law","Urgency, no sv",10,11479,30560.02,61320.04,61793.92,16985.76,0,0,305.58,13,259.42,15,95.82,18,0.0
+pulse_linear_leak_urgency_no_sv,pulse_only,"Pulse-only fits, linear motion energy","Leak + urgency, no sv",10,11479,30578.98,61357.95,61831.83,16960.48,1,0,343.49,16,297.33,16,70.54,14,1.0
+pulse_linear_leak_no_sv,pulse_only,"Pulse-only fits, linear motion energy","Leak, no sv",9,11479,30614.81,61409.61,61836.11,16973.15,0,1,395.15,20,301.61,17,83.21,16,0.0
+pulse_power_leak_urgency_no_sv,pulse_only,"Pulse-only fits, power law","Leak + urgency, no sv",11,11479,30552.01,61324.02,61845.29,16992.17,0,0,309.55,15,310.79,18,102.22,19,0.0
+pulse_power_leak_no_sv,pulse_only,"Pulse-only fits, power law","Leak, no sv",10,11479,30593.89,61387.79,61861.67,16994.13,0,0,373.33,18,327.17,19,104.18,20,0.0
+pulse_norm_ugm_no_sv,pulse_only,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",12,11479,30529.4,61298.79,61867.45,16889.94,0,1,284.33,12,332.95,20,0.0,1,1.0
+pulse_linear_ugm_no_sv,pulse_only,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear, no sv",10,11479,30677.56,61555.13,62029.01,17006.37,0,0,540.66,22,494.51,21,116.43,21,0.0
+pulse_power_ugm_no_sv,pulse_only,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law, no sv",11,11479,30653.79,61527.58,62048.85,17042.19,0,0,513.12,21,514.35,22,152.25,22,0.0

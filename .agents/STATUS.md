@@ -38,6 +38,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-11-11-model-ic.md : AIC/BIC agree with held-out NLL on the top group (leak / leak + urgency with sv, power or norm input) and on integrators > E/ES > Stine; QMLE AIC/BIC legitimate (corrects an earlier claim)
 - reports/2026-11-11-ugm-corner.md : free UGM-region fits avoid the corner (0/120 full-data fits); with sv late reversal outside data CI, no sv passes the pulse but NLL within 10 of best in 3/10 (joint) mice; corner proper untested by a fixed grid
 - reports/2026-11-11-pulse-only-fits.md : fitting pulse trials only does not fix the pulse misfit (per-mouse spread; late reversal with sv); no-sv matches pulse means but fits worse; pulse-trial fits have longer ndt, more guesses
 - reports/2026-11-09-pulse-effect-bootstrap.md : data pulse mean has CI 3.2-7.9 pp (ME integrators inside); per-mouse spread real (I^2 0.83) and unexplained by every family; late reversal of leak/urgency integrators outside the data CI, sv-only integrators inside
