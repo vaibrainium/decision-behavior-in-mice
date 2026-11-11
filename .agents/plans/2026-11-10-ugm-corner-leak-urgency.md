@@ -1,5 +1,5 @@
 # Plan: Test the urgency-gating (UGM) corner of the leak + urgency model
-Status: active (step 4 done: submitting on Hyak; next: step 5 after sync)
+Status: active (step 5 done; next: step 6, criteria to be confirmed by the author before the NLL comparison)
 Created: 2026-11-10 by Claude (Opus 5.5)
 Related reports: reports/2026-10-29-pulse-leak-vs-urgency.md, reports/2026-10-22-leak-urgency-diagnosis.md,
 reports/2026-11-09-mapping-accumulator-exploratory.md; literature: dissemination/reports/pulse-leak-vs-urgency-literature-2026-10-29.md
@@ -48,7 +48,7 @@ misfit for each (L, u) pair, plus a report saying whether the UGM corner is rule
 - [x] 4. Author: pull and submit on Hyak (720 tasks):
       python3 scripts/slurm/autosubmit.py --tasks scripts/slurm/tasks_2026-11-10_ugm.csv --state slurm-logs/autosubmit_state_ugm.json --watch 10
       (--dry_run first). Do not change the table once pulled.
-- [ ] 5. Sync; check bound-hitting (leak at 2 or 20, urgency at 0 or 50, drift_gain at 50, a at 9.5) and convergence.
+- [x] 5. Sync; check bound-hitting (leak at 2 or 20, urgency at 0 or 50, drift_gain at 50, a at 9.5) and convergence.
 - [ ] 6. Compare with the standard L1U1 (same splits, same input): held-out NLL per mouse (joint CV and pulse CV),
       fitted leak and urgency, pulse profile and late-window effect (simulate fits; add to fit browser).
       Viability criteria for the UGM (author to confirm before looking): held-out NLL within 10 units of the best
@@ -90,3 +90,14 @@ misfit for each (L, u) pair, plus a report saying whether the UGM corner is rule
   norm 102/120, joint power 91/120, all three pulse-only batches 0/120). Synced files all valid (12 resumed from a
   checkpoint). Missing 407: 47 joint, 360 pulse-only; 164 of them have 16 h table limits. To resume: restart the ugm
   autosubmit loop (state slurm-logs/autosubmit_state_ugm.json); fits resume from their .ckpt files on gscratch.
+- 2026-11-11: author synced the remaining UGM fits. Step 5 (scratch script, not committed: checks every .pkl in
+  ddm/fits_{joint,pulse}_{linear,power,norm}_ugm): 720/720 present (120 per folder, 10 mice, no duplicates); all
+  ugm=True, urgency_ref 1, name = content, front end matches folder, finite NLL, success True, none at max_iterations
+  (1000); 91 resumed from a checkpoint; fit time median 0.5-1.9 h, max 7.2 h. Bounds (1% of range): no fit near
+  drift_gain 50 or a 9.5 (max a 8.88). The fits sit at the edge nearest the standard L1U1, away from the UGM corner:
+  leak <= 2.18 /s (lower bound 2) in 388/720, urgency <= 0.5 /s (lower bound 0) in 571/720, both in 303. In the UGM
+  region (leak 4-10 /s and urgency >= 1 /s): 14/720, all pulse-only CV folds of PSUIM10 (9), DBM13 (4), DBM14 (1),
+  none on a full-data split. Urgency >= 1 /s: PSUIM10 53/72 fits (the mouse with fewest trials), other mice 66/648.
+  sv at its upper bound in 50 fits (with-sv variants). Reading (descriptive): given the freedom, the likelihood pulls
+  these fits back toward slow leak and weak urgency. Step 6 decides whether the corner is ruled out (NLL cost).
+  Note: the pulse-only norm UGM fits have no standard pulse-only norm counterpart (pulse-only fits were linear and power).
