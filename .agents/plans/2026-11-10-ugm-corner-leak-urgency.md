@@ -81,3 +81,8 @@ misfit for each (L, u) pair, plus a report saying whether the UGM corner is rule
   state together, cut not counted as an attempt; stub-tested). Author ran it with 11.0 h: 34 UGM tasks capped (joint
   power 16 h array 43092441; dry run listed 35, one started running in between); PO/PLU had none above 11 h.
   Capped fits that do not converge time out, are resubmitted at 22 h and resume from their checkpoints after maintenance.
+- 2026-11-11: after the Hyak maintenance all tmux loops were gone (login node restart). Synced status: PO 480/480 and
+  PLU 480/480 done; UGM 313/720 done (joint linear 120, joint power 91, joint norm 102). Author restarted the ugm loop;
+  the remaining 389 tasks submitted (arrays 43112068-43112083). One start-up failure (UGM_joint_power:117, PSUIM5
+  L1U1V0Z0G1 all; FAILED after 9 s: Lmod cache rename race in ~/.cache/lmod when many jobs start at once); the loop
+  retries it; no other task hit it. If it repeats: rm -rf ~/.cache/lmod, or retry `module load` in fit_mouse_ddm.slurm.
