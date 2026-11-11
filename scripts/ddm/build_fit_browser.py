@@ -32,7 +32,8 @@ from src.utils.pmf_utils import fit_psychometric_function
 
 from scripts.ddm.compare_joint_refits import DDM, FAMILIES, FOLDS, load
 from scripts.ddm.fit_mouse_ddm import load_inputs, responded_only
-from scripts.ddm.pulse_joint_signatures import EXTRA_FAMILIES, FE_NORM, FE_POWER, PULSE_ONLY_FAMILIES, REFERENCE, model_path, simulate
+from scripts.ddm.pulse_joint_signatures import (EXTRA_FAMILIES, FE_NORM, FE_POWER, PULSE_ONLY_FAMILIES, REFERENCE, UGM_FAMILIES,
+                                                UGM_PULSE_FAMILIES, model_path, simulate)
 import scripts.ddm.pulse_leak_urgency_signatures as PLU
 from scripts.ddm.pulse_leak_urgency_signatures import observed
 from scripts.ddm.pulse_psychometric import OUT
@@ -54,6 +55,8 @@ ACC = [("primary", "Integrator (sv)"), ("no_sv", "Integrator, no sv"), ("leak", 
 PULSE_ONLY_LABELS = [("primary", "Integrator (sv)"), ("no_sv", "Integrator, no sv"), ("leak", "Leak"), ("leak_no_sv", "Leak, no sv"),
                      ("urgency", "Urgency"), ("urgency_no_sv", "Urgency, no sv"), ("leak_urgency", "Leak + urgency"),
                      ("leak_urgency_no_sv", "Leak + urgency, no sv")]
+UGM_LABELS = [(f"{fe}_{k}", f"Leak + urgency, UGM region, {fl}{sv}") for fe, fl in [("linear", "linear"), ("power", "power law"), ("norm", "normalization")]
+              for k, sv in [("ugm", ""), ("ugm_no_sv", ", no sv")]]  # plan 2026-11-10-ugm-corner-leak-urgency: leak 2-20 /s, urgency 0-50 /s
 GROUPS = [  # (group label, [(family key, display label)])
     ("Control-only fits (fitted on control trials; pulses predicted)",
      [(REFERENCE, "Integrator, linear"), (FE_POWER, "Integrator, power law"), (FE_NORM, "Integrator, normalization")]),
@@ -67,6 +70,8 @@ GROUPS = [  # (group label, [(family key, display label)])
      [(f"pulse_linear_{k}", l) for k, l in PULSE_ONLY_LABELS]),
     ("Pulse-only fits, power law (fitted on pulse trials; controls predicted)",
      [(f"pulse_power_{k}", l) for k, l in PULSE_ONLY_LABELS]),
+    ("All trials, urgency-gating region", UGM_LABELS),
+    ("Pulse-only fits, urgency-gating region (fitted on pulse trials; controls predicted)", [(f"pulse_{k}", l) for k, l in UGM_LABELS]),
     ("Counterfactual: fitted parameters with sv = 0 (not fitted)",
      [(f"{k} [sv=0]", l) for k, l in [("primary", "Integrator, linear"), ("leak", "Leak, linear"), ("urgency", "Urgency, linear"),
                                        ("leak_urgency", "Leak + urgency, linear"), ("power_primary", "Integrator, power law"),
@@ -182,8 +187,8 @@ def nll_table(families: list[str], mice: list[str]) -> list[dict]:
                                  "pulse_test_nll": r.test_nll, "n_pulse_test": int(r.n_test) if r.n_test == r.n_test else None,
                                  "k": len(r.free_parameters)})
             continue
-        if fam in PULSE_ONLY_FAMILIES:  # held-out = pcv0-pcv4 test NLL (pulse trials); fitted and control test from "pulse"
-            folder, variant = PULSE_ONLY_FAMILIES[fam]
+        if fam in PULSE_ONLY_FAMILIES or fam in UGM_PULSE_FAMILIES:  # held-out = pcv0-pcv4 test NLL (pulse trials); fitted and control test from "pulse"
+            folder, variant = PULSE_ONLY_FAMILIES.get(fam) or UGM_PULSE_FAMILIES[fam]
             df = load(folder, variant)
             cv = df[df.split.isin(PULSE_FOLDS)]
             nf = cv.groupby("mouse").split.nunique()
@@ -199,7 +204,7 @@ def nll_table(families: list[str], mice: list[str]) -> list[dict]:
                              "n_control_test": int(pf.loc[m, "n_test"]) if m in pf.index else None,
                              "k": len(pf.loc[m, "free_parameters"]) if m in pf.index else None})
             continue
-        folder, variant = (FAMILIES.get(fam) or EXTRA_FAMILIES[fam])[:2]
+        folder, variant = (FAMILIES.get(fam) or EXTRA_FAMILIES.get(fam) or UGM_FAMILIES[fam])[:2]
         df = load(folder, variant)
         cv = df[df.split.isin(FOLDS)]
         nf = cv.groupby("mouse").split.nunique()

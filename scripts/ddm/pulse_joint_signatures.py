@@ -50,6 +50,11 @@ EXTRA_FAMILIES = {
 PULSE_ONLY_VARIANTS = [("primary", "L0U0V1Z0G1"), ("no_sv", "L0U0V0Z0G1"), ("leak", "L1U0V1Z0G1"), ("leak_no_sv", "L1U0V0Z0G1"),
                        ("urgency", "L0U1V1Z0G1"), ("urgency_no_sv", "L0U1V0Z0G1"), ("leak_urgency", "L1U1V1Z0G1"), ("leak_urgency_no_sv", "L1U1V0Z0G1")]
 PULSE_ONLY_FAMILIES = {f"pulse_{fe}_{name}": (f"fits_pulse_{fe}_integrators", var) for fe in ("linear", "power") for name, var in PULSE_ONLY_VARIANTS}
+# urgency-gating region of leak + urgency (plan 2026-11-10-ugm-corner-leak-urgency): joint ("all" fit) and pulse-only
+# ("pulse" fit) families, linear / power / normalization input, with and without sv; family -> (folder, variant)
+UGM_VARIANTS = [("ugm", "L1U1V1Z0G1"), ("ugm_no_sv", "L1U1V0Z0G1")]
+UGM_FAMILIES = {f"{fe}_{name}": (f"fits_joint_{fe}_ugm", var) for fe in ("linear", "power", "norm") for name, var in UGM_VARIANTS}
+UGM_PULSE_FAMILIES = {f"pulse_{fe}_{name}": (f"fits_pulse_{fe}_ugm", var) for fe in ("linear", "power", "norm") for name, var in UGM_VARIANTS}
 OPTIONS = {  # family -> make_model options (as the fits)
     "fixed_guess_bias": dict(fixed_guess_bias=True), "extrema_E_leak20-200": dict(leak_bounds=(20, 200)),
     "free_leak_0-200": dict(leak_bounds=(0, 200)), "extrema_sampling_ES": dict(extrema_samples=True),
@@ -70,14 +75,17 @@ for _fam in EXTRA_FAMILIES:
     OPTIONS[_fam] = _opt
 for _fam in PULSE_ONLY_FAMILIES:
     OPTIONS[_fam] = dict(front_end="power") if _fam.startswith("pulse_power_") else {}
+for _fam in (*UGM_FAMILIES, *UGM_PULSE_FAMILIES):
+    _fe = _fam.removeprefix("pulse_").split("_")[0]
+    OPTIONS[_fam] = dict(ugm=True) | ({} if _fe == "linear" else dict(front_end=_fe))
 
 
 def model_path(fam: str):
     """Fit file per mouse: joint families use the "all" fit, pulse-only families the "pulse" fit."""
-    if fam in PULSE_ONLY_FAMILIES:
-        folder, variant = PULSE_ONLY_FAMILIES[fam]
+    if fam in PULSE_ONLY_FAMILIES or fam in UGM_PULSE_FAMILIES:
+        folder, variant = (PULSE_ONLY_FAMILIES.get(fam) or UGM_PULSE_FAMILIES[fam])
         return lambda m: DDM / folder / f"{m}_{variant}_pulse.pkl"
-    folder, variant = (FAMILIES.get(fam) or EXTRA_FAMILIES[fam])[:2]
+    folder, variant = (FAMILIES.get(fam) or EXTRA_FAMILIES.get(fam) or UGM_FAMILIES[fam])[:2]
     return lambda m: DDM / folder / f"{m}_{variant}_all.pkl"
 
 
@@ -93,10 +101,11 @@ def simulate(fam: str, path: Path, inputs: dict, obs: pd.DataFrame, mouse: str, 
     opt = {"fixed_guess_bias": False} | OPTIONS.get(base, {})
     assert bool(r.get("fixed_guess_bias")) == opt["fixed_guess_bias"] and bool(r.get("nominal_input")) == opt.get("nominal_input", False)
     assert r.get("front_end") == opt.get("front_end") and bool(r.get("nominal_matched")) == opt.get("nominal_matched", False)
+    assert bool(r.get("ugm")) == opt.get("ugm", False)
     rig = obs.loc[obs.mouse == mouse, "rig"].iloc[0]
     model = make_model(r["variant"], rig, opt["fixed_guess_bias"], leak_bounds=opt.get("leak_bounds"), responded=True,
                        extrema_samples=opt.get("extrema_samples", False), nominal_input=opt.get("nominal_input", False),
-                       front_end=opt.get("front_end"), nominal_matched=opt.get("nominal_matched", False))
+                       front_end=opt.get("front_end"), nominal_matched=opt.get("nominal_matched", False), ugm=opt.get("ugm", False))
     rows = np.flatnonzero(inputs["subject_id"] == mouse)  # all responded trials, for the non-response share
     data, stim = select(inputs, rows, nominal=opt.get("nominal_input", False))
     params = dict(r["parameters"])
