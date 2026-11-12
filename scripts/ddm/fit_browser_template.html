@@ -140,10 +140,15 @@ const sideOf = c => c === "control" ? "control" : c.split(" ")[1];
 /* ---------- NLL index ---------- */
 const NLL = {};
 for (const r of D.nll) { if (!NLL[r.family]) NLL[r.family] = {}; NLL[r.family][r.mouse] = r; }
+function ic(r, which) {  // information criteria from a mouse's full-data fit (censored quantile likelihood)
+  if (r.fitted_nll == null || r.k == null || r.n_fitted == null) return null;
+  return 2 * r.fitted_nll + (which === "aic" ? 2 * r.k : r.k * Math.log(r.n_fitted));
+}
 function totals(fam) {
   const rs = Object.values(NLL[fam] || {});
   const sum = k => rs.length === D.mice.length && rs.every(r => r[k] != null) ? rs.reduce((a, r) => a + r[k], 0) : null;
-  return { heldout: sum("heldout_nll"), n_heldout: sum("n_heldout"), fitted: sum("fitted_nll"), pulse: sum("pulse_test_nll"), n_pulse: sum("n_pulse_test"), ctest: sum("control_test_nll"), n_ctest: sum("n_control_test"), k: rs.length ? rs[0].k : null };
+  const icSum = w => rs.length === D.mice.length && rs.every(r => ic(r, w) != null) ? rs.reduce((a, r) => a + ic(r, w), 0) : null;
+  return { aic: icSum("aic"), bic: icSum("bic"), heldout: sum("heldout_nll"), n_heldout: sum("n_heldout"), fitted: sum("fitted_nll"), pulse: sum("pulse_test_nll"), n_pulse: sum("n_pulse_test"), ctest: sum("control_test_nll"), n_ctest: sum("n_control_test"), k: rs.length ? rs[0].k : null };
 }
 
 /* ---------- sidebar ---------- */
@@ -364,8 +369,8 @@ function modelView(fam) {
 /* ---------- NLL tab ---------- */
 function nllView() {
   const frag = document.createDocumentFragment();
-  const views = { heldout: "Held-out (cv0–cv4)", fitted: "Fitted, all trials", per1k: "Held-out per 1,000 trials" };
-  const head = el("div", { class: "head" }, el("div", {}, el("h2", { text: "Negative log likelihood" }), el("div", { class: "sub", text: "Actual values, not differences. Lower is better." })));
+  const views = { heldout: "Held-out (cv0–cv4)", fitted: "Fitted, all trials", per1k: "Held-out per 1,000 trials", aic: "AIC", bic: "BIC" };
+  const head = el("div", { class: "head" }, el("div", {}, el("h2", { text: "Negative log likelihood" }), el("div", { class: "sub", text: "Actual values, not differences. Lower is better. AIC = 2 NLL + 2k, BIC = 2 NLL + k ln(n trials fitted), from each mouse's full-data fit, summed over mice." })));
   const seg = el("div", { class: "seg", role: "group", "aria-label": "Likelihood" });
   for (const [k, l] of Object.entries(views)) { const b = el("button", { type: "button", "aria-pressed": String(state.nllView === k), text: l }); b.addEventListener("click", () => { state.nllView = k; save(); render(); }); seg.append(b); }
   head.append(el("div", { class: "controls" }, seg));
@@ -373,8 +378,8 @@ function nllView() {
   const fams = D.groups.flatMap(g => g.families.map(f => [g, f])).filter(([g]) => g.label.startsWith("All trials"));
   const pfams = D.groups.flatMap(g => g.families.map(f => [g, f])).filter(([g]) => g.label.startsWith("Pulse-only"));
   function tableBlock(fams, refN, id, title, note, withCtl) {
-    const val = (f, m) => { const r = (NLL[f] || {})[m]; if (!r) return null; if (state.nllView === "fitted") return r.fitted_nll; if (state.nllView === "per1k") return r.heldout_nll != null ? r.heldout_nll / r.n_heldout * 1000 : null; return r.heldout_nll; };
-    const tot = f => { const t = totals(f); if (state.nllView === "fitted") return t.fitted; if (state.nllView === "per1k") return t.heldout != null ? t.heldout / t.n_heldout * 1000 : null; return t.heldout; };
+    const val = (f, m) => { const r = (NLL[f] || {})[m]; if (!r) return null; if (state.nllView === "aic" || state.nllView === "bic") return ic(r, state.nllView); if (state.nllView === "fitted") return r.fitted_nll; if (state.nllView === "per1k") return r.heldout_nll != null ? r.heldout_nll / r.n_heldout * 1000 : null; return r.heldout_nll; };
+    const tot = f => { const t = totals(f); if (state.nllView === "aic" || state.nllView === "bic") return t[state.nllView]; if (state.nllView === "fitted") return t.fitted; if (state.nllView === "per1k") return t.heldout != null ? t.heldout / t.n_heldout * 1000 : null; return t.heldout; };
     const cols = [["total", "All mice"], ...D.mice.map(m => [m, m]), ...(withCtl ? [["ctl", "Control trials, predicted"]] : []), ["k", "Params"], ["n", "n held-out"]];
     const get = (f, k) => k === "total" ? tot(f) : k === "ctl" ? totals(f).ctest : k === "k" ? totals(f).k : k === "n" ? totals(f).n_heldout : val(f, k);
     const block = el("section", { class: "block", id }, el("h3", { text: title }), note ? el("p", { class: "note", text: note }) : null);
@@ -405,10 +410,10 @@ function nllView() {
   const cb = el("section", { class: "block", id: "nll-control" }, el("h3", { text: "Models fitted to control trials only" }),
     el("p", { class: "note", text: "Fitted on control trials; pulse trials held out entirely. Not comparable with the table above (different trials)." }));
   const w2 = el("div", { class: "tablewrap" }), t2 = el("table"), h2 = el("tr");
-  for (const l of ["Model", "Fitted NLL, control", "Held-out NLL, pulse trials", "per 1,000 pulse trials", "n pulse"]) h2.append(el("th", { text: l }));
+  for (const l of ["Model", "Fitted NLL, control", "AIC", "BIC", "Held-out NLL, pulse trials", "per 1,000 pulse trials", "n pulse"]) h2.append(el("th", { text: l }));
   t2.append(el("thead", {}, h2));
   const b2 = el("tbody");
-  for (const f of (D.groups.find(g => g.label.startsWith("Control-only")) || { families: [] }).families) { const t = totals(f); b2.append(el("tr", {}, el("td", { text: D.families[f].label }), el("td", { text: fmt(t.fitted) }), el("td", { text: fmt(t.pulse) }), el("td", { text: t.pulse != null ? fmt(t.pulse / t.n_pulse * 1000, 2) : "–" }), el("td", { text: t.n_pulse ?? "–" }))); }
+  for (const f of (D.groups.find(g => g.label.startsWith("Control-only")) || { families: [] }).families) { const t = totals(f); b2.append(el("tr", {}, el("td", { text: D.families[f].label }), el("td", { text: fmt(t.fitted) }), el("td", { text: fmt(t.aic) }), el("td", { text: fmt(t.bic) }), el("td", { text: fmt(t.pulse) }), el("td", { text: t.pulse != null ? fmt(t.pulse / t.n_pulse * 1000, 2) : "–" }), el("td", { text: t.n_pulse ?? "–" }))); }
   t2.append(b2); w2.append(t2); cb.append(w2); frag.append(cb);
   return frag;
 }
