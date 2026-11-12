@@ -1,0 +1,1261 @@
+family,group,label,trials,mouse,nll,dev,dev_le36,cells
+"primary, control-only fit",Control-only fits,"Integrator, linear",control,DBM12,399.0924771593078,6.18898645824639,6.106613178664361,7
+"primary, control-only fit",Control-only fits,"Integrator, linear",control,DBM13,184.54129977100405,8.949527430542219,8.668170975258604,7
+"primary, control-only fit",Control-only fits,"Integrator, linear",control,DBM14,173.77156314270024,7.267650952412886,4.539007721528499,7
+"primary, control-only fit",Control-only fits,"Integrator, linear",control,DBM15,253.1602746530871,12.774772359488686,11.57304100721084,9
+"primary, control-only fit",Control-only fits,"Integrator, linear",control,DBM5,586.819498775589,13.69033036822292,9.647941356736926,9
+"primary, control-only fit",Control-only fits,"Integrator, linear",control,DBM6,665.1755299821,8.684675669402921,3.9899086950693317,9
+"primary, control-only fit",Control-only fits,"Integrator, linear",control,PSUIM10,134.0580355468999,9.214852224262039,8.482907543338392,9
+"primary, control-only fit",Control-only fits,"Integrator, linear",control,PSUIM5,693.6199842426433,15.134121170147878,9.249925530143273,9
+"primary, control-only fit",Control-only fits,"Integrator, linear",control,PSUIM6,1763.510427295607,61.911096583565325,54.08568154058338,9
+"primary, control-only fit",Control-only fits,"Integrator, linear",control,PSUIM7,2341.731874467925,44.167759905939704,29.496258615702402,9
+"primary, control-only fit",Control-only fits,"Integrator, linear",pulse,DBM12,464.3023552642571,51.10226930841506,44.3164339582806,36
+"primary, control-only fit",Control-only fits,"Integrator, linear",pulse,DBM13,182.79292213875175,30.232517372508266,26.83977362804365,36
+"primary, control-only fit",Control-only fits,"Integrator, linear",pulse,DBM14,204.30770110782842,56.694199827924066,51.66708762287968,36
+"primary, control-only fit",Control-only fits,"Integrator, linear",pulse,DBM15,285.30459631506244,77.12048917100537,74.56579152099044,48
+"primary, control-only fit",Control-only fits,"Integrator, linear",pulse,DBM5,709.5405392947875,50.342162239212136,38.42384669924179,48
+"primary, control-only fit",Control-only fits,"Integrator, linear",pulse,DBM6,784.7297109267515,48.328660034690415,42.84432382860806,48
+"primary, control-only fit",Control-only fits,"Integrator, linear",pulse,PSUIM10,101.37850264576191,40.08973730316664,37.531926795921656,32
+"primary, control-only fit",Control-only fits,"Integrator, linear",pulse,PSUIM5,500.80598936336764,35.9668077789559,25.473194385348464,32
+"primary, control-only fit",Control-only fits,"Integrator, linear",pulse,PSUIM6,1307.0176319230977,74.3487883776219,62.52950691088174,32
+"primary, control-only fit",Control-only fits,"Integrator, linear",pulse,PSUIM7,1667.5559188043082,170.76263154109085,162.48255904455152,32
+"primary + power law, control-only fit",Control-only fits,"Integrator, power law",control,DBM12,399.3475705686835,6.69917327699784,6.683986189202415,7
+"primary + power law, control-only fit",Control-only fits,"Integrator, power law",control,DBM13,184.2753836890702,8.417695266674507,8.02519134847681,7
+"primary + power law, control-only fit",Control-only fits,"Integrator, power law",control,DBM14,173.73587293036087,7.19627052773415,4.875274944259239,7
+"primary + power law, control-only fit",Control-only fits,"Integrator, power law",control,DBM15,252.85702208478222,12.16826722287889,10.99350056994758,9
+"primary + power law, control-only fit",Control-only fits,"Integrator, power law",control,DBM5,586.0845436332578,12.220420083560757,9.830880354507887,9
+"primary + power law, control-only fit",Control-only fits,"Integrator, power law",control,DBM6,663.2150107469483,4.76363719909974,1.9495187785026573,9
+"primary + power law, control-only fit",Control-only fits,"Integrator, power law",control,PSUIM10,135.08968249060578,11.278146111673802,9.443046256114851,9
+"primary + power law, control-only fit",Control-only fits,"Integrator, power law",control,PSUIM5,692.4679363830663,12.830025450993915,5.228553866524365,9
+"primary + power law, control-only fit",Control-only fits,"Integrator, power law",control,PSUIM6,1741.589084521812,18.0684110359756,14.071823968089916,9
+"primary + power law, control-only fit",Control-only fits,"Integrator, power law",control,PSUIM7,2331.031138513094,22.76628799627781,10.664183255374837,9
+"primary + power law, control-only fit",Control-only fits,"Integrator, power law",pulse,DBM12,464.06767356850673,50.63290591691448,44.159454270209125,36
+"primary + power law, control-only fit",Control-only fits,"Integrator, power law",pulse,DBM13,183.70456854725612,32.05581018951702,28.439089562362938,36
+"primary + power law, control-only fit",Control-only fits,"Integrator, power law",pulse,DBM14,201.91423672852406,51.907271069315335,46.65208463523164,36
+"primary + power law, control-only fit",Control-only fits,"Integrator, power law",pulse,DBM15,286.9703674008874,80.4520313426553,77.84320818325399,48
+"primary + power law, control-only fit",Control-only fits,"Integrator, power law",pulse,DBM5,708.5175785138317,48.29624067730013,36.17687933584257,48
+"primary + power law, control-only fit",Control-only fits,"Integrator, power law",pulse,DBM6,782.4679867585975,43.805211698382266,38.659870851605646,48
+"primary + power law, control-only fit",Control-only fits,"Integrator, power law",pulse,PSUIM10,100.31432187032313,37.96137575228907,36.7409784544956,32
+"primary + power law, control-only fit",Control-only fits,"Integrator, power law",pulse,PSUIM5,498.72898547820165,31.812800008623807,20.522521788257254,32
+"primary + power law, control-only fit",Control-only fits,"Integrator, power law",pulse,PSUIM6,1302.774996367285,65.86351726599597,56.945563675635384,32
+"primary + power law, control-only fit",Control-only fits,"Integrator, power law",pulse,PSUIM7,1658.0312764282342,151.7133467889425,143.68019149102116,32
+"primary + normalization, control-only fit",Control-only fits,"Integrator, normalization",control,DBM12,399.1005712538937,6.2051746474181755,6.180237137832023,7
+"primary + normalization, control-only fit",Control-only fits,"Integrator, normalization",control,DBM13,185.57305522149676,11.01303833152759,10.933094625475483,7
+"primary + normalization, control-only fit",Control-only fits,"Integrator, normalization",control,DBM14,173.5622330878837,6.84899084277977,3.678372220001613,7
+"primary + normalization, control-only fit",Control-only fits,"Integrator, normalization",control,DBM15,255.34908079434996,17.15238464201436,13.075132856638724,9
+"primary + normalization, control-only fit",Control-only fits,"Integrator, normalization",control,DBM5,585.606454232968,11.264241282981207,9.76683194140637,9
+"primary + normalization, control-only fit",Control-only fits,"Integrator, normalization",control,DBM6,664.3598943795752,7.053404464353477,4.817586470230239,9
+"primary + normalization, control-only fit",Control-only fits,"Integrator, normalization",control,PSUIM10,133.65532095041533,8.409423031292848,6.0573262057699875,9
+"primary + normalization, control-only fit",Control-only fits,"Integrator, normalization",control,PSUIM5,690.8017368901835,9.497626465228066,5.535255321038434,9
+"primary + normalization, control-only fit",Control-only fits,"Integrator, normalization",control,PSUIM6,1740.9432766285688,16.776795249488714,12.919904963179874,9
+"primary + normalization, control-only fit",Control-only fits,"Integrator, normalization",control,PSUIM7,2332.02237701116,24.748764992410088,10.265122898940206,9
+"primary + normalization, control-only fit",Control-only fits,"Integrator, normalization",pulse,DBM12,464.3968599592089,51.29127869831868,44.71843089241392,36
+"primary + normalization, control-only fit",Control-only fits,"Integrator, normalization",pulse,DBM13,183.96948071043823,32.58563451588119,29.0166918726517,36
+"primary + normalization, control-only fit",Control-only fits,"Integrator, normalization",pulse,DBM14,201.2508134085301,50.58042442932745,45.51317836731674,36
+"primary + normalization, control-only fit",Control-only fits,"Integrator, normalization",pulse,DBM15,294.94763171888957,96.40655997865963,93.96336649991065,48
+"primary + normalization, control-only fit",Control-only fits,"Integrator, normalization",pulse,DBM5,709.6221444096016,50.50537246883988,37.778122781053284,48
+"primary + normalization, control-only fit",Control-only fits,"Integrator, normalization",pulse,DBM6,783.8257731662079,46.52078451360304,42.59975900625629,48
+"primary + normalization, control-only fit",Control-only fits,"Integrator, normalization",pulse,PSUIM10,100.3498349427262,38.03240189709525,36.577357810147824,32
+"primary + normalization, control-only fit",Control-only fits,"Integrator, normalization",pulse,PSUIM5,499.3769677248843,33.10876450198923,22.67294755218319,32
+"primary + normalization, control-only fit",Control-only fits,"Integrator, normalization",pulse,PSUIM6,1299.879494152281,60.07251283598851,52.126371356332704,32
+"primary + normalization, control-only fit",Control-only fits,"Integrator, normalization",pulse,PSUIM7,1657.6091943853564,150.86918270318716,142.01595409084803,32
+primary,"All trials, linear motion energy",Integrator (sv),control,DBM12,400.8330767433942,9.670185626419112,7.919629508491909,7
+primary,"All trials, linear motion energy",Integrator (sv),control,DBM13,184.8669894176926,9.60090672391923,8.680549985376658,7
+primary,"All trials, linear motion energy",Integrator (sv),control,DBM14,172.70237010605277,5.129264879117926,4.351771238997763,7
+primary,"All trials, linear motion energy",Integrator (sv),control,DBM15,253.04543829034816,12.545099634010752,11.953134404635902,9
+primary,"All trials, linear motion energy",Integrator (sv),control,DBM5,586.629166596732,13.30966601050919,8.98038470144094,9
+primary,"All trials, linear motion energy",Integrator (sv),control,DBM6,666.7290284240472,11.791672553297559,6.898855426386916,9
+primary,"All trials, linear motion energy",Integrator (sv),control,PSUIM10,135.12558746714774,11.349956064757684,9.743195590530735,9
+primary,"All trials, linear motion energy",Integrator (sv),control,PSUIM5,692.9135983841693,13.721349453199878,7.287504147823739,9
+primary,"All trials, linear motion energy",Integrator (sv),control,PSUIM6,1765.7783210918435,66.44688417603777,64.38369562377665,9
+primary,"All trials, linear motion energy",Integrator (sv),control,PSUIM7,2346.606010150105,53.916031270299925,46.65696538066203,9
+primary,"All trials, linear motion energy",Integrator (sv),pulse,DBM12,459.8998121571861,42.29718309427325,38.88605177409637,36
+primary,"All trials, linear motion energy",Integrator (sv),pulse,DBM13,182.5124859495093,29.67164499402338,26.22318993176988,36
+primary,"All trials, linear motion energy",Integrator (sv),pulse,DBM14,202.56774166210084,53.21428093646897,48.71429074760482,36
+primary,"All trials, linear motion energy",Integrator (sv),pulse,DBM15,285.3265260700769,77.16434868103428,74.54710453772866,48
+primary,"All trials, linear motion energy",Integrator (sv),pulse,DBM5,709.7148824774536,50.690848604544,36.775752642036075,48
+primary,"All trials, linear motion energy",Integrator (sv),pulse,DBM6,781.624647265979,42.11853271314513,38.108430878002714,48
+primary,"All trials, linear motion energy",Integrator (sv),pulse,PSUIM10,101.21367832019556,39.76008865203397,37.53155697555187,32
+primary,"All trials, linear motion energy",Integrator (sv),pulse,PSUIM5,500.16257065211124,34.67997035644288,24.041626160568494,32
+primary,"All trials, linear motion energy",Integrator (sv),pulse,PSUIM6,1306.09662901899,72.50678256940641,64.04293423108238,32
+primary,"All trials, linear motion energy",Integrator (sv),pulse,PSUIM7,1658.872261174741,153.3953162819563,147.4619178835748,32
+no_sv,"All trials, linear motion energy","Integrator, no sv",control,DBM12,401.9887568360017,11.981545811634263,7.396550472148519,7
+no_sv,"All trials, linear motion energy","Integrator, no sv",control,DBM13,183.26591098498636,6.398749858506886,6.174933676409392,7
+no_sv,"All trials, linear motion energy","Integrator, no sv",control,DBM14,173.26549459336061,6.2555138537336745,5.514485092953819,7
+no_sv,"All trials, linear motion energy","Integrator, no sv",control,DBM15,254.15962350144184,14.773470056198171,13.096958075668702,9
+no_sv,"All trials, linear motion energy","Integrator, no sv",control,DBM5,585.7854770009177,11.622286818880408,9.12529893463488,9
+no_sv,"All trials, linear motion energy","Integrator, no sv",control,DBM6,664.9648949405178,8.263405586238719,4.93198723996062,9
+no_sv,"All trials, linear motion energy","Integrator, no sv",control,PSUIM10,133.49056720696336,8.079915544388907,6.405742593582559,9
+no_sv,"All trials, linear motion energy","Integrator, no sv",control,PSUIM5,693.5823993036425,15.05895129214629,3.8857569972766584,9
+no_sv,"All trials, linear motion energy","Integrator, no sv",control,PSUIM6,1762.2603572621956,59.41095651674226,49.25216198696893,9
+no_sv,"All trials, linear motion energy","Integrator, no sv",control,PSUIM7,2350.647746808562,61.99950458721429,44.15128601180214,9
+no_sv,"All trials, linear motion energy","Integrator, no sv",pulse,DBM12,459.46580684119454,41.42917246228998,38.93413181834795,36
+no_sv,"All trials, linear motion energy","Integrator, no sv",pulse,DBM13,181.94469072148647,28.53605453797774,24.75392175653183,36
+no_sv,"All trials, linear motion energy","Integrator, no sv",pulse,DBM14,203.53145448108938,55.14170657444589,50.95519346623499,36
+no_sv,"All trials, linear motion energy","Integrator, no sv",pulse,DBM15,285.37912121032025,77.26953896152092,75.95757972248268,48
+no_sv,"All trials, linear motion energy","Integrator, no sv",pulse,DBM5,705.926547551629,43.1141787528949,33.63918813177604,48
+no_sv,"All trials, linear motion energy","Integrator, no sv",pulse,DBM6,780.9512015581315,40.7716412974504,37.861706987114864,48
+no_sv,"All trials, linear motion energy","Integrator, no sv",pulse,PSUIM10,101.31904674430095,39.97082550024475,35.951318866152306,32
+no_sv,"All trials, linear motion energy","Integrator, no sv",pulse,PSUIM5,497.9014597149011,30.157748482022605,17.701989020796862,32
+no_sv,"All trials, linear motion energy","Integrator, no sv",pulse,PSUIM6,1294.7906780005655,49.89488053255733,38.93536832464064,32
+no_sv,"All trials, linear motion energy","Integrator, no sv",pulse,PSUIM7,1641.173094899711,117.99698373189625,102.87791489273044,32
+leak,"All trials, linear motion energy",Leak,control,DBM12,400.0544342331165,8.112900605863771,8.012832812225597,7
+leak,"All trials, linear motion energy",Leak,control,DBM13,185.13894047454193,10.144808837617909,8.896240256412774,7
+leak,"All trials, linear motion energy",Leak,control,DBM14,172.36446549174718,4.453455650506754,3.775471920762442,7
+leak,"All trials, linear motion energy",Leak,control,DBM15,252.9571090503328,12.368441153980115,11.568723921245905,9
+leak,"All trials, linear motion energy",Leak,control,DBM5,585.1149203770902,10.281173571225679,8.938052269422599,9
+leak,"All trials, linear motion energy",Leak,control,DBM6,666.4223811048362,11.178377914875227,6.943548851803968,9
+leak,"All trials, linear motion energy",Leak,control,PSUIM10,134.80882552352455,10.716432177511322,9.771964094154544,9
+leak,"All trials, linear motion energy",Leak,control,PSUIM5,696.5399434430133,20.974039570888053,5.3559932673579596,9
+leak,"All trials, linear motion energy",Leak,control,PSUIM6,1770.4888499964873,75.86794198532567,58.374120229370874,9
+leak,"All trials, linear motion energy",Leak,control,PSUIM7,2343.650469949724,48.00495086953714,40.91616395622651,9
+leak,"All trials, linear motion energy",Leak,pulse,DBM12,461.29861692125564,45.0947926224123,38.87194843786723,36
+leak,"All trials, linear motion energy",Leak,pulse,DBM13,182.18967715446692,29.026027403938514,26.204344052429406,36
+leak,"All trials, linear motion energy",Leak,pulse,DBM14,202.28487333139793,52.64854427506307,47.51062296348768,36
+leak,"All trials, linear motion energy",Leak,pulse,DBM15,286.85971981859836,80.23073617807721,78.25724423359465,48
+leak,"All trials, linear motion energy",Leak,pulse,DBM5,710.4263454937353,52.1137746371075,38.70598163792265,48
+leak,"All trials, linear motion energy",Leak,pulse,DBM6,782.4743959230093,43.818030027205964,37.71514727842257,48
+leak,"All trials, linear motion energy",Leak,pulse,PSUIM10,101.34133594928366,40.01540391021015,36.68129111169729,32
+leak,"All trials, linear motion energy",Leak,pulse,PSUIM5,501.5698422096098,37.494513471440065,22.32644853861622,32
+leak,"All trials, linear motion energy",Leak,pulse,PSUIM6,1304.7102658606827,69.73405625279149,56.22264257274241,32
+leak,"All trials, linear motion energy",Leak,pulse,PSUIM7,1658.7075484151696,153.06589076281364,146.8636095497709,32
+urgency,"All trials, linear motion energy",Urgency,control,DBM12,400.7204156858653,9.444863511361447,7.30714151738249,7
+urgency,"All trials, linear motion energy",Urgency,control,DBM13,184.6472814359796,9.161490760493265,8.440425979241425,7
+urgency,"All trials, linear motion energy",Urgency,control,DBM14,172.93964946753871,5.6038236020898395,4.446611996136433,7
+urgency,"All trials, linear motion energy",Urgency,control,DBM15,253.08300622465725,12.620235502628915,12.252649338342763,9
+urgency,"All trials, linear motion energy",Urgency,control,DBM5,585.4084426237487,10.868218064542482,8.794880700861178,9
+urgency,"All trials, linear motion energy",Urgency,control,DBM6,663.1957094556091,4.725034616421041,3.099418528302195,9
+urgency,"All trials, linear motion energy",Urgency,control,PSUIM10,134.11949928610707,9.337779702676341,8.717268361746877,9
+urgency,"All trials, linear motion energy",Urgency,control,PSUIM5,695.7619763463798,19.41810537762082,18.271523593860636,9
+urgency,"All trials, linear motion energy",Urgency,control,PSUIM6,1754.5056465545406,43.901535101432444,41.36659777158576,9
+urgency,"All trials, linear motion energy",Urgency,control,PSUIM7,2342.9883700979344,46.680751165958725,40.09053684298419,9
+urgency,"All trials, linear motion energy",Urgency,pulse,DBM12,460.7913087163834,44.080176212667745,41.13713330573358,36
+urgency,"All trials, linear motion energy",Urgency,pulse,DBM13,182.91608538177263,30.478843858549958,27.090605442072004,36
+urgency,"All trials, linear motion energy",Urgency,pulse,DBM14,202.62114245140327,53.321082515073684,49.054506747388785,36
+urgency,"All trials, linear motion energy",Urgency,pulse,DBM15,284.6513949598426,75.8140864605657,73.34719575341985,48
+urgency,"All trials, linear motion energy",Urgency,pulse,DBM5,709.5813306128459,50.423744875328694,36.95569941804046,48
+urgency,"All trials, linear motion energy",Urgency,pulse,DBM6,781.7027988087732,42.27483579873369,36.4634966855817,48
+urgency,"All trials, linear motion energy",Urgency,pulse,PSUIM10,101.45440683386073,40.241545679364286,37.63362764235379,32
+urgency,"All trials, linear motion energy",Urgency,pulse,PSUIM5,502.6874080121022,39.729645076424916,31.532431079844507,32
+urgency,"All trials, linear motion energy",Urgency,pulse,PSUIM6,1304.152315817757,68.61815616694005,56.30470625113941,32
+urgency,"All trials, linear motion energy",Urgency,pulse,PSUIM7,1658.107966330314,151.86672659310204,145.7282761673036,32
+leak_urgency,"All trials, linear motion energy",Leak + urgency,control,DBM12,400.0943918284227,8.19281579647614,7.194957607197722,7
+leak_urgency,"All trials, linear motion energy",Leak + urgency,control,DBM13,185.31051989787153,10.487967684277102,8.517961727932324,7
+leak_urgency,"All trials, linear motion energy",Leak + urgency,control,DBM14,173.6304305804373,6.985385827886979,5.084950523675488,7
+leak_urgency,"All trials, linear motion energy",Leak + urgency,control,DBM15,254.12210433871525,14.698431730745014,12.931834851382462,9
+leak_urgency,"All trials, linear motion energy",Leak + urgency,control,DBM5,586.280160063527,12.611652944099035,9.197189900542156,9
+leak_urgency,"All trials, linear motion energy",Leak + urgency,control,DBM6,666.3637509566585,11.06111761851988,6.866509622925683,9
+leak_urgency,"All trials, linear motion energy",Leak + urgency,control,PSUIM10,134.66087089402993,10.420522918522078,9.054914157679576,9
+leak_urgency,"All trials, linear motion energy",Leak + urgency,control,PSUIM5,697.8752097720469,23.644572228955084,23.443519723185645,9
+leak_urgency,"All trials, linear motion energy",Leak + urgency,control,PSUIM6,1759.7030022256024,54.29624644355624,44.05111469187051,9
+leak_urgency,"All trials, linear motion energy",Leak + urgency,control,PSUIM7,2350.557351154995,61.81871328007895,47.6006211606674,9
+leak_urgency,"All trials, linear motion energy",Leak + urgency,pulse,DBM12,461.547021608441,45.591601996783126,42.064502023578015,36
+leak_urgency,"All trials, linear motion energy",Leak + urgency,pulse,DBM13,182.81857918118527,30.28383145737516,26.28948692421343,36
+leak_urgency,"All trials, linear motion energy",Leak + urgency,pulse,DBM14,203.62735215897527,55.33350193021772,50.764047586274145,36
+leak_urgency,"All trials, linear motion energy",Leak + urgency,pulse,DBM15,284.597785043234,75.70686662734845,72.64714662315572,48
+leak_urgency,"All trials, linear motion energy",Leak + urgency,pulse,DBM5,710.6667335326567,52.59455071495023,38.86445809411239,48
+leak_urgency,"All trials, linear motion energy",Leak + urgency,pulse,DBM6,782.7143137376931,44.29786565657376,37.400080814031355,48
+leak_urgency,"All trials, linear motion energy",Leak + urgency,pulse,PSUIM10,101.81796364716013,40.96865930596307,38.287566701819316,32
+leak_urgency,"All trials, linear motion energy",Leak + urgency,pulse,PSUIM5,505.0968248399016,44.5484787320236,37.577518593588096,32
+leak_urgency,"All trials, linear motion energy",Leak + urgency,pulse,PSUIM6,1307.5538684638364,75.42126145909901,58.22204994162402,32
+leak_urgency,"All trials, linear motion energy",Leak + urgency,pulse,PSUIM7,1666.0393480353314,167.72949000313724,158.36506157551162,32
+extrema_E_leak20-200,"All trials, linear motion energy",Extrema detection (E),control,DBM12,408.99819775474396,26.000427649118734,12.012358571081052,7
+extrema_E_leak20-200,"All trials, linear motion energy",Extrema detection (E),control,DBM13,184.3417352493796,8.550398387293313,7.951887710746796,7
+extrema_E_leak20-200,"All trials, linear motion energy",Extrema detection (E),control,DBM14,172.28035166624474,4.285227999501856,3.7668755515504344,7
+extrema_E_leak20-200,"All trials, linear motion energy",Extrema detection (E),control,DBM15,254.05232640645102,14.55887586621656,12.654444118822035,9
+extrema_E_leak20-200,"All trials, linear motion energy",Extrema detection (E),control,DBM5,586.0720937340641,12.195520285173224,8.595512990934829,9
+extrema_E_leak20-200,"All trials, linear motion energy",Extrema detection (E),control,DBM6,662.8299496524014,3.993515010005922,2.8612759419552845,9
+extrema_E_leak20-200,"All trials, linear motion energy",Extrema detection (E),control,PSUIM10,136.37263525929356,13.844051649049321,9.698128647544179,9
+extrema_E_leak20-200,"All trials, linear motion energy",Extrema detection (E),control,PSUIM5,695.8388108721037,19.571774429068725,16.535213387021983,9
+extrema_E_leak20-200,"All trials, linear motion energy",Extrema detection (E),control,PSUIM6,1784.186678367772,103.26359872789493,97.20260207817836,9
+extrema_E_leak20-200,"All trials, linear motion energy",Extrema detection (E),control,PSUIM7,2370.6694745369105,102.04296004391063,73.9810684284397,9
+extrema_E_leak20-200,"All trials, linear motion energy",Extrema detection (E),pulse,DBM12,459.91349568974346,42.32455015938784,40.51706165792163,36
+extrema_E_leak20-200,"All trials, linear motion energy",Extrema detection (E),pulse,DBM13,181.92850795681812,28.503689008641082,25.123419786161108,36
+extrema_E_leak20-200,"All trials, linear motion energy",Extrema detection (E),pulse,DBM14,203.78632543589345,55.65144848405412,51.29857505949108,36
+extrema_E_leak20-200,"All trials, linear motion energy",Extrema detection (E),pulse,DBM15,285.48443877747354,77.48017409582762,75.595454659999,48
+extrema_E_leak20-200,"All trials, linear motion energy",Extrema detection (E),pulse,DBM5,709.1804268259058,49.62193730144831,38.50052507049148,48
+extrema_E_leak20-200,"All trials, linear motion energy",Extrema detection (E),pulse,DBM6,783.5831598778242,46.0355579368358,40.70808615393788,48
+extrema_E_leak20-200,"All trials, linear motion energy",Extrema detection (E),pulse,PSUIM10,100.17871882890117,37.69016966944517,35.116149295380694,32
+extrema_E_leak20-200,"All trials, linear motion energy",Extrema detection (E),pulse,PSUIM5,501.3832416568115,37.12131236584351,29.15915666845092,32
+extrema_E_leak20-200,"All trials, linear motion energy",Extrema detection (E),pulse,PSUIM6,1307.0945414031653,74.50260733775698,67.21343421149885,32
+extrema_E_leak20-200,"All trials, linear motion energy",Extrema detection (E),pulse,PSUIM7,1664.2972870004364,164.2453679333468,147.8905457979188,32
+extrema_sampling_ES,"All trials, linear motion energy",Extrema sampling (ES),control,DBM12,404.8303595211992,17.664751182029136,8.739047458905986,7
+extrema_sampling_ES,"All trials, linear motion energy",Extrema sampling (ES),control,DBM13,185.630193922496,11.127315733526103,6.963314465289727,7
+extrema_sampling_ES,"All trials, linear motion energy",Extrema sampling (ES),control,DBM14,172.10819628203387,3.9409172310801495,2.579846808149952,7
+extrema_sampling_ES,"All trials, linear motion energy",Extrema sampling (ES),control,DBM15,253.3640641414129,13.182351336140329,10.881921658562263,9
+extrema_sampling_ES,"All trials, linear motion energy",Extrema sampling (ES),control,DBM5,585.5903633221625,11.232059461370007,9.031673342288293,9
+extrema_sampling_ES,"All trials, linear motion energy",Extrema sampling (ES),control,DBM6,662.9895271605233,4.31267002624967,2.730791780549829,9
+extrema_sampling_ES,"All trials, linear motion energy",Extrema sampling (ES),control,PSUIM10,134.90204915039251,10.902879431247234,9.797356632218412,9
+extrema_sampling_ES,"All trials, linear motion energy",Extrema sampling (ES),control,PSUIM5,695.9904901001213,19.87513288510398,17.319846108227537,9
+extrema_sampling_ES,"All trials, linear motion energy",Extrema sampling (ES),control,PSUIM6,1780.1990371801228,95.28831635259667,86.21166751156142,9
+extrema_sampling_ES,"All trials, linear motion energy",Extrema sampling (ES),control,PSUIM7,2347.26367797208,55.231366914249634,50.22385212648999,9
+extrema_sampling_ES,"All trials, linear motion energy",Extrema sampling (ES),pulse,DBM12,460.2519768281557,43.00151243621261,41.59515188337808,36
+extrema_sampling_ES,"All trials, linear motion energy",Extrema sampling (ES),pulse,DBM13,183.85634843613866,32.35936996728209,28.08315832220424,36
+extrema_sampling_ES,"All trials, linear motion energy",Extrema sampling (ES),pulse,DBM14,204.4305750520401,56.93994771634736,53.18071587950069,36
+extrema_sampling_ES,"All trials, linear motion energy",Extrema sampling (ES),pulse,DBM15,285.11354306718647,76.7383826752534,74.33708043742142,48
+extrema_sampling_ES,"All trials, linear motion energy",Extrema sampling (ES),pulse,DBM5,708.7705636892988,48.80221102823437,37.57129865889985,48
+extrema_sampling_ES,"All trials, linear motion energy",Extrema sampling (ES),pulse,DBM6,783.721845840395,46.31292986197724,43.188011895206465,48
+extrema_sampling_ES,"All trials, linear motion energy",Extrema sampling (ES),pulse,PSUIM10,101.16258474412314,39.65790149988911,37.73394709513034,32
+extrema_sampling_ES,"All trials, linear motion energy",Extrema sampling (ES),pulse,PSUIM5,499.08297742086256,32.520783893945634,23.80016014276435,32
+extrema_sampling_ES,"All trials, linear motion energy",Extrema sampling (ES),pulse,PSUIM6,1303.9374568493995,68.1884382302253,59.395836150125945,32
+extrema_sampling_ES,"All trials, linear motion energy",Extrema sampling (ES),pulse,PSUIM7,1646.2142843012111,128.0793625348962,119.20091968199617,32
+no_guess,"All trials, linear motion energy","Integrator, no fast guesses",control,DBM12,402.9004691846084,13.804970508847788,8.376474414140546,7
+no_guess,"All trials, linear motion energy","Integrator, no fast guesses",control,DBM13,185.58133053366765,11.029588955869372,9.13817547551372,7
+no_guess,"All trials, linear motion energy","Integrator, no fast guesses",control,DBM14,175.68522286756075,11.094970402133882,7.58216888128419,7
+no_guess,"All trials, linear motion energy","Integrator, no fast guesses",control,DBM15,255.34033247243934,17.1348879981932,13.040970636041699,9
+no_guess,"All trials, linear motion energy","Integrator, no fast guesses",control,DBM5,584.7891922163406,9.629717249726198,8.912816947346343,9
+no_guess,"All trials, linear motion energy","Integrator, no fast guesses",control,DBM6,664.4785175793463,7.290650863895685,4.2318159035857335,9
+no_guess,"All trials, linear motion energy","Integrator, no fast guesses",control,PSUIM10,136.33461867450487,13.768018479471937,9.868894770704944,9
+no_guess,"All trials, linear motion energy","Integrator, no fast guesses",control,PSUIM5,709.152667642199,46.19948796925935,11.132776810462659,9
+no_guess,"All trials, linear motion energy","Integrator, no fast guesses",control,PSUIM6,1787.6839549648173,110.25815192198627,63.31067594291238,9
+no_guess,"All trials, linear motion energy","Integrator, no fast guesses",control,PSUIM7,2363.990410202891,88.68483137587134,57.49641153738406,9
+no_guess,"All trials, linear motion energy","Integrator, no fast guesses",pulse,DBM12,468.087748106502,58.673054992904866,56.421196613173834,36
+no_guess,"All trials, linear motion energy","Integrator, no fast guesses",pulse,DBM13,183.6017234005578,31.850119896120287,27.892695250239893,36
+no_guess,"All trials, linear motion energy","Integrator, no fast guesses",pulse,DBM14,207.48916887784355,63.05713536795432,57.96984871868297,36
+no_guess,"All trials, linear motion energy","Integrator, no fast guesses",pulse,DBM15,284.8341292014822,76.17955494384492,71.54466729164882,48
+no_guess,"All trials, linear motion energy","Integrator, no fast guesses",pulse,DBM5,708.7998964446965,48.86087653902995,35.211079086843945,48
+no_guess,"All trials, linear motion energy","Integrator, no fast guesses",pulse,DBM6,785.298786003949,49.46681018908541,41.41248636762768,48
+no_guess,"All trials, linear motion energy","Integrator, no fast guesses",pulse,PSUIM10,101.18846456833535,39.709661148313536,37.389846034282044,32
+no_guess,"All trials, linear motion energy","Integrator, no fast guesses",pulse,PSUIM5,505.10014828113333,44.55512561448707,24.66383173425179,32
+no_guess,"All trials, linear motion energy","Integrator, no fast guesses",pulse,PSUIM6,1307.5285089184426,75.37054236831104,51.14877152112774,32
+no_guess,"All trials, linear motion energy","Integrator, no fast guesses",pulse,PSUIM7,1649.658023191772,134.9668403160184,127.9042215537677,32
+fixed_guess_bias,"All trials, linear motion energy","Integrator, guess bias fixed",control,DBM12,402.41472283530703,12.833477810244858,7.376395737722362,7
+fixed_guess_bias,"All trials, linear motion energy","Integrator, guess bias fixed",control,DBM13,184.78273833394414,9.432404556422334,9.09211219505513,7
+fixed_guess_bias,"All trials, linear motion energy","Integrator, guess bias fixed",control,DBM14,173.73907627366316,7.202677214338671,5.732658690470586,7
+fixed_guess_bias,"All trials, linear motion energy","Integrator, guess bias fixed",control,DBM15,253.6178997632883,13.69002257989111,12.2121487875845,9
+fixed_guess_bias,"All trials, linear motion energy","Integrator, guess bias fixed",control,DBM5,586.78199649138,13.615325799805081,9.395273686613113,9
+fixed_guess_bias,"All trials, linear motion energy","Integrator, guess bias fixed",control,DBM6,663.125795392514,4.585206490230853,3.7309388399179326,9
+fixed_guess_bias,"All trials, linear motion energy","Integrator, guess bias fixed",control,PSUIM10,135.18238853203087,11.463558194523976,9.960616621890328,9
+fixed_guess_bias,"All trials, linear motion energy","Integrator, guess bias fixed",control,PSUIM5,693.4661705040946,14.826493693050665,8.774920624782695,9
+fixed_guess_bias,"All trials, linear motion energy","Integrator, guess bias fixed",control,PSUIM6,1759.6434150680132,54.177072128377745,52.5846909771106,9
+fixed_guess_bias,"All trials, linear motion energy","Integrator, guess bias fixed",control,PSUIM7,2341.4318171792347,43.56764532855806,33.88871202360366,9
+fixed_guess_bias,"All trials, linear motion energy","Integrator, guess bias fixed",pulse,DBM12,462.9969762332212,48.49151124634329,46.1596174849345,36
+fixed_guess_bias,"All trials, linear motion energy","Integrator, guess bias fixed",pulse,DBM13,182.69699767226524,30.040668439535235,26.841938384651694,36
+fixed_guess_bias,"All trials, linear motion energy","Integrator, guess bias fixed",pulse,DBM14,204.95229920164238,57.98339601555193,54.01542659392229,36
+fixed_guess_bias,"All trials, linear motion energy","Integrator, guess bias fixed",pulse,DBM15,285.29606174750575,77.10342003589197,74.47307415924766,48
+fixed_guess_bias,"All trials, linear motion energy","Integrator, guess bias fixed",pulse,DBM5,708.4993305069838,48.25974466360461,37.27315841727958,48
+fixed_guess_bias,"All trials, linear motion energy","Integrator, guess bias fixed",pulse,DBM6,781.8870860648003,42.64341031078794,39.13052311260351,48
+fixed_guess_bias,"All trials, linear motion energy","Integrator, guess bias fixed",pulse,PSUIM10,101.0719347243719,39.47660146038663,37.22503428654914,32
+fixed_guess_bias,"All trials, linear motion energy","Integrator, guess bias fixed",pulse,PSUIM5,500.501368585916,35.35756622405248,25.0300875735253,32
+fixed_guess_bias,"All trials, linear motion energy","Integrator, guess bias fixed",pulse,PSUIM6,1308.030631168328,76.37478686808237,66.03121912445795,32
+fixed_guess_bias,"All trials, linear motion energy","Integrator, guess bias fixed",pulse,PSUIM7,1656.918804078747,149.4884020899682,141.10429895472217,32
+free_leak_0-200,"All trials, linear motion energy",Free leak 0-200 /s,control,DBM12,400.5078693374901,9.01977081461095,8.446607219907719,7
+free_leak_0-200,"All trials, linear motion energy",Free leak 0-200 /s,control,DBM13,184.92257178691426,9.712071462362616,8.932335822266538,7
+free_leak_0-200,"All trials, linear motion energy",Free leak 0-200 /s,control,DBM14,171.9762893859763,3.67710343896497,3.660175324386401,7
+free_leak_0-200,"All trials, linear motion energy",Free leak 0-200 /s,control,DBM15,255.80504523802733,18.064313529369162,13.178816819454415,9
+free_leak_0-200,"All trials, linear motion energy",Free leak 0-200 /s,control,DBM5,586.2567298858102,12.564792588665426,9.568251638073122,9
+free_leak_0-200,"All trials, linear motion energy",Free leak 0-200 /s,control,DBM6,665.8332382181743,10.00009214155159,3.9815092572621325,9
+free_leak_0-200,"All trials, linear motion energy",Free leak 0-200 /s,control,PSUIM10,134.06548099785368,9.229743126169586,8.174132654747995,9
+free_leak_0-200,"All trials, linear motion energy",Free leak 0-200 /s,control,PSUIM5,695.1544579921053,18.203068669071982,10.200128656477588,9
+free_leak_0-200,"All trials, linear motion energy",Free leak 0-200 /s,control,PSUIM6,1786.700556243766,108.29135447988335,100.83658898642597,9
+free_leak_0-200,"All trials, linear motion energy",Free leak 0-200 /s,control,PSUIM7,2346.672536177087,54.04908332426294,46.27722774054746,9
+free_leak_0-200,"All trials, linear motion energy",Free leak 0-200 /s,pulse,DBM12,460.48927546938376,43.476109718668496,38.48840627187805,36
+free_leak_0-200,"All trials, linear motion energy",Free leak 0-200 /s,pulse,DBM13,182.12138683001723,28.889446755039216,26.385477043086254,36
+free_leak_0-200,"All trials, linear motion energy",Free leak 0-200 /s,pulse,DBM14,203.82911914425682,55.737035900780825,50.457675122899715,36
+free_leak_0-200,"All trials, linear motion energy",Free leak 0-200 /s,pulse,DBM15,286.3179039834322,79.14710450774477,74.84295046954813,48
+free_leak_0-200,"All trials, linear motion energy",Free leak 0-200 /s,pulse,DBM5,710.9647020032963,53.190487656229465,39.03407049814552,48
+free_leak_0-200,"All trials, linear motion energy",Free leak 0-200 /s,pulse,DBM6,788.5533665645112,55.97597131020959,52.118473989222046,48
+free_leak_0-200,"All trials, linear motion energy",Free leak 0-200 /s,pulse,PSUIM10,101.52666760856849,40.38606722877981,36.65087950716143,32
+free_leak_0-200,"All trials, linear motion energy",Free leak 0-200 /s,pulse,PSUIM5,500.8785764531629,36.11198195854622,26.517460332337958,32
+free_leak_0-200,"All trials, linear motion energy",Free leak 0-200 /s,pulse,PSUIM6,1306.437495967632,73.1885164666902,65.2664995607467,32
+free_leak_0-200,"All trials, linear motion energy",Free leak 0-200 /s,pulse,PSUIM7,1658.9007232933686,153.45224051921116,146.39922701436137,32
+power_primary,"All trials, power law",Integrator (sv),control,DBM12,400.1341888094099,8.272409758450564,7.491588590523023,7
+power_primary,"All trials, power law",Integrator (sv),control,DBM13,185.31840350294584,10.503734894425733,9.018391106858573,7
+power_primary,"All trials, power law",Integrator (sv),control,DBM14,172.3379644124106,4.400453491833559,3.5333035365728733,7
+power_primary,"All trials, power law",Integrator (sv),control,DBM15,253.15316399457214,12.760551042458813,12.195712943272879,9
+power_primary,"All trials, power law",Integrator (sv),control,DBM5,589.0557712762501,18.162875369545326,9.871899289783862,9
+power_primary,"All trials, power law",Integrator (sv),control,DBM6,666.9840648913168,12.301745487836762,5.613425729126469,9
+power_primary,"All trials, power law",Integrator (sv),control,PSUIM10,134.9003722331687,10.899525596799593,9.684445666303825,9
+power_primary,"All trials, power law",Integrator (sv),control,PSUIM5,691.1924040435927,10.278960772046787,2.8818987196026455,9
+power_primary,"All trials, power law",Integrator (sv),control,PSUIM6,1741.8404829617741,18.571207915899606,15.822957833771625,9
+power_primary,"All trials, power law",Integrator (sv),control,PSUIM7,2330.742986733457,22.18998443700417,13.69560181927227,9
+power_primary,"All trials, power law",Integrator (sv),pulse,DBM12,461.59501894694387,45.68759667378863,39.55224098538689,36
+power_primary,"All trials, power law",Integrator (sv),pulse,DBM13,184.92982809194552,34.5063292788957,30.577560742034088,36
+power_primary,"All trials, power law",Integrator (sv),pulse,DBM14,201.77431636462902,51.627430341525226,47.114577491464615,36
+power_primary,"All trials, power law",Integrator (sv),pulse,DBM15,285.1610738384703,76.83344421782107,74.19430546611179,48
+power_primary,"All trials, power law",Integrator (sv),pulse,DBM5,709.674595838254,50.61027532614497,37.54546188411138,48
+power_primary,"All trials, power law",Integrator (sv),pulse,DBM6,779.2503685303261,37.36997524183977,31.84279984660811,48
+power_primary,"All trials, power law",Integrator (sv),pulse,PSUIM10,100.77100640697567,38.87474482559418,37.17871207521444,32
+power_primary,"All trials, power law",Integrator (sv),pulse,PSUIM5,499.3836237641426,33.122076580505656,20.734609882634313,32
+power_primary,"All trials, power law",Integrator (sv),pulse,PSUIM6,1303.1295746038002,66.57267373902636,60.155192676690184,32
+power_primary,"All trials, power law",Integrator (sv),pulse,PSUIM7,1652.9652911141714,141.58137616081737,134.9692459390248,32
+power_leak,"All trials, power law",Leak,control,DBM12,399.9427913207635,7.889614781157704,7.0968227117989215,7
+power_leak,"All trials, power law",Leak,control,DBM13,185.05762508709253,9.982178062719086,8.656900810316209,7
+power_leak,"All trials, power law",Leak,control,DBM14,172.38156385467255,4.487652376357524,4.164113629257429,7
+power_leak,"All trials, power law",Leak,control,DBM15,253.77580583421866,14.005834721751722,12.288218607480669,9
+power_leak,"All trials, power law",Leak,control,DBM5,586.7524321700878,13.55619715722069,9.372986439545894,9
+power_leak,"All trials, power law",Leak,control,DBM6,663.5201468317965,5.373909368796106,1.8175800352940001,9
+power_leak,"All trials, power law",Leak,control,PSUIM10,134.7448198059236,10.58842074230946,8.726715203293825,9
+power_leak,"All trials, power law",Leak,control,PSUIM5,692.3192507337089,12.532654152279221,5.9333107155528495,9
+power_leak,"All trials, power law",Leak,control,PSUIM6,1745.7990672572225,26.488376506796328,21.45459049717266,9
+power_leak,"All trials, power law",Leak,control,PSUIM7,2328.3259393299977,17.3558896300857,13.017551707264033,9
+power_leak,"All trials, power law",Leak,pulse,DBM12,461.45337816059003,45.404315101081124,41.0053115778435,36
+power_leak,"All trials, power law",Leak,pulse,DBM13,182.49276708878492,29.63220727257455,26.457898327621283,36
+power_leak,"All trials, power law",Leak,pulse,DBM14,200.86270441259396,49.804206437455086,44.63060676746212,36
+power_leak,"All trials, power law",Leak,pulse,DBM15,284.76334911981144,76.03799478050331,72.85490793535075,48
+power_leak,"All trials, power law",Leak,pulse,DBM5,709.8504327074679,50.96194906457255,38.93459196080791,48
+power_leak,"All trials, power law",Leak,pulse,DBM6,780.1044696834967,39.07817754818093,35.27224066021545,48
+power_leak,"All trials, power law",Leak,pulse,PSUIM10,102.41343437773045,42.15960076710374,38.65128857568757,32
+power_leak,"All trials, power law",Leak,pulse,PSUIM5,500.06455633029384,34.48394171280819,23.01039603195553,32
+power_leak,"All trials, power law",Leak,pulse,PSUIM6,1299.5833652062292,59.48025494388467,51.56100640762943,32
+power_leak,"All trials, power law",Leak,pulse,PSUIM7,1653.2062483732861,142.06329067904645,136.11467263857318,32
+power_urgency,"All trials, power law",Urgency,control,DBM12,400.68954547608934,9.383123091809594,7.663761475927203,7
+power_urgency,"All trials, power law",Urgency,control,DBM13,185.1597264899458,10.186380868425655,8.39058599648141,7
+power_urgency,"All trials, power law",Urgency,control,DBM14,174.50271587686723,8.72995642074683,4.612655675951444,7
+power_urgency,"All trials, power law",Urgency,control,DBM15,253.77778652700303,14.009796107320524,12.703687886583252,9
+power_urgency,"All trials, power law",Urgency,control,DBM5,585.0093256268046,10.069984070654293,8.634680642578466,9
+power_urgency,"All trials, power law",Urgency,control,DBM6,665.274538948254,8.882693601710947,2.3564847787329555,9
+power_urgency,"All trials, power law",Urgency,control,PSUIM10,135.09552425851786,11.289829647497887,10.53568743079918,9
+power_urgency,"All trials, power law",Urgency,control,PSUIM5,688.9375553672663,5.769263419393965,4.327064605655394,9
+power_urgency,"All trials, power law",Urgency,control,PSUIM6,1740.7727328427966,16.435707677944038,14.935514443662669,9
+power_urgency,"All trials, power law",Urgency,control,PSUIM7,2333.4519449465556,27.607900863200598,20.731320894111036,9
+power_urgency,"All trials, power law",Urgency,pulse,DBM12,460.7873021865031,44.07216315290705,40.23296085838713,36
+power_urgency,"All trials, power law",Urgency,pulse,DBM13,182.26214475782885,29.17096261066247,26.24744414654105,36
+power_urgency,"All trials, power law",Urgency,pulse,DBM14,202.6607494925744,53.400296597415995,48.81261852224966,36
+power_urgency,"All trials, power law",Urgency,pulse,DBM15,284.6072829009137,75.72586234270786,72.6895339483101,48
+power_urgency,"All trials, power law",Urgency,pulse,DBM5,709.8211898912621,50.90346343216095,37.40792271749108,48
+power_urgency,"All trials, power law",Urgency,pulse,DBM6,779.5970585258183,38.06335523282412,34.431166947687615,48
+power_urgency,"All trials, power law",Urgency,pulse,PSUIM10,101.37271645636203,40.07816492436687,38.13933551528953,32
+power_urgency,"All trials, power law",Urgency,pulse,PSUIM5,499.1611588192912,32.677146690802886,23.88280227026151,32
+power_urgency,"All trials, power law",Urgency,pulse,PSUIM6,1302.0201217123242,64.35376795607459,55.97822956780634,32
+power_urgency,"All trials, power law",Urgency,pulse,PSUIM7,1651.1520534940119,137.9549009204983,131.6297580242985,32
+power_leak_urgency,"All trials, power law",Leak + urgency,control,DBM12,399.94476987961775,7.893571898866384,7.145275471531818,7
+power_leak_urgency,"All trials, power law",Leak + urgency,control,DBM13,185.03611769013162,9.939163268797344,8.683791481279272,7
+power_leak_urgency,"All trials, power law",Leak + urgency,control,DBM14,172.70273275414718,5.129990175306716,3.9713594648473816,7
+power_leak_urgency,"All trials, power law",Leak + urgency,control,DBM15,253.04543067231563,12.545084397945708,11.313488856052764,9
+power_leak_urgency,"All trials, power law",Leak + urgency,control,DBM5,585.4313219791236,10.91397677529244,8.651433894258105,9
+power_leak_urgency,"All trials, power law",Leak + urgency,control,DBM6,664.6391922392899,7.612000183782669,3.7267948916254454,9
+power_leak_urgency,"All trials, power law",Leak + urgency,control,PSUIM10,134.2233781631206,9.545537456703421,7.417191778133674,9
+power_leak_urgency,"All trials, power law",Leak + urgency,control,PSUIM5,692.0857171883499,12.065587061560976,11.177850517786979,9
+power_leak_urgency,"All trials, power law",Leak + urgency,control,PSUIM6,1747.4289279739198,29.748097940190803,26.913319130707748,9
+power_leak_urgency,"All trials, power law",Leak + urgency,control,PSUIM7,2336.2379562444835,33.179923459056454,23.22730152489379,9
+power_leak_urgency,"All trials, power law",Leak + urgency,pulse,DBM12,461.5804520025755,45.658462785051796,40.9390437874642,36
+power_leak_urgency,"All trials, power law",Leak + urgency,pulse,DBM13,183.16837650148264,30.98342609797004,27.27283989909018,36
+power_leak_urgency,"All trials, power law",Leak + urgency,pulse,DBM14,201.55206349427436,51.182924600815916,46.933797412025235,36
+power_leak_urgency,"All trials, power law",Leak + urgency,pulse,DBM15,286.8491885674401,80.20967367576067,77.69034193149442,48
+power_leak_urgency,"All trials, power law",Leak + urgency,pulse,DBM5,710.8323262394186,52.92573612847421,39.31816235844365,48
+power_leak_urgency,"All trials, power law",Leak + urgency,pulse,DBM6,780.9846998657304,40.8386379126479,33.3295431493003,48
+power_leak_urgency,"All trials, power law",Leak + urgency,pulse,PSUIM10,100.4010279448516,38.13478790134603,36.613550179380134,32
+power_leak_urgency,"All trials, power law",Leak + urgency,pulse,PSUIM5,500.03370309565196,34.42223524352437,26.66678807545045,32
+power_leak_urgency,"All trials, power law",Leak + urgency,pulse,PSUIM6,1300.147614761278,60.60875405398196,55.5180817641899,32
+power_leak_urgency,"All trials, power law",Leak + urgency,pulse,PSUIM7,1654.0914074988957,143.83360893026574,135.83232414587826,32
+power_extrema_E_leak20-200,"All trials, power law",Extrema detection (E),control,DBM12,405.4298948235653,18.86382178676132,8.807932122646491,7
+power_extrema_E_leak20-200,"All trials, power law",Extrema detection (E),control,DBM13,185.99429649476002,11.855520878054143,10.94601440876307,7
+power_extrema_E_leak20-200,"All trials, power law",Extrema detection (E),control,DBM14,171.77508233895466,3.274689344921782,3.147490404594464,7
+power_extrema_E_leak20-200,"All trials, power law",Extrema detection (E),control,DBM15,253.71947061217625,13.893164277666973,12.290828693156332,9
+power_extrema_E_leak20-200,"All trials, power law",Extrema detection (E),control,DBM5,587.5122027027603,15.07573822256558,10.613886423573891,9
+power_extrema_E_leak20-200,"All trials, power law",Extrema detection (E),control,DBM6,667.0370779798802,12.407771664963569,2.4109858873280743,9
+power_extrema_E_leak20-200,"All trials, power law",Extrema detection (E),control,PSUIM10,133.33034399721717,7.7594691248965315,5.770763755416878,9
+power_extrema_E_leak20-200,"All trials, power law",Extrema detection (E),control,PSUIM5,691.5403894064723,10.974931497805883,8.809371528760508,9
+power_extrema_E_leak20-200,"All trials, power law",Extrema detection (E),control,PSUIM6,1759.7962334887527,54.4827089698565,48.39584670679528,9
+power_extrema_E_leak20-200,"All trials, power law",Extrema detection (E),control,PSUIM7,2359.068630293188,78.84127155646615,51.312406664022774,9
+power_extrema_E_leak20-200,"All trials, power law",Extrema detection (E),pulse,DBM12,458.39817925277066,39.29391728544233,37.15489587360622,36
+power_extrema_E_leak20-200,"All trials, power law",Extrema detection (E),pulse,DBM13,182.11088381479843,28.868440724601605,25.49011411534746,36
+power_extrema_E_leak20-200,"All trials, power law",Extrema detection (E),pulse,DBM14,202.7922236672294,53.66324494672594,48.21834234462392,36
+power_extrema_E_leak20-200,"All trials, power law",Extrema detection (E),pulse,DBM15,284.43485696996873,75.38101048081803,72.54820546962758,48
+power_extrema_E_leak20-200,"All trials, power law",Extrema detection (E),pulse,DBM5,707.8533310001951,46.96774565002695,34.96826587974982,48
+power_extrema_E_leak20-200,"All trials, power law",Extrema detection (E),pulse,DBM6,782.2814121144672,43.432062410121915,39.18549435416671,48
+power_extrema_E_leak20-200,"All trials, power law",Extrema detection (E),pulse,PSUIM10,101.34510468070229,40.02294137304743,38.139389783671525,32
+power_extrema_E_leak20-200,"All trials, power law",Extrema detection (E),pulse,PSUIM5,497.8300897154283,30.01500848307703,22.63469950169279,32
+power_extrema_E_leak20-200,"All trials, power law",Extrema detection (E),pulse,PSUIM6,1297.601748361703,55.51702125483191,48.479019949970606,32
+power_extrema_E_leak20-200,"All trials, power law",Extrema detection (E),pulse,PSUIM7,1644.092930400297,123.83665473306837,108.92297171228604,32
+power_extrema_sampling_ES,"All trials, power law",Extrema sampling (ES),control,DBM12,405.4360413049987,18.8761147496282,7.530779725176856,7
+power_extrema_sampling_ES,"All trials, power law",Extrema sampling (ES),control,DBM13,185.80950355504064,11.485934998615356,7.016750413196142,7
+power_extrema_sampling_ES,"All trials, power law",Extrema sampling (ES),control,DBM14,171.68427409884697,3.093072864706315,2.56641800915947,7
+power_extrema_sampling_ES,"All trials, power law",Extrema sampling (ES),control,DBM15,255.7575258899498,17.969274833214012,13.958522366579526,9
+power_extrema_sampling_ES,"All trials, power law",Extrema sampling (ES),control,DBM5,587.0458537021163,14.143040221277715,10.966604748609427,9
+power_extrema_sampling_ES,"All trials, power law",Extrema sampling (ES),control,DBM6,663.5095393559524,5.352694417107685,2.4477379028205206,9
+power_extrema_sampling_ES,"All trials, power law",Extrema sampling (ES),control,PSUIM10,133.6942256355549,8.487232401572026,7.047932339878756,9
+power_extrema_sampling_ES,"All trials, power law",Extrema sampling (ES),control,PSUIM5,693.1905491625178,14.275251009896621,11.502143366895936,9
+power_extrema_sampling_ES,"All trials, power law",Extrema sampling (ES),control,PSUIM6,1757.537499170507,49.965240333365216,45.12468919658767,9
+power_extrema_sampling_ES,"All trials, power law",Extrema sampling (ES),control,PSUIM7,2339.630852757603,39.96571648529505,34.93715947781436,9
+power_extrema_sampling_ES,"All trials, power law",Extrema sampling (ES),pulse,DBM12,460.2929851315337,43.08352904296845,41.2146567606122,36
+power_extrema_sampling_ES,"All trials, power law",Extrema sampling (ES),pulse,DBM13,182.77342458196023,30.193522258925185,25.803024143809488,36
+power_extrema_sampling_ES,"All trials, power law",Extrema sampling (ES),pulse,DBM14,203.0413526088759,54.161502830018925,49.95499457086813,36
+power_extrema_sampling_ES,"All trials, power law",Extrema sampling (ES),pulse,DBM15,286.67447335915415,79.86024325918888,76.5564533547507,48
+power_extrema_sampling_ES,"All trials, power law",Extrema sampling (ES),pulse,DBM5,708.3527813349908,47.96664631961865,37.4222221441155,48
+power_extrema_sampling_ES,"All trials, power law",Extrema sampling (ES),pulse,DBM6,781.5028701438098,41.87497846880681,39.11770598927206,48
+power_extrema_sampling_ES,"All trials, power law",Extrema sampling (ES),pulse,PSUIM10,100.34334493779582,38.01942188723447,36.48920784238577,32
+power_extrema_sampling_ES,"All trials, power law",Extrema sampling (ES),pulse,PSUIM5,496.7509200661542,27.85666918452896,18.90555985301728,32
+power_extrema_sampling_ES,"All trials, power law",Extrema sampling (ES),pulse,PSUIM6,1298.4534428547418,57.22041024090978,49.919171202411434,32
+power_extrema_sampling_ES,"All trials, power law",Extrema sampling (ES),pulse,PSUIM7,1633.7187698262258,103.08833358492575,94.52200734656249,32
+norm_primary,"All trials, normalization",Integrator (sv),control,DBM12,399.45758393469765,6.919200009026014,6.3912341678371405,7
+norm_primary,"All trials, normalization",Integrator (sv),control,DBM13,186.2610583487171,12.389044585968275,8.467935660476538,7
+norm_primary,"All trials, normalization",Integrator (sv),control,DBM14,172.77502847608275,5.274581619177887,3.753111427280224,7
+norm_primary,"All trials, normalization",Integrator (sv),control,DBM15,254.16543476940103,14.785092592116541,11.391081364065116,9
+norm_primary,"All trials, normalization",Integrator (sv),control,DBM5,588.723346679998,17.498026177041186,9.704090617405644,9
+norm_primary,"All trials, normalization",Integrator (sv),control,DBM6,670.022554776242,18.378725257686995,3.7153114252215858,9
+norm_primary,"All trials, normalization",Integrator (sv),control,PSUIM10,134.40532141801492,9.9094239664921,8.686431374016768,9
+norm_primary,"All trials, normalization",Integrator (sv),control,PSUIM5,690.2819589924397,8.458070669740707,6.785925317715609,9
+norm_primary,"All trials, normalization",Integrator (sv),control,PSUIM6,1745.4867918561074,25.863825704565954,24.402730061249486,9
+norm_primary,"All trials, normalization",Integrator (sv),control,PSUIM7,2341.270703890433,43.24541875095548,26.353591136544935,9
+norm_primary,"All trials, normalization",Integrator (sv),pulse,DBM12,462.74995343905266,47.997465658006405,43.71745920110068,36
+norm_primary,"All trials, normalization",Integrator (sv),pulse,DBM13,183.45146975323559,31.549612601475882,26.186559709241333,36
+norm_primary,"All trials, normalization",Integrator (sv),pulse,DBM14,200.7652251172865,49.60924784684013,45.079166557592465,36
+norm_primary,"All trials, normalization",Integrator (sv),pulse,DBM15,286.30595369650285,79.1232039338862,75.44434238854625,48
+norm_primary,"All trials, normalization",Integrator (sv),pulse,DBM5,708.7094753158947,48.680034281426174,37.36446107055412,48
+norm_primary,"All trials, normalization",Integrator (sv),pulse,DBM6,779.6485054009815,38.166248983150496,33.94693724235632,48
+norm_primary,"All trials, normalization",Integrator (sv),pulse,PSUIM10,100.72572835922007,38.78418873008296,36.14469016962309,32
+norm_primary,"All trials, normalization",Integrator (sv),pulse,PSUIM5,497.54697986183817,29.448788775896766,19.271310145040083,32
+norm_primary,"All trials, normalization",Integrator (sv),pulse,PSUIM6,1297.0891911219694,54.491906775365,47.70579335167457,32
+norm_primary,"All trials, normalization",Integrator (sv),pulse,PSUIM7,1652.2064339856233,140.06366190372086,130.10509435793304,32
+norm_leak,"All trials, normalization",Leak,control,DBM12,400.599617959588,9.203268058806756,6.142869527687822,7
+norm_leak,"All trials, normalization",Leak,control,DBM13,187.54231228192765,14.951552452389315,9.32532475088788,7
+norm_leak,"All trials, normalization",Leak,control,DBM14,172.6712700712257,5.067064809463844,3.6828789328808824,7
+norm_leak,"All trials, normalization",Leak,control,DBM15,252.9610532481286,12.376329549571697,11.457529190726621,9
+norm_leak,"All trials, normalization",Leak,control,DBM5,586.6238520889581,13.299036994961153,10.166755191137224,9
+norm_leak,"All trials, normalization",Leak,control,DBM6,663.8634491299142,6.060513965031532,2.6817766817975723,9
+norm_leak,"All trials, normalization",Leak,control,PSUIM10,133.7796368080555,8.658054746573228,7.831352336402677,9
+norm_leak,"All trials, normalization",Leak,control,PSUIM5,688.3904477356311,4.675048156123623,3.384392633518857,9
+norm_leak,"All trials, normalization",Leak,control,PSUIM6,1743.6925455081885,22.275333008728012,19.41190239255559,9
+norm_leak,"All trials, normalization",Leak,control,PSUIM7,2339.359746059057,39.4235030882042,21.10449836219874,9
+norm_leak,"All trials, normalization",Leak,pulse,DBM12,462.82085941463106,48.13927760916316,45.252806551344875,36
+norm_leak,"All trials, normalization",Leak,pulse,DBM13,183.41005616549845,31.466785426001646,26.200064288745896,36
+norm_leak,"All trials, normalization",Leak,pulse,DBM14,200.6288361539858,49.336469920238805,45.13056212362884,36
+norm_leak,"All trials, normalization",Leak,pulse,DBM15,285.98924753134054,78.48979160356166,76.1045892081462,48
+norm_leak,"All trials, normalization",Leak,pulse,DBM5,710.4848528037787,52.230789257194324,38.10425988482807,48
+norm_leak,"All trials, normalization",Leak,pulse,DBM6,779.6697085321302,38.208655245447666,33.080895062663046,48
+norm_leak,"All trials, normalization",Leak,pulse,PSUIM10,101.66539817269901,40.66352835704086,37.67706659319807,32
+norm_leak,"All trials, normalization",Leak,pulse,PSUIM5,496.5235442214715,27.401917495163612,18.298588773522532,32
+norm_leak,"All trials, normalization",Leak,pulse,PSUIM6,1294.609458821147,49.5324421737204,44.37106468180116,32
+norm_leak,"All trials, normalization",Leak,pulse,PSUIM7,1649.2778851198102,134.20656417209466,122.89946706967739,32
+norm_urgency,"All trials, normalization",Urgency,control,DBM12,400.6208138712938,9.245659882218476,7.625632330018746,7
+norm_urgency,"All trials, normalization",Urgency,control,DBM13,186.6631505686065,13.193229025747101,8.469071522128104,7
+norm_urgency,"All trials, normalization",Urgency,control,DBM14,173.87463670706074,7.473798081133886,4.278350531806836,7
+norm_urgency,"All trials, normalization",Urgency,control,DBM15,252.54713940392998,11.54850186117449,10.883339585298575,9
+norm_urgency,"All trials, normalization",Urgency,control,DBM5,586.1754505199472,12.402233856939311,8.990027057616281,9
+norm_urgency,"All trials, normalization",Urgency,control,DBM6,667.0308831240294,12.39538195326174,4.7386048000059375,9
+norm_urgency,"All trials, normalization",Urgency,control,PSUIM10,134.7420844066733,10.582949943808845,6.611842494321628,9
+norm_urgency,"All trials, normalization",Urgency,control,PSUIM5,689.9096291504801,7.713410985821696,7.224110405042751,9
+norm_urgency,"All trials, normalization",Urgency,control,PSUIM6,1741.088991776771,17.068225545893256,15.381939974100248,9
+norm_urgency,"All trials, normalization",Urgency,control,PSUIM7,2336.959775774671,34.623562519430834,17.046666611042156,9
+norm_urgency,"All trials, normalization",Urgency,pulse,DBM12,460.7200205805417,43.93759994098457,39.3350332529358,36
+norm_urgency,"All trials, normalization",Urgency,pulse,DBM13,184.0178857562534,32.682444607511556,27.11481464476965,36
+norm_urgency,"All trials, normalization",Urgency,pulse,DBM14,203.90608611022384,55.89096983271485,51.633041445064656,36
+norm_urgency,"All trials, normalization",Urgency,pulse,DBM15,286.0760022873802,78.6633011156409,76.87554542035089,48
+norm_urgency,"All trials, normalization",Urgency,pulse,DBM5,709.3864395022629,50.033962654162735,37.14389379463698,48
+norm_urgency,"All trials, normalization",Urgency,pulse,DBM6,779.198137797071,37.26551377532909,32.58136614387954,48
+norm_urgency,"All trials, normalization",Urgency,pulse,PSUIM10,100.12959446388919,37.59192093942121,36.59176734615689,32
+norm_urgency,"All trials, normalization",Urgency,pulse,PSUIM5,497.20658448654405,28.767998025308593,20.44536646573845,32
+norm_urgency,"All trials, normalization",Urgency,pulse,PSUIM6,1301.2914120497737,62.89634863097345,55.059693779801606,32
+norm_urgency,"All trials, normalization",Urgency,pulse,PSUIM7,1649.6902891379752,135.03137220842467,124.31181211138416,32
+norm_leak_urgency,"All trials, normalization",Leak + urgency,control,DBM12,399.82268738171604,7.649406903062825,6.744344913977514,7
+norm_leak_urgency,"All trials, normalization",Leak + urgency,control,DBM13,186.12411685418056,12.115161596895248,9.393617652871228,7
+norm_leak_urgency,"All trials, normalization",Leak + urgency,control,DBM14,172.63254234346107,4.989609353934554,4.348928056765544,7
+norm_leak_urgency,"All trials, normalization",Leak + urgency,control,DBM15,252.98757547507248,12.429374003459435,12.253445364643943,9
+norm_leak_urgency,"All trials, normalization",Leak + urgency,control,DBM5,587.7055225345541,15.462377886153185,8.59948522125044,9
+norm_leak_urgency,"All trials, normalization",Leak + urgency,control,DBM6,665.2384274775654,8.810470660333998,4.320724427308754,9
+norm_leak_urgency,"All trials, normalization",Leak + urgency,control,PSUIM10,133.38965202831534,7.878085187092896,6.785310304798774,9
+norm_leak_urgency,"All trials, normalization",Leak + urgency,control,PSUIM5,690.2672905732144,8.428733831290316,7.368779530242875,9
+norm_leak_urgency,"All trials, normalization",Leak + urgency,control,PSUIM6,1742.6860556750785,20.26235334250805,18.728053279714572,9
+norm_leak_urgency,"All trials, normalization",Leak + urgency,control,PSUIM7,2339.8003270424524,40.304665054995155,23.313872303216726,9
+norm_leak_urgency,"All trials, normalization",Leak + urgency,pulse,DBM12,461.9847539373191,46.467066654539096,42.24134885175627,36
+norm_leak_urgency,"All trials, normalization",Leak + urgency,pulse,DBM13,182.91109416500856,30.468861425021803,26.277601372523268,36
+norm_leak_urgency,"All trials, normalization",Leak + urgency,pulse,DBM14,199.95660989054358,47.99201739335435,43.72534890133394,36
+norm_leak_urgency,"All trials, normalization",Leak + urgency,pulse,DBM15,285.4657621162644,77.44282077340921,75.04777748097388,48
+norm_leak_urgency,"All trials, normalization",Leak + urgency,pulse,DBM5,709.8345136277815,50.93011090519974,39.57735270846423,48
+norm_leak_urgency,"All trials, normalization",Leak + urgency,pulse,DBM6,780.9665808321236,40.802399845434394,34.46109103323603,48
+norm_leak_urgency,"All trials, normalization",Leak + urgency,pulse,PSUIM10,101.36212332543643,40.056978662515675,37.306158775741004,32
+norm_leak_urgency,"All trials, normalization",Leak + urgency,pulse,PSUIM5,500.2955052453991,34.94583954301882,27.03455179205374,32
+norm_leak_urgency,"All trials, normalization",Leak + urgency,pulse,PSUIM6,1303.5882569954047,67.49003852223547,60.925698637846246,32
+norm_leak_urgency,"All trials, normalization",Leak + urgency,pulse,PSUIM7,1652.6880920867557,141.02697810598582,130.584772383341,32
+norm_extrema_E_leak20-200,"All trials, normalization",Extrema detection (E),control,DBM12,403.9836093544267,15.97125084848416,10.134217315157215,7
+norm_extrema_E_leak20-200,"All trials, normalization",Extrema detection (E),control,DBM13,186.58385659525118,13.034641079036387,10.621010161614233,7
+norm_extrema_E_leak20-200,"All trials, normalization",Extrema detection (E),control,DBM14,172.30964509579474,4.343814858601888,4.325759293359731,7
+norm_extrema_E_leak20-200,"All trials, normalization",Extrema detection (E),control,DBM15,255.9572238077402,18.368670668794852,12.735225015738909,9
+norm_extrema_E_leak20-200,"All trials, normalization",Extrema detection (E),control,DBM5,587.806772569406,15.664877955857197,8.085176009627151,9
+norm_extrema_E_leak20-200,"All trials, normalization",Extrema detection (E),control,DBM6,664.7722448679821,7.8781054411672,1.7850628308133807,9
+norm_extrema_E_leak20-200,"All trials, normalization",Extrema detection (E),control,PSUIM10,133.36139231240855,7.821565755279314,6.057848319745107,9
+norm_extrema_E_leak20-200,"All trials, normalization",Extrema detection (E),control,PSUIM5,690.6805262366912,9.255205158243697,8.846103336090394,9
+norm_extrema_E_leak20-200,"All trials, normalization",Extrema detection (E),control,PSUIM6,1756.9107127369225,48.71166746619633,42.52440900709166,9
+norm_extrema_E_leak20-200,"All trials, normalization",Extrema detection (E),control,PSUIM7,2360.3561448791734,81.41630072843634,51.72114605134584,9
+norm_extrema_E_leak20-200,"All trials, normalization",Extrema detection (E),pulse,DBM12,458.912052258267,40.32166329643499,37.60831326950456,36
+norm_extrema_E_leak20-200,"All trials, normalization",Extrema detection (E),pulse,DBM13,183.19560081719965,31.037874729404002,26.703024265521194,36
+norm_extrema_E_leak20-200,"All trials, normalization",Extrema detection (E),pulse,DBM14,203.2353638724834,54.54952535723398,49.701333038541755,36
+norm_extrema_E_leak20-200,"All trials, normalization",Extrema detection (E),pulse,DBM15,286.8946433716131,80.3005832841067,75.0847288654002,48
+norm_extrema_E_leak20-200,"All trials, normalization",Extrema detection (E),pulse,DBM5,708.223869887695,47.708823425026516,35.2822323497456,48
+norm_extrema_E_leak20-200,"All trials, normalization",Extrema detection (E),pulse,DBM6,784.9627862527409,48.794810686668946,45.48998287438707,48
+norm_extrema_E_leak20-200,"All trials, normalization",Extrema detection (E),pulse,PSUIM10,101.31249231479985,39.957716641242556,38.26969142743779,32
+norm_extrema_E_leak20-200,"All trials, normalization",Extrema detection (E),pulse,PSUIM5,497.6734717386825,29.701772529585558,23.78531745603382,32
+norm_extrema_E_leak20-200,"All trials, normalization",Extrema detection (E),pulse,PSUIM6,1295.053459078521,50.4204426884683,44.342493839460126,32
+norm_extrema_E_leak20-200,"All trials, normalization",Extrema detection (E),pulse,PSUIM7,1647.2019476223754,130.05468917722504,114.49239549023991,32
+norm_extrema_sampling_ES,"All trials, normalization",Extrema sampling (ES),control,DBM12,404.3354731568725,16.674978453375843,7.361167314647474,7
+norm_extrema_sampling_ES,"All trials, normalization",Extrema sampling (ES),control,DBM13,185.05200398052108,9.970935849576215,8.394294113432103,7
+norm_extrema_sampling_ES,"All trials, normalization",Extrema sampling (ES),control,DBM14,171.68747853509882,3.0994817372100343,2.323863599121438,7
+norm_extrema_sampling_ES,"All trials, normalization",Extrema sampling (ES),control,DBM15,255.05510610480502,16.564435262924547,12.066156183882342,9
+norm_extrema_sampling_ES,"All trials, normalization",Extrema sampling (ES),control,DBM5,589.5518788840325,19.15509058511015,10.828378856488005,9
+norm_extrema_sampling_ES,"All trials, normalization",Extrema sampling (ES),control,DBM6,664.162814726847,6.659245158897114,2.4450890453398486,9
+norm_extrema_sampling_ES,"All trials, normalization",Extrema sampling (ES),control,PSUIM10,133.58454737548004,8.267875881422311,7.167663784514405,9
+norm_extrema_sampling_ES,"All trials, normalization",Extrema sampling (ES),control,PSUIM5,692.4536374919135,12.80142766868839,12.34365097370916,9
+norm_extrema_sampling_ES,"All trials, normalization",Extrema sampling (ES),control,PSUIM6,1759.88422746088,54.65869691411103,47.24120834738301,9
+norm_extrema_sampling_ES,"All trials, normalization",Extrema sampling (ES),control,PSUIM7,2356.798573140305,74.30115725069919,38.80774994201039,9
+norm_extrema_sampling_ES,"All trials, normalization",Extrema sampling (ES),pulse,DBM12,460.7650934755618,44.02774573102451,41.954445166826204,36
+norm_extrema_sampling_ES,"All trials, normalization",Extrema sampling (ES),pulse,DBM13,182.15050071174042,28.947674518485513,25.230423733249133,36
+norm_extrema_sampling_ES,"All trials, normalization",Extrema sampling (ES),pulse,DBM14,202.13492369732407,52.34864500691534,47.74303587899082,36
+norm_extrema_sampling_ES,"All trials, normalization",Extrema sampling (ES),pulse,DBM15,285.0617269085931,76.63475035806667,72.61974677208465,48
+norm_extrema_sampling_ES,"All trials, normalization",Extrema sampling (ES),pulse,DBM5,710.4519533582718,52.16499036618053,39.517847093341956,48
+norm_extrema_sampling_ES,"All trials, normalization",Extrema sampling (ES),pulse,DBM6,780.0568647777734,38.982967736734196,36.19160039813177,48
+norm_extrema_sampling_ES,"All trials, normalization",Extrema sampling (ES),pulse,PSUIM10,99.66617823601656,36.665088483675945,34.790374122493304,32
+norm_extrema_sampling_ES,"All trials, normalization",Extrema sampling (ES),pulse,PSUIM5,496.7544393135664,27.863707679353197,19.987855091362924,32
+norm_extrema_sampling_ES,"All trials, normalization",Extrema sampling (ES),pulse,PSUIM6,1298.3253369703484,56.96419847212275,48.74602164566723,32
+norm_extrema_sampling_ES,"All trials, normalization",Extrema sampling (ES),pulse,PSUIM7,1636.4458629127548,108.54251975798411,90.49180340801323,32
+nominal_primary,"All trials, coherence sequence",Integrator (sv),control,DBM12,401.211852279903,10.427736699436721,7.984630638587888,7
+nominal_primary,"All trials, coherence sequence",Integrator (sv),control,DBM13,184.76132400827393,9.38957590508192,8.591386559345331,7
+nominal_primary,"All trials, coherence sequence",Integrator (sv),control,DBM14,174.30008956013916,8.324703787290701,4.627674503632093,7
+nominal_primary,"All trials, coherence sequence",Integrator (sv),control,DBM15,254.238291226825,14.930805506964553,11.948586471667348,9
+nominal_primary,"All trials, coherence sequence",Integrator (sv),control,DBM5,587.3487355579978,14.748803933040694,9.33980527151046,9
+nominal_primary,"All trials, coherence sequence",Integrator (sv),control,DBM6,671.5807312046605,21.4950781145239,13.02785330288902,9
+nominal_primary,"All trials, coherence sequence",Integrator (sv),control,PSUIM10,135.73102710003306,12.560835330528322,10.641206402850633,9
+nominal_primary,"All trials, coherence sequence",Integrator (sv),control,PSUIM5,694.2737807493627,16.441714183586527,8.841140608874895,9
+nominal_primary,"All trials, coherence sequence",Integrator (sv),control,PSUIM6,1757.8056418510193,50.5015256943899,47.0119433159166,9
+nominal_primary,"All trials, coherence sequence",Integrator (sv),control,PSUIM7,2349.4135038218883,59.531018613866024,45.21734904915883,9
+nominal_primary,"All trials, coherence sequence",Integrator (sv),pulse,DBM12,461.8186067898666,46.1347723596342,42.60892399558992,36
+nominal_primary,"All trials, coherence sequence",Integrator (sv),pulse,DBM13,182.94726211517366,30.541197325352044,27.153058221192133,36
+nominal_primary,"All trials, coherence sequence",Integrator (sv),pulse,DBM14,203.84235215734228,55.76350192695179,50.82976015345065,36
+nominal_primary,"All trials, coherence sequence",Integrator (sv),pulse,DBM15,285.95605685958145,78.42341026004343,75.22361629693432,48
+nominal_primary,"All trials, coherence sequence",Integrator (sv),pulse,DBM5,710.262754576582,51.78659280280081,38.38091432913109,48
+nominal_primary,"All trials, coherence sequence",Integrator (sv),pulse,DBM6,784.1184086295284,47.106055440243985,42.223842847594575,48
+nominal_primary,"All trials, coherence sequence",Integrator (sv),pulse,PSUIM10,100.34011465276068,38.01296131716418,36.396242436295296,32
+nominal_primary,"All trials, coherence sequence",Integrator (sv),pulse,PSUIM5,501.90795676796455,38.170742588149665,25.459953820213222,32
+nominal_primary,"All trials, coherence sequence",Integrator (sv),pulse,PSUIM6,1299.101429064581,58.51638266058815,48.9541463437658,32
+nominal_primary,"All trials, coherence sequence",Integrator (sv),pulse,PSUIM7,1664.6495677874575,164.94992950738924,155.48390866376752,32
+nominal_no_sv,"All trials, coherence sequence","Integrator, no sv",control,DBM12,401.1809093433608,10.365850826352414,6.591659547236418,7
+nominal_no_sv,"All trials, coherence sequence","Integrator, no sv",control,DBM13,184.2212485449833,8.309424978500708,6.069617545835236,7
+nominal_no_sv,"All trials, coherence sequence","Integrator, no sv",control,DBM14,173.1851899149529,6.094904496918218,5.376897462847623,7
+nominal_no_sv,"All trials, coherence sequence","Integrator, no sv",control,DBM15,254.98562701774628,16.42547708880709,13.140524086439289,9
+nominal_no_sv,"All trials, coherence sequence","Integrator, no sv",control,DBM5,585.5685965916282,11.188526000301497,9.018776293279732,9
+nominal_no_sv,"All trials, coherence sequence","Integrator, no sv",control,DBM6,664.0379652460397,6.4095461972824666,4.295023794818761,9
+nominal_no_sv,"All trials, coherence sequence","Integrator, no sv",control,PSUIM10,133.76023042122046,8.619241972903149,8.094971427012544,9
+nominal_no_sv,"All trials, coherence sequence","Integrator, no sv",control,PSUIM5,691.7302213239271,11.354595332715476,6.110370866504056,9
+nominal_no_sv,"All trials, coherence sequence","Integrator, no sv",control,PSUIM6,1755.7540242031034,46.39829039855749,44.39001318540846,9
+nominal_no_sv,"All trials, coherence sequence","Integrator, no sv",control,PSUIM7,2346.1172845318633,52.93858003381655,35.41941303457412,9
+nominal_no_sv,"All trials, coherence sequence","Integrator, no sv",pulse,DBM12,460.59321298081113,43.683984741523304,40.71485384013255,36
+nominal_no_sv,"All trials, coherence sequence","Integrator, no sv",pulse,DBM13,182.41650056628131,29.47967422756726,24.57196814320008,36
+nominal_no_sv,"All trials, coherence sequence","Integrator, no sv",pulse,DBM14,202.39747741312192,52.873752438511055,48.61915909226254,36
+nominal_no_sv,"All trials, coherence sequence","Integrator, no sv",pulse,DBM15,284.5114046674707,75.5341058758219,72.81720219059024,48
+nominal_no_sv,"All trials, coherence sequence","Integrator, no sv",pulse,DBM5,705.9029434876502,43.066970624937056,33.35758596171854,48
+nominal_no_sv,"All trials, coherence sequence","Integrator, no sv",pulse,DBM6,781.6911673496597,42.25157288050688,38.51292956180236,48
+nominal_no_sv,"All trials, coherence sequence","Integrator, no sv",pulse,PSUIM10,100.22084206840783,37.7744161484585,36.10021315538606,32
+nominal_no_sv,"All trials, coherence sequence","Integrator, no sv",pulse,PSUIM5,497.5967185607474,29.54826617371526,18.895649794389207,32
+nominal_no_sv,"All trials, coherence sequence","Integrator, no sv",pulse,PSUIM6,1294.2788817758938,48.871288083213386,40.13799798904427,32
+nominal_no_sv,"All trials, coherence sequence","Integrator, no sv",pulse,PSUIM7,1641.8139050218883,119.27860397625113,106.46003754492982,32
+nominal_leak,"All trials, coherence sequence",Leak,control,DBM12,400.1834521626128,8.370936464856314,7.409913660487362,7
+nominal_leak,"All trials, coherence sequence",Leak,control,DBM13,184.41074054622345,8.688408980980935,7.721168935231351,7
+nominal_leak,"All trials, coherence sequence",Leak,control,DBM14,172.83794042896727,5.40040552494694,4.394694455342048,7
+nominal_leak,"All trials, coherence sequence",Leak,control,DBM15,252.9746169090448,12.403456871404085,11.346926657646659,9
+nominal_leak,"All trials, coherence sequence",Leak,control,DBM5,586.6954872319623,13.44230728096948,10.366307948316852,9
+nominal_leak,"All trials, coherence sequence",Leak,control,DBM6,666.266747473813,10.867110652828892,6.5813934768772455,9
+nominal_leak,"All trials, coherence sequence",Leak,control,PSUIM10,135.29340766350094,11.685596457464062,10.28745306622664,9
+nominal_leak,"All trials, coherence sequence",Leak,control,PSUIM5,693.5719259382056,15.038004561272729,8.938122389951118,9
+nominal_leak,"All trials, coherence sequence",Leak,control,PSUIM6,1755.8372346610477,46.56471131444687,39.06323784189749,9
+nominal_leak,"All trials, coherence sequence",Leak,control,PSUIM7,2345.1838793526645,51.07176967541784,42.63273059906669,9
+nominal_leak,"All trials, coherence sequence",Leak,pulse,DBM12,461.72604969221686,45.94965816433465,41.05168985546473,36
+nominal_leak,"All trials, coherence sequence",Leak,pulse,DBM13,182.4206044243877,29.487881943780145,26.113546288420487,36
+nominal_leak,"All trials, coherence sequence",Leak,pulse,DBM14,203.23159275991236,54.54198313209194,50.78826612243522,36
+nominal_leak,"All trials, coherence sequence",Leak,pulse,DBM15,285.54434115229355,77.5999788454676,75.46443985147337,48
+nominal_leak,"All trials, coherence sequence",Leak,pulse,DBM5,711.6206300984991,54.50234384663497,40.01525158142543,48
+nominal_leak,"All trials, coherence sequence",Leak,pulse,DBM6,784.421495827229,47.71222983564555,39.123398717717436,48
+nominal_leak,"All trials, coherence sequence",Leak,pulse,PSUIM10,101.18374390898592,39.700219829614696,38.40847990584017,32
+nominal_leak,"All trials, coherence sequence",Leak,pulse,PSUIM5,500.16411984902203,34.68306875026465,23.702910142603333,32
+nominal_leak,"All trials, coherence sequence",Leak,pulse,PSUIM6,1305.5004015781287,71.31432768768403,57.07347526569588,32
+nominal_leak,"All trials, coherence sequence",Leak,pulse,PSUIM7,1659.3177063718929,154.28620667626015,146.6269381896838,32
+nominal_urgency,"All trials, coherence sequence",Urgency,control,DBM12,402.25186711098377,12.507766361598343,8.781425928942937,7
+nominal_urgency,"All trials, coherence sequence",Urgency,control,DBM13,184.79586700595445,9.458661900442966,8.13156288967075,7
+nominal_urgency,"All trials, coherence sequence",Urgency,control,DBM14,173.48107149509187,6.686667657196132,4.852067666535348,7
+nominal_urgency,"All trials, coherence sequence",Urgency,control,DBM15,253.3474514369982,13.149125927310905,11.724954092083976,9
+nominal_urgency,"All trials, coherence sequence",Urgency,control,DBM5,589.8034668623138,19.658266541672717,9.813081095326694,9
+nominal_urgency,"All trials, coherence sequence",Urgency,control,DBM6,664.7847852989295,7.903186303061972,5.337175212373722,9
+nominal_urgency,"All trials, coherence sequence",Urgency,control,PSUIM10,135.5652031389716,12.229187408405457,11.427205870455483,9
+nominal_urgency,"All trials, coherence sequence",Urgency,control,PSUIM5,696.0540889757432,20.00233063634751,7.4863569385762645,9
+nominal_urgency,"All trials, coherence sequence",Urgency,control,PSUIM6,1758.2157876842186,51.32181736078843,49.59836500806199,9
+nominal_urgency,"All trials, coherence sequence",Urgency,control,PSUIM7,2345.5012464203683,51.706503810826234,38.48512520740991,9
+nominal_urgency,"All trials, coherence sequence",Urgency,pulse,DBM12,459.53506716737314,41.56769311464724,37.863294761605175,36
+nominal_urgency,"All trials, coherence sequence",Urgency,pulse,DBM13,182.36741085244876,29.3814947999023,25.807924476954092,36
+nominal_urgency,"All trials, coherence sequence",Urgency,pulse,DBM14,204.5487556065292,57.176308825325656,53.16168045611274,36
+nominal_urgency,"All trials, coherence sequence",Urgency,pulse,DBM15,284.228535052604,74.96836664608853,72.00850140993852,48
+nominal_urgency,"All trials, coherence sequence",Urgency,pulse,DBM5,710.1549512894208,51.57098622847837,39.03023765668546,48
+nominal_urgency,"All trials, coherence sequence",Urgency,pulse,DBM6,781.9318671448248,42.73297247083694,37.79172174996622,48
+nominal_urgency,"All trials, coherence sequence",Urgency,pulse,PSUIM10,100.79889664296937,38.93052529758156,37.56291655939994,32
+nominal_urgency,"All trials, coherence sequence",Urgency,pulse,PSUIM5,501.8643945368141,38.083618125848616,24.331885735063707,32
+nominal_urgency,"All trials, coherence sequence",Urgency,pulse,PSUIM6,1305.8250634691685,71.9636514697629,61.7091512171406,32
+nominal_urgency,"All trials, coherence sequence",Urgency,pulse,PSUIM7,1660.6182829152576,156.88735976298955,147.78195273186475,32
+nominal_leak_urgency,"All trials, coherence sequence",Leak + urgency,control,DBM12,400.3329975568794,8.670027253389563,7.503233727687572,7
+nominal_leak_urgency,"All trials, coherence sequence",Leak + urgency,control,DBM13,185.68017614289786,11.227280174329834,8.59451651626675,7
+nominal_leak_urgency,"All trials, coherence sequence",Leak + urgency,control,DBM14,172.3703165806065,4.465157828225436,3.995751744952223,7
+nominal_leak_urgency,"All trials, coherence sequence",Leak + urgency,control,DBM15,253.9183727704455,14.290968594205456,10.76463369282678,9
+nominal_leak_urgency,"All trials, coherence sequence",Leak + urgency,control,DBM5,586.2922792482069,12.635891313458878,9.471516708472656,9
+nominal_leak_urgency,"All trials, coherence sequence",Leak + urgency,control,DBM6,665.7804191218887,9.894453948980491,5.831314907548567,9
+nominal_leak_urgency,"All trials, coherence sequence",Leak + urgency,control,PSUIM10,135.67520931771102,12.449199765884245,10.996093202729984,9
+nominal_leak_urgency,"All trials, coherence sequence",Leak + urgency,control,PSUIM5,693.619360962103,15.132874609067173,11.42498547371882,9
+nominal_leak_urgency,"All trials, coherence sequence",Leak + urgency,control,PSUIM6,1755.8974804951108,46.68520298257306,40.05662596398804,9
+nominal_leak_urgency,"All trials, coherence sequence",Leak + urgency,control,PSUIM7,2350.327885263548,61.359781497186134,43.96189535233242,9
+nominal_leak_urgency,"All trials, coherence sequence",Leak + urgency,pulse,DBM12,461.31807455751255,45.13370789492615,40.25403367174866,36
+nominal_leak_urgency,"All trials, coherence sequence",Leak + urgency,pulse,DBM13,183.05300915438977,30.752691403784276,26.3437450275503,36
+nominal_leak_urgency,"All trials, coherence sequence",Leak + urgency,pulse,DBM14,202.1788571163643,52.436511844995735,47.94086057088169,36
+nominal_leak_urgency,"All trials, coherence sequence",Leak + urgency,pulse,DBM15,284.848621720492,76.20853998186452,72.89789530566992,48
+nominal_leak_urgency,"All trials, coherence sequence",Leak + urgency,pulse,DBM5,709.6589754519937,50.57903455362424,38.93759792629923,48
+nominal_leak_urgency,"All trials, coherence sequence",Leak + urgency,pulse,DBM6,783.8747705944158,46.618779370018956,39.77209090903158,48
+nominal_leak_urgency,"All trials, coherence sequence",Leak + urgency,pulse,PSUIM10,101.41229583468557,40.15732368101397,37.899223326894656,32
+nominal_leak_urgency,"All trials, coherence sequence",Leak + urgency,pulse,PSUIM5,502.6710234492291,39.69687595067868,29.701028379705747,32
+nominal_leak_urgency,"All trials, coherence sequence",Leak + urgency,pulse,PSUIM6,1308.8232850815398,77.96009469450578,61.353410010552835,32
+nominal_leak_urgency,"All trials, coherence sequence",Leak + urgency,pulse,PSUIM7,1666.4145891852424,168.47997230295894,157.70295203257677,32
+nominal_extrema_E_leak20-200,"All trials, coherence sequence",Extrema detection (E),control,DBM12,405.637098471923,19.2782290834769,13.703869807287504,7
+nominal_extrema_E_leak20-200,"All trials, coherence sequence",Extrema detection (E),control,DBM13,184.72532532755423,9.317578543642576,8.916838819947976,7
+nominal_extrema_E_leak20-200,"All trials, coherence sequence",Extrema detection (E),control,DBM14,172.7257615962866,5.1760478595856085,3.434732047493135,7
+nominal_extrema_E_leak20-200,"All trials, coherence sequence",Extrema detection (E),control,DBM15,255.5324809170146,17.519184887343638,12.7292191464805,9
+nominal_extrema_E_leak20-200,"All trials, coherence sequence",Extrema detection (E),control,DBM5,586.0051734395169,12.061679696078969,8.511081964173272,9
+nominal_extrema_E_leak20-200,"All trials, coherence sequence",Extrema detection (E),control,DBM6,663.7614900945152,5.85659589423345,4.921400611468428,9
+nominal_extrema_E_leak20-200,"All trials, coherence sequence",Extrema detection (E),control,PSUIM10,135.76677380520212,12.632328740866482,9.010054072462845,9
+nominal_extrema_E_leak20-200,"All trials, coherence sequence",Extrema detection (E),control,PSUIM5,699.0534634717576,26.00107962837653,14.299236731419072,9
+nominal_extrema_E_leak20-200,"All trials, coherence sequence",Extrema detection (E),control,PSUIM6,1773.2969983989728,81.48423879029701,70.50154324443906,9
+nominal_extrema_E_leak20-200,"All trials, coherence sequence",Extrema detection (E),control,PSUIM7,2369.6317589209375,99.96752881196437,90.85973735133064,9
+nominal_extrema_E_leak20-200,"All trials, coherence sequence",Extrema detection (E),pulse,DBM12,458.31621295437685,39.1299846886546,36.39280965228505,36
+nominal_extrema_E_leak20-200,"All trials, coherence sequence",Extrema detection (E),pulse,DBM13,182.25669289316332,29.16005888133142,25.80412898168836,36
+nominal_extrema_E_leak20-200,"All trials, coherence sequence",Extrema detection (E),pulse,DBM14,205.54272205218376,59.164241716634635,54.7867492494117,36
+nominal_extrema_E_leak20-200,"All trials, coherence sequence",Extrema detection (E),pulse,DBM15,286.67832419877595,79.86794493843247,76.08275680136873,48
+nominal_extrema_E_leak20-200,"All trials, coherence sequence",Extrema detection (E),pulse,DBM5,708.6446622983971,48.55040824643103,38.112690997151645,48
+nominal_extrema_E_leak20-200,"All trials, coherence sequence",Extrema detection (E),pulse,DBM6,784.4080274793753,47.68529313993809,44.06526692480003,48
+nominal_extrema_E_leak20-200,"All trials, coherence sequence",Extrema detection (E),pulse,PSUIM10,100.78954748919591,38.91182699003465,37.5379722472982,32
+nominal_extrema_E_leak20-200,"All trials, coherence sequence",Extrema detection (E),pulse,PSUIM5,499.22376729564235,32.80236364350537,24.12238134766102,32
+nominal_extrema_E_leak20-200,"All trials, coherence sequence",Extrema detection (E),pulse,PSUIM6,1301.0236993423377,62.360923216101604,55.76774627326984,32
+nominal_extrema_E_leak20-200,"All trials, coherence sequence",Extrema detection (E),pulse,PSUIM7,1660.7975984945322,157.24599092153863,139.8701773519398,32
+nominal_extrema_sampling_ES,"All trials, coherence sequence",Extrema sampling (ES),control,DBM12,404.23192855484626,16.46788924932325,9.967118616841006,7
+nominal_extrema_sampling_ES,"All trials, coherence sequence",Extrema sampling (ES),control,DBM13,184.1630502165072,8.193028321548496,7.193309107423374,7
+nominal_extrema_sampling_ES,"All trials, coherence sequence",Extrema sampling (ES),control,DBM14,171.51450712647005,2.75353891995249,2.6766277256998876,7
+nominal_extrema_sampling_ES,"All trials, coherence sequence",Extrema sampling (ES),control,DBM15,254.47281052714837,15.399844107611235,11.765516124787089,9
+nominal_extrema_sampling_ES,"All trials, coherence sequence",Extrema sampling (ES),control,DBM5,586.7409806935367,13.533294204118437,10.54920961403015,9
+nominal_extrema_sampling_ES,"All trials, coherence sequence",Extrema sampling (ES),control,DBM6,663.9328481768588,6.199312058920626,3.4140557073834685,9
+nominal_extrema_sampling_ES,"All trials, coherence sequence",Extrema sampling (ES),control,PSUIM10,134.3234014688343,9.745584068130803,7.76597130714503,9
+nominal_extrema_sampling_ES,"All trials, coherence sequence",Extrema sampling (ES),control,PSUIM5,698.8169471988548,25.52804708257098,11.637545028198517,9
+nominal_extrema_sampling_ES,"All trials, coherence sequence",Extrema sampling (ES),control,PSUIM6,1785.0479642485786,104.98617048950877,91.88648774993635,9
+nominal_extrema_sampling_ES,"All trials, coherence sequence",Extrema sampling (ES),control,PSUIM7,2352.2225891173907,65.14918920487042,55.05039097228797,9
+nominal_extrema_sampling_ES,"All trials, coherence sequence",Extrema sampling (ES),pulse,DBM12,459.58177558919317,41.661109958287156,39.324634261063366,36
+nominal_extrema_sampling_ES,"All trials, coherence sequence",Extrema sampling (ES),pulse,DBM13,182.2226020202034,29.091877135411476,25.894748537954786,36
+nominal_extrema_sampling_ES,"All trials, coherence sequence",Extrema sampling (ES),pulse,DBM14,204.00905804947354,56.096913711214306,51.74434780109927,36
+nominal_extrema_sampling_ES,"All trials, coherence sequence",Extrema sampling (ES),pulse,DBM15,285.53657764797276,77.58445183682603,73.86115894664597,48
+nominal_extrema_sampling_ES,"All trials, coherence sequence",Extrema sampling (ES),pulse,DBM5,709.5111679453182,50.28341954027327,37.71914805892527,48
+nominal_extrema_sampling_ES,"All trials, coherence sequence",Extrema sampling (ES),pulse,DBM6,783.5586149985957,45.9864681783784,43.17480052502021,48
+nominal_extrema_sampling_ES,"All trials, coherence sequence",Extrema sampling (ES),pulse,PSUIM10,102.02282285467427,41.37837772099138,38.54479323888648,32
+nominal_extrema_sampling_ES,"All trials, coherence sequence",Extrema sampling (ES),pulse,PSUIM5,496.93765909928334,28.230147250787123,20.74317764160195,32
+nominal_extrema_sampling_ES,"All trials, coherence sequence",Extrema sampling (ES),pulse,PSUIM6,1302.9763938036272,66.26631213868052,59.02297808315094,32
+nominal_extrema_sampling_ES,"All trials, coherence sequence",Extrema sampling (ES),pulse,PSUIM7,1650.657721909609,136.96623775169272,115.24803854657232,32
+nominal_power_primary,"All trials, coherence sequence","Integrator, power law",control,DBM12,403.2787660013993,14.561564142429376,8.722059547737203,7
+nominal_power_primary,"All trials, coherence sequence","Integrator, power law",control,DBM13,184.20958842378084,8.286104736095723,7.875631547543179,7
+nominal_power_primary,"All trials, coherence sequence","Integrator, power law",control,DBM14,173.51561725910636,6.755759185225095,4.468441771878062,7
+nominal_power_primary,"All trials, coherence sequence","Integrator, power law",control,DBM15,254.0809215220299,14.616066097374327,12.651244501284351,9
+nominal_power_primary,"All trials, coherence sequence","Integrator, power law",control,DBM5,590.5848347957624,21.221002408569998,11.037291591748609,9
+nominal_power_primary,"All trials, coherence sequence","Integrator, power law",control,DBM6,669.3063647774084,16.946345260019783,4.195311487058078,9
+nominal_power_primary,"All trials, coherence sequence","Integrator, power law",control,PSUIM10,135.15389430031107,11.40656973108435,9.577821085264606,9
+nominal_power_primary,"All trials, coherence sequence","Integrator, power law",control,PSUIM5,689.0587310248022,6.0116147344656525,4.308975999749308,9
+nominal_power_primary,"All trials, coherence sequence","Integrator, power law",control,PSUIM6,1744.2264684343459,23.34317886104276,18.334371467014478,9
+nominal_power_primary,"All trials, coherence sequence","Integrator, power law",control,PSUIM7,2351.270479080471,63.2449691310311,32.487348460253315,9
+nominal_power_primary,"All trials, coherence sequence","Integrator, power law",pulse,DBM12,460.1879443903039,42.87344756050882,39.76648723202695,36
+nominal_power_primary,"All trials, coherence sequence","Integrator, power law",pulse,DBM13,183.6475111013803,31.941695297765346,28.778780472687604,36
+nominal_power_primary,"All trials, coherence sequence","Integrator, power law",pulse,DBM14,201.9912040126594,52.06120563758599,47.01266519160745,36
+nominal_power_primary,"All trials, coherence sequence","Integrator, power law",pulse,DBM15,285.33422017370617,77.17973688829288,74.1972861152901,48
+nominal_power_primary,"All trials, coherence sequence","Integrator, power law",pulse,DBM5,708.6704690957433,48.60202184112367,37.85121350710672,48
+nominal_power_primary,"All trials, coherence sequence","Integrator, power law",pulse,DBM6,780.2984943847825,39.46622695075241,35.181506684556766,48
+nominal_power_primary,"All trials, coherence sequence","Integrator, power law",pulse,PSUIM10,100.59388965247665,38.52051131659613,37.17875867903745,32
+nominal_power_primary,"All trials, coherence sequence","Integrator, power law",pulse,PSUIM5,498.87938152007644,32.11359209237338,23.537307109288395,32
+nominal_power_primary,"All trials, coherence sequence","Integrator, power law",pulse,PSUIM6,1306.3348676080673,72.98325974756062,67.10376447066919,32
+nominal_power_primary,"All trials, coherence sequence","Integrator, power law",pulse,PSUIM7,1661.5958769705876,158.84254787364915,144.06893014692605,32
+stine_nominal_DDM,"All trials, coherence sequence",Stine 2020 DDM,control,DBM12,399.99827558053687,8.000583300704463,5.397195768644522,7
+stine_nominal_DDM,"All trials, coherence sequence",Stine 2020 DDM,control,DBM13,183.9811196801817,7.829167248897459,6.9296745575739855,7
+stine_nominal_DDM,"All trials, coherence sequence",Stine 2020 DDM,control,DBM14,173.5908996447279,6.906323956468171,6.025970728331664,7
+stine_nominal_DDM,"All trials, coherence sequence",Stine 2020 DDM,control,DBM15,254.96348068577848,16.38118442487142,14.771050916048182,9
+stine_nominal_DDM,"All trials, coherence sequence",Stine 2020 DDM,control,DBM5,584.7215472401449,9.494427297334834,8.847864673848346,9
+stine_nominal_DDM,"All trials, coherence sequence",Stine 2020 DDM,control,DBM6,669.5669712089716,17.46755812314629,5.858181833204696,9
+stine_nominal_DDM,"All trials, coherence sequence",Stine 2020 DDM,control,PSUIM10,135.4991567630388,12.097094656539767,7.829229188113384,9
+stine_nominal_DDM,"All trials, coherence sequence",Stine 2020 DDM,control,PSUIM5,712.5691111163725,53.03237491760639,15.289013152717317,9
+stine_nominal_DDM,"All trials, coherence sequence",Stine 2020 DDM,control,PSUIM6,1790.9116620160808,116.71356602451317,77.81912929227383,9
+stine_nominal_DDM,"All trials, coherence sequence",Stine 2020 DDM,control,PSUIM7,2364.3498549010446,89.40372077217933,36.301946311537904,9
+stine_nominal_DDM,"All trials, coherence sequence",Stine 2020 DDM,pulse,DBM12,464.41840548189776,51.33436974369661,48.678475075614145,36
+stine_nominal_DDM,"All trials, coherence sequence",Stine 2020 DDM,pulse,DBM13,183.24387036462102,31.134413824246717,26.455242854947695,36
+stine_nominal_DDM,"All trials, coherence sequence",Stine 2020 DDM,pulse,DBM14,206.57399761356837,61.22679283940396,57.03848840323254,36
+stine_nominal_DDM,"All trials, coherence sequence",Stine 2020 DDM,pulse,DBM15,283.8451417216138,74.20157998410806,72.69572607258543,48
+stine_nominal_DDM,"All trials, coherence sequence",Stine 2020 DDM,pulse,DBM5,707.6417713082985,46.54462626623381,32.18299445606648,48
+stine_nominal_DDM,"All trials, coherence sequence",Stine 2020 DDM,pulse,DBM6,786.508059261138,51.88535670346321,40.19911704029704,48
+stine_nominal_DDM,"All trials, coherence sequence",Stine 2020 DDM,pulse,PSUIM10,100.39721262228473,38.127157256212286,36.00213548354001,32
+stine_nominal_DDM,"All trials, coherence sequence",Stine 2020 DDM,pulse,PSUIM5,505.15575207035516,44.666333192930836,25.429097541250126,32
+stine_nominal_DDM,"All trials, coherence sequence",Stine 2020 DDM,pulse,PSUIM6,1307.2031008625906,74.71972625660726,52.917635080562114,32
+stine_nominal_DDM,"All trials, coherence sequence",Stine 2020 DDM,pulse,PSUIM7,1642.4732741893574,120.59734231118935,111.48115860091916,32
+stine_nominal_ES,"All trials, coherence sequence",Stine 2020 ES,control,DBM12,399.5996935207614,7.203419181153549,6.972713016565152,7
+stine_nominal_ES,"All trials, coherence sequence",Stine 2020 ES,control,DBM13,184.19312635910228,8.253180606738681,7.737651767173254,7
+stine_nominal_ES,"All trials, coherence sequence",Stine 2020 ES,control,DBM14,173.48423181751986,6.692988302052143,4.510554385359818,7
+stine_nominal_ES,"All trials, coherence sequence",Stine 2020 ES,control,DBM15,255.14984756343688,16.75391818018823,12.863038976407145,9
+stine_nominal_ES,"All trials, coherence sequence",Stine 2020 ES,control,DBM5,584.6613748371472,9.374082491339326,8.539001724830374,9
+stine_nominal_ES,"All trials, coherence sequence",Stine 2020 ES,control,DBM6,666.1667353848073,10.66708647481758,8.55698060034004,9
+stine_nominal_ES,"All trials, coherence sequence",Stine 2020 ES,control,PSUIM10,135.83468334474318,12.768147819948593,9.690458714065544,9
+stine_nominal_ES,"All trials, coherence sequence",Stine 2020 ES,control,PSUIM5,714.7143818762528,57.3229164373668,11.716153740665149,9
+stine_nominal_ES,"All trials, coherence sequence",Stine 2020 ES,control,PSUIM6,1793.959302498953,122.8088469902574,72.1152254243026,9
+stine_nominal_ES,"All trials, coherence sequence",Stine 2020 ES,control,PSUIM7,2353.507220928435,67.71845282695949,54.07395229072455,9
+stine_nominal_ES,"All trials, coherence sequence",Stine 2020 ES,pulse,DBM12,465.23429119849044,52.96614117688186,47.50208566860147,36
+stine_nominal_ES,"All trials, coherence sequence",Stine 2020 ES,pulse,DBM13,182.17793769736195,29.002548489728593,25.489468283623037,36
+stine_nominal_ES,"All trials, coherence sequence",Stine 2020 ES,pulse,DBM14,201.4165627793593,50.91192317098577,43.349146663445815,36
+stine_nominal_ES,"All trials, coherence sequence",Stine 2020 ES,pulse,DBM15,288.87403818545044,84.25937291178144,82.56999902249305,48
+stine_nominal_ES,"All trials, coherence sequence",Stine 2020 ES,pulse,DBM5,708.0296484200705,47.32038048977783,31.892082554873557,48
+stine_nominal_ES,"All trials, coherence sequence",Stine 2020 ES,pulse,DBM6,786.5139678735995,51.89717392838635,48.287997811307356,48
+stine_nominal_ES,"All trials, coherence sequence",Stine 2020 ES,pulse,PSUIM10,101.42808789406948,40.18890779978179,37.95812298370342,32
+stine_nominal_ES,"All trials, coherence sequence",Stine 2020 ES,pulse,PSUIM5,502.6232100364618,39.60124912514411,23.656368229483146,32
+stine_nominal_ES,"All trials, coherence sequence",Stine 2020 ES,pulse,PSUIM6,1301.2220308490532,62.757586229532485,53.80720215896468,32
+stine_nominal_ES,"All trials, coherence sequence",Stine 2020 ES,pulse,PSUIM7,1649.2775812102334,134.20595635294103,128.68315949733176,32
+pulse_linear_primary,"Pulse-only fits, linear motion energy",Integrator (sv),control,DBM12,408.90617991780584,25.81639197524251,11.818263260376114,7
+pulse_linear_primary,"Pulse-only fits, linear motion energy",Integrator (sv),control,DBM13,184.9230292107415,9.712986310017044,8.683047746752138,7
+pulse_linear_primary,"Pulse-only fits, linear motion energy",Integrator (sv),control,DBM14,175.14811843293697,10.020761532886382,5.91403443693725,7
+pulse_linear_primary,"Pulse-only fits, linear motion energy",Integrator (sv),control,DBM15,254.35545801040388,15.165139074122242,12.164350511552973,9
+pulse_linear_primary,"Pulse-only fits, linear motion energy",Integrator (sv),control,DBM5,586.7401125282071,13.531557873459082,9.96819039417311,9
+pulse_linear_primary,"Pulse-only fits, linear motion energy",Integrator (sv),control,DBM6,667.4509521369378,13.235519979078504,9.501150234051835,9
+pulse_linear_primary,"Pulse-only fits, linear motion energy",Integrator (sv),control,PSUIM10,140.7832483556155,22.665277841693225,10.944783952024604,9
+pulse_linear_primary,"Pulse-only fits, linear motion energy",Integrator (sv),control,PSUIM5,696.9360779505764,21.76630858601392,15.299133400084273,9
+pulse_linear_primary,"Pulse-only fits, linear motion energy",Integrator (sv),control,PSUIM6,1786.9111242136348,108.71249041962074,104.90810567767903,9
+pulse_linear_primary,"Pulse-only fits, linear motion energy",Integrator (sv),control,PSUIM7,2354.677646571547,70.0593041131832,52.072944185235656,9
+pulse_linear_primary,"Pulse-only fits, linear motion energy",Integrator (sv),pulse,DBM12,458.66335336205555,39.82426550401195,36.28668839652188,36
+pulse_linear_primary,"Pulse-only fits, linear motion energy",Integrator (sv),pulse,DBM13,183.57786840718455,31.802409909373814,28.316271389076952,36
+pulse_linear_primary,"Pulse-only fits, linear motion energy",Integrator (sv),pulse,DBM14,204.9796086330434,58.03801487835401,52.81192788809296,36
+pulse_linear_primary,"Pulse-only fits, linear motion energy",Integrator (sv),pulse,DBM15,286.3580419822613,79.227380505403,75.91502938652698,48
+pulse_linear_primary,"Pulse-only fits, linear motion energy",Integrator (sv),pulse,DBM5,710.4710902611848,52.20326417200647,39.73098471520599,48
+pulse_linear_primary,"Pulse-only fits, linear motion energy",Integrator (sv),pulse,DBM6,781.4242581807881,41.71775454276367,38.08971720150788,48
+pulse_linear_primary,"Pulse-only fits, linear motion energy",Integrator (sv),pulse,PSUIM10,98.4462798731453,34.22529175793343,33.521034045817295,32
+pulse_linear_primary,"Pulse-only fits, linear motion energy",Integrator (sv),pulse,PSUIM5,500.68708906690017,35.72900718602064,26.098316009477397,32
+pulse_linear_primary,"Pulse-only fits, linear motion energy",Integrator (sv),pulse,PSUIM6,1313.8549379104643,88.02340035235439,76.41917896650492,32
+pulse_linear_primary,"Pulse-only fits, linear motion energy",Integrator (sv),pulse,PSUIM7,1658.6105198543837,152.87183364124166,142.05580115885613,32
+pulse_linear_no_sv,"Pulse-only fits, linear motion energy","Integrator, no sv",control,DBM12,407.78267595593803,23.569384051506773,12.769019382143028,7
+pulse_linear_no_sv,"Pulse-only fits, linear motion energy","Integrator, no sv",control,DBM13,183.45930232151824,6.785532531570553,5.644142969641791,7
+pulse_linear_no_sv,"Pulse-only fits, linear motion energy","Integrator, no sv",control,DBM14,175.01981315220377,9.764150971419944,7.775283607136885,7
+pulse_linear_no_sv,"Pulse-only fits, linear motion energy","Integrator, no sv",control,DBM15,256.2978400125324,19.04990307837924,14.525279084228128,9
+pulse_linear_no_sv,"Pulse-only fits, linear motion energy","Integrator, no sv",control,DBM5,586.6457157780961,13.342764373237287,10.08359448732989,9
+pulse_linear_no_sv,"Pulse-only fits, linear motion energy","Integrator, no sv",control,DBM6,664.010949599897,6.355514904997143,5.269355369122145,9
+pulse_linear_no_sv,"Pulse-only fits, linear motion energy","Integrator, no sv",control,PSUIM10,139.9244681080846,20.947717346631414,8.674501822784197,9
+pulse_linear_no_sv,"Pulse-only fits, linear motion energy","Integrator, no sv",control,PSUIM5,692.808009617188,13.510171919237266,7.741970490158096,9
+pulse_linear_no_sv,"Pulse-only fits, linear motion energy","Integrator, no sv",control,PSUIM6,1775.593623186505,86.07748836536115,83.33469519647713,9
+pulse_linear_no_sv,"Pulse-only fits, linear motion energy","Integrator, no sv",control,PSUIM7,2342.0372258014327,44.77846257295471,19.31450835825285,9
+pulse_linear_no_sv,"Pulse-only fits, linear motion energy","Integrator, no sv",pulse,DBM12,458.89917568591716,40.29591015173537,34.93240114768742,36
+pulse_linear_no_sv,"Pulse-only fits, linear motion energy","Integrator, no sv",pulse,DBM13,182.63902876803886,29.924730631082483,24.411252977798583,36
+pulse_linear_no_sv,"Pulse-only fits, linear motion energy","Integrator, no sv",pulse,DBM14,206.2369929313343,60.552783474935765,55.71988986340051,36
+pulse_linear_no_sv,"Pulse-only fits, linear motion energy","Integrator, no sv",pulse,DBM15,286.14560652153284,78.80250958394625,76.73284673295882,48
+pulse_linear_no_sv,"Pulse-only fits, linear motion energy","Integrator, no sv",pulse,DBM5,706.4188523031701,44.098788255976835,34.54180729110851,48
+pulse_linear_no_sv,"Pulse-only fits, linear motion energy","Integrator, no sv",pulse,DBM6,780.4918224194387,39.85288302006463,36.12453610572262,48
+pulse_linear_no_sv,"Pulse-only fits, linear motion energy","Integrator, no sv",pulse,PSUIM10,95.89331174787226,29.119355507387354,28.6248728739506,32
+pulse_linear_no_sv,"Pulse-only fits, linear motion energy","Integrator, no sv",pulse,PSUIM5,497.24595097961776,28.84673101145602,18.433478211447127,32
+pulse_linear_no_sv,"Pulse-only fits, linear motion energy","Integrator, no sv",pulse,PSUIM6,1297.0057987260814,54.325121983589085,46.62843039108955,32
+pulse_linear_no_sv,"Pulse-only fits, linear motion energy","Integrator, no sv",pulse,PSUIM7,1636.9855340478075,109.62186202808928,91.99502428747937,32
+pulse_linear_leak,"Pulse-only fits, linear motion energy",Leak,control,DBM12,409.0495731594116,26.103178458453883,12.983221399852354,7
+pulse_linear_leak,"Pulse-only fits, linear motion energy",Leak,control,DBM13,185.55507524192024,10.977078372374514,9.215350044497697,7
+pulse_linear_leak,"Pulse-only fits, linear motion energy",Leak,control,DBM14,171.92951438452346,3.5835534360593115,3.543219924451833,7
+pulse_linear_leak,"Pulse-only fits, linear motion energy",Leak,control,DBM15,253.78970503669012,14.033633126694665,11.924890971530571,9
+pulse_linear_leak,"Pulse-only fits, linear motion energy",Leak,control,DBM5,586.3943076638071,12.839948144659296,9.469988609212542,9
+pulse_linear_leak,"Pulse-only fits, linear motion energy",Leak,control,DBM6,662.4544253598984,3.2424664249997903,2.280883632301638,9
+pulse_linear_leak,"Pulse-only fits, linear motion energy",Leak,control,PSUIM10,135.70301007848053,12.504801287423252,10.81970062553627,9
+pulse_linear_leak,"Pulse-only fits, linear motion energy",Leak,control,PSUIM5,695.9192381540503,19.732628992962077,6.673682146311563,9
+pulse_linear_leak,"Pulse-only fits, linear motion energy",Leak,control,PSUIM6,1765.282757922179,65.45575783670893,59.62518401114875,9
+pulse_linear_leak,"Pulse-only fits, linear motion energy",Leak,control,PSUIM7,2356.557411698159,73.81883436640686,64.5747429479377,9
+pulse_linear_leak,"Pulse-only fits, linear motion energy",Leak,pulse,DBM12,457.9807304177342,38.459019615369456,34.82356616633675,36
+pulse_linear_leak,"Pulse-only fits, linear motion energy",Leak,pulse,DBM13,183.14377155877438,30.934216212553366,27.595596794645488,36
+pulse_linear_leak,"Pulse-only fits, linear motion energy",Leak,pulse,DBM14,202.34447422663212,52.76774606553143,46.86816365025141,36
+pulse_linear_leak,"Pulse-only fits, linear motion energy",Leak,pulse,DBM15,285.9418121177863,78.39492077645312,75.28894168736676,48
+pulse_linear_leak,"Pulse-only fits, linear motion energy",Leak,pulse,DBM5,709.7558060026447,50.772695654926196,38.88969856777054,48
+pulse_linear_leak,"Pulse-only fits, linear motion energy",Leak,pulse,DBM6,781.6969488825332,42.263135946253925,36.98320855689502,48
+pulse_linear_leak,"Pulse-only fits, linear motion energy",Leak,pulse,PSUIM10,100.4034032851896,38.139538582022034,37.63294539310635,32
+pulse_linear_leak,"Pulse-only fits, linear motion energy",Leak,pulse,PSUIM5,501.7793441694148,37.91351739105008,22.873129815720993,32
+pulse_linear_leak,"Pulse-only fits, linear motion energy",Leak,pulse,PSUIM6,1303.820681012482,67.95488655639011,55.005489904278356,32
+pulse_linear_leak,"Pulse-only fits, linear motion energy",Leak,pulse,PSUIM7,1659.120704549994,153.8922030324622,145.94574205497116,32
+pulse_linear_leak_no_sv,"Pulse-only fits, linear motion energy","Leak, no sv",control,DBM12,408.4037926654607,24.811617470552108,10.558988606742133,7
+pulse_linear_leak_no_sv,"Pulse-only fits, linear motion energy","Leak, no sv",control,DBM13,183.58536917841474,7.037666245363528,6.588023351810239,7
+pulse_linear_leak_no_sv,"Pulse-only fits, linear motion energy","Leak, no sv",control,DBM14,173.07794099171485,5.880406650442055,5.079644888169369,7
+pulse_linear_leak_no_sv,"Pulse-only fits, linear motion energy","Leak, no sv",control,DBM15,255.64796008879202,17.750143230898512,13.229690316974551,9
+pulse_linear_leak_no_sv,"Pulse-only fits, linear motion energy","Leak, no sv",control,DBM5,586.4320363112583,12.9154054395616,10.919336234487165,9
+pulse_linear_leak_no_sv,"Pulse-only fits, linear motion energy","Leak, no sv",control,DBM6,663.1340117934218,4.601639292046684,4.077424492951309,9
+pulse_linear_leak_no_sv,"Pulse-only fits, linear motion energy","Leak, no sv",control,PSUIM10,139.27157143276978,19.641923996001797,11.047007746701414,9
+pulse_linear_leak_no_sv,"Pulse-only fits, linear motion energy","Leak, no sv",control,PSUIM5,694.0226567414306,15.93946616772287,8.403385978291837,9
+pulse_linear_leak_no_sv,"Pulse-only fits, linear motion energy","Leak, no sv",control,PSUIM6,1763.7892672979058,62.46877658816254,61.96490029536096,9
+pulse_linear_leak_no_sv,"Pulse-only fits, linear motion energy","Leak, no sv",control,PSUIM7,2351.7140048405113,64.13202065111278,45.632454571419544,9
+pulse_linear_leak_no_sv,"Pulse-only fits, linear motion energy","Leak, no sv",pulse,DBM12,459.2638863120006,41.02533140390223,37.62413567414595,36
+pulse_linear_leak_no_sv,"Pulse-only fits, linear motion energy","Leak, no sv",pulse,DBM13,182.15692170292834,28.96051650086146,24.840751207322732,36
+pulse_linear_leak_no_sv,"Pulse-only fits, linear motion energy","Leak, no sv",pulse,DBM14,199.85190185753402,47.78260132733517,43.45570427901202,36
+pulse_linear_leak_no_sv,"Pulse-only fits, linear motion energy","Leak, no sv",pulse,DBM15,286.1108253030965,78.73294714707349,76.09470293751934,48
+pulse_linear_leak_no_sv,"Pulse-only fits, linear motion energy","Leak, no sv",pulse,DBM5,706.5887061352306,44.43849592009798,34.992280661057706,48
+pulse_linear_leak_no_sv,"Pulse-only fits, linear motion energy","Leak, no sv",pulse,DBM6,779.4444052443198,37.75804866982701,33.66320669794147,48
+pulse_linear_leak_no_sv,"Pulse-only fits, linear motion energy","Leak, no sv",pulse,PSUIM10,96.52866001214406,30.390052035930964,29.629323735734907,32
+pulse_linear_leak_no_sv,"Pulse-only fits, linear motion energy","Leak, no sv",pulse,PSUIM5,497.22635994071936,28.807548933659213,17.883437040399688,32
+pulse_linear_leak_no_sv,"Pulse-only fits, linear motion energy","Leak, no sv",pulse,PSUIM6,1293.5312464577896,47.37601744700535,40.91265496161709,32
+pulse_linear_leak_no_sv,"Pulse-only fits, linear motion energy","Leak, no sv",pulse,PSUIM7,1637.5560281299536,110.76285019238155,94.96898587617005,32
+pulse_linear_urgency,"Pulse-only fits, linear motion energy",Urgency,control,DBM12,402.9514922731885,13.90701668600768,10.644436363228309,7
+pulse_linear_urgency,"Pulse-only fits, linear motion energy",Urgency,control,DBM13,185.6348058371497,11.136539562833462,9.169250944670239,7
+pulse_linear_urgency,"Pulse-only fits, linear motion energy",Urgency,control,DBM14,173.1104089529354,5.9453425728831775,4.561774064631827,7
+pulse_linear_urgency,"Pulse-only fits, linear motion energy",Urgency,control,DBM15,254.25804576365167,14.970314580617796,11.992283194403996,9
+pulse_linear_urgency,"Pulse-only fits, linear motion energy",Urgency,control,DBM5,587.2556407480697,14.562614313184408,9.931595393220302,9
+pulse_linear_urgency,"Pulse-only fits, linear motion energy",Urgency,control,DBM6,666.3535824975794,11.040780700361722,5.645527106352716,9
+pulse_linear_urgency,"Pulse-only fits, linear motion energy",Urgency,control,PSUIM10,140.69073983528713,22.480260801036504,9.506446531129063,9
+pulse_linear_urgency,"Pulse-only fits, linear motion energy",Urgency,control,PSUIM5,695.9574530000164,19.809058684893998,9.691656197777533,9
+pulse_linear_urgency,"Pulse-only fits, linear motion energy",Urgency,control,PSUIM6,1781.965557953572,98.82135789949524,95.67559717082196,9
+pulse_linear_urgency,"Pulse-only fits, linear motion energy",Urgency,control,PSUIM7,2364.4960405268216,89.69609202373317,83.2258036714253,9
+pulse_linear_urgency,"Pulse-only fits, linear motion energy",Urgency,pulse,DBM12,458.14724927331787,38.79205732653675,33.49206459203121,36
+pulse_linear_urgency,"Pulse-only fits, linear motion energy",Urgency,pulse,DBM13,182.8040645875379,30.25480227008053,26.70102174505634,36
+pulse_linear_urgency,"Pulse-only fits, linear motion energy",Urgency,pulse,DBM14,203.7176227053655,55.514043022998116,51.24481608899021,36
+pulse_linear_urgency,"Pulse-only fits, linear motion energy",Urgency,pulse,DBM15,287.11816521021893,80.74762696131836,77.15368180563847,48
+pulse_linear_urgency,"Pulse-only fits, linear motion energy",Urgency,pulse,DBM5,710.1846751548181,51.63043395927324,39.86291930954044,48
+pulse_linear_urgency,"Pulse-only fits, linear motion energy",Urgency,pulse,DBM6,782.0631764603802,42.99559110194747,38.871943472525516,48
+pulse_linear_urgency,"Pulse-only fits, linear motion energy",Urgency,pulse,PSUIM10,98.37358782887628,34.079907669395375,33.41724610407417,32
+pulse_linear_urgency,"Pulse-only fits, linear motion energy",Urgency,pulse,PSUIM5,502.1123089834855,38.5794470191914,26.021581237412743,32
+pulse_linear_urgency,"Pulse-only fits, linear motion energy",Urgency,pulse,PSUIM6,1309.0178829449449,78.349290421316,67.73581480398087,32
+pulse_linear_urgency,"Pulse-only fits, linear motion energy",Urgency,pulse,PSUIM7,1662.3170246554494,160.28484324337307,152.0695216088346,32
+pulse_linear_urgency_no_sv,"Pulse-only fits, linear motion energy","Urgency, no sv",control,DBM12,406.0415494924634,20.0871311245575,13.753915120802574,7
+pulse_linear_urgency_no_sv,"Pulse-only fits, linear motion energy","Urgency, no sv",control,DBM13,183.02508135009597,5.917090588726012,5.421886005940671,7
+pulse_linear_urgency_no_sv,"Pulse-only fits, linear motion energy","Urgency, no sv",control,DBM14,173.02205686222786,5.768638391468166,4.387372329163497,7
+pulse_linear_urgency_no_sv,"Pulse-only fits, linear motion energy","Urgency, no sv",control,DBM15,253.90072506291227,14.255673179138999,13.40617941260064,9
+pulse_linear_urgency_no_sv,"Pulse-only fits, linear motion energy","Urgency, no sv",control,DBM5,586.3541079947737,12.759548806592537,10.98591859409942,9
+pulse_linear_urgency_no_sv,"Pulse-only fits, linear motion energy","Urgency, no sv",control,DBM6,663.3765853829071,5.086786471017483,4.456836448917834,9
+pulse_linear_urgency_no_sv,"Pulse-only fits, linear motion energy","Urgency, no sv",control,PSUIM10,139.13941928896088,19.377619708383957,10.476968035252384,9
+pulse_linear_urgency_no_sv,"Pulse-only fits, linear motion energy","Urgency, no sv",control,PSUIM5,694.4819298897071,16.858012464275603,10.501118725407494,9
+pulse_linear_urgency_no_sv,"Pulse-only fits, linear motion energy","Urgency, no sv",control,PSUIM6,1768.2560038432543,71.4022496788599,58.23956361065274,9
+pulse_linear_urgency_no_sv,"Pulse-only fits, linear motion energy","Urgency, no sv",control,PSUIM7,2351.6629466065015,64.02990418309219,47.05910237150067,9
+pulse_linear_urgency_no_sv,"Pulse-only fits, linear motion energy","Urgency, no sv",pulse,DBM12,458.54822604855906,39.594010877018945,33.76302444548651,36
+pulse_linear_urgency_no_sv,"Pulse-only fits, linear motion energy","Urgency, no sv",pulse,DBM13,182.58270507509386,29.812083245192362,25.21211946402228,36
+pulse_linear_urgency_no_sv,"Pulse-only fits, linear motion energy","Urgency, no sv",pulse,DBM14,201.17981584827825,50.43842930882362,46.11360782756983,36
+pulse_linear_urgency_no_sv,"Pulse-only fits, linear motion energy","Urgency, no sv",pulse,DBM15,284.0360408809714,74.58337830282332,73.15867405176698,48
+pulse_linear_urgency_no_sv,"Pulse-only fits, linear motion energy","Urgency, no sv",pulse,DBM5,707.0133884700728,45.28786058978231,34.28570661255417,48
+pulse_linear_urgency_no_sv,"Pulse-only fits, linear motion energy","Urgency, no sv",pulse,DBM6,779.8545427565314,38.57832369425028,33.89121526844846,48
+pulse_linear_urgency_no_sv,"Pulse-only fits, linear motion energy","Urgency, no sv",pulse,PSUIM10,96.91463725582432,31.16200652329147,30.377997186636616,32
+pulse_linear_urgency_no_sv,"Pulse-only fits, linear motion energy","Urgency, no sv",pulse,PSUIM5,497.76051626387334,29.875861579967157,19.43243906151677,32
+pulse_linear_urgency_no_sv,"Pulse-only fits, linear motion energy","Urgency, no sv",pulse,PSUIM6,1294.2539201401637,48.821364811753845,38.43194788463258,32
+pulse_linear_urgency_no_sv,"Pulse-only fits, linear motion energy","Urgency, no sv",pulse,PSUIM7,1635.6209035089482,106.89260095037078,92.10224555724082,32
+pulse_linear_leak_urgency,"Pulse-only fits, linear motion energy",Leak + urgency,control,DBM12,403.43125378623773,14.866539712106245,9.2739649201052,7
+pulse_linear_leak_urgency,"Pulse-only fits, linear motion energy",Leak + urgency,control,DBM13,186.61881880709552,13.104565502725105,10.823959653586417,7
+pulse_linear_leak_urgency,"Pulse-only fits, linear motion energy",Leak + urgency,control,DBM14,171.99456827192878,3.7136612108699723,3.4540012458122575,7
+pulse_linear_leak_urgency,"Pulse-only fits, linear motion energy",Leak + urgency,control,DBM15,253.05111358812263,12.556450229559708,11.611598227947347,9
+pulse_linear_leak_urgency,"Pulse-only fits, linear motion energy",Leak + urgency,control,DBM5,586.2438200577672,12.538972932579426,11.115991750731538,9
+pulse_linear_leak_urgency,"Pulse-only fits, linear motion energy",Leak + urgency,control,DBM6,668.2655303664891,14.864676438181029,7.394080797406225,9
+pulse_linear_leak_urgency,"Pulse-only fits, linear motion energy",Leak + urgency,control,PSUIM10,140.3233686118,21.745518354062206,10.28670783473849,9
+pulse_linear_leak_urgency,"Pulse-only fits, linear motion energy",Leak + urgency,control,PSUIM5,695.3449873005486,18.58412728595873,11.251206078903195,9
+pulse_linear_leak_urgency,"Pulse-only fits, linear motion energy",Leak + urgency,control,PSUIM6,1755.4640421130264,45.81832621840363,41.375430233284305,9
+pulse_linear_leak_urgency,"Pulse-only fits, linear motion energy",Leak + urgency,control,PSUIM7,2358.068079500569,76.8401699712287,55.40190585479985,9
+pulse_linear_leak_urgency,"Pulse-only fits, linear motion energy",Leak + urgency,pulse,DBM12,458.1682535543455,38.83406588859191,34.86648184113551,36
+pulse_linear_leak_urgency,"Pulse-only fits, linear motion energy",Leak + urgency,pulse,DBM13,183.21766720976052,31.08200751452579,27.57447218377201,36
+pulse_linear_leak_urgency,"Pulse-only fits, linear motion energy",Leak + urgency,pulse,DBM14,201.55878502952453,51.196367671316246,46.77866874035882,36
+pulse_linear_leak_urgency,"Pulse-only fits, linear motion energy",Leak + urgency,pulse,DBM15,285.25018381040115,77.01166416168286,74.49832096699416,48
+pulse_linear_leak_urgency,"Pulse-only fits, linear motion energy",Leak + urgency,pulse,DBM5,710.3609363619271,51.98295637349116,39.90115523462875,48
+pulse_linear_leak_urgency,"Pulse-only fits, linear motion energy",Leak + urgency,pulse,DBM6,783.7168727349472,46.30298365108156,42.18913096550449,48
+pulse_linear_leak_urgency,"Pulse-only fits, linear motion energy",Leak + urgency,pulse,PSUIM10,99.04085495154821,35.41444191473926,34.63627226463869,32
+pulse_linear_leak_urgency,"Pulse-only fits, linear motion energy",Leak + urgency,pulse,PSUIM5,503.8232330281481,42.001295108516615,30.162392916354854,32
+pulse_linear_leak_urgency,"Pulse-only fits, linear motion energy",Leak + urgency,pulse,PSUIM6,1306.522654610366,73.35883375215832,59.307186911087186,32
+pulse_linear_leak_urgency,"Pulse-only fits, linear motion energy",Leak + urgency,pulse,PSUIM7,1663.5652636298028,162.78132119207987,147.12367982878132,32
+pulse_linear_leak_urgency_no_sv,"Pulse-only fits, linear motion energy","Leak + urgency, no sv",control,DBM12,406.5235387573857,21.05110965440231,11.209400220699038,7
+pulse_linear_leak_urgency_no_sv,"Pulse-only fits, linear motion energy","Leak + urgency, no sv",control,DBM13,184.3764842840278,8.619896456589665,6.635330829331217,7
+pulse_linear_leak_urgency_no_sv,"Pulse-only fits, linear motion energy","Leak + urgency, no sv",control,DBM14,173.2602128005091,6.24495026803055,5.536290364685449,7
+pulse_linear_leak_urgency_no_sv,"Pulse-only fits, linear motion energy","Leak + urgency, no sv",control,DBM15,255.8986533598415,18.25152977299746,14.632447542027979,9
+pulse_linear_leak_urgency_no_sv,"Pulse-only fits, linear motion energy","Leak + urgency, no sv",control,DBM5,587.5829358811252,15.217204579295561,10.267684857006493,9
+pulse_linear_leak_urgency_no_sv,"Pulse-only fits, linear motion energy","Leak + urgency, no sv",control,DBM6,666.1816781664462,10.696972038095474,5.383357934288448,9
+pulse_linear_leak_urgency_no_sv,"Pulse-only fits, linear motion energy","Leak + urgency, no sv",control,PSUIM10,139.30239113373025,19.703563397922732,11.502838617732458,9
+pulse_linear_leak_urgency_no_sv,"Pulse-only fits, linear motion energy","Leak + urgency, no sv",control,PSUIM5,699.5622962147687,27.018745114398556,6.916535601010608,9
+pulse_linear_leak_urgency_no_sv,"Pulse-only fits, linear motion energy","Leak + urgency, no sv",control,PSUIM6,1761.3761251504693,57.642492293290275,57.18592261866365,9
+pulse_linear_leak_urgency_no_sv,"Pulse-only fits, linear motion energy","Leak + urgency, no sv",control,PSUIM7,2340.346709070214,41.39742911051684,34.447278850762075,9
+pulse_linear_leak_urgency_no_sv,"Pulse-only fits, linear motion energy","Leak + urgency, no sv",pulse,DBM12,458.0726339590042,38.6428266979093,36.13648027691538,36
+pulse_linear_leak_urgency_no_sv,"Pulse-only fits, linear motion energy","Leak + urgency, no sv",pulse,DBM13,181.35175291827895,27.350178931562702,23.159635820423254,36
+pulse_linear_leak_urgency_no_sv,"Pulse-only fits, linear motion energy","Leak + urgency, no sv",pulse,DBM14,200.94843376133295,49.97566513493311,45.39374967771255,36
+pulse_linear_leak_urgency_no_sv,"Pulse-only fits, linear motion energy","Leak + urgency, no sv",pulse,DBM15,285.27224614248854,77.05578882585755,75.50675810447194,48
+pulse_linear_leak_urgency_no_sv,"Pulse-only fits, linear motion energy","Leak + urgency, no sv",pulse,DBM5,707.2447674078783,45.75061846539344,35.434594713662946,48
+pulse_linear_leak_urgency_no_sv,"Pulse-only fits, linear motion energy","Leak + urgency, no sv",pulse,DBM6,782.44667745505,43.76259309128731,34.821758540196576,48
+pulse_linear_leak_urgency_no_sv,"Pulse-only fits, linear motion energy","Leak + urgency, no sv",pulse,PSUIM10,96.90971334379353,31.152158699229858,30.118922466134464,32
+pulse_linear_leak_urgency_no_sv,"Pulse-only fits, linear motion energy","Leak + urgency, no sv",pulse,PSUIM5,498.96222715968884,32.2792833715982,17.74241418519824,32
+pulse_linear_leak_urgency_no_sv,"Pulse-only fits, linear motion energy","Leak + urgency, no sv",pulse,PSUIM6,1292.738502553246,45.790529637918,38.82744009264156,32
+pulse_linear_leak_urgency_no_sv,"Pulse-only fits, linear motion energy","Leak + urgency, no sv",pulse,PSUIM7,1631.055154156541,97.76110224555634,85.51942946303672,32
+pulse_power_primary,"Pulse-only fits, power law",Integrator (sv),control,DBM12,402.6098502808099,13.223732701250654,8.411457899299776,7
+pulse_power_primary,"Pulse-only fits, power law",Integrator (sv),control,DBM13,187.38211845169195,14.631164791917975,11.396299868909928,7
+pulse_power_primary,"Pulse-only fits, power law",Integrator (sv),control,DBM14,173.95975983892288,7.644044344858088,4.731163062744983,7
+pulse_power_primary,"Pulse-only fits, power law",Integrator (sv),control,DBM15,254.40592711315898,15.266077279632448,12.730085374556914,9
+pulse_power_primary,"Pulse-only fits, power law",Integrator (sv),control,DBM5,590.7340343836877,21.51940158442047,12.15777208606547,9
+pulse_power_primary,"Pulse-only fits, power law",Integrator (sv),control,DBM6,668.8468484823087,16.027312669820624,7.229845136245537,9
+pulse_power_primary,"Pulse-only fits, power law",Integrator (sv),control,PSUIM10,140.7804034146148,22.659587959691816,10.372783807023675,9
+pulse_power_primary,"Pulse-only fits, power law",Integrator (sv),control,PSUIM5,692.9516055994961,13.797363883853578,12.884959069051732,9
+pulse_power_primary,"Pulse-only fits, power law",Integrator (sv),control,PSUIM6,1752.358296015068,39.60683402248708,37.14943048790798,9
+pulse_power_primary,"Pulse-only fits, power law",Integrator (sv),control,PSUIM7,2349.551332351563,59.806675673214556,50.052217002163616,9
+pulse_power_primary,"Pulse-only fits, power law",Integrator (sv),pulse,DBM12,458.6731589698494,39.84387671959961,35.44981332563216,36
+pulse_power_primary,"Pulse-only fits, power law",Integrator (sv),pulse,DBM13,183.57667515930717,31.800023413619087,27.894964437315956,36
+pulse_power_primary,"Pulse-only fits, power law",Integrator (sv),pulse,DBM14,199.89115623535085,47.8611100829689,43.45488160835939,36
+pulse_power_primary,"Pulse-only fits, power law",Integrator (sv),pulse,DBM15,285.2505792402964,77.01245502147327,73.88001357558959,48
+pulse_power_primary,"Pulse-only fits, power law",Integrator (sv),pulse,DBM5,709.1780369421613,49.61715753395927,38.957810183758234,48
+pulse_power_primary,"Pulse-only fits, power law",Integrator (sv),pulse,DBM6,780.3611851543221,39.591608489831344,35.90664378613559,48
+pulse_power_primary,"Pulse-only fits, power law",Integrator (sv),pulse,PSUIM10,99.09392644829082,35.52058490822446,34.827647886919856,32
+pulse_power_primary,"Pulse-only fits, power law",Integrator (sv),pulse,PSUIM5,499.64965238356376,33.65413381934803,25.401157123321415,32
+pulse_power_primary,"Pulse-only fits, power law",Integrator (sv),pulse,PSUIM6,1299.7336598544885,59.78084424040306,51.154939855042905,32
+pulse_power_primary,"Pulse-only fits, power law",Integrator (sv),pulse,PSUIM7,1650.1735792420318,135.99795241653777,127.72259538922415,32
+pulse_power_no_sv,"Pulse-only fits, power law","Integrator, no sv",control,DBM12,407.9257193666599,23.855470872950605,10.22219219185277,7
+pulse_power_no_sv,"Pulse-only fits, power law","Integrator, no sv",control,DBM13,182.65050856533395,5.16794501920193,5.025949025256857,7
+pulse_power_no_sv,"Pulse-only fits, power law","Integrator, no sv",control,DBM14,176.1848824262001,12.094289519412598,6.771470112947391,7
+pulse_power_no_sv,"Pulse-only fits, power law","Integrator, no sv",control,DBM15,256.69331896907636,19.840860991467256,15.419805321053065,9
+pulse_power_no_sv,"Pulse-only fits, power law","Integrator, no sv",control,DBM5,590.996699231966,22.044731280977018,14.57140179991147,9
+pulse_power_no_sv,"Pulse-only fits, power law","Integrator, no sv",control,DBM6,665.2371946152891,8.808004935781312,5.391723427054345,9
+pulse_power_no_sv,"Pulse-only fits, power law","Integrator, no sv",control,PSUIM10,139.10754029731604,19.31386172509425,11.947244913837398,9
+pulse_power_no_sv,"Pulse-only fits, power law","Integrator, no sv",control,PSUIM5,695.7975461921717,19.48924506920477,8.646130191279894,9
+pulse_power_no_sv,"Pulse-only fits, power law","Integrator, no sv",control,PSUIM6,1765.0673615295436,65.02496505143819,60.80194356826962,9
+pulse_power_no_sv,"Pulse-only fits, power law","Integrator, no sv",control,PSUIM7,2346.913303602101,54.530618174291874,36.209403582627544,9
+pulse_power_no_sv,"Pulse-only fits, power law","Integrator, no sv",pulse,DBM12,458.52112764163815,39.53981406317726,34.24294796949424,36
+pulse_power_no_sv,"Pulse-only fits, power law","Integrator, no sv",pulse,DBM13,183.52773576033232,31.702144615669468,27.105446753218928,36
+pulse_power_no_sv,"Pulse-only fits, power law","Integrator, no sv",pulse,DBM14,203.09573523092408,54.270268074115386,48.277080455390426,36
+pulse_power_no_sv,"Pulse-only fits, power law","Integrator, no sv",pulse,DBM15,284.35860010889076,75.22849675866209,73.30314055428607,48
+pulse_power_no_sv,"Pulse-only fits, power law","Integrator, no sv",pulse,DBM5,706.8673472086846,44.99577806700586,36.6154339297847,48
+pulse_power_no_sv,"Pulse-only fits, power law","Integrator, no sv",pulse,DBM6,778.5779323614818,36.02510290415086,32.91885216463539,48
+pulse_power_no_sv,"Pulse-only fits, power law","Integrator, no sv",pulse,PSUIM10,96.26363349602059,29.85999900368401,28.80295875936186,32
+pulse_power_no_sv,"Pulse-only fits, power law","Integrator, no sv",pulse,PSUIM5,498.14245910090455,30.639747254029558,17.71092995843875,32
+pulse_power_no_sv,"Pulse-only fits, power law","Integrator, no sv",pulse,PSUIM6,1294.5363326246072,49.38618978064049,41.5906713537299,32
+pulse_power_no_sv,"Pulse-only fits, power law","Integrator, no sv",pulse,PSUIM7,1633.9194692395022,103.4897324114782,87.62195918335023,32
+pulse_power_leak,"Pulse-only fits, power law",Leak,control,DBM12,408.0779286853806,24.159889510391935,12.503759901687914,7
+pulse_power_leak,"Pulse-only fits, power law",Leak,control,DBM13,184.6145723320942,9.096072552722532,8.578801792640704,7
+pulse_power_leak,"Pulse-only fits, power law",Leak,control,DBM14,176.37491685373732,12.474358374486997,5.0959045423313185,7
+pulse_power_leak,"Pulse-only fits, power law",Leak,control,DBM15,253.15706081482517,12.768344682964873,11.965497818152961,9
+pulse_power_leak,"Pulse-only fits, power law",Leak,control,DBM5,591.5609339689887,23.173200755022506,13.231075104257755,9
+pulse_power_leak,"Pulse-only fits, power law",Leak,control,DBM6,665.2514006487659,8.836417002734585,4.611800055591381,9
+pulse_power_leak,"Pulse-only fits, power law",Leak,control,PSUIM10,140.50588932473076,22.110559779923708,9.972535908308126,9
+pulse_power_leak,"Pulse-only fits, power law",Leak,control,PSUIM5,691.4242562719869,10.742665228835406,0.7590643298512845,9
+pulse_power_leak,"Pulse-only fits, power law",Leak,control,PSUIM6,1747.477206596125,29.84465518460115,29.265066641779526,9
+pulse_power_leak,"Pulse-only fits, power law",Leak,control,PSUIM7,2342.8094149981052,46.32284096630042,39.290936503750004,9
+pulse_power_leak,"Pulse-only fits, power law",Leak,pulse,DBM12,458.2209947773028,38.93954833450647,35.50552982245863,36
+pulse_power_leak,"Pulse-only fits, power law",Leak,pulse,DBM13,183.6350992940025,31.91687168300976,28.69797235708909,36
+pulse_power_leak,"Pulse-only fits, power law",Leak,pulse,DBM14,202.12494190579014,52.32868142384754,45.82502079160375,36
+pulse_power_leak,"Pulse-only fits, power law",Leak,pulse,DBM15,285.91413945080245,78.3395754424854,76.10254452069609,48
+pulse_power_leak,"Pulse-only fits, power law",Leak,pulse,DBM5,709.1654202106145,49.591924070865694,38.659734143376454,48
+pulse_power_leak,"Pulse-only fits, power law",Leak,pulse,DBM6,778.9203445725868,36.70992732636084,31.284280490413842,48
+pulse_power_leak,"Pulse-only fits, power law",Leak,pulse,PSUIM10,98.4118733394229,34.156478690488626,33.578919350292864,32
+pulse_power_leak,"Pulse-only fits, power law",Leak,pulse,PSUIM5,501.9593719440729,38.273572940366265,25.829874854129265,32
+pulse_power_leak,"Pulse-only fits, power law",Leak,pulse,PSUIM6,1297.2796318717176,54.87278827486123,48.278063567567756,32
+pulse_power_leak,"Pulse-only fits, power law",Leak,pulse,PSUIM7,1653.3659612175725,142.3827163676192,134.98391628101544,32
+pulse_power_leak_no_sv,"Pulse-only fits, power law","Leak, no sv",control,DBM12,403.9265847558337,15.857201651298283,11.21662922203737,7
+pulse_power_leak_no_sv,"Pulse-only fits, power law","Leak, no sv",control,DBM13,185.0717476340456,10.0104231566253,6.782203965312142,7
+pulse_power_leak_no_sv,"Pulse-only fits, power law","Leak, no sv",control,DBM14,172.94363526194596,5.611795190904317,4.583701142972387,7
+pulse_power_leak_no_sv,"Pulse-only fits, power law","Leak, no sv",control,DBM15,261.04739173739034,28.549006528095187,20.048747365432458,9
+pulse_power_leak_no_sv,"Pulse-only fits, power law","Leak, no sv",control,DBM5,592.5203233393509,25.091979495746845,14.02513352542346,9
+pulse_power_leak_no_sv,"Pulse-only fits, power law","Leak, no sv",control,DBM6,667.3091849177677,12.951985540738335,10.413083591081275,9
+pulse_power_leak_no_sv,"Pulse-only fits, power law","Leak, no sv",control,PSUIM10,139.55182932168012,20.20243977382245,10.843737162353412,9
+pulse_power_leak_no_sv,"Pulse-only fits, power law","Leak, no sv",control,PSUIM5,700.7326758594298,29.359504403720962,17.779216224791668,9
+pulse_power_leak_no_sv,"Pulse-only fits, power law","Leak, no sv",control,PSUIM6,1763.671875210511,62.23399241337296,59.25506365517663,9
+pulse_power_leak_no_sv,"Pulse-only fits, power law","Leak, no sv",control,PSUIM7,2342.325035314127,45.35408159834304,20.597928695513872,9
+pulse_power_leak_no_sv,"Pulse-only fits, power law","Leak, no sv",pulse,DBM12,457.7931280419201,38.08381486374121,34.467220433655896,36
+pulse_power_leak_no_sv,"Pulse-only fits, power law","Leak, no sv",pulse,DBM13,183.13198671559357,30.910646526191847,26.240990491262345,36
+pulse_power_leak_no_sv,"Pulse-only fits, power law","Leak, no sv",pulse,DBM14,199.26339401128075,46.605585634828614,42.05240713634879,36
+pulse_power_leak_no_sv,"Pulse-only fits, power law","Leak, no sv",pulse,DBM15,286.4462883259803,79.40387319284108,75.81478328844698,48
+pulse_power_leak_no_sv,"Pulse-only fits, power law","Leak, no sv",pulse,DBM5,705.0877233519693,41.436530353575634,33.920832838887335,48
+pulse_power_leak_no_sv,"Pulse-only fits, power law","Leak, no sv",pulse,DBM6,778.4322755858545,35.73378935289636,32.979980192037765,48
+pulse_power_leak_no_sv,"Pulse-only fits, power law","Leak, no sv",pulse,PSUIM10,97.05081910470281,31.43437022104842,30.63013084966406,32
+pulse_power_leak_no_sv,"Pulse-only fits, power law","Leak, no sv",pulse,PSUIM5,498.7842855863021,31.923400224824576,20.32801866901454,32
+pulse_power_leak_no_sv,"Pulse-only fits, power law","Leak, no sv",pulse,PSUIM6,1294.0046183131594,48.322761157745134,41.36905762566037,32
+pulse_power_leak_no_sv,"Pulse-only fits, power law","Leak, no sv",pulse,PSUIM7,1636.0600539627717,107.7709018580178,89.41532996416692,32
+pulse_power_urgency,"Pulse-only fits, power law",Urgency,control,DBM12,407.8636146940188,23.73126152766848,13.58201344779367,7
+pulse_power_urgency,"Pulse-only fits, power law",Urgency,control,DBM13,188.38571615773714,16.638360204008357,13.64422734293354,7
+pulse_power_urgency,"Pulse-only fits, power law",Urgency,control,DBM14,172.603007267847,4.930539202706399,4.2396152101901805,7
+pulse_power_urgency,"Pulse-only fits, power law",Urgency,control,DBM15,256.0057282175778,18.46567948847017,12.654739078172849,9
+pulse_power_urgency,"Pulse-only fits, power law",Urgency,control,DBM5,588.2018680352171,16.45506888747915,11.484808947439724,9
+pulse_power_urgency,"Pulse-only fits, power law",Urgency,control,DBM6,663.0267363228136,4.387088350830155,3.684063147426045,9
+pulse_power_urgency,"Pulse-only fits, power law",Urgency,control,PSUIM10,140.24980286278912,21.598386856040463,9.266636796493021,9
+pulse_power_urgency,"Pulse-only fits, power law",Urgency,control,PSUIM5,695.414931276501,18.724015237863313,4.3463606145276685,9
+pulse_power_urgency,"Pulse-only fits, power law",Urgency,control,PSUIM6,1750.2550890023956,35.40041999714202,30.37476398332109,9
+pulse_power_urgency,"Pulse-only fits, power law",Urgency,control,PSUIM7,2353.298444247594,67.30089946527755,50.9796303211167,9
+pulse_power_urgency,"Pulse-only fits, power law",Urgency,pulse,DBM12,459.0677967033786,40.63315218665811,37.840910756144666,36
+pulse_power_urgency,"Pulse-only fits, power law",Urgency,pulse,DBM13,183.57882024916202,31.804313593328803,27.98034249651,36
+pulse_power_urgency,"Pulse-only fits, power law",Urgency,pulse,DBM14,200.0943499966319,48.26749760553095,43.76841905799003,36
+pulse_power_urgency,"Pulse-only fits, power law",Urgency,pulse,DBM15,286.2540343545707,79.01936525002186,74.44978072504816,48
+pulse_power_urgency,"Pulse-only fits, power law",Urgency,pulse,DBM5,708.5786329027414,48.4183494551197,39.0004514963905,48
+pulse_power_urgency,"Pulse-only fits, power law",Urgency,pulse,DBM6,778.9124707622071,36.69417970560177,31.96194614285685,48
+pulse_power_urgency,"Pulse-only fits, power law",Urgency,pulse,PSUIM10,98.64478193936773,34.62229589037828,34.0415238217425,32
+pulse_power_urgency,"Pulse-only fits, power law",Urgency,pulse,PSUIM5,500.6289923871268,35.61281382647416,19.64407276524012,32
+pulse_power_urgency,"Pulse-only fits, power law",Urgency,pulse,PSUIM6,1298.7634721575814,57.840468846589104,48.98852048754369,32
+pulse_power_urgency,"Pulse-only fits, power law",Urgency,pulse,PSUIM7,1649.0742058092274,133.79920555092855,123.33008638103887,32
+pulse_power_urgency_no_sv,"Pulse-only fits, power law","Urgency, no sv",control,DBM12,408.4652363214106,24.93450478245191,11.736436833837274,7
+pulse_power_urgency_no_sv,"Pulse-only fits, power law","Urgency, no sv",control,DBM13,183.29799535991296,6.462918608360027,5.759663750875561,7
+pulse_power_urgency_no_sv,"Pulse-only fits, power law","Urgency, no sv",control,DBM14,172.98587610827903,5.6962768835704765,5.298618411929787,7
+pulse_power_urgency_no_sv,"Pulse-only fits, power law","Urgency, no sv",control,DBM15,261.15857175533176,28.771366563978,16.663137796017118,9
+pulse_power_urgency_no_sv,"Pulse-only fits, power law","Urgency, no sv",control,DBM5,592.2001111522457,24.45155512153656,15.336234228191277,9
+pulse_power_urgency_no_sv,"Pulse-only fits, power law","Urgency, no sv",control,DBM6,664.5638209465153,7.461257598233793,4.020979884108009,9
+pulse_power_urgency_no_sv,"Pulse-only fits, power law","Urgency, no sv",control,PSUIM10,138.9456507797188,18.990082689899804,9.696021219013312,9
+pulse_power_urgency_no_sv,"Pulse-only fits, power law","Urgency, no sv",control,PSUIM5,694.4205646879047,16.735282060670798,2.532516338677297,9
+pulse_power_urgency_no_sv,"Pulse-only fits, power law","Urgency, no sv",control,PSUIM6,1763.1435315492727,61.17730509089637,54.612180842283976,9
+pulse_power_urgency_no_sv,"Pulse-only fits, power law","Urgency, no sv",control,PSUIM7,2347.232677564329,55.1693660987479,38.52170764971379,9
+pulse_power_urgency_no_sv,"Pulse-only fits, power law","Urgency, no sv",pulse,DBM12,458.5153348352978,39.528228450496485,34.6064305853774,36
+pulse_power_urgency_no_sv,"Pulse-only fits, power law","Urgency, no sv",pulse,DBM13,183.09713161616108,30.84093632732693,25.819698255349145,36
+pulse_power_urgency_no_sv,"Pulse-only fits, power law","Urgency, no sv",pulse,DBM14,200.67840610781852,49.4356098279043,45.078033816108686,36
+pulse_power_urgency_no_sv,"Pulse-only fits, power law","Urgency, no sv",pulse,DBM15,286.22295858999684,78.95721372087422,74.64635865400007,48
+pulse_power_urgency_no_sv,"Pulse-only fits, power law","Urgency, no sv",pulse,DBM5,706.0180710841119,43.29722581786062,36.51812042709936,48
+pulse_power_urgency_no_sv,"Pulse-only fits, power law","Urgency, no sv",pulse,DBM6,779.5769109587034,38.02306009859411,35.01169073395727,48
+pulse_power_urgency_no_sv,"Pulse-only fits, power law","Urgency, no sv",pulse,PSUIM10,96.83240457852332,30.997541168689494,30.361125289920658,32
+pulse_power_urgency_no_sv,"Pulse-only fits, power law","Urgency, no sv",pulse,PSUIM5,498.5345739242885,31.423976900797427,18.729679396134618,32
+pulse_power_urgency_no_sv,"Pulse-only fits, power law","Urgency, no sv",pulse,PSUIM6,1293.7705701588711,47.854664849169005,38.98221882919759,32
+pulse_power_urgency_no_sv,"Pulse-only fits, power law","Urgency, no sv",pulse,PSUIM7,1633.9429257740564,103.53664548058686,88.61917913765103,32
+pulse_power_leak_urgency,"Pulse-only fits, power law",Leak + urgency,control,DBM12,404.35598305347935,16.71599824658942,11.32551383662016,7
+pulse_power_leak_urgency,"Pulse-only fits, power law",Leak + urgency,control,DBM13,186.31414123896704,12.49521036646815,10.542044520652261,7
+pulse_power_leak_urgency,"Pulse-only fits, power law",Leak + urgency,control,DBM14,173.19256362281928,6.109651912650968,4.552580486036504,7
+pulse_power_leak_urgency,"Pulse-only fits, power law",Leak + urgency,control,DBM15,254.54003751651004,15.534298086334495,14.369286520066858,9
+pulse_power_leak_urgency,"Pulse-only fits, power law",Leak + urgency,control,DBM5,594.187861057916,28.427054932877144,12.925963913067836,9
+pulse_power_leak_urgency,"Pulse-only fits, power law",Leak + urgency,control,DBM6,666.1551192790356,10.643854263274235,4.712825119771722,9
+pulse_power_leak_urgency,"Pulse-only fits, power law",Leak + urgency,control,PSUIM10,135.91585849902475,12.930498128511715,8.3130336016071,9
+pulse_power_leak_urgency,"Pulse-only fits, power law",Leak + urgency,control,PSUIM5,693.7656660811246,15.425484847110411,14.90821088120721,9
+pulse_power_leak_urgency,"Pulse-only fits, power law",Leak + urgency,control,PSUIM6,1763.9670399734016,62.82432193915446,62.4802249234279,9
+pulse_power_leak_urgency,"Pulse-only fits, power law",Leak + urgency,control,PSUIM7,2354.663397044794,70.03080505967722,50.38909837934261,9
+pulse_power_leak_urgency,"Pulse-only fits, power law",Leak + urgency,pulse,DBM12,458.4952173878614,39.48799355562378,34.007964599018514,36
+pulse_power_leak_urgency,"Pulse-only fits, power law",Leak + urgency,pulse,DBM13,182.43806090116388,29.522794897332503,26.327121964009216,36
+pulse_power_leak_urgency,"Pulse-only fits, power law",Leak + urgency,pulse,DBM14,201.0061684874585,50.09113458718422,45.7268927805746,36
+pulse_power_leak_urgency,"Pulse-only fits, power law",Leak + urgency,pulse,DBM15,284.52810666678374,75.56750987444798,72.72350011098543,48
+pulse_power_leak_urgency,"Pulse-only fits, power law",Leak + urgency,pulse,DBM5,707.6919493175495,46.644982284735775,37.60853152855359,48
+pulse_power_leak_urgency,"Pulse-only fits, power law",Leak + urgency,pulse,DBM6,779.0695719402457,37.0083820616788,31.965009495531028,48
+pulse_power_leak_urgency,"Pulse-only fits, power law",Leak + urgency,pulse,PSUIM10,100.48572265811731,38.30417732787743,37.42183100851364,32
+pulse_power_leak_urgency,"Pulse-only fits, power law",Leak + urgency,pulse,PSUIM5,500.91620400655626,36.18723706533295,29.020648074772875,32
+pulse_power_leak_urgency,"Pulse-only fits, power law",Leak + urgency,pulse,PSUIM6,1307.0275792945797,74.36868312058553,64.90458000926708,32
+pulse_power_leak_urgency,"Pulse-only fits, power law",Leak + urgency,pulse,PSUIM7,1658.8893746084987,153.42954314947139,140.6199188613227,32
+pulse_power_leak_urgency_no_sv,"Pulse-only fits, power law","Leak + urgency, no sv",control,DBM12,406.3260937918043,20.656219723239474,10.452577211771398,7
+pulse_power_leak_urgency_no_sv,"Pulse-only fits, power law","Leak + urgency, no sv",control,DBM13,183.99719995532809,7.861327799190299,6.7997501364696475,7
+pulse_power_leak_urgency_no_sv,"Pulse-only fits, power law","Leak + urgency, no sv",control,DBM14,173.16702323523066,6.058571137473706,5.022357725400845,7
+pulse_power_leak_urgency_no_sv,"Pulse-only fits, power law","Leak + urgency, no sv",control,DBM15,261.39100922022874,29.236241493771963,19.04201724211081,9
+pulse_power_leak_urgency_no_sv,"Pulse-only fits, power law","Leak + urgency, no sv",control,DBM5,592.7819347957984,25.615202408642034,16.030902424964864,9
+pulse_power_leak_urgency_no_sv,"Pulse-only fits, power law","Leak + urgency, no sv",control,DBM6,663.6994419418412,5.732499588885439,4.265811729168142,9
+pulse_power_leak_urgency_no_sv,"Pulse-only fits, power law","Leak + urgency, no sv",control,PSUIM10,140.05666721834086,21.212115567143904,11.146626508277368,9
+pulse_power_leak_urgency_no_sv,"Pulse-only fits, power law","Leak + urgency, no sv",control,PSUIM5,698.4100231541745,24.714198993210474,15.936129113104968,9
+pulse_power_leak_urgency_no_sv,"Pulse-only fits, power law","Leak + urgency, no sv",control,PSUIM6,1757.3038293079362,49.497900608223574,48.57977437746615,9
+pulse_power_leak_urgency_no_sv,"Pulse-only fits, power law","Leak + urgency, no sv",control,PSUIM7,2348.1534157136457,57.01084239738066,40.4626845668127,9
+pulse_power_leak_urgency_no_sv,"Pulse-only fits, power law","Leak + urgency, no sv",pulse,DBM12,459.5960358626448,41.68963050519062,38.16165860062266,36
+pulse_power_leak_urgency_no_sv,"Pulse-only fits, power law","Leak + urgency, no sv",pulse,DBM13,182.11240192025878,28.871476935522292,24.712034634870914,36
+pulse_power_leak_urgency_no_sv,"Pulse-only fits, power law","Leak + urgency, no sv",pulse,DBM14,198.553593033173,45.185983678613184,40.56630428771421,36
+pulse_power_leak_urgency_no_sv,"Pulse-only fits, power law","Leak + urgency, no sv",pulse,DBM15,286.5723138458149,79.65592423251033,75.78559208117044,48
+pulse_power_leak_urgency_no_sv,"Pulse-only fits, power law","Leak + urgency, no sv",pulse,DBM5,706.7322208576554,44.72552536494783,38.06006611882723,48
+pulse_power_leak_urgency_no_sv,"Pulse-only fits, power law","Leak + urgency, no sv",pulse,DBM6,778.5739078974377,36.01705397606292,32.500187522307634,48
+pulse_power_leak_urgency_no_sv,"Pulse-only fits, power law","Leak + urgency, no sv",pulse,PSUIM10,97.0296172729823,31.391966557607446,30.2791212189032,32
+pulse_power_leak_urgency_no_sv,"Pulse-only fits, power law","Leak + urgency, no sv",pulse,PSUIM5,499.1977010878668,32.75023122795403,21.324768453116807,32
+pulse_power_leak_urgency_no_sv,"Pulse-only fits, power law","Leak + urgency, no sv",pulse,PSUIM6,1291.3015456901358,42.91661591169774,37.51155934479428,32
+pulse_power_leak_urgency_no_sv,"Pulse-only fits, power law","Leak + urgency, no sv",pulse,PSUIM7,1633.857335595722,103.36546512391803,88.57426743670378,32
+linear_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, linear",control,DBM12,400.40775465686664,8.819541453364039,7.055176023367935,7
+linear_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, linear",control,DBM13,185.2991816249346,10.465291138403288,8.40193507563697,7
+linear_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, linear",control,DBM14,172.73741021073283,5.199345088478012,4.099908970270164,7
+linear_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, linear",control,DBM15,253.92545288281283,14.30512881894016,11.382270132897828,9
+linear_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, linear",control,DBM5,585.2414274075459,10.534187632136781,8.584883041569288,9
+linear_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, linear",control,DBM6,663.73742355957,5.808462824342826,2.0204328498424218,9
+linear_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, linear",control,PSUIM10,134.20419447668866,9.50717008383955,8.929760762574332,9
+linear_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, linear",control,PSUIM5,700.499951643439,28.89405597173932,28.595486615505777,9
+linear_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, linear",control,PSUIM6,1760.6408368375005,56.17191566735244,48.984932095943066,9
+linear_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, linear",control,PSUIM7,2354.0321092523723,68.7682294748347,51.62064644371168,9
+linear_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, linear",pulse,DBM12,463.4034111452048,49.30438107031076,45.73682528149765,36
+linear_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, linear",pulse,DBM13,183.89095206471856,32.42857722444181,28.576183504319907,36
+linear_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, linear",pulse,DBM14,202.8510777551435,53.780953122554195,49.54434915268022,36
+linear_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, linear",pulse,DBM15,284.59631084221934,75.7039182253192,73.08968433933401,48
+linear_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, linear",pulse,DBM5,710.4512034811638,52.16349061196456,39.14763042075544,48
+linear_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, linear",pulse,DBM6,782.978750388897,44.8267389589813,35.47909711764966,48
+linear_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, linear",pulse,PSUIM10,101.80777818408743,40.9482883798177,38.54560971584585,32
+linear_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, linear",pulse,PSUIM5,506.7634054990036,47.88164005022778,40.983375945325434,32
+linear_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, linear",pulse,PSUIM6,1310.7003260103083,81.7141765520428,66.54641821428618,32
+linear_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, linear",pulse,PSUIM7,1667.9467917257068,171.54437738388754,159.71822309319958,32
+linear_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, linear, no sv",control,DBM12,404.05304333832396,16.11011881627863,7.356196540675796,7
+linear_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, linear, no sv",control,DBM13,184.18007896419493,8.227085816923939,7.455166364049184,7
+linear_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, linear, no sv",control,DBM14,172.06716684851702,3.8588583640464407,3.531460241935733,7
+linear_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, linear, no sv",control,DBM15,255.8856739713562,18.225570996026885,12.327521535441601,9
+linear_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, linear, no sv",control,DBM5,586.6837712735444,13.418875364133733,9.238861738797603,9
+linear_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, linear, no sv",control,DBM6,663.3733335004416,5.080282706086308,3.6364431344648267,9
+linear_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, linear, no sv",control,PSUIM10,133.30430906983148,7.707399270125158,7.484259225051179,9
+linear_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, linear, no sv",control,PSUIM5,695.3072119518554,18.50857658857224,11.809929821666756,9
+linear_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, linear, no sv",control,PSUIM6,1764.460073238258,63.81038846886713,58.66243406696441,9
+linear_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, linear, no sv",control,PSUIM7,2338.2542634140536,37.21253779819699,36.26826836506723,9
+linear_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, linear, no sv",pulse,DBM12,459.8902196139889,42.27799800787884,40.162111498535246,36
+linear_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, linear, no sv",pulse,DBM13,181.74714214524684,28.14095738549842,24.31811472130055,36
+linear_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, linear, no sv",pulse,DBM14,202.31301642348677,52.704830459240725,47.15338191890693,36
+linear_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, linear, no sv",pulse,DBM15,285.30693345005596,77.12516344099242,73.93282574674808,48
+linear_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, linear, no sv",pulse,DBM5,706.8132340598413,44.887551769319515,35.43511239246149,48
+linear_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, linear, no sv",pulse,DBM6,786.8992004408938,52.66763906297503,47.87821845148226,48
+linear_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, linear, no sv",pulse,PSUIM10,100.80766502719969,38.9480620660422,36.742628869433496,32
+linear_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, linear, no sv",pulse,PSUIM5,498.88463284142375,32.124094735067985,21.927411715312783,32
+linear_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, linear, no sv",pulse,PSUIM6,1295.771920273421,51.85736507826837,41.75315811201719,32
+linear_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, linear, no sv",pulse,PSUIM7,1634.3890407888773,104.42887551022882,98.63762433574853,32
+power_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, power law",control,DBM12,400.4562634022614,8.916558944153579,6.62655776917255,7
+power_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, power law",control,DBM13,185.32798057994447,10.522889048422954,9.428072650998878,7
+power_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, power law",control,DBM14,172.5279594569353,4.780443580882967,3.602352731022478,7
+power_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, power law",control,DBM15,252.6194526375581,11.693128328430667,10.420661155733292,9
+power_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, power law",control,DBM5,586.0125235680713,12.076379953187594,9.705056390783593,9
+power_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, power law",control,DBM6,665.874717571185,10.083050847573013,2.458456331850094,9
+power_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, power law",control,PSUIM10,135.46071452064328,12.020210171748761,6.928643832581582,9
+power_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, power law",control,PSUIM5,691.0514246055061,9.997001895873765,9.700315637641452,9
+power_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, power law",control,PSUIM6,1744.507277243304,23.9047964789591,22.227743171533064,9
+power_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, power law",control,PSUIM7,2341.8026323855993,44.3092757412889,25.493065411377586,9
+power_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, power law",pulse,DBM12,461.50022056284,45.49799990558124,41.94771358585662,36
+power_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, power law",pulse,DBM13,182.484242432149,29.61515795930274,26.38590012602697,36
+power_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, power law",pulse,DBM14,201.61276315270803,51.30432391768324,46.964709906310624,36
+power_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, power law",pulse,DBM15,284.7126533034475,75.93660314777546,73.77750432993209,48
+power_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, power law",pulse,DBM5,709.8623400006845,50.98576365100587,38.31722423137214,48
+power_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, power law",pulse,DBM6,778.7938086690449,36.456855519277106,33.61454434227832,48
+power_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, power law",pulse,PSUIM10,100.60773175612638,38.548195523895586,37.473151729288006,32
+power_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, power law",pulse,PSUIM5,499.3254959242265,33.00582090067344,25.90380298593349,32
+power_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, power law",pulse,PSUIM6,1302.4980280803074,65.309580692041,59.59008818538684,32
+power_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, power law",pulse,PSUIM7,1657.2009503085142,150.05269454950303,138.0097243671119,32
+power_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, power law, no sv",control,DBM12,410.9741568171863,29.952345774003334,8.000629367366713,7
+power_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, power law, no sv",control,DBM13,183.84169934540535,7.550326579344748,7.490831899774015,7
+power_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, power law, no sv",control,DBM14,172.08269267784794,3.889910022708257,3.5627628123425694,7
+power_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, power law, no sv",control,DBM15,255.8541547290152,18.16253251134482,12.958823694305293,9
+power_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, power law, no sv",control,DBM5,586.1597761850511,12.370885187147259,8.206309903242165,9
+power_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, power law, no sv",control,DBM6,667.2914672843435,12.916550273890266,4.264356309447919,9
+power_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, power law, no sv",control,PSUIM10,135.02929090377518,11.157362938012557,9.037561302829673,9
+power_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, power law, no sv",control,PSUIM5,693.0695498995548,14.033252483970784,8.155665004998099,9
+power_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, power law, no sv",control,PSUIM6,1750.4457338360573,35.78170966446595,35.45978569206835,9
+power_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, power law, no sv",control,PSUIM7,2351.0990464693805,62.90210390885056,54.04747977830186,9
+power_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, power law, no sv",pulse,DBM12,459.26930018141155,41.03615914272403,36.900249882949225,36
+power_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, power law, no sv",pulse,DBM13,181.85791786262376,28.362508820252337,24.994861428232127,36
+power_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, power law, no sv",pulse,DBM14,201.14859262689063,50.37598286604848,45.69692241531354,36
+power_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, power law, no sv",pulse,DBM15,285.56335578270443,77.63800810628932,74.75391567084586,48
+power_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, power law, no sv",pulse,DBM5,707.0998176886931,45.46071902702306,35.289289990313115,48
+power_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, power law, no sv",pulse,DBM6,779.3760957127886,37.621429606764636,35.104105313347404,48
+power_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, power law, no sv",pulse,PSUIM10,98.73400177175455,34.80073555515194,33.52407955245475,32
+power_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, power law, no sv",pulse,PSUIM5,497.21541749035316,28.78566403292676,18.538508615352324,32
+power_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, power law, no sv",pulse,PSUIM6,1297.829726470171,55.97297747176835,49.45836352743222,32
+power_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, power law, no sv",pulse,PSUIM7,1634.1453094059568,103.94141274438812,92.39835014723545,32
+norm_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization",control,DBM12,400.2097058605579,8.423443860746573,5.754646161676547,7
+norm_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization",control,DBM13,186.3183951673728,12.503718223279684,11.053540691961778,7
+norm_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization",control,DBM14,173.0193279518853,5.763180570782936,4.050052401521057,7
+norm_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization",control,DBM15,254.28893782010903,15.032098693532488,10.79454340299395,9
+norm_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization",control,DBM5,592.2979102843045,24.647153385654207,9.333859807466098,9
+norm_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization",control,DBM6,665.3146807494829,8.96297720416905,4.0645513652883665,9
+norm_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization",control,PSUIM10,134.5856989621321,10.270179054726427,7.060350945864126,9
+norm_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization",control,PSUIM5,689.8987198835057,7.691592451872907,6.0096948804975625,9
+norm_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization",control,PSUIM6,1745.310957416062,25.512156824474744,19.54123129181511,9
+norm_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization",control,PSUIM7,2343.7838091954827,48.27162936105549,24.263433524420407,9
+norm_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization",pulse,DBM12,461.45320994413044,45.40397866816189,42.08685877586192,36
+norm_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization",pulse,DBM13,182.95266097493578,30.551995044876296,26.440215860528536,36
+norm_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization",pulse,DBM14,200.11090486443024,48.30060734112767,44.21879458807177,36
+norm_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization",pulse,DBM15,284.77634063780386,76.06397781648822,72.57137705879876,48
+norm_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization",pulse,DBM5,709.9061042618423,51.07329217332147,39.27943470285235,48
+norm_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization",pulse,DBM6,779.1672909033973,37.20381998798213,33.40435962505404,48
+norm_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization",pulse,PSUIM10,102.14074123450322,41.61421448064925,40.09642383468644,32
+norm_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization",pulse,PSUIM5,499.42251401993866,33.19985709209777,25.966199771342833,32
+norm_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization",pulse,PSUIM6,1303.2911104174473,66.89574536632105,61.83982812180455,32
+norm_ugm,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization",pulse,PSUIM7,1657.3300024113469,150.31079875516792,136.78770119806433,32
+norm_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",control,DBM12,403.3128219975724,14.629676134775622,6.494634107529919,7
+norm_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",control,DBM13,189.29629875972785,18.459525407989737,8.479887196040643,7
+norm_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",control,DBM14,171.8637813892841,3.4520874455805526,3.2445129099860637,7
+norm_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",control,DBM15,253.9785605179835,14.4113440892815,11.931258194135694,9
+norm_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",control,DBM5,587.1828553932959,14.417043603636834,11.414434397557976,9
+norm_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",control,DBM6,667.4983435481904,13.330302801583947,4.977954989281734,9
+norm_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",control,PSUIM10,134.0330510413353,9.164883213132848,6.827739869953577,9
+norm_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",control,PSUIM5,692.7710686788741,13.436290042609684,13.386352279666156,9
+norm_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",control,PSUIM6,1748.9090005242597,32.708243040870116,24.64275733229465,9
+norm_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",control,PSUIM7,2361.7443042253944,84.19261942087758,41.99356191616164,9
+norm_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",pulse,DBM12,463.1561676672163,48.80989411433369,46.16799936900185,36
+norm_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",pulse,DBM13,183.0220864799229,30.69084605485058,23.759155212720607,36
+norm_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",pulse,DBM14,199.628592243077,47.33598209842122,42.587167113687265,36
+norm_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",pulse,DBM15,286.2724068619247,79.05611026472988,77.21197410176707,48
+norm_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",pulse,DBM5,706.4434634608476,44.14801057133205,34.49822043070728,48
+norm_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",pulse,DBM6,779.471591707719,37.81242159662531,34.87386507093944,48
+norm_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",pulse,PSUIM10,98.08920915710422,33.51115032585128,32.1776388973079,32
+norm_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",pulse,PSUIM5,496.9930273340116,28.340883720243653,20.372930386481336,32
+norm_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",pulse,PSUIM6,1294.0183771419806,48.350278815387576,43.19925232400019,32
+norm_ugm_no_sv,"All trials, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",pulse,PSUIM7,1623.9969015216573,83.64459697578887,62.472893853684425,32
+pulse_linear_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear",control,DBM12,402.29717978327255,12.598391706175846,9.630691902885772,7
+pulse_linear_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear",control,DBM13,186.9320137318261,13.730955352186264,9.704439233700803,7
+pulse_linear_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear",control,DBM14,172.4952641329529,4.715052932918226,4.027041699986306,7
+pulse_linear_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear",control,DBM15,255.40445046652133,17.263123986357115,11.868979967360373,9
+pulse_linear_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear",control,DBM5,585.4498283093609,10.950989435767006,10.17498220635499,9
+pulse_linear_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear",control,DBM6,664.0671812641641,6.4679782335311415,4.868465744299812,9
+pulse_linear_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear",control,PSUIM10,137.18511307943862,15.469007289339476,8.549342817094178,9
+pulse_linear_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear",control,PSUIM5,696.9894824282632,21.873117541387714,20.125850866334403,9
+pulse_linear_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear",control,PSUIM6,1794.8465333929532,124.58330877825756,118.36315223765433,9
+pulse_linear_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear",control,PSUIM7,2358.9976522516004,78.69931547329026,57.6636295255592,9
+pulse_linear_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear",pulse,DBM12,458.70259129873114,39.9027413773633,36.09856658833063,36
+pulse_linear_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear",pulse,DBM13,182.63284092638094,29.912354947766563,26.55198482390109,36
+pulse_linear_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear",pulse,DBM14,202.75064578096004,53.58008917418733,49.23528856488526,36
+pulse_linear_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear",pulse,DBM15,285.2673542200472,77.04600498097491,73.57697257207039,48
+pulse_linear_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear",pulse,DBM5,711.391297555038,54.04367875971284,38.85982572454619,48
+pulse_linear_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear",pulse,DBM6,781.572625381495,42.01448894417713,38.19344972882739,48
+pulse_linear_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear",pulse,PSUIM10,100.44403012721565,38.220792266074156,37.32457561745922,32
+pulse_linear_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear",pulse,PSUIM5,503.6424128325259,41.63965471727234,34.44664624791928,32
+pulse_linear_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear",pulse,PSUIM6,1317.9886205220866,96.29076557559947,90.79024436152929,32
+pulse_linear_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear",pulse,PSUIM7,1664.8002750967944,165.25134412606297,151.39896946892858,32
+pulse_linear_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear, no sv",control,DBM12,403.3615128340536,14.72705780773802,10.341611044224777,7
+pulse_linear_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear, no sv",control,DBM13,183.50144697376993,6.869821836073889,6.660103396434685,7
+pulse_linear_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear, no sv",control,DBM14,172.56685918753328,4.858243042078939,4.39437139390602,7
+pulse_linear_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear, no sv",control,DBM15,257.47941060591467,21.413044265143817,15.700967054056754,9
+pulse_linear_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear, no sv",control,DBM5,585.8474884789351,11.746309774915353,11.243856517453146,9
+pulse_linear_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear, no sv",control,DBM6,663.4333404452698,5.200296595742373,4.832990449438967,9
+pulse_linear_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear, no sv",control,PSUIM10,139.4420199591368,19.98282104873576,9.178009248373721,9
+pulse_linear_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear, no sv",control,PSUIM5,694.9921037170544,17.878360118970235,13.457229705362224,9
+pulse_linear_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear, no sv",control,PSUIM6,1776.4363493672272,87.76294072680554,82.40844648394727,9
+pulse_linear_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear, no sv",control,PSUIM7,2365.865347778635,92.43470652735971,63.24525388331028,9
+pulse_linear_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear, no sv",pulse,DBM12,458.0953684270907,38.68829563408228,35.803942332402244,36
+pulse_linear_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear, no sv",pulse,DBM13,181.38307851246608,27.412830119936864,23.542036682480642,36
+pulse_linear_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear, no sv",pulse,DBM14,199.51223033930117,47.103258290869505,42.844536869838315,36
+pulse_linear_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear, no sv",pulse,DBM15,285.43010308233863,77.37150270555772,74.72180697311816,48
+pulse_linear_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear, no sv",pulse,DBM5,709.4022446795846,50.0655730088058,38.61130316424996,48
+pulse_linear_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear, no sv",pulse,DBM6,779.8824003759705,38.63403893312842,35.24538396646494,48
+pulse_linear_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear, no sv",pulse,PSUIM10,98.56432001014669,34.46137203193621,33.79169056600288,32
+pulse_linear_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear, no sv",pulse,PSUIM5,498.2727404528547,30.900309957929895,21.54135909986908,32
+pulse_linear_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear, no sv",pulse,PSUIM6,1298.1308718426858,56.57526821679795,48.15266020222898,32
+pulse_linear_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, linear, no sv",pulse,PSUIM7,1643.8135164438092,123.2778268200927,104.83301868625908,32
+pulse_power_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law",control,DBM12,407.75038537953105,23.504802898692972,7.827592571587999,7
+pulse_power_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law",control,DBM13,187.95202175971318,15.770971407960474,10.463036748749815,7
+pulse_power_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law",control,DBM14,173.82797779768714,7.3804802623866905,5.027774026797545,7
+pulse_power_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law",control,DBM15,253.41254274671178,13.27930854673803,12.882740761742077,9
+pulse_power_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law",control,DBM5,590.4871239043944,21.025580625833612,12.845008202802177,9
+pulse_power_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law",control,DBM6,675.2429068781934,28.819429461589557,5.686286162274634,9
+pulse_power_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law",control,PSUIM10,137.78439231216933,16.667565754800854,9.112649263911992,9
+pulse_power_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law",control,PSUIM5,693.743252083494,15.380656851849395,12.495460619192627,9
+pulse_power_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law",control,PSUIM6,1750.4278409154504,35.7459238232521,34.789438592570434,9
+pulse_power_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law",control,PSUIM7,2349.376122141286,59.45625525266132,33.95165325186849,9
+pulse_power_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law",pulse,DBM12,459.4264525444764,41.35046386885382,38.445085470263436,36
+pulse_power_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law",pulse,DBM13,183.8471397732934,32.34095264159157,28.297581619320155,36
+pulse_power_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law",pulse,DBM14,201.44393240055075,50.966662413368766,46.117246621965386,36
+pulse_power_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law",pulse,DBM15,284.011261465436,74.53381947175247,72.45116556989339,48
+pulse_power_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law",pulse,DBM5,708.336663362679,47.93441037499458,38.278286234690825,48
+pulse_power_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law",pulse,DBM6,782.4429787547353,43.75519569065802,38.47228257994679,48
+pulse_power_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law",pulse,PSUIM10,100.93787099604154,39.208474003725925,38.417050412167015,32
+pulse_power_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law",pulse,PSUIM5,501.06669023043435,36.48820951308919,29.01503800721338,32
+pulse_power_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law",pulse,PSUIM6,1301.745196208276,63.803916947978145,54.17165582392636,32
+pulse_power_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law",pulse,PSUIM7,1660.4101036986146,156.47100132970348,139.94035666527614,32
+pulse_power_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law, no sv",control,DBM12,411.82433892216375,31.652709983958317,10.164522814907372,7
+pulse_power_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law, no sv",control,DBM13,185.45581120820538,10.778550304944758,9.432763165845714,7
+pulse_power_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law, no sv",control,DBM14,172.67407604763824,5.07267676228885,4.312137030867397,7
+pulse_power_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law, no sv",control,DBM15,257.3578977226764,21.170018498667297,16.362788932212375,9
+pulse_power_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law, no sv",control,DBM5,590.7167253576856,21.484783532416454,12.039424840574465,9
+pulse_power_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law, no sv",control,DBM6,666.6570949163507,11.647805537904567,5.796150554387914,9
+pulse_power_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law, no sv",control,PSUIM10,139.5074810447552,20.113743219972633,8.539236432104756,9
+pulse_power_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law, no sv",control,PSUIM5,708.6047949556612,45.103742596183835,17.68722663335707,9
+pulse_power_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law, no sv",control,PSUIM6,1758.5591002115648,52.00844241548077,46.81757382411331,9
+pulse_power_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law, no sv",control,PSUIM7,2366.377533930796,93.45907883168184,84.81232456759972,9
+pulse_power_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law, no sv",pulse,DBM12,460.2188048099886,42.93516839987821,38.80299559213526,36
+pulse_power_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law, no sv",pulse,DBM13,182.28836002860723,29.22339315221919,24.570426659638176,36
+pulse_power_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law, no sv",pulse,DBM14,198.75152155025663,45.581840712780505,41.38887186249204,36
+pulse_power_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law, no sv",pulse,DBM15,284.22228308700204,74.95586271488457,72.42843346062108,48
+pulse_power_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law, no sv",pulse,DBM5,707.8725385860519,47.00616082174059,37.45836910414065,48
+pulse_power_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law, no sv",pulse,DBM6,778.697472371268,36.26418292372323,33.26254506702533,48
+pulse_power_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law, no sv",pulse,PSUIM10,97.52529152897934,32.38331506960149,31.82444164643784,32
+pulse_power_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law, no sv",pulse,PSUIM5,502.68423278855596,39.72329462933234,23.741068315148322,32
+pulse_power_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law, no sv",pulse,PSUIM6,1294.1614175689392,48.63635966930504,40.95724224009112,32
+pulse_power_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, power law, no sv",pulse,PSUIM7,1637.8231346058094,111.29706314409302,98.31870306221613,32
+pulse_norm_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization",control,DBM12,406.8752520594771,21.754536258584906,8.98161425113183,7
+pulse_norm_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization",control,DBM13,187.49734586732453,14.861619623183124,10.048513458093048,7
+pulse_norm_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization",control,DBM14,172.92185410049743,5.568232868007257,3.509093369929687,7
+pulse_norm_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization",control,DBM15,258.8443645336687,24.14295212065182,12.633162397463458,9
+pulse_norm_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization",control,DBM5,603.538923817518,47.12918045208106,13.639956917785454,9
+pulse_norm_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization",control,DBM6,665.0039841526607,8.341584010524443,2.2462686197528825,9
+pulse_norm_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization",control,PSUIM10,141.86135733858922,24.821495807640648,7.28236408603289,9
+pulse_norm_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization",control,PSUIM5,690.5961226506348,9.086397986131047,8.659395609656443,9
+pulse_norm_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization",control,PSUIM6,1751.6632207901662,38.21668357268351,32.7162190718081,9
+pulse_norm_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization",control,PSUIM7,2362.2483368701614,85.20068471041236,44.92241555037907,9
+pulse_norm_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization",pulse,DBM12,458.7968107998741,40.09118037964906,36.57571444575166,36
+pulse_norm_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization",pulse,DBM13,182.59946340002077,29.845599895046202,25.1728565619955,36
+pulse_norm_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization",pulse,DBM14,199.6768522365065,47.43250208528024,43.16661025453947,36
+pulse_norm_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization",pulse,DBM15,286.1352055541399,78.7817076491602,72.61151546808466,48
+pulse_norm_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization",pulse,DBM5,709.0917834514611,49.44465055255907,39.474325834654735,48
+pulse_norm_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization",pulse,DBM6,781.048369454463,40.96597709011317,37.412687821312765,48
+pulse_norm_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization",pulse,PSUIM10,101.41957876841617,40.17188954847518,39.84430075192727,32
+pulse_norm_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization",pulse,PSUIM5,499.6492374728374,33.65330399789531,26.23320216793289,32
+pulse_norm_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization",pulse,PSUIM6,1298.8052120159523,57.923948563330775,53.703284918102625,32
+pulse_norm_ugm,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization",pulse,PSUIM7,1662.193829219154,160.038452370782,142.29291700154468,32
+pulse_norm_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",control,DBM12,408.6214347268102,25.24690159325121,9.749480232727649,7
+pulse_norm_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",control,DBM13,188.3762266711969,16.619381230927818,9.05311302396385,7
+pulse_norm_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",control,DBM14,178.35469999754315,16.433924662098732,6.234664328145861,7
+pulse_norm_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",control,DBM15,261.1472194980847,28.74866204948392,15.981168080768605,9
+pulse_norm_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",control,DBM5,614.0787875656624,68.20890794836986,18.907369309521826,9
+pulse_norm_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",control,DBM6,664.3437881106383,7.021191926479595,6.493027645257179,9
+pulse_norm_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",control,PSUIM10,140.32823900529104,21.75525914104431,10.173851347032661,9
+pulse_norm_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",control,PSUIM5,690.420809745358,8.735772175577608,7.329288912255464,9
+pulse_norm_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",control,PSUIM6,1766.0177767451441,66.92579548263978,52.22682877899115,9
+pulse_norm_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",control,PSUIM7,2380.444813992699,121.59363895548688,72.1564165160795,9
+pulse_norm_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",pulse,DBM12,458.4865954623175,39.470749704536004,35.01803476352005,36
+pulse_norm_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",pulse,DBM13,182.5216790427616,29.690031180527875,24.010072989726957,36
+pulse_norm_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",pulse,DBM14,202.8114866133179,53.70177083890296,44.55163789726876,36
+pulse_norm_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",pulse,DBM15,289.43592332624195,85.38314319336439,80.08139355010967,48
+pulse_norm_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",pulse,DBM5,711.9505130898367,55.1621098293103,38.341298474717576,48
+pulse_norm_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",pulse,DBM6,779.7855639313682,38.44036604392372,33.76879725490732,48
+pulse_norm_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",pulse,PSUIM10,97.64452050550472,32.62177302265226,31.5799523124407,32
+pulse_norm_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",pulse,PSUIM5,495.07015720528744,24.49514346279542,16.080991862843973,32
+pulse_norm_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",pulse,PSUIM6,1296.1040065695024,52.52153767043149,46.1227879202877,32
+pulse_norm_ugm_no_sv,"Pulse-only fits, urgency-gating region","Leak + urgency, UGM region, normalization, no sv",pulse,PSUIM7,1624.9432156060602,85.53722514459497,61.91923195468519,32
