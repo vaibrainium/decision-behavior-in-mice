@@ -38,6 +38,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-11-12-rescored-ic.md : AIC/BIC from rescored fitted NLL: joint best power + leak + urgency (= held-out best; norm + leak 2.6 behind), pulse-only best linear leak; MC noise ~13 per family
 - reports/2026-11-12-likelihood-check.md : likelihood code correct; sv's pulse-trial advantage is all RT term, mostly PSUIM7; stored fitted NLL optimistic by 194-250 per family (model-dependent), so AIC/BIC need rescoring at an independent seed
 - reports/2026-11-11-model-ic.md : AIC/BIC agree with held-out NLL on the top group (leak / leak + urgency with sv, power or norm input) and on integrators > E/ES > Stine; QMLE AIC/BIC legitimate (corrects an earlier claim)
 - reports/2026-11-11-ugm-corner.md : free UGM-region fits avoid the corner (0/120 full-data fits); with sv late reversal outside data CI, no sv passes the pulse but NLL within 10 of best in 3/10 (joint) mice; corner proper untested by a fixed grid
@@ -115,7 +116,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - ../dissemination/reports/motion-energy-methods.md : motion-energy method review and corrections
 
 ## Known issues
-- Fitted NLL (train_nll) is evaluated at the fit's own noise draw: optimistic by 4-47 per mouse, differing by model; AIC/BIC in model_ic_*_2026-11-11.csv use it (reports/2026-11-12-likelihood-check.md). Held-out NLL unaffected.
+- Fitted NLL (train_nll) is evaluated at the fit's own noise draw (optimistic, model-dependent): use rescored_nll_2026-11-12.csv / model_ic_*_2026-11-12_rescored.csv, not model_ic_*_2026-11-11.csv (reports/2026-11-12-rescored-ic.md).
 - 2026-11-12 (resolved same day): /mnt/data was empty because the container started while the NAS was unmounted and a plain bind mount does not pick up later host mounts. docker-compose.yaml now binds host /mnt to /mnt/host (rslave) and links /mnt/data -> /mnt/host/cnc_backup/vaib_data/mouse-pulse-experiment at startup; NAS remounts now appear without a restart. If the NAS drops, /mnt/data reads as an empty local dir and writes go to local disk: check `findmnt -R /mnt/host` before long jobs. Claude history persisted to host ~/.claude-docker (CLAUDE_CONFIG_DIR=/root/.claude).
 - Choices vs RTs (choice_binomial_nll_2026-11-12.csv, scripts/ddm/choice_fit_binomial.py): on pulse trials, no-sv fits predict choices better than their sv counterparts (pulse-only: NLL -26 to -60, 8-9/10 mice; all-trial pairs too); sv wins the combined likelihood through RTs.
 - Choices after 5 s (13.7% of trials) are stimulus-driven (accuracy equal to on-time); "no response" is a misnomer. RT floor 0.3 s. Choice-history effects not in any model (reports/2026-10-29-behavior-exploration.md).

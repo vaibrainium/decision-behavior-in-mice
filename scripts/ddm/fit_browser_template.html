@@ -156,7 +156,7 @@ function totals(fam) {
   const rs = Object.values(NLL[fam] || {});
   const sum = k => rs.length === D.mice.length && rs.every(r => r[k] != null) ? rs.reduce((a, r) => a + r[k], 0) : null;
   const icSum = w => rs.length === D.mice.length && rs.every(r => ic(r, w) != null) ? rs.reduce((a, r) => a + ic(r, w), 0) : null;
-  return { aic: icSum("aic"), bic: icSum("bic"), heldout: sum("heldout_nll"), n_heldout: sum("n_heldout"), fitted: sum("fitted_nll"), pulse: sum("pulse_test_nll"), n_pulse: sum("n_pulse_test"), ctest: sum("control_test_nll"), n_ctest: sum("n_control_test"), k: rs.length ? rs[0].k : null };
+  return { aic: icSum("aic"), bic: icSum("bic"), heldout: sum("heldout_nll"), n_heldout: sum("n_heldout"), fitted: sum("fitted_nll"), stored: sum("stored_fitted_nll"), pulse: sum("pulse_test_nll"), n_pulse: sum("n_pulse_test"), ctest: sum("control_test_nll"), n_ctest: sum("n_control_test"), k: rs.length ? rs[0].k : null };
 }
 
 /* ---------- sidebar ---------- */
@@ -402,17 +402,17 @@ function modelView(fam) {
 /* ---------- NLL tab ---------- */
 function nllView() {
   const frag = document.createDocumentFragment();
-  const views = { heldout: "Held-out (cv0–cv4)", fitted: "Fitted, all trials", per1k: "Held-out per 1,000 trials", aic: "AIC", bic: "BIC" };
+  const views = { heldout: "Held-out (cv0–cv4)", fitted: "Fitted, all trials", per1k: "Held-out per 1,000 trials", aic: "AIC", bic: "BIC", stored: "Fitted, as stored" };
   const head = el("div", { class: "head" }, el("div", {}, el("h2", { text: "Negative log likelihood" }), el("div", { class: "sub", text: "Actual values, not differences. Lower is better. AIC = 2 NLL + 2k, BIC = 2 NLL + k ln(n trials fitted), from each mouse's full-data fit, summed over mice." })));
   const seg = el("div", { class: "seg", role: "group", "aria-label": "Likelihood" });
   for (const [k, l] of Object.entries(views)) { const b = el("button", { type: "button", "aria-pressed": String(state.nllView === k), text: l }); b.addEventListener("click", () => { state.nllView = k; save(); render(); }); seg.append(b); }
   head.append(el("div", { class: "controls" }, seg));
-  frag.append(head, el("p", { class: "note", text: "The likelihood is the fitting objective: censored quantile quasi-likelihood of choice and RT, responded trials (all coherences, all trials). Held-out: each mouse's trials are split into five folds, each fold predicted by a fit to the other four, NLL summed over folds, so every trial is predicted once. Fitted: the fit to all trials (no penalty for parameters). Values are comparable across models only for the same trials; the n column gives the held-out trial count and marks any model that differs (≠). Highlighted: lowest value in each column. Click a column name to sort." }));
+  frag.append(head, el("p", { class: "note", text: "The likelihood is the fitting objective: censored quantile quasi-likelihood of choice and RT, responded trials (all coherences, all trials). Held-out: each mouse's trials are split into five folds, each fold predicted by a fit to the other four, NLL summed over folds, so every trial is predicted once. Fitted: the fit to all trials (no penalty for parameters), rescored at two independent noise seeds (30 simulated repetitions each, mean) when available; “Fitted, as stored” is the value at the fit's own noise draw, which the optimizer tuned to, so it is optimistic by a model-dependent amount (4–47 per mouse). AIC and BIC use the rescored value. Values are comparable across models only for the same trials; the n column gives the held-out trial count and marks any model that differs (≠). Highlighted: lowest value in each column. Click a column name to sort." }));
   const fams = D.groups.flatMap(g => g.families.map(f => [g, f])).filter(([g]) => g.label.startsWith("All trials"));
   const pfams = D.groups.flatMap(g => g.families.map(f => [g, f])).filter(([g]) => g.label.startsWith("Pulse-only"));
   function tableBlock(fams, refN, id, title, note, withCtl) {
-    const val = (f, m) => { const r = (NLL[f] || {})[m]; if (!r) return null; if (state.nllView === "aic" || state.nllView === "bic") return ic(r, state.nllView); if (state.nllView === "fitted") return r.fitted_nll; if (state.nllView === "per1k") return r.heldout_nll != null ? r.heldout_nll / r.n_heldout * 1000 : null; return r.heldout_nll; };
-    const tot = f => { const t = totals(f); if (state.nllView === "aic" || state.nllView === "bic") return t[state.nllView]; if (state.nllView === "fitted") return t.fitted; if (state.nllView === "per1k") return t.heldout != null ? t.heldout / t.n_heldout * 1000 : null; return t.heldout; };
+    const val = (f, m) => { const r = (NLL[f] || {})[m]; if (!r) return null; if (state.nllView === "aic" || state.nllView === "bic") return ic(r, state.nllView); if (state.nllView === "fitted") return r.fitted_nll; if (state.nllView === "stored") return r.stored_fitted_nll ?? r.fitted_nll; if (state.nllView === "per1k") return r.heldout_nll != null ? r.heldout_nll / r.n_heldout * 1000 : null; return r.heldout_nll; };
+    const tot = f => { const t = totals(f); if (state.nllView === "aic" || state.nllView === "bic") return t[state.nllView]; if (state.nllView === "fitted") return t.fitted; if (state.nllView === "stored") return t.stored ?? t.fitted; if (state.nllView === "per1k") return t.heldout != null ? t.heldout / t.n_heldout * 1000 : null; return t.heldout; };
     const cols = [["total", "All mice"], ...D.mice.map(m => [m, m]), ...(withCtl ? [["ctl", "Control trials, predicted"]] : []), ["k", "Params"], ["n", "n held-out"]];
     const get = (f, k) => k === "total" ? tot(f) : k === "ctl" ? totals(f).ctest : k === "k" ? totals(f).k : k === "n" ? totals(f).n_heldout : val(f, k);
     const block = el("section", { class: "block", id }, el("h3", { text: title }), note ? el("p", { class: "note", text: note }) : null);
