@@ -56,6 +56,14 @@ svg .s-right { stroke: var(--right) } svg .s-left { stroke: var(--left) } svg .s
 svg .f-right { fill: var(--right) } svg .f-left { fill: var(--left) } svg .f-control { fill: var(--ink) }
 svg .gd { fill: none; stroke-width: 1.8 } svg .gm { fill: none; stroke-width: 1.5; stroke-dasharray: 5 3 }
 svg .gmp { fill: var(--panel); stroke-width: 1.2 } svg .gbar { stroke-width: 1 }
+svg .gm2 { fill: none; stroke-width: 2; stroke-dasharray: 1.2 2.6; stroke-linecap: round } svg .gmp2 { fill: var(--panel); stroke-width: 1.1 }
+svg .mh2 { fill: none; stroke: var(--ink); stroke-width: 1.6; stroke-dasharray: 1.2 2.4 } svg .mhe2 { fill: none; stroke: var(--err); stroke-width: 1.6; stroke-dasharray: 1.2 2.4 }
+svg .mdia2 { fill: var(--panel); stroke: var(--ink); stroke-width: 1.3 }
+.legend i.gm2 { border-top: 2px dotted var(--muted) } .legend i.mo2 { width: 7px; height: 7px; border: 1.2px solid var(--muted); border-radius: 0; background: none }
+.legend i.c2 { border-top: 2px dotted var(--ink) } .legend i.e2 { border-top: 2px dotted var(--err) } .legend i.sq2 { width: 7px; height: 7px; border: 1.3px solid var(--ink); background: none }
+.cmp { display: inline-flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 12.5px; color: var(--muted) }
+.cmp select { font: inherit; font-size: 12.5px; max-width: min(320px, 100%); padding: 4px 6px; border: 1px solid var(--rule); border-radius: 6px; background: var(--panel); color: var(--ink) }
+.cmp button { font: inherit; font-size: 12.5px; padding: 4px 9px; border: 1px solid var(--rule); border-radius: 6px; background: var(--panel); color: var(--accent); cursor: pointer }
 .legend i.rd { border-top-color: var(--right) } .legend i.ld { border-top-color: var(--left) } .legend i.gm { border-top: 2px dashed var(--muted) } .legend i.gd { border-top: 2px solid var(--muted) }
 .legend i.mo { width: 7px; height: 7px; border: 1.2px solid var(--muted); border-radius: 50%; background: none }
 .legend i.do { width: 7px; height: 7px; border: 0; border-radius: 50%; background: var(--muted) }
@@ -127,7 +135,7 @@ const COND_LABEL = {"control": "Control", "early left": "Early pulse, left", "ea
   "middle left": "Middle pulse, left", "middle right": "Middle pulse, right", "late left": "Late pulse, left", "late right": "Late pulse, right"};
 const COND_SHORT = {"control": "Ctrl", "early left": "E-L", "early right": "E-R", "middle left": "M-L", "middle right": "M-R", "late left": "L-L", "late right": "L-R"};
 const VIEWS = [["psy", "Psychometric fits"], ["rtd", "RT distributions"], ["rt", "Mean RT"], ["par", "Fit parameters"]];
-const state = { tab: "nll", view: "psy", nllView: "heldout", nllSort: "total" };
+const state = { tab: "nll", view: "psy", nllView: "heldout", nllSort: "total", cmp: "" };
 try { Object.assign(state, JSON.parse(localStorage.getItem("fitbrowser2") || "{}")); } catch (e) {}
 function save() { try { localStorage.setItem("fitbrowser2", JSON.stringify(state)); } catch (e) {} }
 const el = (tag, attrs = {}, ...kids) => { const e = document.createElement(tag); for (const [k, v] of Object.entries(attrs)) { if (k === "class") e.className = v; else if (k === "text") e.textContent = v; else e.setAttribute(k, v); } for (const k of kids) if (k != null) e.append(k); return e; };
@@ -189,7 +197,7 @@ function rtRange(tabs) {
 
 /* RT distribution panel: correct above, errors below (defective densities) */
 const E = D.rt_edges, LOGX = v => Math.log(v);
-function rtdChart(cond, dd, md, ymax, big) {
+function rtdChart(cond, dd, md, ymax, big, md2) {
   const W = 210, H = big ? 170 : 132, L = 26, R = 6, T = 6, B = 18, mid = T + (H - T - B) / 2;
   const x = v => L + (LOGX(v) - LOGX(E[0])) / (LOGX(E[E.length - 1]) - LOGX(E[0])) * (W - L - R);
   const yu = v => mid - v / ymax * (mid - T), yd = v => mid + v / ymax * (H - B - mid);
@@ -204,6 +212,8 @@ function rtdChart(cond, dd, md, ymax, big) {
     if (dh[1][i] > 0) s.append(sv("rect", { x: x0, y: mid, width: Math.max(0.5, x1 - x0 - 0.4), height: yd(dh[1][i]) - mid, class: "he" }));
   }
   const step = (vals, f, cls) => { const p = []; for (let i = 0; i < E.length - 1; i++) { p.push(`${x(E[i]).toFixed(1)},${f(vals[i]).toFixed(1)}`, `${x(E[i + 1]).toFixed(1)},${f(vals[i]).toFixed(1)}`); } s.append(sv("polyline", { points: p.join(" "), class: cls })); };
+  const mh2 = md2 && md2.rt[cond];
+  if (mh2) { step(mh2[0], yu, "mh2"); step(mh2[1], yd, "mhe2"); }
   if (mh) { step(mh[0], yu, "mh"); step(mh[1], yd, "mhe"); }
   const t = sv("title");
   t.textContent = `${COND_LABEL[cond]} (0% coherence excluded): data ${dh ? `${dh[2]} trials, ${(dh[3] * 100).toFixed(1)}% correct` : "–"}; model ${mh ? `${(mh[3] * 100).toFixed(1)}% correct` : "–"}`;
@@ -214,7 +224,7 @@ function rtdMax(tabs) { let m = 0; for (const d of tabs) for (const h of Object.
 
 /* grouped panels (psychometric, mean RT): control, then early / middle / late with left and right overlaid */
 const STAGES = [["control", ["control"]], ["Early pulse", ["early left", "early right"]], ["Middle pulse", ["middle left", "middle right"]], ["Late pulse", ["late left", "late right"]]];
-function groupChart(view, conds, dd, md, yr, big) {
+function groupChart(view, conds, dd, md, yr, big, md2) {
   const W = 240, H = big ? 190 : 150, L = 30, R = 6, T = 6, B = 18;
   const isP = view === "psy", lo = isP ? 0 : yr[0], hi = isP ? 1 : yr[1], val = isP ? COL.p : COL.rt, se = isP ? COL.se_p : COL.se_rt;
   const x = c => L + cohPos(c) * (W - L - R), y = v => T + (1 - (v - lo) / (hi - lo)) * (H - T - B);
@@ -228,8 +238,9 @@ function groupChart(view, conds, dd, md, yr, big) {
     const k = sideOf(cond);
     const curve = (p, cls) => { if (!p || p.some(v => v == null)) return; const pts = []; for (let i = 0; i <= 160; i++) { const c = -100 + 200 * i / 160; pts.push(`${x(c).toFixed(1)},${y(psyP(c, p)).toFixed(1)}`); } s.append(sv("polyline", { points: pts.join(" "), class: `${cls} s-${k}` })); };
     const line = (rs, cls) => { const p = rs.filter(r => r[val] != null).map(r => `${x(r[COL.coh]).toFixed(1)},${y(r[val]).toFixed(1)}`); if (p.length > 1) s.append(sv("polyline", { points: p.join(" "), class: `${cls} s-${k}` })); };
-    if (isP) { const a = dd && dd.psy[cond], b = md && md.psy[cond]; if (b) curve(b.est, "gm"); if (a) curve(a.est, "gd"); }
-    else { line(rowsOf(md, cond), "gm"); line(rowsOf(dd, cond), "gd"); }
+    if (isP) { const a = dd && dd.psy[cond], b = md && md.psy[cond], b2 = md2 && md2.psy[cond]; if (b2) curve(b2.est, "gm2"); if (b) curve(b.est, "gm"); if (a) curve(a.est, "gd"); }
+    else { if (md2) line(rowsOf(md2, cond), "gm2"); line(rowsOf(md, cond), "gm"); line(rowsOf(dd, cond), "gd"); }
+    if (md2) for (const r of rowsOf(md2, cond)) if (r[val] != null) { const h = big ? 2.4 : 1.9; s.append(sv("rect", { x: x(r[COL.coh]) - h, y: y(r[val]) - h, width: 2 * h, height: 2 * h, class: `gmp2 s-${k}` })); }
     const mrows = rowsOf(md, cond);
     for (const r of mrows) if (r[val] != null) s.append(sv("circle", { cx: x(r[COL.coh]), cy: y(r[val]), r: big ? 2.6 : 2.1, class: `gmp s-${k}` }));
     for (const r of rowsOf(dd, cond)) {
@@ -238,51 +249,52 @@ function groupChart(view, conds, dd, md, yr, big) {
       s.append(sv("line", { x1: cx, x2: cx, y1: y(Math.min(hi, r[val] + e)), y2: y(Math.max(lo, r[val] - e)), class: `gbar s-${k}` }));
       const c = sv("circle", { cx, cy: y(r[val]), r: big ? 2.8 : 2.3, class: `f-${k}` });
       const m = mrows.find(q => q[COL.coh] === r[COL.coh]);
-      const t = sv("title"); t.textContent = `${COND_LABEL[cond]}, coherence ${r[COL.coh]}%: data ${isP ? `P(right) ${r[val].toFixed(3)} ± ${e.toFixed(3)}` : `mean RT ${r[val].toFixed(3)} s ± ${e.toFixed(3)}`} (n=${r[COL.n]})${m && m[val] != null ? `; model ${m[val].toFixed(3)}` : ""}`;
+      const m2 = md2 && rowsOf(md2, cond).find(q => q[COL.coh] === r[COL.coh]);
+      const t = sv("title"); t.textContent = `${COND_LABEL[cond]}, coherence ${r[COL.coh]}%: data ${isP ? `P(right) ${r[val].toFixed(3)} ± ${e.toFixed(3)}` : `mean RT ${r[val].toFixed(3)} s ± ${e.toFixed(3)}`} (n=${r[COL.n]})${m && m[val] != null ? `; model ${md2 ? "A " : ""}${m[val].toFixed(3)}` : ""}${m2 && m2[val] != null ? `; model B ${m2[val].toFixed(3)}` : ""}`;
       c.append(t); s.append(c);
     }
   }
   return s;
 }
-function stageRow(view, dd, md, big) {
+function stageRow(view, dd, md, big, md2) {
   const row = el("div", { class: "row4" });
-  const yr = view === "rt" ? rtRange([dd, md]) : null;
+  const yr = view === "rt" ? rtRange([dd, md, md2]) : null;
   for (const [title, conds] of STAGES) {
     const sub = conds.map(c => {
       const n = rowsOf(dd, c).reduce((a, r) => a + r[COL.n], 0);
       if (view !== "psy") return `${conds.length > 1 ? sideOf(c) + " " : ""}n=${n}`;
-      const a = dd && dd.psy[c], b = md && md.psy[c];
-      return `${conds.length > 1 ? sideOf(c) + ": " : ""}mean ${a ? fmt(a.est[0]) : "–"} | ${b ? fmt(b.est[0]) : "–"} (n=${n})`;
+      const a = dd && dd.psy[c], b = md && md.psy[c], b2 = md2 && md2.psy[c];
+      return `${conds.length > 1 ? sideOf(c) + ": " : ""}mean ${a ? fmt(a.est[0]) : "–"} | ${b ? fmt(b.est[0]) : "–"}${md2 ? ` | ${b2 ? fmt(b2.est[0]) : "–"}` : ""} (n=${n})`;
     });
     const head = el("div", { class: "t" }, title === "control" ? "Control" : title);
     const subs = conds.map((c, i) => el("div", { class: "s " + sideOf(c), text: sub[i] }));
-    row.append(el("div", { class: "panel" }, head, ...subs, groupChart(view, conds, dd, md, yr, big)));
+    row.append(el("div", { class: "panel" }, head, ...subs, groupChart(view, conds, dd, md, yr, big, md2)));
   }
   return row;
 }
 
 /* one row of 7 panels */
-function conditionRow(view, dd, md, big) {
-  if (view === "psy" || view === "rt") return stageRow(view, dd, md, big);
+function conditionRow(view, dd, md, big, md2) {
+  if (view === "psy" || view === "rt") return stageRow(view, dd, md, big, md2);
   const row = el("div", { class: "row" + (big ? " big" : "") });
-  const yr = view === "rt" ? rtRange([dd, md]) : null, ym = view === "rtd" ? rtdMax([dd, md]) : null;
+  const yr = view === "rt" ? rtRange([dd, md]) : null, ym = view === "rtd" ? rtdMax([dd, md, md2]) : null;
   for (const cond of D.conditions) {
     const n = rowsOf(dd, cond).reduce((a, r) => a + r[COL.n], 0);
     let sub = "";
     if (view === "psy") { const a = dd && dd.psy[cond], b = md && md.psy[cond]; sub = `mean ${a ? fmt(a.est[0]) : "–"} | ${b ? fmt(b.est[0]) : "–"}`; }
-    if (view === "rtd") { const a = dd && dd.rt[cond], b = md && md.rt[cond]; sub = `correct ${a ? fmt(a[3] * 100, 0) : "–"}% | ${b ? fmt(b[3] * 100, 0) : "–"}%`; }
-    const chart = rtdChart(cond, dd, md, ym, big);
-    row.append(el("div", { class: "panel" }, el("div", { class: "t " + sideOf(cond), text: `${COND_LABEL[cond]} · n=${n}` }), sub ? el("div", { class: "s", text: sub + " (data | model)" }) : null, chart));
+    if (view === "rtd") { const a = dd && dd.rt[cond], b = md && md.rt[cond], b2 = md2 && md2.rt[cond]; sub = `correct ${a ? fmt(a[3] * 100, 0) : "–"}% | ${b ? fmt(b[3] * 100, 0) : "–"}%${md2 ? ` | ${b2 ? fmt(b2[3] * 100, 0) : "–"}%` : ""}`; }
+    const chart = rtdChart(cond, dd, md, ym, big, md2);
+    row.append(el("div", { class: "panel" }, el("div", { class: "t " + sideOf(cond), text: `${COND_LABEL[cond]} · n=${n}` }), sub ? el("div", { class: "s", text: sub + (md2 ? " (data | A | B)" : " (data | model)") }) : null, chart));
   }
   return row;
 }
 
 const ok = (d, c, pi) => { const v = d && d.psy[c]; return v && v.est[pi] != null ? v : null; };
 /* parameter chart: one parameter across the 7 conditions, data with 95% CI and model */
-function parChart(dd, md, pi, title, big) {
+function parChart(dd, md, pi, title, big, md2) {
   const W = 260, H = big ? 150 : 120, L = 32, R = 6, T = 14, B = 18;
   const vals = [];
-  for (const c of D.conditions) { const a = ok(dd, c, pi), b = ok(md, c, pi); if (a) { vals.push(a.est[pi]); if (a.lo && a.lo[pi] != null) vals.push(a.lo[pi], a.hi[pi]); } if (b) vals.push(b.est[pi]); }
+  for (const c of D.conditions) { const a = ok(dd, c, pi), b = ok(md, c, pi), b2 = ok(md2, c, pi); if (b2) vals.push(b2.est[pi]); if (a) { vals.push(a.est[pi]); if (a.lo && a.lo[pi] != null) vals.push(a.lo[pi], a.hi[pi]); } if (b) vals.push(b.est[pi]); }
   let lo = Math.min(...vals), hi = Math.max(...vals); if (pi === 0) { lo = Math.min(lo, 0); hi = Math.max(hi, 0); } if (!isFinite(lo)) { lo = 0; hi = 1; }
   const pad = (hi - lo) * 0.1 || 1; lo -= pad; hi += pad;
   const x = i => L + (i + 0.5) / D.conditions.length * (W - L - R), y = v => T + (1 - (v - lo) / (hi - lo)) * (H - T - B);
@@ -300,15 +312,17 @@ function parChart(dd, md, pi, title, big) {
       const t = sv("title"); t.textContent = `${COND_LABEL[c]}: data ${fmt(a.est[pi], 2)}${a.lo ? ` (95% CI ${fmt(a.lo[pi], 2)} to ${fmt(a.hi[pi], 2)})` : ""}; model ${b ? fmt(b.est[pi], 2) : "–"}`; d.append(t); s.append(d);
     }
     if (b) s.append(sv("rect", { x: x(i) + 3 - 2.8, y: y(b.est[pi]) - 2.8, width: 5.6, height: 5.6, class: "mdia", transform: `rotate(45 ${x(i) + 3} ${y(b.est[pi])})` }));
+    const b2 = ok(md2, c, pi);
+    if (b2) s.append(sv("rect", { x: x(i) + 9 - 2.6, y: y(b2.est[pi]) - 2.6, width: 5.2, height: 5.2, class: "mdia2" }));
   });
   return s;
 }
-function parBlock(dd, md, big) {
+function parBlock(dd, md, big, md2) {
   const g = el("div", { class: "grid2" });
-  g.append(el("div", { class: "panel" }, parChart(dd, md, 0, "mean (% coherence at the midpoint; − = rightward bias)", big)),
-           el("div", { class: "panel" }, parChart(dd, md, 1, "beta (slope, 1/% coherence; higher = steeper)", big)),
-           el("div", { class: "panel" }, parChart(dd, md, 2, "lapse_rate (floor: P(right) at strong leftward motion)", big)),
-           el("div", { class: "panel" }, parChart(dd, md, 3, "guess_rate (1 − ceiling at strong rightward motion)", big)));
+  g.append(el("div", { class: "panel" }, parChart(dd, md, 0, "mean (% coherence at the midpoint; − = rightward bias)", big, md2)),
+           el("div", { class: "panel" }, parChart(dd, md, 1, "beta (slope, 1/% coherence; higher = steeper)", big, md2)),
+           el("div", { class: "panel" }, parChart(dd, md, 2, "lapse_rate (floor: P(right) at strong leftward motion)", big, md2)),
+           el("div", { class: "panel" }, parChart(dd, md, 3, "guess_rate (1 − ceiling at strong rightward motion)", big, md2)));
   return [g];
 }
 
@@ -319,6 +333,16 @@ const LEGENDS = {
   rtd: [["box", "data"], ["", "model, correct"], ["e", "model, errors"]],
   par: [["d", "data, 95% bootstrap CI"], ["dia", "model"]],
 };
+const LEGENDS2 = {
+  psy: [["mo2", "model B (simulated)"], ["gm2", "model B fit"]], rt: [["mo2", "model B (simulated)"], ["gm2", "model B"]],
+  rtd: [["c2", "model B, correct"], ["e2", "model B, errors"]], par: [["sq2", "model B"]],
+};
+/* the same model with / without sv, if it exists */
+function counterpart(f) {
+  const c = f.endsWith("no_sv") ? [f === "no_sv" ? "primary" : f.replace(/_no_sv$/, ""), f.replace(/_no_sv$/, "_primary")]
+                                : [f === "primary" ? "no_sv" : f + "_no_sv", f.replace(/primary$/, "no_sv")];
+  return c.find(x => x !== f && D.families[x]) || null;
+}
 const VIEW_NOTES = {
   psy: "Fit: your psychometric function (src/utils/pmf_utils.py, model logit_4 as in config/main.yaml): P(right) = lapse_rate + (1 − guess_rate − lapse_rate) / (1 + exp(−beta·(coherence − mean))), weighted least squares on the proportion right per coherence with weights √n, default bounds (mean ±100, beta 1e-5–30, lapse and guess 1e-5–0.4). Every condition is fitted on its own with all four parameters free. Pulse trials at ±100% exist only with the pulse against the motion (left pulse at +100%, right pulse at −100%); at the other end each pulse condition's fit uses the control trials at that coherence (not plotted as points). Same procedure for data and model. Panels: control, then early, middle and late pulses with left (red) and right (blue) overlaid; subtitles give the fitted mean, data | model. Linear coherence axis.",
   rtd: "Correct responses above the line, errors below, as defective densities (per s): each condition's correct and error areas sum to 1, so their relative size shows accuracy. 0% coherence excluded (no correct answer). All other coherences of the condition pooled; the model uses the same trials as the data. Log time axis, 0.3–5 s.",
@@ -332,8 +356,16 @@ function modelView(fam) {
   const head = el("div", { class: "head" }, el("div", {}, el("h2", { id: "model-title", text: F.label }), el("div", { class: "sub", text: F.group })));
   const seg = el("div", { class: "seg", role: "group", "aria-label": "View" });
   for (const [k, l] of VIEWS) { const b = el("button", { type: "button", "aria-pressed": String(state.view === k), text: l }); b.addEventListener("click", () => { state.view = k; save(); render(); }); seg.append(b); }
-  head.append(el("div", { class: "controls" }, seg));
+  const M2 = state.cmp && state.cmp !== fam && D.families[state.cmp] ? D.families[state.cmp] : null;
+  const sel = el("select", { "aria-label": "Compare with another model" });
+  sel.append(el("option", { value: "", text: "none" }));
+  for (const g of D.groups) { const og = el("optgroup", { label: g.label.replace(/ \(.*\)$/, "") }); for (const f of g.families) if (f !== fam) { const o = el("option", { value: f, text: D.families[f].label }); if (f === state.cmp) o.selected = true; og.append(o); } sel.append(og); }
+  sel.addEventListener("change", () => { state.cmp = sel.value; save(); render(); });
+  const cp = counterpart(fam), cmpBox = el("label", { class: "cmp" }, "Compare with ", sel);
+  if (cp && cp !== state.cmp) { const b = el("button", { type: "button", text: `${fam.endsWith("no_sv") ? "with sv" : "no sv"} version` }); b.addEventListener("click", e => { e.preventDefault(); state.cmp = cp; save(); render(); }); cmpBox.append(b); }
+  head.append(el("div", { class: "controls" }, seg, cmpBox));
   frag.append(head);
+  if (M2) { const t2 = totals(state.cmp); frag.append(el("p", { class: "note" }, "A (dashed, open circles): ", el("b", { text: `${F.label} · ${F.group.replace(/ \(.*\)$/, "")}` }), ". B (dotted, open squares): ", el("b", { text: `${M2.label} · ${M2.group.replace(/ \(.*\)$/, "")}` }), `. Subtitles give data | A | B. BIC: A ${fmt(tot.bic)}, B ${fmt(t2.bic)}; held-out NLL: A ${fmt(tot.heldout)}, B ${fmt(t2.heldout)}.`)); }
   const st = el("div", { class: "stats" });
   if (isCf) st.append(el("span", { text: "Not a fitted model: the fitted parameters with sv set to 0, simulated. No likelihood." }));
   else if (isCtl) st.append(el("span", {}, "Fitted NLL (control trials) ", el("b", { text: fmt(tot.fitted) })), el("span", {}, "Held-out NLL, pulse trials ", el("b", { text: fmt(tot.pulse) })), el("span", {}, "Free parameters ", el("b", { text: tot.k ?? "–" })));
@@ -341,17 +373,18 @@ function modelView(fam) {
   else st.append(el("span", {}, "Held-out NLL, cv0–cv4, 10 mice ", el("b", { text: fmt(tot.heldout) })), el("span", {}, "Fitted NLL, all trials ", el("b", { text: fmt(tot.fitted) })), el("span", {}, "Free parameters ", el("b", { text: tot.k ?? "–" })));
   frag.append(st);
   const lg = el("div", { class: "legend" });
-  for (const [c, l] of LEGENDS[state.view]) lg.append(el("span", {}, el("i", { class: c }), l));
+  for (const [c, l] of LEGENDS[state.view]) lg.append(el("span", {}, el("i", { class: c }), M2 && /^model/.test(l) ? l.replace(/^model/, "model A") : l));
+  if (M2) for (const [c, l] of LEGENDS2[state.view]) lg.append(el("span", {}, el("i", { class: c }), l));
   frag.append(lg, el("p", { class: "note", text: VIEW_NOTES[state.view] }));
   const pooled = el("section", { class: "block", id: "pooled" }, el("h3", { text: "All mice pooled" }));
-  if (state.view === "par") pooled.append(...parBlock(D.data.all, F.all, true));
-  else pooled.append(conditionRow(state.view, D.data.all, F.all, true));
+  if (state.view === "par") pooled.append(...parBlock(D.data.all, F.all, true, M2 && M2.all));
+  else pooled.append(conditionRow(state.view, D.data.all, F.all, true, M2 && M2.all));
   frag.append(pooled);
   const per = el("section", { class: "block", id: "per-mouse" }, el("h3", { text: "Each mouse" }));
   if (state.view === "par") {
     for (const [pi, title] of [[0, "Bias (% coherence)"], [1, "Slope σ (% coherence)"]]) {
       const g = el("div", { class: "grid5" });
-      for (const m of D.mice) g.append(el("div", { class: "panel" }, el("div", { class: "t", text: m }), parChart(D.data[m], F[m], pi, title, false)));
+      for (const m of D.mice) g.append(el("div", { class: "panel" }, el("div", { class: "t", text: m }), parChart(D.data[m], F[m], pi, title, false, M2 && M2[m])));
       per.append(g);
       if (pi === 0) per.append(el("div", { style: "height:14px" }));
     }
@@ -359,7 +392,7 @@ function modelView(fam) {
     for (const m of D.mice) {
       const r = (NLL[fam] || {})[m];
       const sub = r ? (r.kind === "joint" ? `held-out ${fmt(r.heldout_nll)}` : `pulse test ${fmt(r.pulse_test_nll)}`) : `${D.n_trials[m]} trials`;
-      per.append(el("div", { class: "mouse", id: "mouse-" + m }, el("div", { class: "name" }, m, el("small", { text: sub })), conditionRow(state.view, D.data[m], F[m], false)));
+      per.append(el("div", { class: "mouse", id: "mouse-" + m }, el("div", { class: "name" }, m, el("small", { text: sub })), conditionRow(state.view, D.data[m], F[m], false, M2 && M2[m])));
     }
   }
   frag.append(per);
