@@ -1,5 +1,5 @@
 # Status
-Last updated: 2026-11-11 by Claude (Opus 5.5; pulse-only fits, UGM region fits)
+Last updated: 2026-11-12 by Claude (Opus 5.5; data mount fix)
 
 ## Current focus
 Mapping x accumulator + nominal-coherence fits complete (1,260; exploratory, no rules): power/norm mappings fit slightly better
@@ -114,7 +114,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - ../dissemination/reports/motion-energy-methods.md : motion-energy method review and corrections
 
 ## Known issues
-- 2026-11-12: /mnt/data (bind mount of host /mnt/cnc_backup/vaib_data/mouse-pulse-experiment) is empty in the container; directory recreated 2026-11-12 17:01:52 UTC. raw/processed/final not visible. Not caused by an agent command. Author to check on the host before anything writes there.
+- 2026-11-12 (resolved same day): /mnt/data was empty because the container started while the NAS was unmounted and a plain bind mount does not pick up later host mounts. docker-compose.yaml now binds host /mnt to /mnt/host (rslave) and links /mnt/data -> /mnt/host/cnc_backup/vaib_data/mouse-pulse-experiment at startup; NAS remounts now appear without a restart. If the NAS drops, /mnt/data reads as an empty local dir and writes go to local disk: check `findmnt -R /mnt/host` before long jobs. Claude history persisted to host ~/.claude-docker (CLAUDE_CONFIG_DIR=/root/.claude).
 - Choices vs RTs (choice_binomial_nll_2026-11-12.csv, scripts/ddm/choice_fit_binomial.py): on pulse trials, no-sv fits predict choices better than their sv counterparts (pulse-only: NLL -26 to -60, 8-9/10 mice; all-trial pairs too); sv wins the combined likelihood through RTs.
 - Choices after 5 s (13.7% of trials) are stimulus-driven (accuracy equal to on-time); "no response" is a misnomer. RT floor 0.3 s. Choice-history effects not in any model (reports/2026-10-29-behavior-exploration.md).
 - 2026-10-29: all-trial (control + pulse) responded-only fits differ from control-only fits in the 4 UCLA mice (median ratio a 0.82, drift_gain 0.85, sv 0.76, ndt 1.9) but not in UW (about 1.0). The parameter table parameters_common_model_resp_2026-10-27.md uses the all-trial fits. UPDATE 2026-10-29: not reproduced by the joint no-freeze refits (primary ratios ~1.0; equal-NLL fits with different parameters = ridge; reports/2026-10-29-joint-control-pulse-refits.md). Cause not identified: UCLA pulse ME understated only 1.13-1.20x (reports/2026-10-29-ucla-pulse-me-nofreeze.md; refit deferred) or pulse misfit pressure; rig and mouse are confounded. Until resolved, compare mice on control-split fits or show both.

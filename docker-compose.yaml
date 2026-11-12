@@ -7,11 +7,26 @@ services:
       - "${JUPYTER_PORT}:8888"
     environment:
       - "JUPYTER_PASSWORD=${JUPYTER_PASSWORD}"
+      # Claude Code keeps chats, settings and .claude.json here (persisted on host below)
+      - "CLAUDE_CONFIG_DIR=/root/.claude"
     volumes:
       - ./:/src/
-      - "${DATAPATH}:/mnt/data"
+      # Host /mnt with rslave propagation: NAS mounts/remounts on the host show up
+      # inside the running container (a direct bind of ${DATAPATH} would freeze
+      # whatever was there at container start, e.g. an empty dir if the NAS was down).
+      - type: bind
+        source: /mnt
+        target: /mnt/host
+        bind:
+          propagation: rslave
+      # Claude Code history survives container recreation
+      - /home/vaibhav/.claude-docker:/root/.claude
 
-    command: sleep infinity; nvidia-smi
+    # /mnt/data -> /mnt/host/<DATAPATH without leading /mnt>; DATAPATH must live under host /mnt
+    command: >
+      bash -c 'rmdir /mnt/data 2>/dev/null;
+      ln -sfn "/mnt/host$${DATAPATH#/mnt}" /mnt/data &&
+      exec sleep infinity'
     deploy:
       resources:
         reservations:
