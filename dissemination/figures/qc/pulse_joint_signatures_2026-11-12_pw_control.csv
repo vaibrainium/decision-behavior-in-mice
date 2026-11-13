@@ -1,0 +1,61 @@
+model,mouse,acc_36,rt50,sim_nonresp_share
+data,DBM12,,0.8048,
+data,DBM13,0.6,1.0963,
+data,DBM14,0.7342,1.3145,
+data,DBM15,0.5735,1.3023,
+data,DBM5,0.657,1.2187,
+data,DBM6,0.7149,1.2976,
+data,PSUIM10,0.75,1.5689,
+data,PSUIM5,0.8062,1.909,
+data,PSUIM6,0.8128,1.6897,
+data,PSUIM7,0.7579,0.9306,
+"primary, control-only fit",DBM12,,0.8189,0.0627
+"primary, control-only fit",DBM13,0.5841,1.2553,0.138
+"primary, control-only fit",DBM14,0.663,1.354,0.1144
+"primary, control-only fit",DBM15,0.615,1.428,0.1679
+"primary, control-only fit",DBM5,0.6326,1.2748,0.1087
+"primary, control-only fit",DBM6,0.6689,1.3487,0.1197
+"primary, control-only fit",PSUIM10,0.6895,1.6022,0.1679
+"primary, control-only fit",PSUIM5,0.7482,1.9261,0.2001
+"primary, control-only fit",PSUIM6,0.7634,1.7545,0.1514
+"primary, control-only fit",PSUIM7,0.6883,0.9565,0.0619
+pw_shared,DBM12,,0.7989,0.0493
+pw_shared,DBM13,0.5786,1.1342,0.0834
+pw_shared,DBM14,0.6615,1.4043,0.1669
+pw_shared,DBM15,0.6306,1.4263,0.1693
+pw_shared,DBM5,0.6316,1.2677,0.0789
+pw_shared,DBM6,0.6713,1.3578,0.1321
+pw_shared,PSUIM10,0.6716,1.6128,0.1676
+pw_shared,PSUIM5,0.7612,1.938,0.1913
+pw_shared,PSUIM6,0.7544,1.6925,0.1452
+pw_shared,PSUIM7,0.6904,0.9115,0.0452
+pw_shared_no_sv,DBM12,,0.8359,0.0131
+pw_shared_no_sv,DBM13,0.5959,1.2505,0.0544
+pw_shared_no_sv,DBM14,0.6584,1.2683,0.0814
+pw_shared_no_sv,DBM15,0.5938,1.4204,0.08
+pw_shared_no_sv,DBM5,0.6474,1.2622,0.0276
+pw_shared_no_sv,DBM6,0.6928,1.3455,0.0429
+pw_shared_no_sv,PSUIM10,0.7315,1.679,0.0873
+pw_shared_no_sv,PSUIM5,0.8057,1.8519,0.1046
+pw_shared_no_sv,PSUIM6,0.7848,1.7026,0.0988
+pw_shared_no_sv,PSUIM7,0.7171,0.9533,0.0106
+pw_per_time,DBM12,,0.7989,0.0493
+pw_per_time,DBM13,0.5786,1.1342,0.0833
+pw_per_time,DBM14,0.6615,1.4043,0.1669
+pw_per_time,DBM15,0.6314,1.4279,0.1697
+pw_per_time,DBM5,0.6316,1.2677,0.0789
+pw_per_time,DBM6,0.6703,1.3636,0.1321
+pw_per_time,PSUIM10,0.6711,1.6108,0.1674
+pw_per_time,PSUIM5,0.7612,1.938,0.1913
+pw_per_time,PSUIM6,0.7655,1.7116,0.1375
+pw_per_time,PSUIM7,0.6904,0.9115,0.0452
+pw_per_time_no_sv,DBM12,,0.8359,0.0131
+pw_per_time_no_sv,DBM13,0.5959,1.2505,0.0543
+pw_per_time_no_sv,DBM14,0.6611,1.2698,0.0818
+pw_per_time_no_sv,DBM15,0.5938,1.4204,0.08
+pw_per_time_no_sv,DBM5,0.6476,1.2622,0.0276
+pw_per_time_no_sv,DBM6,0.693,1.3445,0.0429
+pw_per_time_no_sv,PSUIM10,0.7315,1.6791,0.0875
+pw_per_time_no_sv,PSUIM5,0.8054,1.8488,0.1042
+pw_per_time_no_sv,PSUIM6,0.7918,1.7111,0.1026
+pw_per_time_no_sv,PSUIM7,0.7192,0.9639,0.0112
