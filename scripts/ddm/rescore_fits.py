@@ -74,11 +74,13 @@ def rescore(fam: str, mouse: str, n_reps: int, seed: int, cache: Path) -> dict:
     split = path.stem.rsplit("_", 1)[1]
     train = {"all": rows, "pulse": rows[~ctl], "control": rows[ctl]}[split]
     assert len(train) == r["n_train"], (fam, mouse, len(train), r["n_train"])
-    data, stim = select(x, train, nominal=opt.get("nominal_input", False))
+    pw, nt = bool(r.get("pulse_weight")), int(r.get("n_pulse_times") or 0)
+    data, stim = select(x, train, nominal=opt.get("nominal_input", False), pulse_weight=pw, pulse_times=nt)
     rig = "ucla" if mouse.startswith("PSUIM") else "uw"
     model = make_model(r["variant"], rig, opt["fixed_guess_bias"], leak_bounds=opt.get("leak_bounds"), responded=True,
                        extrema_samples=opt.get("extrema_samples", False), nominal_input=opt.get("nominal_input", False),
-                       front_end=opt.get("front_end"), nominal_matched=opt.get("nominal_matched", False), ugm=opt.get("ugm", False))
+                       front_end=opt.get("front_end"), nominal_matched=opt.get("nominal_matched", False), ugm=opt.get("ugm", False),
+                       pulse_weight=pw, n_pulse_times=nt)
     q = model.likelihood_calc
     assert isinstance(q, CensoredQMLE) and q.nbins == r["likelihood_params"]["nbins"] and q.include_censored == r["likelihood_params"]["include_censored"], fam
     np.random.seed(seed)

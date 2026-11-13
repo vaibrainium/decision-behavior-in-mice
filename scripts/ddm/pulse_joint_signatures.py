@@ -75,6 +75,13 @@ for _fam in EXTRA_FAMILIES:
     OPTIONS[_fam] = _opt
 for _fam in PULSE_ONLY_FAMILIES:
     OPTIONS[_fam] = dict(front_end="power") if _fam.startswith("pulse_power_") else {}
+# free pulse weight, shared or per pulse time (plans 2026-10-29-pulse-weight-joint, 2026-10-30-pulse-time-weights; joint "all")
+PULSE_WEIGHT_FAMILIES = {"pw_shared": ("fits_joint_unfreeze_pulse_weight", "L0U0V1Z0G1"),
+                         "pw_shared_no_sv": ("fits_joint_unfreeze_pulse_weight", "L0U0V0Z0G1"),
+                         "pw_per_time": ("fits_joint_unfreeze_pulse_time_weights", "L0U0V1Z0G1"),
+                         "pw_per_time_no_sv": ("fits_joint_unfreeze_pulse_time_weights", "L0U0V0Z0G1")}
+for _fam in PULSE_WEIGHT_FAMILIES:
+    OPTIONS[_fam] = dict(pulse_weight=True) if _fam.startswith("pw_shared") else dict(pulse_times=True)
 for _fam in (*UGM_FAMILIES, *UGM_PULSE_FAMILIES):
     _fe = _fam.removeprefix("pulse_").split("_")[0]
     OPTIONS[_fam] = dict(ugm=True) | ({} if _fe == "linear" else dict(front_end=_fe))
@@ -85,7 +92,7 @@ def model_path(fam: str):
     if fam in PULSE_ONLY_FAMILIES or fam in UGM_PULSE_FAMILIES:
         folder, variant = (PULSE_ONLY_FAMILIES.get(fam) or UGM_PULSE_FAMILIES[fam])
         return lambda m: DDM / folder / f"{m}_{variant}_pulse.pkl"
-    folder, variant = (FAMILIES.get(fam) or EXTRA_FAMILIES.get(fam) or UGM_FAMILIES[fam])[:2]
+    folder, variant = (FAMILIES.get(fam) or EXTRA_FAMILIES.get(fam) or UGM_FAMILIES.get(fam) or PULSE_WEIGHT_FAMILIES[fam])[:2]
     return lambda m: DDM / folder / f"{m}_{variant}_all.pkl"
 
 
@@ -102,12 +109,15 @@ def simulate(fam: str, path: Path, inputs: dict, obs: pd.DataFrame, mouse: str, 
     assert bool(r.get("fixed_guess_bias")) == opt["fixed_guess_bias"] and bool(r.get("nominal_input")) == opt.get("nominal_input", False)
     assert r.get("front_end") == opt.get("front_end") and bool(r.get("nominal_matched")) == opt.get("nominal_matched", False)
     assert bool(r.get("ugm")) == opt.get("ugm", False)
+    assert bool(r.get("pulse_weight")) == opt.get("pulse_weight", False) and bool(r.get("n_pulse_times")) == opt.get("pulse_times", False)
     rig = obs.loc[obs.mouse == mouse, "rig"].iloc[0]
     model = make_model(r["variant"], rig, opt["fixed_guess_bias"], leak_bounds=opt.get("leak_bounds"), responded=True,
                        extrema_samples=opt.get("extrema_samples", False), nominal_input=opt.get("nominal_input", False),
-                       front_end=opt.get("front_end"), nominal_matched=opt.get("nominal_matched", False), ugm=opt.get("ugm", False))
+                       front_end=opt.get("front_end"), nominal_matched=opt.get("nominal_matched", False), ugm=opt.get("ugm", False),
+                       pulse_weight=bool(r.get("pulse_weight")), n_pulse_times=int(r.get("n_pulse_times") or 0))
     rows = np.flatnonzero(inputs["subject_id"] == mouse)  # all responded trials, for the non-response share
-    data, stim = select(inputs, rows, nominal=opt.get("nominal_input", False))
+    data, stim = select(inputs, rows, nominal=opt.get("nominal_input", False), pulse_weight=bool(r.get("pulse_weight")),
+                        pulse_times=int(r.get("n_pulse_times") or 0))
     params = dict(r["parameters"])
     for k, v in (override or {}).items():
         assert k in params, f"{k} not a parameter of {fam}"

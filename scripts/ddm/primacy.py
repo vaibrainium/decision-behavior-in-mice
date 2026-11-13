@@ -149,11 +149,12 @@ def nominal_stimuli(inputs: dict, rows: np.ndarray, lead: float) -> tuple[np.nda
 
 def make_model(variant: str, rig: str, fixed_guess_bias: bool | None = None, time_varying_gain: bool = False, leak_bounds: tuple[float, float] | None = None,
                responded: bool = False, extrema_samples: bool = False, nominal_input: bool = False, front_end: str | None = None,
-               nominal_matched: bool = False, ugm: bool = False) -> MouseDDM:
+               nominal_matched: bool = False, ugm: bool = False, pulse_weight: bool = False,
+               n_pulse_times: int = 0) -> MouseDDM:
     fixed_guess_bias = FIXED_GUESS_BIAS if fixed_guess_bias is None else fixed_guess_bias
     free, fixed = make_params(variant, GUESS_MODEL, time_varying_gain=time_varying_gain, fixed_guess_bias=fixed_guess_bias, leak_bounds=leak_bounds,
                               extrema_samples=extrema_samples, nominal_input=nominal_input, front_end=front_end, nominal_matched=nominal_matched,
-                              ugm=ugm)
+                              ugm=ugm, pulse_weight=pulse_weight, n_pulse_times=n_pulse_times)
     likelihood_params = RESPONDED_LIKELIHOOD_PARAMS if responded else LIKELIHOOD_PARAMS
     return MouseDDM(free_params=free, fixed_params=fixed, device=DEVICE, likelihood_params=likelihood_params, censor_at=CENSOR_AT, min_rt=MIN_RT[rig])
 
