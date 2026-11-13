@@ -1,5 +1,5 @@
 # Status
-Last updated: 2026-11-12 by Claude (Opus 5.5; data mount fix)
+Last updated: 2026-11-13 by Claude (Opus 5.5)
 
 ## Current focus
 Mapping x accumulator + nominal-coherence fits complete (1,260; exploratory, no rules): power/norm mappings fit slightly better
@@ -38,6 +38,8 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-11-13-pulse-weight-signatures.md : free pulse weights (shared / per time) raise PSUIM6/7 early effect only to 6.5-7.5 pp (data 15.5 / 13.5); best early chi2 74.6, worse than normalized UGM no sv; BIC +274 to +907
+- reports/2026-11-13-bits-per-trial.md : bits per trial: full-data ranks like BIC (rho 0.94); held-out bits noise-limited at 150 reps (seed moves families 5-26 mbits), not usable for ranking
 - reports/2026-11-12-rescored-ic.md : AIC/BIC from rescored fitted NLL: joint best power + leak + urgency (= held-out best; norm + leak 2.6 behind), pulse-only best linear leak; MC noise ~13 per family
 - reports/2026-11-12-likelihood-check.md : likelihood code correct; sv's pulse-trial advantage is all RT term, mostly PSUIM7; stored fitted NLL optimistic by 194-250 per family (model-dependent), so AIC/BIC need rescoring at an independent seed
 - reports/2026-11-11-model-ic.md : AIC/BIC agree with held-out NLL on the top group (leak / leak + urgency with sv, power or norm input) and on integrators > E/ES > Stine; QMLE AIC/BIC legitimate (corrects an earlier claim)
