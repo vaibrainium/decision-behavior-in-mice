@@ -33,7 +33,7 @@ from src.utils.pmf_utils import fit_psychometric_function
 from scripts.ddm.compare_joint_refits import DDM, FAMILIES, FOLDS, load
 from scripts.ddm.fit_mouse_ddm import load_inputs, responded_only
 from scripts.ddm.pulse_joint_signatures import (EXTRA_FAMILIES, FE_NORM, FE_POWER, PULSE_ONLY_FAMILIES, REFERENCE, UGM_FAMILIES,
-                                                UGM_PULSE_FAMILIES, model_path, simulate)
+                                                UGM_PULSE_FAMILIES, PULSE_WEIGHT_FAMILIES, model_path, simulate)
 import scripts.ddm.pulse_leak_urgency_signatures as PLU
 from scripts.ddm.pulse_leak_urgency_signatures import observed
 from scripts.ddm.pulse_psychometric import OUT
@@ -71,6 +71,8 @@ GROUPS = [  # (group label, [(family key, display label)])
     ("Pulse-only fits, power law (fitted on pulse trials; controls predicted)",
      [(f"pulse_power_{k}", l) for k, l in PULSE_ONLY_LABELS]),
     ("All trials, urgency-gating region", UGM_LABELS),
+    ("All trials, free pulse weight", [("pw_shared", "Integrator, pulse weight"), ("pw_shared_no_sv", "Integrator, pulse weight, no sv"),
+                                       ("pw_per_time", "Integrator, weight per pulse time"), ("pw_per_time_no_sv", "Integrator, weight per pulse time, no sv")]),
     ("Pulse-only fits, urgency-gating region (fitted on pulse trials; controls predicted)", [(f"pulse_{k}", l) for k, l in UGM_LABELS]),
     ("Counterfactual: fitted parameters with sv = 0 (not fitted)",
      [(f"{k} [sv=0]", l) for k, l in [("primary", "Integrator, linear"), ("leak", "Leak, linear"), ("urgency", "Urgency, linear"),
@@ -204,7 +206,7 @@ def nll_table(families: list[str], mice: list[str]) -> list[dict]:
                              "n_control_test": int(pf.loc[m, "n_test"]) if m in pf.index else None,
                              "k": len(pf.loc[m, "free_parameters"]) if m in pf.index else None})
             continue
-        folder, variant = (FAMILIES.get(fam) or EXTRA_FAMILIES.get(fam) or UGM_FAMILIES[fam])[:2]
+        folder, variant = (FAMILIES.get(fam) or EXTRA_FAMILIES.get(fam) or UGM_FAMILIES.get(fam) or PULSE_WEIGHT_FAMILIES[fam])[:2]
         df = load(folder, variant)
         cv = df[df.split.isin(FOLDS)]
         nf = cv.groupby("mouse").split.nunique()
@@ -241,6 +243,7 @@ def main():
     ap.add_argument("--families", nargs="*", help="only these families (with --sim_only: fill the cache in parallel runs)")
     ap.add_argument("--sim_only", action="store_true", help="simulate into the cache and stop")
     ap.add_argument("--tag", default="", help="appended to the JSON name")
+    ap.add_argument("--merge", type=Path, help="existing browser JSON: keep its data and families, add / replace --families only")
     args = ap.parse_args()
     inputs = load_inputs(DDM / "ddm_inputs_global_ucla_nofreeze.npz")
     with np.load(DDM / "pulse_timing_global.npz") as f:
@@ -259,13 +262,22 @@ def main():
                 simulate(fam, fit_path(fam)(m), inputs, obs, m, args.cache, override)
             print(f"simulated {fam}", flush=True)
         return
-    rng = np.random.default_rng(0)
-    data = {"all": describe(obs, rng), **{m: describe(obs[obs.mouse == m], rng) for m in mice}}
+    base = json.loads(args.merge.read_text()) if args.merge else None
+    if base:
+        assert base["mice"] == mice and args.families, "--merge needs the same mice and --families"
+        data = base["data"]
+    else:
+        rng = np.random.default_rng(0)
+        data = {"all": describe(obs, rng), **{m: describe(obs[obs.mouse == m], rng) for m in mice}}
     print("data done", flush=True)
     fams, groups = {}, []
     for glabel, members in GROUPS:
         keys = []
         for fam, label in members:
+            if base and fam not in args.families and fam in base["families"]:
+                fams[fam] = base["families"][fam]
+                keys.append(fam)
+                continue
             if args.families and fam not in args.families:
                 continue
             override = {"sv": 0.0} if fam.endswith("[sv=0]") else None
@@ -277,7 +289,9 @@ def main():
             print(f"summarized {fam}", flush=True)
         if keys:
             groups.append({"label": glabel, "families": keys})
-    nll = nll_table(list(fams), mice)
+    nll = nll_table([f for f in fams if not base or f in args.families], mice)
+    if base:
+        nll = [r for r in base["nll"] if r["family"] not in args.families] + nll
     payload = {"made": date.today().isoformat(), "mice": mice, "conditions": CONDITIONS, "columns": ["cond", "coh", "n", "p", "se_p", "rt", "se_rt"],
                "rt_edges": RT_EDGES.tolist(), "psy_params": PSY_PARAMS, "max_coh": MAX_COH,
                "data": data, "families": fams, "groups": groups, "nll": nll,

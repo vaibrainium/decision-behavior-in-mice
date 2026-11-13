@@ -28,17 +28,19 @@ from scripts.ddm.pulse_psychometric import OUT
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--browser", default=str(OUT / "fit_browser_2026-11-11_v5.json"))
-    ap.add_argument("--rescored")
+    ap.add_argument("--rescored", nargs="+")
     args = ap.parse_args()
     b = json.load(open(args.browser))
     lab = {f: (v["group"].split(" (")[0], v["label"]) for f, v in b["families"].items()}
     d = pd.DataFrame(b["nll"]).dropna(subset=["fitted_nll", "n_fitted", "k"])
     d = d.groupby("family").filter(lambda g: len(g) == len(b["mice"]))
+    if "stored_fitted_nll" in d:  # browser data v6+: fitted_nll holds the rescored value, the stored one is kept aside
+        d["fitted_nll"] = d.stored_fitted_nll.fillna(d.fitted_nll)
     d["aic_stored"] = 2 * d.fitted_nll + 2 * d.k
     d["bic_stored"] = 2 * d.fitted_nll + d.k * np.log(d.n_fitted)
     sd = None
     if args.rescored:
-        r = pd.read_csv(args.rescored)
+        r = pd.concat([pd.read_csv(f) for f in args.rescored], ignore_index=True)
         per = r.groupby(["family", "mouse"]).agg(nll=("nll", "mean"), choice_nll=("choice_nll", "mean"), rt_nll=("rt_nll", "mean"),
                                                  stored_check=("stored_nll", "first"), n_check=("n_train", "first"), k_check=("k", "first")).reset_index()
         d = d.merge(per, on=["family", "mouse"], how="inner", validate="one_to_one")
