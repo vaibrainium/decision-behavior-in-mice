@@ -1,0 +1,71 @@
+{
+  "original_scores_reproduced_max_error": 0.0,
+  "matched_pair_definition": "pw_per_time_no_sv_minus_pw_per_time",
+  "matched_choice_delta": -49.28647068814482,
+  "matched_rt_delta": 360.2174279939402,
+  "matched_total_delta": 310.93095730579523,
+  "matched_total_without_PSUIM7": 30.763193229489502,
+  "matched_total_without_PSUIM6_and_7": 22.89389007972789,
+  "PSUIM7_share_of_matched_total": 0.9010610152940338,
+  "by_trial_type": [
+    {
+      "trial_type": "control",
+      "delta_choice_nll": -19.09033150669456,
+      "delta_rt_nll": 226.62199434005828,
+      "delta_total": 207.53166283336373
+    },
+    {
+      "trial_type": "pulse",
+      "delta_choice_nll": -30.19613918145026,
+      "delta_rt_nll": 133.5954336538819,
+      "delta_total": 103.39929447243165
+    }
+  ],
+  "rt_by_correctness": {
+    "correct": 292.1679327928762,
+    "error": 51.98005320316818,
+    "zero_coherence": 16.069441997895634
+  },
+  "rt_by_abs_coherence": {
+    "0": 16.06944199789564,
+    "9": 30.545941926145456,
+    "18": -4.932610565683663,
+    "36": 138.61260704401457,
+    "100": 179.92204759156817
+  },
+  "rt_by_quantile_third": {
+    "0.0": 213.18600571161807,
+    "1.0": 538.6973809970909,
+    "2.0": -391.665958714769
+  },
+  "seed_checks": [
+    {
+      "seed": 12345,
+      "mouse": "PSUIM6",
+      "choice": -13.165599770352634,
+      "rt": 21.034902920114252,
+      "total": 7.869303149761615
+    },
+    {
+      "seed": 12345,
+      "mouse": "PSUIM7",
+      "choice": -25.47457294969579,
+      "rt": 305.64233702600166,
+      "total": 280.1677640763059
+    },
+    {
+      "seed": 23456,
+      "mouse": "PSUIM6",
+      "choice": -16.49511862872065,
+      "rt": -8.334837461533937,
+      "total": -24.82995609025459
+    },
+    {
+      "seed": 23456,
+      "mouse": "PSUIM7",
+      "choice": -9.082740041067604,
+      "rt": 278.4013604933212,
+      "total": 269.3186204522535
+    }
+  ]
+}

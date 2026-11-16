@@ -1,0 +1,100 @@
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+power_leak_urgency PSUIM6 cv0 seed=23456: score=2963.580, stored difference=9.3771, seconds=1.97
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+power_leak_urgency PSUIM6 cv1 seed=23456: score=2954.614, stored difference=3.9554, seconds=1.63
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+power_leak_urgency PSUIM6 cv2 seed=23456: score=2834.013, stored difference=12.8469, seconds=1.62
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+power_leak_urgency PSUIM6 cv3 seed=23456: score=2863.649, stored difference=19.1730, seconds=1.51
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+power_leak_urgency PSUIM6 cv4 seed=23456: score=2784.704, stored difference=-0.7597, seconds=1.50
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+power_leak_urgency PSUIM7 cv0 seed=23456: score=3673.565, stored difference=9.9689, seconds=1.79
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+power_leak_urgency PSUIM7 cv1 seed=23456: score=3643.326, stored difference=-7.2513, seconds=1.79
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+power_leak_urgency PSUIM7 cv2 seed=23456: score=3645.569, stored difference=0.4870, seconds=1.79
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+power_leak_urgency PSUIM7 cv3 seed=23456: score=3564.293, stored difference=-13.8564, seconds=1.78
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+power_leak_urgency PSUIM7 cv4 seed=23456: score=3575.554, stored difference=0.4602, seconds=1.76
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+pw_per_time PSUIM6 cv0 seed=23456: score=2990.485, stored difference=12.7088, seconds=1.51
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+pw_per_time PSUIM6 cv1 seed=23456: score=2961.535, stored difference=0.4659, seconds=1.50
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+pw_per_time PSUIM6 cv2 seed=23456: score=2844.529, stored difference=8.0159, seconds=1.49
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+pw_per_time PSUIM6 cv3 seed=23456: score=2872.767, stored difference=-10.3310, seconds=1.48
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+pw_per_time PSUIM6 cv4 seed=23456: score=2791.092, stored difference=7.0863, seconds=1.47
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+pw_per_time PSUIM7 cv0 seed=23456: score=3686.607, stored difference=1.8658, seconds=1.74
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+pw_per_time PSUIM7 cv1 seed=23456: score=3667.353, stored difference=10.8876, seconds=1.73
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+pw_per_time PSUIM7 cv2 seed=23456: score=3668.159, stored difference=6.4331, seconds=1.73
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+pw_per_time PSUIM7 cv3 seed=23456: score=3563.105, stored difference=-14.7399, seconds=1.71
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+pw_per_time PSUIM7 cv4 seed=23456: score=3594.566, stored difference=18.1634, seconds=1.70
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+pw_per_time_no_sv PSUIM6 cv0 seed=23456: score=2972.929, stored difference=0.2933, seconds=1.49
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+pw_per_time_no_sv PSUIM6 cv1 seed=23456: score=2952.819, stored difference=-12.2427, seconds=1.46
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+pw_per_time_no_sv PSUIM6 cv2 seed=23456: score=2842.520, stored difference=-0.1537, seconds=1.47
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+pw_per_time_no_sv PSUIM6 cv3 seed=23456: score=2878.890, stored difference=0.2552, seconds=1.46
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+pw_per_time_no_sv PSUIM6 cv4 seed=23456: score=2788.420, stored difference=-2.9054, seconds=1.45
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+pw_per_time_no_sv PSUIM7 cv0 seed=23456: score=3767.885, stored difference=26.6132, seconds=1.74
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+pw_per_time_no_sv PSUIM7 cv1 seed=23456: score=3730.546, stored difference=8.6061, seconds=1.73
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+pw_per_time_no_sv PSUIM7 cv2 seed=23456: score=3688.551, stored difference=-29.0000, seconds=1.72
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+pw_per_time_no_sv PSUIM7 cv3 seed=23456: score=3620.171, stored difference=-9.9534, seconds=1.71
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+pw_per_time_no_sv PSUIM7 cv4 seed=23456: score=3641.955, stored difference=15.4949, seconds=1.70
+                        test_nll  stored_test_nll  difference_from_stored
+family                                                                   
+power_leak_urgency  32502.867000     32468.465866               34.401134
+pw_per_time         32640.196486     32599.640484               40.556002
+pw_per_time_no_sv   32884.685150     32887.677552               -2.992401
+                                            delta_choice_nll  delta_rt_nll  delta_total
+pair                                                                                   
+pw_per_time_minus_power_leak_urgency               20.548823    116.780663   137.329486
+pw_per_time_no_sv_minus_power_leak_urgency         -5.029035    386.847186   381.818150
+pw_per_time_no_sv_minus_pw_per_time               -25.577859    270.066523   244.488664

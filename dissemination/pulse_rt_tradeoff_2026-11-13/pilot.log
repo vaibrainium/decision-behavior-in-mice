@@ -1,0 +1,9 @@
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+power_leak_urgency PSUIM7 cv0 seed=12345: score=3663.596, stored difference=0.0000, seconds=2.19
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+pw_per_time PSUIM7 cv0 seed=12345: score=3684.741, stored difference=0.0000, seconds=1.77
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+pw_per_time_no_sv PSUIM7 cv0 seed=12345: score=3741.271, stored difference=0.0000, seconds=1.75
