@@ -1,0 +1,377 @@
+[
+  {
+    "path": ".agents/reports/2026-10-21-ddm-common-model-selection.md",
+    "sha256": "4e7fb8cdaaece26fd6deeec8c4fdc07473b1af5c8811da54d3ad64b04787e8a4",
+    "summary": "## Summary\nWarm starts removed the optimizer failures. With measured noise, sv and fast guesses clearly improve held-out fit in\nmost mice; sz does not. Leak and urgency help only in the 3\u20134 mice with the most trials, so they fail parsimony rule 2\nas written. The fast-only guess form (guess delay \u2264 0.3 s) is the best-supported guess form. The common model is not\nchosen yet: the authors have to decide between strict rule 2 (L0U0V1Z0G1, fast-only guesses) and keeping leak and\nurgency.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-22-arriving-results.md",
+    "sha256": "0bebbbae1040976ffe90897f1252dc3a4f10cda3b678b71459ebcac4d5065d80",
+    "summary": "## Summary\nIndependently recomputed the control-strategy comparison and guess-bias score difference from saved fits, and\nrecomputed recovery rates and parameter correlations in memory. Incorporated these results into manuscript Results,\nAbstract and Discussion, with uncertainty caveats. The independent pulse comparison remains pending: no primacy\noutput directory existed during this inspection, and no observed pulse outcomes were examined.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-22-leak-urgency-diagnosis.md",
+    "sha256": "8b50cb3b16c9c15f1960704e776354b5694c4487a2d075f9518835a9b2dc6a03",
+    "summary": "## Summary\nNot power: the other seven mice pooled (12,307 trials) gain ~0 from leak (+6.8 \u00b1 4.0) and urgency (\u22120.3 \u00b1 4.5). In\nthe mice where they help, they mostly fit the rate of censored (> 5 s) trials. That rate is nearly\ncoherence-independent (5\u201312% even at 100%), yet the late responses are coherence-dependent (accuracy 0.57\u20130.88 by\ncoherence): consistent with a delayed start of integration, not disengagement. Neither model captures it.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-22-observed-gate-review.md",
+    "sha256": "ab971e91507d02f9e586f8c8b40b8634cd489867122ec37668e2732be302592b",
+    "summary": "## Summary\nRead saved gate and strategy outputs and checked coverage counts and prediction commits. Both baselines fail\nchoice and RT adequacy; strategy test remains not distinguished under its original rule. Added these findings\nto manuscript Results/Abstract/Discussion and withheld primacy claims. Amendment 6 is a draft, not adopted here.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-22-paper-first-draft.md",
+    "sha256": "8ba8e140fac38686ef4f2f430c5e85dc1d262ed3f36299c2aedbd618e5866f71",
+    "summary": "## Summary\nCreated `dissemination/paper/manuscript_2026-10-22.md`: Introduction, established Results, Methods and bounded\nDiscussion prose, with pending strategy/timing sections and an incomplete abstract. Added source, paragraph-claim\nand numeric-consistency records. Corrected censoring language in the existing captions and qualified the outline.\nThe parent paper plan remains active: scientific results, author facts, figures and final verification remain unfinished.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-22-prediction-sensitivity.md",
+    "sha256": "4a29f289572ec4a59fc942634c4c6ea1c56559ca9c21aaacf743525ca5ba6238",
+    "summary": "## Summary\nAll frozen prediction checksums match. Both strategies predict small and similar pulse effects. The completed\nsynthetic test rarely selects the generator with the primary pulse-specific statistic. Updated the manuscript\nto distinguish control-trial model preference from limited independent pulse discrimination. No recorded pulse\nchoices or reaction times were read; no observed-analysis result files existed at the inspection.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-22-primacy-power.md",
+    "sha256": "132d18ebb2e2060a34cdeeef721a3db20399745e357d63716b982fe9fcce1314",
+    "summary": "## Summary\nThe pipeline works on synthetic data: predictions, gates, PyMC GLMMs and sensitivity jobs. No recorded pulse-trial\noutcome was read. But the fitted DDM predicts that a \u00b1100%, 50\u201367 ms pulse changes choices by only ~0.025 logit\n(about 0.6 percentage points). Primacy can at most remove that effect, so the largest possible \u03b2_middle is ~0.03\u20130.04,\nwhile the GLMM's standard error with all mice is ~0.05\u20130.07. Under the model as fitted, the confirmatory test cannot\ndetect primacy of any size. It becomes informative only if the observed pulse effects are much larger than the model\npredicts, which is what the gate (step 6.2) checks.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-23-amendment-6-result.md",
+    "sha256": "dcd76553db54fa9eb25a32f7d7aeeb6ea3f57fdf42bc54f55c11135949d1dc41",
+    "summary": "## Summary\nNo to both. The revised gate fails for both baselines (departure +0.24 / +0.31 logit). The calibration shows the\nprocedure is valid under the null, but the timing test detects 0\u20135% of datasets with 10\u201340% primacy. Per amendment 6\nitem 8, the timing test is not run and no further revision is made. The data show a between-mouse-variable excess\npulse sensitivity, not an answer about primacy.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-23-control-only-selection.md",
+    "sha256": "25a57abbcd55fd5be4f244d70677d87ad1cf79fed5a11ab1b8456f383da0a846",
+    "summary": "## Summary\nYes. sv and guesses are needed (8/10 and 7/10 mice by > 10 held-out NLL); leak and urgency are not (summed \u221221 / +26;\nonly PSUIM6 benefits). Part of the leak/urgency gain seen on all trials (PSUIM5, PSUIM7) came from pulse trials.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-23-final-parameters-review.md",
+    "sha256": "ac0d1c96316d0e787e58baea2f4a642b8f8c9c2d90f28ad78d4f102589bec7fa",
+    "summary": "## Summary\nThe saved fits reproduce the table and reported medians/ranges. All ten fits have the expected common-model form, free guess bias, fifty simulation repetitions and warm starts. The boundary wording needs correction: the script flags proximity within 1% of the allowed parameter range, not exact boundary hits. Such estimates are potentially constrained; they are not established lower limits. Recommendation: retain the descriptive table, review fit quality and the ongoing diagnostics before prioritizing refits.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-23-manuscript-story-integration.md",
+    "sha256": "94fc67e41aa9b9b71ba3633ab6cadf1080cb5af7747eada22eda78f16f487108",
+    "summary": "## Summary\nRevised the Markdown manuscript around the agreed argument: control behaviour favours the tested accumulator, randomized pulses redirect choices, and the fitted models misplace the pulse effect in time. Added the assignment-based effect, pulse-aligned response curves, stimulus audit, model diagnostics and corresponding Methods. Preserved the original/revised failed gates, low strategy sensitivity and the decision not to run the confirmatory timing test. The tau-p pilot remains outside formal claims pending its planned independent check.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-23-poster-story-review.md",
+    "sha256": "ef4cde5a0fcd5d8982f067ebf2688685dd0aa7c4a305a35e2f0485c4e5a77bbb",
+    "summary": "## Summary\nRetain the accessible comparative motivation, direction-to-lick task illustration, psychometric introduction and pulse-coherence traces. Replace the poster's accumulation/primacy assertions with the current model comparison, assignment-based pulse effect and predictive limitations. Updated the story document and caption production notes; formal numerical captions are unchanged. The WFV experiment remains outside this paper.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-23-pulse-behaviour-20261023T191030Z_fa8de8b.md",
+    "sha256": "03968c7b27cc0df7029e044945ddb1ef50cf020ede7d8d1d602340ea7e435842",
+    "summary": "## Summary\n- Positive (rightward) vs negative (leftward) scheduled pulses, primary set (|coh| \u2264 36%): **\u0394direction = +5.84 pp, 95% t CI [1.80, 9.89], n = 10 mice**. Unadjusted p = 0.0097, Holm p = 0.019. Mouse bootstrap [2.60, 9.16].\n- Components: \u0394R +4.81 [0.47, 9.16], \u0394L \u22126.88 [\u221210.97, \u22122.78], \u0394unresponded +2.07 [\u22120.36, 4.49]. Mostly a redirection of responses, possibly with a small increase in omissions under positive pulses (t CI includes 0).\n- Positive vs control: \u0394direction +4.86 [2.43, 7.29], Holm p = 0.0043. Control vs negative: +1.40 [\u22122.13, 4.92], Holm p = 0.39. All three Holm family members were estimable.\n- The direction is consistent across leave-one-mouse-out, session halves, within-session halves and the pseudo-onset seed sensitivity. Zero coherence and matched seeds point the same way but are imprecise. 9 of 10 mice have positive \u0394direction.\n- Confidence: moderate for a nonzero directional effect of a few pp. Low for its size (wide CI with n = 10) and for any pulse-sign asymmetry.\n\nAssignment was verified as randomized and unannounced (cfg assignment_verdict). So the positive-vs-negative assignment contrast can be worded causally, with that verdict's two qualifications: the task code read is the repository HEAD, and there are small outcome-dependent exclusions. Pulse vs control additionally depends on pseudo-onsets for UCLA controls, which D1 accepted.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-23-pulse-data-20261023T191030Z_fa8de8b.md",
+    "sha256": "1073f1fb6ac0890c36d0133ad061780776f1bb30994f0eb564cf92f7ef5f1137",
+    "summary": "## Summary\nThe contract is frozen: run `20261023T191030Z_fa8de8b`, config v2, `ready_for_behaviour = true`, and all 21 checks\npass. The user supplied the task source code mid-session. It shows that **assignment is randomized and unannounced in\nboth rigs, conditional on coherence** (UW: independent per-trial draws; UCLA: permuted blocks). Causal wording for the\nassignment contrast is therefore supported, with the qualifications listed under Caveats. A found one label bug in\nthe existing DDM inputs (48 trials), one outcome-dependent exclusion (15 trials) and one UW design asymmetry. All\nthree are now explicit in the contract. Confidence is high for the identity, label and censoring facts (checked\nmechanically), and moderate for the code-version match to collection.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-23-pulse-diagnostics-20261023T191030Z_fa8de8b.md",
+    "sha256": "27bf06e5c0197790e6223313c3e2b1a68710afd84b87f4c0b7edff098e884e93",
+    "summary": "## Summary\n- **The decomposition is exact.** The objective splits into three parts: response vs censored, choice given response, and RT bins.\n- **A choice\u2013RT tradeoff is demonstrated in the two mice with the most data and an RT term that covers almost all trials.** In PSUIM6 and PSUIM7, the gain that best fits choices (4\u20137) is 2\u20133\u00d7 the joint optimum. The RT term rejects that gain, both in-sample and on held-out folds. In 6 of the other 8 mice the choice term is too flat to tell.\n- **The mismatch is in the timing of the pulse's directional effect.** At every gain the model puts the directional effect early (0\u20131 s after onset) and then reverses part of it. The data show no early effect, accrual at 0.5\u20132 s and no reversal. This holds for the leak/urgency baseline too.\n- **No common latency effect needs explaining.** The model at the fitted gains predicts almost none, and neither do the data (package D).\n- **The with/against-coherence asymmetry from amendment 6 matches the control fit's own coherence-slope error.** It is the known control psychometric misfit, not a pulse effect.\n- **Physical amplitude errors are too small.** Package B allows at most \u00d71.4, while the choice data need \u00d72\u20137. B's rounding shift accounts for at most about 0.3 pp.\n- **Recommendation:** one bounded candidate, an added causal pulse time constant (F branch 1 form; B gives it no physical support). It has explicit falsifiers, and benchmarking on PSUIM6/PSUIM7 should come before anything wider.\n- **Confidence:** moderate for the timing mismatch and for the tradeoff in PSUIM6 and PSUIM7; low elsewhere.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-23-pulse-extension-review.md",
+    "sha256": "5986eb2605d432f7eda483d5b35c38fe2b3180560f519853c72da7e1a004c4e1",
+    "summary": "## Summary\nRecommend a versioned input correction and the reduced exploratory pilot, with the safeguards below; this recommendation is not authorization to execute it. The behavioural result already supports a substantive thesis contribution. A temporal-filter pilot tests a specific predictive repair, not a neural mechanism. Several claims in E overstate what the stimulus audit and null behavioural contrasts establish.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-23-pulse-parallel-plan.md",
+    "sha256": "adba70781c4a730890a396eeb7c68cf1af8321867a4cc96d626ec4b8a99a7c25",
+    "summary": "## Summary\nDrafted a shared trial/assignment contract followed by parallel stimulus, directional-behaviour and joint-response workstreams. Existing-model diagnosis determines whether a narrowly bounded candidate is worth implementing. The behavioural Results package can be completed independently of mechanism identification. Only documentation was created or updated; no workers, analyses or jobs were launched.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-23-pulse-response_time-20261023T191030Z_fa8de8b.md",
+    "sha256": "ad98e5fc26550872383539218532a8dae00d4f8d3c39593b4997daf454d7e449",
+    "summary": "## Summary\n- **D1 accepted.** UW uses recorded sham onsets. UCLA uses A's fixed-seed pseudo-onsets, which are reproduced exactly from metadata and match the pulse-onset distribution. The grid is 0 to 4.58 s since onset, a common range inside every trial's follow-up.\n- **Direction.** Pulses redirect responses. For pooled strata in the onset-eligible set, the directional contrast (dR - dL)/2 (positive minus negative) is +5.85 pp at u = 4.58 s, 95% t-interval [1.93, 9.77] across 10 mice. It is positive in 8 of 10 mice.\n- **Timing of the directional mass.** It accumulates mainly between 0.5 and 2 s after onset, which is where most responses occur. It is about 0 before 0.5 s.\n- **Latency and response rate.** I found no clear common effect of both pulse signs against control on response rate or latency (for example, -0.51 pp responded by 4.58 s, [-2.10, 1.09]). With 10 mice the study is underpowered, so this null should not be over-read.\n- **Confidence.** Moderate for the direction effect. Everything else is low and descriptive: intervals are pointwise, with no multiplicity correction.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-23-pulse-review-D-20261023T191030Z_fa8de8b.md",
+    "sha256": "d6190861547c7b465593b1c87ada8b74b892f7bd3a34c80202577a6cbdcc6c48",
+    "summary": "## Summary\n**PASS on all six items. No issue changes D's reported numbers.**\n- I recomputed with my own dict/loop code from the frozen trial table. It reproduces every checked per-mouse value and group value in D's `contrast_table.csv` to within 3e-13 pp. That covers:\n  - positive \u2212 negative \u0394direction at onset + 4.58 s, both summaries;\n  - pulse vs control in both directions;\n  - the three-arm common effect;\n  - one pseudo-onset seed.\n- Running my estimator at the absolute 5 s deadline reproduces package C exactly. So the D-vs-C differences come only from the horizon (onset + 4.58 s versus 5 s) and from onset eligibility.\n- Minor items only (ISSUE-minor): the identity check is weak as evidence, and `curves.csv.gz` has no interval-method column. Neither changes any number.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-23-pulse-stimulus-20261023T191030Z_fa8de8b.md",
+    "sha256": "8bc7498aa1e7bdbd5c2d3d11b04d4585ba95dce764790a61b12410fcb96438f6",
+    "summary": "## Summary\n- The replay is internally consistent. Before onset the rendered frames and the ME are bitwise identical with and\n  without the pulse in all 532 replays. The ME is causal: it first differs one frame after the stimulus does. The\n  replay reproduces the stored ME and the DDM's S+N. VERIFIED.\n- Returning to baseline redraws every noise-dot direction. This is in the task code itself, not only in the replay.\n  After the pulse the noise is a new, independent draw (pre/post noise correlation about 0). Its pulse-aligned mean\n  is about 0, so it adds noise but no directional bias. VERIFIED.\n- A small directional bias does exist, and it is deterministic. Rounding in the task's coherence-update code leaves\n  one more or one fewer coherent dot after the return, always toward the pulse direction, and this lasts for the rest\n  of the trial. The size is +0.198% coherence (UCLA |c| = 9 congruent, 18 and 36 incongruent) and +0.658% (UW |c| = 9\n  and 36 incongruent). Averaged over all genuine pulses that is +0.074% (UCLA) and +0.161% (UW). VERIFIED in code and\n  in all 13,547 pulse trials checked. Whether it matters for behaviour is a HYPOTHESIS for C/E.\n- The UCLA replay's one-frame freezes cut its early pulse energy. The replay gives 72\u201378% of the 0\u2013333 ms pulse\n  energy of the no-freeze and display-loop alternatives (ratios 1.28 to 1.40). Which alternative matches acquisition\n  is UNKNOWN. For UW the task frame-counter convention and the replay agree within 1%.\n- Recommendation: a full physical-omission replay is not needed to interpret the existing behaviour. If the pulse gain\n  is reported quantitatively, recompute the UCLA pulse with labelled alternatives. Cost is about 46 core-hours per\n  convention (\u2248 5.7 h on 8 cores).\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-23-pulse-tau-pilot-20261023T191030Z_fa8de8b.md",
+    "sha256": "04c33381c5315c01de47946bc04e46d959e5d4c0a67a179ef868e316db79953b",
+    "summary": "## Summary\n**FAIL under the frozen rule. Modelling stops.** A slower pulse response (tau_p = 300 ms, the grid edge) improves the\njoint fit in both mice, in sample and in 4 of 5 held-out folds each. It does **not** bring the choice and RT gains\ntogether, and it does **not** remove the late reversal. Criteria P2 and P3 fail in both mice. The frozen P0 check\nflagged float32 rounding; that does not affect the decision (see the P0 finding). Confidence that the candidate does\nnot fix the mismatch in these two mice: moderate to high. Generality: low, because only 2 mice from one rig were tested.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-23-pulse-thesis-research.md",
+    "sha256": "947e8dd15d084f6ff73086afc0f5267a78cf38124e36967e70faf70d791926d6",
+    "summary": "## Summary\nCompleted a targeted primary-literature review and read-only pipeline/data audit. Recommend adjusted directional\npulse effects and pulse-aligned joint choice\u2013RT distributions, then stimulus validation and a small exploratory\nmodel comparison conditional on recoverability. Existing primacy stopping rules remain intact. The user explicitly\nruled out new behavioural data. Detailed synthesis: `dissemination/reports/pulse-thesis-research-2026-10-23.md`;\npublic search/source record: `dissemination/reports/pulse-thesis-searches-2026-10-23.json`.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-23-pulse-validation-g1-20261023T191030Z_fa8de8b.md",
+    "sha256": "114ace31b7838384d5ce74637d5bbe407ef4ecca42aa3bdd2b263f6fd2860b36",
+    "summary": "## Summary\n- **C's Student-t interval across mice is adequate:** coverage is 0.93\u20130.975 in all six scenarios.\n- **The mouse bootstrap percentile interval under-covers:** coverage is 0.85\u20130.925.\n- **Null rejection is at or below nominal:** the primary test rejects 0.025 of the time (95% MC CI [0.008, 0.057]); the Holm family rejects 0.030 [0.011, 0.064].\n- **Power of the primary test (unadjusted / Holm):**\n  - \u03b4 = 3 pp: 0.29 / 0.21\n  - \u03b4 = 6 pp: 0.81 / 0.64\n  - \u03b4 = 10 pp: 0.995 / 0.985\n- **Estimator behaviour:** C and D are unbiased to within Monte Carlo error. Probability conservation, the CIF checks, censoring and the rule that pre-onset responses are unaffected held in all 1,200 datasets. D recovers a known time-local perturbation, and C recovers a censoring-driven change in response rate.\n- **Confidence:** high for the estimator and censoring logic. Moderate for interval calibration, because it depends on the assumed outcome model and normal heterogeneity across mice.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-23-story-figures-captions.md",
+    "sha256": "77fc9048a88a4de0612f3e6690b17c27f7721e6244cf7d8b94e212a917b4e468",
+    "summary": "## Summary\nDrafted a story that connects the control-trial preference for the tested accumulator to a model-independent directional pulse effect and a specific temporal prediction failure. Proposed five main figures, merging the old stimulus/hidden-coherence displays to give two main figures to pulses. Wrote complete proposed main captions, production notes and alt text, with supplementary content briefs. The new files preserve the existing manuscript/captions and do not incorporate an unevaluated model pilot.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-24-neuropaper-literature-g2.md",
+    "sha256": "815348a8f3d2f9706e4813d05538fbcdde88f7d2e5a77b5210a12981ae496f81",
+    "summary": "## Summary\nVERIFIED: a four-shard public-source search, independent metadata audit, synthesis and adversarial scoop check produced 35 verified sources. An author-requested mouse-specific fact-check then added nine unique verified precedents, producing a 44-source ledger. Broad mouse novelty is false: continuous RDK, dynamic visual evidence accumulation and visual DDM/RT modelling were already established separately. No retained source performed the exact control-fit to randomized signed-motion-pulse transfer test across choice, response probability and response-time distributions.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-25-fluctuation-kernel-power.md",
+    "sha256": "7589896eb9ba3d1f9905bd6c8a88c83fe9bd43e9fb7c156b4a6751a32ee6960c",
+    "summary": "## Summary\n(a) No. 40% gain decay moves the stimulus-aligned primacy index by ~0.1 % coh against a per-dataset SD of ~0.6; group\ndetection 0-5%. (b) Yes at the group level. A response-aligned late-weight index classifies 20/20 integrator and\n20/20 extrema-detection datasets correctly (criterion >= 90%). Per mouse, only PSUIM6/7 (~3,200 trials) are reliably\nclassified (100%); the others are at 25-90%. Confidence: moderate. See the caveats (no refit; only two candidate models).\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-25-neuropaper-outline-g3.md",
+    "sha256": "6c73648114ae15f17ce8d270c0026600da6e9e2a69f18beb28d0e977d479464d",
+    "summary": "## Summary\nVERIFIED: yes. The revised outline assigns all 21 approved claims exactly once, gives each main figure one headline, mirrors Results and Methods, and budgets 4,980 words for the eLife main text. An independent reviewer precommitted 12 criteria, requested three bounded revisions, and passed the revised package with no remaining P0/P1/P2 issues. G3 now awaits author approval.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-25-neuropaper-wave1-review.md",
+    "sha256": "fe7f1f8d48d397e1f58ddc5790d4243237f848e6003f07855481c28566189aae",
+    "summary": "## Summary\nPARTLY. Figure legends passed, and Methods passed statistical review, but Methods and Results did not both receive full PASS after two rounds. No new analysis is required. One approved-claim inconsistency must be corrected: C007 requires secondary-pipeline gate outcomes that the Methods brief did not define. Human authorization is required before a narrowly scoped third review round.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-25-results-narrative-rewrite.md",
+    "sha256": "fb03bd79d936cd6632e8df003c10f993a1d328533eb4347befac649cc3a1ef5d",
+    "summary": "## Summary\nYes. A versioned Results v4 now follows a question-to-result narrative while retaining the locked thesis, all seven\napproved Results claims and all 42 registered number tokens. No analysis, estimate or scientific conclusion changed.\nThe canonical section is 2,746/2,850 words and all deterministic Results checks pass without warnings.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-26-figure-notebooks.md",
+    "sha256": "5ce4b6700c3c5ebb0873eb329ebdd43996dafc4aa01f97d29166b57ba67fc16a",
+    "summary": "## Summary\nFive notebooks now wrap the tested modules in `scripts/paper/`, prepare shared data once, and give every labeled panel its own Markdown heading and code cell. Figures 1\u20132 expose panels A\u2013E; Figures 3\u20135 expose panels A\u2013D. All five notebooks execute successfully with the project virtual environment. Source notebooks retain no outputs and contain no export calls, so running them cannot overwrite the selected artwork.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-26-fluctuation-kernel-observed.md",
+    "sha256": "094ee08ecdcaeff0d35b71e1b6504aebb8b1beef8b27dd4c0e22d38ed8692c4b",
+    "summary": "## Summary\nPre-specified verdict: **neither model fits**. S_I = 11.44 just exceeds its 95th-percentile reference (11.22) and S_E =\n14.74 exceeds its reference (13.21). The data lie nominally closer to the integrator, but by the frozen rule this is\ninconclusive and does not qualify as supporting evidence for the accumulation-first paper (author condition: \"add it if\nit pans out\"). Confidence in the verdict itself: high (deterministic, rule fixed in advance).\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-26-main-figures-1-2.md",
+    "sha256": "fe96f5417d87b83492aabc64495dd58a0f6cb4d3c24fa183ff94791a3b86dab3",
+    "summary": "## Summary\nFigures 1 and 2 are assembled, visually inspected and selected as versioned PDF/SVG/300-dpi PNG exports. Figure 1\nuses mice for behavioural summaries and retains no-response trials explicitly; Figure 2 uses trials/seeds/replay\nconventions and never presents stimulus dispersion as across-mouse uncertainty. Exact source tables accompany every\nselected panel. The selected five-figure set, captions and neuropaper legends are reconciled, with no unresolved claim\nor number tokens and no main-figure `[MISSING]` markers.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-26-main-figures-3-5.md",
+    "sha256": "0572cbf62c5b34237bc6e1d297d244264d2a161b976a4493d40c3b9740333215",
+    "summary": "## Summary\nFigures 3\u20135 are assembled as versioned PDF, SVG and 300-dpi PNG files with adjacent source-data CSVs. Figure 3 keeps\nheld-out model comparisons separate from descriptive in-sample fit quality. Figures 4\u20135 make the randomized behavioural\npulse effect and the model's temporal mismatch the visual centre of the paper. No fitting or cluster work was run.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-26-neuropaper-s4-g4.md",
+    "sha256": "be7dcbe619e601dbee7a385cdb7d43466a4601dcb189052e303a0afb5b93b627",
+    "summary": "## Summary\nVERIFIED: all six neuropaper sections are `passed`. Introduction v2 and title/abstract v2 each passed independent round-2 review after bounded revisions, and the full deterministic check has zero errors. G4 is written but not approved. Three Methods reproducibility-table placeholders became stale when the selected Figure 1\u20133 audits were completed; G4 proposes an exact evidence-only N105\u2013N107 patch before assembly rather than silently carrying those placeholders forward.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-26-neuropaper-s5-s6.md",
+    "sha256": "4d6278277956ba6486290ba2bfe181aeaea684dd53b88cd5ab23d30f27dad40d",
+    "summary": "## Summary\nVERIFIED: G4 was approved with the bounded N105\u2013N107 Methods patch. The S5 manuscript was assembled with a\nrepository-local, marker-aware renderer because the pinned neuropaper renderer duplicated units for compound ledger\nrecords. Independent coherence review found no scientific drift and specified eight bounded editorial repairs; those\nrepairs are applied and all contract checks pass. Supplementary Figure S6 v2 is selected, visually inspected and backed\nby one adjacent source CSV per panel. It reports failed original and gain-revised gates, low frozen-strategy sensitivity,\nlow timing-test sensitivity and the resulting stopping sequence; it is not a null result for temporal weighting.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-27-f1a-strategy-recovery-responded.md",
+    "sha256": "1dd129951b339fadc905438a7eb1d20773315aa4585321ea0da0bd6616314ffa",
+    "summary": "## Summary\n*k* = 5/20, so under the D002 rule **THESIS_B** applies: the comparison favored the accumulator on real data but also\non a quarter of E-generated datasets, so it does not reliably distinguish the two strategies. The 5 are not optimizer\nfailures: in each, C's held-out NLL is lower than E's at E's own generating parameters (by 15-80). Confidence in k:\nhigh for these 20 datasets; k itself has binomial uncertainty (2 replicates x 10 mice).\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-27-no-response-trials-disengagement.md",
+    "sha256": "f5c3fb8cec7cd48ec49856f3d40bd76998b3c1b6561376731d9c61d881793168",
+    "summary": "## Summary\nThe data contradict the censoring assumption for most of these trials: non-response stays high at 100% coherence,\nrises steeply at the end of sessions and comes in runs. This matches lapse/disengagement states, not unfinished\ndiffusion. Effects on the fits are SUSPECTED, not tested; the responded-only refits (src-85) will test them.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-27-pulse-asymmetry-lapse-checks.md",
+    "sha256": "24b8e211fd1362bf2b70158c5f1dd04c87a9f900723e2dbfa90dc4b71fcb5402",
+    "summary": "## Summary\nNo asymmetry: excluding asymmetric UW cells, observed incongruent - congruent = 0.54 \u00b1 3.22 pp (p 0.87); every model\npredicts 0.36-0.84 pp; observed minus model \u2248 0 for all 7 (Holm p 1.0). The 2.0 vs 4.0 pp split in the earlier figure\ncame with the asymmetric cells. The test is weak (95% CI of the difference about \u00b17 pp). At \u00b1100% the excess pulse-direction\nerrors (3.77 \u00b1 1.15 pp per trial) are spread over RTs, largest at 1-2 s; not concentrated in the fast-guess range.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-27-pulse-contrast-responders-only.md",
+    "sha256": "fc0e9f727011823aeccc7f873902fc5b7c7fff13c62530cc5160f913696c4016",
+    "summary": "## Summary\nThey hold and get slightly larger. Positive vs negative pulse: 5.84 pp [1.80, 9.89] -> 7.52 pp [2.73, 12.30],\np 0.0097 -> 0.0062 (Holm over the 3 contrasts: 0.019 -> 0.012). The pulse does not significantly change the\nresponse rate (+2.07 pp, p = 0.086), so conditioning on responding is unlikely to drive the effect. Model fits,\ngates and calibration are not covered here (refits needed; src-85 owns the refits).\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-27-pulse-effect-vs-coherence-change.md",
+    "sha256": "eead993572c7b508e122cf10fbc62e2f120570f5d412b26c1210aac4ce899c92",
+    "summary": "## Summary\nInconclusive, and this design cannot settle it. Pulses always go to +-100%, so within |c| <= 36 |D| only spans 64-136%.\nThe two hypotheses then predict effects that differ by ~0.12 logit across the range, below the per-arm uncertainty. The\noverall pulse effect is clear (0.17 logit, p 0.009); its dependence on |D| is not resolved either way.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-27-pulse-me-old-vs-new-filter.md",
+    "sha256": "73a5328a8aa9dd1ed08fdb52b60b046b8d9ebacfabfc09f4273e5ff097266e95",
+    "summary": "## Summary\nNot a calculation bug. The difference is the filter change of 2026-10-13 (dissemination/reports/motion-energy-methods.md \u00a72.2-2.3, \u00a73.1-3.2).\nStimulus replay and pulse placement are identical on master and this branch. The old filter is non-causal (centred padding,\nunflipped kernels, 6-frame temporal window), so its pulse response starts about 1 frame before onset and peaks at about 0-17 ms with\nheight close to the nominal change. The new causal mouse filter (k 34 /s, 0.55 s) delays the response (rise ~50 ms, peak ~120 ms) and spreads it over ~300 ms\n(peak about 1/3 of nominal, area ratio 0.99; see refit plan log).\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-27-pulse-psychometric-variants.md",
+    "sha256": "18f99d588edcdae4dd5a15c8b72b4567a28b0f69712f9e383f353a65dacc5138",
+    "summary": "## Summary\nAll seven variants predict pulse effects of 0.35-1.9 pp, below the observed ones (congruent 2.0 pp, incongruent 4.0 pp,\n|c| <= 36). Adding a cross-validated pulse gain or using ES gets closest but still predicts about half the incongruent effect.\nObserved effects are noisy per coherence (SEM 1-6 pp), so the per-coherence shape is not informative. Descriptive only.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-27-pulse-readout-bias-checks.md",
+    "sha256": "d71c4e0ea4fdc6e8a0258b79d76136b8ef260414cf1b6c9301220ea5fe6b7308",
+    "summary": "## Summary\nNone of the three expectations holds. The pulse effect is in fast-to-middle RTs (median ~0.5-1.3 s) and absent in the\ntwo slowest quintiles; slow \u00b1100% control trials are the most accurate (0.91), the fast ones the least (0.66); and\npulse-direction choices are faster on pulse trials (median -71 ms, 0.9 quantile -152 ms; noisy). This pattern looks more\nlike the pulse acting as evidence on trials still deciding shortly after it than like a readout bias on slow trials. Descriptive; exploratory.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-27-pulse-readout-model-rt-split.md",
+    "sha256": "081a69b5f2d8afb97ff51c22bd2207ea454601cd290ac66671bde7a4dd9af117",
+    "summary": "## Summary\nThe model gets the shape right: pulse effect in fast-to-middle RTs, none in slow ones, pulse-direction choices faster,\ncontrol accuracy rising with RT. It falls short in magnitude in Q1-Q3 (median RT ~0.45-1.3 s), and it predicts a small\nlate reversal (Q5, -1.6 to -1.8 pp) that the data do not show. Only one bin survives correction (\u00b1100% Q2, +8.2 pp).\nSo the gap is a too-weak pulse on trials deciding within ~1 s of the pulse, not a different mechanism visible in RT.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-28-pulse-congruency-tests.md",
+    "sha256": "5345bdb2388d00cd1fc5b8ed242ce2983572cec1a3cde7b38e7abb0d1ad37920",
+    "summary": "## Summary\nNot after correction. Pooled over stages, congruent pulses shift choices toward the pulse by 3.0 pp [0.3, 5.8]\n(8/10 mice, dz 0.80, Holm p 0.096) and incongruent by 3.6 pp [-2.2, 9.4] (7/10, Holm p 0.39); they do not differ\n(-0.5 pp, p 0.87). Each is roughly half of the positive-vs-negative contrast (7.52 pp, Holm 0.012), which pools both\ndirections and does not subtract the noisier control cells. Per-stage tests are all non-significant (late: 6 mice).\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-28-pulse-direction-by-time.md",
+    "sha256": "f64df2566d0ace8d18cfe4c93147d3efa30029bda8afbe60f8f81a2029d3019b",
+    "summary": "## Summary\nPulses act on bias, not slope. Right minus left bias: early -17.1% coherence (Holm 0.047), middle -12.4 (p 0.021,\nHolm 0.10), late -16.8 with a CI spanning zero (6 mice). No slope difference at any time. Only the early bias\ndifference survives correction, narrowly; the 6-test family was set after the 36-test results were seen, so treat the\ncorrected p values as post hoc.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-28-pulse-psychometric-parameter-bootstrap.md",
+    "sha256": "4f9e4a98e7ccc50986ab34b86d6f945801e7a9c18761003a737c903c17ed5418",
+    "summary": "## Summary\nTwo of 36 tests survive Holm, both early pulses: congruent curves are steeper than incongruent ones (slope +0.040 per %\ncoherence, Holm 0.022), and right pulses shift the bias leftward (-15.1% coherence, Holm 0.011) while left pulses do not\nshift it (+2.0, Holm 1.0). Middle pulses point the same way but nothing survives; late pulses (6 mice) show nothing.\nThe slope contrast congruent - incongruent asks the same question as positive-vs-negative (do choices follow the pulse),\nnot the pp \"congruent - incongruent\" asymmetry, which was ~1 pp and n.s.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-28-pulse-time-comparison.md",
+    "sha256": "1cf3be351df938fbe42c0c3c6b64d89443f4797754663143978e69d30035f09c",
+    "summary": "## Summary\nNo within-mouse evidence that the pulse effect changes with pulse time. Every within-mouse contrast (early - middle on\n10 mice; early - late, middle - late on the 6 mice with late pulses) has an interval spanning zero, in the per-mouse\ntests, the hierarchical model, and the RT-conditioned sensitivity. The apparent decline in per-stage group means\n(early > middle > late) is mostly a mouse-set effect: late pulses exist only in 6 mice, and those mice have small\npulse effects at every pulse time. Underpowered: a modest decline cannot be excluded.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-28-recovery-synthetic-data-mismatch.md",
+    "sha256": "9e3df1c356853276983c4e1d6728dba50bc9e32a3fa27e0b8f67758ec482d1d2",
+    "summary": "## Summary\nNo. Within one dataset, the number of responded synthetic trials (n_train / n_test) differs between candidates in many\ndatasets, so their held-out NLLs come from different trials and the \"C - E\" style differences that recovery is scored on\nare not paired. This affects the full matrix and the existing pairwise recoveries, including F1a k = 5/20 (THESIS_B under\nD002) and the ESx/DDMx and ES recoveries. Those results should be treated as invalid until rerun on fixed datasets.\nLikely cause (SUSPECTED): synthesis runs on the GPU (torch.randn), whose draws for a given seed depend on the GPU model;\njobs ran on mixed hardware (A100 lab pool and ckpt-all).\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-28-stine-exact-models.md",
+    "sha256": "b4bec247e2f46f45a24779fa2a2f612e8cd498b42f0d80c3b931885d1ec76cc7",
+    "summary": "## Summary\nThey are barely distinguishable. On held-out control trials DDMx is better than ESx by > 10 in 3/10 mice, ESx in none\n(summed 62.7); the pulse strategy test does not distinguish them at any of three pulse latencies; and recovery is weak\n(each model's own data recognised in 5-7/20, 12/20 within 10). Both fit far worse than C (summed 655-718, C better in\n6/10 mice, neither better in any). Conclusion consistent with F1a (THESIS_B): without drift variability and fast\nguesses, neither strategy model captures these mice, and these data do not separate the two strategies.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-29-behavior-exploration.md",
+    "sha256": "150731f2fc968211c32b8cde9324aa94deee0f5e9baf4d01d621ed19db689695",
+    "summary": "## Summary\nThe analysed data are 50 of 298 sessions (17%) from 10 of 14 mice; every session had pulses, so 77% of responded pulse\ntrials sit in excluded sessions. Exclusion uses control-trial behaviour only, so it is valid, but it is strict. Five\nfindings matter for modelling: (1) choices after the 5 s deadline (14% of trials, excluded) are as accurate as on-time\nchoices, so they are not disengaged guesses; (2) RTs are floored at 0.3 s with a pile-up there and low accuracy below\n0.5 s (a fast-guess population); (3) choice history moves choices about as much as the pulse (repeat-the-last-choice\nafter errors in 8/10 mice); (4) no-response rises through the session (9/10 mice); (5) the pulse effect is stable across\nsessions within a mouse (no heterogeneity, no trend) and the mice that ignore it in included sessions also ignore it in\nexcluded sessions.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-29-control-descriptives.md",
+    "sha256": "e2a050ff456f5896c59c63299cf5bf2505c9751b01f1d9c4ed43c18008883594",
+    "summary": "## Summary\nOn 14,014 responded control trials from 10 mice, RT falls weakly with coherence and errors are faster than correct\nresponses. The motion-energy kernel is small (about 0.1-0.3% coherence) and, with these trial counts, cannot be\ndistinguished from 0 or from either model. Within-mouse simulation SD (0.2-1.1) is as large as the predicted kernel\n(about 0.3-0.5), so the kernel analysis is underpowered. The common model under-predicts fast errors (exploratory).\nPaired recovery datasets now exist (80, CPU, sha256); the 320-fit rerun awaits submission by the author.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-29-heldout-choice-rt-split.md",
+    "sha256": "2155799913a6612624048fa0a005caa84d84d162152464a59b162ca96da10b28",
+    "summary": "## Summary\n`scripts/ddm/control_heldout.py` reproduces paper_accumulation heldout_per_trial_2026-10-28 exactly. The common model's\nadvantage is mostly in the RT terms. Against ES, ESx and DDMx the choice part is about 0 and not significant. Against\nrapid forgetting (E) there is a small, consistent choice advantage (2.5 per 1,000 trials, positive in 10/10 mice). The\ngroup results survive dropping any one mouse.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-29-huk-shadlen-replication.md",
+    "sha256": "0e68032a91f6f06723c89b859e917e0b84d4c2d92a7adb8fbceef4067319d7c9",
+    "summary": "## Summary\nBoth of their behavioural analyses run on our data and give the same qualitative picture: a pulse shifts the\npsychometric function by a fixed coherence equivalent, with no separate effect on RT, and it affects choices made from\nabout 0.3 s after pulse onset onward, not earlier. Differences: the shift is much larger in coherence units (12% vs\n1.6%), the effect lasts to about 1.2-1.8 s after the pulse and then fades, and pulses change the RT distribution shape\nslightly (KS p < .001, D 0.03-0.04) where theirs did not. The diffusion fit to mean RT is poor in mice, so per-mouse\nk, A and t_nd are not interpretable; gamma is carried by the choices.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-29-joint-control-pulse-refits.md",
+    "sha256": "bb597e0719ec19cd6c12dc23cb2ebc71c29af23e240eab3f2ea1106de205c9c8",
+    "summary": "## Summary\nAdding pulse trials to the fit changes almost nothing. The ranking is the control-only one (L1U1 best in the sum, but\nbeyond 10 NLL in only 2/10 mice; urgency alone drops behind the primary model). The primary model's parameters stay at\n~1.0x its control-only fit, so the earlier UCLA parameter shift (known issue) does not reproduce and looks like a flat\nlikelihood ridge. No family reproduces the size of the pulse effect: every one predicts 2.3-4.5 pp in the 0.3-1.2 s\nwindow against 5.48 pp in the data, and none reaches the 10-16 pp of PSUIM5/6/7 or DBM6. The predicted late reversal\nis a property of drift variability and leak, not of integration: families without sv, and the extrema and Stine\nmodels, predict none. High confidence on the descriptive results; the mechanism of the reversal is SUSPECTED.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-29-likelihood-ignores-trial-me.md",
+    "sha256": "43dfd742e6342de9730093894ce1837a10be2c6a299addfe98e12959553228b8",
+    "summary": "## Summary\nNothing. The likelihood (CensoredQMLE, src/ddm/likelihood_calculator_censored.py) scores per condition the choice counts and\nthe RT quantiles per choice. On control trials, condition = signed coherence (build_ddm_inputs.py line 149). So\npredictions are pooled over the trials of a condition, and no trial's choice is matched to its own stimulus. Shuffling the\nnoise between trials of the same coherence leaves the likelihood unchanged up to Monte Carlo noise. The shuffled-ME refit\nis a no-op by construction and should not be run. The input enters only through the distribution of stimuli within a\ncondition, which acts like between-trial drift variability. The only trial-level test of motion-energy use is the kernel,\nwhich is null and underpowered (reports/2026-10-29-control-descriptives.md).\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-29-pulse-descriptive-package.md",
+    "sha256": "609a5c8bf8aa26b35fc8df44aa4078737b9d421f8d1babd143295f273350522b",
+    "summary": "## Summary\nThe pulse effect lives in responses made 0.3 to 1.2 s after the pulse: 5.5 pp [0.8, 10.2] over 10 mice (t p 0.027,\nHolm 0.08 over 3; logit 0.24 [0.01, 0.47], Holm 0.12). After 1.2 s the effect is 1.2 pp [-2.8, 5.2], so there is\nno group-level reversal, but the interval admits a small one. The effect is carried by 5 mice (PSUIM5/6/7, DBM5, DBM6);\nthe 5 sparsest mice are near zero. The \"no reversal\" pattern is clear only in PSUIM6/7; DBM6 does reverse (late window\n-3.4 to -7.2 pp in each stage, SE about 6 to 9 pp per bin). Toward-pulse choices are faster mainly in the slow tail, and\ntheir RT SD shrinks after middle pulses. No coherence dependence of the onset effect is detectable. Moderate confidence\nin S1 window results; S2 and the late-stage parts of S3 are underpowered.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-29-pulse-leak-vs-urgency.md",
+    "sha256": "a444fa5a8d0e7b1daeed1a7fb275f8fc93dd8b76bd5ca2b08843904850b8b8fe",
+    "summary": "## Summary\n1. Nothing already in hand decides it. The three descriptive pulse results (no within-mouse change across onsets;\n   effect present for responses within ~1.2 s of the pulse and absent later; toward-pulse choices faster) are what a\n   fixed-bound integrator with bound depletion, non-decision time and drift variability produces; leak and urgency\n   change them only per undecided trial, in the second-order structure. The literature report gives the sources.\n2. The pulses do carry information at the project's trial counts: in the two dense mice a leak of 1 /s or more moves the\n   pulse-to-response profile (S1) away from the leak-free model by 2 to 10 bootstrap SE in the 0.6 to 1.2 s bins, and\n   urgency of 3 /s by 2 to 3.5 SE. Urgency of 0.3 /s (the control-fitted range) moves it by under 1.6 SE and is not\n   resolvable; urgency of 1 /s is marginal (0.5 to 2.5 SE). Stop rule SR1 (feasibility) is therefore not triggered.\n3. But no member of the family, with or without leak or urgency, reproduces the observed profile: the data hold a flat\n   13 to 19 pp effect across 0.3 to 1.2 s and ~0 afterwards, whereas every variant peaks in the first bin, is near 0 by\n   0.9 to 1.2 s (3.5 to 9 SE below the data in PSUIM7) and reverses to -8 to -24 pp after 1.2 s. Leak makes the\n   mismatch worse; mild urgency does not repair it. Within the family the data sit on the \"no leak\" side of the\n   leak-free model, so leak >= 1 /s is disfavoured, but only conditionally on a family that fails SR4 (falsification).\n4. Route: the leak-versus-urgency answer has to come from a joint fit of (L, u, pulse gain w) with the non-decision\n   time pinned, judged first by ex-post reproduction of S1 to S3 and only second by held-out likelihood, after a recovery\n   grid on the real schedules. The illustration predicts the fit will fail SR4 before it reaches L versus u, so the\n   first modelling target is the sustained-then-absent pulse response, not leak or urgency. Details in \"Route\" below.\nAll simulation numbers here are an exploratory illustration (parameters re-matched on a coarse grid, three mice), not a\nfit and not a power analysis.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-29-pulse-race-lca-illustration.md",
+    "sha256": "3f8e50107d121ca727fce0845b3bd8ba2b2bec23525c03436d1717a9716af913",
+    "summary": "## Summary\nNo. Matched to control trials in PSUIM6, PSUIM7 and DBM6, every race and LCA variant predicts 2.7-5.1 pp in the\n0.3-1.2 s window, against 13.1 pp in these mice; none predicts the late reversal (none has sv). LCAs move the\ntoward-pulse RT shift from -34 to -45...-69 ms (data -166) and fit control trials worse than the DDM limit in 2 of 3\nmice. Architecture does not fix the size problem. This is an illustration with coarse matching (bound and gain only),\nnot a fit; confidence moderate.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-29-ucla-pulse-me-nofreeze.md",
+    "sha256": "dc139d1e19a2c6c34541a39a8ae50d52b38f3f00e7e6b30f57d114bbd8e668cb",
+    "summary": "## Summary\nRemoving the freeze raises the UCLA pulse template by 1.13x (0-333 ms sum) to 1.15x (peak). The UW/UCLA pulse\nratio falls from 1.65 to 1.45, close to the 1.33 expected from pulse length alone (4 vs 3 frames). The DDM kernel is\nimplemented as intended, and control inputs are matched across rigs. In the fitted model, the pulse moves the\ndecision variable by about 2-4% of the bound separation, which is why predicted pulse effects are tiny. A 1.13x input\ncorrection cannot close the 4-10x gap to the observed effect.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-30-es-recovery-partial-and-nominal-refits.md",
+    "sha256": "682bcd3aacf7ed73538892aff9ab8745ead43829c1d7f64a0cd58a42a6c9e606",
+    "summary": "## Summary\nE is separated, now with Holm over all 4 alternatives: 0/1,024 E-generated cohorts and 1,024/1,024 C-generated cohorts\nreproduce C > E. ES is NOT decided. The 100 jobs on ES-generated data (job 42590287, array indices 40-89, 130-179)\nproduced no output, most likely because the ES datasets were not on Hyak. Only the C-generated half of the ES criterion\nis known (1.000). Motion energy does not predict better than nominal coherence for any model, but the ranking C > E,\nES holds on nominal input.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-30-paired-recovery-cohorts.md",
+    "sha256": "d6b438057e921403be3d3f19f8c3912b0ce063a733cb36a497db6f1059f2ea4e",
+    "summary": "## Summary\nThe 320 paired fits are valid: complete, all on the same CPU datasets, with equal train/test splits per dataset. **E is\nseparated.** No E-generated cohort reproduces \"C beats E\" (0/1,024), and every C-generated cohort does (1,024/1,024).\nBonferroni x4 and Holm over the 3 available alternatives agree. ES is not decided yet, because the ES fits (180 jobs)\nhave not been submitted. The thesis variant is therefore I_E or A, never B. **PROVISIONAL** until ES is in.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-30-pulse-time-weight-profile.md",
+    "sha256": "6e4e42a79573ee96e24765a9fad5caebceb5cbe7d92548e760899c828ab3e8ee",
+    "summary": "## Summary\nMostly no. In 8/10 mice the likelihood barely sees the pulse at all: removing it entirely (w = 0) changes train NLL by\n<= 12 (<= 9 in 7 of them), so per-time weights there cannot be identified. Only the two densest mice (PSUIM6, PSUIM7,\n~2300-2700 pulse trials) show structure: the early bin tolerates or prefers w >= 1.5, the later bin prefers w <= 1 and is\npenalised strongly above 1.5 (PSUIM7: +42 at w = 2, +98 at w = 3, sv model). Gains beyond 10 NLL: 2 of 50 bin x model\nprofiles (sv PSUIM6 early -18.5 at w = 3; no-sv PSUIM7 early -12.5 at w = 2). Fitting per-time weights in all mice is not\njustified; the early > late hint in two mice is suggestive only. Moderate confidence.\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-30-pulse-weight-joint.md",
+    "sha256": "151eb478db81c0d858c89b626e81512fe418159fd9ea231e8f577d3b3d6bca58",
+    "summary": "## Summary\nNo. The fitted weight stays at ~1 (median 1.00 with sv, 1.01 without, all-trial fits), and the extra parameter does not\nimprove held-out NLL in any mouse (no mouse better by 10; Holm p 0.32 / 0.64). An NLL profile over w shows this is the\nlikelihood, not the optimizer: flat within Monte Carlo noise up to w ~2-3, then worse. Fitted to choices and RTs together,\nthe data do not ask for a stronger pulse. Confident (VERIFIED for these models, 10 mice).\n"
+  },
+  {
+    "path": ".agents/reports/2026-10-31-pulse-time-weights.md",
+    "sha256": "f633cd9b51a23eb6966ceeb1b82f4ed48b09c95c697fdc912128be3b44a24275",
+    "summary": "## Summary\nNo at the group level. Held-out NLL does not improve (sum -2.0 sv, -8.4 no-sv vs the joint fits; all Holm p = 1.0) and the\nweights are ~1 in most mice, so no early > middle > late ordering across mice. One mouse carries the only clear signal:\nPSUIM6 fits an early weight ~3 (sv 3.16, no-sv 2.65) with middle ~1, and predicts held-out trials better (-17.3 sv vs joint).\nPSUIM7 shows the same in the no-sv model only (early 2.11, held-out -9.0). This matches the pre-fit likelihood profile. Confident\nfor the group null (VERIFIED); the PSUIM6 primacy-like weight is one mouse (SUSPECTED as a general property).\n"
+  },
+  {
+    "path": ".agents/reports/2026-11-06-normalization-pulse-prediction.md",
+    "sha256": "c9d62294a556be31af05c42d3eafa76ffbcf57ed17b1c9ec8c9fd421794590db",
+    "summary": "## Summary\nIt gets the average closer but not the mice. Mean predicted pulse effect (0.3-1.2 s) rises from 3.25 to 4.71 pp\n(data 5.48), but the per-mouse error does not fall (mean |error| change -0.17 pp, Wilcoxon p 0.92). The predictions\nstay about 2.5-8 pp in every mouse, while the data run from -4.2 to 15.5 pp. Under the rule fixed on 2026-10-30:\nNOT \"captures the pulse better\". High confidence (VERIFIED, 10 mice, pre-registered rule).\n"
+  },
+  {
+    "path": ".agents/reports/2026-11-09-mapping-accumulator-exploratory.md",
+    "sha256": "533224778aa5e3b91db5faa2d03dfe7230a0a78460583d8b2dfa51768aafe4fe",
+    "summary": "## Summary\n- Both nonlinear mappings fit slightly better than linear ME for every accumulator (power -39 to -123, norm -54 to -197\n  summed held-out NLL over 10 mice), carried by 2-4 mice; the fitted power exponent is compressive in most mice (median\n  0.70-0.89).\n- Integrators beat E and ES under all four inputs/mappings (-241 to -593); leak+urgency is best under linear, power and\n  norm, leak under the nominal sequence. The mapping does not change the accumulator ranking.\n- No family reproduces the pulse effect per mouse (RMSE 5.3-6.9 pp for all 32 families). Integrator means range from\n  2.3 (nominal) to 5.3 pp (norm leak); every integrator predicts a late (1.2-5 s) reversal the data do not show.\n- Nominal coherence instead of ME: mixed (primary +117 worse, no_sv -164 better); adding a power law to the nominal\n  sequence recovers the ME-linear fit (-10) but not ME-power (+29).\n"
+  },
+  {
+    "path": ".agents/reports/2026-11-09-pulse-effect-bootstrap.md",
+    "sha256": "83a4cf71e090c648a046f7429580c1ac59c59b6c01f69211a7d6b7908fad188e",
+    "summary": "## Summary\n- The mean early effect (5.48 pp) is uncertain: 95% CI 3.2-7.9 pp. Motion-energy integrators (3.3-5.3) lie inside\n  it, so \"integrators predict too small a mean effect\" (reports/2026-11-09-mapping-accumulator-exploratory.md) is NOT\n  established by the mean alone; only nominal-input integrators and ME urgency (2.3-3.1) fall below the CI.\n- The per-mouse spread is real: Cochran's Q 51.7 on 9 df (p < 0.001, I^2 0.83) early; 21.0 (p 0.013, I^2 0.57) late.\n  No family captures it: early chi-square over mice 77-177 on 10 df for all 28 families.\n- The late mean (+1.22 pp, CI -1.0 to 3.4) excludes the reversal of the leak/urgency integrators (-1.3 to -2.9) but not\n  that of the plain sv integrators (nominal primary -0.86, control-only primary -1.02). The strongest late misfits are\n  leak+urgency under power and norm (chi-square 35 on 10 df). So the late reversal is mainly a leak/urgency problem;\n  sv alone is not clearly inconsistent with the data at 1.2-5 s.\n"
+  },
+  {
+    "path": ".agents/reports/2026-11-11-model-ic.md",
+    "sha256": "c8e126f5b782326399cd5a4f2f62fc0234f882a867bee87718dc27e45a751436",
+    "summary": "## Summary\n- All-trial fits (38 families): BIC best normalization + leak (k 12); AIC best normalization + leak; held-out best\n  power + leak + urgency. The top four by every criterion are leak or leak + urgency with sv on power or norm input\n  (BIC within 74 of the best). Integrators > E/ES > no guesses > Stine 2020 by all three. VERIFIED.\n- Pulse-only fits (22): BIC best linear leak / power leak (within 1.2); held-out best pulse norm UGM no sv, which is\n  20th by BIC; its held-out lead over linear leak + urgency is 9 over 10 mice, no mouse beyond 12 (noise level).\n- Control-only (3): BIC best power law; AIC best normalization (within 3).\n"
+  },
+  {
+    "path": ".agents/reports/2026-11-11-pulse-only-fits.md",
+    "sha256": "229aa9f99d3870a3ad4028a7f0bec3b6431201e66b364686ac4c28ec603978db",
+    "summary": "## Summary\n- Fitting pulse trials alone does not fix the pulse misfit. The per-mouse spread of the early effect stays unexplained\n  (chi-square 91-140 on 10 df, as for all-trial fits 100-143), and with sv the late reversal remains (-1.0 to -2.9 pp\n  vs data +1.2). By the plan's reading these are structural for these families, not a control-vs-pulse tension.\n- The early mean effect rises a little (4.2-5.2 pp with sv vs 3.1-4.2 all-trial), inside the data CI (3.2-7.9).\n- Without sv, pulse-only fits match both window means (early 3.8-5.1, late +0.7 to +1.2; data 5.5 and 1.2) but have\n  worse held-out NLL on pulse trials in every pair (+25 to +68, carried by 1-3 mice) and predict controls worse\n  (+159 to +587).\n- Pulse-trial parameters differ consistently from all-trial ones: longer non-decision time (ndt higher in 6-9/10 mice\n  per family) and more fast guesses (p_guess higher in 5-8/10). Moderately confident (descriptive, 10 mice).\n"
+  },
+  {
+    "path": ".agents/reports/2026-11-11-ugm-corner.md",
+    "sha256": "eea0ac4a42328499fa3b111285bc54d27526da2351e4f0622d9d4142ff59e958",
+    "summary": "## Summary\n- Given leak 2-20 /s and urgency 0-50 /s, the fits leave the UGM corner: 0 of 120 full-data fits are in it (leak 4-10\n  and urgency >= 1); 14 of 720 fits are, all pulse-only CV folds, 9 of them PSUIM10 (fewest trials). Fits sit at\n  the edge nearest the standard model (median tau 400-495 ms, median urgency 0.00-0.71 /s).\n- So the criteria end up testing that edge, not the corner itself. On it: with sv, NLL within 10 of the best\n  integrator in 5-7/10 mice, but every with-sv family has a late reversal outside the data CI (criterion 2 fails).\n  Without sv, the late window is inside the CI but NLL is within 10 in only 3/10 mice (joint) or 6-7/10 (pulse-only).\n- No UGM family passes both criteria in most mice; the corner proper is ruled out to the extent the optimizer's\n  avoidance shows (moderately confident: it is not a profile likelihood over the corner).\n"
+  },
+  {
+    "path": ".agents/reports/2026-11-12-likelihood-check.md",
+    "sha256": "7f1633c4b7805e8a23dc699cda3c730a1f07cc20beb1c2a54d51372eecc1260b",
+    "summary": "## Summary\n- No bug found. src/ddm/likelihood_calculator_censored.py is a standard censored quantile likelihood (binomial over\n  choices + per-choice multinomial over 9 data-quantile RT bins, per cell). Cells = signed coherence x scheduled pulse\n  (sign x stage 1-3), unique per condition code (checked on the inputs). Rescoring reproduces the stored values up\n  to the noise seed (below). VERIFIED.\n- sv's advantage on pulse trials is all in the RT term; the choice term favours no sv. The RT term is ~77% of the\n  objective (23.5k of 30.6k per family). VERIFIED for 3 pairs.\n- One mouse carries it: PSUIM7 gives 109-133 of the 125-232 no-sv deficit. Without PSUIM7: linear integrator no-sv\n  -7 (better), linear leak+urgency +19, power leak +99. VERIFIED.\n- The stored fitted NLL (train_nll; used for \"fitted\", AIC, BIC) is optimistic: the fit's own noise draw. Rescored at\n  an independent seed it is 4-47 higher per mouse, 194-250 per family, and the optimism differs by family by up to 56.\n  So AIC/BIC from stored values carry a model-dependent bias of the size of the top-model gaps. Held-out NLL\n  (scored at EVAL_SEED on unseen trials) is not affected. VERIFIED (6 families); other families SUSPECTED same.\n"
+  },
+  {
+    "path": ".agents/reports/2026-11-12-rescored-ic.md",
+    "sha256": "04ac62298f8f882de82307a0b5e95ecc5126b1abf79aafdaac15a563d4a5cfcb",
+    "summary": "## Summary\n- All-trial fits (38): rescored AIC and BIC both pick power law + leak + urgency, the held-out winner too.\n  Normalization + leak is 2.6 behind (within Monte Carlo noise); next power law + leak (BIC +43). With stored values\n  BIC had picked normalization + leak (+29 ahead). VERIFIED.\n- Pulse-only fits (22): BIC still picks linear leak; then power-law integrator (+35), power-law leak (+50). No-sv models\n  remain 190-500 behind their sv versions by BIC. Held-out best (norm UGM no sv) is 16th by BIC. VERIFIED.\n- Control-only (3): BIC power law, then normalization (+39).\n- Optimism of stored NLL: per family 53-233 (median per mouse 16; range -11 to 45), so it was model-dependent but\n  smaller than most gaps; rankings beyond the top 2-3 changed little (Spearman BIC vs held-out: joint 0.93 both ways;\n  pulse-only 0.75 rescored vs 0.68 stored).\n"
+  },
+  {
+    "path": ".agents/reports/2026-11-13-bits-per-trial.md",
+    "sha256": "d0ad2347e2664924bb77d12939eb3350c2bf19f80ac2a268ef062f87ede27633",
+    "summary": "## Summary\nFull-data bits (fits scored on their training trials, independent seed) rank all-trial models like rescored BIC\n(Spearman 0.94) and are useful descriptively. Held-out bits (CV test folds scored by their fold's fit) are dominated by\nMonte Carlo noise at 150 reps: a second seed moves family means by 5-26 mbits, as much as the model gaps. They do not\nrank models reliably and should not replace held-out NLL. Confidence: high on the noise finding (two seeds), moderate on\nthe full-data ranking (single seed, 30 reps; bias check at more reps not done).\n"
+  },
+  {
+    "path": ".agents/reports/2026-11-13-pulse-weight-signatures.md",
+    "sha256": "15b7c9cc01732837f5e3f1fb1af0973cea85c74be0f2f8baf36a192baee413bb",
+    "summary": "## Summary\nNo. Per-time weights roughly double the predicted early effect in PSUIM6 (to 7.5 pp with sv, weight 3.16) and raise\nPSUIM7 to 6.5 pp (no sv, weight 2.11), still about half the data. Across mice the best early-window chi2 is 74.6\n(pw_per_time_no_sv), worse than normalized UGM without sv (51.3 all-trial, 44.7 pulse-only fit). Rescored BIC is\n+274 to +907 vs the best model (power_leak_urgency). Confidence: moderate (one simulation seed per signature; weights\nof many fits sit at the seed value 1.0).\n"
+  }
+]

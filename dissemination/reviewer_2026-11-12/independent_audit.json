@@ -1,0 +1,65 @@
+{
+  "commit": "b63c9d919edc85e48446be48a8399ba6304b8df0",
+  "provenance": {
+    "aggregate_trials": 134537,
+    "aggregate_mice": 14,
+    "aggregate_sessions": 298,
+    "valid_responded_trials": 25508,
+    "valid_mice": 10,
+    "valid_sessions": 50,
+    "table_trials": 30045,
+    "table_censored": 4537,
+    "late_choices_restored": 4102,
+    "legacy_controls_with_scheduled_signed_pulse": 362
+  },
+  "effects": {
+    "by_5s": {
+      "n_mice": 10,
+      "mean_pp": 5.844356373835997,
+      "lo_pp": 1.7994914855323305,
+      "hi_pp": 9.889221262139664,
+      "p_t_unadjusted": 0.009705145120000118
+    },
+    "eventual_choice_sensitivity": {
+      "n_mice": 10,
+      "mean_pp": 6.517751841304182,
+      "lo_pp": 2.696063461692001,
+      "hi_pp": 10.339440220916364,
+      "p_t_unadjusted": 0.003858677994459298
+    },
+    "by_5s_without_PSUIM6_7_exploratory": {
+      "n_mice": 8,
+      "mean_pp": 3.9979227414612235,
+      "lo_pp": 0.27137090694205845,
+      "hi_pp": 7.724474575980389,
+      "p_t_unadjusted": 0.03884409675685752
+    },
+    "by_5s_per_rig_descriptive_only": {
+      "ucla": {
+        "n_mice": 4,
+        "mean_pp": 11.120421074219726,
+        "lo_pp": 5.611071709682163,
+        "hi_pp": 16.62977043875729,
+        "p_t_unadjusted": 0.007646725289982515
+      },
+      "uw": {
+        "n_mice": 6,
+        "mean_pp": 2.3269799069135115,
+        "lo_pp": -1.4916042580764257,
+        "hi_pp": 6.145564071903449,
+        "p_t_unadjusted": 0.1780186853565
+      }
+    }
+  },
+  "synthetic_qmle_pairing_invariance": {
+    "original_nll": 749.546872910346,
+    "repaired_nll": 749.546872910346,
+    "difference": 0.0
+  },
+  "input_sha256": {
+    "/mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/data/trial_table.csv": "44d7cdf94faa2f63618acc5668251cb09779b026ece1b61264fd57199e81f335",
+    "/mnt/data/processed/aggregate_data.csv": "a95253294e36369d8c77e20cb505b009708d72f981100cab33f7e9c3752d6d59",
+    "/mnt/data/processed/valid_data.csv": "be508cc2e7918ae66bf7e82728d2617d07265b9f0f18442d6d531f345921e020",
+    "/src/dissemination/paper_control/tables/heldout_diff_per_mouse_2026-10-29.csv": "4f1803af6f11813935dec93c9384e8fc851b9cb1c9ae0379323d2bb4dc6a59d1"
+  }
+}

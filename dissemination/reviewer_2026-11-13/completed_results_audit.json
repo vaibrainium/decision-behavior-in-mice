@@ -1,0 +1,133 @@
+{
+  "commit": "b63c9d919edc85e48446be48a8399ba6304b8df0",
+  "scope": "Audits existing fits and tables; no model fitting or fresh simulation",
+  "recovery": {
+    "fits": 500,
+    "datasets": 100,
+    "datasets_per_generator": 20,
+    "replicates_per_mouse": 2,
+    "all_dataset_hashes_match": true,
+    "all_fits_paired_by_dataset_and_counts": true,
+    "v3_rates_and_confusion_reproduced": true,
+    "cohort_rates": [
+      {
+        "generator": "C",
+        "rep_E": 1.0,
+        "rep_ES": 1.0,
+        "rep_DDMx": 1.0,
+        "rep_ESx": 1.0
+      },
+      {
+        "generator": "DDMx",
+        "rep_E": 0.0849609375,
+        "rep_ES": 0.0,
+        "rep_DDMx": 0.0,
+        "rep_ESx": 0.0
+      },
+      {
+        "generator": "E",
+        "rep_E": 0.0,
+        "rep_ES": 0.0,
+        "rep_DDMx": 1.0,
+        "rep_ESx": 0.7666015625
+      },
+      {
+        "generator": "ES",
+        "rep_E": 0.0,
+        "rep_ES": 0.0,
+        "rep_DDMx": 0.9951171875,
+        "rep_ESx": 0.4580078125
+      },
+      {
+        "generator": "ESx",
+        "rep_E": 0.0,
+        "rep_ES": 0.0,
+        "rep_DDMx": 0.0,
+        "rep_ESx": 0.0
+      }
+    ]
+  },
+  "control": {
+    "fold_fit_files_read": 400,
+    "control_trials": 14014,
+    "same_test_counts_across_models_and_folds": true,
+    "saved_comparisons_reproduced": true,
+    "mean_nll_advantage_per_1000": {
+      "DDMx": 28.201153062299404,
+      "E": 12.75661938117317,
+      "ES": 18.744963193078917,
+      "ESx": 30.235374364674477
+    }
+  },
+  "inventory": {
+    "csv_tables_cataloged": 236,
+    "reports_with_summary_cataloged": 75
+  },
+  "dilution": {
+    "plateau_K": 15.153123100280803,
+    "K_lo": 12.7057058426402,
+    "K_hi": 17.541363189699798,
+    "late_holm": [
+      {
+        "lo_s": 1.2,
+        "hi_s": 1.5,
+        "p_holm_below_plateau": 0.02
+      },
+      {
+        "lo_s": 1.5,
+        "hi_s": 2.1,
+        "p_holm_below_plateau": 0.0266666666666666
+      },
+      {
+        "lo_s": 2.1,
+        "hi_s": 5.0,
+        "p_holm_below_plateau": 0.009999999999999901
+      }
+    ]
+  },
+  "rescored_family_counts": {
+    "control_only": 3,
+    "joint": 42,
+    "pulse_only": 22
+  },
+  "joint_best_bic": [
+    {
+      "family": "power_leak_urgency",
+      "d_bic": 0.0,
+      "d_heldout": 0.0,
+      "seed_sd": 5.25
+    },
+    {
+      "family": "norm_leak",
+      "d_bic": 2.63,
+      "d_heldout": 92.39,
+      "seed_sd": 2.03
+    },
+    {
+      "family": "power_leak",
+      "d_bic": 43.3,
+      "d_heldout": 81.2,
+      "seed_sd": 1.79
+    }
+  ],
+  "pulse_only_best_bic": [
+    {
+      "family": "pulse_linear_leak",
+      "d_bic": 0.0,
+      "d_heldout": 28.4,
+      "seed_sd": 6.85
+    },
+    {
+      "family": "pulse_power_primary",
+      "d_bic": 34.55,
+      "d_heldout": 22.46,
+      "seed_sd": 8.21
+    },
+    {
+      "family": "pulse_power_leak",
+      "d_bic": 50.24,
+      "d_heldout": 36.06,
+      "seed_sd": 17.88
+    }
+  ]
+}

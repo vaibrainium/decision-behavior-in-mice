@@ -1,0 +1,1256 @@
+{
+  "date": "2026-11-12",
+  "timezone": "America/Los_Angeles",
+  "review_type": "targeted critical narrative review; not a systematic review",
+  "queries": [
+    "Stine Zylberberg Ditterich Shadlen 2020 differentiating integration non integration PMC",
+    "Stine 2023 superior colliculus termination accumulation perceptual decisions Nature",
+    "Steinemann 2024 direct observation dynamic Bayesian population evidence accumulation motion pulses",
+    "Hyafil 2023 temporal integration evidence non integration perceptual decision eLife",
+    "Pinto 2018 mice visually guided evidence accumulation task pulses Odoemene 2018 visual evidence",
+    "You 2022 dynamics decision making mice random dot motion Caballero 2022 reaction time",
+    "Ashwood 2022 mice alternate discrete strategies perceptual decision making state GLM HMM",
+    "Okazawa 2018 psychophysical reverse correlation temporal weighting sensory nonlinearity",
+    "Response Time Distributions and the Accumulation of Visual Evidence",
+    "A cross-species framework for investigating perceptual evidence accumulation",
+    "Probing the role of sequential sampling and integration in decisions about protracted noiseless stimuli",
+    "Perceptual glimpses are locally accumulated and globally maintained at distinct processing levels",
+    "Strategic and Dynamic Temporal Weighting Levi 2018",
+    "Neural Circuit Dynamics Underlying Accumulation of Time-Varying Evidence Wong 2007",
+    "Brunton 2013 Rats and humans accumulation evidence",
+    "Waskom Kiani 2018 temporal integration",
+    "Cisek 2009 Decisions in changing conditions",
+    "Kiani 2008 Bounded Integration",
+    "Samonds 2018 motion mice",
+    "Neuron aims and scope"
+  ],
+  "method": "Public web search, primary journal/PubMed records, selected full text via Europe PMC and eLife. Existing repository literature notes used as leads. Search-result candidates below are not all included papers or full-text reads.",
+  "search_result_candidates": [
+    {
+      "title": "Differentiating between integration and non-integration strategies in perceptual decision making",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32338595/"
+    },
+    {
+      "title": "Differentiating between integration and non-integration strategies in perceptual decision making",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7217695/"
+    },
+    {
+      "title": "Temporal integration is a robust feature of perceptual decisions.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37140191/"
+    },
+    {
+      "title": "Temporal integration is a robust feature of perceptual decisions",
+      "url": "https://doi.org/10.7554%2FeLife.84045"
+    },
+    {
+      "title": "Temporal integration is a robust feature of perceptual decisions",
+      "url": "https://elifesciences.org/articles/84045v1"
+    },
+    {
+      "title": "RESEARCH ARTICLE",
+      "url": "https://elifesciences.org/articles/84045.pdf"
+    },
+    {
+      "title": "Temporal integration is a robust feature of perceptual decisions",
+      "url": "https://elifesciences.org/articles/84045"
+    },
+    {
+      "title": "Differentiating between integration and non-integration strategies in perceptual decision making",
+      "url": "https://elifesciences.org/articles/55365"
+    },
+    {
+      "title": "Differentiating between integration and non-integration strategies in perceptual decision making",
+      "url": "https://elifesciences.org/articles/55365v1"
+    },
+    {
+      "title": "A neural mechanism for terminating decisions",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0896627323004002"
+    },
+    {
+      "title": "A neural mechanism for terminating decisions.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37352857/"
+    },
+    {
+      "title": "A neural mechanism for terminating decisions",
+      "url": "https://static1.squarespace.com/static/647a0daec6fdee347ddac999/t/65a7f4088cba1676fdaf224a/1705505802011/2023_Stine_Neuron.pdf"
+    },
+    {
+      "title": "Direct observation of the neural computations underlying a single decision",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11488853/"
+    },
+    {
+      "title": "A neural mechanism for terminating decisions",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10565788/"
+    },
+    {
+      "title": "Temporal integration is a robust feature of perceptual decisions",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10205084/"
+    },
+    {
+      "title": "Differentiating between integration and non-integration strategies in perceptual decision making",
+      "url": "https://elifesciences.org/articles/55365v1/figures"
+    },
+    {
+      "title": "Temporal integration is a robust feature of perceptual decisions",
+      "url": "https://elifesciences.org/articles/84045/figures"
+    },
+    {
+      "title": "Differentiating between integration and non-integration strategies in perceptual decision making",
+      "url": "https://elifesciences.org/articles/55365/figures"
+    },
+    {
+      "title": "Differentiating between integration and non-integration strategies in perceptual decision making",
+      "url": "https://elifesciences.org/articles/55365/peer-reviews"
+    },
+    {
+      "title": "Temporal integration is a robust feature of perceptual decisions",
+      "url": "https://elifesciences.org/articles/84045v1/figures"
+    },
+    {
+      "title": "Quantifying decision-making in dynamic, continuously evolving environments",
+      "url": "https://elifesciences.org/articles/82823"
+    },
+    {
+      "title": "A Population Representation of the Confidence in a Decision in the Parietal Cortex",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11370442/"
+    },
+    {
+      "title": "Differentiating between integration and non-integration strategies in perceptual decision making",
+      "url": "https://openalex.org/W3018745833"
+    },
+    {
+      "title": "Publications | Shadlen Lab",
+      "url": "https://shadlenlab.zi.columbia.edu/publications"
+    },
+    {
+      "title": "Direct observation of the neural computations underlying a single decision.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39422555/"
+    },
+    {
+      "title": "Neural population dynamics underlying evidence accumulation in multiple rat brain regions",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12005723/"
+    },
+    {
+      "title": "Direct observation of the neural computations underlying a single decision",
+      "url": "https://elifesciences.org/articles/90859/figures"
+    },
+    {
+      "title": "Direct observation of the neural computations underlying a single decision",
+      "url": "https://elifesciences.org/articles/90859"
+    },
+    {
+      "title": "Projects",
+      "url": "https://gabrielstine.com/blog/"
+    },
+    {
+      "title": "A population representation of the confidence in a decision in the parietal cortex",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40208792/"
+    },
+    {
+      "title": "Causal role for the primate superior colliculus in the computation of evidence for perceptual decisions.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34183869/"
+    },
+    {
+      "title": "NDLI: Direct observation of the neural computations underlying a single decision",
+      "url": "https://www.ndl.iitkgp.ac.in/re_document/biorxiv/biorxiv/_content_10_1101_2022_05_02_490321v6"
+    },
+    {
+      "title": "Differentiating between integration and non-integration strategies in perceptual decision making",
+      "url": "https://bishtref.com/articles/10.7554/elife.55365"
+    },
+    {
+      "title": "A neural mechanism for terminating decisions | JoVE Visualize",
+      "url": "https://visualize.jove.com/37352857-a-neural-mechanism-for-terminating-decisions"
+    },
+    {
+      "title": "eLife RESEARCH ARTICLE",
+      "url": "https://elifesciences.org/articles/90859.pdf"
+    },
+    {
+      "title": "Clarifying the nature of stochastic fluctuations and accumulation processes in spontaneous movements",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10602783/"
+    },
+    {
+      "title": "Direct observation of the neural computations underlying a single decision.",
+      "url": "https://openurl.ebsco.com/contentitem/gcd%3A180414635?crl=f&id=ebsco%3Agcd%3A180414635&jrnl=2050084X&sid=ebsco%3Aplink%3Acrawler-gcd"
+    },
+    {
+      "title": "ORCID",
+      "url": "https://orcid.org/0000-0002-2572-4748"
+    },
+    {
+      "title": "Rat movements reflect internal decision dynamics in an evidence accumulation task",
+      "url": "https://journals.physiology.org/doi/full/10.1152/jn.00181.2024"
+    },
+    {
+      "title": "Tracking the evolution of a single choice",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11493403/"
+    },
+    {
+      "title": "Mice alternate between discrete strategies during perceptual decision-making.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35132235/"
+    },
+    {
+      "title": "Mice alternate between discrete strategies during perceptual decision-making",
+      "url": "https://www.nature.com/articles/s41593-021-01007-z"
+    },
+    {
+      "title": "Mice alternate between discrete strategies during perceptual decision-making",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8890994/"
+    },
+    {
+      "title": "Mice alternate between discrete strategies during perceptual decision-making",
+      "url": "https://www.nature.com/articles/s41593-021-01007-z.pdf"
+    },
+    {
+      "title": "Visual Evidence Accumulation Guides Decision-Making in Unrestrained Mice",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30322902/"
+    },
+    {
+      "title": "Psychophysical reverse correlation reflects both sensory and decision-making processes",
+      "url": "https://www.nature.com/articles/s41467-018-05797-y"
+    },
+    {
+      "title": "An Accumulation-of-Evidence Task Using Visual Pulses for Mice Navigating in Virtual Reality",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29559900/"
+    },
+    {
+      "title": "Mice alternate between discrete strategies during perceptual decision-making",
+      "url": "https://escholarship.org/uc/item/9xm1x3nv"
+    },
+    {
+      "title": "Psychophysical reverse correlation reflects both sensory and decision-making processes",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30154467/"
+    },
+    {
+      "title": "An Accumulation-of-Evidence Task Using Visual Pulses for Mice Navigating in Virtual Reality",
+      "url": "https://www.frontiersin.org/journals/behavioral-neuroscience/articles/10.3389/fnbeh.2018.00036/full"
+    },
+    {
+      "title": "Psychophysical reverse correlation reflects both sensory and decision-making processes",
+      "url": "https://www.cns.nyu.edu/kianilab/papers/Okazawa_Kiani_2018.pdf"
+    },
+    {
+      "title": "Identifying the factors governing internal state switches during nonstationary sensory decision-making.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41310378/"
+    },
+    {
+      "title": "Mice alternate between discrete strategies during perceptual decision-making",
+      "url": "https://www.biorxiv.org/content/10.1101/2020.10.19.346353v1"
+    },
+    {
+      "title": "Visual Evidence Accumulation Guides Decision-Making in Unrestrained Mice",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6246883/"
+    },
+    {
+      "title": "Mice alternate between discrete strategies during perceptual decision-making",
+      "url": "https://collaborate.princeton.edu/en/publications/mice-alternate-between-discrete-strategies-during-perceptual-deci/"
+    },
+    {
+      "title": "A cross-species framework for investigating perceptual evidence accumulation",
+      "url": "https://doi.org/10.7554/elife.105116"
+    },
+    {
+      "title": "Visual Evidence Accumulation Guides Decision-Making in Unrestrained Mice",
+      "url": "https://www.jneurosci.org/content/jneuro/38/47/10143.full.pdf"
+    },
+    {
+      "title": "Psychophysical reverse correlation reflects both sensory and decision-making processes",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6113286/"
+    },
+    {
+      "title": "An Accumulation-of-Evidence Task Using Visual Pulses for Mice Navigating in Virtual Reality",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5845651/"
+    },
+    {
+      "title": "A cross-species framework for investigating perceptual evidence accumulation",
+      "url": "https://elifesciences.org/reviewed-preprints/105116v1"
+    },
+    {
+      "title": "Mice alternate between discrete strategies during perceptual decision-making - World Wide",
+      "url": "https://world-wide.org/seminar/mice-alternate-discrete-strategies-o0hngvwv"
+    },
+    {
+      "title": "Dynamics of Visual Perceptual Decision-Making in Freely Behaving Mice",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8925649/"
+    },
+    {
+      "title": "Inferring mind wandering from perceptual decision making",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13035942/"
+    },
+    {
+      "title": "Mice alternate between discrete strategies during perceptual decision-making",
+      "url": "https://bibbase.org/network/publication/ashwood-roy-stone-urai-churchland-pouget-pillow-micealternatebetweendiscretestrategiesduringperceptualdecisionmaking-2022"
+    },
+    {
+      "title": "Strategic and Dynamic Temporal Weighting for Perceptual Decisions in Humans and Macaques",
+      "url": "https://www.eneuro.org/content/5/5/ENEURO.0169-18.2018"
+    },
+    {
+      "title": "Psychophysical reverse correlation reflects both sensory and decision-making processes",
+      "url": "https://ideas.repec.org/a/nat/natcom/v9y2018i1d10.1038_s41467-018-05797-y.html"
+    },
+    {
+      "title": "Dynamics of Visual Perceptual Decision-Making in Freely Behaving Mice",
+      "url": "https://www.eneuro.org/content/9/2/ENEURO.0161-21.2022"
+    },
+    {
+      "title": "Dynamics of Visual Perceptual Decision-Making in Freely Behaving Mice.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35228308/"
+    },
+    {
+      "title": "From choices to internal states",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9042447/"
+    },
+    {
+      "title": "Visual evidence accumulation guides decision-making in unrestrained mice",
+      "url": "https://repository.cshl.edu/id/eprint/37253/"
+    },
+    {
+      "title": "Gouki Okazawa: “Modeling integration of dynamic multi-dimensional sensory evidence for perceptual decision-making”",
+      "url": "https://cinet.jp/english/event/20180206_2344/"
+    },
+    {
+      "title": "Designing and interpreting psychophysical investigations of cognition",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6855836/"
+    },
+    {
+      "title": "Limitation of switching sensory information flow in flexible perceptual decision making",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11696174/"
+    },
+    {
+      "title": "Strategic and Dynamic Temporal Weighting for Perceptual Decisions in Humans and Macaques",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6220584/"
+    },
+    {
+      "title": "Multiple timescales of sensory-evidence accumulation across the dorsal cortex",
+      "url": "https://elifesciences.org/articles/70263"
+    },
+    {
+      "title": "An Accumulation-of-Evidence Task Using Visual Pulses for Mice Navigating in Virtual Reality",
+      "url": "https://www.frontiersin.org/journals/behavioral-neuroscience/articles/10.3389/fnbeh.2018.00036/full?report=reader"
+    },
+    {
+      "title": "Amplitude modulations of cortical sensory responses in pulsatile evidence accumulation",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7811404/"
+    },
+    {
+      "title": "Strategic and Dynamic Temporal Weighting for Perceptual Decisions in Humans and Macaques",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30406190/"
+    },
+    {
+      "title": "Multiple timescales of sensory-evidence accumulation across the dorsal cortex",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9203055/"
+    },
+    {
+      "title": "Multiple timescales of sensory-evidence accumulation across the dorsal cortex",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35708483/"
+    },
+    {
+      "title": "Interpreting temporal dynamics during sensory decision-making",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7455029/"
+    },
+    {
+      "title": "Dynamics of visual perceptual decision-making in freely behaving mice",
+      "url": "https://www.eneuro.org/content/early/2022/02/24/ENEURO.0161-21.2022/tab-article-info?versioned=true"
+    },
+    {
+      "title": "Identifying the factors governing internal state switches during nonstationary sensory decision-making",
+      "url": "https://www.nature.com/articles/s41467-025-66738-0"
+    },
+    {
+      "title": "A cross-species framework for investigating perceptual evidence accumulation.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38659929/"
+    },
+    {
+      "title": "# Identifying the factors governing internal state switches during nonstationary sensory decision-making",
+      "url": "https://www.nature.com/articles/s41467-025-66738-0_reference.pdf"
+    },
+    {
+      "title": "Response Time Distributions and the Accumulation of Visual Evidence in Freely Moving Mice",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35995337/"
+    },
+    {
+      "title": "A cross-species framework for investigating perceptual evidence accumulation",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11042372/"
+    },
+    {
+      "title": "Identifying the factors governing internal state switches during nonstationary sensory decision-making",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12749821/"
+    },
+    {
+      "title": "Response Time Distributions and the Accumulation of Visual Evidence in Freely Moving Mice",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0306452222004274"
+    },
+    {
+      "title": "Identifying the factors governing internal state switches during nonstationary sensory decision-making",
+      "url": "https://ideas.repec.org/a/nat/natcom/v16y2025i1d10.1038_s41467-025-66738-0.html"
+    },
+    {
+      "title": "Crossmark",
+      "url": "https://crossmark.crossref.org/dialog/?doi=10.1038%2Fs41467-025-66738-0"
+    },
+    {
+      "title": "Identifying the factors governing internal state switches during nonstationary sensory decision-making",
+      "url": "https://collaborate.princeton.edu/en/publications/identifying-the-factors-governing-internal-state-switches-during-/"
+    },
+    {
+      "title": "Identifying the factors governing internal state switches during nonstationary sensory decision-making | Articles | Nature Index",
+      "url": "https://www.nature.com/nature-index/article/10.1038/s41467-025-66738-0"
+    },
+    {
+      "title": "A cross-species framework for investigating perceptual evidence accumulation | JoVE Visualize",
+      "url": "https://visualize.jove.com/38659929-a-cross-species-framework-for-investigating-perceptual-evidence-accumulation"
+    },
+    {
+      "title": "A cross-species framework for investigating perceptual evidence accumulation | Sciety",
+      "url": "https://sciety.org/articles/activity/10.7554/elife.105116.1"
+    },
+    {
+      "title": "Identifying the factors governing internal state switches during nonstationary sensory decision-making | JoVE Visualize",
+      "url": "https://visualize.jove.com/41310378-identifying-the-factors-governing-internal-state-switches-during-nonstationary-sensory-decision-making"
+    },
+    {
+      "title": "A cross-species framework for investigating perceptual evidence accumulation",
+      "url": "https://elifesciences.org/reviewed-preprints/105116"
+    },
+    {
+      "title": "Identifying the factors governing internal state switches during nonstationary sensory decision-making",
+      "url": "https://openalex.org/W4416772437"
+    },
+    {
+      "title": "Identifying the factors governing internal state switches during nonstationary sensory decision-making",
+      "url": "https://www.researchwithnj.com/en/publications/identifying-the-factors-governing-internal-state-switches-during-/"
+    },
+    {
+      "title": "Response Time Distributions and the Accumulation of Visual Evidence in Freely Moving Mice",
+      "url": "https://openalex.org/W4292381391"
+    },
+    {
+      "title": "Identifying the factors governing internal state switches during nonstationary sensory decision-making | Articles | Nature Index",
+      "url": "https://preview-www.nature.com/nature-index/article/10.1038/s41467-025-66738-0"
+    },
+    {
+      "title": "Identifying the factors governing internal state switches during…",
+      "url": "https://lacuna.tiptreesystems.com/work/identifying-the-factors-governing-internal-state-switches"
+    },
+    {
+      "title": "Data & Resources — Laboratory of Comparative Cognition",
+      "url": "https://www.scottcognitionlab.com/resources"
+    },
+    {
+      "title": "Science Cast",
+      "url": "https://sciencecast.org/casts/zvsnr43bxdcg"
+    },
+    {
+      "title": "A cross-species framework for investigating perceptual evidence accumulation",
+      "url": "https://ouci.dntb.gov.ua/en/works/7PMMRaJG/"
+    },
+    {
+      "title": "Response Time Distributions and the Accumulation of Visual Evidence in Freely Moving Mice",
+      "url": "https://www.academia.edu/129989692/Response_Time_Distributions_and_the_Accumulation_of_Visual_Evidence_in_Freely_Moving_Mice"
+    },
+    {
+      "title": "A cross-species framework for investigating perceptual evidence accumulation",
+      "url": "https://elifesciences.org/reviewed-preprints/105116v1/figures"
+    },
+    {
+      "title": "Response Time Distributions and the Accumulation of Visual Evidence in Freely Moving Mice",
+      "url": "https://www.researchgate.net/publication/362803290_Response_time_distributions_and_the_accumulation_of_visual_evidence_in_freely_moving_mice"
+    },
+    {
+      "title": "Publications — Laboratory of Comparative Cognition",
+      "url": "https://www.scottcognitionlab.com/publications"
+    },
+    {
+      "title": "Balanced Expression of G Protein-coupled Receptor Subtypes in the Mouse, Macaque, and Human Cerebral Cortex",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0306452222000513"
+    },
+    {
+      "title": "Dr. Mario Treviño Villegas | Instituto de Neurociencias CUCBA",
+      "url": "https://ineurociencias-cucba.udg.mx/index.php/investigacion/investigadores/dr-mario-trevino-villegas"
+    },
+    {
+      "title": "Representation of Confidence Associated with a Decision by Neurons in the Parietal Cortex",
+      "url": "https://ouci.dntb.gov.ua/en/works/lxqbOAQ9/"
+    },
+    {
+      "title": "Sharing the spotlight: Uncovering common attentional dynamics across species",
+      "url": "https://pure.mpg.de/rest/items/item_3707318_3/component/file_3707525/content"
+    },
+    {
+      "title": "The Stage of the Estrus Cycle Is Critical for Interpretation of Female Mouse Social Interaction Behavior",
+      "url": "https://ouci.dntb.gov.ua/works/4wwaPyB4/"
+    },
+    {
+      "title": "Elí Lezama's research works | University of Guadalajara and other places",
+      "url": "https://www.researchgate.net/scientific-contributions/Eli-Lezama-2149339543"
+    },
+    {
+      "title": "J Neurophysiol 132: 1608–1620, 2024.",
+      "url": "https://static1.squarespace.com/static/5aee1aeb4611a046d4fd485c/t/673680530dc5572fa729624c/1731625045634/kane-et-al-2024-rat-movements-reflect-internal-decision-dynamics-in-an-evidence-accumulation-task.pdf"
+    },
+    {
+      "title": "TICS 2728 No. of Pages 12",
+      "url": "https://anneurai.net/wp-content/uploads/2025/07/urai-2025-structure-uncovered-understanding-temporal-variability-in-perceptual-decision-making.pdf"
+    },
+    {
+      "title": "HHS Public Access",
+      "url": "https://www.lmrt.mit.edu/s/Kirkpatrick_STM_2020.pdf"
+    },
+    {
+      "title": "Universidad de Guadalajara | Instituto de Neurociencias - Academia.edu",
+      "url": "https://guadalajara.academia.edu/Departments/Instituto_de_Neurociencias/Documents?page=2"
+    },
+    {
+      "title": "Analysis of Response Time Distributions",
+      "url": "https://www.researchgate.net/publication/2549207_Analysis_of_Response_Time_Distributions"
+    },
+    {
+      "title": "Laura Kirkpatrick - Research Profile - Read Full Profile",
+      "url": "https://independent.academia.edu/LauraKirkpatrick"
+    },
+    {
+      "title": "Multinucleated Giant Cells Induced by a Silk Fibroin Construct Express Proinflammatory Agents: An Immunohistological Study",
+      "url": "https://www.academia.edu/125650563/Multinucleated_Giant_Cells_Induced_by_a_Silk_Fibroin_Construct_Express_Proinflammatory_Agents_An_Immunohistological_Study"
+    },
+    {
+      "title": "MouseMine: Report page",
+      "url": "https://www.mousemine.org/mousemine/report.do%3Bjsessionid%3DBC33DE0EAA362D9E5F475667C07E2446?id=74206713&trail=%7C74206713"
+    },
+    {
+      "title": "ATR regulates neuronal activity by modulating presynaptic firing",
+      "url": "https://ideas.repec.org/a/nat/natcom/v12y2021i1d10.1038_s41467-021-24217-2.html"
+    },
+    {
+      "title": "Tree Shrews as an Animal Model for Studying Perceptual Decision-Making Reveal a Critical Role of Stimulus-Independent Processes in Guiding Behavior",
+      "url": "https://www.researchgate.net/publication/365674243_Tree_Shrews_as_an_Animal_Model_for_Studying_Perceptual_Decision-making_Reveal_a_Critical_Role_of_Stimulus-independent_Processes_in_Guiding_Behavior"
+    },
+    {
+      "title": "Kirkpatrick - an overview | ScienceDirect Topics",
+      "url": "https://www.sciencedirect.com/topics/engineering/kirkpatrick"
+    },
+    {
+      "title": "Accumulation of senescent cells in the stroma of aged mouse ovary",
+      "url": "https://www.researchgate.net/publication/375397265_Accumulation_of_senescent_cells_in_the_stroma_of_aged_mouse_ovary"
+    },
+    {
+      "title": "Aging drives organ-specific alterations of the inflammatory microenvironment guided by immunomodulatory mediators in mice.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33855766/"
+    },
+    {
+      "title": "High-Throughput Screening of Mouse Gene Knockouts Identifies Established and Novel High Body Fat Phenotypes",
+      "url": "https://www.academia.edu/124714761/High_Throughput_Screening_of_Mouse_Gene_Knockouts_Identifies_Established_and_Novel_High_Body_Fat_Phenotypes"
+    },
+    {
+      "title": "In Vivo Evaluation of Nose-to-Brain Delivery of Liposomal Donepezil, Memantine, and BACE-1 siRNA for Alzheimer’s Disease Therapy",
+      "url": "https://www.mdpi.com/1422-0067/25/19/10357"
+    },
+    {
+      "title": "Deficiency of Microglial Autophagy Increases the Density of Oligodendrocytes and Susceptibility to Severe Forms of Seizures",
+      "url": "https://www.eneuro.org/content/8/1/ENEURO.0183-20.2021"
+    },
+    {
+      "title": "Ava Amini",
+      "url": "https://www.mit.edu/~asolei/"
+    },
+    {
+      "title": "The Diffusion Decision Model: Theory and Data for Two-Choice Decision Tasks",
+      "url": "https://doi.org/10.1162/NECO.2008.12-06-420"
+    },
+    {
+      "title": "The diffusion decision model: theory and data for two-choice decision tasks.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18085991/"
+    },
+    {
+      "title": "The Diffusio",
+      "url": "https://stanford.edu/class/psych205/papers/Ratcliff-McCoon-2008.pdf"
+    },
+    {
+      "title": "Rats and humans can optimally accumulate evidence for decision-making.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23559254/"
+    },
+    {
+      "title": "Decisions in changing conditions: the urgency-gating model",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19759303/"
+    },
+    {
+      "title": "The Diffusion Decision Model: Theory and Data for Two-Choice Decision Tasks",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2474742/"
+    },
+    {
+      "title": "Decisions in Changing Conditions: The Urgency-Gating Model | NDL Search | National Diet Library",
+      "url": "https://ndlsearch.ndl.go.jp/en/books/R100000136-I1360294647093445632"
+    },
+    {
+      "title": "Decision Making through Integration of Sensory Evidence at Prolonged Timescales",
+      "url": "https://www.med.upenn.edu/ngg/assets/user-content/documents/JC%20Fall%202019/paper-2-waskom-kiani-2018-12.4.pdf"
+    },
+    {
+      "title": "The Diffusion Decision Model: Theory and Data for Two-Choice Decision Tasks",
+      "url": "https://bibbase.org/network/publication/ratcliff-mckoon-thediffusiondecisionmodeltheoryanddatafortwochoicedecisiontasks-2008"
+    },
+    {
+      "title": "Gail McKoon’s Publications | Roger Ratcliff + Gail McKoon",
+      "url": "https://u.osu.edu/ratcliffmckoon/gail-mckoons-publications/"
+    },
+    {
+      "title": "Decisions in Changing Conditions: The Urgency-Gating Model",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6665752/"
+    },
+    {
+      "title": "The Diffusion Decision Model: Theory and Data for Two-Choice Decision Tasks",
+      "url": "https://bishtref.com/articles/10.1162/neco.2008.12-06-420"
+    },
+    {
+      "title": "Decision Making through Integration of Sensory Evidence at Prolonged Timescales",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0960982218313502"
+    },
+    {
+      "title": "GitHub - KianiLab/Waskom_CurrBiol_2018: Data and code from Waskom and Kiani (2018) Current Biology · GitHub",
+      "url": "https://github.com/kianilab/Waskom_CurrBiol_2018"
+    },
+    {
+      "title": "Decision-making through integration of sensory evidence at prolonged timescales",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6279571/"
+    },
+    {
+      "title": "Roger Ratcliff’s Publications | Roger Ratcliff + Gail McKoon",
+      "url": "https://u.osu.edu/ratcliffmckoon/roger-ratcliffs-publications/"
+    },
+    {
+      "title": "Decisions in Changing Conditions: The Urgency-Gating Model | NDLサーチ | 国立国会図書館",
+      "url": "https://ndlsearch.ndl.go.jp/books/R100000136-I1360294647093445632"
+    },
+    {
+      "title": "Diffusion Decision Model: Current Issues and History.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26952739/"
+    },
+    {
+      "title": "Michael Waskom, PhD | Research",
+      "url": "https://mwaskom.github.io/research.html"
+    },
+    {
+      "title": "The Diffusion Model Is Not a Deterministic Growth Model: Comment on Jones and Dzhafarov (2014)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4429756/"
+    },
+    {
+      "title": "The diffusion decision model: theory and data for two-choice decision tasks.",
+      "url": "https://www.scienceopen.com/document?vid=39874249-c389-4449-bfc8-fb4f2da97321"
+    },
+    {
+      "title": "Perceptual insensitivity to higher-order statistical moments of coherent random dot motion",
+      "url": "https://www.cns.nyu.edu/kianilab/papers/Waskom_Asfour_Kiani_2018.pdf"
+    },
+    {
+      "title": "The Diffusion Decision Model: Theory and Data for Two-Choice Decision Tasks",
+      "url": "https://explore.openaire.eu/search/publication?pid=10.1162%2Fneco.2008.12-06-420"
+    },
+    {
+      "title": "The Diffusion Decision Model: Theory and Data for Two-Choice Decision Tasks",
+      "url": "https://openurl.ebsco.com/c/p7fgln/openurl?date=2008-04&doi=10.1162%2Fneco.2008.12-06-420&epage=922&genre=article&issn=0899-7667&issue=4&prompt=true&sid=Primo&spage=873&title=Neural+computation.&volume=20"
+    },
+    {
+      "title": "Kiani Lab · GitHub",
+      "url": "https://github.com/KianiLab"
+    },
+    {
+      "title": "Decision Making through Integration of Sensory Evidence at Prolonged Timescales.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30471996/"
+    },
+    {
+      "title": "Behavioral/Systems/Cognitive",
+      "url": "https://www.jneurosci.org/content/jneuro/29/37/11560.full.pdf"
+    },
+    {
+      "title": "Decisions in Changing Conditions: The Urgency-Gating Model",
+      "url": "https://openalex.org/W2011265495"
+    },
+    {
+      "title": "Publications",
+      "url": "https://www.cns.nyu.edu/kianilab/Publications.html"
+    },
+    {
+      "title": "Decisions in Changing Conditions: The Urgency-Gating Model",
+      "url": "https://explore.metascienceobservatory.org/papers/W2011265495"
+    },
+    {
+      "title": "Sources of noise during accumulation of evidence in unrestrained and voluntarily head-restrained rats",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4749559/"
+    },
+    {
+      "title": "Science Magazine - 5 April 2013",
+      "url": "https://www.sciencemagazinedigital.org/sciencemagazine/20130405?pg=109"
+    },
+    {
+      "title": "Causal contribution and dynamical encoding in the striatum during evidence accumulation",
+      "url": "https://elifesciences.org/articles/34929"
+    },
+    {
+      "title": "Causal contribution and dynamical encoding in the striatum during evidence accumulation",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6147735/"
+    },
+    {
+      "title": "Rats and Humans Can Optimally Accumulate Evidence for Decision-Making | Department of Biology | University of Washington",
+      "url": "https://biology.washington.edu/research/publications/rats-and-humans-can-optimally-accumulate-evidence-decision-making"
+    },
+    {
+      "title": "Rats and humans can optimally accumulate evidence for decision-making",
+      "url": "https://collaborate.princeton.edu/en/publications/rats-and-humans-can-optimally-accumulate-evidence-for-decision-ma/"
+    },
+    {
+      "title": "Michael Waskom, PhD | Publications",
+      "url": "https://mwaskom.github.io/publications.html"
+    },
+    {
+      "title": "Sources of noise during accumulation of evidence in unrestrained and voluntarily head-restrained rats",
+      "url": "https://doi.org/10.7554/eLife.11308"
+    },
+    {
+      "title": "Roozbeh Kiani | ScienceDirect",
+      "url": "https://www.sciencedirect.com/author/55881416800/roozbeh-kiani"
+    },
+    {
+      "title": "Sources of noise during accumulation of evidence in unrestrained and voluntarily head-restrained rats",
+      "url": "https://elifesciences.org/articles/11308"
+    },
+    {
+      "title": "Brunton et al. 2013 | Brodylab",
+      "url": "https://brodylab.org/publications-2/brunton-et-al-2013/"
+    },
+    {
+      "title": "Distinct effects of prefrontal and parietal cortex inactivations on an accumulation of evidence task in the rat",
+      "url": "https://elifesciences.org/articles/05457"
+    },
+    {
+      "title": "Decisions in Changing Conditions: The Urgency-Gating Model",
+      "url": "https://www.researchgate.net/publication/26816978_Decisions_in_Changing_Conditions_The_Urgency-Gating_Model"
+    },
+    {
+      "title": "Decisions in Changing Conditions: The Urgency-Gating Model | Synapse",
+      "url": "https://synapsesocial.com/papers/69dbdb2d3d9adb00e768558e"
+    },
+    {
+      "title": "Decisions in Changing Conditions: The Urgency-Gating Model",
+      "url": "https://scispace.com/papers/decisions-in-changing-conditions-the-urgency-gating-model-t685vw2zao"
+    },
+    {
+      "title": "Neural circuit dynamics underlying accumulation of time-varying evidence during perceptual decision making.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18946528/"
+    },
+    {
+      "title": "Neural circuit dynamics underlying accumulation of time-varying evidence during perceptual decision making",
+      "url": "https://www.frontiersin.org/journals/computational-neuroscience/articles/10.3389/neuro.10.006.2007/full"
+    },
+    {
+      "title": "Neural Circuit Dynamics Underlying Accumulation of Time-Varying Evidence During Perceptual Decision Making",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2525934/"
+    },
+    {
+      "title": "Strategic and Dynamic Temporal Weighting for Perceptual Decisions in Humans and Macaques",
+      "url": "https://www.eneuro.org/content/eneuro/5/5/ENEURO.0169-18.2018.full.pdf"
+    },
+    {
+      "title": "Probing the role of sequential sampling and integration in decisions about protracted, noiseless stimuli",
+      "url": "https://elifesciences.org/reviewed-preprints/111167"
+    },
+    {
+      "title": "Perceptual glimpses are locally accumulated and globally maintained at distinct processing levels",
+      "url": "https://doi.org/10.7554/eLife.107980.1.sa2"
+    },
+    {
+      "title": "Probing the role of sequential sampling and integration in decisions about protracted, noiseless stimuli",
+      "url": "https://elifesciences.org/reviewed-preprints/111167v2"
+    },
+    {
+      "title": "Probing the role of sequential sampling and integration in decisions about protracted, noiseless stimuli",
+      "url": "https://elifesciences.org/reviewed-preprints/111167v1"
+    },
+    {
+      "title": "Strategic and Dynamic Temporal Weighting for Perceptual Decisions in Humans and Macaques",
+      "url": "https://www.eneuro.org/content/5/5/ENEURO.0169-18.2018/tab-article-info"
+    },
+    {
+      "title": "Perceptual glimpses are locally accumulated and globally maintained at distinct processing levels",
+      "url": "https://elifesciences.org/reviewed-preprints/107980"
+    },
+    {
+      "title": "Probing the role of sequential sampling and integration in decisions about protracted, noiseless stimuli",
+      "url": "https://elifesciences.org/reviewed-preprints/111167/reviews"
+    },
+    {
+      "title": "Perceptual glimpses are locally accumulated and globally maintained at distinct processing levels",
+      "url": "https://elifesciences.org/reviewed-preprints/107980/reviews"
+    },
+    {
+      "title": "Probing the role of sequential sampling and integration in decisions about protracted, noiseless stimuli",
+      "url": "https://elifesciences.org/reviewed-preprints/111167v1/reviews"
+    },
+    {
+      "title": "Perceptual glimpses are locally accumulated and globally maintained at distinct processing levels",
+      "url": "https://aresearch.uk/publications/cmuhsk43s0055040rhns3pvbu"
+    },
+    {
+      "title": "Probing the role of sequential sampling and integration in decisions about protracted, noiseless stimuli",
+      "url": "https://elifesciences.org/reviewed-preprints/111167v2/figures"
+    },
+    {
+      "title": "Wang Lab at NYU",
+      "url": "https://www.cns.nyu.edu/wanglab/publications/"
+    },
+    {
+      "title": "Perceptual glimpses are locally accumulated and globally maintained at distinct processing levels",
+      "url": "https://elifesciences.org/reviewed-preprints/107980v2/reviews"
+    },
+    {
+      "title": "Perceptual glimpses are locally accumulated and globally maintained at distinct processing levels",
+      "url": "https://elifesciences.org/reviewed-preprints/107980v1"
+    },
+    {
+      "title": "Perceptual glimpses are locally accumulated and globally maintained at distinct processing levels",
+      "url": "https://elifesciences.org/reviewed-preprints/107980v2"
+    },
+    {
+      "title": "Probing the role of sequential sampling and integration in decisions about protracted, noiseless stimuli",
+      "url": "https://elifesciences.org/reviewed-preprints/111167/figures"
+    },
+    {
+      "title": "Perceptual glimpses are locally accumulated and globally maintained at distinct processing levels",
+      "url": "https://elifesciences.org/reviewed-preprints/107980v1/reviews"
+    },
+    {
+      "title": "Probing the role of sequential sampling and integration in decisions about protracted, noiseless stimuli",
+      "url": "https://www.researchgate.net/publication/404665850_Probing_the_role_of_sequential_sampling_and_integration_in_decisions_about_protracted_noiseless_stimuli"
+    },
+    {
+      "title": "Neural circuit dynamics underlying accumulation of",
+      "url": "https://citeseerx.ist.psu.edu/document?doi=3cae32e93fe48805f5255b8af1de6a48b8bcdebe&repid=rep1&type=pdf"
+    },
+    {
+      "title": "Strategic and Dynamic Temporal Weighting for Perceptual Decisions in Humans and Macaques",
+      "url": "https://openalex.org/W2889929138"
+    },
+    {
+      "title": "Perceptual glimpses are locally accumulated and globally maintained at distinct processing levels",
+      "url": "https://elifesciences.org/reviewed-preprints/107980v2/figures"
+    },
+    {
+      "title": "Reviewer #2 (Public review): Perceptual glimpses are locally accumulated and globally maintained at distinct processing levels",
+      "url": "https://aresearch.uk/research/doi/10.7554%2Felife.107980.3.sa1"
+    },
+    {
+      "title": "Strategic and dynamic temporal weighting for perceptual decisions in humans and macaques",
+      "url": "https://www.eneuro.org/content/early/2018/09/11/ENEURO.0169-18.2018/tab-e-letters?versioned=true"
+    },
+    {
+      "title": "Neural circuit dynamics underlying accumulation of time-varying evidence during perceptual decision making",
+      "url": "https://openalex.org/W1993762087"
+    },
+    {
+      "title": "Probing the role of sequential sampling and integration in decisions about protracted, noiseless stimuli | DeepDyve",
+      "url": "https://www.deepdyve.com/lp/unpaywall/probing-the-role-of-sequential-sampling-and-integration-in-decisions-0ymwwB037n"
+    },
+    {
+      "title": "Neural circuit dynamics underlying accumulation of time-varying evidence during perceptual decision making",
+      "url": "https://explore.metascienceobservatory.org/papers/W1993762087"
+    },
+    {
+      "title": "Neural circuit dynamics underlying accumulation of time-varying evidence during perceptual decision making",
+      "url": "https://pure.ulster.ac.uk/en/publications/neural-circuit-dynamics-underlying-accumulation-of-time-varying-e-3/"
+    },
+    {
+      "title": "Reviewed Preprints, page 26 | eLife",
+      "url": "https://elifesciences.org/reviewed-preprints?page=26"
+    },
+    {
+      "title": "Strategic and Dynamic Temporal Weighting for Perceptual Decisions in Humans and Macaques. | GreenMedInfo",
+      "url": "https://uat.greenmedinfo.com/abstracts/strategic-and-dynamic-temporal-weighting-for-perceptual-decisions-in-h-30406190"
+    },
+    {
+      "title": "Post by @epares.bsky.social — Bluesky",
+      "url": "https://bsky.app/profile/epares.bsky.social/post/3lzr3lalmms2z"
+    },
+    {
+      "title": "Perceptual glimpses are locally accumulated and globally maintained at distinct processing levels",
+      "url": "https://www.researchgate.net/publication/404740995_Perceptual_glimpses_are_locally_accumulated_and_globally_maintained_at_distinct_processing_levels"
+    },
+    {
+      "title": "Latest research, page 33 | eLife",
+      "url": "https://elifesciences.org/?page=33"
+    },
+    {
+      "title": "Distributed Coding of Evidence Accumulation across the Mouse Brain Using Microcircuits with a Diversity of Timescales",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10626503/"
+    },
+    {
+      "title": "Bounded integration in parietal cortex underlies decisions even when viewing duration is dictated by the environment",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18354005/"
+    },
+    {
+      "title": "Motion Discrimination and the Motion Aftereffect in Mouse Vision.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30627645/"
+    },
+    {
+      "title": "in Computat",
+      "url": "https://rebekahmanweiler.github.io/resources/documents/Palminteri2017.pdf"
+    },
+    {
+      "title": "OdorDB: Paper - Kiani R, Hanks TD, Shadlen MN (2008)",
+      "url": "https://ordb.biotech.ttu.edu/odordb/Data/180145"
+    },
+    {
+      "title": "Bounded Integration in Parietal Cortex Underlies Decisions Even When Viewing Duration Is Dictated by the Environment",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6670720/"
+    },
+    {
+      "title": "The Importance of Falsification in Computational Cognitive Modeling.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28476348/"
+    },
+    {
+      "title": "Motion Discrimination and the Motion Aftereffect in Mouse Vision",
+      "url": "https://doi.org/10.1523%2FENEURO.0065-18.2018"
+    },
+    {
+      "title": "Motion Discrimination and the Motion Aftereffect in Mouse Vision",
+      "url": "https://www.eneuro.org/content/5/6/ENEURO.0065-18.2018/tab-article-info"
+    },
+    {
+      "title": "14775612841214 1..31",
+      "url": "https://shadlenlab.zi.columbia.edu/sites/shadlenlab.zi.columbia.edu/files/content/ZylberbergFetschShadlen_eLife2016.pdf"
+    },
+    {
+      "title": "Motion Discrimination and the Motion Aftereffect in Mouse Vision",
+      "url": "https://www.eneuro.org/content/5/6/eneuro.0065-18.2018.abstract"
+    },
+    {
+      "title": "Using Time-Varying Evidence to Test Models of Decision Dynamics: Bounded Diffusion vs. the Leaky Competing Accumulator Model",
+      "url": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2012.00079/full"
+    },
+    {
+      "title": "CoAxlab | Coaxies",
+      "url": "https://www.cmu.edu/dietrich/psychology/cognitiveaxon/coaxies.html"
+    },
+    {
+      "title": "Post Docs | Center for Perceptual Systems | Liberal Arts | UT - Austin",
+      "url": "https://liberalarts.utexas.edu/cps/people-and-research/post-docs/"
+    },
+    {
+      "title": "Stefano Palminteri, INSERM Paris • Center for Cognitive Neuroscience Berlin • Department of Education and Psychology",
+      "url": "https://www.ewi-psy.fu-berlin.de/en/psychologie/einrichtungen/ccnb/seminar/2026_07_06_Stefano-Palminteri.html"
+    },
+    {
+      "title": "The Importance of Falsification in Computational Cognitive Modeling",
+      "url": "https://www.researchgate.net/publication/316639384_The_Importance_of_Falsification_in_Computational_Cognitive_Modeling"
+    },
+    {
+      "title": "The influence of evidence volatility on choice, reaction time and confidence in a perceptual decision",
+      "url": "https://elifesciences.org/articles/17688v1/peer-reviews"
+    },
+    {
+      "title": "The Importance of Falsification in Computational Cognitive Modeling",
+      "url": "https://explore.metascienceobservatory.org/papers/W2610253745"
+    },
+    {
+      "title": "Stefano Palminteri - Publications",
+      "url": "https://sites.google.com/site/stefanopalminteri/publications"
+    },
+    {
+      "title": "LONDON’S GLOBAL UNIVERSITY",
+      "url": "https://discovery.ucl.ac.uk/id/eprint/10118886/1/Jessica%20Bone%20PhD%20Thesis%20-%20final.pdf"
+    },
+    {
+      "title": "Bounded integration in parietal cortex underlies decisions … | Article Details - GeneLibs",
+      "url": "https://www.genelibs.com/db/command/search/pub/detail/18354005/"
+    },
+    {
+      "title": "The Importance of Falsification in Computational Cognitive Modeling",
+      "url": "https://www.academia.edu/32941908/The_Importance_of_Falsification_in_Computational_Cognitive_Modeling"
+    },
+    {
+      "title": "Title",
+      "url": "https://discovery.ucl.ac.uk/id/eprint/10151960/1/EH_Thesis_withCorrections_final.pdf"
+    },
+    {
+      "title": "The influence of evidence volatility on choice, reaction time and confidence in a perceptual decision",
+      "url": "https://elifesciences.org/articles/17688"
+    },
+    {
+      "title": "Tsetsos thesis",
+      "url": "https://discovery.ucl.ac.uk/id/eprint/1348210/1/1348210.pdf"
+    },
+    {
+      "title": "Confirmation bias in human reinforcement learning: Evidence from counterfactual feedback processing",
+      "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1005684"
+    },
+    {
+      "title": "Toutes les publications - Stefano Palminteri",
+      "url": "https://cognition.ens.fr/fr/publication/657/stefano-palminteri"
+    },
+    {
+      "title": "Publications | Laboratoire de Neurosciences cognitives",
+      "url": "https://lnc2.dec.ens.fr/en/publications/search?f%5B0%5D=pub_equipe_facet%3A114&f%5B1%5D=pub_equipe_facet%3A582&f%5B2%5D=reference_type_facet%3A64&f%5B3%5D=reference_type_facet%3A68&f%5B4%5D=reference_type_facet%3A77&keys=&order=asc&page=2&sort=field_pub_date_publication_1"
+    },
+    {
+      "title": "All publications - Stefano Palminteri",
+      "url": "https://cognition.ens.fr/en/publication/657/stefano-palminteri"
+    },
+    {
+      "title": "The Importance of Falsification in Computational Cognitive Modeling.",
+      "url": "https://www.minicod.com/papers/the-importance-of-falsification-in-computational-cognitive-modeling-0cdaf4be"
+    },
+    {
+      "title": "Lab Publications |",
+      "url": "https://sites.utexas.edu/priebelab/priebe-lab-publications/"
+    },
+    {
+      "title": "The influence of evidence volatility on choice, reaction time and confidence in a perceptual decision",
+      "url": "https://elifesciences.org/articles/17688/figures"
+    },
+    {
+      "title": "Motion Discrimination and the Motion Aftereffect in Mouse Vision",
+      "url": "https://openalex.org/W2903732871"
+    },
+    {
+      "title": "Search Results | Scholarly Articles, Journals, and E-Books | EBSCOhost",
+      "url": "https://openurl.ebsco.com/results?bquery=AU+Kiani%2C+Roozbeh&page=1&sid=ebsco%3Aocu_results%3Acache"
+    },
+    {
+      "title": "Publications | Priebelab",
+      "url": "https://www.priebelab.com/publications"
+    },
+    {
+      "title": "Variance misperception explains illusions of confidence in simple perceptual decisions",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S1053810014000865"
+    },
+    {
+      "title": "Roozbeh Kiani - Publications",
+      "url": "https://academictree-staging.thetransmitter.org/neurotree/publications.php?pid=935"
+    },
+    {
+      "title": "Bounded integration in parietal cortex underlies decisions even when viewing duration is dictated by the environment",
+      "url": "https://eurekamag.com/research/030/346/030346401.php"
+    },
+    {
+      "title": "Bounded Integration in Parietal Cortex Underlies",
+      "url": "https://studyres.com/doc/529444/bounded-integration-in-parietal-cortex-underlies?page=2"
+    },
+    {
+      "title": "Interocular velocity cues elicit vergence eye movements in mice",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7500383/"
+    },
+    {
+      "title": "ORCID",
+      "url": "https://orcid.org/0000-0002-5857-0597"
+    },
+    {
+      "title": "Search Results | Scholarly Articles, Journals, and E-Books | EBSCOhost",
+      "url": "https://openurl.ebsco.com/results?bquery=AU+Kiani%2C+Roozbeh&page=1&sid=ebsco%3Aocu.results%3Acrawler"
+    },
+    {
+      "title": "Reward history guides focal attention in whisker somatosensory cortex",
+      "url": "https://ouci.dntb.gov.ua/en/works/7qEEjZvB/"
+    },
+    {
+      "title": "Accumulated evidence as an additive performance measure based on confidence ratings",
+      "url": "https://doi.org/10.1016/j.newideapsych.2026.101249"
+    },
+    {
+      "title": "Mammals Achieve Common Neural Coverage of Visual Scenes Using Distinct Sampling Behaviors",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10860624/"
+    },
+    {
+      "title": "Variance misperception explains illusions of confidence in simple perceptual decisions",
+      "url": "https://philpapers.org/rec/ZYLVME"
+    },
+    {
+      "title": "Toward ‘Computational-Rationality’ Approaches to Arbitrating Models of Cognition: A Case Study Using Perceptual Metacognition",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10575558/"
+    },
+    {
+      "title": "Dual strategies in human confidence judgments",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8142718/"
+    },
+    {
+      "title": "The Impact of Evidence Reliability on Sensitivity and Bias in Decision Confidence",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5524444/"
+    },
+    {
+      "title": "Consensus goals in the field of visual metacognition",
+      "url": "https://www.academia.edu/91480893/Consensus_goals_in_the_field_of_visual_metacognition"
+    },
+    {
+      "title": "Parameter fits for the alternative models. | Download Table",
+      "url": "https://www.researchgate.net/figure/Parameter-fits-for-the-alternative-models_tbl2_320974519"
+    },
+    {
+      "title": "T",
+      "url": "https://escholarship.org/content/qt21m1w8m1/qt21m1w8m1.pdf"
+    },
+    {
+      "title": "Modeling Cell-to-Cell Communication Networks Using Response-Time Distributions",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5913757/"
+    },
+    {
+      "title": "What are the Shapes of Response Time Distributions in Visual Search?",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3062635/"
+    },
+    {
+      "title": "What are the shapes of response time distributions in visual search?",
+      "url": "https://dspace.mit.edu/entities/publication/232a06a6-1fa7-4156-bd47-a33ef7ecd0ba"
+    },
+    {
+      "title": "Lapses in perceptual decisions reflect exploration",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33427198/"
+    },
+    {
+      "title": "Sunk cost sensitivity in mice, rats, and humans on the Restaurant Row and WebSurf tasks cannot be explained by attritio…",
+      "url": "https://ouci.dntb.gov.ua/en/works/lmyNwaOl/"
+    },
+    {
+      "title": "Modeling Cell-to-Cell Communication Networks Using Response-Time Distributions",
+      "url": "https://doi.org/10.1016/j.cels.2018.01.016"
+    },
+    {
+      "title": "Modeling Response Time with Power Law Distributions.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31586497/"
+    },
+    {
+      "title": "Modeling Cell-to-Cell Communication Networks Using Response-Time Distributions",
+      "url": "https://www.sciencedirect.com/science/article/pii/S240547121830053X"
+    },
+    {
+      "title": "Lapses in perceptual decisions reflect exploration",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7846276/"
+    },
+    {
+      "title": "15035072184304 1..28",
+      "url": "https://elifesciences.org/articles/24910.pdf"
+    },
+    {
+      "title": "Modelling the Effect of Instructional Support on Logarithmic-Transformed Response Time: An Exploratory Study",
+      "url": "https://imec-publications.be/server/api/core/bitstreams/0445ed5f-0a11-4f73-928e-650b74002b8f/content"
+    },
+    {
+      "title": "Idiographic Lapse Prediction With State Space Modeling: Algorithm Development and Validation Study",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12174888/"
+    },
+    {
+      "title": "ARTICLE IN PRESS",
+      "url": "https://www.nature.com/articles/s44271-026-00424-9_reference.pdf"
+    },
+    {
+      "title": "Inferring mind wandering from perceptual decision making",
+      "url": "https://www.nature.com/articles/s44271-026-00424-9"
+    },
+    {
+      "title": "Modeling Cell-to-Cell Communication Networks Using Response-Time Distributions",
+      "url": "https://escholarship.org/uc/item/21m1w8m1"
+    },
+    {
+      "title": "Differentiating between integration and non-integration strategies in perceptual decision making",
+      "url": "https://www.researchgate.net/publication/340964471_Differentiating_between_integration_and_non-integration_strategies_in_perceptual_decision_making"
+    },
+    {
+      "title": "Modeling Cell-to-Cell Communication Networks Using Response-Time Distributions.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29525203/"
+    },
+    {
+      "title": "Mice alternate between discrete strategies during perceptual decision-making",
+      "url": "https://www.researchgate.net/publication/358416611_Mice_alternate_between_discrete_strategies_during_perceptual_decision-making"
+    },
+    {
+      "title": "\\begin{ali",
+      "url": "https://stanford.edu/~cpiech/bio/papers/speed.pdf"
+    },
+    {
+      "title": "Trial-history biases in evidence accumulation can give rise to apparent lapses in decision-making",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10803295/"
+    },
+    {
+      "title": "Assessing Impulsivity in Humans and Rodents: Taking the Translational Road",
+      "url": "https://ouci.dntb.gov.ua/en/works/4k6DQOm7/"
+    },
+    {
+      "title": "An Overview of Models for Response Times and Processes in Cognitive Tests",
+      "url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2019.00102/full"
+    },
+    {
+      "title": "Neuroscience journals | Elsevier | Elsevier Shop",
+      "url": "https://shop.elsevier.com/journals/subjects/life-sciences/neuroscience?page=1&subjectArea=life-sciences%2Fneuroscience"
+    },
+    {
+      "title": "Trial-history biases in evidence accumulation can give rise to apparent lapses in decision-making",
+      "url": "https://www.nature.com/articles/s41467-024-44880-5"
+    },
+    {
+      "title": "Mice alternate between discrete strategies during perceptual decision-making",
+      "url": "https://www.minicod.com/papers/mice-alternate-between-discrete-strategies-during-perceptual-decision-making-837bcc30"
+    },
+    {
+      "title": "Lapsing during Sleep Deprivation Is Associated with Distributed Changes in Brain Activation",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6670628/"
+    },
+    {
+      "title": "Statistical approaches to identifying lapses in psychometric response data.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33825094/"
+    },
+    {
+      "title": "Lapsing during sleep deprivation is associated with distributed changes in brain activation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18495886/"
+    },
+    {
+      "title": "Neuroscience journals | Elsevier | Elsevier Shop",
+      "url": "https://shop.elsevier.com/journals/subjects/life-sciences/neuroscience/neuroscience-general/neuroscience?page=1&slug=life-sciences&slug=neuroscience&slug=neuroscience-general"
+    },
+    {
+      "title": "Psychedelics Relax Priors and Reshape Orbitofrontal Dynamics",
+      "url": "https://ouci.dntb.gov.ua/en/works/lxLvW0dL/"
+    },
+    {
+      "title": "Guide for Authors | KeAi Publishing",
+      "url": "https://www.keaipublishing.com/en/journals/neuron-communications/guide-for-authors/"
+    },
+    {
+      "title": "Neurobiological reduction: From cellular explanations of behavior to interventions",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9815460/"
+    },
+    {
+      "title": "Neuroscience general journals | Elsevier | Elsevier Shop",
+      "url": "https://shop.elsevier.com/subjects/journals/life-sciences/neuroscience/neuroscience-general?page=1"
+    },
+    {
+      "title": "Research – philinbiomed",
+      "url": "https://philinbiomed.cnrs.fr/research/"
+    },
+    {
+      "title": "A Fully Automated High-Throughput Training System for Rodents",
+      "url": "https://ouci.dntb.gov.ua/works/lm5oY5Pl/"
+    },
+    {
+      "title": "Bridging complexity through integrative systems neuroscience",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12341991/"
+    },
+    {
+      "title": "Neural mechanisms for the attention-mediated propagation of conceptual information in the human brain",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12135929/"
+    },
+    {
+      "title": "Neuroscience journals | Elsevier | Elsevier Shop",
+      "url": "https://shop.elsevier.com/journals/subjects/life-sciences/neuroscience"
+    },
+    {
+      "title": "Neuron Submission Guidelines, Template and Cover Letter",
+      "url": "https://www.thesify.ai/journals/neuron/submission-guide"
+    },
+    {
+      "title": "Neuroscience journals | Elsevier | Elsevier Shop",
+      "url": "https://shop.elsevier.com/journals/subjects/life-sciences/neuroscience?page=1&type=journals"
+    },
+    {
+      "title": "Developing Concepts for Neuroscience: A Philosophical Toolkit",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/ejn.70403"
+    }
+  ],
+  "fulltext_access_record": "public_fulltext_access.json",
+  "europe_pmc_endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/{PMCID}/fullTextXML"
+}
