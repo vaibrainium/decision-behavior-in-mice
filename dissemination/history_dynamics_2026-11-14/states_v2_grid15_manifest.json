@@ -1,0 +1,7 @@
+{
+  "source_sha256": "1ac5fad60a7bd460e19f4b1f4d92109d62738343a93dad3f11e4494ab13a35f3",
+  "original_model_source_sha256": "39e3a990a17ab5727522f983a1dcd1f142519ba80f28f3b247d8366f9e706ac2",
+  "change": "Optimize the same two-state model in logit self-transition coordinates; more iterations/starts",
+  "original_outputs": "states_grid15_* retained; continuous fits identical",
+  "selection": "training likelihood only; no change to endpoints or test blocks"
+}

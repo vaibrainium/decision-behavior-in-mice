@@ -1,0 +1,26 @@
+{
+  "source_sha256": "39e3a990a17ab5727522f983a1dcd1f142519ba80f28f3b247d8366f9e706ac2",
+  "n_grid": 15,
+  "ridge": 0.1,
+  "training": "prefix folds <2/<3/<4, test next fold; same sessions",
+  "state_prediction": "filtered before current choice, no current RT, advance every recorded row",
+  "models": [
+    "static history GLM",
+    "continuous AR1 bias approximation",
+    "two-state bias-only GLM-HMM"
+  ],
+  "group_endpoints": [
+    "continuous_gain_bits",
+    "discrete_gain_bits",
+    "discrete_minus_continuous_bits",
+    "continuous_rt_alignment",
+    "discrete_rt_alignment"
+  ],
+  "multiplicity": "Holm five endpoints",
+  "limitations": [
+    "responded-only conditional choices",
+    "same-session forecasting",
+    "bias states, not attention labels",
+    "RT validation conditional, not causal"
+  ]
+}

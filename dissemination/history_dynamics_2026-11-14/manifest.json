@@ -1,0 +1,22 @@
+{
+  "commit": "b63c9d919edc85e48446be48a8399ba6304b8df0",
+  "source_sha256": "7092c919a3b70619065604a5e0a00fd11896cbcdf69149f98aef9fcd1de8b7e9",
+  "seed": 114,
+  "block_bootstraps": 300,
+  "block_length_recorded_rows": 50,
+  "ridge_penalty": 0.1,
+  "primary_endpoints": [
+    "win_bias_late_minus_early",
+    "loss_bias_late_minus_early",
+    "choice_residual_acf_2_10",
+    "rt_residual_acf_2_10"
+  ],
+  "correction": "Holm over four group t-tests",
+  "sampling_unit": "mouse for group inference; within-session recorded-row blocks for within-mouse uncertainty",
+  "generalization": "Five contiguous within-session blocks; parameters may use other blocks on both sides; not prospective/new-session",
+  "rt_curve": "Current RT conditioned, descriptive; previous R vs L log odds contrast",
+  "null_reference": "Fixed predictors/residual permutation; no refitting or full sequential generative calibration",
+  "python": "3.12.12",
+  "numpy": "1.26.4",
+  "pandas": "2.2.3"
+}

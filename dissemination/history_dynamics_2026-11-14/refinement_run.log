@@ -1,0 +1,16 @@
+REFINED DBM12 bits 0.05752561255900769
+REFINED DBM13 bits -0.009833358876627863
+REFINED DBM14 bits 0.010678368922348325
+REFINED DBM15 bits 0.017082145597262465
+REFINED DBM5 bits 0.05827436195432446
+REFINED DBM6 bits 0.028802858273165997
+REFINED PSUIM10 bits 0.0058069181333848825
+REFINED PSUIM5 bits 0.07774149028885148
+REFINED PSUIM6 bits 0.02327701265827189
+REFINED PSUIM7 bits 0.02148538930825839
+                        metric  n_mice      mean    median        lo        hi        dz      p_t  p_wilcoxon  n_positive  p_holm_5
+          continuous_gain_bits      10  0.042640  0.033732  0.019415  0.065865  1.313369 0.002472    0.001953          10  0.012362
+            discrete_gain_bits      10  0.029084  0.022381  0.009625  0.048543  1.069209 0.008112    0.005859           9  0.032449
+discrete_minus_continuous_bits      10 -0.013556 -0.006887 -0.026418 -0.000695 -0.753990 0.040936    0.003906           1  0.122809
+       continuous_rt_alignment      10  0.022290 -0.048235 -0.111462  0.156042  0.119215 0.714916    0.921875           4  1.000000
+         discrete_rt_alignment      10  0.001357 -0.010854 -0.042221  0.044934  0.022272 0.945392    0.845703           5  1.000000

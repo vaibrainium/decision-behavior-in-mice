@@ -1,0 +1,401 @@
+mouse,kind,lag,lo,hi,reference,parameter_uncertainty_included
+DBM12,choice,1,-0.04984810842768659,0.05256001568495884,Independent Bernoulli conditional on frozen predictors,False
+DBM12,choice,2,-0.04721318100874921,0.04099467421617453,Independent Bernoulli conditional on frozen predictors,False
+DBM12,choice,3,-0.05237744278932952,0.04833923235737596,Independent Bernoulli conditional on frozen predictors,False
+DBM12,choice,4,-0.04795133676766574,0.04836461227313087,Independent Bernoulli conditional on frozen predictors,False
+DBM12,choice,5,-0.04455479868943952,0.045490843307031945,Independent Bernoulli conditional on frozen predictors,False
+DBM12,choice,6,-0.04991253363457633,0.04722194899534212,Independent Bernoulli conditional on frozen predictors,False
+DBM12,choice,7,-0.053673642858055294,0.046583525987945046,Independent Bernoulli conditional on frozen predictors,False
+DBM12,choice,8,-0.045910828168745574,0.04689812632494586,Independent Bernoulli conditional on frozen predictors,False
+DBM12,choice,9,-0.053472825916309176,0.04805109925830603,Independent Bernoulli conditional on frozen predictors,False
+DBM12,choice,10,-0.04995993290129172,0.04273162932748372,Independent Bernoulli conditional on frozen predictors,False
+DBM12,choice,11,-0.04762540967145316,0.04452432432602256,Independent Bernoulli conditional on frozen predictors,False
+DBM12,choice,12,-0.0477881165001611,0.04615895808311206,Independent Bernoulli conditional on frozen predictors,False
+DBM12,choice,13,-0.05191936519629392,0.044293895922821125,Independent Bernoulli conditional on frozen predictors,False
+DBM12,choice,14,-0.043763542427909155,0.04836118466559683,Independent Bernoulli conditional on frozen predictors,False
+DBM12,choice,15,-0.050712669051470545,0.047668170703208876,Independent Bernoulli conditional on frozen predictors,False
+DBM12,choice,16,-0.05017458364384334,0.04548253867779878,Independent Bernoulli conditional on frozen predictors,False
+DBM12,choice,17,-0.04845943348334701,0.04519608035533356,Independent Bernoulli conditional on frozen predictors,False
+DBM12,choice,18,-0.04552252987448015,0.047675586641501955,Independent Bernoulli conditional on frozen predictors,False
+DBM12,choice,19,-0.05248362663748372,0.05060097901204436,Independent Bernoulli conditional on frozen predictors,False
+DBM12,choice,20,-0.0535616066000351,0.04799404726983207,Independent Bernoulli conditional on frozen predictors,False
+DBM12,rt,1,-0.05085980403318152,0.04924566028719029,Within-session residual-order permutation,False
+DBM12,rt,2,-0.04581187009931777,0.04213684694802657,Within-session residual-order permutation,False
+DBM12,rt,3,-0.04836048735805955,0.05369790413338474,Within-session residual-order permutation,False
+DBM12,rt,4,-0.052026504069321834,0.047045162711346615,Within-session residual-order permutation,False
+DBM12,rt,5,-0.052440690677330086,0.04567355282439199,Within-session residual-order permutation,False
+DBM12,rt,6,-0.05152716572431579,0.04495137692491734,Within-session residual-order permutation,False
+DBM12,rt,7,-0.04861996475204005,0.05226829512486509,Within-session residual-order permutation,False
+DBM12,rt,8,-0.049475129301545163,0.04665173518024026,Within-session residual-order permutation,False
+DBM12,rt,9,-0.04670294377080269,0.05303574153555713,Within-session residual-order permutation,False
+DBM12,rt,10,-0.04870654457985984,0.05187891545842817,Within-session residual-order permutation,False
+DBM12,rt,11,-0.052476324188653924,0.05128149631224112,Within-session residual-order permutation,False
+DBM12,rt,12,-0.05289568263346086,0.050149366049242076,Within-session residual-order permutation,False
+DBM12,rt,13,-0.050673009774416286,0.041695680010033286,Within-session residual-order permutation,False
+DBM12,rt,14,-0.05070337917273371,0.050440399084235116,Within-session residual-order permutation,False
+DBM12,rt,15,-0.054756089267069256,0.04582157823066503,Within-session residual-order permutation,False
+DBM12,rt,16,-0.04685703820491293,0.04867712604849502,Within-session residual-order permutation,False
+DBM12,rt,17,-0.05563727595580465,0.04347975051632111,Within-session residual-order permutation,False
+DBM12,rt,18,-0.04882016073022649,0.04832935185795829,Within-session residual-order permutation,False
+DBM12,rt,19,-0.05140797819254613,0.0438269879402689,Within-session residual-order permutation,False
+DBM12,rt,20,-0.05115968408340674,0.04330608183703211,Within-session residual-order permutation,False
+DBM13,choice,1,-0.07726965309479901,0.08140055194240309,Independent Bernoulli conditional on frozen predictors,False
+DBM13,choice,2,-0.0722811611539137,0.07880807007644514,Independent Bernoulli conditional on frozen predictors,False
+DBM13,choice,3,-0.08080997353685498,0.08286228249323872,Independent Bernoulli conditional on frozen predictors,False
+DBM13,choice,4,-0.06856304035838313,0.07846244068383441,Independent Bernoulli conditional on frozen predictors,False
+DBM13,choice,5,-0.07528795734005732,0.06663542685825852,Independent Bernoulli conditional on frozen predictors,False
+DBM13,choice,6,-0.0855163224530245,0.07748210702766473,Independent Bernoulli conditional on frozen predictors,False
+DBM13,choice,7,-0.08580137395277623,0.06835233736377988,Independent Bernoulli conditional on frozen predictors,False
+DBM13,choice,8,-0.07626882987279529,0.07537707043265644,Independent Bernoulli conditional on frozen predictors,False
+DBM13,choice,9,-0.07769098270078123,0.07158095486489731,Independent Bernoulli conditional on frozen predictors,False
+DBM13,choice,10,-0.07113393322745866,0.0732318333089589,Independent Bernoulli conditional on frozen predictors,False
+DBM13,choice,11,-0.07385614035608548,0.08280754199358252,Independent Bernoulli conditional on frozen predictors,False
+DBM13,choice,12,-0.08076431459463819,0.06798114410358626,Independent Bernoulli conditional on frozen predictors,False
+DBM13,choice,13,-0.07808318241833713,0.07853358568705349,Independent Bernoulli conditional on frozen predictors,False
+DBM13,choice,14,-0.08211420326366092,0.07664774157786548,Independent Bernoulli conditional on frozen predictors,False
+DBM13,choice,15,-0.07208675556450288,0.08240707708514733,Independent Bernoulli conditional on frozen predictors,False
+DBM13,choice,16,-0.07274997856594165,0.07290155419727573,Independent Bernoulli conditional on frozen predictors,False
+DBM13,choice,17,-0.08708451170386942,0.076838376749443,Independent Bernoulli conditional on frozen predictors,False
+DBM13,choice,18,-0.07649761402446846,0.08075454921362553,Independent Bernoulli conditional on frozen predictors,False
+DBM13,choice,19,-0.07942925924564391,0.06436001689807715,Independent Bernoulli conditional on frozen predictors,False
+DBM13,choice,20,-0.07397668357252189,0.08669649253741583,Independent Bernoulli conditional on frozen predictors,False
+DBM13,rt,1,-0.06813492619441837,0.07123376708818113,Within-session residual-order permutation,False
+DBM13,rt,2,-0.07210654040777999,0.0756244466070399,Within-session residual-order permutation,False
+DBM13,rt,3,-0.07362156328822385,0.0765055267602066,Within-session residual-order permutation,False
+DBM13,rt,4,-0.07496253793157003,0.0750468334086258,Within-session residual-order permutation,False
+DBM13,rt,5,-0.07485195555025732,0.07178333541606677,Within-session residual-order permutation,False
+DBM13,rt,6,-0.07586895707550972,0.08756740091378222,Within-session residual-order permutation,False
+DBM13,rt,7,-0.07594843110958921,0.07246753351973477,Within-session residual-order permutation,False
+DBM13,rt,8,-0.07327227229701852,0.07175684418791534,Within-session residual-order permutation,False
+DBM13,rt,9,-0.08064015982858433,0.06722294985061218,Within-session residual-order permutation,False
+DBM13,rt,10,-0.09208970487255273,0.07746048494427912,Within-session residual-order permutation,False
+DBM13,rt,11,-0.07474389603373235,0.08481397640546737,Within-session residual-order permutation,False
+DBM13,rt,12,-0.08583124508154202,0.0813287991914632,Within-session residual-order permutation,False
+DBM13,rt,13,-0.07980506724702283,0.06948063712619172,Within-session residual-order permutation,False
+DBM13,rt,14,-0.07577258885735301,0.08821838305846286,Within-session residual-order permutation,False
+DBM13,rt,15,-0.07486805349052213,0.07096629139287906,Within-session residual-order permutation,False
+DBM13,rt,16,-0.0742726063567828,0.07433213500549077,Within-session residual-order permutation,False
+DBM13,rt,17,-0.07856423547012026,0.07467050061580777,Within-session residual-order permutation,False
+DBM13,rt,18,-0.07129722918101401,0.07175993259139091,Within-session residual-order permutation,False
+DBM13,rt,19,-0.0781682439498754,0.07397138048418807,Within-session residual-order permutation,False
+DBM13,rt,20,-0.07297726329339901,0.07368255817094309,Within-session residual-order permutation,False
+DBM14,choice,1,-0.06662076888176098,0.07512868263805862,Independent Bernoulli conditional on frozen predictors,False
+DBM14,choice,2,-0.06449340928030602,0.05796379855347529,Independent Bernoulli conditional on frozen predictors,False
+DBM14,choice,3,-0.06934278549524762,0.07343089522204814,Independent Bernoulli conditional on frozen predictors,False
+DBM14,choice,4,-0.056626222917369386,0.08523377053379359,Independent Bernoulli conditional on frozen predictors,False
+DBM14,choice,5,-0.07454217840084625,0.07914027614188077,Independent Bernoulli conditional on frozen predictors,False
+DBM14,choice,6,-0.06852957948225906,0.0772412837412461,Independent Bernoulli conditional on frozen predictors,False
+DBM14,choice,7,-0.07145704998330267,0.06151857123453549,Independent Bernoulli conditional on frozen predictors,False
+DBM14,choice,8,-0.0717237154085164,0.07280799931785398,Independent Bernoulli conditional on frozen predictors,False
+DBM14,choice,9,-0.07781167228212582,0.07327222853922014,Independent Bernoulli conditional on frozen predictors,False
+DBM14,choice,10,-0.06487593404322964,0.06313358048656617,Independent Bernoulli conditional on frozen predictors,False
+DBM14,choice,11,-0.06192381981185282,0.0804348498886043,Independent Bernoulli conditional on frozen predictors,False
+DBM14,choice,12,-0.07170297195501855,0.07165420066553022,Independent Bernoulli conditional on frozen predictors,False
+DBM14,choice,13,-0.08139205633008242,0.06951449158960844,Independent Bernoulli conditional on frozen predictors,False
+DBM14,choice,14,-0.08712312019393274,0.06374328061314176,Independent Bernoulli conditional on frozen predictors,False
+DBM14,choice,15,-0.06938382080824282,0.06472261787006187,Independent Bernoulli conditional on frozen predictors,False
+DBM14,choice,16,-0.07094644701370967,0.06751964519871485,Independent Bernoulli conditional on frozen predictors,False
+DBM14,choice,17,-0.06578323759763098,0.07245629277387297,Independent Bernoulli conditional on frozen predictors,False
+DBM14,choice,18,-0.0726723434508064,0.0645981031437999,Independent Bernoulli conditional on frozen predictors,False
+DBM14,choice,19,-0.0780869266504807,0.07481954703356242,Independent Bernoulli conditional on frozen predictors,False
+DBM14,choice,20,-0.07158900611555023,0.08229861314292328,Independent Bernoulli conditional on frozen predictors,False
+DBM14,rt,1,-0.06594292844059091,0.0687894077245063,Within-session residual-order permutation,False
+DBM14,rt,2,-0.06847333501897973,0.07283240201644,Within-session residual-order permutation,False
+DBM14,rt,3,-0.07250912808809029,0.07823888703063703,Within-session residual-order permutation,False
+DBM14,rt,4,-0.07702547657193522,0.07104434156805048,Within-session residual-order permutation,False
+DBM14,rt,5,-0.06578326484469844,0.06828789162108748,Within-session residual-order permutation,False
+DBM14,rt,6,-0.06647331951646428,0.0765725277274849,Within-session residual-order permutation,False
+DBM14,rt,7,-0.07735895978985244,0.06526165145845965,Within-session residual-order permutation,False
+DBM14,rt,8,-0.07232876667467544,0.07884718686456017,Within-session residual-order permutation,False
+DBM14,rt,9,-0.06733550741147495,0.06853095924991025,Within-session residual-order permutation,False
+DBM14,rt,10,-0.06592103538735573,0.06660569924252634,Within-session residual-order permutation,False
+DBM14,rt,11,-0.06925800699467716,0.06385640468139225,Within-session residual-order permutation,False
+DBM14,rt,12,-0.07325319698655147,0.06468595060489034,Within-session residual-order permutation,False
+DBM14,rt,13,-0.06973780138953928,0.05417349531001255,Within-session residual-order permutation,False
+DBM14,rt,14,-0.0698412072031569,0.06210000200913805,Within-session residual-order permutation,False
+DBM14,rt,15,-0.06588039648062398,0.07540274733080828,Within-session residual-order permutation,False
+DBM14,rt,16,-0.06099681570588049,0.07184469440537802,Within-session residual-order permutation,False
+DBM14,rt,17,-0.07594104883607758,0.0711664765880793,Within-session residual-order permutation,False
+DBM14,rt,18,-0.06321069018636136,0.060252504474157816,Within-session residual-order permutation,False
+DBM14,rt,19,-0.06838347895896783,0.07187884199679932,Within-session residual-order permutation,False
+DBM14,rt,20,-0.06836135757423799,0.07499863555123971,Within-session residual-order permutation,False
+DBM15,choice,1,-0.07488806155131195,0.06471940145739416,Independent Bernoulli conditional on frozen predictors,False
+DBM15,choice,2,-0.05741068559908571,0.06226988616032422,Independent Bernoulli conditional on frozen predictors,False
+DBM15,choice,3,-0.0674678652177619,0.05675997097459782,Independent Bernoulli conditional on frozen predictors,False
+DBM15,choice,4,-0.06433757877090408,0.06691422322887779,Independent Bernoulli conditional on frozen predictors,False
+DBM15,choice,5,-0.06870594645097532,0.06397587529235257,Independent Bernoulli conditional on frozen predictors,False
+DBM15,choice,6,-0.06478708580360414,0.06427119042737411,Independent Bernoulli conditional on frozen predictors,False
+DBM15,choice,7,-0.06289834793919537,0.06528146299916367,Independent Bernoulli conditional on frozen predictors,False
+DBM15,choice,8,-0.05869763044240589,0.06682648380449462,Independent Bernoulli conditional on frozen predictors,False
+DBM15,choice,9,-0.07187567232677466,0.06779758015568198,Independent Bernoulli conditional on frozen predictors,False
+DBM15,choice,10,-0.07521399345706585,0.05894485266297429,Independent Bernoulli conditional on frozen predictors,False
+DBM15,choice,11,-0.06873686981176128,0.07319134365254559,Independent Bernoulli conditional on frozen predictors,False
+DBM15,choice,12,-0.0648803237696817,0.058334513997169844,Independent Bernoulli conditional on frozen predictors,False
+DBM15,choice,13,-0.06784391633537856,0.061316196593233174,Independent Bernoulli conditional on frozen predictors,False
+DBM15,choice,14,-0.0698337703971637,0.07261833154258507,Independent Bernoulli conditional on frozen predictors,False
+DBM15,choice,15,-0.07003178591058246,0.0656634751858927,Independent Bernoulli conditional on frozen predictors,False
+DBM15,choice,16,-0.06313149478506622,0.06138976009877674,Independent Bernoulli conditional on frozen predictors,False
+DBM15,choice,17,-0.07904547074513948,0.07266844445192053,Independent Bernoulli conditional on frozen predictors,False
+DBM15,choice,18,-0.06371515080878926,0.06730931004311091,Independent Bernoulli conditional on frozen predictors,False
+DBM15,choice,19,-0.07031306085640757,0.058350142563415086,Independent Bernoulli conditional on frozen predictors,False
+DBM15,choice,20,-0.06559611177799846,0.060552322247270446,Independent Bernoulli conditional on frozen predictors,False
+DBM15,rt,1,-0.06457985633835973,0.06923293837690331,Within-session residual-order permutation,False
+DBM15,rt,2,-0.06018507657229258,0.06012556277953159,Within-session residual-order permutation,False
+DBM15,rt,3,-0.0682907246541934,0.05919064111950134,Within-session residual-order permutation,False
+DBM15,rt,4,-0.06884588283910345,0.0478853548907849,Within-session residual-order permutation,False
+DBM15,rt,5,-0.062136497567674844,0.0706725455328369,Within-session residual-order permutation,False
+DBM15,rt,6,-0.06295893264153855,0.06512676941334335,Within-session residual-order permutation,False
+DBM15,rt,7,-0.07290192949432742,0.06372385977338087,Within-session residual-order permutation,False
+DBM15,rt,8,-0.06434027580917061,0.055794482359401765,Within-session residual-order permutation,False
+DBM15,rt,9,-0.06521954696660712,0.06185927126508376,Within-session residual-order permutation,False
+DBM15,rt,10,-0.06744827261858584,0.06757060058369681,Within-session residual-order permutation,False
+DBM15,rt,11,-0.0650012682702467,0.054032749558645204,Within-session residual-order permutation,False
+DBM15,rt,12,-0.06251496070771527,0.06309948763746005,Within-session residual-order permutation,False
+DBM15,rt,13,-0.07497518773893244,0.0655080271060944,Within-session residual-order permutation,False
+DBM15,rt,14,-0.06229681599404543,0.06119474517233417,Within-session residual-order permutation,False
+DBM15,rt,15,-0.07152404276279203,0.07459517953479212,Within-session residual-order permutation,False
+DBM15,rt,16,-0.06825882128727687,0.06375942370300015,Within-session residual-order permutation,False
+DBM15,rt,17,-0.06940669886074502,0.050791879238364986,Within-session residual-order permutation,False
+DBM15,rt,18,-0.07221379368701794,0.06208948167013684,Within-session residual-order permutation,False
+DBM15,rt,19,-0.06708413879457044,0.057486552865953285,Within-session residual-order permutation,False
+DBM15,rt,20,-0.06740933112636051,0.06513647686008357,Within-session residual-order permutation,False
+DBM5,choice,1,-0.04130899177402991,0.03679962442804971,Independent Bernoulli conditional on frozen predictors,False
+DBM5,choice,2,-0.04178969260905529,0.034999779639970335,Independent Bernoulli conditional on frozen predictors,False
+DBM5,choice,3,-0.04012939382215771,0.03676649304414603,Independent Bernoulli conditional on frozen predictors,False
+DBM5,choice,4,-0.04197129962918379,0.03778213245115489,Independent Bernoulli conditional on frozen predictors,False
+DBM5,choice,5,-0.041648772388534476,0.043447733755813754,Independent Bernoulli conditional on frozen predictors,False
+DBM5,choice,6,-0.0398471466545379,0.04315117193125015,Independent Bernoulli conditional on frozen predictors,False
+DBM5,choice,7,-0.043467653976256335,0.034887005985907146,Independent Bernoulli conditional on frozen predictors,False
+DBM5,choice,8,-0.04195772132276686,0.04136993112257199,Independent Bernoulli conditional on frozen predictors,False
+DBM5,choice,9,-0.03986024955082123,0.03564059509805265,Independent Bernoulli conditional on frozen predictors,False
+DBM5,choice,10,-0.040142752226784116,0.040494553967848526,Independent Bernoulli conditional on frozen predictors,False
+DBM5,choice,11,-0.039848570994902945,0.0418787933300195,Independent Bernoulli conditional on frozen predictors,False
+DBM5,choice,12,-0.03943705765253131,0.040567181159563925,Independent Bernoulli conditional on frozen predictors,False
+DBM5,choice,13,-0.039146521249663856,0.040574753561742165,Independent Bernoulli conditional on frozen predictors,False
+DBM5,choice,14,-0.04359646980933311,0.03856529831795231,Independent Bernoulli conditional on frozen predictors,False
+DBM5,choice,15,-0.04857688831856087,0.03725658378747467,Independent Bernoulli conditional on frozen predictors,False
+DBM5,choice,16,-0.04688187921416942,0.03370610611827285,Independent Bernoulli conditional on frozen predictors,False
+DBM5,choice,17,-0.04397192202947049,0.041038038959697376,Independent Bernoulli conditional on frozen predictors,False
+DBM5,choice,18,-0.03914845167673885,0.03433827590685268,Independent Bernoulli conditional on frozen predictors,False
+DBM5,choice,19,-0.037816194483041674,0.0410322486486202,Independent Bernoulli conditional on frozen predictors,False
+DBM5,choice,20,-0.045560417815559494,0.038666012184646034,Independent Bernoulli conditional on frozen predictors,False
+DBM5,rt,1,-0.03486526184955086,0.03306918545366613,Within-session residual-order permutation,False
+DBM5,rt,2,-0.0379151136841881,0.03506786745710706,Within-session residual-order permutation,False
+DBM5,rt,3,-0.03980421640928676,0.04181422631246301,Within-session residual-order permutation,False
+DBM5,rt,4,-0.04095120386358653,0.044945150187998904,Within-session residual-order permutation,False
+DBM5,rt,5,-0.04366218311037023,0.03938191646977862,Within-session residual-order permutation,False
+DBM5,rt,6,-0.04077766729829674,0.03547930917937275,Within-session residual-order permutation,False
+DBM5,rt,7,-0.03878112487408925,0.03874953590230352,Within-session residual-order permutation,False
+DBM5,rt,8,-0.04313792997390427,0.03830276092597011,Within-session residual-order permutation,False
+DBM5,rt,9,-0.03928236075026199,0.040571439276329474,Within-session residual-order permutation,False
+DBM5,rt,10,-0.037161723324957895,0.03954034539844281,Within-session residual-order permutation,False
+DBM5,rt,11,-0.04176820041458319,0.039734162375494465,Within-session residual-order permutation,False
+DBM5,rt,12,-0.039523886055974296,0.03736724765558483,Within-session residual-order permutation,False
+DBM5,rt,13,-0.04208779250568154,0.03943264854399371,Within-session residual-order permutation,False
+DBM5,rt,14,-0.04376948791613182,0.040206954077207424,Within-session residual-order permutation,False
+DBM5,rt,15,-0.041479399654246935,0.03352833799824602,Within-session residual-order permutation,False
+DBM5,rt,16,-0.04484778067566471,0.03681245253305214,Within-session residual-order permutation,False
+DBM5,rt,17,-0.046065508503721056,0.038140860482222115,Within-session residual-order permutation,False
+DBM5,rt,18,-0.04433815863411487,0.04125151069161896,Within-session residual-order permutation,False
+DBM5,rt,19,-0.0358076872598591,0.03922264029468606,Within-session residual-order permutation,False
+DBM5,rt,20,-0.040831339258717646,0.03929194721254965,Within-session residual-order permutation,False
+DBM6,choice,1,-0.036007052530346924,0.033968780887423784,Independent Bernoulli conditional on frozen predictors,False
+DBM6,choice,2,-0.0404724097359304,0.03794939544066325,Independent Bernoulli conditional on frozen predictors,False
+DBM6,choice,3,-0.039297969809829095,0.037055426179541676,Independent Bernoulli conditional on frozen predictors,False
+DBM6,choice,4,-0.042686163876135295,0.035642629410271735,Independent Bernoulli conditional on frozen predictors,False
+DBM6,choice,5,-0.04018804026328891,0.0318639492161268,Independent Bernoulli conditional on frozen predictors,False
+DBM6,choice,6,-0.039494101229102685,0.030565787353446987,Independent Bernoulli conditional on frozen predictors,False
+DBM6,choice,7,-0.0393891151222485,0.03611292529565324,Independent Bernoulli conditional on frozen predictors,False
+DBM6,choice,8,-0.037960790961237445,0.03436296265184419,Independent Bernoulli conditional on frozen predictors,False
+DBM6,choice,9,-0.039396905252097644,0.037963364384047134,Independent Bernoulli conditional on frozen predictors,False
+DBM6,choice,10,-0.043402842359103536,0.03480818834336434,Independent Bernoulli conditional on frozen predictors,False
+DBM6,choice,11,-0.038511361162226414,0.0331291321410769,Independent Bernoulli conditional on frozen predictors,False
+DBM6,choice,12,-0.04064201303940992,0.03132181566873254,Independent Bernoulli conditional on frozen predictors,False
+DBM6,choice,13,-0.03984902558843447,0.036286978244907925,Independent Bernoulli conditional on frozen predictors,False
+DBM6,choice,14,-0.036524146603713156,0.036178256473162265,Independent Bernoulli conditional on frozen predictors,False
+DBM6,choice,15,-0.03682235104201974,0.032305798464994366,Independent Bernoulli conditional on frozen predictors,False
+DBM6,choice,16,-0.036056321834785174,0.03420741534732005,Independent Bernoulli conditional on frozen predictors,False
+DBM6,choice,17,-0.045845409000547004,0.034241461845259565,Independent Bernoulli conditional on frozen predictors,False
+DBM6,choice,18,-0.036169648907786234,0.03395311496851904,Independent Bernoulli conditional on frozen predictors,False
+DBM6,choice,19,-0.04105148781579211,0.03280971665044939,Independent Bernoulli conditional on frozen predictors,False
+DBM6,choice,20,-0.03808598979523976,0.038015616794296596,Independent Bernoulli conditional on frozen predictors,False
+DBM6,rt,1,-0.03499792644806303,0.03479852401664913,Within-session residual-order permutation,False
+DBM6,rt,2,-0.039180888885179836,0.03610479926437169,Within-session residual-order permutation,False
+DBM6,rt,3,-0.03749803410407973,0.0401014060499542,Within-session residual-order permutation,False
+DBM6,rt,4,-0.03360796471056793,0.030725591888449737,Within-session residual-order permutation,False
+DBM6,rt,5,-0.03440305623323134,0.040192524230229495,Within-session residual-order permutation,False
+DBM6,rt,6,-0.03175848934332726,0.03132196869566923,Within-session residual-order permutation,False
+DBM6,rt,7,-0.03952061966317762,0.034487098936722575,Within-session residual-order permutation,False
+DBM6,rt,8,-0.0365871502398349,0.037169812829372664,Within-session residual-order permutation,False
+DBM6,rt,9,-0.03773557509936531,0.032189708447851566,Within-session residual-order permutation,False
+DBM6,rt,10,-0.03939691772088383,0.032705810142638576,Within-session residual-order permutation,False
+DBM6,rt,11,-0.038731164177721905,0.038234640633808194,Within-session residual-order permutation,False
+DBM6,rt,12,-0.03422954337848666,0.039278424205152096,Within-session residual-order permutation,False
+DBM6,rt,13,-0.03920710296780251,0.0337788412988489,Within-session residual-order permutation,False
+DBM6,rt,14,-0.04052511478105765,0.032607137028903305,Within-session residual-order permutation,False
+DBM6,rt,15,-0.03637236294564879,0.03551671090495654,Within-session residual-order permutation,False
+DBM6,rt,16,-0.039823348689969916,0.035657482942699735,Within-session residual-order permutation,False
+DBM6,rt,17,-0.03325809709134338,0.0332449309524343,Within-session residual-order permutation,False
+DBM6,rt,18,-0.03778381454248323,0.03767401996614219,Within-session residual-order permutation,False
+DBM6,rt,19,-0.04049850907453824,0.03095984811417202,Within-session residual-order permutation,False
+DBM6,rt,20,-0.04070393912717465,0.03551300255782721,Within-session residual-order permutation,False
+PSUIM10,choice,1,-0.09946218352703942,0.11496849855081362,Independent Bernoulli conditional on frozen predictors,False
+PSUIM10,choice,2,-0.11122329620643674,0.09352478721561872,Independent Bernoulli conditional on frozen predictors,False
+PSUIM10,choice,3,-0.10307441952961317,0.10472065611286069,Independent Bernoulli conditional on frozen predictors,False
+PSUIM10,choice,4,-0.10394790107700683,0.10275261874808773,Independent Bernoulli conditional on frozen predictors,False
+PSUIM10,choice,5,-0.10974310805947778,0.10537980803149534,Independent Bernoulli conditional on frozen predictors,False
+PSUIM10,choice,6,-0.10964558660491144,0.109251496105838,Independent Bernoulli conditional on frozen predictors,False
+PSUIM10,choice,7,-0.1042768031214001,0.09635427236632829,Independent Bernoulli conditional on frozen predictors,False
+PSUIM10,choice,8,-0.10222665624796408,0.09897467025651127,Independent Bernoulli conditional on frozen predictors,False
+PSUIM10,choice,9,-0.1156457935415589,0.10189003240649872,Independent Bernoulli conditional on frozen predictors,False
+PSUIM10,choice,10,-0.1061632621992656,0.09102428812652749,Independent Bernoulli conditional on frozen predictors,False
+PSUIM10,choice,11,-0.09657714842013775,0.10268043515419646,Independent Bernoulli conditional on frozen predictors,False
+PSUIM10,choice,12,-0.09784886836008604,0.10492656870399594,Independent Bernoulli conditional on frozen predictors,False
+PSUIM10,choice,13,-0.09881774780248118,0.08479168457107844,Independent Bernoulli conditional on frozen predictors,False
+PSUIM10,choice,14,-0.10309824119740206,0.10691027575160217,Independent Bernoulli conditional on frozen predictors,False
+PSUIM10,choice,15,-0.10391511665195967,0.1020763867468865,Independent Bernoulli conditional on frozen predictors,False
+PSUIM10,choice,16,-0.08911888567607858,0.08563968790354531,Independent Bernoulli conditional on frozen predictors,False
+PSUIM10,choice,17,-0.10145259705961579,0.09995697299838445,Independent Bernoulli conditional on frozen predictors,False
+PSUIM10,choice,18,-0.09897618411110742,0.09755214311405405,Independent Bernoulli conditional on frozen predictors,False
+PSUIM10,choice,19,-0.10803541333918855,0.10256868966882274,Independent Bernoulli conditional on frozen predictors,False
+PSUIM10,choice,20,-0.10462583154236615,0.09077230657441668,Independent Bernoulli conditional on frozen predictors,False
+PSUIM10,rt,1,-0.0948484948709867,0.09108249304586498,Within-session residual-order permutation,False
+PSUIM10,rt,2,-0.1001571157673615,0.09913090418472748,Within-session residual-order permutation,False
+PSUIM10,rt,3,-0.1036623876987002,0.09191158294308141,Within-session residual-order permutation,False
+PSUIM10,rt,4,-0.09735278688089981,0.09085995798987345,Within-session residual-order permutation,False
+PSUIM10,rt,5,-0.11375388925130088,0.1040711608153518,Within-session residual-order permutation,False
+PSUIM10,rt,6,-0.10319168987862343,0.094112186744008,Within-session residual-order permutation,False
+PSUIM10,rt,7,-0.10569693973711664,0.10418717081828262,Within-session residual-order permutation,False
+PSUIM10,rt,8,-0.11041708879440652,0.098758387387744,Within-session residual-order permutation,False
+PSUIM10,rt,9,-0.09934939319568616,0.09779712526892376,Within-session residual-order permutation,False
+PSUIM10,rt,10,-0.10254412620871034,0.10692484534285525,Within-session residual-order permutation,False
+PSUIM10,rt,11,-0.09018206742349576,0.1003295803456515,Within-session residual-order permutation,False
+PSUIM10,rt,12,-0.09060317535088687,0.10173389659479955,Within-session residual-order permutation,False
+PSUIM10,rt,13,-0.11242505650515258,0.10405446826522641,Within-session residual-order permutation,False
+PSUIM10,rt,14,-0.10941240633991471,0.11134122603180932,Within-session residual-order permutation,False
+PSUIM10,rt,15,-0.09285218056902182,0.11062931818161058,Within-session residual-order permutation,False
+PSUIM10,rt,16,-0.09418371065780563,0.10678918257814718,Within-session residual-order permutation,False
+PSUIM10,rt,17,-0.10017051509813342,0.09452499908503785,Within-session residual-order permutation,False
+PSUIM10,rt,18,-0.10899189660128993,0.10478055307546351,Within-session residual-order permutation,False
+PSUIM10,rt,19,-0.1043943952266118,0.09581964017516158,Within-session residual-order permutation,False
+PSUIM10,rt,20,-0.10373661130963358,0.0915910340585083,Within-session residual-order permutation,False
+PSUIM5,choice,1,-0.04567918481207921,0.04881060014734263,Independent Bernoulli conditional on frozen predictors,False
+PSUIM5,choice,2,-0.04793439247126681,0.054917085865374984,Independent Bernoulli conditional on frozen predictors,False
+PSUIM5,choice,3,-0.04712105234253587,0.04119767562233569,Independent Bernoulli conditional on frozen predictors,False
+PSUIM5,choice,4,-0.04865472594325442,0.0464424674999043,Independent Bernoulli conditional on frozen predictors,False
+PSUIM5,choice,5,-0.04605734770948128,0.0442550355782518,Independent Bernoulli conditional on frozen predictors,False
+PSUIM5,choice,6,-0.052803024473720865,0.044396984476204854,Independent Bernoulli conditional on frozen predictors,False
+PSUIM5,choice,7,-0.04440849106757719,0.05401959346495451,Independent Bernoulli conditional on frozen predictors,False
+PSUIM5,choice,8,-0.05432956012723064,0.04340614453526599,Independent Bernoulli conditional on frozen predictors,False
+PSUIM5,choice,9,-0.04842363784264791,0.04446154054595565,Independent Bernoulli conditional on frozen predictors,False
+PSUIM5,choice,10,-0.05196199141552792,0.046835715242546636,Independent Bernoulli conditional on frozen predictors,False
+PSUIM5,choice,11,-0.05309417331651413,0.04380120542956509,Independent Bernoulli conditional on frozen predictors,False
+PSUIM5,choice,12,-0.04446137288596286,0.04513299660427489,Independent Bernoulli conditional on frozen predictors,False
+PSUIM5,choice,13,-0.050049038655208065,0.053117023798963874,Independent Bernoulli conditional on frozen predictors,False
+PSUIM5,choice,14,-0.04991893690049999,0.05171179746867616,Independent Bernoulli conditional on frozen predictors,False
+PSUIM5,choice,15,-0.05472460906090471,0.045049516411719594,Independent Bernoulli conditional on frozen predictors,False
+PSUIM5,choice,16,-0.04561415690815115,0.040895873440732936,Independent Bernoulli conditional on frozen predictors,False
+PSUIM5,choice,17,-0.055436846938003596,0.04276874737385311,Independent Bernoulli conditional on frozen predictors,False
+PSUIM5,choice,18,-0.04294685113855618,0.04368994760992824,Independent Bernoulli conditional on frozen predictors,False
+PSUIM5,choice,19,-0.05356738664940509,0.04875176343531368,Independent Bernoulli conditional on frozen predictors,False
+PSUIM5,choice,20,-0.054172477910966584,0.04161347616640429,Independent Bernoulli conditional on frozen predictors,False
+PSUIM5,rt,1,-0.0470943715452339,0.04793585002788029,Within-session residual-order permutation,False
+PSUIM5,rt,2,-0.05246616302506581,0.039124586463154,Within-session residual-order permutation,False
+PSUIM5,rt,3,-0.04585372158427767,0.044949856874052674,Within-session residual-order permutation,False
+PSUIM5,rt,4,-0.046268723126833215,0.047163638037425286,Within-session residual-order permutation,False
+PSUIM5,rt,5,-0.04942208096210005,0.0441296840676878,Within-session residual-order permutation,False
+PSUIM5,rt,6,-0.05719521389475243,0.04608950206012574,Within-session residual-order permutation,False
+PSUIM5,rt,7,-0.050603601845487914,0.04860815271582786,Within-session residual-order permutation,False
+PSUIM5,rt,8,-0.04612028150445321,0.046851166526029386,Within-session residual-order permutation,False
+PSUIM5,rt,9,-0.04918579202321194,0.04319259597702649,Within-session residual-order permutation,False
+PSUIM5,rt,10,-0.04720714682054616,0.05043864262660811,Within-session residual-order permutation,False
+PSUIM5,rt,11,-0.05071101074744266,0.04591810249049515,Within-session residual-order permutation,False
+PSUIM5,rt,12,-0.049950161823487875,0.04344596496764595,Within-session residual-order permutation,False
+PSUIM5,rt,13,-0.04927404310090716,0.05149225245364482,Within-session residual-order permutation,False
+PSUIM5,rt,14,-0.047614868865059896,0.046228857272626864,Within-session residual-order permutation,False
+PSUIM5,rt,15,-0.04933681425080424,0.050225190918498114,Within-session residual-order permutation,False
+PSUIM5,rt,16,-0.05084151455188392,0.04237301908067863,Within-session residual-order permutation,False
+PSUIM5,rt,17,-0.04900924256822793,0.04727210700618958,Within-session residual-order permutation,False
+PSUIM5,rt,18,-0.047845070083677575,0.048587085853304054,Within-session residual-order permutation,False
+PSUIM5,rt,19,-0.04309056450681353,0.044630172869612766,Within-session residual-order permutation,False
+PSUIM5,rt,20,-0.054187596181586604,0.04721117989444459,Within-session residual-order permutation,False
+PSUIM6,choice,1,-0.029379309322280847,0.028826238708706996,Independent Bernoulli conditional on frozen predictors,False
+PSUIM6,choice,2,-0.03165508316472651,0.026612106193224256,Independent Bernoulli conditional on frozen predictors,False
+PSUIM6,choice,3,-0.03065212768559324,0.02290648606937508,Independent Bernoulli conditional on frozen predictors,False
+PSUIM6,choice,4,-0.030901705774235635,0.024829081290181472,Independent Bernoulli conditional on frozen predictors,False
+PSUIM6,choice,5,-0.030098258827365713,0.026718204114468277,Independent Bernoulli conditional on frozen predictors,False
+PSUIM6,choice,6,-0.028088093359132253,0.02234738350969734,Independent Bernoulli conditional on frozen predictors,False
+PSUIM6,choice,7,-0.03277615293156117,0.024043622151958582,Independent Bernoulli conditional on frozen predictors,False
+PSUIM6,choice,8,-0.03203204008952684,0.023454040544276678,Independent Bernoulli conditional on frozen predictors,False
+PSUIM6,choice,9,-0.03108073722959067,0.023903470589474316,Independent Bernoulli conditional on frozen predictors,False
+PSUIM6,choice,10,-0.028821366278514345,0.02596511189225128,Independent Bernoulli conditional on frozen predictors,False
+PSUIM6,choice,11,-0.031587892480888766,0.025954466590398996,Independent Bernoulli conditional on frozen predictors,False
+PSUIM6,choice,12,-0.03426292382197913,0.030272164641351972,Independent Bernoulli conditional on frozen predictors,False
+PSUIM6,choice,13,-0.028543514021897417,0.026686883990108632,Independent Bernoulli conditional on frozen predictors,False
+PSUIM6,choice,14,-0.03103328172355971,0.02423957049978061,Independent Bernoulli conditional on frozen predictors,False
+PSUIM6,choice,15,-0.033222188862370175,0.023683133433304072,Independent Bernoulli conditional on frozen predictors,False
+PSUIM6,choice,16,-0.030232942109938453,0.021750157743388104,Independent Bernoulli conditional on frozen predictors,False
+PSUIM6,choice,17,-0.03310872205869601,0.026856235322434068,Independent Bernoulli conditional on frozen predictors,False
+PSUIM6,choice,18,-0.027862391452834992,0.02921932943246925,Independent Bernoulli conditional on frozen predictors,False
+PSUIM6,choice,19,-0.029757168559957654,0.02800585562721439,Independent Bernoulli conditional on frozen predictors,False
+PSUIM6,choice,20,-0.031146129721301114,0.024898861113483873,Independent Bernoulli conditional on frozen predictors,False
+PSUIM6,rt,1,-0.03214659638021842,0.026566719546278213,Within-session residual-order permutation,False
+PSUIM6,rt,2,-0.030856814247984858,0.02573426814631075,Within-session residual-order permutation,False
+PSUIM6,rt,3,-0.029900626868654172,0.021217256883653557,Within-session residual-order permutation,False
+PSUIM6,rt,4,-0.027699947330469644,0.02446517147290441,Within-session residual-order permutation,False
+PSUIM6,rt,5,-0.03235060024315004,0.028910894199597314,Within-session residual-order permutation,False
+PSUIM6,rt,6,-0.03302472793892796,0.025307648146086763,Within-session residual-order permutation,False
+PSUIM6,rt,7,-0.029575831888208854,0.02128459759020874,Within-session residual-order permutation,False
+PSUIM6,rt,8,-0.030515869603753493,0.026806562434640344,Within-session residual-order permutation,False
+PSUIM6,rt,9,-0.032051899839738614,0.02326904748185381,Within-session residual-order permutation,False
+PSUIM6,rt,10,-0.028028924582922502,0.025872817206246953,Within-session residual-order permutation,False
+PSUIM6,rt,11,-0.02705967119601848,0.026452391500487428,Within-session residual-order permutation,False
+PSUIM6,rt,12,-0.029649845779667408,0.0257365048210111,Within-session residual-order permutation,False
+PSUIM6,rt,13,-0.029320829499063433,0.027952534118756756,Within-session residual-order permutation,False
+PSUIM6,rt,14,-0.0345425690652946,0.02836660865713215,Within-session residual-order permutation,False
+PSUIM6,rt,15,-0.028851205787915567,0.02555031758897293,Within-session residual-order permutation,False
+PSUIM6,rt,16,-0.033887739747072904,0.02537089925092011,Within-session residual-order permutation,False
+PSUIM6,rt,17,-0.0314269359922845,0.02686970823717048,Within-session residual-order permutation,False
+PSUIM6,rt,18,-0.030560554025340667,0.02324160686281535,Within-session residual-order permutation,False
+PSUIM6,rt,19,-0.033139578559998766,0.025617248735663463,Within-session residual-order permutation,False
+PSUIM6,rt,20,-0.02640575917921322,0.0229686359418747,Within-session residual-order permutation,False
+PSUIM7,choice,1,-0.02290910903556866,0.021426018694165282,Independent Bernoulli conditional on frozen predictors,False
+PSUIM7,choice,2,-0.027991911646060547,0.024170547193300848,Independent Bernoulli conditional on frozen predictors,False
+PSUIM7,choice,3,-0.024443609046582087,0.02262364417340444,Independent Bernoulli conditional on frozen predictors,False
+PSUIM7,choice,4,-0.02942363075630871,0.02130053350471624,Independent Bernoulli conditional on frozen predictors,False
+PSUIM7,choice,5,-0.025848479960220452,0.022439129250464394,Independent Bernoulli conditional on frozen predictors,False
+PSUIM7,choice,6,-0.03079126379708189,0.02269306059091394,Independent Bernoulli conditional on frozen predictors,False
+PSUIM7,choice,7,-0.027813156683924437,0.022268932705962235,Independent Bernoulli conditional on frozen predictors,False
+PSUIM7,choice,8,-0.028012993265797426,0.024906454252976825,Independent Bernoulli conditional on frozen predictors,False
+PSUIM7,choice,9,-0.026103376712342113,0.02505744148094318,Independent Bernoulli conditional on frozen predictors,False
+PSUIM7,choice,10,-0.02582364394635272,0.021603564983674276,Independent Bernoulli conditional on frozen predictors,False
+PSUIM7,choice,11,-0.024681420922705956,0.024367007846304585,Independent Bernoulli conditional on frozen predictors,False
+PSUIM7,choice,12,-0.028636116137011405,0.022829639324194892,Independent Bernoulli conditional on frozen predictors,False
+PSUIM7,choice,13,-0.024974287825089328,0.0235305923467161,Independent Bernoulli conditional on frozen predictors,False
+PSUIM7,choice,14,-0.025440474874288948,0.02442639117891734,Independent Bernoulli conditional on frozen predictors,False
+PSUIM7,choice,15,-0.024966671592238646,0.024277856417183323,Independent Bernoulli conditional on frozen predictors,False
+PSUIM7,choice,16,-0.02385109699497514,0.02283279675511857,Independent Bernoulli conditional on frozen predictors,False
+PSUIM7,choice,17,-0.026074888884144942,0.022850340072108167,Independent Bernoulli conditional on frozen predictors,False
+PSUIM7,choice,18,-0.02619538071025992,0.022896064474863653,Independent Bernoulli conditional on frozen predictors,False
+PSUIM7,choice,19,-0.027419638666758398,0.023268571065703757,Independent Bernoulli conditional on frozen predictors,False
+PSUIM7,choice,20,-0.0275044943200812,0.02347376457818183,Independent Bernoulli conditional on frozen predictors,False
+PSUIM7,rt,1,-0.02754213380590415,0.02156565916327668,Within-session residual-order permutation,False
+PSUIM7,rt,2,-0.025698939064726888,0.02398625193601813,Within-session residual-order permutation,False
+PSUIM7,rt,3,-0.025477114102971037,0.023941294164151035,Within-session residual-order permutation,False
+PSUIM7,rt,4,-0.02417653245167676,0.02261406830483893,Within-session residual-order permutation,False
+PSUIM7,rt,5,-0.023632505776749888,0.024959060039709283,Within-session residual-order permutation,False
+PSUIM7,rt,6,-0.02824009532312895,0.02406925094136479,Within-session residual-order permutation,False
+PSUIM7,rt,7,-0.024220610288217922,0.02311704365954329,Within-session residual-order permutation,False
+PSUIM7,rt,8,-0.026922138722379862,0.022773828728267182,Within-session residual-order permutation,False
+PSUIM7,rt,9,-0.02652898856730224,0.023482288592565414,Within-session residual-order permutation,False
+PSUIM7,rt,10,-0.026120869243246768,0.023074553526858072,Within-session residual-order permutation,False
+PSUIM7,rt,11,-0.025440826144010397,0.027854377806794103,Within-session residual-order permutation,False
+PSUIM7,rt,12,-0.028080791743780982,0.021048777563872995,Within-session residual-order permutation,False
+PSUIM7,rt,13,-0.03212553439374982,0.021416733747927016,Within-session residual-order permutation,False
+PSUIM7,rt,14,-0.026529837854360246,0.024198371324840068,Within-session residual-order permutation,False
+PSUIM7,rt,15,-0.024294656603467423,0.02161199792924659,Within-session residual-order permutation,False
+PSUIM7,rt,16,-0.02526629186693263,0.020878004936374473,Within-session residual-order permutation,False
+PSUIM7,rt,17,-0.026168878550245925,0.023700298974417874,Within-session residual-order permutation,False
+PSUIM7,rt,18,-0.02787144600131919,0.021448805563908203,Within-session residual-order permutation,False
+PSUIM7,rt,19,-0.023469748636171635,0.02235528555635636,Within-session residual-order permutation,False
+PSUIM7,rt,20,-0.028448112061323715,0.02251813083947632,Within-session residual-order permutation,False

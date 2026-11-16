@@ -1,0 +1,61 @@
+{
+  "source_sha256": "1544c0d3ce38ef9516df585ec67c74ed9e82eb91430e849c5e933597ccf96045",
+  "nhp_repository": "https://github.com/vaibrainium/prior-encoding-in-nhp-sc",
+  "nhp_commit": "b42fb00ed243ace8dc831a6c72caca7c7494d8d2",
+  "contract": "Lists of session observations (T,1), inputs (T,M), masks (T,1); Bernoulli C=2",
+  "feature_names": [
+    "intercept",
+    "coherence_-100",
+    "coherence_-36",
+    "coherence_-18",
+    "coherence_-9",
+    "coherence_9",
+    "coherence_18",
+    "coherence_36",
+    "coherence_100",
+    "pulse_left_stage1",
+    "pulse_right_stage1",
+    "pulse_left_stage2",
+    "pulse_right_stage2",
+    "pulse_left_stage3",
+    "pulse_right_stage3",
+    "h_win",
+    "h_loss",
+    "prev_missing",
+    "prev_logrt",
+    "prev_coherence",
+    "prev_correction",
+    "prev_late"
+  ],
+  "pulse_features": [
+    "pulse_left_stage1",
+    "pulse_right_stage1",
+    "pulse_left_stage2",
+    "pulse_right_stage2",
+    "pulse_left_stage3",
+    "pulse_right_stage3"
+  ],
+  "pulse_type_map": {
+    "-1": "pulse_left_stage1",
+    "1": "pulse_right_stage1",
+    "-2": "pulse_left_stage2",
+    "2": "pulse_right_stage2",
+    "-3": "pulse_left_stage3",
+    "3": "pulse_right_stage3"
+  },
+  "pulse_encoding": "Six separate one-hot indicators: -1,+1,-2,+2,-3,+3; scheduled control 0 is the all-zero reference",
+  "coherence_reference": 0,
+  "history": "Shift original saved records; do not compress excluded records into previous trial",
+  "population": "Accepted sessions; masks exactly reproduce 25,493 DDM responded choices",
+  "missing_dependency": [
+    "ssm",
+    "autograd"
+  ],
+  "fitted": false,
+  "warnings": [
+    "Scheduled assignment, not response-dependent delivered-pulse labels",
+    "No current RT, correctness, target or realized exposure in choice inputs",
+    "Current choice must update filter only after predicting that choice",
+    "Masking preserves ordering but does not model selection/missingness"
+  ]
+}

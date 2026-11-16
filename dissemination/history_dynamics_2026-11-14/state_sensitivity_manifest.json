@@ -1,0 +1,7 @@
+{
+  "source_sha256": "456df260a8295bb8bb76e1ac12e6c99b5fc7c320378ff8738838ce03a8d03e70",
+  "long_history": "same nuisance/evidence covariates plus rewarded/unrewarded choice at recorded-row lags 2-10",
+  "stationary": "same fitted model emissions, replace filtered pre-choice state distribution by stationary prior",
+  "grid_check": "refit continuous approximation at 31 states; PSUIM6/7; training-only starts",
+  "inference": "sensitivity estimates, no additional significance fishing"
+}

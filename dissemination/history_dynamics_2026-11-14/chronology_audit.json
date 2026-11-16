@@ -1,0 +1,16 @@
+{
+  "n_aggregate_records": 134537,
+  "n_main": 25493,
+  "n_mice": 10,
+  "n_sessions": 50,
+  "raw_counter_duplicate_records": 4450,
+  "counter_inversions_in_recorded_order": 0,
+  "alignment_history_disagreements": {
+    "prev_choice": 0,
+    "prev_outcome": 0
+  },
+  "definition": "Physical recorded-row order within idx_session; no compression of excluded/correction/late records",
+  "input_sha256": "dd1563d743656317ac611a7b041b199e05c1852adb544e2f916c757b1c496cd5",
+  "table_sha256": "44d7cdf94faa2f63618acc5668251cb09779b026ece1b61264fd57199e81f335",
+  "aggregate_sha256": "a95253294e36369d8c77e20cb505b009708d72f981100cab33f7e9c3752d6d59"
+}

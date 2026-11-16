@@ -1,0 +1,26 @@
+{
+  "repository": "vaibrainium/prior-encoding-in-nhp-sc",
+  "commit": "b42fb00ed243ace8dc831a6c72caca7c7494d8d2",
+  "files": [
+    {
+      "path": "src/utils/glm_hmm_utils.py",
+      "blob_sha": "157af5302147cdbb390346439f1e8fb794d7922a",
+      "url": "https://github.com/vaibrainium/prior-encoding-in-nhp-sc/blob/b42fb00ed243ace8dc831a6c72caca7c7494d8d2/src/utils/glm_hmm_utils.py"
+    },
+    {
+      "path": "src/utils/glm_hmm_utils_cv.py",
+      "blob_sha": "a894af5eb7b2e6d03e94833452646915cd5aced3",
+      "url": "https://github.com/vaibrainium/prior-encoding-in-nhp-sc/blob/b42fb00ed243ace8dc831a6c72caca7c7494d8d2/src/utils/glm_hmm_utils_cv.py"
+    },
+    {
+      "path": "notebooks/2.21-glm-hmm-fitting-new.py",
+      "blob_sha": "fe1ccdae5b08b3d7950de822ac6e59a0a23c6784",
+      "url": "https://github.com/vaibrainium/prior-encoding-in-nhp-sc/blob/b42fb00ed243ace8dc831a6c72caca7c7494d8d2/notebooks/2.21-glm-hmm-fitting-new.py"
+    }
+  ],
+  "executed": false,
+  "missing_dependencies": [
+    "ssm",
+    "autograd"
+  ]
+}

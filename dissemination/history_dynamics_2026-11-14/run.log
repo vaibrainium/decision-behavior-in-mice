@@ -1,0 +1,18 @@
+/src/scripts/behavior/history_dynamics.py:59: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  a['prev_correction']=a.prev_correction.fillna(False).astype(float)
+PREPARED {'n_aggregate_records': 134537, 'n_main': 25493, 'n_mice': 10, 'n_sessions': 50, 'raw_counter_duplicate_records': 4450, 'counter_inversions_in_recorded_order': 0, 'alignment_history_disagreements': {'prev_choice': 0, 'prev_outcome': 0}, 'definition': 'Physical recorded-row order within idx_session; no compression of excluded/correction/late records', 'input_sha256': 'dd1563d743656317ac611a7b041b199e05c1852adb544e2f916c757b1c496cd5', 'table_sha256': '44d7cdf94faa2f63618acc5668251cb09779b026ece1b61264fd57199e81f335', 'aggregate_sha256': 'a95253294e36369d8c77e20cb505b009708d72f981100cab33f7e9c3752d6d59'}
+DONE DBM12 n 1700 seconds 5.1
+DONE DBM13 n 719 seconds 3.1
+DONE DBM14 n 829 seconds 3.2
+DONE DBM15 n 1095 seconds 5.4
+DONE DBM5 n 2646 seconds 9.3
+DONE DBM6 n 3217 seconds 11.1
+DONE PSUIM10 n 425 seconds 2.5
+DONE PSUIM5 n 2184 seconds 8.2
+DONE PSUIM6 n 5843 seconds 21.0
+DONE PSUIM7 n 6835 seconds 19.3
+                    metric  n_mice     mean   median       lo      hi       dz     p_t  p_wilcoxon  n_positive  p_holm_4
+ win_bias_late_minus_early      10 -0.05683 -0.01836 -1.11734 1.00368 -0.03833 0.90618     0.76953           5   1.00000
+loss_bias_late_minus_early      10 -0.10104 -0.26838 -0.56079 0.35871 -0.15722 0.63099     0.62500           4   1.00000
+  choice_residual_acf_2_10      10  0.07259  0.06102  0.04803 0.09716  2.11404 0.00009     0.00195          10   0.00036
+      rt_residual_acf_2_10      10  0.05056  0.02836  0.01333 0.08779  0.97153 0.01331     0.00195          10   0.03992

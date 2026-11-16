@@ -1,0 +1,4 @@
+metric,mean,lo,hi,n_positive,inference
+continuous_tuned_gain_vs_history1_tuned_bits,0.04277035649108338,0.015616817055819993,0.06992389592634676,9,Uncorrected descriptive sensitivity interval; no new primary test
+continuous_tuned_gain_vs_history10_tuned_bits,0.07187490109801475,0.033307237640688,0.11044256455534152,10,Uncorrected descriptive sensitivity interval; no new primary test
+continuous_tuned_gain_vs_original_static_bits,0.08565776329002517,0.0588036376828331,0.11251188889721724,10,Uncorrected descriptive sensitivity interval; no new primary test

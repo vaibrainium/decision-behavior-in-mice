@@ -1,0 +1,46 @@
+{
+  "source_sha256": "c6ef413c4cc178becdaf8d87064cb3a452db545510a09624d5d0420e12b490e5",
+  "nhp_repository": "https://github.com/vaibrainium/prior-encoding-in-nhp-sc",
+  "nhp_commit": "b42fb00ed243ace8dc831a6c72caca7c7494d8d2",
+  "contract": "Lists of session observations (T,1), inputs (T,M), masks (T,1); Bernoulli C=2",
+  "feature_names": [
+    "intercept",
+    "coherence_-100",
+    "coherence_-36",
+    "coherence_-18",
+    "coherence_-9",
+    "coherence_9",
+    "coherence_18",
+    "coherence_36",
+    "coherence_100",
+    "signed_pulse_stage1",
+    "signed_pulse_stage2",
+    "signed_pulse_stage3",
+    "h_win",
+    "h_loss",
+    "prev_missing",
+    "prev_logrt",
+    "prev_coherence",
+    "prev_correction",
+    "prev_late"
+  ],
+  "pulse_features": [
+    "signed_pulse_stage1",
+    "signed_pulse_stage2",
+    "signed_pulse_stage3"
+  ],
+  "coherence_reference": 0,
+  "history": "Shift original saved records; do not compress excluded records into previous trial",
+  "population": "Accepted sessions; masks exactly reproduce 25,493 DDM responded choices",
+  "missing_dependency": [
+    "ssm",
+    "autograd"
+  ],
+  "fitted": false,
+  "warnings": [
+    "Scheduled assignment, not response-dependent delivered-pulse labels",
+    "No current RT, correctness, target or realized exposure in choice inputs",
+    "Current choice must update filter only after predicting that choice",
+    "Masking preserves ordering but does not model selection/missingness"
+  ]
+}

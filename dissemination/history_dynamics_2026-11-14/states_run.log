@@ -1,0 +1,16 @@
+DONE DBM12 seconds 2.0 bits 0.0589 0.0567
+DONE DBM13 seconds 1.5 bits 0.004 -0.0098
+DONE DBM14 seconds 1.2 bits 0.0098 0.0104
+DONE DBM15 seconds 1.5 bits 0.0189 0.0171
+DONE DBM5 seconds 3.0 bits 0.0827 0.0591
+DONE DBM6 seconds 3.4 bits 0.0875 0.0239
+DONE PSUIM10 seconds 1.0 bits 0.0162 -0.0029
+DONE PSUIM5 seconds 2.5 bits 0.0808 0.0745
+DONE PSUIM6 seconds 6.0 bits 0.0426 0.0223
+DONE PSUIM7 seconds 6.2 bits 0.0248 0.0217
+                        metric  n_mice      mean    median        lo        hi        dz      p_t  p_wilcoxon  n_positive  p_holm_5
+          continuous_gain_bits      10  0.042640  0.033732  0.019415  0.065865  1.313369 0.002472    0.001953          10  0.012362
+            discrete_gain_bits      10  0.027292  0.022022  0.007556  0.047028  0.989252 0.012155    0.009766           8  0.048621
+discrete_minus_continuous_bits      10 -0.015348 -0.010070 -0.029011 -0.001685 -0.803584 0.031651    0.003906           1  0.094952
+       continuous_rt_alignment      10  0.022290 -0.048235 -0.111462  0.156042  0.119215 0.714916    0.921875           4  1.000000
+         discrete_rt_alignment      10 -0.001915 -0.014153 -0.047012  0.043182 -0.030382 0.925565    1.000000           4  1.000000

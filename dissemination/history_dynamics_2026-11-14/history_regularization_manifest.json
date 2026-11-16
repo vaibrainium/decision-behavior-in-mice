@@ -1,0 +1,14 @@
+{
+  "source_sha256": "2caa97586c884ba7fc24390305c2c736d284ab4ce719573826d271707c3807a3",
+  "penalties": [
+    0.01,
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "selection": "last block of available training prefix, earlier blocks train coefficients; never outer test",
+  "history1": "select common ridge penalty",
+  "history10": "keep common-covariate ridge 0.1; select added lags 2-10 penalty",
+  "purpose": "sensitivity to short-history baseline and long-history overfit, exploratory"
+}

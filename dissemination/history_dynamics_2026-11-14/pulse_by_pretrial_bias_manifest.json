@@ -1,0 +1,13 @@
+{
+  "source_sha256": "673b5932ced628bef4b5a71c0eb91a8e3ea3df7cc48513e0b34495bbc8cc3f58",
+  "threshold_abs_latent_bias_logodds": 0.5,
+  "cohort": "PSUIM6/7, original symmetric low-coherence responded sample, prefix test blocks",
+  "standardization": "Same pooled pulse-count weights over common coherence/stage cells in both regimes and signs; minimum five per cell",
+  "interval": "Within-session 50-record blocks; state fits/threshold/common support/weights held fixed",
+  "limitations": [
+    "Responded-trial selection",
+    "No current RT conditioning",
+    "No population test from two mice",
+    "Does not propagate state-parameter uncertainty; exploratory"
+  ]
+}

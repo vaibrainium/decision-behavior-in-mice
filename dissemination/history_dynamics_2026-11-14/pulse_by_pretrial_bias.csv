@@ -1,0 +1,9 @@
+mouse,regime,sign,effect_pp,lo,hi,successful_bootstraps,n_bootstrap,n_common_cells,n_regime,status
+PSUIM6,near_neutral,-1,5.971004251098118,2.223521908290639,9.184381650950476,400,400,14,1779,exploratory conditional-on-state-fit interval
+PSUIM6,near_neutral,1,9.404701250943535,5.841695342968664,13.595049716897442,400,400,14,1779,exploratory conditional-on-state-fit interval
+PSUIM6,biased,-1,2.3425202906107443,-4.513145474847383,8.287267426164195,395,400,14,782,exploratory conditional-on-state-fit interval
+PSUIM6,biased,1,16.47780594976358,9.406756635707417,22.241415492871877,400,400,14,782,exploratory conditional-on-state-fit interval
+PSUIM7,near_neutral,-1,6.949865249875857,1.3750516344386114,12.461114102938861,400,400,14,1954,exploratory conditional-on-state-fit interval
+PSUIM7,near_neutral,1,15.577587619640733,9.94829545813602,20.76221638646752,400,400,14,1954,exploratory conditional-on-state-fit interval
+PSUIM7,biased,-1,-3.6425604669932814,-11.001617458647004,3.614249757767184,400,400,14,1134,exploratory conditional-on-state-fit interval
+PSUIM7,biased,1,13.505843691588348,7.628800706703436,19.713330981661013,400,400,14,1134,exploratory conditional-on-state-fit interval

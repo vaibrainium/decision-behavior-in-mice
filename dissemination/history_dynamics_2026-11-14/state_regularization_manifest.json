@@ -1,0 +1,12 @@
+{
+  "source_sha256": "1310de5474c37b46029576ed4c7b39b852daa5f7bd0e80fbd98cebf34f0a9311",
+  "penalties": [
+    0.01,
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "selection": "Nested last-prefix-block prediction, no outer-test tuning",
+  "limitation": "Same sessions, responded choices; no unique latent-process interpretation"
+}
