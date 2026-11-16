@@ -1,0 +1,68 @@
+{
+  "source_sha256": "308c52052ca0c97ef860ccaffb585eceae2c062dd9ccd938e89fb639fea383af",
+  "nhp_repository": "https://github.com/vaibrainium/prior-encoding-in-nhp-sc",
+  "nhp_commit": "b42fb00ed243ace8dc831a6c72caca7c7494d8d2",
+  "contract": "Lists of session observations (T,1), inputs (T,M), masks (T,1); Bernoulli C=2",
+  "feature_names": [
+    "intercept",
+    "coherence_-100",
+    "coherence_-36",
+    "coherence_-18",
+    "coherence_-9",
+    "coherence_9",
+    "coherence_18",
+    "coherence_36",
+    "coherence_100",
+    "pulse_congruent_stage1_target_signed",
+    "pulse_incongruent_stage1_target_signed",
+    "pulse_congruent_stage2_target_signed",
+    "pulse_incongruent_stage2_target_signed",
+    "pulse_congruent_stage3_target_signed",
+    "pulse_incongruent_stage3_target_signed",
+    "h_win",
+    "h_loss",
+    "prev_missing",
+    "prev_logrt",
+    "prev_coherence",
+    "prev_correction",
+    "prev_late"
+  ],
+  "pulse_features": [
+    "pulse_congruent_stage1_target_signed",
+    "pulse_incongruent_stage1_target_signed",
+    "pulse_congruent_stage2_target_signed",
+    "pulse_incongruent_stage2_target_signed",
+    "pulse_congruent_stage3_target_signed",
+    "pulse_incongruent_stage3_target_signed"
+  ],
+  "pulse_type_map": {
+    "pulse_congruent_stage1_target_signed": "target direction (+1 right / -1 left) when active, otherwise 0",
+    "pulse_incongruent_stage1_target_signed": "target direction (+1 right / -1 left) when active, otherwise 0",
+    "pulse_congruent_stage2_target_signed": "target direction (+1 right / -1 left) when active, otherwise 0",
+    "pulse_incongruent_stage2_target_signed": "target direction (+1 right / -1 left) when active, otherwise 0",
+    "pulse_congruent_stage3_target_signed": "target direction (+1 right / -1 left) when active, otherwise 0",
+    "pulse_incongruent_stage3_target_signed": "target direction (+1 right / -1 left) when active, otherwise 0"
+  },
+  "pulse_encoding": "Six target-signed indicators: onset stage x congruent/incongruent",
+  "outcome": "Right versus left choice in both exports; control is the all-zero pulse reference",
+  "congruency_definition": "Scheduled pulse direction relative to task-assigned correct side",
+  "zero_coherence": "Retained, classified using task target",
+  "n_observed_unknown_target": 0,
+  "target_provenance": "UW: target in original log; UCLA: existing target reconstructed from Response/Correct, not independently logged",
+  "unknown_masked_target": "Keep saved record and mask; no target-dependent emission on unobserved unknown-target rows",
+  "coherence_reference": 0,
+  "history": "Shift original saved records; do not compress excluded records into previous trial",
+  "population": "Accepted sessions; masks exactly reproduce 25,493 DDM responded choices",
+  "missing_dependency": [
+    "ssm",
+    "autograd"
+  ],
+  "fitted": false,
+  "warnings": [
+    "Scheduled assignment, not response-dependent delivered-pulse labels",
+    "No current RT or realized exposure in choice inputs; target-relative encoding uses the recorded task-side definition",
+    "UCLA target reconstruction assumes Correct reflects the preassigned target; task-source audit must distinguish this from independent target logging",
+    "Current choice must update filter only after predicting that choice",
+    "Masking preserves ordering but does not model selection/missingness"
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "date": "2026-11-15",
+  "nhp_repository": "vaibrainium/prior-encoding-in-nhp-sc",
+  "nhp_commit": "b42fb00ed243ace8dc831a6c72caca7c7494d8d2",
+  "nhp_lock_blob_sha": "e884de5bc19171b4ee7f59221352836106880869",
+  "ssm_repository": "vaibrainium/ssm",
+  "ssm_commit": "a109af369797d852904fd9496f3532524de8f15a",
+  "ssm_version_label": "0.0.1",
+  "packages": [
+    {
+      "name": "autograd",
+      "version": "1.8.0",
+      "source": "{ registry = \"https://pypi.org/simple\" }"
+    },
+    {
+      "name": "cython",
+      "version": "3.2.4",
+      "source": "{ registry = \"https://pypi.org/simple\" }"
+    },
+    {
+      "name": "numba",
+      "version": "0.65.0",
+      "source": "{ registry = \"https://pypi.org/simple\" }"
+    },
+    {
+      "name": "numpy",
+      "version": "2.2.6",
+      "source": "{ registry = \"https://pypi.org/simple\" }"
+    },
+    {
+      "name": "scikit-learn",
+      "version": "1.7.2",
+      "source": "{ registry = \"https://pypi.org/simple\" }"
+    },
+    {
+      "name": "scipy",
+      "version": "1.15.3",
+      "source": "{ registry = \"https://pypi.org/simple\" }"
+    },
+    {
+      "name": "ssm",
+      "version": "0.0.1",
+      "source": "{ git = \"https://github.com/vaibrainium/ssm.git#a109af369797d852904fd9496f3532524de8f15a\" }"
+    },
+    {
+      "name": "tqdm",
+      "version": "4.67.3",
+      "source": "{ registry = \"https://pypi.org/simple\" }"
+    }
+  ],
+  "sources": [
+    {
+      "path": "nhp/requirements.txt",
+      "github_blob_sha": "14f152c3747b5efdcf4ca1ca420f52049c84e5fe",
+      "url": "https://github.com/vaibrainium/prior-encoding-in-nhp-sc/blob/b42fb00ed243ace8dc831a6c72caca7c7494d8d2/requirements.txt"
+    },
+    {
+      "path": "nhp/pyproject.toml",
+      "github_blob_sha": "bf0117920bcd775a7cc644f188de70ea61b447e1",
+      "url": "https://github.com/vaibrainium/prior-encoding-in-nhp-sc/blob/b42fb00ed243ace8dc831a6c72caca7c7494d8d2/pyproject.toml"
+    },
+    {
+      "path": "nhp/.python-version",
+      "github_blob_sha": "c8cfe3959183f8e9a50f83f54cd723f2dc9c252d",
+      "url": "https://github.com/vaibrainium/prior-encoding-in-nhp-sc/blob/b42fb00ed243ace8dc831a6c72caca7c7494d8d2/.python-version"
+    },
+    {
+      "path": "ssm/setup.py",
+      "github_blob_sha": "45fc75efdaa6a286337ee2205ce34835650fb09f",
+      "url": "https://github.com/vaibrainium/ssm/blob/master/setup.py"
+    },
+    {
+      "path": "ssm/setup.cfg",
+      "github_blob_sha": "28f0e92da586cf1dbdda4ba9597ebbd4a408d465",
+      "url": "https://github.com/vaibrainium/ssm/blob/master/setup.cfg"
+    },
+    {
+      "path": "ssm/pyproject.toml",
+      "github_blob_sha": "173467b14dab64af9f244e4bb12467ee98756822",
+      "url": "https://github.com/vaibrainium/ssm/blob/master/pyproject.toml"
+    },
+    {
+      "path": "ssm/README.md",
+      "github_blob_sha": "a43bca585daea6b7eb8e1e12d875530b39db0338",
+      "url": "https://github.com/vaibrainium/ssm/blob/master/README.md"
+    },
+    {
+      "path": "ssm/ssm/hmm.py",
+      "github_blob_sha": "5f221949962ab8d93876785f6f8ed2046d7dc3be",
+      "url": "https://github.com/vaibrainium/ssm/blob/a109af369797d852904fd9496f3532524de8f15a/ssm/hmm.py"
+    },
+    {
+      "path": "ssm/ssm/observations.py",
+      "github_blob_sha": "14072b4ad5776323bee857e891a945985daf3026",
+      "url": "https://github.com/vaibrainium/ssm/blob/a109af369797d852904fd9496f3532524de8f15a/ssm/observations.py"
+    },
+    {
+      "path": "ssm/ssm/messages.py",
+      "github_blob_sha": "30026f75adec33ac17a46b138e4734289388df75",
+      "url": "https://github.com/vaibrainium/ssm/blob/a109af369797d852904fd9496f3532524de8f15a/ssm/messages.py"
+    },
+    {
+      "path": "ssm/ssm/transitions.py",
+      "github_blob_sha": "384342dfeed90a2512ba28f933f986b270a75f94",
+      "url": "https://github.com/vaibrainium/ssm/blob/a109af369797d852904fd9496f3532524de8f15a/ssm/transitions.py"
+    },
+    {
+      "path": "ssm/ssm/init_state_distns.py",
+      "github_blob_sha": "d639a89359630f42352f8608dea80dcc77bccda7",
+      "url": "https://github.com/vaibrainium/ssm/blob/a109af369797d852904fd9496f3532524de8f15a/ssm/init_state_distns.py"
+    }
+  ],
+  "code_verified": {
+    "input_driven_obs": true,
+    "masked_input_driven_likelihood": true,
+    "filter_returns_pre_current_choice_distribution": true,
+    "transition_params_are_log_probabilities": true,
+    "positive_stored_weight_raises_class_zero_probability": true
+  },
+  "local_environment": {
+    "python": "3.12.12",
+    "numpy": "1.26.4",
+    "scipy": "1.15.3",
+    "numba": "0.61.2",
+    "scikit_learn": "1.6.1",
+    "ssm": null,
+    "autograd": null,
+    "cython": null
+  },
+  "installation_performed": false,
+  "post_install_smoke_test_executed": false,
+  "notes": [
+    "NHP .python-version selects 3.10; project declares >=3.10, uv.lock also resolves 3.12.",
+    "Build pyproject requires numpy>=2.0 and Cython; extension ssm.cstats is compiled C++.",
+    "Full requirements include unrelated modeling/GPU packages; prepared direct GLM-HMM subset, not a full transitive lock."
+  ]
+}

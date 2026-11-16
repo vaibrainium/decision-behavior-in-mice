@@ -1,0 +1,5 @@
+# Build tools pinned in the NHP uv.lock; install in a separate environment.
+setuptools==82.0.1
+wheel==0.42.0
+numpy==2.2.6
+Cython==3.2.4

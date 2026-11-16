@@ -1,0 +1,11 @@
+{
+  "n_saved_records": 30146,
+  "n_observed_choices": 25493,
+  "n_observed_zero_coherence_pulses": 1388,
+  "masks_choices_and_order_identical_to_physical_type_export": true,
+  "category_membership_matches_task_target": true,
+  "version1_and_version2_arrays_identical": true,
+  "version1_issue": "Manifest-only target-missing counter; use target_inputs_v2",
+  "n_unknown_target_observed": 0,
+  "source_sha256": "308c52052ca0c97ef860ccaffb585eceae2c062dd9ccd938e89fb639fea383af"
+}
