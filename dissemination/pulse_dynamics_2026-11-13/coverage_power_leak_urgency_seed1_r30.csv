@@ -1,0 +1,11 @@
+family,seed,mouse,simulated_nonresponse_fraction,simulated_trials,readout_trials
+power_leak_urgency,1,DBM12,0.10988095238095238,25200,21880
+power_leak_urgency,1,DBM13,0.057703081232493,10710,9880
+power_leak_urgency,1,DBM14,0.2907496012759171,12540,8695
+power_leak_urgency,1,DBM15,0.11020793950850662,15870,13950
+power_leak_urgency,1,DBM5,0.21220973782771535,40050,30996
+power_leak_urgency,1,DBM6,0.26689511941848393,48150,34847
+power_leak_urgency,1,PSUIM10,0.07667493796526055,12090,11083
+power_leak_urgency,1,PSUIM5,0.12718446601941746,61800,53441
+power_leak_urgency,1,PSUIM6,0.17005988023952096,165330,136290
+power_leak_urgency,1,PSUIM7,0.0517660890456474,195630,181657

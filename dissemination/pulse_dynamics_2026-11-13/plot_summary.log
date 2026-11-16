@@ -1,0 +1,25 @@
+              family          scope      K  late_gammaT_mean  late_over_early
+                data all_coherences 15.153             2.294            0.151
+                data coherence_le36 15.603             2.328            0.149
+     control_primary all_coherences  5.632            -5.142           -0.913
+     control_primary coherence_le36  5.397            -4.975           -0.922
+             primary all_coherences  5.892            -5.998           -1.017
+             primary coherence_le36  5.557            -5.924           -1.065
+               no_sv all_coherences  7.511             2.138            0.285
+               no_sv coherence_le36  7.153             2.154            0.301
+  power_leak_urgency all_coherences  6.049           -10.525           -1.740
+  power_leak_urgency coherence_le36  5.998           -10.569           -1.762
+           norm_leak all_coherences  7.167            -5.743           -0.801
+           norm_leak coherence_le36  7.206            -5.763           -0.800
+   pulse_linear_leak all_coherences  7.604            -9.312           -1.225
+   pulse_linear_leak coherence_le36  7.177            -9.463           -1.319
+pulse_norm_ugm_no_sv all_coherences  9.963            -0.384           -0.039
+pulse_norm_ugm_no_sv coherence_le36 10.341            -0.296           -0.029
+         primary_sv0 all_coherences  7.321             4.158            0.567
+         primary_sv0 coherence_le36  6.746             4.478            0.663
+         pw_per_time all_coherences  7.402            -6.202           -0.838
+         pw_per_time coherence_le36  6.993            -6.020           -0.860
+   pw_per_time_no_sv all_coherences 11.695             3.405            0.291
+   pw_per_time_no_sv coherence_le36 11.102             3.490            0.314
+
+Readout failures: 0

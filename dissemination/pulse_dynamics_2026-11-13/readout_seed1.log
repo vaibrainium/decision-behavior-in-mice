@@ -1,0 +1,8 @@
+ANALYZED control_primary seed=1
+ANALYZED primary seed=1
+ANALYZED no_sv seed=1
+ANALYZED power_leak_urgency seed=1
+ANALYZED norm_leak seed=1
+ANALYZED pulse_linear_leak seed=1
+ANALYZED pulse_norm_ugm_no_sv seed=1
+ANALYZED primary_sv0 seed=1

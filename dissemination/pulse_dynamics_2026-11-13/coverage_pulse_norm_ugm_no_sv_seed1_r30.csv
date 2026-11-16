@@ -1,0 +1,11 @@
+family,seed,mouse,simulated_nonresponse_fraction,simulated_trials,readout_trials
+pulse_norm_ugm_no_sv,1,DBM12,0.03880952380952381,25200,23568
+pulse_norm_ugm_no_sv,1,DBM13,0.10037348272642391,10710,9442
+pulse_norm_ugm_no_sv,1,DBM14,0.00733652312599681,12540,12077
+pulse_norm_ugm_no_sv,1,DBM15,0.031064902331442976,15870,14964
+pulse_norm_ugm_no_sv,1,DBM5,0.024019975031210988,40050,38242
+pulse_norm_ugm_no_sv,1,DBM6,0.04396677050882658,48150,45673
+pulse_norm_ugm_no_sv,1,PSUIM10,0.0,12090,11705
+pulse_norm_ugm_no_sv,1,PSUIM5,0.06880258899676375,61800,56640
+pulse_norm_ugm_no_sv,1,PSUIM6,0.08294925300913325,165330,150001
+pulse_norm_ugm_no_sv,1,PSUIM7,0.016081378111741554,195630,188336

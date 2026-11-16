@@ -1,0 +1,14 @@
+{
+  "model_configurations": 10,
+  "mice": 10,
+  "seeds": 2,
+  "repetitions_per_seed": 30,
+  "simulation_cache_files": 200,
+  "simulated_outcome_rows": 11747400,
+  "pooled_readout_rows": 294,
+  "replicate_readout_rows": 8400,
+  "readout_failures": 0,
+  "data_mouse_bootstrap_replicates_per_scope": 600,
+  "fixed_parameter_ablation_verified": true,
+  "independent_mouse_seeds_verified": true
+}
