@@ -1,0 +1,7 @@
+mouse,candidate,baseline,n,gain_bits_per_trial,lo,hi,nll_difference,interval
+PSUIM6,tied,static,3461,0.03756898109535412,0.021646580875105126,0.053503749609877305,-90.1273241300537,Conditional on fitted models; within-session 50-saved-record blocks
+PSUIM6,free,static,3461,0.03460548540125457,0.018800048115934605,0.05082195998993432,-83.01795014138406,Conditional on fitted models; within-session 50-saved-record blocks
+PSUIM6,free,tied,3461,-0.002963495694099557,-0.004612814350581746,-0.0012738805784563414,7.109373988669631,Conditional on fitted models; within-session 50-saved-record blocks
+PSUIM7,tied,static,4020,0.014825534465461376,0.003357936163273408,0.027031063438057314,-41.31063520841599,Conditional on fitted models; within-session 50-saved-record blocks
+PSUIM7,free,static,4020,0.015478378148954522,0.003253281031759192,0.028884845928004336,-43.12975257782591,Conditional on fitted models; within-session 50-saved-record blocks
+PSUIM7,free,tied,4020,0.0006528436834931435,-0.004364163187802637,0.005696073996585086,-1.8191173694099234,Conditional on fitted models; within-session 50-saved-record blocks

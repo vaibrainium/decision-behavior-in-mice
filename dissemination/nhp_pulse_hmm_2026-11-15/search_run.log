@@ -1,0 +1,36 @@
+FIT PSUIM6 outer2_shape0 tied prior 1.0 seed 0 LL -1046.357 iters 80 converged True sec 1.3
+FIT PSUIM6 outer2_shape1 tied prior 1.0 seed 0 LL -1046.357 iters 100 converged True sec 1.5
+SEARCH PSUIM6 2 tied training improvement 1.3869794202037156e-11
+FIT PSUIM6 outer2_shape0 free prior 1.0 seed 0 LL -1046.837 iters 60 converged True sec 0.9
+FIT PSUIM6 outer2_shape1 free prior 1.0 seed 0 LL -1046.837 iters 60 converged True sec 0.9
+SEARCH PSUIM6 2 free training improvement 0.0
+FIT PSUIM6 outer3_shape0 tied prior 1.0 seed 0 LL -1632.629 iters 100 converged True sec 1.9
+FIT PSUIM6 outer3_shape1 tied prior 1.0 seed 0 LL -1632.626 iters 80 converged True sec 1.6
+SEARCH PSUIM6 3 tied training improvement 5.020887948511245
+FIT PSUIM6 outer3_shape0 free prior 1.0 seed 0 LL -1625.408 iters 80 converged True sec 1.5
+FIT PSUIM6 outer3_shape1 free prior 1.0 seed 0 LL -1625.408 iters 60 converged True sec 1.1
+SEARCH PSUIM6 3 free training improvement 9.652336742301031
+FIT PSUIM6 outer4_shape0 tied prior 1.0 seed 0 LL -2145.062 iters 100 converged True sec 2.3
+FIT PSUIM6 outer4_shape1 tied prior 1.0 seed 0 LL -2145.062 iters 80 converged True sec 1.8
+SEARCH PSUIM6 4 tied training improvement 0.0
+FIT PSUIM6 outer4_shape0 free prior 1.0 seed 0 LL -2140.31 iters 100 converged True sec 2.3
+FIT PSUIM6 outer4_shape1 free prior 1.0 seed 0 LL -2140.309 iters 80 converged True sec 1.8
+SEARCH PSUIM6 4 free training improvement 0.0
+FIT PSUIM7 outer2_shape0 tied prior 2.0 seed 0 LL -1414.878 iters 140 converged True sec 1.9
+FIT PSUIM7 outer2_shape1 tied prior 2.0 seed 0 LL -1383.796 iters 100 converged True sec 1.3
+SEARCH PSUIM7 2 tied training improvement 0.0
+FIT PSUIM7 outer2_shape0 free prior 1.0 seed 0 LL -1385.339 iters 100 converged True sec 1.3
+FIT PSUIM7 outer2_shape1 free prior 1.0 seed 0 LL -1387.096 iters 100 converged True sec 1.3
+SEARCH PSUIM7 2 free training improvement 0.0
+FIT PSUIM7 outer3_shape0 tied prior 2.0 seed 0 LL -2103.095 iters 80 converged True sec 1.4
+FIT PSUIM7 outer3_shape1 tied prior 2.0 seed 0 LL -2103.094 iters 100 converged True sec 1.7
+SEARCH PSUIM7 3 tied training improvement 0.0
+FIT PSUIM7 outer3_shape0 free prior 1.0 seed 0 LL -2108.281 iters 140 converged True sec 2.3
+FIT PSUIM7 outer3_shape1 free prior 1.0 seed 0 LL -2108.281 iters 120 converged True sec 2.0
+SEARCH PSUIM7 3 free training improvement 0.0
+FIT PSUIM7 outer4_shape0 tied prior 2.0 seed 0 LL -2784.707 iters 100 converged True sec 2.1
+FIT PSUIM7 outer4_shape1 tied prior 2.0 seed 0 LL -2784.697 iters 120 converged True sec 2.5
+SEARCH PSUIM7 4 tied training improvement 0.0
+FIT PSUIM7 outer4_shape0 free prior 1.0 seed 0 LL -2779.193 iters 100 converged True sec 2.1
+FIT PSUIM7 outer4_shape1 free prior 1.0 seed 0 LL -2779.192 iters 120 converged True sec 2.5
+SEARCH PSUIM7 4 free training improvement 0.0

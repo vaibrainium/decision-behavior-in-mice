@@ -1,0 +1,125 @@
+Using Python 3.10.12 environment at: /mnt/data/venvs/nhp-glmhmm-2026-11-15
+WARN Skipping file for setuptools: setuptools-0.6b1-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6b1-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6b2-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6b2-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6b3-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6b3-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6b4-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6b4-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c1-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6c1-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c10-1.src.rpm
+WARN Skipping file for setuptools: setuptools-0.6c10-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6c10-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c10-py2.5.egg
+WARN Skipping file for setuptools: setuptools-0.6c10-py2.6.egg
+WARN Skipping file for setuptools: setuptools-0.6c10.win32-py2.3.exe
+WARN Skipping file for setuptools: setuptools-0.6c10.win32-py2.4.exe
+WARN Skipping file for setuptools: setuptools-0.6c10.win32-py2.5.exe
+WARN Skipping file for setuptools: setuptools-0.6c10.win32-py2.6.exe
+WARN Skipping file for setuptools: setuptools-0.6c11-1.src.rpm
+WARN Skipping file for setuptools: setuptools-0.6c11-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6c11-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c11-py2.5.egg
+WARN Skipping file for setuptools: setuptools-0.6c11-py2.6.egg
+WARN Skipping file for setuptools: setuptools-0.6c11-py2.7.egg
+WARN Skipping file for setuptools: setuptools-0.6c11.win32-py2.3.exe
+WARN Skipping file for setuptools: setuptools-0.6c11.win32-py2.4.exe
+WARN Skipping file for setuptools: setuptools-0.6c11.win32-py2.5.exe
+WARN Skipping file for setuptools: setuptools-0.6c11.win32-py2.6.exe
+WARN Skipping file for setuptools: setuptools-0.6c11.win32-py2.7.exe
+WARN Skipping file for setuptools: setuptools-0.6c2-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6c2-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c3-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6c3-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c3-py2.5.egg
+WARN Skipping file for setuptools: setuptools-0.6c4-1.src.rpm
+WARN Skipping file for setuptools: setuptools-0.6c4-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6c4-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c4-py2.5.egg
+WARN Skipping file for setuptools: setuptools-0.6c4.win32-py2.3.exe
+WARN Skipping file for setuptools: setuptools-0.6c4.win32-py2.4.exe
+WARN Skipping file for setuptools: setuptools-0.6c4.win32-py2.5.exe
+WARN Skipping file for setuptools: setuptools-0.6c5-1.src.rpm
+WARN Skipping file for setuptools: setuptools-0.6c5-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6c5-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c5-py2.5.egg
+WARN Skipping file for setuptools: setuptools-0.6c5.win32-py2.3.exe
+WARN Skipping file for setuptools: setuptools-0.6c5.win32-py2.4.exe
+WARN Skipping file for setuptools: setuptools-0.6c5.win32-py2.5.exe
+WARN Skipping file for setuptools: setuptools-0.6c6-1.src.rpm
+WARN Skipping file for setuptools: setuptools-0.6c6-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6c6-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c6-py2.5.egg
+WARN Skipping file for setuptools: setuptools-0.6c6.win32-py2.3.exe
+WARN Skipping file for setuptools: setuptools-0.6c6.win32-py2.4.exe
+WARN Skipping file for setuptools: setuptools-0.6c6.win32-py2.5.exe
+WARN Skipping file for setuptools: setuptools-0.6c7-1.src.rpm
+WARN Skipping file for setuptools: setuptools-0.6c7-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6c7-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c7-py2.5.egg
+WARN Skipping file for setuptools: setuptools-0.6c7.win32-py2.3.exe
+WARN Skipping file for setuptools: setuptools-0.6c7.win32-py2.4.exe
+WARN Skipping file for setuptools: setuptools-0.6c7.win32-py2.5.exe
+WARN Skipping file for setuptools: setuptools-0.6c8-1.src.rpm
+WARN Skipping file for setuptools: setuptools-0.6c8-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6c8-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c8-py2.5.egg
+WARN Skipping file for setuptools: setuptools-0.6c8.win32-py2.3.exe
+WARN Skipping file for setuptools: setuptools-0.6c8.win32-py2.4.exe
+WARN Skipping file for setuptools: setuptools-0.6c8.win32-py2.5.exe
+WARN Skipping file for setuptools: setuptools-0.6c9-1.src.rpm
+WARN Skipping file for setuptools: setuptools-0.6c9-py2.3.egg
+WARN Skipping file for setuptools: setuptools-0.6c9-py2.4.egg
+WARN Skipping file for setuptools: setuptools-0.6c9-py2.5.egg
+WARN Skipping file for setuptools: setuptools-0.6c9-py2.6.egg
+WARN Skipping file for setuptools: setuptools-0.6c9.win32-py2.3.exe
+WARN Skipping file for setuptools: setuptools-0.6c9.win32-py2.4.exe
+WARN Skipping file for setuptools: setuptools-0.6c9.win32-py2.5.exe
+WARN Skipping file for setuptools: setuptools-18.3.1-py3.4.egg
+WARN Skipping file for numpy: numpy-1.0.1.dev3460.win32-py2.4.exe
+WARN Skipping file for numpy: numpy-1.3.0.win32-py2.5.exe
+WARN Skipping file for numpy: numpy-1.5.0.win32-py2.6.exe
+WARN Skipping file for numpy: numpy-1.5.1.win32-py2.5-nosse.exe
+WARN Skipping file for numpy: numpy-1.5.1.win32-py2.6-nosse.exe
+WARN Skipping file for numpy: numpy-1.5.1.win32-py2.7-nosse.exe
+WARN Skipping file for numpy: numpy-1.5.1.win32-py3.1-nosse.exe
+WARN Skipping file for numpy: numpy-1.6.0.win32-py2.5.exe
+WARN Skipping file for numpy: numpy-1.6.0.win32-py2.6.exe
+WARN Skipping file for numpy: numpy-1.6.0.win32-py2.7.exe
+WARN Skipping file for numpy: numpy-1.6.0.win32-py3.1.exe
+WARN Skipping file for numpy: numpy-1.6.0.win32-py3.2.exe
+WARN Skipping file for numpy: numpy-1.6.1.win32-py2.5.exe
+WARN Skipping file for numpy: numpy-1.6.1.win32-py2.6.exe
+WARN Skipping file for numpy: numpy-1.6.1.win32-py2.7.exe
+WARN Skipping file for numpy: numpy-1.6.1.win32-py3.1.exe
+WARN Skipping file for numpy: numpy-1.6.1.win32-py3.2.exe
+WARN Skipping file for numpy: numpy-1.6.2.win32-py2.5.exe
+WARN Skipping file for numpy: numpy-1.6.2.win32-py2.6.exe
+WARN Skipping file for numpy: numpy-1.6.2.win32-py2.7.exe
+WARN Skipping file for numpy: numpy-1.6.2.win32-py3.1.exe
+WARN Skipping file for numpy: numpy-1.6.2.win32-py3.2.exe
+WARN Skipping file for numpy: numpy-1.7.0.win32-py2.5.exe
+WARN Skipping file for numpy: numpy-1.7.0.win32-py2.6.exe
+WARN Skipping file for numpy: numpy-1.7.0.win32-py2.7.exe
+WARN Skipping file for numpy: numpy-1.7.0.win32-py3.1.exe
+WARN Skipping file for numpy: numpy-1.7.0.win32-py3.2.exe
+WARN Skipping file for numpy: numpy-1.7.0.win32-py3.3.exe
+WARN Skipping file for numpy: numpy-1.7.1.win32-py2.5.exe
+WARN Skipping file for numpy: numpy-1.7.1.win32-py2.6.exe
+WARN Skipping file for numpy: numpy-1.7.1.win32-py2.7.exe
+WARN Skipping file for numpy: numpy-1.7.1.win32-py3.1.exe
+WARN Skipping file for numpy: numpy-1.7.1.win32-py3.2.exe
+WARN Skipping file for numpy: numpy-1.7.1.win32-py3.3.exe
+Resolved 4 packages in 1.06s
+Downloading numpy (16.0MiB)
+Downloading cython (3.4MiB)
+ Downloading cython
+ Downloading numpy
+Prepared 4 packages in 44.02s
+Installed 4 packages in 13.05s
+ + cython==3.2.4
+ + numpy==2.2.6
+ + setuptools==82.0.1
+ + wheel==0.42.0

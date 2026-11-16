@@ -1,0 +1,33 @@
+ mouse candidate baseline    n  gain_bits_per_trial       lo      hi  nll_difference                                                            interval
+PSUIM6      tied   static 3461              0.03342  0.01518 0.05199       -80.16381 Conditional on fitted models; within-session 50-saved-record blocks
+PSUIM6      free   static 3461              0.03253  0.01405 0.05160       -78.04928 Conditional on fitted models; within-session 50-saved-record blocks
+PSUIM6      free     tied 3461             -0.00088 -0.00209 0.00052         2.11453 Conditional on fitted models; within-session 50-saved-record blocks
+PSUIM7      tied   static 4020              0.01483  0.00336 0.02703       -41.31064 Conditional on fitted models; within-session 50-saved-record blocks
+PSUIM7      free   static 4020              0.01548  0.00325 0.02888       -43.12975 Conditional on fitted models; within-session 50-saved-record blocks
+PSUIM7      free     tied 4020              0.00065 -0.00436 0.00570        -1.81912 Conditional on fitted models; within-session 50-saved-record blocks
+ mouse family  coefficient_logrt       lo      hi  ratio_rt_state0_to1     q10     q90  effective_higher_state_count                                                                interval
+PSUIM6   tied            0.00865 -0.05934 0.07613              1.00869 0.06585 0.98641                    2449.74434 Descriptive conditional association, fixed fitted q; no population test
+PSUIM6   free            0.00901 -0.05761 0.07697              1.00905 0.06545 0.98654                    2438.66603 Descriptive conditional association, fixed fitted q; no population test
+PSUIM7   tied            0.08970  0.02283 0.15375              1.09385 0.02198 0.96709                    1650.51584 Descriptive conditional association, fixed fitted q; no population test
+PSUIM7   free            0.02434 -0.02766 0.07609              1.02464 0.02898 0.98268                    2396.02386 Descriptive conditional association, fixed fitted q; no population test
+{
+  "n_all_fits": 108,
+  "n_selected_models": 18,
+  "n_selected_converged": 18,
+  "n_selected_with_mstep_failure": 0,
+  "n_outer_choice_predictions": 22443,
+  "n_distinct_test_trials": 7481,
+  "source_and_input_hashes_verified": true,
+  "likelihood_recomputed": true,
+  "trial_identity_and_folds_verified": true,
+  "n_bootstrap": 600,
+  "block_length_saved_rows": 50,
+  "source_sha256": "6be372ccea63b1c962e50a1403832139de30dfdd68e28dd65d849ad98870b434",
+  "limitations": [
+    "Two-mouse pilot; no population p-value",
+    "Condition on selected/responded trials",
+    "Block intervals condition on trained models",
+    "Not a joint RT model; no RT-conditioned pulse prediction",
+    "No late pulse observations in pilot mice"
+  ]
+}

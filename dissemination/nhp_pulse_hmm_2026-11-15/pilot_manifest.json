@@ -1,0 +1,32 @@
+{
+  "sources": {
+    "scripts/behavior/fit_nhp_pulse_pilot.py": "4cdbcc210a7b2f8e3e64d0a56f4a249990da073435f48be1fb740d57b3096f3f",
+    "scripts/behavior/nhp_pulse_observations.py": "b30b459ea80e31da65428b067997e3452619fd2e7b5b0086e6d99cd69c79f2e3"
+  },
+  "input_sha256": "afda707821b569aeb0a815a5e91985b082ea7971bece99e526dbc055d7f9fe00",
+  "priors": [
+    1.0,
+    2.0,
+    5.0
+  ],
+  "starts": 4,
+  "max_em_iters": 200,
+  "chunk": 20,
+  "tolerance": 0.001,
+  "commit": "b63c9d919edc85e48446be48a8399ba6304b8df0",
+  "encoding": "Six physical direction x onset indicators; controls reference; preserve zero coherence",
+  "validation": "same-session phase prefixes, not novel sessions/days",
+  "prior_selection": "first 20% train, next 20% validate, fixed thereafter for all outer blocks",
+  "start_selection": "actual training log_probability, no held-out selection",
+  "states": "baseline/coherence/history can vary; session and position shared; pulse tied vs free",
+  "inactive": "late pulse types absent in these two mice; not estimable",
+  "group_claim": "none from two mice",
+  "ssm_origin": {
+    "url": "https://github.com/vaibrainium/ssm.git",
+    "vcs_info": {
+      "vcs": "git",
+      "commit_id": "a109af369797d852904fd9496f3532524de8f15a",
+      "requested_revision": "a109af369797d852904fd9496f3532524de8f15a"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "n_all_fits": 108,
+  "n_selected_models": 18,
+  "n_selected_converged": 18,
+  "n_selected_with_mstep_failure": 0,
+  "n_outer_choice_predictions": 22443,
+  "n_distinct_test_trials": 7481,
+  "source_and_input_hashes_verified": true,
+  "likelihood_recomputed": true,
+  "trial_identity_and_folds_verified": true,
+  "n_bootstrap": 600,
+  "block_length_saved_rows": 50,
+  "source_sha256": "3beb6f2dd979d9a72b9070f6a906dab6bcc4d59ffc4de288c8cfcde4c5c4dee9",
+  "version": 2,
+  "limitations": [
+    "Two-mouse pilot; no population p-value",
+    "Condition on selected/responded trials",
+    "Block intervals condition on trained models",
+    "Not a joint RT model; no RT-conditioned pulse prediction",
+    "No late pulse observations in pilot mice"
+  ],
+  "n_additional_training_search_fits": 24
+}
