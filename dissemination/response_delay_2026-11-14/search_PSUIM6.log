@@ -1,0 +1,19 @@
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+SEARCH PSUIM6 all reps=3 eval=100 best=16443.370 seconds=9.8
+SEARCH PSUIM6 all reps=3 eval=200 best=16443.370 seconds=17.7
+SEARCH PSUIM6 all reps=3 eval=300 best=16436.095 seconds=25.5
+SEARCH PSUIM6 all reps=3 eval=400 best=16423.484 seconds=32.4
+SEARCH PSUIM6 all reps=3 eval=500 best=16423.484 seconds=39.4
+SEARCH PSUIM6 all reps=3 eval=600 best=16412.733 seconds=46.3
+SEARCH PSUIM6 all reps=3 eval=700 best=16412.733 seconds=53.1
+SEARCH PSUIM6 all reps=3 eval=800 best=16407.792 seconds=60.0
+SEARCH PSUIM6 all reps=3 eval=900 best=16403.216 seconds=66.9
+SEARCH PSUIM6 all reps=3 eval=1000 best=16403.216 seconds=73.6
+SEARCH PSUIM6 all reps=15 eval=1100 best=16372.861 seconds=114.7
+SEARCH PSUIM6 all reps=15 eval=1200 best=16372.861 seconds=152.0
+SEARCH PSUIM6 all reps=15 eval=1300 best=16372.861 seconds=190.5
+SEARCH PSUIM6 all reps=15 eval=1400 best=16372.861 seconds=226.2
+SEARCH PSUIM6 all reps=15 eval=1500 best=16372.861 seconds=259.8
+DONE PSUIM6 all nll=16372.861 ndt=0.053 sigma=0.000

@@ -1,0 +1,7 @@
+{
+  "checked_scores": 90,
+  "simulated_outcomes": 6846120,
+  "fit_parameter_records": 36,
+  "equal_drift_delay_parameter_count": true,
+  "maximum_nll_reconstruction_error": 2.2737367544323206e-12
+}

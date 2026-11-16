@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/src/scripts/ddm/assess_response_delay.py", line 268, in <module>
+    main()
+  File "/src/scripts/ddm/assess_response_delay.py", line 260, in main
+    prepare(args.n_boot)
+  File "/src/scripts/ddm/assess_response_delay.py", line 125, in prepare
+    assert checks[f'{name}_max_error_pp'] < 1e-8
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

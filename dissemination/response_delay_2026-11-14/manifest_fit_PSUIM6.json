@@ -1,0 +1,54 @@
+{
+  "commit": "b63c9d919edc85e48446be48a8399ba6304b8df0",
+  "source_sha256": {
+    "scripts/ddm/fit_response_delay.py": "bf59e37c7eef95e75c76427d7f0ad01a37cb0d7e8ee04e477c9c44c30e4924a3",
+    "src/ddm/response_delay.py": "2de07a23ad86cde41e87dce418a1d2f96ef0870c019e836271d5c3940c94ca4e",
+    "src/ddm/simulator.py": "83528f667e2b7b3c6e9c5e686a511c61f17ed58a3a6be21487056f346f41c51f",
+    "src/ddm/ddm.py": "22443accab0b062e1b234c0fe009e01f84f77e87ce6258b3eed6c909c78679b8",
+    "src/ddm/likelihood_calculator_censored.py": "c0d86f54fca0c21c83c19caa587097fe1e0897d603bcb9d2d412fc477f4b53ad",
+    "scripts/ddm/fit_mouse_ddm.py": "2d69af100aa7078f863b51f0bcf1d3365470558fde83421ef070b454bf7ee8c4"
+  },
+  "input_sha256": "dd1563d743656317ac611a7b041b199e05c1852adb544e2f916c757b1c496cd5",
+  "timing_sha256": "01d4d378e9cdf731cbcf5a427e8a4ad869416838473ab4d4af83a7d3eaae55f4",
+  "python": "3.12.12",
+  "numpy": "1.26.4",
+  "scipy": "1.15.3",
+  "pandas": "2.2.3",
+  "torch": "2.7.0+cu126",
+  "cuda": "12.6",
+  "device": "cuda",
+  "args": {
+    "fit": true,
+    "score": false,
+    "mice": [
+      "PSUIM6"
+    ],
+    "splits": [
+      "all",
+      "cv0",
+      "cv1",
+      "cv2",
+      "cv3",
+      "cv4"
+    ],
+    "families": [
+      "fixed",
+      "drift",
+      "delay"
+    ],
+    "device": "cuda",
+    "fit_seed": 42,
+    "screen_reps": 3,
+    "n_reps": 15,
+    "screen_evals": 350,
+    "refine_evals": 600,
+    "eval_reps": 60,
+    "eval_seeds": [
+      12345,
+      23456,
+      34567
+    ]
+  },
+  "generalization": "Trial holdout within the same mice/sessions, not new sessions or animals",
+  "status": "Exploratory pilot; no recovery or parameter confidence intervals yet"
+}

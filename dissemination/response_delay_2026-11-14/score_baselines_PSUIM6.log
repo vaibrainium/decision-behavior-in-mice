@@ -1,0 +1,50 @@
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+SCORE fixed PSUIM6 cv0 seed=12345 nll=2974.349 choice=635.055 rt=2339.294
+SCORE fixed PSUIM6 cv0 seed=23456 nll=2974.234 choice=634.793 rt=2339.441
+SCORE fixed PSUIM6 cv0 seed=34567 nll=2975.622 choice=638.111 rt=2337.511
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+SCORE drift PSUIM6 cv0 seed=12345 nll=2968.379 choice=637.011 rt=2331.368
+SCORE drift PSUIM6 cv0 seed=23456 nll=2977.896 choice=639.557 rt=2338.339
+SCORE drift PSUIM6 cv0 seed=34567 nll=2975.397 choice=638.537 rt=2336.859
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+SCORE fixed PSUIM6 cv1 seed=12345 nll=2951.625 choice=616.720 rt=2334.905
+SCORE fixed PSUIM6 cv1 seed=23456 nll=2950.729 choice=616.737 rt=2333.991
+SCORE fixed PSUIM6 cv1 seed=34567 nll=2953.336 choice=618.215 rt=2335.121
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+SCORE drift PSUIM6 cv1 seed=12345 nll=2952.704 choice=617.877 rt=2334.827
+SCORE drift PSUIM6 cv1 seed=23456 nll=2956.007 choice=619.390 rt=2336.617
+SCORE drift PSUIM6 cv1 seed=34567 nll=2955.982 choice=620.349 rt=2335.633
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+SCORE fixed PSUIM6 cv2 seed=12345 nll=2843.888 choice=594.780 rt=2249.108
+SCORE fixed PSUIM6 cv2 seed=23456 nll=2838.889 choice=596.746 rt=2242.142
+SCORE fixed PSUIM6 cv2 seed=34567 nll=2843.211 choice=597.183 rt=2246.028
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+SCORE drift PSUIM6 cv2 seed=12345 nll=2843.272 choice=599.887 rt=2243.385
+SCORE drift PSUIM6 cv2 seed=23456 nll=2843.347 choice=601.599 rt=2241.748
+SCORE drift PSUIM6 cv2 seed=34567 nll=2846.304 choice=600.451 rt=2245.853
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+SCORE fixed PSUIM6 cv3 seed=12345 nll=2882.712 choice=615.094 rt=2267.619
+SCORE fixed PSUIM6 cv3 seed=23456 nll=2880.761 choice=616.580 rt=2264.181
+SCORE fixed PSUIM6 cv3 seed=34567 nll=2886.669 choice=615.913 rt=2270.756
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+SCORE drift PSUIM6 cv3 seed=12345 nll=2870.467 choice=617.185 rt=2253.283
+SCORE drift PSUIM6 cv3 seed=23456 nll=2874.186 choice=620.555 rt=2253.632
+SCORE drift PSUIM6 cv3 seed=34567 nll=2875.311 choice=618.380 rt=2256.932
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+SCORE fixed PSUIM6 cv4 seed=12345 nll=2794.915 choice=592.375 rt=2202.540
+SCORE fixed PSUIM6 cv4 seed=23456 nll=2793.608 choice=593.452 rt=2200.157
+SCORE fixed PSUIM6 cv4 seed=34567 nll=2798.278 choice=592.796 rt=2205.483
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+SCORE drift PSUIM6 cv4 seed=12345 nll=2791.036 choice=595.485 rt=2195.551
+SCORE drift PSUIM6 cv4 seed=23456 nll=2793.356 choice=595.146 rt=2198.211
+SCORE drift PSUIM6 cv4 seed=34567 nll=2791.835 choice=596.907 rt=2194.928

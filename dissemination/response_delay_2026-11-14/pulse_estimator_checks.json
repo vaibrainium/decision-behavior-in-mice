@@ -1,0 +1,7 @@
+{
+  "profile_max_error_pp": 3.552713678800501e-15,
+  "window_max_error_pp": 3.552713678800501e-15,
+  "n_boot": 500,
+  "seed": 187,
+  "sampling_unit": "50-trial blocks within mouse/session; pointwise within-mouse inference only"
+}

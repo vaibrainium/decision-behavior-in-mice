@@ -1,0 +1,12 @@
+{
+  "PSUIM6": {
+    "zero_spread_nll": 2972.6360885044314,
+    "stored_nll": 2972.6360885044314,
+    "difference": 0.0
+  },
+  "PSUIM7": {
+    "zero_spread_nll": 3741.2713878938475,
+    "stored_nll": 3741.2713878938475,
+    "difference": 0.0
+  }
+}

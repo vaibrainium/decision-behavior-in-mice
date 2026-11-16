@@ -1,0 +1,3 @@
+ok: DecisionModel methods present
+ok: step-by-step DE == scipy differential_evolution (maxiter 0, 1, 7, 300)
+ok: killed in generation 1, 12, 25 of 40 and resumed == uninterrupted
