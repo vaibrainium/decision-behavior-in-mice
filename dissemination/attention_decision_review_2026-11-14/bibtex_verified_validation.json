@@ -1,0 +1,34 @@
+{
+  "filepath": "dissemination/attention_decision_review_2026-11-14/references_verified.bib",
+  "total_entries": 32,
+  "valid_entries": 32,
+  "errors": [],
+  "warnings": [
+    {
+      "type": "page_range_format",
+      "field": "pages",
+      "value": "imag-2-00338",
+      "severity": "low",
+      "message": "Entry ref40800290: Page range uses single hyphen, should use -- (en-dash)",
+      "entry": "ref40800290"
+    },
+    {
+      "type": "page_range_format",
+      "field": "pages",
+      "value": "ENEURO.0169-18.2018",
+      "severity": "low",
+      "message": "Entry ref30406190: Page range uses single hyphen, should use -- (en-dash)",
+      "entry": "ref30406190"
+    }
+  ],
+  "duplicates": [],
+  "venue_standard_checked": null,
+  "min_count_checked": null,
+  "manuscript_results": {
+    "checked": false,
+    "manuscript_filepath": null,
+    "cited_keys": [],
+    "missing_keys": [],
+    "unused_keys": []
+  }
+}

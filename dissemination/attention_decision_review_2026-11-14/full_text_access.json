@@ -1,0 +1,128 @@
+[
+  {
+    "pmid": "35132235",
+    "url": "https://escholarship.org/content/qt9xm1x3nv/qt9xm1x3nv.pdf",
+    "assessment": "selected full-text sections",
+    "notes": "Sections 2.5, 2.7, 4.2 and 4.4.2: state alternatives, RT checks, holdouts, RT definition",
+    "date": "2026-11-14"
+  },
+  {
+    "pmid": "33412101",
+    "url": "https://www.med.upenn.edu/ngg/assets/user-content/documents/jc-2021-2022/roy2021neuron-paper1-10.18.2021.pdf",
+    "assessment": "selected full-text sections",
+    "notes": "Dynamics, session jumps, cross-validation and post-modeling guidance about future outcomes",
+    "date": "2026-11-14"
+  },
+  {
+    "pmid": "28435173",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5397902/",
+    "assessment": "selected full-text sections",
+    "notes": "EEG parameter links, section 3.4 and poor error-RT predictions",
+    "date": "2026-11-14"
+  },
+  {
+    "pmid": "24656259",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4411568/",
+    "assessment": "selected full-text sections",
+    "notes": "Adaptive gain model, recent-sample consistency, transfer-function mechanism",
+    "date": "2026-11-14"
+  },
+  {
+    "pmid": "24336710",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6618757/",
+    "assessment": "selected full-text sections",
+    "notes": "CPP buildup, coherence and pretarget alpha; methods and results",
+    "date": "2026-11-14"
+  },
+  {
+    "pmid": "23177968",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3975574/",
+    "assessment": "selected full-text sections",
+    "notes": "Rhythmic weighting and sensory-to-decision stages",
+    "date": "2026-11-14"
+  },
+  {
+    "pmid": "24777419",
+    "url": "https://www.cns.nyu.edu/~tony/Publications/goris-movshon-simoncelli-2014.pdf",
+    "assessment": "selected full-text sections",
+    "notes": "Modulated-Poisson framework, slow gain correlations and anesthesia comparison",
+    "date": "2026-11-14"
+  },
+  {
+    "pmid": "19186161",
+    "url": "https://www.cns.nyu.edu/heegerlab/content/publications/Reynolds-Neuron2009.pdf",
+    "assessment": "selected full-text sections",
+    "notes": "Theoretical review/model: normalization, stimulus conditions and different gain definitions",
+    "date": "2026-11-14"
+  },
+  {
+    "key": "hulsey2024",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11016285/fullTextXML",
+    "local_file": "sources/hulsey2024.json",
+    "assessment": "selected full-text XML sections",
+    "date": "2026-11-14"
+  },
+  {
+    "key": "urai2019",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6606080/fullTextXML",
+    "local_file": "sources/urai2019.json",
+    "assessment": "selected full-text XML sections",
+    "date": "2026-11-14"
+  },
+  {
+    "key": "murphy2014",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4168983/fullTextXML",
+    "local_file": "sources/murphy2014.json",
+    "assessment": "selected full-text XML sections",
+    "date": "2026-11-14"
+  },
+  {
+    "key": "pisupati2021",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7846276/fullTextXML",
+    "local_file": "sources/pisupati2021.json",
+    "assessment": "selected full-text XML sections",
+    "date": "2026-11-14"
+  },
+  {
+    "key": "okazawa2018",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6113286/fullTextXML",
+    "local_file": "sources/okazawa2018.json",
+    "assessment": "selected full-text XML sections",
+    "date": "2026-11-14"
+  },
+  {
+    "key": "attention_onset2024",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11208218/fullTextXML",
+    "local_file": "sources/attention_onset2024.json",
+    "assessment": "selected full-text XML sections",
+    "date": "2026-11-14"
+  },
+  {
+    "key": "mcgaughey2026",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13405624/fullTextXML",
+    "local_file": "sources/mcgaughey2026.json",
+    "assessment": "selected full-text XML sections",
+    "date": "2026-11-14"
+  },
+  {
+    "key": "gain_confidence2024",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7615478/fullTextXML",
+    "local_file": "sources/gain_confidence2024.json",
+    "assessment": "selected full-text XML sections",
+    "date": "2026-11-14"
+  },
+  {
+    "key": "wong2007",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2525934/fullTextXML",
+    "local_file": "sources/wong2007.json",
+    "assessment": "selected full-text XML sections",
+    "date": "2026-11-14"
+  },
+  {
+    "key": "murphy2016urgency",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5123079/fullTextXML",
+    "local_file": "sources/murphy2016urgency.json",
+    "assessment": "selected full-text XML sections",
+    "date": "2026-11-14"
+  }
+]

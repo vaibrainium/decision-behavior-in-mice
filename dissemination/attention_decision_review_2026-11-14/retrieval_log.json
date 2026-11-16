@@ -1,0 +1,405 @@
+{
+  "ashwood2022": {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8890994/fullTextXML",
+    "file": "sources/ashwood2022_PMC8890994.xml",
+    "accessed_utc": "2026-11-14T03:21:25.226122+00:00",
+    "ok": false,
+    "error": "HTTP Error 500: "
+  },
+  "hulsey2024": {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11016285/fullTextXML",
+    "file": "sources/hulsey2024_PMC11016285.xml",
+    "accessed_utc": "2026-11-14T03:21:25.226859+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "e90db859ef1fe1f87e1422daa063b325749735a8ab66f7680ef816fd1baa7854",
+    "bytes": 141519,
+    "parser_exit": 0,
+    "parsed_file": "sources/hulsey2024.json"
+  },
+  "roy2021": {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7897255/fullTextXML",
+    "file": "sources/roy2021_PMC7897255.xml",
+    "accessed_utc": "2026-11-14T03:21:26.052478+00:00",
+    "ok": false,
+    "error": "HTTP Error 500: "
+  },
+  "urai2019": {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6606080/fullTextXML",
+    "file": "sources/urai2019_PMC6606080.xml",
+    "accessed_utc": "2026-11-14T03:21:26.509031+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "6b46b306c06561e3ca095be530b6d923a8f8840edf9e0b5767597d3e0e2d97a2",
+    "bytes": 383199,
+    "parser_exit": 0,
+    "parsed_file": "sources/urai2019.json"
+  },
+  "murphy2014": {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4168983/fullTextXML",
+    "file": "sources/murphy2014_PMC4168983.xml",
+    "accessed_utc": "2026-11-14T03:21:26.716360+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "cf8d3848a5fe3b4787e1266ad2ca1ec596d24c12d25aa2800cb972316cb0b546",
+    "bytes": 173724,
+    "parser_exit": 0,
+    "parsed_file": "sources/murphy2014.json"
+  },
+  "nunez2017": {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5397902/fullTextXML",
+    "file": "sources/nunez2017_PMC5397902.xml",
+    "accessed_utc": "2026-11-14T03:21:27.901923+00:00",
+    "ok": false,
+    "error": "HTTP Error 500: "
+  },
+  "kelly2013": {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6618757/fullTextXML",
+    "file": "sources/kelly2013_PMC6618757.xml",
+    "accessed_utc": "2026-11-14T03:21:27.910944+00:00",
+    "ok": false,
+    "error": "HTTP Error 500: "
+  },
+  "cheadle2014": {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4411568/fullTextXML",
+    "file": "sources/cheadle2014_PMC4411568.xml",
+    "accessed_utc": "2026-11-14T03:21:28.566001+00:00",
+    "ok": false,
+    "error": "HTTP Error 500: "
+  },
+  "wyart2012": {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3975574/fullTextXML",
+    "file": "sources/wyart2012_PMC3975574.xml",
+    "accessed_utc": "2026-11-14T03:21:30.996654+00:00",
+    "ok": false,
+    "error": "HTTP Error 500: "
+  },
+  "reynolds2009": {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2752446/fullTextXML",
+    "file": "sources/reynolds2009_PMC2752446.xml",
+    "accessed_utc": "2026-11-14T03:21:32.584435+00:00",
+    "ok": false,
+    "error": "HTTP Error 500: "
+  },
+  "pisupati2021": {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7846276/fullTextXML",
+    "file": "sources/pisupati2021_PMC7846276.xml",
+    "accessed_utc": "2026-11-14T03:21:33.441776+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "c49c812a83bb0fcc90444a00572c2e2d5586913222884ae1b500ff36b3fca467",
+    "bytes": 334079,
+    "parser_exit": 0,
+    "parsed_file": "sources/pisupati2021.json"
+  },
+  "okazawa2018": {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6113286/fullTextXML",
+    "file": "sources/okazawa2018_PMC6113286.xml",
+    "accessed_utc": "2026-11-14T03:21:34.734650+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "dd545bca61ba2273a69c63726ef78d5b3bdded46deca40942a32733c205434f8",
+    "bytes": 335776,
+    "parser_exit": 0,
+    "parsed_file": "sources/okazawa2018.json"
+  },
+  "attention_onset2024": {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11208218/fullTextXML",
+    "file": "sources/attention_onset2024_PMC11208218.xml",
+    "accessed_utc": "2026-11-14T03:21:34.835664+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "752391febea7458a7c698a1c261e103e9cb3b5114450d0f925f2f62f8b6cfb9b",
+    "bytes": 73079,
+    "parser_exit": 0,
+    "parsed_file": "sources/attention_onset2024.json"
+  },
+  "mcgaughey2026": {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13405624/fullTextXML",
+    "file": "sources/mcgaughey2026_PMC13405624.xml",
+    "accessed_utc": "2026-11-14T03:21:35.895925+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "c62f247f0f656fb488251e16f4f1f95545abe095815c8fad0ceb936c10acb4f2",
+    "bytes": 228072,
+    "parser_exit": 0,
+    "parsed_file": "sources/mcgaughey2026.json"
+  },
+  "gain_confidence2024": {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7615478/fullTextXML",
+    "file": "sources/gain_confidence2024_PMC7615478.xml",
+    "accessed_utc": "2026-11-14T03:21:36.101169+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "f69cd433bc0549a3b028e9d21e32ca9833dbf35adf158113980e03783eeec414",
+    "bytes": 279087,
+    "parser_exit": 0,
+    "parsed_file": "sources/gain_confidence2024.json"
+  },
+  "wong2007": {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2525934/fullTextXML",
+    "file": "sources/wong2007_PMC2525934.xml",
+    "accessed_utc": "2026-11-14T03:21:37.376306+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "aa8e9e7ba6a24aca088963b31d5bc9f35e0d9cb71b1c74291443df199095920e",
+    "bytes": 122437,
+    "parser_exit": 0,
+    "parsed_file": "sources/wong2007.json"
+  },
+  "murphy2016urgency": {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5123079/fullTextXML",
+    "file": "sources/murphy2016urgency_PMC5123079.xml",
+    "accessed_utc": "2026-11-14T03:21:37.671583+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "e06788c2836344184ce7747cc654603bb7e689a902e4d513487ace850767bd87",
+    "bytes": 162284,
+    "parser_exit": 0,
+    "parsed_file": "sources/murphy2016urgency.json"
+  },
+  "wyart2015divided": {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4402727/fullTextXML",
+    "file": "sources/wyart2015divided_PMC4402727.xml",
+    "accessed_utc": "2026-11-14T03:21:38.616157+00:00",
+    "ok": false,
+    "error": "HTTP Error 500: "
+  },
+  "selected_metadata": {
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28EXT_ID%3A26853360+OR+EXT_ID%3A30406190+OR+EXT_ID%3A23559254+OR+EXT_ID%3A30322902+OR+EXT_ID%3A40800290+OR+EXT_ID%3A38280196+OR+EXT_ID%3A31264959+OR+EXT_ID%3A25232732+OR+EXT_ID%3A33427198+OR+EXT_ID%3A30154467+OR+EXT_ID%3A38816552+OR+EXT_ID%3A42504837+OR+EXT_ID%3A38188903+OR+EXT_ID%3A18946528+OR+EXT_ID%3A27882927+OR+DOI%3A%2210.7554%2FeLife.55365%22+OR+DOI%3A%2210.7554%2FeLife.105116%22+OR+DOI%3A%2210.1038%2Fs41583-025-00916-3%22+OR+DOI%3A%2210.1016%2Fj.tics.2025.06.003%22%29+AND+SRC%3AMED&format=json&pageSize=100&resultType=core",
+    "file": "sources/selected_metadata.json",
+    "accessed_utc": "2026-11-14T03:21:47.887177+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "f63c11eb139fe8f1d72867c260b1060199f5ce9edbd1a0a4de885818bf2f512a",
+    "bytes": 111389,
+    "total": 18,
+    "retrieved": 18,
+    "bounded": true
+  },
+  "crossref_42504837": {
+    "url": "https://api.crossref.org/works/10.7554%2Felife.110685",
+    "file": "sources/crossref_42504837.json",
+    "accessed_utc": "2026-11-14T03:27:58.413990+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "c9bbb204effa57ac97e627a76295cd394ac2173b2130b2da4916ade4330e3655",
+    "bytes": 34838
+  },
+  "crossref_40800290": {
+    "url": "https://api.crossref.org/works/10.1162%2Fimag_a_00338",
+    "file": "sources/crossref_40800290.json",
+    "accessed_utc": "2026-11-14T03:27:58.986908+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "bf503f727e7976a2629ebd19273a412c808cb67a6e1fddf9366d3fa57d72c3f1",
+    "bytes": 39306
+  },
+  "crossref_38816552": {
+    "url": "https://api.crossref.org/works/10.1007%2Fs00221-024-06862-3",
+    "file": "sources/crossref_38816552.json",
+    "accessed_utc": "2026-11-14T03:27:59.554336+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "d2db4f0ff2bfb562c1956db9483c4db5095ec3883f045d18f5cf2af2876c6762",
+    "bytes": 13443
+  },
+  "crossref_38280196": {
+    "url": "https://api.crossref.org/works/10.1016%2Fj.celrep.2024.113709",
+    "file": "sources/crossref_38280196.json",
+    "accessed_utc": "2026-11-14T03:28:00.051186+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "199786bae0dbf0b18e7c971e723194ded1c3eaaf7e6898d8e067bba94e1e5fea",
+    "bytes": 18411
+  },
+  "crossref_38188903": {
+    "url": "https://api.crossref.org/works/10.1016%2Fj.jmp.2023.102815",
+    "file": "sources/crossref_38188903.json",
+    "accessed_utc": "2026-11-14T03:28:00.624306+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "f169182d4a51a923772c5b1e37321f18d4f943166edd6081feef234543879b28",
+    "bytes": 34488
+  },
+  "crossref_33427198": {
+    "url": "https://api.crossref.org/works/10.7554%2Felife.55490",
+    "file": "sources/crossref_33427198.json",
+    "accessed_utc": "2026-11-14T03:28:01.183996+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "41a3dba37f4217177f72037ed0f034ea30a31913bce292ab0a7c506b7eef5201",
+    "bytes": 25017
+  },
+  "crossref_31264959": {
+    "url": "https://api.crossref.org/works/10.7554%2Felife.46331",
+    "file": "sources/crossref_31264959.json",
+    "accessed_utc": "2026-11-14T03:28:01.748234+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "55118e3e7431d5e2eff94ce9a6e22a0f4d1ce9a444a644f6b8fc953837dd40e6",
+    "bytes": 40519
+  },
+  "crossref_30406190": {
+    "url": "https://api.crossref.org/works/10.1523%2Feneuro.0169-18.2018",
+    "file": "sources/crossref_30406190.json",
+    "accessed_utc": "2026-11-14T03:28:02.314482+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "d676aa079be73684289cc2650e0c81258dc33d8aa2b85eecf7e3f31e1696df91",
+    "bytes": 2611
+  },
+  "crossref_30154467": {
+    "url": "https://api.crossref.org/works/10.1038%2Fs41467-018-05797-y",
+    "file": "sources/crossref_30154467.json",
+    "accessed_utc": "2026-11-14T03:28:02.811390+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "050153928b632576058e9952236d38ee45e82a03d12eec8998735474bc9f461a",
+    "bytes": 30589
+  },
+  "crossref_27882927": {
+    "url": "https://api.crossref.org/works/10.1038%2Fncomms13526",
+    "file": "sources/crossref_27882927.json",
+    "accessed_utc": "2026-11-14T03:28:03.374049+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "beb8e0f6f2d2bfda8a73baeee869d1885361502674a21b4e68406015b192e57d",
+    "bytes": 32156
+  },
+  "crossref_26853360": {
+    "url": "https://api.crossref.org/works/10.1016%2Fj.cub.2015.12.049",
+    "file": "sources/crossref_26853360.json",
+    "accessed_utc": "2026-11-14T03:28:03.941889+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "23fdb52014f66f31a515399d8336953792e5f044b5282a64afed939e443c0cde",
+    "bytes": 16166
+  },
+  "crossref_25232732": {
+    "url": "https://api.crossref.org/works/10.1371%2Fjournal.pcbi.1003854",
+    "file": "sources/crossref_25232732.json",
+    "accessed_utc": "2026-11-14T03:28:04.493418+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "add4666639f877b81ca0f8e3e5433d30c5a2de33adbca40a7dadd9c3968042b0",
+    "bytes": 21695
+  },
+  "crossref_18946528": {
+    "url": "https://api.crossref.org/works/10.3389%2Fneuro.10.006.2007",
+    "file": "sources/crossref_18946528.json",
+    "accessed_utc": "2026-11-14T03:28:05.048478+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "5686365d7af127ec95b3b22f99c4f85a15fd448bc90aa4802da6ae83448edc71",
+    "bytes": 1500
+  },
+  "crossref_25716848": {
+    "url": "https://api.crossref.org/works/10.1523%2Fjneurosci.3276-14.2015",
+    "file": "sources/crossref_25716848.json",
+    "accessed_utc": "2026-11-14T03:28:05.545666+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "079d06e106345c4d419bbc2e51c26abb76fb597ff8978ec719dc603fb2cc63c2",
+    "bytes": 11535
+  },
+  "crossref_37352857": {
+    "url": "https://api.crossref.org/works/10.1016%2Fj.neuron.2023.05.028",
+    "file": "sources/crossref_37352857.json",
+    "accessed_utc": "2026-11-14T03:28:06.050698+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "83690f6b7bbd72bd47a57eba4abaf881138ed974672ce2b2028477b76fdded13",
+    "bytes": 26262
+  },
+  "crossref_28435173": {
+    "url": "https://api.crossref.org/works/10.1016%2Fj.jmp.2016.03.003",
+    "file": "sources/crossref_28435173.json",
+    "accessed_utc": "2026-11-14T03:28:06.604309+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "9a0a236132b0722d31d6011ff6c8f59f8b03af2ffadcbc4b17974e0d449898dc",
+    "bytes": 23906
+  },
+  "crossref_35132235": {
+    "url": "https://api.crossref.org/works/10.1038%2Fs41593-021-01007-z",
+    "file": "sources/crossref_35132235.json",
+    "accessed_utc": "2026-11-14T03:28:07.168865+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "5bc936b52d0695d55be2c5ee11fcd82d94e897cac5cfcb4a2f016dd35b73dd23",
+    "bytes": 27823
+  },
+  "crossref_33412101": {
+    "url": "https://api.crossref.org/works/10.1016%2Fj.neuron.2020.12.004",
+    "file": "sources/crossref_33412101.json",
+    "accessed_utc": "2026-11-14T03:28:07.725947+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "8146bf2e76970e10e200785e6b0bad87ee86330f7b2f64da7794ea93c353de6f",
+    "bytes": 17399
+  },
+  "crossref_24777419": {
+    "url": "https://api.crossref.org/works/10.1038%2Fnn.3711",
+    "file": "sources/crossref_24777419.json",
+    "accessed_utc": "2026-11-14T03:28:08.280292+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "5ad50f5170a36e26bf23079a059f117b3de886ca726a7ba225d8a3c1d7328170",
+    "bytes": 20993
+  },
+  "crossref_24656259": {
+    "url": "https://api.crossref.org/works/10.1016%2Fj.neuron.2014.01.020",
+    "file": "sources/crossref_24656259.json",
+    "accessed_utc": "2026-11-14T03:28:08.844408+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "7590df54d824abc05eef75e165b8cae371b833e5822b49b985d2a333abc726f6",
+    "bytes": 23692
+  },
+  "crossref_24336710": {
+    "url": "https://api.crossref.org/works/10.1523%2Fjneurosci.3355-13.2013",
+    "file": "sources/crossref_24336710.json",
+    "accessed_utc": "2026-11-14T03:28:09.410074+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "601ca0e846073e65b4d41686d88b32785158fa238f5a8c52371d7866c2bcc3ec",
+    "bytes": 10929
+  },
+  "crossref_23177968": {
+    "url": "https://api.crossref.org/works/10.1016%2Fj.neuron.2012.09.015",
+    "file": "sources/crossref_23177968.json",
+    "accessed_utc": "2026-11-14T03:28:09.906272+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "45ab04e2354a3ba3cf3769f24146feeca3fa84931f838a7e360767e2f9b7b90d",
+    "bytes": 17416
+  },
+  "crossref_19915566": {
+    "url": "https://api.crossref.org/works/10.1038%2Fnn.2439",
+    "file": "sources/crossref_19915566.json",
+    "accessed_utc": "2026-11-14T03:28:10.459294+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "449b7a08909f38a4363ab101f2931dc557be743d739253a982dc7d985ae2d020",
+    "bytes": 18949
+  },
+  "crossref_19348543": {
+    "url": "https://api.crossref.org/works/10.1037%2Fa0015156",
+    "file": "sources/crossref_19348543.json",
+    "accessed_utc": "2026-11-14T03:28:11.019427+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "bc4898819f431b56938468b1e42e4e1f2a521a338e1b99b6eeac75e320b8f01c",
+    "bytes": 2678
+  },
+  "crossref_19186161": {
+    "url": "https://api.crossref.org/works/10.1016%2Fj.neuron.2009.01.002",
+    "file": "sources/crossref_19186161.json",
+    "accessed_utc": "2026-11-14T03:28:11.518292+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "d24470e7e2cfae2c717efefb3bec532c35eba3e92710316464704edfca24faa5",
+    "bytes": 52638
+  }
+}

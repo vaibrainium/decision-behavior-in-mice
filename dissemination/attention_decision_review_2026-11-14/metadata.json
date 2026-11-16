@@ -1,0 +1,4999 @@
+[
+  {
+    "id": "42504837",
+    "source": "MED",
+    "pmid": "42504837",
+    "pmcid": "PMC13405624",
+    "fullTextIdList": {
+      "fullTextId": [
+        "PMC13405624"
+      ]
+    },
+    "doi": "10.7554/elife.110685",
+    "title": "Sensory adaptation and pupil-linked arousal support flexible evidence accumulation during perceptual decision making.",
+    "authorString": "McGaughey KD, Gold JI.",
+    "authorList": {
+      "author": [
+        {
+          "fullName": "McGaughey KD",
+          "lastName": "McGaughey",
+          "firstName": "Kara D",
+          "initials": "KD",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0001-8670-7303"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Neuroscience, University of Pennsylvania, Philadelphia, United States."
+              },
+              {
+                "affiliation": "Computational Neuroscience Initiative, University of Pennsylvania, Philadelphia, United States."
+              },
+              {
+                "affiliation": "Neuroscience Graduate Group, University of Pennsylvania, Philadelphia, United States."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Gold JI",
+          "lastName": "Gold",
+          "firstName": "Joshua I",
+          "initials": "JI",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-6018-0483"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Neuroscience, University of Pennsylvania, Philadelphia, United States."
+              },
+              {
+                "affiliation": "Computational Neuroscience Initiative, University of Pennsylvania, Philadelphia, United States."
+              },
+              {
+                "affiliation": "Neuroscience Graduate Group, University of Pennsylvania, Philadelphia, United States."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "authorIdList": {
+      "authorId": [
+        {
+          "type": "ORCID",
+          "value": "0000-0001-8670-7303"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0002-6018-0483"
+        }
+      ]
+    },
+    "journalInfo": {
+      "volume": "15",
+      "journalIssueId": 4223566,
+      "dateOfPublication": "2026 Jul",
+      "monthOfPublication": 7,
+      "yearOfPublication": 2026,
+      "journal": {
+        "medlineAbbreviation": "Elife",
+        "title": "eLife",
+        "essn": "2050-084X",
+        "issn": "2050-084X",
+        "isoabbreviation": "Elife",
+        "nlmid": "101579614"
+      },
+      "printPublicationDate": "2026-07-01"
+    },
+    "pubYear": "2026",
+    "pageInfo": "RP110685",
+    "abstractText": "Effective decision making in dynamic environments requires flexible evidence accumulation. Although models often express this flexibility as a property of the accumulator, its implementation in the brain may involve adaptive mechanisms operating at other stages of the decision process. We examined two such mechanisms: (1) stimulus-specific sensory adaptation at the level of evidence encoding, and (2) arousal-related neuromodulation, which could, in principle, affect both evidence encoding and accumulation. We measured single-unit activity in the middle temporal (MT) area and pupil-linked arousal while monkeys performed a modified random-dot motion direction-discrimination task in which an adapting stimulus with varied temporal stability preceded a behaviorally relevant test stimulus. The monkeys' decisions reflected adaptive evidence accumulation that depended on temporal-context stability and corresponded to context-dependent changes in both stimulus-specific sensory adaptation in MT and task-evoked pupil responses. However, adaptation and pupil adjustments were not related to each other. Together, these findings suggest that multiple mechanisms contribute to flexible, context-dependent evidence accumulation, including changes in sensory adaptation that shape evidence encoding and changes in arousal that may shape the accumulation process itself.",
+    "affiliation": "Department of Neuroscience, University of Pennsylvania, Philadelphia, United States.",
+    "publicationStatus": "epublish",
+    "language": "eng",
+    "pubModel": "Electronic",
+    "pubTypeList": {
+      "pubType": [
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    "grantsList": {
+      "grant": [
+        {
+          "agency": "National Science Foundation Graduate Research Fellowship Program",
+          "grantId": "NSFGRFP DGE-1845298",
+          "orderIn": 0
+        },
+        {
+          "agency": "NEI NIH HHS",
+          "acronym": "EY",
+          "grantId": "R01 EY015260",
+          "orderIn": 0
+        },
+        {
+          "agency": "NIMH NIH HHS",
+          "acronym": "MH",
+          "grantId": "R01 MH127566",
+          "orderIn": 0
+        }
+      ]
+    },
+    "meshHeadingList": {
+      "meshHeading": [
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Pupil",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Animals"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Macaca mulatta"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Photic Stimulation"
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Decision Making",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Arousal",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Adaptation, Physiological"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Male"
+        }
+      ]
+    },
+    "keywordList": {
+      "keyword": [
+        "Visual cortex",
+        "Neuroscience",
+        "Rhesus macaque",
+        "Inference",
+        "Middle Temporal Area"
+      ]
+    },
+    "subsetList": {
+      "subset": [
+        {
+          "code": "IM",
+          "name": "Index Medicus"
+        }
+      ]
+    },
+    "fullTextUrlList": {
+      "fullTextUrl": [
+        {
+          "availability": "Subscription required",
+          "availabilityCode": "S",
+          "documentStyle": "doi",
+          "site": "DOI",
+          "url": "https://doi.org/10.7554/eLife.110685"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "html",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC13405624"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "pdf",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC13405624?pdf=render"
+        }
+      ]
+    },
+    "commentCorrectionList": {
+      "commentCorrection": [
+        {
+          "source": "MED",
+          "id": "41676607",
+          "reference": "bioRxiv. 2026 Feb 05:2026.02.03.703553. doi: 10.64898/2026.02.03.703553.",
+          "type": "Update of",
+          "orderIn": 1
+        },
+        {
+          "source": "PPR",
+          "id": "PPR1225086",
+          "type": "Preprint in",
+          "note": "Link created based on a title-first author match",
+          "orderIn": 10002
+        }
+      ]
+    },
+    "isOpenAccess": "Y",
+    "inEPMC": "Y",
+    "inPMC": "Y",
+    "citedByCount": 1,
+    "hasReferences": "Y",
+    "hasTextMinedTerms": "Y",
+    "hasDbCrossReferences": "N",
+    "hasPDF": "Y",
+    "hasBook": "N",
+    "hasSuppl": "Y",
+    "hasLabsLinks": "N",
+    "hasData": "Y",
+    "license": "cc by",
+    "authMan": "N",
+    "epmcAuthMan": "N",
+    "nihAuthMan": "N",
+    "hasTMAccessionNumbers": "N",
+    "dateOfCompletion": "2026-07-27",
+    "dateOfCreation": "2026-07-27",
+    "dateOfRevision": "2026-08-24",
+    "electronicPublicationDate": "2026-07-27",
+    "firstPublicationDate": "2026-07-27",
+    "firstIndexDate": "2026-07-30",
+    "fullTextReceivedDate": "2026-09-04",
+    "hasEvaluations": "N"
+  },
+  {
+    "id": "40610349",
+    "source": "MED",
+    "pmid": "40610349",
+    "doi": "10.1016/j.tics.2025.06.003",
+    "title": "Structure uncovered: understanding temporal variability in perceptual decision-making.",
+    "authorString": "Urai AE.",
+    "authorList": {
+      "author": [
+        {
+          "fullName": "Urai AE",
+          "lastName": "Urai",
+          "firstName": "Anne E",
+          "initials": "AE",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0001-5270-6513"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Cognitive Psychology, Leiden University, Leiden, The Netherlands. Electronic address: a.e.urai@fsw.leidenuniv.nl."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "authorIdList": {
+      "authorId": [
+        {
+          "type": "ORCID",
+          "value": "0000-0001-5270-6513"
+        }
+      ]
+    },
+    "dataLinksTagsList": {
+      "dataLinkstag": [
+        "altmetrics"
+      ]
+    },
+    "journalInfo": {
+      "issue": "1",
+      "volume": "30",
+      "journalIssueId": 4088201,
+      "dateOfPublication": "2026 Jan",
+      "monthOfPublication": 1,
+      "yearOfPublication": 2026,
+      "journal": {
+        "medlineAbbreviation": "Trends Cogn Sci",
+        "title": "Trends in cognitive sciences",
+        "essn": "1879-307X",
+        "issn": "1364-6613",
+        "isoabbreviation": "Trends Cogn Sci",
+        "nlmid": "9708669"
+      },
+      "printPublicationDate": "2026-01-01"
+    },
+    "pubYear": "2026",
+    "pageInfo": "54-65",
+    "abstractText": "Studies of perceptual decision-making typically present the same stimulus repeatedly over the course of an experimental session but ignore the order of these observations, assuming unrealistic stability of decision strategies over trials. However, even 'stable,' 'steady-state,' or 'expert' decision-making behavior features significant trial-to-trial variability that is richly structured in time. Structured trial-to-trial variability of various forms can be uncovered using latent variable models such as hidden Markov models and autoregressive models, revealing how unobservable internal states change over time. Capturing such temporal structure can avoid confounds in cognitive models, provide insights into inter- and intraindividual variability, and bridge the gap between neural and cognitive mechanisms of variability in perceptual decision-making.",
+    "affiliation": "Cognitive Psychology, Leiden University, Leiden, The Netherlands. Electronic address: a.e.urai@fsw.leidenuniv.nl.",
+    "publicationStatus": "ppublish",
+    "language": "eng",
+    "pubModel": "Print-Electronic",
+    "pubTypeList": {
+      "pubType": [
+        "Research Support, Non-U.S. Gov't",
+        "Review",
+        "Journal Article"
+      ]
+    },
+    "grantsList": {
+      "grant": [
+        {
+          "agency": "Dutch Research Council (NWO)",
+          "grantId": "VI.Veni.212.184",
+          "orderIn": 0
+        }
+      ]
+    },
+    "meshHeadingList": {
+      "meshHeading": [
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Humans"
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Perception",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Decision Making",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Models, Psychological"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Time Factors"
+        }
+      ]
+    },
+    "keywordList": {
+      "keyword": [
+        "Noise",
+        "decision-making",
+        "Behavioral Strategies",
+        "Choice Variability",
+        "Dynamic Cognitive Modeling"
+      ]
+    },
+    "subsetList": {
+      "subset": [
+        {
+          "code": "IM",
+          "name": "Index Medicus"
+        }
+      ]
+    },
+    "fullTextUrlList": {
+      "fullTextUrl": [
+        {
+          "availability": "Subscription required",
+          "availabilityCode": "S",
+          "documentStyle": "doi",
+          "site": "DOI",
+          "url": "https://doi.org/10.1016/j.tics.2025.06.003"
+        }
+      ]
+    },
+    "commentCorrectionList": {
+      "commentCorrection": [
+        {
+          "source": "PPR",
+          "id": "PPR1122627",
+          "type": "Preprint in",
+          "note": "CrossRef Pre-print loader",
+          "orderIn": 10002
+        }
+      ]
+    },
+    "isOpenAccess": "N",
+    "inEPMC": "N",
+    "inPMC": "N",
+    "citedByCount": 11,
+    "hasReferences": "Y",
+    "hasTextMinedTerms": "N",
+    "hasDbCrossReferences": "N",
+    "hasPDF": "N",
+    "hasBook": "N",
+    "hasSuppl": "N",
+    "hasLabsLinks": "Y",
+    "hasData": "N",
+    "authMan": "N",
+    "epmcAuthMan": "N",
+    "nihAuthMan": "N",
+    "hasTMAccessionNumbers": "N",
+    "dateOfCompletion": "2026-01-07",
+    "dateOfCreation": "2025-07-03",
+    "dateOfRevision": "2026-07-11",
+    "electronicPublicationDate": "2025-07-02",
+    "firstPublicationDate": "2025-07-02",
+    "firstIndexDate": "2025-07-09",
+    "hasEvaluations": "N"
+  },
+  {
+    "id": "40114010",
+    "source": "MED",
+    "pmid": "40114010",
+    "doi": "10.1038/s41583-025-00916-3",
+    "title": "Disentangling sources of variability in decision-making.",
+    "authorString": "Duffy JS, Bellgrove MA, Murphy PR, O'Connell RG.",
+    "authorList": {
+      "author": [
+        {
+          "fullName": "Duffy JS",
+          "lastName": "Duffy",
+          "firstName": "Jade S",
+          "initials": "JS",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0001-6650-0022"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Trinity College Institute of Neuroscience and School of Psychology, Trinity College Dublin, Dublin, Ireland."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Bellgrove MA",
+          "lastName": "Bellgrove",
+          "firstName": "Mark A",
+          "initials": "MA",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-0186-8349"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "School of Psychological Sciences and Turner Institute for Brain and Mental Health, Monash University, Melbourne, Victoria, Australia."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Murphy PR",
+          "lastName": "Murphy",
+          "firstName": "Peter R",
+          "initials": "PR",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-1963-185X"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Psychology, Maynooth University, Kildare, Ireland."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "O'Connell RG",
+          "lastName": "O'Connell",
+          "firstName": "Redmond G",
+          "initials": "RG",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0001-6949-2793"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Trinity College Institute of Neuroscience and School of Psychology, Trinity College Dublin, Dublin, Ireland. reoconne@tcd.ie."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "authorIdList": {
+      "authorId": [
+        {
+          "type": "ORCID",
+          "value": "0000-0001-6650-0022"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0001-6949-2793"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0003-0186-8349"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0003-1963-185X"
+        }
+      ]
+    },
+    "dataLinksTagsList": {
+      "dataLinkstag": [
+        "altmetrics"
+      ]
+    },
+    "journalInfo": {
+      "issue": "5",
+      "volume": "26",
+      "journalIssueId": 3932264,
+      "dateOfPublication": "2025 May",
+      "monthOfPublication": 5,
+      "yearOfPublication": 2025,
+      "journal": {
+        "medlineAbbreviation": "Nat Rev Neurosci",
+        "title": "Nature reviews. Neuroscience",
+        "essn": "1471-0048",
+        "issn": "1471-003X",
+        "isoabbreviation": "Nat Rev Neurosci",
+        "nlmid": "100962781"
+      },
+      "printPublicationDate": "2025-05-01"
+    },
+    "pubYear": "2025",
+    "pageInfo": "247-262",
+    "abstractText": "Even the most highly-trained observers presented with identical choice-relevant stimuli will reliably exhibit substantial trial-to-trial variability in the timing and accuracy of their choices. Despite being a pervasive feature of choice behaviour and a prominent phenotype for numerous clinical disorders, the capability to disentangle the sources of such intra-individual variability (IIV) remains limited. In principle, computational models of decision-making offer a means of parsing and estimating these sources, but methodological limitations have prevented this potential from being fully realized in practice. In this Review, we first discuss current limitations of algorithmic models for understanding variability in decision-making behaviour. We then highlight recent advances in behavioural paradigm design, novel analyses of cross-trial behavioural and neural dynamics, and the development of neurally grounded computational models that are now making it possible to link distinct components of IIV to well-defined neural processes. Taken together, we demonstrate how these methods are opening up new avenues for systematically analysing the neural origins of IIV, paving the way for a more refined, holistic understanding of decision-making in health and disease.",
+    "affiliation": "Trinity College Institute of Neuroscience and School of Psychology, Trinity College Dublin, Dublin, Ireland.",
+    "publicationStatus": "ppublish",
+    "language": "eng",
+    "pubModel": "Print-Electronic",
+    "pubTypeList": {
+      "pubType": [
+        "Review",
+        "Journal Article"
+      ]
+    },
+    "meshHeadingList": {
+      "meshHeading": [
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Brain",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Animals"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Humans"
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Decision Making",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Choice Behavior",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Models, Neurological"
+        }
+      ]
+    },
+    "subsetList": {
+      "subset": [
+        {
+          "code": "IM",
+          "name": "Index Medicus"
+        }
+      ]
+    },
+    "fullTextUrlList": {
+      "fullTextUrl": [
+        {
+          "availability": "Subscription required",
+          "availabilityCode": "S",
+          "documentStyle": "doi",
+          "site": "DOI",
+          "url": "https://doi.org/10.1038/s41583-025-00916-3"
+        }
+      ]
+    },
+    "isOpenAccess": "N",
+    "inEPMC": "N",
+    "inPMC": "N",
+    "citedByCount": 11,
+    "hasReferences": "Y",
+    "hasTextMinedTerms": "Y",
+    "hasDbCrossReferences": "N",
+    "hasPDF": "N",
+    "hasBook": "N",
+    "hasSuppl": "N",
+    "hasLabsLinks": "Y",
+    "hasData": "N",
+    "authMan": "N",
+    "epmcAuthMan": "N",
+    "nihAuthMan": "N",
+    "hasTMAccessionNumbers": "N",
+    "dateOfCompletion": "2025-04-24",
+    "dateOfCreation": "2025-03-21",
+    "dateOfRevision": "2025-04-24",
+    "electronicPublicationDate": "2025-03-20",
+    "firstPublicationDate": "2025-03-20",
+    "firstIndexDate": "2025-03-21",
+    "hasEvaluations": "N"
+  },
+  {
+    "id": "40800290",
+    "source": "MED",
+    "pmid": "40800290",
+    "pmcid": "PMC12290597",
+    "fullTextIdList": {
+      "fullTextId": [
+        "PMC12290597"
+      ]
+    },
+    "doi": "10.1162/imag_a_00338",
+    "title": "Prior probability biases perceptual choices by modulating the accumulation rate, rather than the baseline, of decision evidence.",
+    "authorString": "Diaz JA, Pisauro MA, Delis I, Philiastides MG.",
+    "authorList": {
+      "author": [
+        {
+          "fullName": "Diaz JA",
+          "lastName": "Diaz",
+          "firstName": "Jessica A",
+          "initials": "JA",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-6772-8499"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "School of Social Sciences, College of Psychology Birmingham City University, Birmingham, United Kingdom."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Pisauro MA",
+          "lastName": "Pisauro",
+          "firstName": "M Andrea",
+          "initials": "MA",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0001-6087-2597"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "School of Psychology and Neuroscience University of Glasgow, Glasgow, United Kingdom."
+              },
+              {
+                "affiliation": "Centre for Human Brain Health, University of Birmingham, Birmingham, United Kingdom."
+              },
+              {
+                "affiliation": "School of Psychology, University of Plymouth, Plymouth, United Kingdom."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Delis I",
+          "lastName": "Delis",
+          "firstName": "Ioannis",
+          "initials": "I",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0001-8940-5036"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "School of Biomedical Sciences University of Leeds, Leeds, United Kingdom."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Philiastides MG",
+          "lastName": "Philiastides",
+          "firstName": "Marios G",
+          "initials": "MG",
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "School of Psychology and Neuroscience University of Glasgow, Glasgow, United Kingdom."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "authorIdList": {
+      "authorId": [
+        {
+          "type": "ORCID",
+          "value": "0000-0001-6087-2597"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0001-8940-5036"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0002-6772-8499"
+        }
+      ]
+    },
+    "dataLinksTagsList": {
+      "dataLinkstag": [
+        "supporting_data"
+      ]
+    },
+    "journalInfo": {
+      "volume": "2",
+      "journalIssueId": 3796905,
+      "dateOfPublication": "2024 ",
+      "monthOfPublication": 0,
+      "yearOfPublication": 2024,
+      "journal": {
+        "medlineAbbreviation": "Imaging Neurosci (Camb)",
+        "title": "Imaging neuroscience (Cambridge, Mass.)",
+        "essn": "2837-6056",
+        "issn": "2837-6056",
+        "isoabbreviation": "Imaging Neurosci (Camb)",
+        "nlmid": "9918663686606676"
+      },
+      "printPublicationDate": "2024-01-01"
+    },
+    "pubYear": "2024",
+    "pageInfo": "imag-2-00338",
+    "abstractText": "The prior probability of an upcoming stimulus has been shown to influence the formation of perceptual decisions. Computationally, these effects have typically been attributed to changes in the starting point (i.e., baseline) of evidence accumulation in sequential sampling models. More recently, it has also been proposed that prior probability might additionally lead to changes in the rate of evidence accumulation. Here, we introduce a neurally-informed behavioural modelling approach to understand whether prior probability influences the starting point, the rate of evidence accumulation or both. To this end, we employ a well-established visual object categorisation task for which two neural components underpinning participants' choices have been characterised using single-trial analysis of the electroencephalogram. These components are reliable measures of trial-by-trial variability in the quality of the relevant decision evidence, which we use to constrain the estimation of a hierarchical drift diffusion model of perceptual choice. We find that, unlike previous computational accounts, constraining the model with the endogenous variability in the relevant decision evidence results in prior probability effects being explained primarily by changes in the rate of evidence accumulation rather than changes in the starting point or a combination of both. Ultimately, our neurally-informed modelling approach helps disambiguate the mechanistic effect of prior probability on perceptual decision formation, suggesting that prior probability biases primarily the interpretation of sensory evidence towards the most likely stimulus.",
+    "affiliation": "School of Social Sciences, College of Psychology Birmingham City University, Birmingham, United Kingdom.",
+    "publicationStatus": "epublish",
+    "language": "eng",
+    "pubModel": "Electronic-eCollection",
+    "pubTypeList": {
+      "pubType": [
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    "keywordList": {
+      "keyword": [
+        "Electroencephalography",
+        "Decision Making",
+        "Prior Probability",
+        "Hierarchical Drift Diffusion Model",
+        "Neurally-Informed Modeling"
+      ]
+    },
+    "fullTextUrlList": {
+      "fullTextUrl": [
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "doi",
+          "site": "Unpaywall",
+          "url": "https://doi.org/10.1162/imag_a_00338"
+        },
+        {
+          "availability": "Subscription required",
+          "availabilityCode": "S",
+          "documentStyle": "doi",
+          "site": "DOI",
+          "url": "https://doi.org/10.1162/imag_a_00338"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "html",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC12290597"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "pdf",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC12290597?pdf=render"
+        }
+      ]
+    },
+    "isOpenAccess": "Y",
+    "inEPMC": "Y",
+    "inPMC": "Y",
+    "citedByCount": 1,
+    "hasReferences": "Y",
+    "hasTextMinedTerms": "Y",
+    "hasDbCrossReferences": "N",
+    "hasPDF": "Y",
+    "hasBook": "N",
+    "hasSuppl": "Y",
+    "hasLabsLinks": "Y",
+    "hasData": "Y",
+    "license": "cc by",
+    "authMan": "N",
+    "epmcAuthMan": "N",
+    "nihAuthMan": "N",
+    "hasTMAccessionNumbers": "Y",
+    "tmAccessionTypeList": {
+      "accessionType": [
+        "doi"
+      ]
+    },
+    "dateOfCreation": "2025-08-13",
+    "dateOfRevision": "2025-08-16",
+    "electronicPublicationDate": "2024-11-18",
+    "firstPublicationDate": "2024-11-18",
+    "firstIndexDate": "2025-08-21",
+    "fullTextReceivedDate": "2025-08-14",
+    "hasEvaluations": "N"
+  },
+  {
+    "id": "38816552",
+    "source": "MED",
+    "pmid": "38816552",
+    "pmcid": "PMC11208218",
+    "fullTextIdList": {
+      "fullTextId": [
+        "PMC11208218"
+      ]
+    },
+    "doi": "10.1007/s00221-024-06862-3",
+    "title": "Attention facilitates initiation of perceptual decision making: a combined psychophysical and electroencephalography study.",
+    "authorString": "Ueno T, Kumano H, Uka T.",
+    "authorList": {
+      "author": [
+        {
+          "fullName": "Ueno T",
+          "lastName": "Ueno",
+          "firstName": "Tomohiro",
+          "initials": "T",
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Integrative Physiology, Graduate School of Medicine, University of Yamanashi, 1110 Shimokato, Chuo-Shi, Yamanashi, Japan."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Kumano H",
+          "lastName": "Kumano",
+          "firstName": "Hironori",
+          "initials": "H",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0009-0000-2083-8335"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Integrative Physiology, Graduate School of Medicine, University of Yamanashi, 1110 Shimokato, Chuo-Shi, Yamanashi, Japan."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Uka T",
+          "lastName": "Uka",
+          "firstName": "Takanori",
+          "initials": "T",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-5026-8596"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Integrative Physiology, Graduate School of Medicine, University of Yamanashi, 1110 Shimokato, Chuo-Shi, Yamanashi, Japan. tuka@yamanashi.ac.jp."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "authorIdList": {
+      "authorId": [
+        {
+          "type": "ORCID",
+          "value": "0000-0002-5026-8596"
+        },
+        {
+          "type": "ORCID",
+          "value": "0009-0000-2083-8335"
+        }
+      ]
+    },
+    "journalInfo": {
+      "issue": "7",
+      "volume": "242",
+      "journalIssueId": 3790187,
+      "dateOfPublication": "2024 Jul",
+      "monthOfPublication": 7,
+      "yearOfPublication": 2024,
+      "journal": {
+        "medlineAbbreviation": "Exp Brain Res",
+        "title": "Experimental brain research",
+        "essn": "1432-1106",
+        "issn": "0014-4819",
+        "isoabbreviation": "Exp Brain Res",
+        "nlmid": "0043312"
+      },
+      "printPublicationDate": "2024-07-01"
+    },
+    "pubYear": "2024",
+    "pageInfo": "1721-1730",
+    "abstractText": "Humans can selectively process information and make decisions by directing their attention to desired locations in their daily lives. Numerous studies have shown that attention increases the rate of correct responses and shortens reaction time, and it has been hypothesized that this phenomenon is caused by an increase in sensitivity of the sensory signals to which attention is directed. The present study employed psychophysical methods and electroencephalography (EEG) to test the hypothesis that attention accelerates the onset of information accumulation. Participants were asked to discriminate the motion direction of one of two random dot kinematograms presented on the left and right sides of the visual field, one of which was cued by an arrow in 80% of the trials. The drift-diffusion model was applied to the percentage of correct responses and reaction times in the attended and unattended fields of view. Attention primarily increased sensory sensitivity and shortened the time unrelated to decision making. Next, we measured centroparietal positivity (CPP), an EEG measure associated with decision making, and found that CPP latency was shorter in attended trials than in unattended trials. These results suggest that attention not only increases sensory sensitivity but also accelerates the initiation of decision making.",
+    "affiliation": "Department of Integrative Physiology, Graduate School of Medicine, University of Yamanashi, 1110 Shimokato, Chuo-Shi, Yamanashi, Japan.",
+    "publicationStatus": "ppublish",
+    "language": "eng",
+    "pubModel": "Print-Electronic",
+    "pubTypeList": {
+      "pubType": [
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    "grantsList": {
+      "grant": [
+        {
+          "agency": "University of Yamanashi",
+          "orderIn": 0
+        },
+        {
+          "agency": "Japan Society for the Promotion of Science",
+          "grantId": "JP23H04674",
+          "orderIn": 0
+        },
+        {
+          "agency": "Japan Society for the Promotion of Science",
+          "grantId": "JP23H02786",
+          "orderIn": 0
+        },
+        {
+          "agency": "Japan Society for the Promotion of Science",
+          "grantId": "JP19H03531",
+          "orderIn": 0
+        },
+        {
+          "agency": "Japan Society for the Promotion of Science",
+          "grantId": "JP19H05207",
+          "orderIn": 0
+        }
+      ]
+    },
+    "meshHeadingList": {
+      "meshHeading": [
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Humans"
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Electroencephalography",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "MT",
+                "qualifierName": "methods"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Photic Stimulation",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "MT",
+                "qualifierName": "methods"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Visual Perception",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Motion Perception",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Decision Making",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Attention",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Reaction Time",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Psychophysics"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Adult"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Female"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Male"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Young Adult"
+        }
+      ]
+    },
+    "keywordList": {
+      "keyword": [
+        "Human",
+        "Reaction time",
+        "Parietal cortex",
+        "Drift Diffusion Model"
+      ]
+    },
+    "subsetList": {
+      "subset": [
+        {
+          "code": "IM",
+          "name": "Index Medicus"
+        }
+      ]
+    },
+    "fullTextUrlList": {
+      "fullTextUrl": [
+        {
+          "availability": "Subscription required",
+          "availabilityCode": "S",
+          "documentStyle": "doi",
+          "site": "DOI",
+          "url": "https://doi.org/10.1007/s00221-024-06862-3"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "html",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC11208218"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "pdf",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC11208218?pdf=render"
+        }
+      ]
+    },
+    "isOpenAccess": "Y",
+    "inEPMC": "Y",
+    "inPMC": "Y",
+    "citedByCount": 0,
+    "hasReferences": "Y",
+    "hasTextMinedTerms": "Y",
+    "hasDbCrossReferences": "N",
+    "hasPDF": "Y",
+    "hasBook": "N",
+    "hasSuppl": "N",
+    "hasLabsLinks": "N",
+    "hasData": "N",
+    "license": "cc by",
+    "authMan": "N",
+    "epmcAuthMan": "N",
+    "nihAuthMan": "N",
+    "hasTMAccessionNumbers": "N",
+    "dateOfCompletion": "2024-06-26",
+    "dateOfCreation": "2024-05-30",
+    "dateOfRevision": "2024-06-29",
+    "electronicPublicationDate": "2024-05-30",
+    "firstPublicationDate": "2024-05-30",
+    "firstIndexDate": "2024-05-31",
+    "fullTextReceivedDate": "2024-06-29",
+    "hasEvaluations": "N"
+  },
+  {
+    "id": "38280196",
+    "source": "MED",
+    "pmid": "38280196",
+    "pmcid": "PMC11016285",
+    "fullTextIdList": {
+      "fullTextId": [
+        "PMC11016285"
+      ]
+    },
+    "doi": "10.1016/j.celrep.2024.113709",
+    "title": "Decision-making dynamics are predicted by arousal and uninstructed movements.",
+    "authorString": "Hulsey D, Zumwalt K, Mazzucato L, McCormick DA, Jaramillo S.",
+    "authorList": {
+      "author": [
+        {
+          "fullName": "Hulsey D",
+          "lastName": "Hulsey",
+          "firstName": "Daniel",
+          "initials": "D",
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Institute of Neuroscience, University of Oregon, Eugene, OR 97405, USA."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Zumwalt K",
+          "lastName": "Zumwalt",
+          "firstName": "Kevin",
+          "initials": "K",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0009-0006-2928-4651"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Institute of Neuroscience, University of Oregon, Eugene, OR 97405, USA."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Mazzucato L",
+          "lastName": "Mazzucato",
+          "firstName": "Luca",
+          "initials": "L",
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Institute of Neuroscience, University of Oregon, Eugene, OR 97405, USA; Department of Biology, University of Oregon, Eugene, OR 97405, USA; Departments of Physics and Mathematics, University of Oregon, Eugene, OR 97405, USA. Electronic address: lmazzuca@uoregon.edu."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "McCormick DA",
+          "lastName": "McCormick",
+          "firstName": "David A",
+          "initials": "DA",
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Institute of Neuroscience, University of Oregon, Eugene, OR 97405, USA; Department of Biology, University of Oregon, Eugene, OR 97405, USA. Electronic address: davidmc@uoregon.edu."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Jaramillo S",
+          "lastName": "Jaramillo",
+          "firstName": "Santiago",
+          "initials": "S",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-6595-8450"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Institute of Neuroscience, University of Oregon, Eugene, OR 97405, USA; Department of Biology, University of Oregon, Eugene, OR 97405, USA. Electronic address: sjara@uoregon.edu."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "authorIdList": {
+      "authorId": [
+        {
+          "type": "ORCID",
+          "value": "0000-0002-6595-8450"
+        },
+        {
+          "type": "ORCID",
+          "value": "0009-0006-2928-4651"
+        }
+      ]
+    },
+    "dataLinksTagsList": {
+      "dataLinkstag": [
+        "altmetrics",
+        "related_data",
+        "supporting_data"
+      ]
+    },
+    "journalInfo": {
+      "issue": "2",
+      "volume": "43",
+      "journalIssueId": 3706789,
+      "dateOfPublication": "2024 Feb",
+      "monthOfPublication": 2,
+      "yearOfPublication": 2024,
+      "journal": {
+        "medlineAbbreviation": "Cell Rep",
+        "title": "Cell reports",
+        "essn": "2211-1247",
+        "issn": "2211-1247",
+        "isoabbreviation": "Cell Rep",
+        "nlmid": "101573691"
+      },
+      "printPublicationDate": "2024-02-01"
+    },
+    "pubYear": "2024",
+    "pageInfo": "113709",
+    "abstractText": "During sensory-guided behavior, an animal's decision-making dynamics unfold through sequences of distinct performance states, even while stimulus-reward contingencies remain static. Little is known about the factors that underlie these changes in task performance. We hypothesize that these decision-making dynamics can be predicted by externally observable measures, such as uninstructed movements and changes in arousal. Here, using computational modeling of visual and auditory task performance data from mice, we uncovered lawful relationships between transitions in strategic task performance states and an animal's arousal and uninstructed movements. Using hidden Markov models applied to behavioral choices during sensory discrimination tasks, we find that animals fluctuate between minutes-long optimal, sub-optimal, and disengaged performance states. Optimal state epochs are predicted by intermediate levels, and reduced variability, of pupil diameter and movement. Our results demonstrate that externally observable uninstructed behaviors can predict optimal performance states and suggest that mice regulate their arousal during optimal performance.",
+    "affiliation": "Institute of Neuroscience, University of Oregon, Eugene, OR 97405, USA.",
+    "publicationStatus": "ppublish",
+    "language": "eng",
+    "pubModel": "Print-Electronic",
+    "pubTypeList": {
+      "pubType": [
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    "grantsList": {
+      "grant": [
+        {
+          "agency": "National Institutes of Health",
+          "grantId": "R01NS118461",
+          "orderIn": 0
+        },
+        {
+          "agency": "National Institutes of Health",
+          "grantId": "R35NS097287",
+          "orderIn": 0
+        },
+        {
+          "agency": "NINDS NIH HHS",
+          "acronym": "NS",
+          "grantId": "RF1 NS118461",
+          "orderIn": 0
+        },
+        {
+          "agency": "National Science Foundation",
+          "grantId": "2238247",
+          "orderIn": 0
+        },
+        {
+          "agency": "NINDS NIH HHS",
+          "acronym": "NS",
+          "grantId": "R35 NS097287",
+          "orderIn": 0
+        },
+        {
+          "agency": "National Science Foundation",
+          "grantId": "2024926",
+          "orderIn": 0
+        },
+        {
+          "agency": "NIDCD NIH HHS",
+          "acronym": "DC",
+          "grantId": "R01 DC015803",
+          "orderIn": 0
+        },
+        {
+          "agency": "NIDA NIH HHS",
+          "acronym": "DA",
+          "grantId": "R01 DA055439",
+          "orderIn": 0
+        },
+        {
+          "agency": "NINDS NIH HHS",
+          "acronym": "NS",
+          "grantId": "R01 NS118461",
+          "orderIn": 0
+        }
+      ]
+    },
+    "meshHeadingList": {
+      "meshHeading": [
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Animals"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Mice"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Task Performance and Analysis"
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Arousal",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Movement"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Computer Simulation"
+        }
+      ]
+    },
+    "keywordList": {
+      "keyword": [
+        "Vision",
+        "Regulation",
+        "decision-making",
+        "State",
+        "Audition",
+        "Arousal",
+        "Cp: Neuroscience"
+      ]
+    },
+    "subsetList": {
+      "subset": [
+        {
+          "code": "IM",
+          "name": "Index Medicus"
+        }
+      ]
+    },
+    "fullTextUrlList": {
+      "fullTextUrl": [
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "doi",
+          "site": "Unpaywall",
+          "url": "https://doi.org/10.1016/j.celrep.2024.113709"
+        },
+        {
+          "availability": "Subscription required",
+          "availabilityCode": "S",
+          "documentStyle": "doi",
+          "site": "DOI",
+          "url": "https://doi.org/10.1016/j.celrep.2024.113709"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "html",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC11016285"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "pdf",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC11016285?pdf=render"
+        }
+      ]
+    },
+    "commentCorrectionList": {
+      "commentCorrection": [
+        {
+          "source": "MED",
+          "id": "37034793",
+          "reference": "bioRxiv. 2023 Mar 28:2023.03.02.530651. doi: 10.1101/2023.03.02.530651",
+          "type": "Update of",
+          "orderIn": 1
+        },
+        {
+          "source": "PPR",
+          "id": "PPR625875",
+          "type": "Preprint in",
+          "note": "CrossRef Pre-print loader",
+          "orderIn": 10002
+        }
+      ]
+    },
+    "isOpenAccess": "Y",
+    "inEPMC": "Y",
+    "inPMC": "Y",
+    "citedByCount": 51,
+    "hasReferences": "Y",
+    "hasTextMinedTerms": "Y",
+    "hasDbCrossReferences": "N",
+    "hasPDF": "Y",
+    "hasBook": "N",
+    "hasSuppl": "Y",
+    "hasLabsLinks": "Y",
+    "hasData": "Y",
+    "license": "cc by",
+    "authMan": "Y",
+    "epmcAuthMan": "N",
+    "nihAuthMan": "Y",
+    "manuscriptId": "NIHMS1970871",
+    "hasTMAccessionNumbers": "Y",
+    "tmAccessionTypeList": {
+      "accessionType": [
+        "doi"
+      ]
+    },
+    "dateOfCompletion": "2024-03-04",
+    "dateOfCreation": "2024-01-27",
+    "dateOfRevision": "2025-01-14",
+    "electronicPublicationDate": "2024-01-26",
+    "firstPublicationDate": "2024-01-26",
+    "firstIndexDate": "2024-01-28",
+    "fullTextReceivedDate": "2025-02-05",
+    "hasEvaluations": "N"
+  },
+  {
+    "id": "38188903",
+    "source": "MED",
+    "pmid": "38188903",
+    "pmcid": "PMC7615478",
+    "fullTextIdList": {
+      "fullTextId": [
+        "PMC7615478"
+      ]
+    },
+    "doi": "10.1016/j.jmp.2023.102815",
+    "title": "Expressions for Bayesian confidence of drift diffusion observers in fluctuating stimuli tasks.",
+    "authorString": "Calder-Travis J, Bogacz R, Yeung N.",
+    "authorList": {
+      "author": [
+        {
+          "fullName": "Calder-Travis J",
+          "lastName": "Calder-Travis",
+          "firstName": "Joshua",
+          "initials": "J",
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Experimental Psychology, University of Oxford, UK."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Bogacz R",
+          "lastName": "Bogacz",
+          "firstName": "Rafal",
+          "initials": "R",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-8994-1661"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "MRC Brain Network Dynamics Unit, Nuffield Department of Clinical Neuroscience, University of Oxford, UK."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Yeung N",
+          "lastName": "Yeung",
+          "firstName": "Nick",
+          "initials": "N",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-1905-2129"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Experimental Psychology, University of Oxford, UK."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "authorIdList": {
+      "authorId": [
+        {
+          "type": "ORCID",
+          "value": "0000-0002-8994-1661"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0003-1905-2129"
+        }
+      ]
+    },
+    "dataLinksTagsList": {
+      "dataLinkstag": [
+        "altmetrics",
+        "supporting_data"
+      ]
+    },
+    "journalInfo": {
+      "volume": "117",
+      "journalIssueId": 3688774,
+      "dateOfPublication": "2023 Dec",
+      "monthOfPublication": 12,
+      "yearOfPublication": 2023,
+      "journal": {
+        "medlineAbbreviation": "J Math Psychol",
+        "title": "Journal of mathematical psychology",
+        "issn": "0022-2496",
+        "isoabbreviation": "J Math Psychol",
+        "nlmid": "2985082R"
+      },
+      "printPublicationDate": "2023-12-01"
+    },
+    "pubYear": "2023",
+    "pageInfo": "102815",
+    "abstractText": "We introduce a new approach to modelling decision confidence, with the aim of enabling computationally cheap predictions while taking into account, and thereby exploiting, trial-by-trial variability in stochastically fluctuating stimuli. Using the framework of the drift diffusion model of decision making, along with time-dependent thresholds and the idea of a Bayesian confidence readout, we derive expressions for the probability distribution over confidence reports. In line with current models of confidence, the derivations allow for the accumulation of \"pipeline\" evidence that has been received but not processed by the time of response, the effect of drift rate variability, and metacognitive noise. The expressions are valid for stimuli that change over the course of a trial with normally-distributed fluctuations in the evidence they provide. A number of approximations are made to arrive at the final expressions, and we test all approximations via simulation. The derived expressions contain only a small number of standard functions, and require evaluating only once per trial, making trial-by-trial modelling of confidence data in stochastically fluctuating stimuli tasks more feasible. We conclude by using the expressions to gain insight into the confidence of optimal observers, and empirically observed patterns.",
+    "affiliation": "Department of Experimental Psychology, University of Oxford, UK.",
+    "publicationStatus": "ppublish",
+    "language": "eng",
+    "pubModel": "Print",
+    "pubTypeList": {
+      "pubType": [
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    "grantsList": {
+      "grant": [
+        {
+          "agency": "Medical Research Council",
+          "acronym": "MRC_",
+          "grantId": "MC_UU_00003/1",
+          "orderIn": 0
+        }
+      ]
+    },
+    "keywordList": {
+      "keyword": [
+        "Bayesian",
+        "Confidence",
+        "Perceptual Decisions",
+        "Ddm",
+        "Fluctuating Stimuli"
+      ]
+    },
+    "fullTextUrlList": {
+      "fullTextUrl": [
+        {
+          "availability": "Subscription required",
+          "availabilityCode": "S",
+          "documentStyle": "doi",
+          "site": "DOI",
+          "url": "https://doi.org/10.1016/j.jmp.2023.102815"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "html",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC7615478"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "pdf",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC7615478?pdf=render"
+        }
+      ]
+    },
+    "commentCorrectionList": {
+      "commentCorrection": [
+        {
+          "source": "PPR",
+          "id": "PPR114878",
+          "type": "Preprint in",
+          "note": "CrossRef Pre-print loader",
+          "orderIn": 10002
+        }
+      ]
+    },
+    "isOpenAccess": "Y",
+    "inEPMC": "Y",
+    "inPMC": "Y",
+    "citedByCount": 7,
+    "hasReferences": "Y",
+    "hasTextMinedTerms": "Y",
+    "hasDbCrossReferences": "N",
+    "hasPDF": "Y",
+    "hasBook": "N",
+    "hasSuppl": "Y",
+    "hasLabsLinks": "Y",
+    "hasData": "Y",
+    "license": "cc by",
+    "authMan": "Y",
+    "epmcAuthMan": "Y",
+    "nihAuthMan": "N",
+    "manuscriptId": "EMS192935",
+    "hasTMAccessionNumbers": "Y",
+    "tmAccessionTypeList": {
+      "accessionType": [
+        "doi"
+      ]
+    },
+    "dateOfCreation": "2024-01-08",
+    "dateOfRevision": "2025-05-30",
+    "firstPublicationDate": "2023-12-01",
+    "firstIndexDate": "2024-01-09",
+    "fullTextReceivedDate": "2025-12-01",
+    "hasEvaluations": "N"
+  },
+  {
+    "id": "32338595",
+    "source": "MED",
+    "pmid": "32338595",
+    "pmcid": "PMC7217695",
+    "fullTextIdList": {
+      "fullTextId": [
+        "PMC7217695"
+      ]
+    },
+    "doi": "10.7554/elife.55365",
+    "title": "Differentiating between integration and non-integration strategies in perceptual decision making.",
+    "authorString": "Stine GM, Zylberberg A, Ditterich J, Shadlen MN.",
+    "authorList": {
+      "author": [
+        {
+          "fullName": "Stine GM",
+          "lastName": "Stine",
+          "firstName": "Gabriel M",
+          "initials": "GM",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-4906-0461"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Neuroscience, Columbia University, New York, United States."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Zylberberg A",
+          "lastName": "Zylberberg",
+          "firstName": "Ariel",
+          "initials": "A",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-2572-4748"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Mortimer B. Zuckerman Mind Brain Behavior Institute and The Kavli Institute for Brain Science, Columbia University, New York, United States."
+              },
+              {
+                "affiliation": "Department of Brain and Cognitive Sciences, University of Rochester, Rochester, United States."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Ditterich J",
+          "lastName": "Ditterich",
+          "firstName": "Jochen",
+          "initials": "J",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-3345-2869"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Center for Neuroscience and Department of Neurobiology, Physiology & Behavior, University of California, Davis, United States."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Shadlen MN",
+          "lastName": "Shadlen",
+          "firstName": "Michael N",
+          "initials": "MN",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-2002-2210"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Neuroscience, Columbia University, New York, United States."
+              },
+              {
+                "affiliation": "Mortimer B. Zuckerman Mind Brain Behavior Institute and The Kavli Institute for Brain Science, Columbia University, New York, United States."
+              },
+              {
+                "affiliation": "Howard Hughes Medical Institute, Columbia University, New York, United States."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "authorIdList": {
+      "authorId": [
+        {
+          "type": "ORCID",
+          "value": "0000-0002-2002-2210"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0002-2572-4748"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0002-3345-2869"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0003-4906-0461"
+        }
+      ]
+    },
+    "dataLinksTagsList": {
+      "dataLinkstag": [
+        "altmetrics",
+        "supporting_data"
+      ]
+    },
+    "journalInfo": {
+      "volume": "9",
+      "journalIssueId": 2930454,
+      "dateOfPublication": "2020 Apr",
+      "monthOfPublication": 4,
+      "yearOfPublication": 2020,
+      "journal": {
+        "medlineAbbreviation": "Elife",
+        "title": "eLife",
+        "essn": "2050-084X",
+        "issn": "2050-084X",
+        "isoabbreviation": "Elife",
+        "nlmid": "101579614"
+      },
+      "printPublicationDate": "2020-04-01"
+    },
+    "pubYear": "2020",
+    "pageInfo": "e55365",
+    "abstractText": "Many tasks used to study decision-making encourage subjects to integrate evidence over time. Such tasks are useful to understand how the brain operates on multiple samples of information over prolonged timescales, but only if subjects actually integrate evidence to form their decisions. We explored the behavioral observations that corroborate evidence-integration in a number of task-designs. Several commonly accepted signs of integration were also predicted by non-integration strategies. Furthermore, an integration model could fit data generated by non-integration models. We identified the features of non-integration models that allowed them to mimic integration and used these insights to design a motion discrimination task that disentangled the models. In human subjects performing the task, we falsified a non-integration strategy in each and confirmed prolonged integration in all but one subject. The findings illustrate the difficulty of identifying a decision-maker's strategy and support solutions to achieve this goal.",
+    "affiliation": "Department of Neuroscience, Columbia University, New York, United States.",
+    "publicationStatus": "epublish",
+    "language": "eng",
+    "pubModel": "Electronic",
+    "pubTypeList": {
+      "pubType": [
+        "Research Support, Non-U.S. Gov't",
+        "research-article",
+        "Journal Article",
+        "Research Support, N.I.H., Extramural"
+      ]
+    },
+    "grantsList": {
+      "grant": [
+        {
+          "agency": "NEI NIH HHS",
+          "acronym": "EY",
+          "grantId": "EY011378",
+          "orderIn": 0
+        },
+        {
+          "agency": "National Eye Institute",
+          "grantId": "EY011378",
+          "orderIn": 0
+        },
+        {
+          "agency": "National Eye Institute",
+          "grantId": "EY013933",
+          "orderIn": 0
+        },
+        {
+          "agency": "National Institute of Neurological Disorders and Stroke",
+          "grantId": "NS113113",
+          "orderIn": 0
+        },
+        {
+          "agency": "Israel Institute for Advanced Studies",
+          "orderIn": 0
+        },
+        {
+          "agency": "NINDS NIH HHS",
+          "acronym": "NS",
+          "grantId": "NS113113",
+          "orderIn": 0
+        },
+        {
+          "agency": "Howard Hughes Medical Institute",
+          "acronym": "HHMI",
+          "orderIn": 0
+        },
+        {
+          "agency": "NEI NIH HHS",
+          "acronym": "EY",
+          "grantId": "T32 EY013933",
+          "orderIn": 0
+        }
+      ]
+    },
+    "meshHeadingList": {
+      "meshHeading": [
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Brain",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "Y",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Humans"
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Motion Perception"
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Decision Making"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Motion"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Female"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Male"
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Discrimination, Psychological"
+        }
+      ]
+    },
+    "keywordList": {
+      "keyword": [
+        "Human",
+        "Neuroscience",
+        "Decision Making",
+        "Perceptual Decisions",
+        "Evidence Accumulation",
+        "Behavioral Modeling"
+      ]
+    },
+    "subsetList": {
+      "subset": [
+        {
+          "code": "IM",
+          "name": "Index Medicus"
+        }
+      ]
+    },
+    "fullTextUrlList": {
+      "fullTextUrl": [
+        {
+          "availability": "Subscription required",
+          "availabilityCode": "S",
+          "documentStyle": "doi",
+          "site": "DOI",
+          "url": "https://doi.org/10.7554/eLife.55365"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "html",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC7217695"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "pdf",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC7217695?pdf=render"
+        }
+      ]
+    },
+    "commentCorrectionList": {
+      "commentCorrection": [
+        {
+          "source": "PPR",
+          "id": "PPR110255",
+          "type": "Preprint in",
+          "note": "CrossRef Pre-print loader",
+          "orderIn": 10002
+        }
+      ]
+    },
+    "isOpenAccess": "Y",
+    "inEPMC": "Y",
+    "inPMC": "Y",
+    "citedByCount": 70,
+    "hasReferences": "Y",
+    "hasTextMinedTerms": "Y",
+    "hasDbCrossReferences": "N",
+    "hasPDF": "Y",
+    "hasBook": "N",
+    "hasSuppl": "Y",
+    "hasLabsLinks": "Y",
+    "hasData": "Y",
+    "license": "cc by",
+    "authMan": "N",
+    "epmcAuthMan": "N",
+    "nihAuthMan": "N",
+    "hasTMAccessionNumbers": "Y",
+    "tmAccessionTypeList": {
+      "accessionType": [
+        "doi"
+      ]
+    },
+    "dateOfCompletion": "2021-03-24",
+    "dateOfCreation": "2020-04-28",
+    "dateOfRevision": "2021-03-24",
+    "electronicPublicationDate": "2020-04-27",
+    "firstPublicationDate": "2020-04-27",
+    "firstIndexDate": "2020-04-28",
+    "fullTextReceivedDate": "2025-02-03",
+    "hasEvaluations": "N"
+  },
+  {
+    "id": "33427198",
+    "source": "MED",
+    "pmid": "33427198",
+    "pmcid": "PMC7846276",
+    "fullTextIdList": {
+      "fullTextId": [
+        "PMC7846276"
+      ]
+    },
+    "doi": "10.7554/elife.55490",
+    "title": "Lapses in perceptual decisions reflect exploration.",
+    "authorString": "Pisupati S, Chartarifsky-Lynn L, Khanal A, Churchland AK.",
+    "authorList": {
+      "author": [
+        {
+          "fullName": "Pisupati S",
+          "lastName": "Pisupati",
+          "firstName": "Sashank",
+          "initials": "S",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-0923-0585"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Cold Spring Harbor Laboratory, Cold Spring Harbor, New York, United States."
+              },
+              {
+                "affiliation": "CSHL School of Biological Sciences, Cold Spring Harbor, New York, United States."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Chartarifsky-Lynn L",
+          "lastName": "Chartarifsky-Lynn",
+          "firstName": "Lital",
+          "initials": "L",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-2446-9842"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Cold Spring Harbor Laboratory, Cold Spring Harbor, New York, United States."
+              },
+              {
+                "affiliation": "CSHL School of Biological Sciences, Cold Spring Harbor, New York, United States."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Khanal A",
+          "lastName": "Khanal",
+          "firstName": "Anup",
+          "initials": "A",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-8929-7984"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Cold Spring Harbor Laboratory, Cold Spring Harbor, New York, United States."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Churchland AK",
+          "lastName": "Churchland",
+          "firstName": "Anne K",
+          "initials": "AK",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-3205-3794"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "University of California, Los Angeles, Los Angeles, United States."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "authorIdList": {
+      "authorId": [
+        {
+          "type": "ORCID",
+          "value": "0000-0002-3205-3794"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0002-8929-7984"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0003-0923-0585"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0003-2446-9842"
+        }
+      ]
+    },
+    "dataLinksTagsList": {
+      "dataLinkstag": [
+        "supporting_data"
+      ]
+    },
+    "journalInfo": {
+      "volume": "10",
+      "journalIssueId": 3083168,
+      "dateOfPublication": "2021 Jan",
+      "monthOfPublication": 1,
+      "yearOfPublication": 2021,
+      "journal": {
+        "medlineAbbreviation": "Elife",
+        "title": "eLife",
+        "essn": "2050-084X",
+        "issn": "2050-084X",
+        "isoabbreviation": "Elife",
+        "nlmid": "101579614"
+      },
+      "printPublicationDate": "2021-01-01"
+    },
+    "pubYear": "2021",
+    "pageInfo": "e55490",
+    "abstractText": "Perceptual decision-makers often display a constant rate of errors independent of evidence strength. These 'lapses' are treated as a nuisance arising from noise tangential to the decision, e.g. inattention or motor errors. Here, we use a multisensory decision task in rats to demonstrate that these explanations cannot account for lapses' stimulus dependence. We propose a novel explanation: lapses reflect a strategic trade-off between exploiting known rewarding actions and exploring uncertain ones. We tested this model's predictions by selectively manipulating one action's reward magnitude or probability. As uniquely predicted by this model, changes were restricted to lapses associated with that action. Finally, we show that lapses are a powerful tool for assigning decision-related computations to neural structures based on disruption experiments (here, posterior striatum and secondary motor cortex). These results suggest that lapses reflect an integral component of decision-making and are informative about action values in normal and disrupted brain states.",
+    "affiliation": "Cold Spring Harbor Laboratory, Cold Spring Harbor, New York, United States.",
+    "publicationStatus": "epublish",
+    "language": "eng",
+    "pubModel": "Electronic",
+    "pubTypeList": {
+      "pubType": [
+        "Research Support, Non-U.S. Gov't",
+        "research-article",
+        "Research Support, U.S. Gov't, Non-P.H.S.",
+        "Journal Article",
+        "Research Support, N.I.H., Extramural"
+      ]
+    },
+    "grantsList": {
+      "grant": [
+        {
+          "agency": "National Institutes of Health",
+          "grantId": "R01 EY022979",
+          "orderIn": 0
+        },
+        {
+          "agency": "NEI NIH HHS",
+          "acronym": "EY",
+          "grantId": "R01 EY022979",
+          "orderIn": 0
+        },
+        {
+          "agency": "Army Research Office",
+          "grantId": "W911NF-16-1-0368",
+          "orderIn": 0
+        }
+      ]
+    },
+    "meshHeadingList": {
+      "meshHeading": [
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Animals"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Rats",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "Y",
+                "abbreviation": "PX",
+                "qualifierName": "psychology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Rats, Long-Evans"
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Uncertainty"
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Cognition"
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Reward"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Perception"
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Decision Making"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Models, Psychological"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Female"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Male"
+        }
+      ]
+    },
+    "keywordList": {
+      "keyword": [
+        "Vision",
+        "Rat",
+        "Neuroscience",
+        "decision-making",
+        "Audition",
+        "Computational Modeling"
+      ]
+    },
+    "subsetList": {
+      "subset": [
+        {
+          "code": "IM",
+          "name": "Index Medicus"
+        }
+      ]
+    },
+    "fullTextUrlList": {
+      "fullTextUrl": [
+        {
+          "availability": "Subscription required",
+          "availabilityCode": "S",
+          "documentStyle": "doi",
+          "site": "DOI",
+          "url": "https://doi.org/10.7554/eLife.55490"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "html",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC7846276"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "pdf",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC7846276?pdf=render"
+        }
+      ]
+    },
+    "commentCorrectionList": {
+      "commentCorrection": [
+        {
+          "source": "PPR",
+          "id": "PPR76658",
+          "type": "Preprint in",
+          "note": "CrossRef Pre-print loader",
+          "orderIn": 10002
+        }
+      ]
+    },
+    "isOpenAccess": "Y",
+    "inEPMC": "Y",
+    "inPMC": "Y",
+    "citedByCount": 110,
+    "hasReferences": "Y",
+    "hasTextMinedTerms": "Y",
+    "hasDbCrossReferences": "N",
+    "hasPDF": "Y",
+    "hasBook": "N",
+    "hasSuppl": "Y",
+    "hasLabsLinks": "Y",
+    "hasData": "Y",
+    "license": "cc by",
+    "authMan": "N",
+    "epmcAuthMan": "N",
+    "nihAuthMan": "N",
+    "hasTMAccessionNumbers": "Y",
+    "tmAccessionTypeList": {
+      "accessionType": [
+        "doi"
+      ]
+    },
+    "dateOfCompletion": "2022-02-03",
+    "dateOfCreation": "2021-01-11",
+    "dateOfRevision": "2022-02-03",
+    "electronicPublicationDate": "2021-01-11",
+    "firstPublicationDate": "2021-01-11",
+    "firstIndexDate": "2021-01-13",
+    "fullTextReceivedDate": "2025-02-04",
+    "hasEvaluations": "N"
+  },
+  {
+    "id": "31264959",
+    "source": "MED",
+    "pmid": "31264959",
+    "pmcid": "PMC6606080",
+    "fullTextIdList": {
+      "fullTextId": [
+        "PMC6606080"
+      ]
+    },
+    "doi": "10.7554/elife.46331",
+    "title": "Choice history biases subsequent evidence accumulation.",
+    "authorString": "Urai AE, de Gee JW, Tsetsos K, Donner TH.",
+    "authorList": {
+      "author": [
+        {
+          "fullName": "Urai AE",
+          "lastName": "Urai",
+          "firstName": "Anne E",
+          "initials": "AE",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0001-5270-6513"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Neurophysiology and Pathophysiology, University Medical Center Hamburg-Eppendorf, Hamburg, Germany."
+              },
+              {
+                "affiliation": "Department of Psychology, University of Amsterdam, Amsterdam, Netherlands."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "de Gee JW",
+          "lastName": "de Gee",
+          "firstName": "Jan Willem",
+          "initials": "JW",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-5875-8282"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Neurophysiology and Pathophysiology, University Medical Center Hamburg-Eppendorf, Hamburg, Germany."
+              },
+              {
+                "affiliation": "Department of Psychology, University of Amsterdam, Amsterdam, Netherlands."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Tsetsos K",
+          "lastName": "Tsetsos",
+          "firstName": "Konstantinos",
+          "initials": "K",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-2709-7634"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Neurophysiology and Pathophysiology, University Medical Center Hamburg-Eppendorf, Hamburg, Germany."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Donner TH",
+          "lastName": "Donner",
+          "firstName": "Tobias H",
+          "initials": "TH",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-7559-6019"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Neurophysiology and Pathophysiology, University Medical Center Hamburg-Eppendorf, Hamburg, Germany."
+              },
+              {
+                "affiliation": "Department of Psychology, University of Amsterdam, Amsterdam, Netherlands."
+              },
+              {
+                "affiliation": "Amsterdam Brain and Cognition, University of Amsterdam, Amsterdam, Netherlands."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "authorIdList": {
+      "authorId": [
+        {
+          "type": "ORCID",
+          "value": "0000-0001-5270-6513"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0002-5875-8282"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0002-7559-6019"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0003-2709-7634"
+        }
+      ]
+    },
+    "dataLinksTagsList": {
+      "dataLinkstag": [
+        "altmetrics",
+        "supporting_data"
+      ]
+    },
+    "journalInfo": {
+      "volume": "8",
+      "journalIssueId": 2832743,
+      "dateOfPublication": "2019 Jul",
+      "monthOfPublication": 7,
+      "yearOfPublication": 2019,
+      "journal": {
+        "medlineAbbreviation": "Elife",
+        "title": "eLife",
+        "essn": "2050-084X",
+        "issn": "2050-084X",
+        "isoabbreviation": "Elife",
+        "nlmid": "101579614"
+      },
+      "printPublicationDate": "2019-07-01"
+    },
+    "pubYear": "2019",
+    "pageInfo": "e46331",
+    "abstractText": "Perceptual choices depend not only on the current sensory input but also on the behavioral context, such as the history of one's own choices. Yet, it remains unknown how such history signals shape the dynamics of later decision formation. In models of decision formation, it is commonly assumed that choice history shifts the starting point of accumulation toward the bound reflecting the previous choice. We here present results that challenge this idea. We fit bounded-accumulation decision models to human perceptual choice data, and estimated bias parameters that depended on observers' previous choices. Across multiple task protocols and sensory modalities, individual history biases in overt behavior were consistently explained by a history-dependent change in the evidence accumulation, rather than in its starting point. Choice history signals thus seem to bias the interpretation of current sensory input, akin to shifting endogenous attention toward (or away from) the previously selected interpretation.",
+    "affiliation": "Department of Neurophysiology and Pathophysiology, University Medical Center Hamburg-Eppendorf, Hamburg, Germany.",
+    "publicationStatus": "epublish",
+    "language": "eng",
+    "pubModel": "Electronic",
+    "pubTypeList": {
+      "pubType": [
+        "Research Support, Non-U.S. Gov't",
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    "grantsList": {
+      "grant": [
+        {
+          "agency": "H2020 Marie Sk\u0142odowska-Curie Actions",
+          "grantId": "658581",
+          "orderIn": 0
+        },
+        {
+          "agency": "Deutsche Forschungsgemeinschaft",
+          "grantId": "SFB 936/Z1",
+          "orderIn": 0
+        },
+        {
+          "agency": "Deutsche Forschungsgemeinschaft",
+          "grantId": "DO 1240/3-1",
+          "orderIn": 0
+        },
+        {
+          "agency": "Deutsche Forschungsgemeinschaft",
+          "grantId": "SFB 936/A7",
+          "orderIn": 0
+        },
+        {
+          "agency": "German Academic Exchange Service London",
+          "grantId": "A/13/70362",
+          "orderIn": 0
+        },
+        {
+          "agency": "Deutsche Forschungsgemeinschaft",
+          "grantId": "DO 1240/2-1",
+          "orderIn": 0
+        }
+      ]
+    },
+    "meshHeadingList": {
+      "meshHeading": [
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Humans"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Behavior"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Decision Making"
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Choice Behavior"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Task Performance and Analysis"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Models, Theoretical"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Computer Simulation"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Adolescent"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Adult"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Female"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Male"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Young Adult"
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Bias"
+        }
+      ]
+    },
+    "keywordList": {
+      "keyword": [
+        "Human",
+        "Neuroscience",
+        "decision-making",
+        "Sequential Sampling Model",
+        "Choice History"
+      ]
+    },
+    "subsetList": {
+      "subset": [
+        {
+          "code": "IM",
+          "name": "Index Medicus"
+        }
+      ]
+    },
+    "fullTextUrlList": {
+      "fullTextUrl": [
+        {
+          "availability": "Subscription required",
+          "availabilityCode": "S",
+          "documentStyle": "doi",
+          "site": "DOI",
+          "url": "https://doi.org/10.7554/eLife.46331"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "html",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC6606080"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "pdf",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC6606080?pdf=render"
+        }
+      ]
+    },
+    "commentCorrectionList": {
+      "commentCorrection": [
+        {
+          "source": "PPR",
+          "id": "PPR19060",
+          "type": "Preprint in",
+          "note": "CrossRef Pre-print loader",
+          "orderIn": 10002
+        }
+      ]
+    },
+    "isOpenAccess": "Y",
+    "inEPMC": "Y",
+    "inPMC": "Y",
+    "citedByCount": 195,
+    "hasReferences": "Y",
+    "hasTextMinedTerms": "Y",
+    "hasDbCrossReferences": "N",
+    "hasPDF": "Y",
+    "hasBook": "N",
+    "hasSuppl": "Y",
+    "hasLabsLinks": "Y",
+    "hasData": "Y",
+    "license": "cc by",
+    "authMan": "N",
+    "epmcAuthMan": "N",
+    "nihAuthMan": "N",
+    "hasTMAccessionNumbers": "Y",
+    "tmAccessionTypeList": {
+      "accessionType": [
+        "doi"
+      ]
+    },
+    "dateOfCompletion": "2020-02-19",
+    "dateOfCreation": "2019-07-03",
+    "dateOfRevision": "2023-10-12",
+    "electronicPublicationDate": "2019-07-02",
+    "firstPublicationDate": "2019-07-02",
+    "firstIndexDate": "2019-07-03",
+    "fullTextReceivedDate": "2025-02-03",
+    "hasEvaluations": "N"
+  },
+  {
+    "id": "30322902",
+    "source": "MED",
+    "pmid": "30322902",
+    "pmcid": "PMC6246883",
+    "fullTextIdList": {
+      "fullTextId": [
+        "PMC6246883"
+      ]
+    },
+    "doi": "10.1523/jneurosci.3478-17.2018",
+    "title": "Visual Evidence Accumulation Guides Decision-Making in Unrestrained Mice.",
+    "authorString": "Odoemene O, Pisupati S, Nguyen H, Churchland AK.",
+    "authorList": {
+      "author": [
+        {
+          "fullName": "Odoemene O",
+          "lastName": "Odoemene",
+          "firstName": "Onyekachi",
+          "initials": "O",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0001-5370-6582"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Watson School of Biological Sciences and."
+              },
+              {
+                "affiliation": "Cold Spring Harbor Laboratory, Cold Spring Harbor, New York 11724."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Pisupati S",
+          "lastName": "Pisupati",
+          "firstName": "Sashank",
+          "initials": "S",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-0923-0585"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Watson School of Biological Sciences and."
+              },
+              {
+                "affiliation": "Cold Spring Harbor Laboratory, Cold Spring Harbor, New York 11724."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Nguyen H",
+          "lastName": "Nguyen",
+          "firstName": "Hien",
+          "initials": "H",
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Cold Spring Harbor Laboratory, Cold Spring Harbor, New York 11724."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Churchland AK",
+          "lastName": "Churchland",
+          "firstName": "Anne K",
+          "initials": "AK",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-3205-3794"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Cold Spring Harbor Laboratory, Cold Spring Harbor, New York 11724 churchland@cshl.edu."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "authorIdList": {
+      "authorId": [
+        {
+          "type": "ORCID",
+          "value": "0000-0001-5370-6582"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0002-3205-3794"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0003-0923-0585"
+        }
+      ]
+    },
+    "dataLinksTagsList": {
+      "dataLinkstag": [
+        "altmetrics",
+        "related_data"
+      ]
+    },
+    "journalInfo": {
+      "issue": "47",
+      "volume": "38",
+      "journalIssueId": 2752410,
+      "dateOfPublication": "2018 Nov",
+      "monthOfPublication": 11,
+      "yearOfPublication": 2018,
+      "journal": {
+        "medlineAbbreviation": "J Neurosci",
+        "title": "The Journal of neuroscience : the official journal of the Society for Neuroscience",
+        "essn": "1529-2401",
+        "issn": "0270-6474",
+        "isoabbreviation": "J Neurosci",
+        "nlmid": "8102140"
+      },
+      "printPublicationDate": "2018-11-01"
+    },
+    "pubYear": "2018",
+    "pageInfo": "10143-10155",
+    "abstractText": "The ability to manipulate neural activity with precision is an asset in uncovering neural circuits for decision-making. Diverse tools for manipulating neurons are available for mice, but their feasibility remains unclear, especially when decisions require accumulating visual evidence. For example, whether mice' decisions reflect leaky accumulation is unknown, as are the relevant/irrelevant factors that influence decisions. Further, causal circuits for visual evidence accumulation are poorly understood. To address this, we measured decisions in mice judging the fluctuating rate of a flash sequence. An initial analysis (>500,000 trials, 29 male and female mice) demonstrated that information throughout the 1000 ms trial influenced choice, with early information most influential. This suggests that information persists in neural circuits for \u223c1000 ms with minimal accumulation leak. Next, in a subset of animals, we probed strategy more extensively and found that although animals were influenced by stimulus rate, they were unable to entirely suppress the influence of stimulus brightness. Finally, we identified anteromedial (AM) visual area via retinotopic mapping and optogenetically inhibited it using JAWS. Light activation biased choices in both injected and uninjected animals, demonstrating that light alone influences behavior. By varying stimulus-response contingency while holding stimulated hemisphere constant, we surmounted this obstacle to demonstrate that AM suppression biases decisions. By leveraging a large dataset to quantitatively characterize decision-making behavior, we establish mice as suitable for neural circuit manipulation studies. Further, by demonstrating that mice accumulate visual evidence, we demonstrate that this strategy for reducing uncertainty in decision-making is used by animals with diverse visual systems.<b>SIGNIFICANCE STATEMENT</b> To connect behaviors to their underlying neural mechanism, a deep understanding of behavioral strategy is needed. This understanding is incomplete for mice. To surmount this, we measured the outcome of >500,000 decisions made by 29 mice trained to judge visual stimuli and performed behavioral/optogenetic manipulations in smaller subsets. Our analyses offer new insights into mice' decision-making strategies and compares them with those of other species. We then disrupted neural activity in a candidate neural structure and examined the effect on decisions. Our findings establish mice as suitable for visual accumulation of evidence decisions. Further, the results highlight similarities in decision-making strategies across very different species.",
+    "affiliation": "Watson School of Biological Sciences and.",
+    "publicationStatus": "ppublish",
+    "language": "eng",
+    "pubModel": "Print-Electronic",
+    "pubTypeList": {
+      "pubType": [
+        "Research Support, Non-U.S. Gov't",
+        "research-article",
+        "Journal Article",
+        "Research Support, N.I.H., Extramural"
+      ]
+    },
+    "grantsList": {
+      "grant": [
+        {
+          "agency": "NIGMS NIH HHS",
+          "acronym": "GM",
+          "grantId": "T32 GM065094",
+          "orderIn": 0
+        },
+        {
+          "agency": "NEI NIH HHS",
+          "acronym": "EY",
+          "grantId": "F31 EY025164",
+          "orderIn": 0
+        },
+        {
+          "agency": "NEI NIH HHS",
+          "acronym": "EY",
+          "grantId": "R01 EY022979",
+          "orderIn": 0
+        }
+      ]
+    },
+    "meshHeadingList": {
+      "meshHeading": [
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Visual Cortex",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "Y",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Animals"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Mice, Inbred C57BL"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Mice, Transgenic"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Mice"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Rats"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Rats, Long-Evans"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Photic Stimulation",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "Y",
+                "abbreviation": "MT",
+                "qualifierName": "methods"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Visual Perception",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "Y",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Decision Making",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "Y",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Reaction Time",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "Y",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Female"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Male"
+        }
+      ]
+    },
+    "keywordList": {
+      "keyword": [
+        "decision-making"
+      ]
+    },
+    "subsetList": {
+      "subset": [
+        {
+          "code": "IM",
+          "name": "Index Medicus"
+        }
+      ]
+    },
+    "fullTextUrlList": {
+      "fullTextUrl": [
+        {
+          "availability": "Free",
+          "availabilityCode": "F",
+          "documentStyle": "pdf",
+          "site": "Unpaywall",
+          "url": "https://www.jneurosci.org/content/jneuro/38/47/10143.full.pdf"
+        },
+        {
+          "availability": "Subscription required",
+          "availabilityCode": "S",
+          "documentStyle": "doi",
+          "site": "DOI",
+          "url": "https://doi.org/10.1523/JNEUROSCI.3478-17.2018"
+        },
+        {
+          "availability": "Free",
+          "availabilityCode": "F",
+          "documentStyle": "html",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC6246883"
+        },
+        {
+          "availability": "Free",
+          "availabilityCode": "F",
+          "documentStyle": "pdf",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC6246883?pdf=render"
+        },
+        {
+          "availability": "Free",
+          "availabilityCode": "F",
+          "documentStyle": "doi",
+          "site": "DOI",
+          "url": "https://doi.org/10.1523/jneurosci.3478-17.2018"
+        }
+      ]
+    },
+    "commentCorrectionList": {
+      "commentCorrection": [
+        {
+          "source": "PPR",
+          "id": "PPR21328",
+          "type": "Preprint in",
+          "note": "CrossRef Pre-print loader",
+          "orderIn": 10002
+        }
+      ]
+    },
+    "isOpenAccess": "N",
+    "inEPMC": "Y",
+    "inPMC": "Y",
+    "citedByCount": 88,
+    "hasReferences": "Y",
+    "hasTextMinedTerms": "Y",
+    "hasDbCrossReferences": "N",
+    "hasPDF": "Y",
+    "hasBook": "N",
+    "hasSuppl": "N",
+    "hasLabsLinks": "Y",
+    "hasData": "Y",
+    "license": "cc by-nc-sa",
+    "authMan": "N",
+    "epmcAuthMan": "N",
+    "nihAuthMan": "N",
+    "hasTMAccessionNumbers": "N",
+    "dateOfCompletion": "2019-10-10",
+    "dateOfCreation": "2018-10-17",
+    "dateOfRevision": "2020-03-09",
+    "electronicPublicationDate": "2018-10-15",
+    "firstPublicationDate": "2018-10-15",
+    "firstIndexDate": "2018-10-16",
+    "fullTextReceivedDate": "2025-02-03",
+    "embargoDate": "2019-05-21",
+    "hasEvaluations": "N"
+  },
+  {
+    "id": "30406190",
+    "source": "MED",
+    "pmid": "30406190",
+    "pmcid": "PMC6220584",
+    "fullTextIdList": {
+      "fullTextId": [
+        "PMC6220584"
+      ]
+    },
+    "doi": "10.1523/eneuro.0169-18.2018",
+    "title": "Strategic and Dynamic Temporal Weighting for Perceptual Decisions in Humans and Macaques.",
+    "authorString": "Levi AJ, Yates JL, Huk AC, Katz LN.",
+    "authorList": {
+      "author": [
+        {
+          "fullName": "Levi AJ",
+          "lastName": "Levi",
+          "firstName": "Aaron J",
+          "initials": "AJ",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0001-9297-2621"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Neuroscience, the University of Texas at Austin, Austin, Texas."
+              },
+              {
+                "affiliation": "Department of Psychology, The University of Texas at Austin, Austin, Texas."
+              },
+              {
+                "affiliation": "Center for Perceptual Systems, The University of Texas at Austin, Austin, Texas."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Yates JL",
+          "lastName": "Yates",
+          "firstName": "Jacob L",
+          "initials": "JL",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0001-8322-5982"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Neuroscience, the University of Texas at Austin, Austin, Texas."
+              },
+              {
+                "affiliation": "Department of Psychology, The University of Texas at Austin, Austin, Texas."
+              },
+              {
+                "affiliation": "Center for Perceptual Systems, The University of Texas at Austin, Austin, Texas."
+              },
+              {
+                "affiliation": "Center for Visual Science, University of Rochester, Rochester, New York."
+              },
+              {
+                "affiliation": "Department of Brain and Cognitive Sciences, University of Rochester, Rochester, New York."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Huk AC",
+          "lastName": "Huk",
+          "firstName": "Alexander C",
+          "initials": "AC",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-1430-6935"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Neuroscience, the University of Texas at Austin, Austin, Texas."
+              },
+              {
+                "affiliation": "Department of Psychology, The University of Texas at Austin, Austin, Texas."
+              },
+              {
+                "affiliation": "Center for Perceptual Systems, The University of Texas at Austin, Austin, Texas."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Katz LN",
+          "lastName": "Katz",
+          "firstName": "Leor N",
+          "initials": "LN",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-2742-6533"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Neuroscience, the University of Texas at Austin, Austin, Texas."
+              },
+              {
+                "affiliation": "Department of Psychology, The University of Texas at Austin, Austin, Texas."
+              },
+              {
+                "affiliation": "Center for Perceptual Systems, The University of Texas at Austin, Austin, Texas."
+              },
+              {
+                "affiliation": "Laboratory of Sensorimotor Research, National Eye Institute, National Institutes of Health, Bethesda, Maryland."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "authorIdList": {
+      "authorId": [
+        {
+          "type": "ORCID",
+          "value": "0000-0001-8322-5982"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0001-9297-2621"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0002-2742-6533"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0003-1430-6935"
+        }
+      ]
+    },
+    "dataLinksTagsList": {
+      "dataLinkstag": [
+        "altmetrics"
+      ]
+    },
+    "journalInfo": {
+      "issue": "5",
+      "volume": "5",
+      "journalIssueId": 2725984,
+      "dateOfPublication": "2018 Sep-Oct",
+      "monthOfPublication": 0,
+      "yearOfPublication": 2018,
+      "journal": {
+        "medlineAbbreviation": "eNeuro",
+        "title": "eNeuro",
+        "essn": "2373-2822",
+        "issn": "2373-2822",
+        "isoabbreviation": "eNeuro",
+        "nlmid": "101647362"
+      },
+      "printPublicationDate": "2018-09-01"
+    },
+    "pubYear": "2018",
+    "pageInfo": "ENEURO.0169-18.2018",
+    "abstractText": "Perceptual decision-making is often modeled as the accumulation of sensory evidence over time. Recent studies using psychophysical reverse correlation have shown that even though the sensory evidence is stationary over time, subjects may exhibit a time-varying weighting strategy, weighting some stimulus epochs more heavily than others. While previous work has explained time-varying weighting as a consequence of static decision mechanisms (e.g., decision bound or leak), here we show that time-varying weighting can reflect strategic adaptation to stimulus statistics, and thus can readily take a number of forms. We characterized the temporal weighting strategies of humans and macaques performing a motion discrimination task in which the amount of information carried by the motion stimulus was manipulated over time. Both species could adapt their temporal weighting strategy to match the time-varying statistics of the sensory stimulus. When early stimulus epochs had higher mean motion strength than late, subjects adopted a pronounced early weighting strategy, where early information was weighted more heavily in guiding perceptual decisions. When the mean motion strength was greater in later stimulus epochs, in contrast, subjects shifted to a marked late weighting strategy. These results demonstrate that perceptual decisions involve a temporally flexible weighting process in both humans and monkeys, and introduce a paradigm with which to manipulate sensory weighting in decision-making tasks.",
+    "affiliation": "Department of Neuroscience, the University of Texas at Austin, Austin, Texas.",
+    "publicationStatus": "epublish",
+    "language": "eng",
+    "pubModel": "Electronic-eCollection",
+    "pubTypeList": {
+      "pubType": [
+        "Research Support, Non-U.S. Gov't",
+        "research-article",
+        "Journal Article",
+        "Research Support, N.I.H., Extramural"
+      ]
+    },
+    "grantsList": {
+      "grant": [
+        {
+          "agency": "NIDA NIH HHS",
+          "acronym": "DA",
+          "grantId": "T32 DA018926",
+          "orderIn": 0
+        },
+        {
+          "agency": "NEI NIH HHS",
+          "acronym": "EY",
+          "grantId": "T32 EY021462",
+          "orderIn": 0
+        },
+        {
+          "agency": "Howard Hughes Medical Institute",
+          "acronym": "HHMI",
+          "orderIn": 0
+        },
+        {
+          "agency": "NEI NIH HHS",
+          "acronym": "EY",
+          "grantId": "R01 EY017366",
+          "orderIn": 0
+        }
+      ]
+    },
+    "meshHeadingList": {
+      "meshHeading": [
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Animals"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Macaca"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Humans"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Photic Stimulation",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "MT",
+                "qualifierName": "methods"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Behavior",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "Y",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Behavior, Animal",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "Y",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Visual Perception",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Motion Perception",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "Y",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Decision Making",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "Y",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Reaction Time"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Psychophysics"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Adolescent"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Child"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Female"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Male"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Discrimination, Psychological",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "Y",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "keywordList": {
+      "keyword": [
+        "Decision Making",
+        "Psychophysics",
+        "Reverse Correlation",
+        "Perceptual Decisions",
+        "Temporal Weighting"
+      ]
+    },
+    "subsetList": {
+      "subset": [
+        {
+          "code": "IM",
+          "name": "Index Medicus"
+        }
+      ]
+    },
+    "fullTextUrlList": {
+      "fullTextUrl": [
+        {
+          "availability": "Subscription required",
+          "availabilityCode": "S",
+          "documentStyle": "doi",
+          "site": "DOI",
+          "url": "https://doi.org/10.1523/ENEURO.0169-18.2018"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "html",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC6220584"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "pdf",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC6220584?pdf=render"
+        }
+      ]
+    },
+    "isOpenAccess": "Y",
+    "inEPMC": "Y",
+    "inPMC": "Y",
+    "citedByCount": 27,
+    "hasReferences": "Y",
+    "hasTextMinedTerms": "Y",
+    "hasDbCrossReferences": "N",
+    "hasPDF": "Y",
+    "hasBook": "N",
+    "hasSuppl": "N",
+    "hasLabsLinks": "Y",
+    "hasData": "N",
+    "license": "cc by",
+    "authMan": "N",
+    "epmcAuthMan": "N",
+    "nihAuthMan": "N",
+    "hasTMAccessionNumbers": "N",
+    "dateOfCompletion": "2019-04-19",
+    "dateOfCreation": "2018-11-09",
+    "dateOfRevision": "2019-12-10",
+    "electronicPublicationDate": "2018-10-15",
+    "firstPublicationDate": "2018-09-01",
+    "firstIndexDate": "2018-11-09",
+    "fullTextReceivedDate": "2025-02-03",
+    "hasEvaluations": "N"
+  },
+  {
+    "id": "30154467",
+    "source": "MED",
+    "pmid": "30154467",
+    "pmcid": "PMC6113286",
+    "fullTextIdList": {
+      "fullTextId": [
+        "PMC6113286"
+      ]
+    },
+    "doi": "10.1038/s41467-018-05797-y",
+    "title": "Psychophysical reverse correlation reflects both sensory and decision-making processes.",
+    "authorString": "Okazawa G, Sha L, Purcell BA, Kiani R.",
+    "authorList": {
+      "author": [
+        {
+          "fullName": "Okazawa G",
+          "lastName": "Okazawa",
+          "firstName": "Gouki",
+          "initials": "G",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-1134-869X"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Center for Neural Science, New York University, New York, NY, 10003, USA."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Sha L",
+          "lastName": "Sha",
+          "firstName": "Long",
+          "initials": "L",
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Center for Neural Science, New York University, New York, NY, 10003, USA."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Purcell BA",
+          "lastName": "Purcell",
+          "firstName": "Braden A",
+          "initials": "BA",
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Center for Neural Science, New York University, New York, NY, 10003, USA."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Kiani R",
+          "lastName": "Kiani",
+          "firstName": "Roozbeh",
+          "initials": "R",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-0614-6791"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Center for Neural Science, New York University, New York, NY, 10003, USA. roozbeh@nyu.edu."
+              },
+              {
+                "affiliation": "Department of Psychology, New York University, New York, NY, 10003, USA. roozbeh@nyu.edu."
+              },
+              {
+                "affiliation": "Neuroscience Institute, NYU Langone Medical Center, New York, NY, 10016, USA. roozbeh@nyu.edu."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "authorIdList": {
+      "authorId": [
+        {
+          "type": "ORCID",
+          "value": "0000-0002-1134-869X"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0003-0614-6791"
+        }
+      ]
+    },
+    "dataLinksTagsList": {
+      "dataLinkstag": [
+        "supporting_data"
+      ]
+    },
+    "journalInfo": {
+      "issue": "1",
+      "volume": "9",
+      "journalIssueId": 2711895,
+      "dateOfPublication": "2018 Aug",
+      "monthOfPublication": 8,
+      "yearOfPublication": 2018,
+      "journal": {
+        "medlineAbbreviation": "Nat Commun",
+        "title": "Nature communications",
+        "essn": "2041-1723",
+        "issn": "2041-1723",
+        "isoabbreviation": "Nat Commun",
+        "nlmid": "101528555"
+      },
+      "printPublicationDate": "2018-08-01"
+    },
+    "pubYear": "2018",
+    "pageInfo": "3479",
+    "abstractText": "Goal-directed behavior depends on both sensory mechanisms that gather information from the outside world and decision-making mechanisms that select appropriate behavior based on that sensory information. Psychophysical reverse correlation is commonly used to quantify how fluctuations of sensory stimuli influence behavior and is generally believed to uncover the spatiotemporal weighting functions of sensory processes. Here we show that reverse correlations also reflect decision-making processes and can deviate significantly from the true sensory filters. Specifically, changes of decision bound and mechanisms of evidence integration systematically alter psychophysical reverse correlations. Similarly, trial-to-trial variability of sensory and motor delays and decision times causes systematic distortions in psychophysical kernels that should not be attributed to sensory mechanisms. We show that ignoring details of the decision-making process results in misinterpretation of reverse correlations, but proper use of these details turns reverse correlation into a powerful method for studying both sensory and decision-making mechanisms.",
+    "affiliation": "Center for Neural Science, New York University, New York, NY, 10003, USA.",
+    "publicationStatus": "epublish",
+    "language": "eng",
+    "pubModel": "Electronic",
+    "pubTypeList": {
+      "pubType": [
+        "Research Support, Non-U.S. Gov't",
+        "research-article",
+        "Journal Article",
+        "Research Support, N.I.H., Extramural"
+      ]
+    },
+    "grantsList": {
+      "grant": [
+        {
+          "agency": "Japan Society for the Promotion of Science",
+          "grantId": "JSPS Postdoctoral Fellowship for Research Abroad",
+          "orderIn": 0
+        },
+        {
+          "agency": "McKnight Foundation",
+          "grantId": "McKnight Scholar Awards",
+          "orderIn": 0
+        },
+        {
+          "agency": "U.S. Department of Health &amp; Human Services | National Institutes of Health (NIH)",
+          "grantId": "R90-1R90DA043849",
+          "orderIn": 0
+        },
+        {
+          "agency": "U.S. Department of Health &amp; Human Services | National Institutes of Health",
+          "grantId": "R90-1R90DA043849",
+          "orderIn": 0
+        },
+        {
+          "agency": "U.S. Department of Health &amp; Human Services | National Institutes of Health",
+          "grantId": "R01-MH109180",
+          "orderIn": 0
+        },
+        {
+          "agency": "Simons Foundation",
+          "grantId": "Simons Collaboration on the Global Brain",
+          "orderIn": 0
+        },
+        {
+          "agency": "Alfred P. Sloan Foundation",
+          "grantId": "Sloan Research Fellowships",
+          "orderIn": 0
+        },
+        {
+          "agency": "NIMH NIH HHS",
+          "acronym": "MH",
+          "grantId": "R01 MH109180",
+          "orderIn": 0
+        },
+        {
+          "agency": "Japan Society for the Promotion of Science (JSPS)",
+          "grantId": "JSPS Postdoctoral Fellowship for Research Abroad",
+          "orderIn": 0
+        },
+        {
+          "agency": "NEI NIH HHS",
+          "acronym": "EY",
+          "grantId": "P30 EY013079",
+          "orderIn": 0
+        },
+        {
+          "agency": "NIDA NIH HHS",
+          "acronym": "DA",
+          "grantId": "R90 DA043849",
+          "orderIn": 0
+        },
+        {
+          "agency": "U.S. Department of Health &amp; Human Services | National Institutes of Health (NIH)",
+          "grantId": "R01-MH109180",
+          "orderIn": 0
+        },
+        {
+          "agency": "Charles H. Revson Foundation",
+          "grantId": "Senior Fellowship in Biomedical Science",
+          "orderIn": 0
+        }
+      ]
+    },
+    "meshHeadingList": {
+      "meshHeading": [
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Humans"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Cognition",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Auditory Perception",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Decision Making"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Psychomotor Performance",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Psychophysics",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "Y",
+                "abbreviation": "MT",
+                "qualifierName": "methods"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Models, Neurological"
+        }
+      ]
+    },
+    "subsetList": {
+      "subset": [
+        {
+          "code": "IM",
+          "name": "Index Medicus"
+        }
+      ]
+    },
+    "fullTextUrlList": {
+      "fullTextUrl": [
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "pdf",
+          "site": "Unpaywall",
+          "url": "https://www.nature.com/articles/s41467-018-05797-y.pdf"
+        },
+        {
+          "availability": "Subscription required",
+          "availabilityCode": "S",
+          "documentStyle": "doi",
+          "site": "DOI",
+          "url": "https://doi.org/10.1038/s41467-018-05797-y"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "html",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC6113286"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "pdf",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC6113286?pdf=render"
+        }
+      ]
+    },
+    "commentCorrectionList": {
+      "commentCorrection": [
+        {
+          "source": "PPR",
+          "id": "PPR12451",
+          "type": "Preprint in",
+          "note": "CrossRef Pre-print loader",
+          "orderIn": 10002
+        }
+      ]
+    },
+    "isOpenAccess": "Y",
+    "inEPMC": "Y",
+    "inPMC": "Y",
+    "citedByCount": 74,
+    "hasReferences": "Y",
+    "hasTextMinedTerms": "Y",
+    "hasDbCrossReferences": "N",
+    "hasPDF": "Y",
+    "hasBook": "N",
+    "hasSuppl": "Y",
+    "hasLabsLinks": "Y",
+    "hasData": "Y",
+    "license": "cc by",
+    "authMan": "N",
+    "epmcAuthMan": "N",
+    "nihAuthMan": "N",
+    "hasTMAccessionNumbers": "N",
+    "dateOfCompletion": "2018-12-17",
+    "dateOfCreation": "2018-08-30",
+    "dateOfRevision": "2024-11-12",
+    "electronicPublicationDate": "2018-08-28",
+    "firstPublicationDate": "2018-08-28",
+    "firstIndexDate": "2018-08-29",
+    "fullTextReceivedDate": "2025-02-05",
+    "hasEvaluations": "N"
+  },
+  {
+    "id": "27882927",
+    "source": "MED",
+    "pmid": "27882927",
+    "pmcid": "PMC5123079",
+    "fullTextIdList": {
+      "fullTextId": [
+        "PMC5123079"
+      ]
+    },
+    "doi": "10.1038/ncomms13526",
+    "title": "Global gain modulation generates time-dependent urgency during perceptual choice in humans.",
+    "authorString": "Murphy PR, Boonstra E, Nieuwenhuis S.",
+    "authorList": {
+      "author": [
+        {
+          "fullName": "Murphy PR",
+          "lastName": "Murphy",
+          "firstName": "Peter R",
+          "initials": "PR",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-1963-185X"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Institute of Psychology and Leiden Institute for Brain and Cognition, Leiden University, 2333 AK Leiden, The Netherlands."
+              },
+              {
+                "affiliation": "Department of Neurophysiology and Pathophysiology, University Medical Center Hamburg-Eppendorf, 20246 Hamburg, Germany."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Boonstra E",
+          "lastName": "Boonstra",
+          "firstName": "Evert",
+          "initials": "E",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-1579-4088"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Institute of Psychology and Leiden Institute for Brain and Cognition, Leiden University, 2333 AK Leiden, The Netherlands."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Nieuwenhuis S",
+          "lastName": "Nieuwenhuis",
+          "firstName": "Sander",
+          "initials": "S",
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Institute of Psychology and Leiden Institute for Brain and Cognition, Leiden University, 2333 AK Leiden, The Netherlands."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "authorIdList": {
+      "authorId": [
+        {
+          "type": "ORCID",
+          "value": "0000-0003-1579-4088"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0003-1963-185X"
+        }
+      ]
+    },
+    "dataLinksTagsList": {
+      "dataLinkstag": [
+        "altmetrics",
+        "supporting_data"
+      ]
+    },
+    "journalInfo": {
+      "volume": "7",
+      "journalIssueId": 2483847,
+      "dateOfPublication": "2016 Nov",
+      "monthOfPublication": 11,
+      "yearOfPublication": 2016,
+      "journal": {
+        "medlineAbbreviation": "Nat Commun",
+        "title": "Nature communications",
+        "essn": "2041-1723",
+        "issn": "2041-1723",
+        "isoabbreviation": "Nat Commun",
+        "nlmid": "101528555"
+      },
+      "printPublicationDate": "2016-11-01"
+    },
+    "pubYear": "2016",
+    "pageInfo": "13526",
+    "abstractText": "Decision-makers must often balance the desire to accumulate information with the costs of protracted deliberation. Optimal, reward-maximizing decision-making can require dynamic adjustment of this speed/accuracy trade-off over the course of a single decision. However, it is unclear whether humans are capable of such time-dependent adjustments. Here, we identify several signatures of time-dependency in human perceptual decision-making and highlight their possible neural source. Behavioural and model-based analyses reveal that subjects respond to deadline-induced speed pressure by lowering their criterion on accumulated perceptual evidence as the deadline approaches. In the brain, this effect is reflected in evidence-independent urgency that pushes decision-related motor preparation signals closer to a fixed threshold. Moreover, we show that global modulation of neural gain, as indexed by task-related fluctuations in pupil diameter, is a plausible biophysical mechanism for the generation of this urgency. These findings establish context-sensitive time-dependency as a critical feature of human decision-making.",
+    "affiliation": "Institute of Psychology and Leiden Institute for Brain and Cognition, Leiden University, 2333 AK Leiden, The Netherlands.",
+    "publicationStatus": "epublish",
+    "language": "eng",
+    "pubModel": "Electronic",
+    "pubTypeList": {
+      "pubType": [
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    "meshHeadingList": {
+      "meshHeading": [
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Brain",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "Y",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Humans"
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Reward"
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Perception"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Decision Making",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Choice Behavior",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "Y",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Time Factors"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Adult"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Female"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Male"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Young Adult"
+        }
+      ]
+    },
+    "subsetList": {
+      "subset": [
+        {
+          "code": "IM",
+          "name": "Index Medicus"
+        }
+      ]
+    },
+    "fullTextUrlList": {
+      "fullTextUrl": [
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "pdf",
+          "site": "Unpaywall",
+          "url": "https://www.nature.com/articles/ncomms13526.pdf"
+        },
+        {
+          "availability": "Subscription required",
+          "availabilityCode": "S",
+          "documentStyle": "doi",
+          "site": "DOI",
+          "url": "https://doi.org/10.1038/ncomms13526"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "html",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC5123079"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "pdf",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC5123079?pdf=render"
+        }
+      ]
+    },
+    "commentCorrectionList": {
+      "commentCorrection": [
+        {
+          "source": "MED",
+          "id": "28098163",
+          "reference": "Nat Commun. 2017 Jan 18;8:14299. doi: 10.1038/ncomms14299",
+          "type": "Erratum in",
+          "orderIn": 1
+        }
+      ]
+    },
+    "isOpenAccess": "Y",
+    "inEPMC": "Y",
+    "inPMC": "Y",
+    "citedByCount": 168,
+    "hasReferences": "Y",
+    "hasTextMinedTerms": "Y",
+    "hasDbCrossReferences": "N",
+    "hasPDF": "Y",
+    "hasBook": "N",
+    "hasSuppl": "Y",
+    "hasLabsLinks": "Y",
+    "hasData": "Y",
+    "license": "cc by",
+    "authMan": "N",
+    "epmcAuthMan": "N",
+    "nihAuthMan": "N",
+    "hasTMAccessionNumbers": "N",
+    "dateOfCompletion": "2018-09-24",
+    "dateOfCreation": "2016-11-25",
+    "dateOfRevision": "2020-04-28",
+    "electronicPublicationDate": "2016-11-24",
+    "firstPublicationDate": "2016-11-24",
+    "firstIndexDate": "2016-11-25",
+    "fullTextReceivedDate": "2020-07-09",
+    "hasEvaluations": "N"
+  },
+  {
+    "id": "26853360",
+    "source": "MED",
+    "pmid": "26853360",
+    "doi": "10.1016/j.cub.2015.12.049",
+    "title": "Target Selection Signals Influence Perceptual Decisions by Modulating the Onset and Rate of Evidence Accumulation.",
+    "authorString": "Loughnane GM, Newman DP, Bellgrove MA, Lalor EC, Kelly SP, Kelly SP, O'Connell RG.",
+    "authorList": {
+      "author": [
+        {
+          "fullName": "Loughnane GM",
+          "lastName": "Loughnane",
+          "firstName": "Gerard M",
+          "initials": "GM",
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Trinity College Institute of Neuroscience, Trinity College Dublin, Dublin 2, Ireland; Trinity Centre for Bioengineering, Trinity College Dublin, Dublin 2, Ireland. Electronic address: loughnag@tcd.ie."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Newman DP",
+          "lastName": "Newman",
+          "firstName": "Daniel P",
+          "initials": "DP",
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "School of Psychological Sciences and Monash Institute for Cognitive and Clinical Neurosciences (MICCN), Monash University, Melbourne, VIC 3800, Australia."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Bellgrove MA",
+          "lastName": "Bellgrove",
+          "firstName": "Mark A",
+          "initials": "MA",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-0186-8349"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "School of Psychological Sciences and Monash Institute for Cognitive and Clinical Neurosciences (MICCN), Monash University, Melbourne, VIC 3800, Australia."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Lalor EC",
+          "lastName": "Lalor",
+          "firstName": "Edmund C",
+          "initials": "EC",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-2498-6631"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Trinity College Institute of Neuroscience, Trinity College Dublin, Dublin 2, Ireland; Trinity Centre for Bioengineering, Trinity College Dublin, Dublin 2, Ireland; School of Engineering, Trinity College Dublin, Dublin 2, Ireland."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Kelly SP",
+          "lastName": "Kelly",
+          "firstName": "Simon P",
+          "initials": "SP",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0001-9983-3595"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "School of Electrical and Electronic Engineering, University College Dublin, Dublin 4, Ireland."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Kelly SP",
+          "lastName": "Kelly",
+          "firstName": "Simon P",
+          "initials": "SP",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-4981-3099"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "School of Electrical and Electronic Engineering, University College Dublin, Dublin 4, Ireland."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "O'Connell RG",
+          "lastName": "O'Connell",
+          "firstName": "Redmond G",
+          "initials": "RG",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0001-6949-2793"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Trinity College Institute of Neuroscience, Trinity College Dublin, Dublin 2, Ireland; School of Psychology, Trinity College Dublin, Dublin 2, Ireland."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "authorIdList": {
+      "authorId": [
+        {
+          "type": "ORCID",
+          "value": "0000-0001-6949-2793"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0001-9983-3595"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0002-2498-6631"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0003-0186-8349"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0003-4981-3099"
+        }
+      ]
+    },
+    "journalInfo": {
+      "issue": "4",
+      "volume": "26",
+      "journalIssueId": 2377870,
+      "dateOfPublication": "2016 Feb",
+      "monthOfPublication": 2,
+      "yearOfPublication": 2016,
+      "journal": {
+        "medlineAbbreviation": "Curr Biol",
+        "title": "Current biology : CB",
+        "essn": "1879-0445",
+        "issn": "0960-9822",
+        "isoabbreviation": "Curr Biol",
+        "nlmid": "9107782"
+      },
+      "printPublicationDate": "2016-02-01"
+    },
+    "pubYear": "2016",
+    "pageInfo": "496-502",
+    "abstractText": "Computational and neurophysiological research has highlighted neural processes that accumulate sensory evidence for perceptual decisions. These processes have been studied in the context of highly simplified perceptual discrimination paradigms in which the physical evidence appears at times and locations that are either entirely predictable or exogenously cued (e.g., by the onset of the stimulus itself). Yet, we are rarely afforded such certainty in everyday life. For example, when driving along a busy motorway, we must continually monitor the movements of surrounding vehicles for events that call for a lane change. In such scenarios, it is unknown which of the continuously present information sources will become relevant or when. Although it is well established that evidence integration provides an effective mechanism for countering the impact of noise, the question of how this mechanism is implemented in the face of uncertain evidence onsets has yet to be answered. Here, we show that when monitoring two potential sources of information for evidence occurring unpredictably in both time and space, the human brain employs discrete, early target selection signals that significantly modulate the onset and rate of neural evidence accumulation, and thereby the timing and accuracy of perceptual reports. These selection signals share many of the key characteristics of the N2pc component highlighted in the literature on visual search yet are present even in the absence of distractors and under situations of low temporal and spatial uncertainty. These data provide novel insights into how target selection supports decision making in uncertain environments.",
+    "affiliation": "Trinity College Institute of Neuroscience, Trinity College Dublin, Dublin 2, Ireland; Trinity Centre for Bioengineering, Trinity College Dublin, Dublin 2, Ireland. Electronic address: loughnag@tcd.ie.",
+    "publicationStatus": "ppublish",
+    "language": "eng",
+    "pubModel": "Print-Electronic",
+    "pubTypeList": {
+      "pubType": [
+        "Research Support, Non-U.S. Gov't",
+        "Research Support, U.S. Gov't, Non-P.H.S.",
+        "Journal Article"
+      ]
+    },
+    "grantsList": {
+      "grant": [
+        {
+          "agency": "United States National Science Foundation",
+          "grantId": "BCS-1358955",
+          "orderIn": 0
+        },
+        {
+          "agency": "Science Foundation Ireland",
+          "grantId": "09-RFP-NES2382",
+          "orderIn": 0
+        },
+        {
+          "agency": "Australian Research Council",
+          "grantId": "DP 150100986",
+          "orderIn": 0
+        },
+        {
+          "agency": "Australian Research Council",
+          "grantId": "FT130101488",
+          "orderIn": 0
+        },
+        {
+          "agency": "European Research Council",
+          "acronym": "ERC_",
+          "grantId": "63829",
+          "orderIn": 0
+        }
+      ]
+    },
+    "meshHeadingList": {
+      "meshHeading": [
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Brain",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "Y",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Humans"
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Uncertainty"
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Visual Perception"
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Decision Making"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Adolescent"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Adult"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Female"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Male"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Young Adult"
+        }
+      ]
+    },
+    "subsetList": {
+      "subset": [
+        {
+          "code": "IM",
+          "name": "Index Medicus"
+        }
+      ]
+    },
+    "fullTextUrlList": {
+      "fullTextUrl": [
+        {
+          "availability": "Subscription required",
+          "availabilityCode": "S",
+          "documentStyle": "doi",
+          "site": "DOI",
+          "url": "https://doi.org/10.1016/j.cub.2015.12.049"
+        }
+      ]
+    },
+    "isOpenAccess": "N",
+    "inEPMC": "N",
+    "inPMC": "N",
+    "citedByCount": 97,
+    "hasReferences": "Y",
+    "hasTextMinedTerms": "Y",
+    "hasDbCrossReferences": "N",
+    "hasPDF": "N",
+    "hasBook": "N",
+    "hasSuppl": "N",
+    "hasLabsLinks": "N",
+    "hasData": "N",
+    "authMan": "N",
+    "epmcAuthMan": "N",
+    "nihAuthMan": "N",
+    "hasTMAccessionNumbers": "N",
+    "dateOfCompletion": "2016-12-13",
+    "dateOfCreation": "2016-02-09",
+    "dateOfRevision": "2016-12-30",
+    "electronicPublicationDate": "2016-02-04",
+    "firstPublicationDate": "2016-02-04",
+    "firstIndexDate": "2016-02-09",
+    "hasEvaluations": "N"
+  },
+  {
+    "id": "25232732",
+    "source": "MED",
+    "pmid": "25232732",
+    "pmcid": "PMC4168983",
+    "fullTextIdList": {
+      "fullTextId": [
+        "PMC4168983"
+      ]
+    },
+    "doi": "10.1371/journal.pcbi.1003854",
+    "title": "Pupil-linked arousal determines variability in perceptual decision making.",
+    "authorString": "Murphy PR, Vandekerckhove J, Nieuwenhuis S.",
+    "authorList": {
+      "author": [
+        {
+          "fullName": "Murphy PR",
+          "lastName": "Murphy",
+          "firstName": "Peter R",
+          "initials": "PR",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-1963-185X"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Psychology and Leiden Institute for Brain and Cognition, Leiden University, Leiden, The Netherlands."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Vandekerckhove J",
+          "lastName": "Vandekerckhove",
+          "firstName": "Joachim",
+          "initials": "J",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-2600-5937"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Cognitive Sciences, University of California, Irvine, Irvine, California, United States of America."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Nieuwenhuis S",
+          "lastName": "Nieuwenhuis",
+          "firstName": "Sander",
+          "initials": "S",
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Psychology and Leiden Institute for Brain and Cognition, Leiden University, Leiden, The Netherlands."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "authorIdList": {
+      "authorId": [
+        {
+          "type": "ORCID",
+          "value": "0000-0003-1963-185X"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0003-2600-5937"
+        }
+      ]
+    },
+    "dataLinksTagsList": {
+      "dataLinkstag": [
+        "altmetrics",
+        "supporting_data",
+        "related_data"
+      ]
+    },
+    "journalInfo": {
+      "issue": "9",
+      "volume": "10",
+      "journalIssueId": 2197366,
+      "dateOfPublication": "2014 Sep",
+      "monthOfPublication": 9,
+      "yearOfPublication": 2014,
+      "journal": {
+        "medlineAbbreviation": "PLoS Comput Biol",
+        "title": "PLoS computational biology",
+        "essn": "1553-7358",
+        "issn": "1553-734X",
+        "isoabbreviation": "PLoS Comput Biol",
+        "nlmid": "101238922"
+      },
+      "printPublicationDate": "2014-09-01"
+    },
+    "pubYear": "2014",
+    "pageInfo": "e1003854",
+    "abstractText": "Decision making between several alternatives is thought to involve the gradual accumulation of evidence in favor of each available choice. This process is profoundly variable even for nominally identical stimuli, yet the neuro-cognitive substrates that determine the magnitude of this variability are poorly understood. Here, we demonstrate that arousal state is a powerful determinant of variability in perceptual decision making. We measured pupil size, a highly sensitive index of arousal, while human subjects performed a motion-discrimination task, and decomposed task behavior into latent decision making parameters using an established computational model of the decision process. In direct contrast to previous theoretical accounts specifying a role for arousal in several discrete aspects of decision making, we found that pupil diameter was uniquely related to a model parameter representing variability in the rate of decision evidence accumulation: Periods of increased pupil size, reflecting heightened arousal, were characterized by greater variability in accumulation rate. Pupil diameter also correlated trial-by-trial with specific patterns of behavior that collectively are diagnostic of changing accumulation rate variability, and explained substantial individual differences in this computational quantity. These findings provide a uniquely clear account of how arousal state impacts decision making, and may point to a relationship between pupil-linked neuromodulation and behavioral variability. They also pave the way for future studies aimed at augmenting the precision with which people make decisions.",
+    "affiliation": "Department of Psychology and Leiden Institute for Brain and Cognition, Leiden University, Leiden, The Netherlands.",
+    "publicationStatus": "epublish",
+    "language": "eng",
+    "pubModel": "Electronic-eCollection",
+    "pubTypeList": {
+      "pubType": [
+        "Research Support, Non-U.S. Gov't",
+        "research-article",
+        "Research Support, U.S. Gov't, Non-P.H.S.",
+        "Journal Article"
+      ]
+    },
+    "meshHeadingList": {
+      "meshHeading": [
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Pupil",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "Y",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Humans"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Choice Behavior",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "Y",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Task Performance and Analysis"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Arousal",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "Y",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Computational Biology"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Computer Simulation"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Adolescent"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Adult"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Female"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Male"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Young Adult"
+        }
+      ]
+    },
+    "subsetList": {
+      "subset": [
+        {
+          "code": "IM",
+          "name": "Index Medicus"
+        }
+      ]
+    },
+    "fullTextUrlList": {
+      "fullTextUrl": [
+        {
+          "availability": "Subscription required",
+          "availabilityCode": "S",
+          "documentStyle": "doi",
+          "site": "DOI",
+          "url": "https://doi.org/10.1371/journal.pcbi.1003854"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "html",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC4168983"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "pdf",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC4168983?pdf=render"
+        }
+      ]
+    },
+    "isOpenAccess": "Y",
+    "inEPMC": "Y",
+    "inPMC": "Y",
+    "citedByCount": 138,
+    "hasReferences": "Y",
+    "hasTextMinedTerms": "Y",
+    "hasDbCrossReferences": "N",
+    "hasPDF": "Y",
+    "hasBook": "N",
+    "hasSuppl": "Y",
+    "hasLabsLinks": "Y",
+    "hasData": "Y",
+    "license": "cc by",
+    "authMan": "N",
+    "epmcAuthMan": "N",
+    "nihAuthMan": "N",
+    "hasTMAccessionNumbers": "N",
+    "dateOfCompletion": "2015-11-30",
+    "dateOfCreation": "2014-09-19",
+    "dateOfRevision": "2021-10-21",
+    "electronicPublicationDate": "2014-09-18",
+    "firstPublicationDate": "2014-09-18",
+    "firstIndexDate": "2014-09-20",
+    "fullTextReceivedDate": "2020-07-14",
+    "hasEvaluations": "N"
+  },
+  {
+    "id": "23559254",
+    "source": "MED",
+    "pmid": "23559254",
+    "doi": "10.1126/science.1233912",
+    "title": "Rats and humans can optimally accumulate evidence for decision-making.",
+    "authorString": "Brunton BW, Botvinick MM, Brody CD.",
+    "authorList": {
+      "author": [
+        {
+          "fullName": "Brunton BW",
+          "lastName": "Brunton",
+          "firstName": "Bingni W",
+          "initials": "BW",
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Princeton Neuroscience Institute, Princeton University, Princeton, NJ 08544, USA."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Botvinick MM",
+          "lastName": "Botvinick",
+          "firstName": "Matthew M",
+          "initials": "MM"
+        },
+        {
+          "fullName": "Brody CD",
+          "lastName": "Brody",
+          "firstName": "Carlos D",
+          "initials": "CD"
+        }
+      ]
+    },
+    "dataLinksTagsList": {
+      "dataLinkstag": [
+        "altmetrics",
+        "recommended_reviews",
+        "wikipedia"
+      ]
+    },
+    "journalInfo": {
+      "issue": "6128",
+      "volume": "340",
+      "journalIssueId": 2027564,
+      "dateOfPublication": "2013 Apr",
+      "monthOfPublication": 4,
+      "yearOfPublication": 2013,
+      "journal": {
+        "medlineAbbreviation": "Science",
+        "title": "Science (New York, N.Y.)",
+        "essn": "1095-9203",
+        "issn": "0036-8075",
+        "isoabbreviation": "Science",
+        "nlmid": "0404511"
+      },
+      "printPublicationDate": "2013-04-01"
+    },
+    "pubYear": "2013",
+    "pageInfo": "95-98",
+    "abstractText": "The gradual and noisy accumulation of evidence is a fundamental component of decision-making, with noise playing a key role as the source of variability and errors. However, the origins of this noise have never been determined. We developed decision-making tasks in which sensory evidence is delivered in randomly timed pulses, and analyzed the resulting data with models that use the richly detailed information of each trial's pulse timing to distinguish between different decision-making mechanisms. This analysis allowed measurement of the magnitude of noise in the accumulator's memory, separately from noise associated with incoming sensory evidence. In our tasks, the accumulator's memory was noiseless, for both rats and humans. In contrast, the addition of new sensory evidence was the primary source of variability. We suggest our task and modeling approach as a powerful method for revealing internal properties of decision-making processes.",
+    "affiliation": "Princeton Neuroscience Institute, Princeton University, Princeton, NJ 08544, USA.",
+    "publicationStatus": "ppublish",
+    "language": "eng",
+    "pubModel": "Print",
+    "pubTypeList": {
+      "pubType": [
+        "Research Support, Non-U.S. Gov't",
+        "Journal Article"
+      ]
+    },
+    "grantsList": {
+      "grant": [
+        {
+          "agency": "Howard Hughes Medical Institute",
+          "orderIn": 0
+        }
+      ]
+    },
+    "meshHeadingList": {
+      "meshHeading": [
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Animals"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Humans"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Rats",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "Y",
+                "abbreviation": "PX",
+                "qualifierName": "psychology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Photic Stimulation"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Behavior, Animal",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "Y",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Visual Perception"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Decision Making",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "Y",
+                "abbreviation": "PH",
+                "qualifierName": "physiology"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Task Performance and Analysis"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Noise"
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Models, Psychological"
+        }
+      ]
+    },
+    "subsetList": {
+      "subset": [
+        {
+          "code": "IM",
+          "name": "Index Medicus"
+        }
+      ]
+    },
+    "fullTextUrlList": {
+      "fullTextUrl": [
+        {
+          "availability": "Subscription required",
+          "availabilityCode": "S",
+          "documentStyle": "doi",
+          "site": "DOI",
+          "url": "https://doi.org/10.1126/science.1233912"
+        }
+      ]
+    },
+    "isOpenAccess": "N",
+    "inEPMC": "N",
+    "inPMC": "N",
+    "citedByCount": 530,
+    "hasReferences": "Y",
+    "hasTextMinedTerms": "Y",
+    "hasDbCrossReferences": "N",
+    "hasPDF": "N",
+    "hasBook": "N",
+    "hasSuppl": "N",
+    "hasLabsLinks": "Y",
+    "hasData": "N",
+    "authMan": "N",
+    "epmcAuthMan": "N",
+    "nihAuthMan": "N",
+    "hasTMAccessionNumbers": "N",
+    "dateOfCompletion": "2013-04-17",
+    "dateOfCreation": "2013-04-06",
+    "dateOfRevision": "2013-04-05",
+    "firstPublicationDate": "2013-04-01",
+    "firstIndexDate": "2013-04-06",
+    "hasEvaluations": "N"
+  },
+  {
+    "id": "18946528",
+    "source": "MED",
+    "pmid": "18946528",
+    "pmcid": "PMC2525934",
+    "fullTextIdList": {
+      "fullTextId": [
+        "PMC2525934"
+      ]
+    },
+    "doi": "10.3389/neuro.10.006.2007",
+    "title": "Neural circuit dynamics underlying accumulation of time-varying evidence during perceptual decision making.",
+    "authorString": "Wong KF, Huk AC, Shadlen MN, Wang XJ.",
+    "authorList": {
+      "author": [
+        {
+          "fullName": "Wong KF",
+          "lastName": "Wong",
+          "firstName": "Kong-Fatt",
+          "initials": "KF",
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Program in Applied and Computational Mathematics, Center for the Study of Brain, Mind and Behavior, Princeton University, USA."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Huk AC",
+          "lastName": "Huk",
+          "firstName": "Alexander C",
+          "initials": "AC"
+        },
+        {
+          "fullName": "Shadlen MN",
+          "lastName": "Shadlen",
+          "firstName": "Michael N",
+          "initials": "MN"
+        },
+        {
+          "fullName": "Wang XJ",
+          "lastName": "Wang",
+          "firstName": "Xiao-Jing",
+          "initials": "XJ"
+        }
+      ]
+    },
+    "authorIdList": {
+      "authorId": [
+        {
+          "type": "ORCID",
+          "value": "0000-0001-8724-4398"
+        }
+      ]
+    },
+    "journalInfo": {
+      "volume": "1",
+      "journalIssueId": 1573445,
+      "dateOfPublication": "2007 ",
+      "monthOfPublication": 0,
+      "yearOfPublication": 2007,
+      "journal": {
+        "medlineAbbreviation": "Front Comput Neurosci",
+        "title": "Frontiers in computational neuroscience",
+        "essn": "1662-5188",
+        "issn": "1662-5188",
+        "isoabbreviation": "Front Comput Neurosci",
+        "nlmid": "101477956"
+      },
+      "printPublicationDate": "2007-01-01"
+    },
+    "pubYear": "2007",
+    "pageInfo": "6",
+    "abstractText": "How do neurons in a decision circuit integrate time-varying signals, in favor of or against alternative choice options? To address this question, we used a recurrent neural circuit model to simulate an experiment in which monkeys performed a direction-discrimination task on a visual motion stimulus. In a recent study, it was found that brief pulses of motion perturbed neural activity in the lateral intraparietal area (LIP), and exerted corresponding effects on the monkey's choices and response times. Our model reproduces the behavioral observations and replicates LIP activity which, depending on whether the direction of the pulse is the same or opposite to that of a preferred motion stimulus, increases or decreases persistently over a few hundred milliseconds. Furthermore, our model accounts for the observation that the pulse exerts a weaker influence on LIP neuronal responses when the pulse is late relative to motion stimulus onset. We show that this violation of time-shift invariance (TSI) is consistent with a recurrent circuit mechanism of time integration. We further examine time integration using two consecutive pulses of the same or opposite motion directions. The induced changes in the performance are not additive, and the second of the paired pulses is less effective than its standalone impact, a prediction that is experimentally testable. Taken together, these findings lend further support for an attractor network model of time integration in perceptual decision making.",
+    "affiliation": "Program in Applied and Computational Mathematics, Center for the Study of Brain, Mind and Behavior, Princeton University, USA.",
+    "publicationStatus": "epublish",
+    "language": "eng",
+    "pubModel": "Electronic-eCollection",
+    "pubTypeList": {
+      "pubType": [
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    "grantsList": {
+      "grant": [
+        {
+          "agency": "NIDA NIH HHS",
+          "acronym": "DA",
+          "grantId": "R01 DA016455",
+          "orderIn": 0
+        },
+        {
+          "agency": "NIMH NIH HHS",
+          "acronym": "MH",
+          "grantId": "R01 MH062349",
+          "orderIn": 0
+        }
+      ]
+    },
+    "keywordList": {
+      "keyword": [
+        "Reaction time",
+        "Intraparietal Cortex",
+        "Computational Modeling",
+        "Attractor Network",
+        "Visual Motion Discrimination"
+      ]
+    },
+    "fullTextUrlList": {
+      "fullTextUrl": [
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "pdf",
+          "site": "Unpaywall",
+          "url": "https://www.frontiersin.org/articles/10.3389/neuro.10.006.2007/pdf"
+        },
+        {
+          "availability": "Subscription required",
+          "availabilityCode": "S",
+          "documentStyle": "doi",
+          "site": "DOI",
+          "url": "https://doi.org/10.3389/neuro.10.006.2007"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "html",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC2525934"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "pdf",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC2525934?pdf=render"
+        }
+      ]
+    },
+    "isOpenAccess": "Y",
+    "inEPMC": "Y",
+    "inPMC": "Y",
+    "citedByCount": 159,
+    "hasReferences": "Y",
+    "hasTextMinedTerms": "Y",
+    "hasDbCrossReferences": "N",
+    "hasPDF": "Y",
+    "hasBook": "N",
+    "hasSuppl": "N",
+    "hasLabsLinks": "N",
+    "hasData": "N",
+    "authMan": "N",
+    "epmcAuthMan": "N",
+    "nihAuthMan": "N",
+    "hasTMAccessionNumbers": "N",
+    "dateOfCompletion": "2009-12-16",
+    "dateOfCreation": "2008-10-24",
+    "dateOfRevision": "2026-11-08",
+    "electronicPublicationDate": "2007-11-02",
+    "firstPublicationDate": "2007-11-02",
+    "firstIndexDate": "2009-12-26",
+    "fullTextReceivedDate": "2025-02-02",
+    "hasEvaluations": "N"
+  }
+]

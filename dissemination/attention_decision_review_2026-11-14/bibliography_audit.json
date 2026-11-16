@@ -1,0 +1,12 @@
+{
+  "reference_records": 32,
+  "fresh_crossref_identity_checks": 26,
+  "new_xml_bodies": 10,
+  "selection": "Purposive narrative review, not PRISMA or meta-analysis",
+  "metadata_author_source": "Europe PMC/Crossref; not unfiltered JATS contributor lists",
+  "files_sha256": {
+    "evidence_matrix.csv": "65017e8adecaad65653643b3abfca20b31f7b4b1dce3f6496a32fe2f959a4b77",
+    "references.bib": "f5ef48aa5d5c8fe1708fc66119c94830ede69e8c0e8f585113d69488a0c32396",
+    "EVIDENCE_MATRIX.md": "cbe44e953ca2e1a7f12f4ffe9cc5e06f4b4b534bcef48809d81e4d102cda0fef"
+  }
+}

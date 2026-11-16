@@ -1,0 +1,6 @@
+{
+  "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28EXT_ID%3A35132235+OR+EXT_ID%3A33412101+OR+EXT_ID%3A24336710+OR+EXT_ID%3A24656259+OR+EXT_ID%3A23177968+OR+EXT_ID%3A19186161+OR+EXT_ID%3A19915566+OR+EXT_ID%3A24777419+OR+EXT_ID%3A19348543+OR+TITLE%3A%22How+attention+influences+perceptual+decision+making%22+OR+TITLE%3A%22Neural+Mechanisms+of+Human+Perceptual+Choice+Under+Focused+and+Divided+Attention%22+OR+DOI%3A%2210.1016%2Fj.neuron.2023.05.028%22+OR+DOI%3A%2210.7554%2FeLife.84045%22%29+AND+SRC%3AMED&format=json&resultType=core&pageSize=100",
+  "date": "2026-11-14",
+  "returned": 13,
+  "total": 13
+}

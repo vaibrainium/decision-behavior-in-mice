@@ -1,0 +1,620 @@
+{
+  "review_type": "Focused critical narrative review; not an exhaustive systematic search",
+  "date": "2026-11-14",
+  "batches": [
+    {
+      "batch": 1,
+      "date": "2026-11-14",
+      "provider": "connected web search",
+      "queries": [
+        "attention perceptual decision making evidence accumulation sensory gain reaction time drift variability primary study",
+        "Ashwood mice alternate discrete strategies 2022 Hulsey arousal engagement perceptual decision making",
+        "perceptual decisions attention intermittent integration pulse evidence transient adaptive gain Cheadle 2014"
+      ],
+      "note": "Initial scoping search; source URLs retained in the bibliography and subsequent search batches."
+    },
+    {
+      "batch": 2,
+      "date": "2026-11-14",
+      "provider": "connected web search",
+      "queries": [
+        {
+          "q": "perceptual decision making gain variability attention 2024 2025 2026 evidence accumulation"
+        },
+        {
+          "q": "mice perceptual decision making lapses uncertainty inattention Pisupati 2021"
+        },
+        {
+          "q": "sensory gain variability drift diffusion multiplicative across trial gain evidence accumulation"
+        },
+        {
+          "q": "attention decision making evidence accumulation initiation onset Loughnane 2016 2017"
+        }
+      ],
+      "urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/26853360/",
+        "https://www.nature.com/articles/s41583-025-00916-3",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7615478/",
+        "https://www.nature.com/articles/s41467-024-48342-w",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12889698/",
+        "https://www.nature.com/articles/s41539-023-00168-9",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6108310/",
+        "https://www.sciencedirect.com/science/article/abs/pii/S1364661325001494",
+        "https://doi.org/10.1016/j.tics.2025.06.003",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11070453/",
+        "https://academic.oup.com/cercor/article/34/5/bhae179/7665118",
+        "https://orcid.org/0000-0003-0929-9216",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11208218/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13489626/",
+        "https://pubmed.ncbi.nlm.nih.gov/40800290/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5773396/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12311769/",
+        "https://www.nature.com/articles/s41467-024-48342-w.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4752305/",
+        "https://www.sciencedirect.com/science/article/pii/S258900422100794X",
+        "https://elifesciences.org/articles/55490",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10250420/",
+        "https://www.nature.com/articles/s41593-021-01007-z",
+        "https://www.nature.com/articles/s41593-021-01007-z.pdf",
+        "https://pubmed.ncbi.nlm.nih.gov/38960720/",
+        "https://www.nature.com/articles/s41467-024-55686-w",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11696174/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4760478/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3943733/",
+        "https://pubmed.ncbi.nlm.nih.gov/33427198/",
+        "https://link.springer.com/content/pdf/10.1007/s00221-024-06862-3.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8857294/",
+        "https://repository.cshl.edu/id/eprint/39950/",
+        "https://pubmed.ncbi.nlm.nih.gov/35132235/",
+        "https://escholarship.org/uc/item/9pr6p2zg",
+        "https://elifesciences.org/articles/55490v1",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2979343/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6904213/",
+        "https://pubmed.ncbi.nlm.nih.gov/26609111/",
+        "https://pubmed.ncbi.nlm.nih.gov/28242798/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5777584/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5381950/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7846276/"
+      ]
+    },
+    {
+      "batch": 3,
+      "date": "2026-11-14",
+      "provider": "connected web search",
+      "queries": [
+        {
+          "q": "\"pulse\" \"attention\" \"evidence accumulation\" perceptual decision"
+        },
+        {
+          "q": "\"pupil-linked arousal determines variability\" decision making"
+        },
+        {
+          "q": "\"Hulsey\" \"Decision-making dynamics\" 2024"
+        },
+        {
+          "q": "\"2026\" \"attention\" \"evidence accumulation\" perceptual"
+        }
+      ],
+      "urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/25232732/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4168983/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/4168983/",
+        "https://escholarship.org/uc/item/8gw5x9pv",
+        "https://pubmed.ncbi.nlm.nih.gov/38280196/",
+        "https://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1003854",
+        "https://escholarship.org/content/qt8gw5x9pv/qt8gw5x9pv_noSplash_de5435cc03253238d110cdd471290773.pdf",
+        "https://pubmed.ncbi.nlm.nih.gov/37034793/",
+        "https://ideas.repec.org/a/plo/pcbi00/1003854.html",
+        "https://datadryad.org/dataset/doi%3A10.5061/dryad.tb542",
+        "https://www.nature.com/articles/s41562-019-0551-4",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13405624/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13489626/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8726586/",
+        "https://www.nature.com/articles/s44271-026-00443-6",
+        "https://doi.org/10.7554/elife.105116",
+        "https://par.nsf.gov/servlets/purl/10527363",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11068411/",
+        "https://elifesciences.org/articles/110685",
+        "https://link.springer.com/article/10.1007/s42113-025-00262-8",
+        "https://www.tara.tcd.ie/bitstreams/3b64fd25-ebb3-4388-bf4b-c9e773b84247/download",
+        "https://ndl.iitkgp.ac.in/re_document/pubmed_central/1234567_pubmed/4168983",
+        "https://muckrack.com/daniel-hulsey",
+        "https://doi.org/10.7554/eLife.110685",
+        "https://www.eneuro.org/content/13/4/ENEURO.0076-26.2026",
+        "https://journals.plos.org/ploscompbiol/article/file?id=10.1371%2Fjournal.pcbi.1003854&type=printable",
+        "https://sprweb.org/wp-content/uploads/2024/12/2024_psychophysiology_supple-4.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11696722/",
+        "https://www.tandfonline.com/doi/full/10.1080/0960085X.2026.2747940?af=R",
+        "https://www.sciencedirect.com/science/article/pii/S0010027726001617",
+        "https://link.springer.com/article/10.3758/s13423-023-02288-0",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7811404/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11016285/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11731777/",
+        "https://doi.org/10.7554/eLife.107980.1.sa2",
+        "https://www.tandfonline.com/doi/full/10.1080/0960085X.2026.2747940?needAccess=true&scroll=top",
+        "https://www.nature.com/articles/s42003-026-09776-8",
+        "https://encorescience.org/papers/?blocked_by=data_missing",
+        "https://encorescience.org/papers/hulsey-2024/",
+        "https://dandiarchive.org/dandiset/000678",
+        "https://journals.physiology.org/doi/full/10.1152/jn.00364.2009",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3943733/",
+        "https://elifesciences.org/articles/60628",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3020592/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2887630/",
+        "https://arxiv.org/abs/2607.22781",
+        "https://visualize.jove.com/38280196-decision-making-dynamics-are-predicted-by-arousal-and-uninstructed-movements",
+        "https://openalex.org/W4391257093",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8112870/",
+        "https://encorescience.org/papers/?has=not_reproduced&technique=%28none%29",
+        "https://encorescience.org/pipeline/"
+      ]
+    },
+    {
+      "batch": 4,
+      "date": "2026-11-14",
+      "provider": "connected web search",
+      "queries": [
+        {
+          "q": "\"Extracting the dynamics of behavior\" Roy Ashwood 2021"
+        },
+        {
+          "q": "\"choice history\" \"drift bias\" \"starting point\" Urai 2019 perceptual"
+        },
+        {
+          "q": "\"Sensory adaptation and pupil-linked arousal support\" 110685"
+        },
+        {
+          "q": "\"Expressions for Bayesian confidence\" \"multiplicative\" drift"
+        }
+      ],
+      "urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/42504837/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6606080/",
+        "https://elifesciences.org/articles/110685",
+        "https://doi.org/10.7554/eLife.110685.",
+        "https://www.bndu.ox.ac.uk/sites/default/files/1-s2.0-S0022249623000718-main.pdf",
+        "https://pubmed.ncbi.nlm.nih.gov/33412101/",
+        "https://doi.org/10.7554/eLife.110685",
+        "https://doi.org/10.7554/eLife.110685.3",
+        "https://doi.org/10.7554/eLife.46331",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13405624/",
+        "https://anneurai.net/wp-content/uploads/2019/07/urai-et-al.-2019-choice-history-biases-subsequent-evidence-accumula-1.pdf",
+        "https://pubmed.ncbi.nlm.nih.gov/31264959/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7615478/",
+        "https://elifesciences.org/reviewed-preprints/110685",
+        "https://ccneuro.org/2018/proceedings/1192.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7897255/",
+        "https://2018.ccneuro.org/proceedings/1192.pdf",
+        "https://www.sciencedirect.com/science/article/pii/S0896627320309636",
+        "https://www.scienceopen.com/document?vid=efb8a306-29b8-4aac-98c4-3bb74f98d2d4",
+        "https://elifesciences.org/articles/46331v1",
+        "https://github.com/anne-urai/2018_Urai_choice-history-ddm;",
+        "https://github.com/elifesciences-publications/2018_Urai_choice-history-ddm;",
+        "https://journal-symfony7.elifesciences.org/articles/110685",
+        "https://elifesciences.org/reviewed-preprints/110685/reviews",
+        "https://doi.org/10.7554/eLife.110685.2",
+        "https://journal-symfony7.elifesciences.org/articles/110685/figures",
+        "https://discovery.ucl.ac.uk/id/eprint/10121150/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12407465/",
+        "https://datadryad.org/dataset/doi%3A10.5061/dryad.jh9w0vtsr",
+        "https://journal-symfony7.elifesciences.org/articles/110685/peer-reviews",
+        "https://www.braincogs.org/publications-brain-cogs/2021/6/7/extracting-the-dynamics-of-behavior-in-sensory-decision-making-experiments",
+        "https://openscicode.org/list/7/",
+        "https://elifesciences.org/articles/46331",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9556658/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6365056/",
+        "https://www.nature.com/articles/s41467-022-33237-5",
+        "https://groups.google.com/g/hddm-users/c/2M4-xOgsizs",
+        "https://github.com/anne-urai/2019_Urai_choice-history-ddm",
+        "https://pubmed.ncbi.nlm.nih.gov/36224207/",
+        "https://elifesciences.org/articles/46331/peer-reviews",
+        "https://collaborate.princeton.edu/en/publications/extracting-the-dynamics-of-behavior-in-sensory-decision-making-ex/",
+        "https://openalex.org/W3119974640",
+        "https://ouci.dntb.gov.ua/en/works/98mkDPR7/",
+        "https://doi.org/10.1017/S0033291725102808",
+        "https://www.braincogs.org/publications-brain-cogs",
+        "https://mainenlab.org/publications/",
+        "https://lacuna.tiptreesystems.com/work/extracting-the-dynamics-of-behavior-in-sensory-decision",
+        "https://github.com/nicholas-roy/psytrack",
+        "https://pubmed.ncbi.nlm.nih.gov/41537271/?fc=20250423215500&ff=20260115080049&v=2.18.0.post22+67771e2",
+        "https://multimediafluids.uam.elogim.com/core/journals/psychological-medicine/article/gender-and-anxiety-reveal-distinct-computational-sources-of-underconfidence/9B87BC07A1AE4721F4C5AD6428DBADF3",
+        "https://www.researchgate.net/publication/383101747_Gender_and_anxiety_reveal_distinct_computational_sources_of_underconfidence",
+        "https://www.researchgate.net/publication/399798632_Gender_and_anxiety_reveal_distinct_computational_sources_of_underconfidence",
+        "https://pdfcoffee.com/reliability-verification-testing-and-analysis-in-engineering-design-2002-pdf-pdf-free.html",
+        "https://huggingface.co/papers?q=marginal+noise+distributions",
+        "https://www.drugowitschlab.org/publications/"
+      ]
+    },
+    {
+      "batch": 5,
+      "date": "2026-11-14",
+      "provider": "connected web search",
+      "queries": [
+        {
+          "q": "\"normalization model of attention\" Reynolds Heeger 2009 PMC"
+        },
+        {
+          "q": "\"attention\" \"motion pulse\" \"reaction time\" decision making"
+        },
+        {
+          "q": "\"trial-to-trial\" \"gain\" \"perceptual\" \"decision\" variability 2025 2026"
+        },
+        {
+          "q": "\"The strategic and dynamic temporal weighting\" Levi 2018 attention"
+        }
+      ],
+      "urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/19186161/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2752446/",
+        "https://www.cns.nyu.edu/heegerlab/content/publications/Reynolds-Neuron2009.pdf",
+        "https://www.nature.com/articles/s41562-026-02544-y",
+        "https://pubmed.ncbi.nlm.nih.gov/30406190/",
+        "https://www.cns.nyu.edu/heegerlab/content/software/attentionModel.php",
+        "https://www.sciencedirect.com/science/article/pii/S0896627309000038",
+        "https://www.eneuro.org/content/5/5/ENEURO.0169-18.2018",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2645695/",
+        "https://www.eneuro.org/content/eneuro/5/5/ENEURO.0169-18.2018.full.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5157945/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3416022/",
+        "https://snl.salk.edu/~reynolds/Normalization_Model_of_Attention/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3343306/",
+        "https://www.snl-r.salk.edu/~reynolds/Normalization_Model_of_Attention/",
+        "https://www.scilit.com/publications/71fde86d777183ce175c064948ae44eb",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8612474/",
+        "https://www.eneuro.org/content/5/5/ENEURO.0169-18.2018/tab-article-info",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13313194/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6220584/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3719398/",
+        "https://journals.physiology.org/doi/full/10.1152/jn.00264.2015",
+        "https://www.cns.nyu.edu/~david/courses/perceptionGrad/Readings/Reynolds-Neuron2009.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12290597/",
+        "https://hdl.handle.net/1721.1/62387",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2525934/",
+        "https://link.springer.com/article/10.1007/s42113-026-00340-5",
+        "https://openalex.org/W2889929138",
+        "https://pubmed.ncbi.nlm.nih.gov/40114010/",
+        "http://orcid.org/0000-0003-0186-8349",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11488853/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3719403/",
+        "https://doi.org/10.1007/s42113-026-00331-6",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3797371/",
+        "https://www.eneuro.org/content/early/2018/09/11/ENEURO.0169-18.2018/tab-e-letters?versioned=true",
+        "https://www.nature.com/articles/s41586-025-09528-4",
+        "https://link.springer.com/article/10.1007/s42113-026-00264-0",
+        "https://uat.greenmedinfo.com/abstracts/strategic-and-dynamic-temporal-weighting-for-perceptual-decisions-in-h-30406190",
+        "https://www.nature.com/articles/s41539-025-00377-4",
+        "https://www.nature.com/articles/s41467-024-44880-5",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12667970/",
+        "https://journals.physiology.org/doi/abs/10.1152/jn.90980.2008?doi=10.1152%2Fjn.90980.2008",
+        "https://www.biorxiv.org/content/10.1101/2025.06.05.658071v3.full",
+        "https://www.frontiersin.org/journals/computational-neuroscience/articles/10.3389/neuro.10.006.2007/full"
+      ]
+    },
+    {
+      "batch": 6,
+      "date": "2026-11-14",
+      "provider": "connected web search",
+      "queries": [
+        {
+          "q": "\"perceptual decision\" \"intermittent attention\""
+        },
+        {
+          "q": "\"pulses\" \"attention\" \"accumulation\" \"mice\""
+        },
+        {
+          "q": "\"psychophysical reverse correlation reflects\" Okazawa 2018"
+        },
+        {
+          "q": "\"gain\" \"attention\" \"motion discrimination\" \"variability\" diffusion model"
+        }
+      ],
+      "urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/30154467/",
+        "https://www.nature.com/articles/s41467-018-05797-y",
+        "https://okazawagouki.github.io/publications.html",
+        "https://www.cns.nyu.edu/kianilab/papers/Okazawa_Kiani_2018.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6113286/",
+        "https://ndlsearch.ndl.go.jp/en/books/R100000136-I1360013171709983616",
+        "https://ndlsearch.ndl.go.jp/books/R100000136-I1360013171709983616",
+        "https://ideas.repec.org/a/nat/natcom/v9y2018i1d10.1038_s41467-018-05797-y.html",
+        "https://github.com/okazawagouki/Okazawa_NatComm_2018",
+        "https://www.cinet.jp/japanese/event/20180206_3078/",
+        "https://cinet.jp/english/event/20180206_2344/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9673774/",
+        "https://openalex.org/W2951357364",
+        "https://datacatalog.med.nyu.edu/dataset/10676",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5773396/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2394732/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5148242/",
+        "https://www.jneurosci.org/content/jneuro/36/5/1775.full.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9535987/",
+        "https://doi.org/10.7554/elife.105116",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6246883/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7811404/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4928591/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4737784/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC1855207/",
+        "https://www.jnss.org/neuroscience-news/2019/news_191.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13198533/",
+        "https://journals.physiology.org/doi/10.1152/jn.00393.2006",
+        "https://journals.physiology.org/doi/full/10.1152/jn.00393.2006",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6170561/",
+        "https://elifesciences.org/articles/36781",
+        "https://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1012980",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6635393/",
+        "https://www.academia.edu/126318149/An_Accumulation_of_Evidence_Task_Using_Visual_Pulses_for_Mice_Navigating_in_Virtual_Reality",
+        "https://elifesciences.org/articles/36781v2",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3384562/",
+        "https://www.janelia.org/lab/koay-lab/publications?items_per_page=10&page=-1&redirect=1&sort_by=field_date",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9203055/",
+        "https://www.nature.com/articles/s41467-019-11050-x",
+        "https://elifesciences.org/articles/60628",
+        "https://en.wikipedia.org/wiki/Reverse_correlation_technique",
+        "https://www.researchgate.net/publication/236105297_Distinct_prestimulus_and_poststimulus_activation_of_VTA_neurons_correlates_with_stimulus_detection",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9648841/",
+        "https://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1010642&rev=1",
+        "https://patents.justia.com/patent/11222298",
+        "https://www.academia.edu/127027559/Merce_Cunninghams_Events_Key_Concepts",
+        "https://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1010642",
+        "https://link.springer.com/article/10.1007/s10648-026-10202-y",
+        "https://www.sweetstudy.com/files/caff321book-pdf"
+      ]
+    },
+    {
+      "batch": 7,
+      "date": "2026-11-14",
+      "provider": "connected web search",
+      "queries": [
+        {
+          "q": "\"attention improves performance\" \"reducing interneuronal correlations\" 2009"
+        },
+        {
+          "q": "\"Partitioning neuronal variability\" Goris 2014 gain"
+        },
+        {
+          "q": "\"Smith\" \"Ratcliff\" \"integrated theory of attention and decision making\" 2009"
+        },
+        {
+          "q": "\"Kassis\" \"2609.00065\""
+        }
+      ],
+      "urls": [
+        "https://www.nature.com/articles/nn.2439",
+        "https://pubmed.ncbi.nlm.nih.gov/19348543/",
+        "https://pubmed.ncbi.nlm.nih.gov/19915566/",
+        "https://bpb-us-w2.wpmucdn.com/u.osu.edu/dist/6/60429/files/2018/07/psychrev09b-1vsi3lm.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2820564/",
+        "https://www.nature.com/articles/nn.3711",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4135707/",
+        "https://www.cns.nyu.edu/~tony/Publications/goris-movshon-simoncelli-2014.pdf",
+        "https://pubmed.ncbi.nlm.nih.gov/24777419/",
+        "https://rcastoragev2.blob.core.windows.net/b8b4266990a6d4a1814fe240b24ae261/PMC2820564.pdf",
+        "https://www.cns.nyu.edu/pub/eero/goris13-reprint.pdf",
+        "https://profiles.uchicago.edu/profiles/display/3078875",
+        "https://www.cns.nyu.edu/~lcv/pubs/makeAbs.php?loc=Goris13",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3045704/",
+        "https://u.osu.edu/ratcliffmckoon/roger-ratcliffs-publications/",
+        "https://slimjectvitamins.com/accel-vitamin-b-complex-capsules/?_=%2Fabs%2F2609.00065%23CD3DgejCa2b3OIySVEszRQc%3D",
+        "https://openalex.org/W2105031232",
+        "https://philpapers.org/rec/SMIAIT-11",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12330597/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3385866/",
+        "https://gorislab.github.io/research/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3579499/",
+        "https://www.researchgate.net/publication/24259620_An_Integrated_Theory_of_Attention_and_Decision_Making_in_Visual_Signal_Detection",
+        "https://explore.metascienceobservatory.org/papers/W2144075628",
+        "https://www.scienceopen.com/document?vid=9995fb40-74d8-4c39-83f3-771521f40a71",
+        "https://www.nature.com/articles/s41593-019-0477-1",
+        "https://pubmed.ncbi.nlm.nih.gov/31477898/",
+        "https://explore.metascienceobservatory.org/papers/W2105031232",
+        "https://gorislab.github.io/publications/",
+        "https://u.osu.edu/ratcliffmckoon/papers-by-topic/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4737784/",
+        "https://www.cns.nyu.edu/~lcv/publications.php?smethod=author",
+        "https://ordb.biotech.ttu.edu/oRmodeldb/Data/243564",
+        "https://www.cns.nyu.edu/files/lcv/pubs/CACHE/publications_date_ARTICLE.php",
+        "https://www.science.gov/topicpages/t/theory%2Bdecision%2Btheory",
+        "https://philpapers.org/rec/SMIAIT-12",
+        "https://www.academia.edu/15266868/Partitioning_neuronal_variability"
+      ]
+    },
+    {
+      "batch": 8,
+      "date": "2026-11-14",
+      "provider": "connected web search",
+      "queries": [
+        {
+          "q": "\"Ashwood\" \"2022\" \"strategies\" \"pdf\" pillow"
+        },
+        {
+          "q": "\"Roy\" \"Extracting the dynamics\" pdf"
+        },
+        {
+          "q": "\"Cheadle\" \"Adaptive gain control\" pdf"
+        },
+        {
+          "q": "\"Kelly\" \"Internal and External Influences\" pdf"
+        }
+      ],
+      "urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/24656259/",
+        "https://discovery.ucl.ac.uk/id/eprint/10121150/",
+        "https://doi.org/10.1523/JNEUROSCI.3355-13.2013.",
+        "http://hdl.handle.net/10197/7461",
+        "https://researchrepository.ucd.ie/bitstreams/69d2e79d-b940-4026-8bc1-c27c8b0f9c7c/download",
+        "https://pubmed.ncbi.nlm.nih.gov/33412101/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4411568",
+        "https://www.nature.com/articles/s41593-021-01007-z",
+        "https://www.med.upenn.edu/ngg/assets/user-content/documents/jc-2021-2022/roy2021neuron-paper1-10.18.2021.pdf",
+        "https://escholarship.org/uc/item/9xm1x3nv",
+        "https://www.researchgate.net/publication/261032603_Adaptive_Gain_Control_during_Human_Perceptual_Choice",
+        "https://pillowlab.princeton.edu/pubs.html",
+        "https://ora.ox.ac.uk/objects/uuid%3Aa7976ec2-02cb-49f4-8a19-38fc333fdc48",
+        "https://anneurai.net/publications/",
+        "https://www.researchgate.net/publication/401370366_Adaptive_gain_control_during_human_perceptual_choice",
+        "https://www.researchgate.net/publication/259321448_Internal_and_External_Influences_on_the_Rate_of_Sensory_Evidence_Accumulation_in_the_Human_Brain/download",
+        "https://www.psy.ox.ac.uk/publication/458555",
+        "https://www.minicod.com/papers/internal-and-external-influences-on-the-rate-of-sensory-evidence-accumulation-in-the-human-brain-fad8831e",
+        "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=201402269165252560",
+        "https://openalex.org/W2010798180",
+        "https://www.robertcutler.org/bakunin/pdf/ar09klio.pdf",
+        "http://www.robertcutler.org/bakunin/pdf/ar09klio.pdf>.",
+        "https://doczz.net/doc/8152614/adaptive-gain-control-during-human-perceptual",
+        "https://collaborate.princeton.edu/en/publications/extracting-the-dynamics-of-behavior-in-sensory-decision-making-ex/",
+        "https://www.ndl.iitkgp.ac.in/re_document/escholarship/escholarship/9xm1x3nv",
+        "https://openalex.org/W2119976941",
+        "https://research-information.bris.ac.uk/en/publications/adaptive-gain-control-during-human-perceptual-choice/",
+        "https://github.com/summerfieldlab/summerfieldlab.github.io/blob/main/_data/publications.yml",
+        "https://www.nature.com/articles/s41598-019-40687-3.pdf",
+        "https://openresearch-repository.anu.edu.au/server/api/core/bitstreams/438354af-f24b-472b-8733-094db092bb83/content",
+        "https://turing.iimas.unam.mx/publications/santiago-2014-adaptive-gain-control-during-human-perceptual-choice/",
+        "https://openalex.org/works/W4221108904",
+        "https://jyx.jyu.fi/bitstreams/d7b3c2c5-fb14-4e8d-aa04-d1bc8e436182/download",
+        "https://cir.nii.ac.jp/crid/1360016870544612992",
+        "https://www.academia.edu/79747247/Using_groups_to_teach_the_connection_between_private_troubles_and_public_issues",
+        "https://www.academia.edu/89706343/Influences_on_Beginning_Teacher_Construing_Beliefs_Stories_and_Trajectories",
+        "https://documentsdelivered.com/source/056/754/056754072.php",
+        "https://www.minicod.com/papers/mice-alternate-between-discrete-strategies-during-perceptual-decision-making-f2346e87",
+        "https://github.com/vicvic0227/victoria-lai-2026-perceptualhmm/blob/main/impact_scholars.bib",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7897255/",
+        "https://www.researchgate.net/publication/377973340_Identifying_the_factors_governing_internal_state_switches_during_nonstationary_sensory_decision-making",
+        "https://www.tandfonline.com/doi/abs/10.1080/09585192.2025.2605548",
+        "https://www.researchgate.net/publication/361958936_From_Big_Ag_to_Big_Finance_a_market_network_approach_to_power_in_agriculture",
+        "https://www.researchgate.net/publication/378639027_Tracking_subjects%27_strategies_in_behavioural_choice_experiments_at_trial_resolution",
+        "https://www.academia.edu/2198813/Internal_and_External_Factors_Affecting_Achievement_in_Mathematics_Some_Findings_from_TIMSS",
+        "https://www.scribd.com/document/476431491/Counselling-20Skills-20for-20Social-20Work-20-20PDFDrive-com-20-pdf-pdf",
+        "https://www.academia.edu/110904707/Internal_and_External_Factors_That_Support_Childrens_Minority_First_Language_and_English",
+        "https://www.researchgate.net/publication/226006951_Multifragmentation_and_dynamics_in_heavy_ion_collisions",
+        "https://www.academia.edu/54661233/Intraclass_Correlation_for_Measures_from_a_Middle_School_Nutrition_Intervention_Study_Estimates_Correlates_and_Applications",
+        "https://pdfcoffee.com/counselling-skills-for-social-work-pdf-free.html",
+        "https://www.sweetstudy.com/files/socialpsychology9thedition.pdf",
+        "https://www.academia.edu/108881605/Bow_tie_architecture_of_gene_regulatory_networks_in_species_of_varying_complexity",
+        "https://www.researchgate.net/publication/400468358_Estimation_of_spatial_and_time_scales_of_collective_behaviors_of_active_matter_through_learning_hydrodynamic_equations_from_particle_dynamics"
+      ]
+    },
+    {
+      "batch": 9,
+      "date": "2026-11-14",
+      "provider": "connected web search",
+      "queries": [
+        {
+          "q": "\"Mice alternate between discrete strategies\" filetype:pdf"
+        },
+        {
+          "q": "\"Rhythmic fluctuations in evidence accumulation\" Wyart 2012 pdf"
+        },
+        {
+          "q": "\"Sensory adaptation\" \"110685\" \"reviewed\" \"2026\""
+        },
+        {
+          "q": "\"cross-species framework\" \"105116\" \"version\""
+        }
+      ],
+      "urls": [
+        "https://doi.org/10.7554/elife.105116",
+        "https://doi.org/10.7554/eLife.105116.1",
+        "https://doi.org/10.7554/eLife.105116.",
+        "https://pubmed.ncbi.nlm.nih.gov/23177968/",
+        "https://elifesciences.org/reviewed-preprints/110685",
+        "https://doi.org/10.7554/eLife.110685.2",
+        "https://doi.org/10.7554/eLife.110685.",
+        "https://elifesciences.org/reviewed-preprints/105116",
+        "https://elifesciences.org/reviewed-preprints/110685v1",
+        "https://doi.org/10.7554/eLife.110685.1",
+        "https://elifesciences.org/articles/110685",
+        "https://doi.org/10.7554/eLife.110685.3",
+        "https://doi.org/10.7554/eLife.110685",
+        "https://www.nature.com/articles/s41593-021-01007-z.pdf",
+        "https://www.sciencedirect.com/science/article/pii/S0896627312008483",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3975574/",
+        "https://escholarship.org/uc/item/9xm1x3nv",
+        "https://sciety.org/articles/activity/10.7554/elife.105116.1",
+        "https://pubmed.ncbi.nlm.nih.gov/35132235/",
+        "https://www.ndl.iitkgp.ac.in/re_document/escholarship/escholarship/9xm1x3nv",
+        "https://www.nature.com/articles/s41593-021-01007-z",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8890994/",
+        "https://www.researchgate.net/publication/403425021_Sensory_adaptation_and_pupil-linked_arousal_support_flexible_evidence_accumulation_during_perceptual_decision_making",
+        "https://journal-symfony7.elifesciences.org/articles/110685/figures",
+        "https://www.sciencedirect.com/author/23988781300/vincent-de-gardelle",
+        "https://ora.ox.ac.uk/objects/uuid%3Aff56b43e-e18a-49b5-9b15-2d0d8868f77b",
+        "https://collaborate.princeton.edu/en/publications/mice-alternate-between-discrete-strategies-during-perceptual-deci/",
+        "https://sciety.org/articles/activity/10.7554/elife.110685.3",
+        "https://www.researchgate.net/publication/346351692_Mice_alternate_between_discrete_strategies_during_perceptual_decision-making",
+        "https://openalex.org/W2049176440",
+        "https://journal-symfony7.elifesciences.org/articles/110685",
+        "https://github.com/vicvic0227/victoria-lai-2026-perceptualhmm/blob/main/impact_scholars.bib",
+        "https://www.biorxiv.org/content/10.1101/2020.10.19.346353v1",
+        "https://searchbiorxiv.org/record/biorxiv%3A10.1101%2F2020.10.19.346353/mice-alternate-between-discrete-strategies-during-perceptual-decision-making",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7547662/",
+        "https://world-wide.org/seminar/mice-alternate-discrete-strategies-o0hngvwv",
+        "https://neuinfo.org/literature/pmid%3A23177968?rpKey=on",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4306525/",
+        "https://bishtref.com/articles/10.1016/j.neuron.2012.09.015",
+        "https://www.columbia.edu/cu/conte/oscillations.html",
+        "https://openalex.org/works/W4221108904",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4467085/",
+        "https://ouci.dntb.gov.ua/en/works/4k6DQOm7/",
+        "https://www.behaviorneuro.com/posts/validating-brainbehavior-associations-a-network-framework-for-clinical-neuroscience-and-drug-development",
+        "https://elifesciences.org/reviewed-preprints/105116]",
+        "https://www.frontiersin.org/journals/ecology-and-evolution/articles/10.3389/fevo.2024.1427997/full]",
+        "https://www.behaviorneuro.com/posts/natural-vs-artificial-enriched-environments-a-comparative-analysis-for-biomedical-research-and-therapeutic-development"
+      ]
+    },
+    {
+      "batch": 10,
+      "date": "2026-11-14",
+      "provider": "connected web search",
+      "queries": [
+        "transient attention evidence accumulation alerting",
+        "exogenous attention drift diffusion onset",
+        "perceptual decisions lapses 2025 engagement"
+      ],
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6718663/",
+        "https://doi.org/10.13039/501100005915",
+        "https://www.nature.com/articles/s41598-019-42759-w",
+        "https://www.eneuro.org/content/early/2026/03/24/ENEURO.0076-26.2026.full",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5572602/",
+        "https://www.nature.com/articles/s44271-026-00424-9",
+        "https://doi.org/10.1038/s41598-019-42759-w",
+        "https://link.springer.com/content/pdf/10.3758/s13414-016-1124-5.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7963117/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13676923/",
+        "https://academic.oup.com/cercor/article/29/6/2624/5025417",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12143545/",
+        "https://ouci.dntb.gov.ua/en/works/4bmzrL17/",
+        "https://ouci.dntb.gov.ua/works/4bmzrL17/",
+        "https://www.nature.com/articles/s41598-019-42759-w.pdf",
+        "https://www.eneuro.org/content/13/4/ENEURO.0076-26.2026",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13171896/",
+        "https://ouci.dntb.gov.ua/en/works/4ENbkmVl/",
+        "https://www.nature.com/articles/s41467-018-04841-1",
+        "https://www.sr-research.com/full-publications-list/?auth=&limit=6&tgid=&tsr=&type=&usr=&yr=",
+        "https://jf2.hep.com.cn/9011b2b7175f47e1a905e274e69d7434.pdf?response-content-disposition=attachment%3B+filename%3D%22Selective+attention+or+inattention%3F+Enabling+efficient+perception+in+embodied+intelligence+agents.pdf%22",
+        "https://cns.iisc.ac.in/sridhar/assets/publications/Vishak_bio_2018.pdf",
+        "https://www.sr-research.com/full-publications-list/?auth=&limit=8&tgid=&tsr=&type=&usr=&yr=",
+        "https://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1012636",
+        "https://www.researchgate.net/publication/393701842_Effects_of_alertness_on_perceptual_detection_and_discrimination",
+        "https://www.nature.com/articles/s42003-022-04231-w",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13389323/",
+        "https://www.sr-research.com/eeg-fnirs-publications/",
+        "https://gonzalezgarcia.github.io/papers/",
+        "https://gonzalezgarcia.github.io/publications/",
+        "https://www.researchgate.net/publication/349898936_The_diachronic_account_of_attentional_selectivity",
+        "https://doi.org/10.1038/s44159-025-00446-w",
+        "https://static1.squarespace.com/static/5daf65330e17a4220c7707ce/t/68cc4d7bb0a272329a213e17/1758219644004/Mohanty%2Bet%2Bal%2B2025.pdf",
+        "https://www.researchgate.net/publication/396558078_Drift-diffusion_modeling_of_accuracy_and_reaction_times_a_deeper_insight_into_retrospective_attention",
+        "https://www.academia.edu/145844450/Author_response_A_causal_role_for_the_right_frontal_eye_fields_in_value_comparison",
+        "https://www.academia.edu/123795424/A_dynamic_normalization_model_of_temporal_attention",
+        "https://www.academia.edu/87232580/Mask_dependent_attentional_cuing_effects_in_visual_signal_detection_The_psychometric_function_for_contrast",
+        "https://app.cochat.ai/papers/10.1037/a0030694?cites_page=1",
+        "https://www.researchgate.net/publication/8940672_Early_posterior_ERP_components_do_not_reflect_the_control_of_attentional_shifts_toward_expected_peripheral_events",
+        "https://www.science.gov/topicpages/t/tasks%2Bindividual%2Bdifferences",
+        "https://www.sr-research.com/zh/cognitive-publications/?auth=&limit=29&tgid=&tsr=&type=&usr=&yr=",
+        "https://www.researchgate.net/publication/337305673_Parts_of_me_Identity-relevance_moderates_self-prioritization",
+        "https://drivingresearch.com/topics/area/foundations-attention/",
+        "https://www.nature.com/articles/s41386-026-02399-x.pdf"
+      ]
+    }
+  ]
+}

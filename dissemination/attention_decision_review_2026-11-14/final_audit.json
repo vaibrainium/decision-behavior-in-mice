@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-14",
+  "commit": "b63c9d919edc85e48446be48a8399ba6304b8df0",
+  "review_type": "Focused critical narrative review; single reviewer; no meta-analysis",
+  "reference_records": 32,
+  "fresh_crossref_verified": 26,
+  "parsed_xml_bodies": 10,
+  "additional_web_or_pdf_assessments": 8,
+  "unmatched_document_dois": [],
+  "citation_validation": {
+    "errors": 0,
+    "duplicates": 0,
+    "remaining_warnings": [
+      {
+        "type": "page_range_format",
+        "field": "pages",
+        "value": "imag-2-00338",
+        "severity": "low",
+        "message": "Entry ref40800290: Page range uses single hyphen, should use -- (en-dash)",
+        "entry": "ref40800290"
+      },
+      {
+        "type": "page_range_format",
+        "field": "pages",
+        "value": "ENEURO.0169-18.2018",
+        "severity": "low",
+        "message": "Entry ref30406190: Page range uses single hyphen, should use -- (en-dash)",
+        "entry": "ref30406190"
+      }
+    ]
+  },
+  "python_for_bibliography": "3.10.12",
+  "scientific_results": "No new behavioral statistics or model fits; existing findings linked to their original reports",
+  "artifact_sha256": {
+    "references.bib": "f5ef48aa5d5c8fe1708fc66119c94830ede69e8c0e8f585113d69488a0c32396",
+    "verify_bibtex.py": "0133572a05b3746e314b980f33dc7ce0b4703cab81d95b90d1c1c1e19b29634b",
+    ".gitignore": "2851b9af44de972c2f74cd001e547374cc9b4d195e601c4498572cb168671607",
+    "metadata.json": "1bf8d36397e80edc5cc0f5989515fcd06a0c92933e9adc601976751eedc62515",
+    "references_verified.bib": "0c0d5b22d9fc36ac4dd53e08b58aca516901c06f87c824f4cb0c8e6856983ac6",
+    "bibliography_audit.json": "92f019eb5108f908d150e3e81c5b68f9d6b3c68d35e0474619cf880c953f448a",
+    "search_log.json": "45a2a16211724b13512dabd9dddd4a6df3ec02ac452cd429009e114b3efc5321",
+    "build_evidence.py": "11a5899288eb4288e644345a0264387d97a3caaf8411ac593eba8cbebfbe3b6e",
+    "evidence_matrix.csv": "65017e8adecaad65653643b3abfca20b31f7b4b1dce3f6496a32fe2f959a4b77",
+    "NEXT_ANALYSES.md": "1a8d1bc64d98e26963c9a8044525e5faa80431ea762f6192e37b8c81da381a6c",
+    "EVIDENCE_MATRIX.md": "cbe44e953ca2e1a7f12f4ffe9cc5e06f4b4b534bcef48809d81e4d102cda0fef",
+    "bibliography_normalizations.json": "53202d944a1a672b20fcd8b06519105a18db583ddf2e6ea6e0301654ef922ce7",
+    "retrieval_log.json": "007f7dd33e74ac9555f15964079d88e58d3a78b9cd61e2dfa604d1fbaa59c0c8",
+    "README.md": "ed1803074c7c5240dffcffedf8c20b23421bc090ba235edb51a85ba786ed0ccf",
+    "REVIEW.md": "bfbd88f6052d7b95ee49623b7f8fcbb946039f8aaf900d61476c01a000c29875",
+    "full_text_access.json": "23d8175a59bb3eedac711a7468ee11f9cbe2498feb84ce01c241d1c288b6b2e2",
+    "crossref.log": "f10333f4477aabff9beef2ebbccb3fa1053086095ffe5edd3c142ae59114df50",
+    "metadata_enriched.json": "390342407958b9f98086fe52c55431f3ac531bab1eb235a296e6ddbd07aae77a",
+    "retrieve.py": "52339d060c472faaf078df8f4c79db16c291b465e03bb4174c45f30891ec673b",
+    "supplementary_search_log.json": "5fe7cb83be16a87b0999cca527ad0c7ed97f0e8247356524b4228f2386ddfad6",
+    "bibtex_validation.json": "f66126a528fc64decf2252c46846e01c3c9c48b4546039634fd30a14db83a980",
+    "bibtex_verified_validation.json": "f5f302d094f1200560faa437591738b0e76acdba09791b857036388d72747108",
+    "retrieval.log": "ec24747acce8da85b3e581be1e57b5b67950ed38af8c541c2c19348092ae8caa",
+    "citation_identity_checks.json": "23d10819ff33b88b3382212d8dc630cba345fbec9e3f754ec061ac254cbbd6e1",
+    "additional_metadata_provenance.json": "ac35e2068f8675d63ac48c8005f3c8c5abbe9f9418a5c639da6eff754d76e454"
+  }
+}

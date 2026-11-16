@@ -1,0 +1,29 @@
+[
+  {
+    "url": "https://api.openalex.org/works?search=attention+evidence+accumulation&filter=to_publication_date%3A2026-11-14&per_page=12",
+    "file": "sources/openalex_attention.json",
+    "accessed_utc": "2026-11-14T03:35:30.300791+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "09ed6fdb9a4c0db6a2d9f979df50a52674a3ed68d1c5cc694c51a72d14e0bc89",
+    "bytes": 224395
+  },
+  {
+    "url": "https://api.openalex.org/works?search=perceptual+decision+strategy+variability&filter=to_publication_date%3A2026-11-14&per_page=12",
+    "file": "sources/openalex_states.json",
+    "accessed_utc": "2026-11-14T03:35:31.157320+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "5288de3b35125e42a20d771cdfe9af124fb4835c4b8c6a1bd624fc7eca20c64b",
+    "bytes": 326142
+  },
+  {
+    "url": "https://api.crossref.org/works/10.7554%2Felife.105116",
+    "file": "sources/crossref_chakravarty2025.json",
+    "accessed_utc": "2026-11-14T03:35:31.762289+00:00",
+    "ok": true,
+    "http_status": 200,
+    "sha256": "9bacf7a89ad0df0ddf7fce237572e540ff03ac37678dfbc29200e80dd4c6027c",
+    "bytes": 22802
+  }
+]
