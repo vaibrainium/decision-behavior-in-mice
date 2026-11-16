@@ -1,0 +1,24 @@
+{
+  "guideline": "ARRIVE 2.0",
+  "official_source": "https://arriveguidelines.org/arrive-guidelines",
+  "checked": "2026-11-16",
+  "status": "working coverage; not a completed official checklist",
+  "addressed": [
+    "Analysis sets and experimental unit",
+    "Recorded inclusion/exclusion criteria",
+    "Outcome estimands and statistical procedures",
+    "Group/within-mouse uncertainty distinctions"
+  ],
+  "partial": [
+    "Study design and task procedures",
+    "Sample-size provenance",
+    "Reporting of all supporting analyses"
+  ],
+  "missing_author_facts": [
+    "Animal characteristics",
+    "Ethics approvals/protocol IDs",
+    "Randomization implementation",
+    "Blinding",
+    "Housing/welfare and training details"
+  ]
+}

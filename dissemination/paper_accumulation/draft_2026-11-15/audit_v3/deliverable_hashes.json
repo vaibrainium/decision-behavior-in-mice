@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-16",
+  "base_commit": "b63c9d919edc85e48446be48a8399ba6304b8df0",
+  "artifacts": {
+    "working_draft_v3.docx": "b3f342c3220813979bad53f4e327f1576ce860215b83c272c31bcb6f4df8cb9b",
+    "working_draft_v3.md": "9bf215e082a0d9fb2ee1ac4d0fbdf78a468224cd1acae94ec0163a3978667a6c",
+    "figure_captions.md": "d5780838cdf12e94302cbad4730ccdebc6be4ebdf80aa3badbf59986227dd09e",
+    "methods.md": "2abef8593a3edbd67ed08458661379788f81d12b69b54350bfe52cdbe2321311",
+    "results.md": "6b5c8f256ed633894a18b5abde16b00f00f4f2a608f9498b071f8dbc3eb77ada",
+    "references.bib": "30d3f9f1b8f1e21622fd09308ac4dd2c127d65f875f69dcc922af8853be32751",
+    "figures_v5/main_figures.pdf": "e13b9c2989c15e642f8604fca470bbbe9a7c7025581741169646255e3c7a3386"
+  },
+  "generated_scripts": {
+    "scripts/paper/build_paper_2026_11_15.py": "e3ea7dd368e51c2074cb4cf4081f5484b39fdcf464e51bff045ca88e8be11a10",
+    "scripts/paper/package_paper_2026_11_15.py": "b50baacf64d6586ced180a205f7b3456a7077dfafc96b7fbf24c6d24fc6165b7"
+  }
+}

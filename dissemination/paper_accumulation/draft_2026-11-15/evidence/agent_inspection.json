@@ -1,0 +1,135 @@
+[
+  {
+    "evidence_id": "E001",
+    "agent": "Codex",
+    "inspected_on": "2026-11-16",
+    "status": "agent_inspected; human verification pending",
+    "note": "Sources/locators checked by the assistant. Human verifier fields intentionally remain unset; source_opened in verification refers to the required human check."
+  },
+  {
+    "evidence_id": "E002",
+    "agent": "Codex",
+    "inspected_on": "2026-11-16",
+    "status": "agent_inspected; human verification pending",
+    "note": "Sources/locators checked by the assistant. Human verifier fields intentionally remain unset; source_opened in verification refers to the required human check."
+  },
+  {
+    "evidence_id": "E003",
+    "agent": "Codex",
+    "inspected_on": "2026-11-16",
+    "status": "agent_inspected; human verification pending",
+    "note": "Sources/locators checked by the assistant. Human verifier fields intentionally remain unset; source_opened in verification refers to the required human check."
+  },
+  {
+    "evidence_id": "E004",
+    "agent": "Codex",
+    "inspected_on": "2026-11-16",
+    "status": "agent_inspected; human verification pending",
+    "note": "Sources/locators checked by the assistant. Human verifier fields intentionally remain unset; source_opened in verification refers to the required human check."
+  },
+  {
+    "evidence_id": "E005",
+    "agent": "Codex",
+    "inspected_on": "2026-11-16",
+    "status": "agent_inspected; human verification pending",
+    "note": "Sources/locators checked by the assistant. Human verifier fields intentionally remain unset; source_opened in verification refers to the required human check."
+  },
+  {
+    "evidence_id": "E006",
+    "agent": "Codex",
+    "inspected_on": "2026-11-16",
+    "status": "agent_inspected; human verification pending",
+    "note": "Sources/locators checked by the assistant. Human verifier fields intentionally remain unset; source_opened in verification refers to the required human check."
+  },
+  {
+    "evidence_id": "E007",
+    "agent": "Codex",
+    "inspected_on": "2026-11-16",
+    "status": "agent_inspected; human verification pending",
+    "note": "Sources/locators checked by the assistant. Human verifier fields intentionally remain unset; source_opened in verification refers to the required human check."
+  },
+  {
+    "evidence_id": "E008",
+    "agent": "Codex",
+    "inspected_on": "2026-11-16",
+    "status": "agent_inspected; human verification pending",
+    "note": "Sources/locators checked by the assistant. Human verifier fields intentionally remain unset; source_opened in verification refers to the required human check."
+  },
+  {
+    "evidence_id": "E009",
+    "agent": "Codex",
+    "inspected_on": "2026-11-16",
+    "status": "agent_inspected; human verification pending",
+    "note": "Sources/locators checked by the assistant. Human verifier fields intentionally remain unset; source_opened in verification refers to the required human check."
+  },
+  {
+    "evidence_id": "E010",
+    "agent": "Codex",
+    "inspected_on": "2026-11-16",
+    "status": "agent_inspected; human verification pending",
+    "note": "Sources/locators checked by the assistant. Human verifier fields intentionally remain unset; source_opened in verification refers to the required human check."
+  },
+  {
+    "evidence_id": "E011",
+    "agent": "Codex",
+    "inspected_on": "2026-11-16",
+    "status": "agent_inspected; human verification pending",
+    "note": "Sources/locators checked by the assistant. Human verifier fields intentionally remain unset; source_opened in verification refers to the required human check."
+  },
+  {
+    "evidence_id": "E012",
+    "agent": "Codex",
+    "inspected_on": "2026-11-16",
+    "status": "agent_inspected; human verification pending",
+    "note": "Sources/locators checked by the assistant. Human verifier fields intentionally remain unset; source_opened in verification refers to the required human check."
+  },
+  {
+    "evidence_id": "E013",
+    "agent": "Codex",
+    "inspected_on": "2026-11-16",
+    "status": "agent_inspected; human verification pending",
+    "note": "Sources/locators checked by the assistant. Human verifier fields intentionally remain unset; source_opened in verification refers to the required human check."
+  },
+  {
+    "evidence_id": "E014",
+    "agent": "Codex",
+    "inspected_on": "2026-11-16",
+    "status": "agent_inspected; human verification pending",
+    "note": "Sources/locators checked by the assistant. Human verifier fields intentionally remain unset; source_opened in verification refers to the required human check."
+  },
+  {
+    "evidence_id": "E015",
+    "agent": "Codex",
+    "inspected_on": "2026-11-16",
+    "status": "agent_inspected; human verification pending",
+    "note": "Sources/locators checked by the assistant. Human verifier fields intentionally remain unset; source_opened in verification refers to the required human check."
+  },
+  {
+    "evidence_id": "E020",
+    "agent": "Codex",
+    "inspected_on": "2026-11-16",
+    "status": "agent_inspected; human verification pending",
+    "note": "Sources/locators checked by the assistant. Human verifier fields intentionally remain unset; source_opened in verification refers to the required human check."
+  },
+  {
+    "evidence_id": "E022",
+    "agent": "Codex",
+    "inspected_on": "2026-11-16",
+    "status": "agent_inspected; human verification pending",
+    "note": "Sources/locators checked by the assistant. Human verifier fields intentionally remain unset; source_opened in verification refers to the required human check."
+  },
+  {
+    "evidence_id": "E023",
+    "agent": "Codex",
+    "inspected_on": "2026-11-16",
+    "status": "agent_inspected; human verification pending",
+    "note": "Sources/locators checked by the assistant. Human verifier fields intentionally remain unset; source_opened in verification refers to the required human check."
+  },
+  {
+    "evidence_id": "E021",
+    "agent": "Codex",
+    "inspected_on": "2026-11-16",
+    "status": "agent_inspected; human verification pending",
+    "note": "Sources/locators checked by the assistant. Human verifier fields intentionally remain unset; source_opened in verification refers to the required human check."
+  }
+]

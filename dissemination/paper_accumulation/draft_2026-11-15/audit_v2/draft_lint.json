@@ -1,0 +1,22 @@
+{
+  "issues": [
+    {
+      "code": "CONFIDENTIALITY_REVIEW_INCOMPLETE",
+      "location": "manifest",
+      "severity": "error"
+    },
+    {
+      "code": "POLICY_REVIEW_INCOMPLETE",
+      "location": "manifest",
+      "severity": "error"
+    }
+  ],
+  "status": "fail",
+  "summary": {
+    "errors": 2,
+    "lines_checked": 220,
+    "raw_text_echoed": false,
+    "warnings": 0
+  },
+  "tool": "lint_manuscript"
+}

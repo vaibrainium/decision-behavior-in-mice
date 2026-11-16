@@ -1,0 +1,44 @@
+[
+  {
+    "check": "source_schema",
+    "exit_code": 0,
+    "issue_codes": {
+      "NO_SOURCE_IDENTIFIER": 15
+    }
+  },
+  {
+    "check": "manuscript_schema",
+    "exit_code": 0,
+    "issue_codes": {}
+  },
+  {
+    "check": "reference_identifiers",
+    "exit_code": 0,
+    "issue_codes": {
+      "NO_IDENTIFIER_TO_CHECK": 15,
+      "NO_SOURCE_IDENTIFIER": 15
+    }
+  },
+  {
+    "check": "declared_consistency",
+    "exit_code": 0,
+    "issue_codes": {}
+  },
+  {
+    "check": "claim_audit",
+    "exit_code": 1,
+    "issue_codes": {
+      "CLAIM_NOT_VERIFIED": 77,
+      "UNVERIFIED_CITATION_MARKER": 225,
+      "UNVERIFIED_CLAIM_EVIDENCE": 225
+    }
+  },
+  {
+    "check": "draft_lint",
+    "exit_code": 1,
+    "issue_codes": {
+      "CONFIDENTIALITY_REVIEW_INCOMPLETE": 1,
+      "POLICY_REVIEW_INCOMPLETE": 1
+    }
+  }
+]

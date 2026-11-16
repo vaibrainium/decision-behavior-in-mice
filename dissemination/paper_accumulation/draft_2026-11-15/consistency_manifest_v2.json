@@ -1,0 +1,610 @@
+{
+  "schema_version": "1.0",
+  "numeric_facts": [
+    {
+      "fact_id": "N001",
+      "concept": "n_mice",
+      "section": "figure_captions",
+      "value": 10,
+      "unit": "mice",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "retained sessions",
+      "evidence_ids": [
+        "E001"
+      ]
+    },
+    {
+      "fact_id": "N002",
+      "concept": "n_mice",
+      "section": "methods",
+      "value": 10,
+      "unit": "mice",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "retained sessions",
+      "evidence_ids": [
+        "E001"
+      ]
+    },
+    {
+      "fact_id": "N003",
+      "concept": "n_mice",
+      "section": "results",
+      "value": 10,
+      "unit": "mice",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "retained sessions",
+      "evidence_ids": [
+        "E001"
+      ]
+    },
+    {
+      "fact_id": "N004",
+      "concept": "n_sessions",
+      "section": "figure_captions",
+      "value": 50,
+      "unit": "sessions",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "retained sessions",
+      "evidence_ids": [
+        "E001"
+      ]
+    },
+    {
+      "fact_id": "N005",
+      "concept": "n_sessions",
+      "section": "methods",
+      "value": 50,
+      "unit": "sessions",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "retained sessions",
+      "evidence_ids": [
+        "E001"
+      ]
+    },
+    {
+      "fact_id": "N006",
+      "concept": "n_sessions",
+      "section": "results",
+      "value": 50,
+      "unit": "sessions",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "retained sessions",
+      "evidence_ids": [
+        "E001"
+      ]
+    },
+    {
+      "fact_id": "N007",
+      "concept": "n_responded",
+      "section": "figure_captions",
+      "value": 25508,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "descriptive responses",
+      "evidence_ids": [
+        "E001"
+      ]
+    },
+    {
+      "fact_id": "N008",
+      "concept": "n_responded",
+      "section": "methods",
+      "value": 25508,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "descriptive responses",
+      "evidence_ids": [
+        "E001"
+      ]
+    },
+    {
+      "fact_id": "N009",
+      "concept": "n_responded",
+      "section": "results",
+      "value": 25508,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "descriptive responses",
+      "evidence_ids": [
+        "E001"
+      ]
+    },
+    {
+      "fact_id": "N010",
+      "concept": "n_model",
+      "section": "figure_captions",
+      "value": 25493,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "model responses",
+      "evidence_ids": [
+        "E001"
+      ]
+    },
+    {
+      "fact_id": "N011",
+      "concept": "n_model",
+      "section": "methods",
+      "value": 25493,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "model responses",
+      "evidence_ids": [
+        "E001"
+      ]
+    },
+    {
+      "fact_id": "N012",
+      "concept": "n_model",
+      "section": "results",
+      "value": 25493,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "model responses",
+      "evidence_ids": [
+        "E001"
+      ]
+    },
+    {
+      "fact_id": "N013",
+      "concept": "n_control_model",
+      "section": "figure_captions",
+      "value": 14014,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "control-model CV",
+      "evidence_ids": [
+        "E002"
+      ]
+    },
+    {
+      "fact_id": "N014",
+      "concept": "n_control_model",
+      "section": "methods",
+      "value": 14014,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "control-model CV",
+      "evidence_ids": [
+        "E002"
+      ]
+    },
+    {
+      "fact_id": "N015",
+      "concept": "n_control_model",
+      "section": "results",
+      "value": 14014,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "control-model CV",
+      "evidence_ids": [
+        "E002"
+      ]
+    },
+    {
+      "fact_id": "N016",
+      "concept": "n_control_descriptive",
+      "section": "figure_captions",
+      "value": 14015,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "descriptive controls",
+      "evidence_ids": [
+        "E001"
+      ]
+    },
+    {
+      "fact_id": "N017",
+      "concept": "n_control_descriptive",
+      "section": "methods",
+      "value": 14015,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "descriptive controls",
+      "evidence_ids": [
+        "E001"
+      ]
+    },
+    {
+      "fact_id": "N019",
+      "concept": "n_temporal",
+      "section": "figure_captions",
+      "value": 19313,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "response-conditioned pulse readout",
+      "evidence_ids": [
+        "E003"
+      ]
+    },
+    {
+      "fact_id": "N020",
+      "concept": "n_temporal",
+      "section": "methods",
+      "value": 19313,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "response-conditioned pulse readout",
+      "evidence_ids": [
+        "E003"
+      ]
+    },
+    {
+      "fact_id": "N021",
+      "concept": "n_temporal",
+      "section": "results",
+      "value": 19313,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "response-conditioned pulse readout",
+      "evidence_ids": [
+        "E003"
+      ]
+    },
+    {
+      "fact_id": "N022",
+      "concept": "n_temporal_pulse",
+      "section": "figure_captions",
+      "value": 8529,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "response-conditioned pulse readout",
+      "evidence_ids": [
+        "E003"
+      ]
+    },
+    {
+      "fact_id": "N023",
+      "concept": "n_temporal_pulse",
+      "section": "methods",
+      "value": 8529,
+      "unit": "trials",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "response-conditioned pulse readout",
+      "evidence_ids": [
+        "E003"
+      ]
+    },
+    {
+      "fact_id": "N025",
+      "concept": "recovery_pairs",
+      "section": "figure_captions",
+      "value": 100,
+      "unit": "pairs",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "synthetic strategy recovery",
+      "evidence_ids": [
+        "E002"
+      ]
+    },
+    {
+      "fact_id": "N026",
+      "concept": "recovery_pairs",
+      "section": "methods",
+      "value": 100,
+      "unit": "pairs",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "synthetic strategy recovery",
+      "evidence_ids": [
+        "E002"
+      ]
+    },
+    {
+      "fact_id": "N027",
+      "concept": "recovery_pairs",
+      "section": "results",
+      "value": 100,
+      "unit": "pairs",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "synthetic strategy recovery",
+      "evidence_ids": [
+        "E002"
+      ]
+    },
+    {
+      "fact_id": "N028",
+      "concept": "recovery_fits",
+      "section": "figure_captions",
+      "value": 500,
+      "unit": "fits",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "synthetic strategy recovery",
+      "evidence_ids": [
+        "E002"
+      ]
+    },
+    {
+      "fact_id": "N029",
+      "concept": "recovery_fits",
+      "section": "methods",
+      "value": 500,
+      "unit": "fits",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "synthetic strategy recovery",
+      "evidence_ids": [
+        "E002"
+      ]
+    },
+    {
+      "fact_id": "N030",
+      "concept": "recovery_fits",
+      "section": "results",
+      "value": 500,
+      "unit": "fits",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "synthetic strategy recovery",
+      "evidence_ids": [
+        "E002"
+      ]
+    },
+    {
+      "fact_id": "N031",
+      "concept": "recovery_recombinations",
+      "section": "figure_captions",
+      "value": 1024,
+      "unit": "recombinations",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "dependent recovery exercise",
+      "evidence_ids": [
+        "E002"
+      ]
+    },
+    {
+      "fact_id": "N032",
+      "concept": "recovery_recombinations",
+      "section": "methods",
+      "value": 1024,
+      "unit": "recombinations",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "dependent recovery exercise",
+      "evidence_ids": [
+        "E002"
+      ]
+    },
+    {
+      "fact_id": "N034",
+      "concept": "signed_effect",
+      "section": "figure_captions",
+      "value": 5.84,
+      "unit": "percentage_points",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "assignment-based response by 5 s",
+      "evidence_ids": [
+        "E003"
+      ]
+    },
+    {
+      "fact_id": "N035",
+      "concept": "signed_effect",
+      "section": "results",
+      "value": 5.84,
+      "unit": "percentage_points",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "assignment-based response by 5 s",
+      "evidence_ids": [
+        "E003"
+      ]
+    },
+    {
+      "fact_id": "N036",
+      "concept": "choice_delta",
+      "section": "figure_captions",
+      "value": -49.29,
+      "unit": "NLL",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "matched joint CV",
+      "evidence_ids": [
+        "E004"
+      ]
+    },
+    {
+      "fact_id": "N037",
+      "concept": "choice_delta",
+      "section": "results",
+      "value": -49.29,
+      "unit": "NLL",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "matched joint CV",
+      "evidence_ids": [
+        "E004"
+      ]
+    },
+    {
+      "fact_id": "N038",
+      "concept": "rt_delta",
+      "section": "figure_captions",
+      "value": 360.22,
+      "unit": "NLL",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "matched joint CV",
+      "evidence_ids": [
+        "E004"
+      ]
+    },
+    {
+      "fact_id": "N039",
+      "concept": "rt_delta",
+      "section": "results",
+      "value": 360.22,
+      "unit": "NLL",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "matched joint CV",
+      "evidence_ids": [
+        "E004"
+      ]
+    },
+    {
+      "fact_id": "N040",
+      "concept": "total_delta",
+      "section": "figure_captions",
+      "value": 310.93,
+      "unit": "NLL",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "matched joint CV",
+      "evidence_ids": [
+        "E004"
+      ]
+    },
+    {
+      "fact_id": "N041",
+      "concept": "total_delta",
+      "section": "results",
+      "value": 310.93,
+      "unit": "NLL",
+      "numerator": null,
+      "denominator": null,
+      "sample_size": null,
+      "analysis_set": "matched joint CV",
+      "evidence_ids": [
+        "E004"
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "method_id": "M001",
+      "name": "Control model comparison and recovery",
+      "analysis_intent": "exploratory",
+      "protocol_status": "post_hoc",
+      "outcome_ids": [
+        "O001"
+      ]
+    },
+    {
+      "method_id": "M002",
+      "name": "Pulse influence and temporal persistence",
+      "analysis_intent": "exploratory",
+      "protocol_status": "post_hoc",
+      "outcome_ids": [
+        "O002"
+      ]
+    },
+    {
+      "method_id": "M003",
+      "name": "Matched pulse/RT predictions",
+      "analysis_intent": "exploratory",
+      "protocol_status": "post_hoc",
+      "outcome_ids": [
+        "O003"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "result_id": "R001",
+      "method_id": "M001",
+      "outcome_id": "O001",
+      "analysis_intent": "exploratory",
+      "sample_size": 10,
+      "evidence_ids": [
+        "E002"
+      ],
+      "reported_sections": [
+        "figure_captions",
+        "results"
+      ]
+    },
+    {
+      "result_id": "R002",
+      "method_id": "M002",
+      "outcome_id": "O002",
+      "analysis_intent": "exploratory",
+      "sample_size": 10,
+      "evidence_ids": [
+        "E003"
+      ],
+      "reported_sections": [
+        "figure_captions",
+        "results"
+      ]
+    },
+    {
+      "result_id": "R003",
+      "method_id": "M003",
+      "outcome_id": "O003",
+      "analysis_intent": "exploratory",
+      "sample_size": 10,
+      "evidence_ids": [
+        "E004"
+      ],
+      "reported_sections": [
+        "figure_captions",
+        "results"
+      ]
+    }
+  ]
+}

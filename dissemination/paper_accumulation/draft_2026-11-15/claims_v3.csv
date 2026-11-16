@@ -1,0 +1,78 @@
+claim_id,section,claim_kind,claim_text_sha256,evidence_ids,verification_status,uncertainty,analysis_intent
+C001,figure_captions.md: Figure legends,factual,b7e4a5db9f40f136c4633d885c9c5ef5bf1dd6ef722f5ebde1591b58e3b9f730,E015,unverified,moderate,exploratory
+C002,figure_captions.md: Figure 1. Mice report motion direction in a reaction-time discrimination task,factual,5969052463650e38bca89fe3d5dfd790ff264eea0502aacdec7d944909445979,E001;E005,unverified,moderate,exploratory
+C003,figure_captions.md: Figure 1. Mice report motion direction in a reaction-time discrimination task,factual,ced6692c359b2684a927ad05440f751d29e7eef686fabdb954a8abedf11126c4,E001;E005,unverified,moderate,exploratory
+C004,figure_captions.md: Figure 1. Mice report motion direction in a reaction-time discrimination task,factual,cfd5badce7bd58b486cf94d4860d5d53e63f5ea7a030cb81fdb78e0d29183f4b,E001;E005,unverified,moderate,exploratory
+C005,figure_captions.md: Figure 2. Control choices and response times favor accumulation over matched nonintegration accounts,factual,fa0405224141a7756ca8d0cf1a30654300388040547d982b774db5f94ff403e8,E002;E009,unverified,moderate,exploratory
+C006,figure_captions.md: Figure 2. Control choices and response times favor accumulation over matched nonintegration accounts,factual,bae0ab0622820550fb96e1242d7dac20f03b6a843f1f10f708875d95ffcf1cfe,E002;E009,unverified,moderate,exploratory
+C007,figure_captions.md: Figure 2. Control choices and response times favor accumulation over matched nonintegration accounts,factual,5cc8f6cbbc14238049e8c9c22b7571f4dc34cc69a3af1da704e44f4efe37f62d,E002;E009,unverified,moderate,exploratory
+C008,figure_captions.md: Figure 3. Brief motion pulses exert a sustained directional influence on choices,factual,5ed13c0b6bf3fa41f5b54e05fae957f13b15c7d735fda54d3062953c3d95369a,E003;E010;E012,unverified,moderate,exploratory
+C009,figure_captions.md: Figure 3. Brief motion pulses exert a sustained directional influence on choices,factual,2497859a937f4339069d15819d3690e0020d43dc713ec725b4f578011f3a0844,E003;E010;E012,unverified,moderate,exploratory
+C010,figure_captions.md: Figure 3. Brief motion pulses exert a sustained directional influence on choices,factual,0b5ad48cd462ac9271d8932d8196b1a42f8f6a66695a02d9f4b878e62008bb42,E003;E010;E012,unverified,moderate,exploratory
+C011,figure_captions.md: Figure 3. Brief motion pulses exert a sustained directional influence on choices,factual,10a5ff7584522ed16edda466cc7a6f4e0a6b5bc83fefe395673cad393dcbdff8,E003;E010;E012,unverified,moderate,exploratory
+C012,figure_captions.md: Figure 4. Pulse sensitivity and response-time distributions jointly constrain accumulation accounts,factual,a03afc80691d1360d948ce5c2c02d01a3f8edef6cb2c7e3966d0580c385f19ce,E004;E013;E014,unverified,moderate,exploratory
+C013,figure_captions.md: Figure 4. Pulse sensitivity and response-time distributions jointly constrain accumulation accounts,factual,9b45ae0d63178894c5211f92e91583a7369ab577d020d3f07e6fe7ca231eb8c1,E004;E013;E014,unverified,moderate,exploratory
+C014,figure_captions.md: Figure 4. Pulse sensitivity and response-time distributions jointly constrain accumulation accounts,factual,749a755a6b6ad6f0acee9dc8f706396ce143d2985ac98471b0176ccb50b15d5b,E004;E013;E014,unverified,moderate,exploratory
+C015,methods.md: STAR Methods — working draft,method,c0cdfa2d8729c4f593c474274f793a282ca32d040b5014bf40d5f993f3784ed8,E015,unverified,moderate,descriptive
+C016,methods.md: Data and code availability,method,c2d329272329ee455298debf1e44feb58f2794e907154b813a81f8b1514e1645,E015,unverified,moderate,descriptive
+C017,methods.md: Experimental model and subject details,method,3af0f4601f8d091fbbd31c3ee673434866b3df516c4d02f288ef438a494ec482,E005;E006;E001,unverified,moderate,descriptive
+C018,methods.md: Motion-discrimination task and behavioral timing,method,d9602893b9b34d0b1120a0e1eb0a06416fae5c3d9480f115aadf9620e766bee8,E001;E006;E011,unverified,moderate,descriptive
+C019,methods.md: Motion-discrimination task and behavioral timing,method,d3639191db576c667681a6acae4450e8ca31207252edff07a8d1eaf81a0278b5,E001;E006;E011,unverified,moderate,descriptive
+C020,"methods.md: Session selection, trial selection and analysis populations",method,214e75eac1f8f159e95261e135417680abbc41bd99cac5131fa323d51fa3ecea,E005;E006;E001,unverified,moderate,descriptive
+C021,"methods.md: Session selection, trial selection and analysis populations",method,67053bd101860cb62b8d2d1717daea6f60f7c050440f8540bbe117ebbc12bc60,E005;E006;E001,unverified,moderate,descriptive
+C022,"methods.md: Session selection, trial selection and analysis populations",method,9a97861152be1290539c3548b8faee1d30d528f3debc84d95b646a12bb083e44,E005;E006;E001,unverified,moderate,descriptive
+C023,methods.md: Descriptive choice and response-time summaries,method,f631b8472e47b07916cdfef61f1effd3021b53dfe65eaf40d416eb34eeb7339c,E001,unverified,moderate,descriptive
+C024,methods.md: Stimulus reconstruction and motion-energy representation,method,b6d6ee47172a1002f9b5a8ced02e973b3c112e975b50d145f064b0b109b7acbe,E011;E022,unverified,moderate,descriptive
+C025,methods.md: Stimulus reconstruction and motion-energy representation,method,2166670f7d89f99e122722ca162e1d487eeea7b5c66a2048cd900ef8b416003f,E011;E022,unverified,moderate,descriptive
+C026,methods.md: Stimulus reconstruction and motion-energy representation,method,dbeab70b3282ff69c60d548f2d36e20aa94643ff5e5e1bf5f54844d1ab521a37,E011;E022,unverified,moderate,descriptive
+C027,methods.md: Stimulus reconstruction and motion-energy representation,method,603f88821a67b267959924a9db4a1d8dbed1d3d6bc13482efc45fe30901272f1,E011;E022,unverified,moderate,descriptive
+C028,methods.md: Accumulation and matched nonintegration models,method,399e0272fdaf3612d15f6b6b152c92e8c00eb1812bdf19bc45f2cdd970a344c5,E007;E011;E021,unverified,moderate,descriptive
+C029,methods.md: Accumulation and matched nonintegration models,method,8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e,E007;E011;E021,unverified,moderate,descriptive
+C030,methods.md: Accumulation and matched nonintegration models,method,c41f8bd4de2f6a8a68c45d8c9b13a716f95e11c8a1af03c7873a240c2a7cf8b3,E007;E011;E021,unverified,moderate,descriptive
+C031,methods.md: Accumulation and matched nonintegration models,method,c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6,E007;E011;E021,unverified,moderate,descriptive
+C032,methods.md: Accumulation and matched nonintegration models,method,66b3cd6b1e004847e1376a3ef81213bceb1fb148aefb5180b1920806bf2a9916,E007;E011;E021,unverified,moderate,descriptive
+C033,methods.md: Accumulation and matched nonintegration models,method,5d7c0b829f3dd589431700ff88c817547238a4d8416b824e87b73d49205bc5f1,E007;E011;E021,unverified,moderate,descriptive
+C034,methods.md: Accumulation and matched nonintegration models,method,b8a7f1a4158b1a0d3001d169387d410709acde97d8e0e583ed25c761a88b026d,E007;E011;E021,unverified,moderate,descriptive
+C035,methods.md: Accumulation and matched nonintegration models,method,1537715a1328433ddd9c47dcf46a73f4f307c022f884b5b70594b1b8ac6f474d,E007;E011;E021,unverified,moderate,descriptive
+C036,methods.md: Joint pulse models and matched variability comparisons,method,36aae75603a670c9df6a8879061052bbcc77861eab919b4058865126cca686fc,E007;E011;E021,unverified,moderate,descriptive
+C037,methods.md: Joint pulse models and matched variability comparisons,method,7c9910c795eed3bab6c09f6a84f2e19dfa35fef6a8d43e5bf8cf4a373e911ea9,E007;E011;E021,unverified,moderate,descriptive
+C038,methods.md: Simulation-based objective and cross-validation,method,ce883022faecd1206e4da84280be77ac9612f33504c34b9e5688b511ca6896f0,E007;E008;E023,unverified,moderate,descriptive
+C039,methods.md: Simulation-based objective and cross-validation,method,edce3425d757270f2b62d811db73b63625cd4b8e66f50ef2a4020b8bceab6b7f,E007;E008;E023,unverified,moderate,descriptive
+C040,methods.md: Simulation-based objective and cross-validation,method,9f77778afbc90438e1add9ea0d6df95e1135f6ad1d9417c6f8c0df7e3938e5c7,E007;E008;E023,unverified,moderate,descriptive
+C041,methods.md: Simulation-based objective and cross-validation,method,8b1f60fade5d66c6281a3b1d4c1f7c45e9a22ef0ffd1177ddcb1b0e6e4ab7f8e,E007;E008;E023,unverified,moderate,descriptive
+C042,methods.md: Simulation-based objective and cross-validation,method,11642d7c99193b4b49f363e2f3ec2d460089623e241232ef469147a1839df29c,E007;E008;E023,unverified,moderate,descriptive
+C043,methods.md: Simulation-based objective and cross-validation,method,c9d6fcd1d11b34248eaac74a6b1e0e733115ce9d55f05ec4bbad2e29618d1ff6,E007;E008;E023,unverified,moderate,descriptive
+C044,methods.md: Simulation-based objective and cross-validation,method,c9d5ba06fb7028ef09e0d5f4197110ef3b35433c2fa381de1a23accd74169d82,E007;E008;E023,unverified,moderate,descriptive
+C045,methods.md: Simulation-based objective and cross-validation,method,02488685eb292824dd9050c7b8dc59635d1766555fd009a5c2d665591ef9c9ae,E007;E008;E023,unverified,moderate,descriptive
+C046,methods.md: Simulation-based objective and cross-validation,method,5289d51e774cce6f0f65411c598ad043f74b47962fee1dd07746579f0d7a799f,E007;E008;E023,unverified,moderate,descriptive
+C047,methods.md: Fixed-input strategy recovery,method,9c392af2413b6d0fe9bce9c0d140f41b196bfe3bf8654584ae379be5686363c8,E002;E009,unverified,moderate,descriptive
+C048,methods.md: Fixed-input strategy recovery,method,ccf3b4353833c3fe650c0f424d28caf0088b3f33eb6120411bab146139775d54,E002;E009,unverified,moderate,descriptive
+C049,methods.md: Scheduled-pulse directional response contrast,method,85b9ff40fa27d75de48b71f74856c91b5084eb5d3f84575e110c1da58fd38d66,E012,unverified,moderate,descriptive
+C050,methods.md: Scheduled-pulse directional response contrast,method,338a888be3c512f1db6313162007e98932f9a4a427a8bd8bc1d323c4eead282e,E012,unverified,moderate,descriptive
+C051,methods.md: Pulse-to-response time course,method,8c5e1a8440110a5dd02187159dc0cb1ecf598720663ecfd44675ac676fa9481a,E003;E010;E020,unverified,moderate,descriptive
+C052,methods.md: Pulse-to-response time course,method,f2551cda12b0a97fbe28a12c95d062d6d71f035f329a9d8ffdee04943962ef1e,E003;E010;E020,unverified,moderate,descriptive
+C053,methods.md: Pulse-to-response time course,method,89b01b6cc233bf93fde9b610554303553d9b5bb4d97482b7b613a93ede35869c,E003;E010;E020,unverified,moderate,descriptive
+C054,methods.md: Coherence-equivalent influence and dilution adjustment,method,27276f11f8a18718b676d6096b048cf9a7111a8caf8031e19b1d988bcfd2c410,E003;E010;E020,unverified,moderate,descriptive
+C055,methods.md: Coherence-equivalent influence and dilution adjustment,method,0dbc163476ac72f73926c7d7367ec72c4bb3d5828f9a14e1c1fd509024942f76,E003;E010;E020,unverified,moderate,descriptive
+C056,methods.md: Coherence-equivalent influence and dilution adjustment,method,52a1500e893d23f4b35772d621d1a82c37329ddd601c4714b37bc446c5e8e342,E003;E010;E020,unverified,moderate,descriptive
+C057,methods.md: Matched forward predictions and individual pulse-effect checks,method,cfd6f3c12486b7ffa6fd278a025bc1348e15655c32b84cf511bfe10012b06c25,E004;E010;E013;E014,unverified,moderate,descriptive
+C058,methods.md: Matched forward predictions and individual pulse-effect checks,method,6a99d0f0df6f4717c1425fd7ba843362e8fc2bdc26e8fc0f2902df3863ccede2,E004;E010;E013;E014,unverified,moderate,descriptive
+C059,methods.md: Matched forward predictions and individual pulse-effect checks,method,291f6809a209018d0f37683de6acea3e618e37154f6c773bf5aadc4061123d4a,E004;E010;E013;E014,unverified,moderate,descriptive
+C060,methods.md: Quantification and statistical analysis,method,b48a7a381e6cf4d4f65efae6c4c7fb07a3494cf7b8666c42482a8529f4e76537,E002;E003;E008;E010;E012;E013;E014,unverified,moderate,descriptive
+C061,methods.md: Quantification and statistical analysis,method,88bf8a3edf40b750d8e0c31ad62aa5cabbdaea988478ed7dab957492fc8385bb,E002;E003;E008;E010;E012;E013;E014,unverified,moderate,descriptive
+C062,results.md: Results,result,de250ce19196425464807b717a25cebcce36179763c51b6c4f06ea67c22deb73,E015,unverified,moderate,exploratory
+C063,results.md: Mice used motion direction to guide their choices,result,572b265ef36a8e2476e58448c192ccd2f50b8b5a5de0b27484b0e4fdbf046bcf,E001;E005,unverified,moderate,exploratory
+C064,results.md: Mice used motion direction to guide their choices,result,37b99a86dad5085820582c6245225e29cf2c55d586bac0ecc0f4826ea99eaf66,E001;E005,unverified,moderate,exploratory
+C065,results.md: Mice used motion direction to guide their choices,result,419efbada667290c442ed70fdc8161a93b4f3dee6bcb588bed7a9cc8ca11227b,E001;E005,unverified,moderate,exploratory
+C066,results.md: Control choices and reaction times favored evidence accumulation,result,a5b11650f0b9b7db32d3b54b3dabaef85adc2dd34e62cf88703630084f2a1914,E002;E007;E009;E021,unverified,moderate,exploratory
+C067,results.md: Control choices and reaction times favored evidence accumulation,result,989deacb795617b62aee49f4160786c269632f8fe058309300a04fcab1ff7a61,E002;E007;E009;E021,unverified,moderate,exploratory
+C068,results.md: Control choices and reaction times favored evidence accumulation,result,cafc423eb3a50f682f5bd8829ba5a46709605410a96cc8a1473bf1e13c5389cf,E002;E007;E009;E021,unverified,moderate,exploratory
+C069,results.md: Control choices and reaction times favored evidence accumulation,result,02a5c2cb4b9a558ef7dfef9ab5372526006194ec13ec9b4106014c6496a8c48b,E002;E007;E009;E021,unverified,moderate,exploratory
+C070,results.md: Brief motion pulses influenced choices after their presentation,result,bff36b47bcba0c65c80858ae757718a38aa5ff21c1052c9478c7ba5f908c1785,E003;E010;E012;E020,unverified,moderate,exploratory
+C071,results.md: Brief motion pulses influenced choices after their presentation,result,8dc9f9047204d3be89dea9541df1d8605323fd9cbb122c9ad1909307f6e08944,E003;E010;E012;E020,unverified,moderate,exploratory
+C072,results.md: Brief motion pulses influenced choices after their presentation,result,4f4bf4fc24a4275b85333c381aa6984a96b90728c95639449a53decdf8e98840,E003;E010;E012;E020,unverified,moderate,exploratory
+C073,results.md: Pulse responses further constrained the fitted accumulation models,result,940010e4a862c7febece43bf20a9e506df1f6da89b270d92355bb26614f4122b,E003;E004;E013;E014,unverified,moderate,exploratory
+C074,results.md: Pulse responses further constrained the fitted accumulation models,result,5999e79d76325c634b35c7492a1c11a89d4a703146c74b55aa8ee9504d163503,E003;E004;E013;E014,unverified,moderate,exploratory
+C075,results.md: Pulse responses further constrained the fitted accumulation models,result,086be2bd8687c9f91b10d74d0b97f0e4d46f103556c37d71e1525e0955b3d5bb,E003;E004;E013;E014,unverified,moderate,exploratory
+C076,results.md: Pulse responses further constrained the fitted accumulation models,result,918f2c0d1f613f71336558462ea0197dc724640563fda50a531b295f116fba53,E003;E004;E013;E014,unverified,moderate,exploratory
+C077,results.md: Pulse responses further constrained the fitted accumulation models,result,3e3df84cd69b4fac5a677250499eb80a14187d74b18fe877f42d5ecd8a2d0f24,E003;E004;E013;E014,unverified,moderate,exploratory

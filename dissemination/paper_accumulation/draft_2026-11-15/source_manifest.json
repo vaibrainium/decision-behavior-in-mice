@@ -1,0 +1,437 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "evidence_id": "E001",
+      "source_type": "dataset",
+      "title": "Figure 1 source tables and population flow",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "figures_v5/figure_manifest.json; source_data/fig1_*",
+      "confidentiality": "restricted",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E002",
+      "source_type": "dataset",
+      "title": "Matched control score and fixed-data recovery tables",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "figures_v5/source_data/fig2_*; dissemination/reviewer_2026-11-13/COMPLETED_RESULTS.md",
+      "confidentiality": "restricted",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E003",
+      "source_type": "dataset",
+      "title": "Pulse directional/persistence data and intervals",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "figures_v5/source_data/fig3_*; dissemination/pulse_dynamics_2026-11-13/",
+      "confidentiality": "restricted",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E004",
+      "source_type": "dataset",
+      "title": "Matched pulse predictions and choice/RT score decomposition",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "figures_v5/source_data/fig4_*; dissemination/pulse_rt_tradeoff_2026-11-13/",
+      "confidentiality": "restricted",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E005",
+      "source_type": "report",
+      "title": "Recorded chronology, selection and original-row audit",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "dissemination/history_dynamics_2026-11-14/selection_audit.json; dissemination/reviewer_2026-11-12/independent_audit.json",
+      "confidentiality": "restricted",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E006",
+      "source_type": "software",
+      "title": "Performed preprocessing and psychometric session filter",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "notebooks/0.0-data-compilation.ipynb; notebooks/0.1-preprocessing-data.ipynb cell 12; config/main.yaml; src/utils/pmf_utils.py",
+      "confidentiality": "restricted",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E007",
+      "source_type": "software",
+      "title": "Decision model, parameterization and saved fitting settings",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "scripts/ddm/fit_mouse_ddm.py; src/ddm/ddm.py; src/ddm/simulator.py; evidence/control_fit_settings.json",
+      "confidentiality": "restricted",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E008",
+      "source_type": "software",
+      "title": "Responded-only conditional choice and RT-quantile objective",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "src/ddm/likelihood_calculator_censored.py; scripts/ddm/fit_mouse_ddm.py select()/heldout_nll()",
+      "confidentiality": "restricted",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E009",
+      "source_type": "software",
+      "title": "Fixed-input recovery and cohort recombination implementation",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "scripts/ddm/model_recovery.py; scripts/ddm/recovery_cohorts.py; dissemination/reviewer_2026-11-13/recovery_fit_inventory.csv",
+      "confidentiality": "restricted",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E010",
+      "source_type": "software",
+      "title": "Huk-style trial selection, directional decomposition and dilution estimator",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "scripts/behavior/huk_shadlen_replication.py; pulse_decomposition.py; pulse_dilution.py; scripts/ddm/pulse_dynamics_bridge.py; pulse_dynamics_sensitivity.py",
+      "confidentiality": "restricted",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E011",
+      "source_type": "software",
+      "title": "Motion-energy reconstruction and pulse-channel inputs",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "scripts/motion_energy.py MOUSE_ME_PARAMS; scripts/ddm/build_ddm_inputs.py; scripts/ddm/fit_mouse_ddm.py select(); .agents/reports/2026-10-29-ucla-pulse-me-nofreeze.md",
+      "confidentiality": "restricted",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E012",
+      "source_type": "software",
+      "title": "Independent scheduled-pulse contrast reproduction and original corrected group comparison",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "dissemination/reviewer_2026-11-12/audit_existing_data.py signed_effect()/summary(); dissemination/reviewer_2026-11-13/COMPLETED_RESULTS.md",
+      "confidentiality": "restricted",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E013",
+      "source_type": "software",
+      "title": "Individual pulse-effect bootstrap, estimands and uncertainty",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "scripts/ddm/pulse_effect_bootstrap.py; scripts/ddm/pulse_joint_signatures.py; figures_v5/source_data/fig4_C_*",
+      "confidentiality": "restricted",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E014",
+      "source_type": "software",
+      "title": "Exact held-out score reconstruction and numerical-seed sensitivity",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": "scripts/ddm/diagnose_pulse_rt_tradeoff.py; dissemination/pulse_rt_tradeoff_2026-11-13/RESULTS_AND_NEXT_MODEL.md",
+      "confidentiality": "restricted",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E015",
+      "source_type": "report",
+      "title": "Drafting scope and author-authorized sequence",
+      "authors": [],
+      "year": 2026,
+      "identifiers": {
+        "doi": "",
+        "pmid": "",
+        "pmcid": "",
+        "isbn": "",
+        "url": ""
+      },
+      "locator": ".agents/plans/2026-10-26-paper-accumulation-variant.md; current conversation; draft README",
+      "confidentiality": "restricted",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E020",
+      "source_type": "journal_article",
+      "title": "Neural Activity in Macaque Parietal Cortex Reflects Temporal Integration of Visual Motion Signals during Perceptual Decision Making",
+      "authors": [
+        "Huk, Alexander C.",
+        "Shadlen, Michael N."
+      ],
+      "year": 2005,
+      "identifiers": {
+        "doi": "10.1523/jneurosci.4684-04.2005",
+        "pmid": "16280581",
+        "pmcid": "",
+        "isbn": "",
+        "url": "https://doi.org/10.1523/jneurosci.4684-04.2005"
+      },
+      "locator": "Eq. 8 / Fig. 4 for behavioral persistence; Figs. 8–9 and Discussion for bounded-model/time-constant interpretation.",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E022",
+      "source_type": "journal_article",
+      "title": "Spatiotemporal energy models for the perception of motion",
+      "authors": [
+        "Adelson, Edward H.",
+        "Bergen, James R."
+      ],
+      "year": 1985,
+      "identifiers": {
+        "doi": "10.1364/josaa.2.000284",
+        "pmid": "3973762",
+        "pmcid": "",
+        "isbn": "",
+        "url": "https://doi.org/10.1364/josaa.2.000284"
+      },
+      "locator": "Abstract / original model architecture: oriented spatiotemporal quadrature energy and opponency.",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E023",
+      "source_type": "journal_article",
+      "title": "Estimating parameters of the diffusion model: Approaches to dealing with contaminant reaction times and parameter variability",
+      "authors": [
+        "Ratcliff, Roger",
+        "Tuerlinckx, Francis"
+      ],
+      "year": 2002,
+      "identifiers": {
+        "doi": "10.3758/bf03196302",
+        "pmid": "12412886",
+        "pmcid": "",
+        "isbn": "",
+        "url": "https://doi.org/10.3758/bf03196302"
+      },
+      "locator": "Model fitting and explicit contaminant-response/parameter-variability treatment; not a claim that our exact objective is identical.",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    },
+    {
+      "evidence_id": "E021",
+      "source_type": "journal_article",
+      "title": "Differentiating between integration and non-integration strategies in perceptual decision making",
+      "authors": [
+        "Stine, Gabriel M",
+        "Zylberberg, Ariel",
+        "Ditterich, Jochen",
+        "Shadlen, Michael N"
+      ],
+      "year": 2020,
+      "identifiers": {
+        "doi": "10.7554/elife.55365",
+        "pmid": "32338595",
+        "pmcid": "",
+        "isbn": "",
+        "url": "https://doi.org/10.7554/elife.55365"
+      },
+      "locator": "Results model definitions and simulated discrimination; model methods.",
+      "confidentiality": "public",
+      "verification": {
+        "source_opened": false,
+        "status": "unverified",
+        "verified_by": "",
+        "verified_on": ""
+      }
+    }
+  ]
+}

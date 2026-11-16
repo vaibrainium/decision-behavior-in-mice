@@ -1,0 +1,37 @@
+[
+  {
+    "paper": "Huk & Shadlen (2005)",
+    "url": "https://www.gatsby.ucl.ac.uk/~pel/course_wuhan/2021/papers/huk_shadlen2005.pdf",
+    "inspected": "Original PDF: behavioral Results, Fig. 4 and bounded-model sections.",
+    "pattern": "Establish behavior, test persistence, then compare the observed trajectory with a model. Give the positive persistence finding a clear conclusion before discussing the origin of the decline.",
+    "applied": "Results section on persistent pulse influence followed by a separate model-comparison section."
+  },
+  {
+    "paper": "Stine et al. (2020)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7217695/",
+    "inspected": "Primary PMC text and full XML; strategy definitions, experimental Results and recovery reasoning.",
+    "pattern": "Define competing decision rules operationally, explain the comparison that distinguishes them, validate discrimination on simulations, then interpret subjects. Scope conclusions to tested models.",
+    "applied": "Matched C/E/ES explanation and recovery stay in the main Results; RT evidence is reported directly."
+  },
+  {
+    "paper": "Odoemene et al. (2018)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6246883/",
+    "inspected": "Primary PMC Results: task performance and temporal-weighting sections.",
+    "pattern": "Open with the animal task and observable behavior. Use finding-based headings and connect the next analysis to a specific question raised by the previous result.",
+    "applied": "Task behavior precedes model inference; headings identify the findings. No unsupported learning or neural-manipulation claim is borrowed."
+  },
+  {
+    "paper": "Stine et al. (2023), Neuron",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10565788/",
+    "inspected": "Primary PMC Results opening, behavioral/pulse reasoning and correlation-to-intervention transition.",
+    "pattern": "Keep task setup concise; link observations to a stated hypothesis; introduce the test needed to go beyond the current inference. The strength of the language follows the experimental support.",
+    "applied": "Short task introduction, figure-linked evidence and a specific interpretation at each section end; no causal neural language transferred to this behavioral study."
+  },
+  {
+    "paper": "Roy et al. (2021), Neuron",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7897255/",
+    "inspected": "Primary full-text search extraction: Introduction, initial model/task Results and Discussion. Direct PMC open challenged; XML unavailable.",
+    "pattern": "Introduce a model through the behavioral problem it addresses, define its variables only as needed, and separate predictive description from mechanism.",
+    "applied": "Model terms explained by what they change in behavior. The paper remains an accumulation/pulse study, not a PsyTrack methods paper."
+  }
+]

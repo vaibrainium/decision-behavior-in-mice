@@ -1,0 +1,13 @@
+{
+  "source_hashes_match": true,
+  "opaque_pngs": true,
+  "font_files_embedded": true,
+  "docx_images": 4,
+  "docx_equations": 2,
+  "missing_author_detail_blocks": 5,
+  "clean_docx_claim_markers": true,
+  "source_reference_structures_valid": true,
+  "claim_hashes_and_links_valid_except_human_verification": true,
+  "human_verification_complete": false,
+  "submission_ready": false
+}

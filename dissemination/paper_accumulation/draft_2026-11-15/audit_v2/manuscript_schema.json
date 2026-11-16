@@ -1,0 +1,17 @@
+{
+  "issues": [
+    {
+      "code": "INVALID_GUIDELINE_ID",
+      "location": "reporting_guidelines[0]",
+      "severity": "error"
+    }
+  ],
+  "status": "fail",
+  "summary": {
+    "errors": 1,
+    "kind": "manuscript",
+    "records": 1,
+    "warnings": 0
+  },
+  "tool": "validate_manifest"
+}

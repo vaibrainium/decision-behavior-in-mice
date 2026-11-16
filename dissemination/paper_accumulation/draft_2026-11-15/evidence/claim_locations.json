@@ -1,0 +1,742 @@
+[
+  {
+    "claim_id": "C001",
+    "file": "figure_captions.md",
+    "line": 7,
+    "evidence_ids": [
+      "E001",
+      "E005"
+    ]
+  },
+  {
+    "claim_id": "C002",
+    "file": "figure_captions.md",
+    "line": 9,
+    "evidence_ids": [
+      "E001",
+      "E005"
+    ]
+  },
+  {
+    "claim_id": "C003",
+    "file": "figure_captions.md",
+    "line": 11,
+    "evidence_ids": [
+      "E001",
+      "E005"
+    ]
+  },
+  {
+    "claim_id": "C004",
+    "file": "figure_captions.md",
+    "line": 15,
+    "evidence_ids": [
+      "E002",
+      "E009"
+    ]
+  },
+  {
+    "claim_id": "C005",
+    "file": "figure_captions.md",
+    "line": 17,
+    "evidence_ids": [
+      "E002",
+      "E009"
+    ]
+  },
+  {
+    "claim_id": "C006",
+    "file": "figure_captions.md",
+    "line": 19,
+    "evidence_ids": [
+      "E002",
+      "E009"
+    ]
+  },
+  {
+    "claim_id": "C007",
+    "file": "figure_captions.md",
+    "line": 23,
+    "evidence_ids": [
+      "E003",
+      "E010",
+      "E012"
+    ]
+  },
+  {
+    "claim_id": "C008",
+    "file": "figure_captions.md",
+    "line": 25,
+    "evidence_ids": [
+      "E003",
+      "E010",
+      "E012"
+    ]
+  },
+  {
+    "claim_id": "C009",
+    "file": "figure_captions.md",
+    "line": 27,
+    "evidence_ids": [
+      "E003",
+      "E010",
+      "E012"
+    ]
+  },
+  {
+    "claim_id": "C010",
+    "file": "figure_captions.md",
+    "line": 29,
+    "evidence_ids": [
+      "E003",
+      "E010",
+      "E012"
+    ]
+  },
+  {
+    "claim_id": "C011",
+    "file": "figure_captions.md",
+    "line": 33,
+    "evidence_ids": [
+      "E004",
+      "E013",
+      "E014"
+    ]
+  },
+  {
+    "claim_id": "C012",
+    "file": "figure_captions.md",
+    "line": 35,
+    "evidence_ids": [
+      "E004",
+      "E013",
+      "E014"
+    ]
+  },
+  {
+    "claim_id": "C013",
+    "file": "figure_captions.md",
+    "line": 37,
+    "evidence_ids": [
+      "E004",
+      "E013",
+      "E014"
+    ]
+  },
+  {
+    "claim_id": "C014",
+    "file": "methods.md",
+    "line": 17,
+    "evidence_ids": [
+      "E015"
+    ]
+  },
+  {
+    "claim_id": "C015",
+    "file": "methods.md",
+    "line": 21,
+    "evidence_ids": [
+      "E005",
+      "E006",
+      "E001"
+    ]
+  },
+  {
+    "claim_id": "C016",
+    "file": "methods.md",
+    "line": 31,
+    "evidence_ids": [
+      "E001",
+      "E006",
+      "E011"
+    ]
+  },
+  {
+    "claim_id": "C017",
+    "file": "methods.md",
+    "line": 33,
+    "evidence_ids": [
+      "E001",
+      "E006",
+      "E011"
+    ]
+  },
+  {
+    "claim_id": "C018",
+    "file": "methods.md",
+    "line": 39,
+    "evidence_ids": [
+      "E005",
+      "E006",
+      "E001"
+    ]
+  },
+  {
+    "claim_id": "C019",
+    "file": "methods.md",
+    "line": 41,
+    "evidence_ids": [
+      "E005",
+      "E006",
+      "E001"
+    ]
+  },
+  {
+    "claim_id": "C020",
+    "file": "methods.md",
+    "line": 43,
+    "evidence_ids": [
+      "E005",
+      "E006",
+      "E001"
+    ]
+  },
+  {
+    "claim_id": "C021",
+    "file": "methods.md",
+    "line": 47,
+    "evidence_ids": [
+      "E001"
+    ]
+  },
+  {
+    "claim_id": "C022",
+    "file": "methods.md",
+    "line": 51,
+    "evidence_ids": [
+      "E011",
+      "E022"
+    ]
+  },
+  {
+    "claim_id": "C023",
+    "file": "methods.md",
+    "line": 53,
+    "evidence_ids": [
+      "E011",
+      "E022"
+    ]
+  },
+  {
+    "claim_id": "C024",
+    "file": "methods.md",
+    "line": 55,
+    "evidence_ids": [
+      "E011",
+      "E022"
+    ]
+  },
+  {
+    "claim_id": "C025",
+    "file": "methods.md",
+    "line": 57,
+    "evidence_ids": [
+      "E011",
+      "E022"
+    ]
+  },
+  {
+    "claim_id": "C026",
+    "file": "methods.md",
+    "line": 61,
+    "evidence_ids": [
+      "E007",
+      "E011",
+      "E021"
+    ]
+  },
+  {
+    "claim_id": "C027",
+    "file": "methods.md",
+    "line": 63,
+    "evidence_ids": [
+      "E007",
+      "E011",
+      "E021"
+    ]
+  },
+  {
+    "claim_id": "C028",
+    "file": "methods.md",
+    "line": 64,
+    "evidence_ids": [
+      "E007",
+      "E011",
+      "E021"
+    ]
+  },
+  {
+    "claim_id": "C029",
+    "file": "methods.md",
+    "line": 65,
+    "evidence_ids": [
+      "E007",
+      "E011",
+      "E021"
+    ]
+  },
+  {
+    "claim_id": "C030",
+    "file": "methods.md",
+    "line": 67,
+    "evidence_ids": [
+      "E007",
+      "E011",
+      "E021"
+    ]
+  },
+  {
+    "claim_id": "C031",
+    "file": "methods.md",
+    "line": 69,
+    "evidence_ids": [
+      "E007",
+      "E011",
+      "E021"
+    ]
+  },
+  {
+    "claim_id": "C032",
+    "file": "methods.md",
+    "line": 71,
+    "evidence_ids": [
+      "E007",
+      "E011",
+      "E021"
+    ]
+  },
+  {
+    "claim_id": "C033",
+    "file": "methods.md",
+    "line": 73,
+    "evidence_ids": [
+      "E007",
+      "E011",
+      "E021"
+    ]
+  },
+  {
+    "claim_id": "C034",
+    "file": "methods.md",
+    "line": 77,
+    "evidence_ids": [
+      "E007",
+      "E011",
+      "E021"
+    ]
+  },
+  {
+    "claim_id": "C035",
+    "file": "methods.md",
+    "line": 79,
+    "evidence_ids": [
+      "E007",
+      "E011",
+      "E021"
+    ]
+  },
+  {
+    "claim_id": "C036",
+    "file": "methods.md",
+    "line": 83,
+    "evidence_ids": [
+      "E007",
+      "E008",
+      "E023"
+    ]
+  },
+  {
+    "claim_id": "C037",
+    "file": "methods.md",
+    "line": 85,
+    "evidence_ids": [
+      "E007",
+      "E008",
+      "E023"
+    ]
+  },
+  {
+    "claim_id": "C038",
+    "file": "methods.md",
+    "line": 87,
+    "evidence_ids": [
+      "E007",
+      "E008",
+      "E023"
+    ]
+  },
+  {
+    "claim_id": "C039",
+    "file": "methods.md",
+    "line": 89,
+    "evidence_ids": [
+      "E007",
+      "E008",
+      "E023"
+    ]
+  },
+  {
+    "claim_id": "C040",
+    "file": "methods.md",
+    "line": 90,
+    "evidence_ids": [
+      "E007",
+      "E008",
+      "E023"
+    ]
+  },
+  {
+    "claim_id": "C041",
+    "file": "methods.md",
+    "line": 91,
+    "evidence_ids": [
+      "E007",
+      "E008",
+      "E023"
+    ]
+  },
+  {
+    "claim_id": "C042",
+    "file": "methods.md",
+    "line": 93,
+    "evidence_ids": [
+      "E007",
+      "E008",
+      "E023"
+    ]
+  },
+  {
+    "claim_id": "C043",
+    "file": "methods.md",
+    "line": 95,
+    "evidence_ids": [
+      "E007",
+      "E008",
+      "E023"
+    ]
+  },
+  {
+    "claim_id": "C044",
+    "file": "methods.md",
+    "line": 97,
+    "evidence_ids": [
+      "E007",
+      "E008",
+      "E023"
+    ]
+  },
+  {
+    "claim_id": "C045",
+    "file": "methods.md",
+    "line": 101,
+    "evidence_ids": [
+      "E002",
+      "E009"
+    ]
+  },
+  {
+    "claim_id": "C046",
+    "file": "methods.md",
+    "line": 103,
+    "evidence_ids": [
+      "E002",
+      "E009"
+    ]
+  },
+  {
+    "claim_id": "C047",
+    "file": "methods.md",
+    "line": 107,
+    "evidence_ids": [
+      "E012"
+    ]
+  },
+  {
+    "claim_id": "C048",
+    "file": "methods.md",
+    "line": 109,
+    "evidence_ids": [
+      "E012"
+    ]
+  },
+  {
+    "claim_id": "C049",
+    "file": "methods.md",
+    "line": 113,
+    "evidence_ids": [
+      "E003",
+      "E010",
+      "E020"
+    ]
+  },
+  {
+    "claim_id": "C050",
+    "file": "methods.md",
+    "line": 115,
+    "evidence_ids": [
+      "E003",
+      "E010",
+      "E020"
+    ]
+  },
+  {
+    "claim_id": "C051",
+    "file": "methods.md",
+    "line": 117,
+    "evidence_ids": [
+      "E003",
+      "E010",
+      "E020"
+    ]
+  },
+  {
+    "claim_id": "C052",
+    "file": "methods.md",
+    "line": 121,
+    "evidence_ids": [
+      "E003",
+      "E010",
+      "E020"
+    ]
+  },
+  {
+    "claim_id": "C053",
+    "file": "methods.md",
+    "line": 123,
+    "evidence_ids": [
+      "E003",
+      "E010",
+      "E020"
+    ]
+  },
+  {
+    "claim_id": "C054",
+    "file": "methods.md",
+    "line": 125,
+    "evidence_ids": [
+      "E003",
+      "E010",
+      "E020"
+    ]
+  },
+  {
+    "claim_id": "C055",
+    "file": "methods.md",
+    "line": 129,
+    "evidence_ids": [
+      "E004",
+      "E010",
+      "E013",
+      "E014"
+    ]
+  },
+  {
+    "claim_id": "C056",
+    "file": "methods.md",
+    "line": 131,
+    "evidence_ids": [
+      "E004",
+      "E010",
+      "E013",
+      "E014"
+    ]
+  },
+  {
+    "claim_id": "C057",
+    "file": "methods.md",
+    "line": 133,
+    "evidence_ids": [
+      "E004",
+      "E010",
+      "E013",
+      "E014"
+    ]
+  },
+  {
+    "claim_id": "C058",
+    "file": "methods.md",
+    "line": 137,
+    "evidence_ids": [
+      "E002",
+      "E003",
+      "E008",
+      "E010",
+      "E012",
+      "E013",
+      "E014"
+    ]
+  },
+  {
+    "claim_id": "C059",
+    "file": "methods.md",
+    "line": 139,
+    "evidence_ids": [
+      "E002",
+      "E003",
+      "E008",
+      "E010",
+      "E012",
+      "E013",
+      "E014"
+    ]
+  },
+  {
+    "claim_id": "C060",
+    "file": "results.md",
+    "line": 7,
+    "evidence_ids": [
+      "E001",
+      "E005"
+    ]
+  },
+  {
+    "claim_id": "C061",
+    "file": "results.md",
+    "line": 9,
+    "evidence_ids": [
+      "E001",
+      "E005"
+    ]
+  },
+  {
+    "claim_id": "C062",
+    "file": "results.md",
+    "line": 11,
+    "evidence_ids": [
+      "E001",
+      "E005"
+    ]
+  },
+  {
+    "claim_id": "C063",
+    "file": "results.md",
+    "line": 15,
+    "evidence_ids": [
+      "E002",
+      "E007",
+      "E009",
+      "E021"
+    ]
+  },
+  {
+    "claim_id": "C064",
+    "file": "results.md",
+    "line": 17,
+    "evidence_ids": [
+      "E002",
+      "E007",
+      "E009",
+      "E021"
+    ]
+  },
+  {
+    "claim_id": "C065",
+    "file": "results.md",
+    "line": 19,
+    "evidence_ids": [
+      "E002",
+      "E007",
+      "E009",
+      "E021"
+    ]
+  },
+  {
+    "claim_id": "C066",
+    "file": "results.md",
+    "line": 21,
+    "evidence_ids": [
+      "E002",
+      "E007",
+      "E009",
+      "E021"
+    ]
+  },
+  {
+    "claim_id": "C067",
+    "file": "results.md",
+    "line": 25,
+    "evidence_ids": [
+      "E003",
+      "E010",
+      "E012",
+      "E020"
+    ]
+  },
+  {
+    "claim_id": "C068",
+    "file": "results.md",
+    "line": 27,
+    "evidence_ids": [
+      "E003",
+      "E010",
+      "E012",
+      "E020"
+    ]
+  },
+  {
+    "claim_id": "C069",
+    "file": "results.md",
+    "line": 29,
+    "evidence_ids": [
+      "E003",
+      "E010",
+      "E012",
+      "E020"
+    ]
+  },
+  {
+    "claim_id": "C070",
+    "file": "results.md",
+    "line": 33,
+    "evidence_ids": [
+      "E003",
+      "E004",
+      "E013",
+      "E014"
+    ]
+  },
+  {
+    "claim_id": "C071",
+    "file": "results.md",
+    "line": 35,
+    "evidence_ids": [
+      "E003",
+      "E004",
+      "E013",
+      "E014"
+    ]
+  },
+  {
+    "claim_id": "C072",
+    "file": "results.md",
+    "line": 37,
+    "evidence_ids": [
+      "E003",
+      "E004",
+      "E013",
+      "E014"
+    ]
+  },
+  {
+    "claim_id": "C073",
+    "file": "results.md",
+    "line": 39,
+    "evidence_ids": [
+      "E003",
+      "E004",
+      "E013",
+      "E014"
+    ]
+  },
+  {
+    "claim_id": "C074",
+    "file": "results.md",
+    "line": 41,
+    "evidence_ids": [
+      "E003",
+      "E004",
+      "E013",
+      "E014"
+    ]
+  }
+]
