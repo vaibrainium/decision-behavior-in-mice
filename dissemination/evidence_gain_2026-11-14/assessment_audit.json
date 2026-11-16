@@ -1,0 +1,13 @@
+{
+  "source_sha256": "93f8761cadad83aa6fd177fe27179f33498257b648e18cf2abab7aa3ac975b8c",
+  "n_scores": 12,
+  "n_simulated_outcomes": 4564080,
+  "input_trials_each_rep_verified": true,
+  "fit_hashes_verified": true,
+  "choice_rt_terms_additive": true,
+  "uncertainty": "Simulation-seed range; not sampling CI",
+  "target": "Independent simulations of full-training fits, no held-out generalization",
+  "observed_profile_source": "/src/dissemination/evidence_gain_2026-11-14/data_pulse_profile.csv",
+  "observed_intervals": "400 within-session 50-original-record block resamples; pointwise exploratory",
+  "observed_point_estimator_matches_prior": true
+}

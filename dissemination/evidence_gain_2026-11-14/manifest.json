@@ -1,0 +1,24 @@
+{
+  "source_sha256": {
+    "scripts/ddm/evidence_gain_feasibility.py": "813b349aebe6ae5b7647f78d36d35abbbaf203b6cad2a299aea17c5d73e07913",
+    "src/ddm/evidence_gain.py": "1e8966f5aa0dfd1ca96f4a3b7078060b8d6d3da7b8b3a91850f5a889ff158ee3",
+    "src/ddm/simulator.py": "83528f667e2b7b3c6e9c5e686a511c61f17ed58a3a6be21487056f346f41c51f",
+    "src/ddm/ddm.py": "22443accab0b062e1b234c0fe009e01f84f77e87ce6258b3eed6c909c78679b8",
+    "scripts/ddm/fit_response_delay.py": "bf59e37c7eef95e75c76427d7f0ad01a37cb0d7e8ee04e477c9c44c30e4924a3",
+    "scripts/ddm/fit_mouse_ddm.py": "2d69af100aa7078f863b51f0bcf1d3365470558fde83421ef070b454bf7ee8c4",
+    "src/ddm/likelihood_calculator_censored.py": "c0d86f54fca0c21c83c19caa587097fe1e0897d603bcb9d2d412fc477f4b53ad"
+  },
+  "input_sha256": "dd1563d743656317ac611a7b041b199e05c1852adb544e2f916c757b1c496cd5",
+  "fit_seed": 114143,
+  "eval_seeds": [
+    415,
+    839
+  ],
+  "eval_reps": 60,
+  "design": "Bounded full-training feasibility; all shared parameters free; no held-out claim",
+  "mice": [
+    "PSUIM6",
+    "PSUIM7"
+  ],
+  "gain": "G=exp(sigma*Z-sigma^2/2), post-front-end, every evidence channel, sv=0"
+}

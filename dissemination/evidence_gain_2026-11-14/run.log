@@ -1,0 +1,61 @@
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+GAIN PSUIM6 screen 100 16455.498 seconds 7.7
+GAIN PSUIM6 screen 200 16448.701 seconds 14.3
+GAIN PSUIM6 screen 300 16448.492 seconds 21.0
+GAIN PSUIM6 screen 400 16413.055 seconds 27.6
+GAIN PSUIM6 screen 500 16405.782 seconds 34.2
+GAIN PSUIM6 screen 600 16405.743 seconds 40.5
+GAIN PSUIM6 refine 100 16355.512 seconds 78.6
+GAIN PSUIM6 refine 200 16347.635 seconds 110.3
+GAIN PSUIM6 refine 300 16347.075 seconds 143.0
+GAIN PSUIM6 refine 400 16346.33 seconds 175.9
+GAIN PSUIM6 refine 500 16326.708 seconds 204.8
+GAIN PSUIM6 refine 600 16325.125 seconds 238.1
+GAIN PSUIM6 refine 700 16325.011 seconds 269.3
+DONE GAIN PSUIM6 sigma 0.6568643406547037 nll 16325.0110548924
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+EVAL PSUIM6 fixed 415 16379.791
+EVAL PSUIM6 fixed 839 16373.095
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+EVAL PSUIM6 drift 415 16363.86
+EVAL PSUIM6 drift 839 16367.922
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+EVAL PSUIM6 gain 415 16316.683
+EVAL PSUIM6 gain 839 16312.403
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+GAIN PSUIM7 screen 100 19693.0 seconds 8.4
+GAIN PSUIM7 screen 200 19682.442 seconds 15.4
+GAIN PSUIM7 screen 300 19681.504 seconds 22.2
+GAIN PSUIM7 screen 400 19681.504 seconds 28.7
+GAIN PSUIM7 screen 500 19681.504 seconds 35.1
+GAIN PSUIM7 screen 600 19681.504 seconds 41.5
+GAIN PSUIM7 refine 100 19622.805 seconds 86.7
+GAIN PSUIM7 refine 200 19587.198 seconds 120.4
+GAIN PSUIM7 refine 300 19579.907 seconds 152.1
+GAIN PSUIM7 refine 400 19579.139 seconds 183.3
+GAIN PSUIM7 refine 500 19579.114 seconds 215.4
+GAIN PSUIM7 refine 600 19579.114 seconds 248.2
+GAIN PSUIM7 refine 700 19579.114 seconds 281.6
+GAIN PSUIM7 refine 800 19579.114 seconds 313.1
+DONE GAIN PSUIM7 sigma 1.036199879771617 nll 19579.113982631825
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+EVAL PSUIM7 fixed 415 19821.696
+EVAL PSUIM7 fixed 839 19799.3
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+EVAL PSUIM7 drift 415 19564.404
+EVAL PSUIM7 drift 839 19561.765
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+INFO:src.ddm.ddm:Initialized MouseDDM | device=cuda | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}
+INFO:src.ddm.simulator:DriftDiffusionSimulator using _TorchSimulator backend on cuda
+EVAL PSUIM7 gain 415 19606.465
+EVAL PSUIM7 gain 839 19582.062

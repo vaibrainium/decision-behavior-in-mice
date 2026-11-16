@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/src/scripts/ddm/assess_evidence_gain.py", line 112, in <module>
+    if __name__=='__main__':run()
+                            ^^^^^
+  File "/src/scripts/ddm/assess_evidence_gain.py", line 26, in run
+    r=pd.read_pickle(OUT/'cache'/f'eval_{mouse}_{family}_r{REPS}_s{seed}.pkl')
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/src/.venv/lib/python3.12/site-packages/pandas/io/pickle.py", line 185, in read_pickle
+    with get_handle(
+         ^^^^^^^^^^^
+  File "/src/.venv/lib/python3.12/site-packages/pandas/io/common.py", line 882, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/src/dissemination/evidence_gain_2026-11-14/cache/eval_PSUIM7_gain_r60_s839.pkl'
