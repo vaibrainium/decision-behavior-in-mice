@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-15",
+  "base_commit": "b63c9d919edc85e48446be48a8399ba6304b8df0",
+  "new_work_uncommitted": true,
+  "scope": "Author-requested publication strategy; no new data, simulations or fits",
+  "evidence": {
+    "E01": "dissemination/reviewer_2026-11-13/COMPLETED_RESULTS.md: task population and matched held-out control/recovery evidence; original tables and fit inventory linked there",
+    "E02": "dissemination/reviewer_2026-11-12/independent_audit.json and independent_signed_effects.csv: scheduled signed pulse effect",
+    "E03": "dissemination/pulse_dynamics_2026-11-13/RESULTS.md, data_bootstrap_summary.csv, summary_across_seeds.csv: identical pulse/dilution estimators and no-leak counterexample",
+    "E04": "dissemination/pulse_rt_tradeoff_2026-11-13/RESULTS_AND_NEXT_MODEL.md, diagnostic_summary.json: matched choice/RT decomposition and dominant-mouse sensitivity",
+    "E05": "dissemination/reviewer_2026-11-13/COMPLETED_RESULTS.md and referenced pulse_effect_bootstrap_2026-11-09 tables: cohort mean compatibility, heterogeneity and timing qualifications",
+    "E06": "dissemination/response_delay_2026-11-14/RESULTS.md: variable postdecision-delay pilot and out-of-fold evaluation",
+    "E07": "dissemination/evidence_gain_2026-11-14/RESULTS.md and training_differences_from_drift.csv: bounded two-mouse full-training positive-gain pilot",
+    "E08": "dissemination/history_dynamics_2026-11-14/RESULTS.md, state_regularization_sensitivity.csv: serial persistence, continuous/discrete bias prediction and extended-history comparison",
+    "E09": "dissemination/nhp_pulse_hmm_2026-11-15/RESULTS.md and assessment_v2/heldout_differences.csv: two-mouse pulse-state held-out comparison; external RT validation adjacent",
+    "E10": "dissemination/history_dynamics_2026-11-14/selection_audit.json: original logged chronology and selected-session/response limits",
+    "E11": "dissemination/attention_decision_review_2026-11-14/REVIEW.md and EVIDENCE_MATRIX.md: established literature, novelty and mechanism-identification limits"
+  },
+  "public_sources_rechecked": [
+    "https://pubmed.ncbi.nlm.nih.gov/32338595/",
+    "https://doi.org/10.7554/eLife.105116",
+    "https://shop.elsevier.com/journals/neuron/0896-6273",
+    "https://www.elsevier.com/en-au/about/policies-and-standards/generative-ai-policies-for-journals",
+    "https://arxiv.org/abs/2609.00065"
+  ],
+  "scope_access_limit": "Direct Cell/ScienceDirect Neuron scope pages returned 403; publisher Neuron description accessible. No journal-specific acceptance prediction inferred.",
+  "role": "Author-requested working appraisal, not assigned review/editorial decision",
+  "processing": "Existing author-authorized repository; no unpublished text or data placed in web queries; no additional external AI services"
+}
