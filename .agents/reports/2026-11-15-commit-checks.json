@@ -1,0 +1,59 @@
+{
+  "base_commit": "b63c9d919edc85e48446be48a8399ba6304b8df0",
+  "preflight": {
+    "files_scanned": 647,
+    "text_files_scanned": 577,
+    "high_confidence_secret_findings": [],
+    "syntax_or_json_errors": [],
+    "symlinks": [],
+    "note": "Pattern scan is not a proof of absence; credentials are never echoed."
+  },
+  "initial_test_runs": [
+    {
+      "module": "tests.test_response_delay",
+      "exit_code": 0,
+      "stdout": "PASS cpu: zero-spread exact, drift baseline exact, fixed decision choices, independent delay, guesses, deadline/floor, deterministic draws\nPASS lognormal moments: mean=0.399902, variance=0.142987; invalid inputs rejected\n",
+      "stderr": "INFO:src.ddm.simulator:DriftDiffusionSimulator using _NumbaSimulator backend on cpu\nINFO:src.ddm.simulator:DriftDiffusionSimulator using _NumbaSimulator backend on cpu\nINFO:src.ddm.simulator:DriftDiffusionSimulator using _NumbaSimulator backend on cpu\nINFO:src.ddm.ddm:Initialized MouseDDM | device=cpu | likelihood=qmle_censored {'nbins': 9, 'rt_nllh_weight': 1.0, 'include_censored': False}\nINFO:src.ddm.simulator:DriftDiffusionSimulator using _NumbaSimulator backend on cpu\n"
+    },
+    {
+      "module": "tests.test_evidence_gain",
+      "exit_code": 0,
+      "stdout": "PASS cpu : exact zero limit, all channels/front end before gain, unscaled bias/diffusion, deterministic\nPASS: positive mean-one gains, expected variance, incompatible variability rejected\n",
+      "stderr": "INFO:src.ddm.simulator:DriftDiffusionSimulator using _NumbaSimulator backend on cpu\nINFO:src.ddm.simulator:DriftDiffusionSimulator using _NumbaSimulator backend on cpu\nINFO:src.ddm.simulator:DriftDiffusionSimulator using _NumbaSimulator backend on cpu\n"
+    },
+    {
+      "module": "tests.test_history_dynamics",
+      "exit_code": 0,
+      "stdout": "PASS: logistic estimates agree with statsmodels/BFGS; lag pairs preserve gaps and session boundaries\n",
+      "stderr": ""
+    },
+    {
+      "module": "tests.test_predictive_bias_states",
+      "exit_code": 0,
+      "stdout": "PASS: AR1 moments; brute-force path likelihood; analytic gradient; no current-choice leakage; gaps/session resets\n",
+      "stderr": ""
+    },
+    {
+      "module": "tests.test_pulse_feature_encoding",
+      "exit_code": 0,
+      "stdout": "PASS: six distinct types; control zero; congruency/physical direction mapping; right-choice/correctness likelihood equivalence\n",
+      "stderr": ""
+    },
+    {
+      "module": "tests.test_nhp_pulse_observations",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/src/tests/test_nhp_pulse_observations.py\", line 4, in <module>\n    from scripts.behavior.nhp_pulse_observations import PulseObservations,independent_expected_loss\n  File \"/src/scripts/behavior/nhp_pulse_observations.py\", line 9, in <module>\n    from ssm.observations import InputDrivenObservations\nModuleNotFoundError: No module named 'ssm'\n"
+    }
+  ],
+  "ssm_environment_check": {
+    "command": "CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 /mnt/data/venvs/nhp-glmhmm-2026-11-15/bin/python -m tests.test_nhp_pulse_observations",
+    "exit_code": 0,
+    "stdout": "PASS: inherited likelihood, analytic gradients/Hessian, constrained optimum, exact sharing, masks"
+  },
+  "docx_xml_secret_pattern_findings": [],
+  "git_author_configured": true,
+  "active_git_hooks": [],
+  "code_whitespace_checks": "Passed before each topic commit",
+  "no_new_fits_or_installs": true
+}

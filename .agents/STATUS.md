@@ -1,7 +1,26 @@
 # Status
-Last updated: 2026-11-13 by Claude (Opus 5.5)
+Last updated: 2026-11-15 by Codex (client date)
 
 ## Current focus
+All accumulated nonignored work checkpointed as 12 focused topic commits plus a final handoff commit on mouse-motion-energy; no push. Commit map and checks: reports/2026-11-15-commit-work.md and adjacent JSON records. The writing objective and next step are unchanged.
+
+Figures-first paper packet complete: reports/2026-11-16-figures-first-draft.md. Author requested figures → captions → Methods → Results and comparable decision-making language/structure. Selected files: dissemination/paper_accumulation/draft_2026-11-15/figures_v5/main_figures.pdf and working_draft_v3.docx (same revision in Markdown); separate captions, methods and results files are current. Main figures include completed recovery, sustained pulse influence, individual/cohort uncertainty and matched RT tradeoffs. No new fits or simulations.
+
+Active writing plan: plans/2026-10-26-paper-accumulation-variant.md, next unchecked current step G: Introduction, Discussion, Summary and final title. Working prose follows task → matched accumulation evidence → pulse persistence/dynamics. Original manuscripts and historical results remain intact. Missing author-specific animal/ethics/apparatus/declaration facts stay explicit; human source verification is not fabricated. Exact Neuron formatting remains provisional because the official author page was inaccessible.
+
+The author explicitly retains the Huk-style post-pulse analysis centrally. Foreground sustained directional influence and retain the late decline; compare full trajectories without treating that decline alone as an intrinsic forgetting constant. Completed paired recovery supersedes older incomplete-recovery notes. Several cohort-average pulse predictions are compatible; stronger individual/time-course constraints and PSUIM7 concentration remain visible. The author has waived earlier manually imposed scientific gates.
+
+## Previous focus
+Historical notes retained for provenance; use the new direction report and completed-results inventory when these older assessments conflict.
+
+NHP SSM installed and two-mouse pulse-state pilot complete: reports/2026-11-15-nhp-pulse-hmm-pilot.md. Environment /mnt/data/venvs/nhp-glmhmm-2026-11-15 contains the exact author fork; original DDM environment unchanged. Latest user selection: six physical direction × time indicators, congruency views on nonzero coherence. Shared-pulse state model improves future choices in PSUIM6/7; freeing pulse coefficients worsens PSUIM6 and gives unresolved PSUIM7 change. Current-RT validation does not support a consistent state interpretation. No late pulses in these two mice. Final results/figure: dissemination/nhp_pulse_hmm_2026-11-15/RESULTS.md and pulse_hmm_pilot_final.pdf. Next scientific option is a compact joint choice/RT baseline-state account with shared pulse weights, not a larger pulse-weight HMM campaign.
+
+History/state follow-up and bounded positive-gain feasibility completed; report: reports/2026-11-14-history-state-gain.md. Verified original logged row order for all 50 accepted sessions, preserved excluded-row gaps. Continuous bias predicts held-out session portions beyond first-order history; extended history explains much of its benefit in the main pulse mice. Current-RT validation does not identify a common state mechanism. Gain partly improves the RT/late-pulse tradeoff but still underpredicts early pulse amplitude; two-mouse full-training pilot only, not held-out gain validation.
+
+Author clarified task-assigned correct side before latest physical-input selection. Alternate six onset × target-congruency inputs remain coded/exported/tested in dissemination/nhp_ssm_2026-11-15/target_inputs_v2/. Exact SSM source is vaibrainium/ssm at a109af369797d852904fd9496f3532524de8f15a; installation and actual fork-based fits are now complete as above. UCLA target is reconstructed from Response/Correct; provenance limitation remains in reports/2026-11-15-nhp-ssm-target-congruency.md.
+
+Literature assessment: dissemination/attention_decision_review_2026-11-14/ (32 verified/curated reference records). Response-delay pilot remains complete and unhelpful; see reports/2026-11-14-response-delay-pilot.md. Historical protocols below predate the author's current exploratory authorization.
+
 Mapping x accumulator + nominal-coherence fits complete (1,260; exploratory, no rules): power/norm mappings fit slightly better
 than linear, integrators beat E/ES under every mapping, no family reproduces the pulse effect per mouse; all integrators
 predict a late reversal (reports/2026-11-09-mapping-accumulator-exploratory.md). Next: rules discussion with the author.
@@ -21,7 +40,6 @@ source tables and audited denominator record N108. Integrity audit 1 passed afte
 The exploratory pulse follow-up status is unchanged: the tau_p pilot failed its frozen criteria and modelling stopped;
 its independent check remains pending before any formal manuscript claim.
 
-## Previous focus
 Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gate failures and predates adoption of amendment 6. Newer draft: manuscript_2026-10-23.md. Timing tests remain withheld after both revised gates failed.
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
@@ -29,7 +47,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - plans/2026-10-29-control-paper.md : third paper (control trials only, Stine 2020 framing) in dissemination/paper_control/; G1 approved 2026-10-30 (D004), spine locked, stage S2; paired recovery 42579825 analysed: E separated (provisional, ES fits not yet submitted)
 - plans/2026-10-28-full-recovery-matrix.md : ON HOLD (author); recovery rerun on fixed CPU datasets if it becomes necessary
 - plans/2026-10-26-v2-refits-and-strategy-recovery.md : responded-only refits + full point-3 re-run (amendment 9); commands ready; next: user syncs code, submits R1-R6 (460), then F1a (80) and P1-P4 (850)
-- plans/2026-10-26-paper-accumulation-variant.md : second paper version (accumulation-first) in dissemination/paper_accumulation/; G1 held; waiting on v2 refits + E-recovery (plans/2026-10-26-v2-refits-and-strategy-recovery.md)
+- plans/2026-10-26-paper-accumulation-variant.md : resumed under current author authorization; figures/captions/Methods/Results packet complete in draft_2026-11-15/; next current step G is Introduction/Discussion/Summary/title. Historical gated stages superseded.
 - plans/2026-10-23-pulse-followup-parallel.md : A-E, G1, F3 pilot done (FAIL -> modelling stopped); next: H2 check of pilot, H4 finalize; original primacy procedure remains closed
 - plans/2026-10-23-amendment-4-extrema.md : code done and checked; next: Hyak fits (commands in analysis log 8.4d)
 - plans/2026-10-22-primacy-analysis-code.md : done; next: predictive check (gate 1) first pass when 8.4c batch 1 lands
@@ -38,86 +56,22 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-11-15-commit-work.md : accumulated analysis/code/results/drafts split into topic commits; intended-environment tests pass; no push.
+- reports/2026-11-16-figures-first-draft.md : four figures, captions, Methods and Results assembled with source records and an editable packet; comparable-paper structure applied; next is remaining manuscript sections.
+- reports/2026-11-15-huk-pulse-interpretation.md : author retains main-paper pulse analysis; original Huk/Shadlen explicitly separates persistence evidence from estimating leak; no results changed.
+- reports/2026-11-15-paper-direction.md : recommends original accumulation-first paper with pulse constraints central; completed recovery retained, attention/state headline unsupported; Neuron mechanism advance remains unresolved.
+- reports/2026-11-15-nhp-pulse-hmm-pilot.md : installed exact fork; 132 converged fits; baseline/history states predict future choices, state-specific pulse weights do not help consistently; original environment preserved.
+- reports/2026-11-15-nhp-ssm-target-congruency.md : exact author's SSM fork/revision pinned from NHP lock; target-relative six-category export audited including zero coherence; isolated setup prepared, no installation/fits.
+- reports/2026-11-14-history-state-gain.md : chronology verified against original logs; persistent choice bias predicts future session portions; gain partly improves RT/late pulse but early effect remains too small; NHP six-type adapter ready, congruency definition pending.
+- reports/2026-11-14-attention-decision-literature.md : literature revises next priority to history/state diagnostics, then gain feasibility; attention/encoding alternatives and scoring limitations mapped to existing data.
+- reports/2026-11-14-response-delay-pilot.md : variable postdecision delay fails to resolve RT/pulse mismatch in PSUIM6/7; new implementation/tests, original folds, 90 audited held-out scores; gain variability proposed next.
 - reports/2026-11-13-pulse-weight-signatures.md : free pulse weights (shared / per time) raise PSUIM6/7 early effect only to 6.5-7.5 pp (data 15.5 / 13.5); best early chi2 74.6, worse than normalized UGM no sv; BIC +274 to +907
-- reports/2026-11-13-bits-per-trial.md : bits per trial: full-data ranks like BIC (rho 0.94); held-out bits noise-limited at 150 reps (seed moves families 5-26 mbits), not usable for ranking
-- reports/2026-11-12-rescored-ic.md : AIC/BIC from rescored fitted NLL: joint best power + leak + urgency (= held-out best; norm + leak 2.6 behind), pulse-only best linear leak; MC noise ~13 per family
-- reports/2026-11-12-likelihood-check.md : likelihood code correct; sv's pulse-trial advantage is all RT term, mostly PSUIM7; stored fitted NLL optimistic by 194-250 per family (model-dependent), so AIC/BIC need rescoring at an independent seed
-- reports/2026-11-11-model-ic.md : AIC/BIC agree with held-out NLL on the top group (leak / leak + urgency with sv, power or norm input) and on integrators > E/ES > Stine; QMLE AIC/BIC legitimate (corrects an earlier claim)
-- reports/2026-11-11-ugm-corner.md : free UGM-region fits avoid the corner (0/120 full-data fits); with sv late reversal outside data CI, no sv passes the pulse but NLL within 10 of best in 3/10 (joint) mice; corner proper untested by a fixed grid
-- reports/2026-11-11-pulse-only-fits.md : fitting pulse trials only does not fix the pulse misfit (per-mouse spread; late reversal with sv); no-sv matches pulse means but fits worse; pulse-trial fits have longer ndt, more guesses
-- reports/2026-11-09-pulse-effect-bootstrap.md : data pulse mean has CI 3.2-7.9 pp (ME integrators inside); per-mouse spread real (I^2 0.83) and unexplained by every family; late reversal of leak/urgency integrators outside the data CI, sv-only integrators inside
-- reports/2026-11-09-mapping-accumulator-exploratory.md : power/norm mappings slightly better than linear (2-4 mice); integrators beat E/ES under all mappings; no family reproduces the per-mouse pulse effect; late reversal in all integrators (exploratory)
-- reports/2026-11-06-normalization-pulse-prediction.md : normalization fitted to control trials raises the mean predicted pulse effect (3.25 -> 4.71 pp, data 5.48) but not per mouse (Wilcoxon p 0.92); not better under the pre-set rule
-- reports/2026-10-31-pulse-time-weights.md : per-pulse-time weights: no held-out gain, no early>late ordering across mice; PSUIM6 alone fits early w ~3
-- reports/2026-10-30-pulse-time-weight-profile.md : per-pulse-time weights: likelihood flat in 8/10 mice; early > late hint only in PSUIM6/PSUIM7
-- reports/2026-10-29-huk-shadlen-replication.md (2026-10-30 additions) : congruent and incongruent pulse effects equal and opposite (one directional term, shared term n.s.); pulse kept (gamma x T flat at 15 %coh x s) to ~1.2 s after onset, then lost (Holm <= .027); pulse worth ~3x its motion energy
-- reports/2026-10-30-pulse-weight-joint.md : free pulse weight stays ~1, no held-out gain (sv or no-sv); data do not ask for a stronger pulse when RTs are fitted
-- reports/2026-10-30-paired-recovery-cohorts.md : paired recovery valid (320); E separated at cohort level (0/1,024 E-generated vs 1,024/1,024 C-generated reproduce C>E); DDMx/ESx comparisons not diagnostic; ES pending
-- reports/2026-10-29-huk-shadlen-replication.md : Huk & Shadlen 2005 analyses on mice: pulse = 11.9% coherence equivalent (theirs 1.6%), no separate RT effect (delta p 0.90), 9/10 mice positive; affects choices 0.3-1.2 s after onset, none earlier, fades after ~1.2-1.8 s; diffusion fits mean RT poorly
-- reports/2026-10-29-behavior-exploration.md : 50/298 sessions, 10/14 mice kept (77% of pulse trials excluded with sessions); late (>5 s) choices as accurate as on-time; 0.3 s RT floor with fast guesses; lose-repeat history 8/10 mice (as large as pulse); pulse effect stable across sessions
-- reports/2026-10-29-heldout-choice-rt-split.md : held-out table reproduced by control_heldout.py; C advantage mostly RT terms (vs ES choice part ~0); small consistent choice advantage over E only; robust to leave-one-mouse-out
-- reports/2026-10-29-pulse-race-lca-illustration.md : race and LCA variants (incl. baseline LCA of Kirkpatrick et al. 2021), matched to control trials in 3 mice, predict 2.7-5.1 pp vs 13.1 pp observed; no reversal; architecture does not fix the size problem
-- reports/2026-10-29-likelihood-ignores-trial-me.md : held-out likelihood is pooled per coherence, so it never uses trial-by-trial motion energy (shuffle = seed noise); shuffled-ME ablation is a no-op; RT terms are ~80% of NLL
-- reports/2026-10-29-control-descriptives.md : control trials: RT falls with coherence (Holm 0.06), errors 118 ms faster (Holm 0.06; common model under-predicts, exploratory), ME kernel ~0.1-0.3% coh, null and underpowered; paired CPU recovery datasets ready (80, sha256)
-- reports/2026-10-29-joint-control-pulse-refits.md : 12 families refit on control + pulse trials: ranking unchanged (L1U1 -72 sum, 2/10 mice), parameters ~1.0x control fits (UCLA shift not reproduced); no family reproduces the pulse effect (2.3-4.5 vs 5.48 pp at 0.3-1.2 s); late reversal only with sv/leak; addendum: sv causes the reversal (dose-response, eta selection 10/10 mice) and also cuts the early effect 16.4 -> 5.2 pp at fixed gain
-- reports/2026-10-29-ucla-pulse-me-nofreeze.md : removing the UCLA replay freeze raises the UCLA pulse x1.13-1.15 (UW/UCLA 1.65 -> 1.45, ~pulse length); new inputs ddm_inputs_global_ucla_nofreeze.npz; DDM kernel verified; pulse moves the fitted decision variable only 2-4% of the bound
-- reports/2026-10-29-pulse-descriptive-package.md : 10 mice: pulse effect in responses 0.3-1.2 s after the pulse 5.5 pp [0.8, 10.2] (Holm 0.08), none after 1.2 s (1.2 [-2.8, 5.2]); no reversal in PSUIM6/7 but DBM6 reverses; S2 uninformative
-- reports/2026-10-29-pulse-leak-vs-urgency.md : pulse tests of leak vs urgency: what was tried, literature verdict, feasibility illustration (SR1 passes in 2 dense mice; every variant mis-predicts the 0.9-1.2 s bin and the late window), calibrated route with stop rules SR1-SR5
-- ../dissemination/reports/pulse-leak-vs-urgency-literature-2026-10-29.md : literature synthesis (62 DOIs): first-order pulse signatures are shared by all bounded integrators; leak identifiable only above ~1 /s with NDT pinned; design S1-S3 + (L, u, w) inference + recovery grid
-- reports/2026-10-28-pulse-time-comparison.md : no within-mouse change of the pulse effect across pulse times (Bayes early-middle 0.14 log-odds [-0.08, 0.37]; per-mouse Holm >= 0.27); late looks smaller only because its 6 mice have small effects throughout
-- reports/2026-10-28-pulse-direction-by-time.md : right vs left pulse per pulse time; bias differs (early -17.1% coh, Holm 0.047 over 6, post hoc family; middle -12.4, Holm 0.10; late n.s.), slope does not
-- reports/2026-10-28-pulse-psychometric-parameter-bootstrap.md : per-stage bootstrap on psychometric bias/slope; early congruent-incongruent slope +0.040 (Holm 0.022) and early right-pulse bias -15.1% (Holm 0.011); rest n.s.
-- reports/2026-10-28-pulse-congruency-tests.md : congruent 3.0 pp (Holm 0.096) and incongruent 3.6 pp (0.39) pulse effects each non-significant; positive-vs-negative (7.52 pp, Holm 0.012) pools both
-- reports/2026-10-28-recovery-synthetic-data-mismatch.md : BUG: recovery candidates scored on different synthetic data (GPU-dependent synthesis); F1a k=5, ES and ESx/DDMx recoveries invalid until rerun on fixed CPU datasets
-- reports/2026-10-28-stine-exact-models.md : paper-exact Stine models barely differ (ESx-DDMx 62.7, DDMx 3/10, ESx 0/10), pulse test not distinguished, recovery weak; both fit far worse than the common model (C better 6/10)
-- reports/2026-10-27-f1a-strategy-recovery-responded.md : F1a k = 5/20 E-generated datasets scored as accumulator (genuine, not optimizer) -> THESIS_B under D002; E vs C on real data 278.9 (C 5/10, E 0/10); E pulse strategy test not distinguished
-- reports/2026-10-27-pulse-readout-model-rt-split.md : primary model gets the RT shape of the pulse effect right but is too weak at RT ~0.5-1.3 s and predicts a late reversal the data lack
-- reports/2026-10-27-pulse-readout-bias-checks.md : readout-bias (slow-trial) account not supported: pulse effect in fast-middle RTs, slow ±100% trials most accurate, pulse-direction choices faster
-- reports/2026-10-27-pulse-asymmetry-lapse-checks.md : no congruency asymmetry beyond models (0.54 ± 3.22 pp) once asymmetric UW cells are dropped; ±100% excess errors are slow, not fast guesses
-- reports/2026-10-27-pulse-psychometric-variants.md : all 7 responded-only variants underpredict pulse effects (0.35-1.9 pp vs observed 2.0 congruent / 4.0 incongruent)
-- reports/2026-10-27-pulse-effect-vs-coherence-change.md : pulse effect vs coherence change inconclusive (slope 0.27 [-0.16, 0.69] logit/100%; design range too narrow)
-- reports/2026-10-27-pulse-me-old-vs-new-filter.md : pulse ME difference from nb 2.11 is the intended filter change (old filter non-causal), not a bug
-- reports/2026-10-27-pulse-contrast-responders-only.md : (src-46) pulse effect holds without no-response trials: pos vs neg 5.84 -> 7.52 pp [2.73, 12.30], Holm 0.012; pulse does not change response rate (p 0.086)
-- reports/2026-10-26-fluctuation-kernel-observed.md : amendment 8 response-aligned kernel on real choices: neither model fits (inconclusive; not used as support)
-- reports/2026-10-26-neuropaper-s5-s6.md : G4 recorded; S5 assembled/coherence-repaired; S6 v2 selected with exact gate, coverage and calibration denominators
-- reports/2026-10-26-neuropaper-s4-g4.md : all six S4 sections passed; G4 awaits approval plus an exact N105–N107 Methods provenance reconciliation
-- reports/2026-10-26-figure-notebooks.md : five executable, panel-by-panel figure notebooks wrap canonical modules without writing publication outputs
-- reports/2026-10-26-main-figures-1-2.md : Figures 1–2 selected; N105–N107 close main-art denominator mappings and the five-figure package is reconciled
-- reports/2026-10-26-main-figures-3-5.md : selected Figures 3–5 assembled with vector/300-dpi exports, source data and artwork-matched captions
-- reports/2026-10-25-results-narrative-rewrite.md : Results v4 uses a natural question-to-result narrative; all claims,
-  tokens and scientific boundaries preserved; deterministic checks pass; author verification pending
-- reports/2026-10-25-fluctuation-kernel-power.md : synthetic: fluctuation kernels have no power for primacy; response-aligned index separates integrator vs E (20/20 each); amendment 8 decision pending
-- reports/2026-10-25-neuropaper-wave1-review.md : legends PASS; Methods/Results need bounded correction after two rounds; no new analysis required
-- reports/2026-10-25-neuropaper-outline-g3.md : five-figure outline and six briefs pass independent K1-K12 review; G3 author approval pending
-- reports/2026-10-24-neuropaper-literature-g2.md : 44 verified sources; broad mouse novelty rejected, narrow predictive-transfer gap survives; C010-C021 approved at G2
-- reports/2026-10-23-pulse-tau-pilot-20261023T191030Z_fa8de8b.md : tau_p pilot FAIL (fit improves at 300 ms but gains stay 2.3x apart and late reversal persists); modelling stopped
-- reports/2026-10-23-pulse-diagnostics-20261023T191030Z_fa8de8b.md : existing model misplaces the pulse effect in time (early, then reverses; data delayed and sustained); choice-RT gain tradeoff demonstrated in 2 mice; proposes one tau_p candidate
-- reports/2026-10-23-pulse-validation-g1-20261023T191030Z_fa8de8b.md : t intervals adequate (coverage 0.93-0.975); power 0.64 at 6 pp; bootstrap undercovers
-- reports/2026-10-23-pulse-stimulus-20261023T191030Z_fa8de8b.md : no sign-aligned post-pulse stimulus bias except a one-dot rounding shift; UCLA pulse energy possibly x1.3-1.4 understated
-- reports/2026-10-23-pulse-response_time-20261023T191030Z_fa8de8b.md : pulse-aligned curves: +5.8 pp direction, emerging 0.5-2 s; no common latency effect (review: reports/2026-10-23-pulse-review-D-...)
-- reports/2026-10-23-pulse-behaviour-20261023T191030Z_fa8de8b.md : scheduled pulse Delta_direction +5.84 pp [1.80, 9.89], 10 mice, Holm p = 0.019
-- reports/2026-10-23-pulse-data-20261023T191030Z_fa8de8b.md : pulse contract frozen; assignment verified randomized from task source; 48 UCLA no-response pulses mislabelled control in DDM inputs (43 recovered); UW asymmetric-coherence schedule flagged
-- reports/2026-10-23-pulse-parallel-plan.md : parallel handoff drafted with explicit ownership, common data contract, minimum behavioural deliverable and conditional mechanism validation; no implementation launched
-- reports/2026-10-23-pulse-thesis-research.md : existing-data pulse research synthesis; replay offset redraws noise directions, physical counterfactual validation needed; joint choice/RT route proposed
-- reports/2026-10-23-amendment-6-result.md : revised gate fails; timing test calibrated but powerless; primacy not
-  answerable with these pulses
-- reports/2026-10-22-observed-gate-review.md : both first-pass gates fail; strategy z=2.966 remains not distinguished; proposed pulse-gain revision reviewed, not adopted
-- reports/2026-10-22-prediction-sensitivity.md : all frozen hashes match; pulse-specific test selects generator in 1/20 extrema and 0/20 integrator simulations; observed pulse analysis pending
-- reports/2026-10-22-arriving-results.md : independently verified control preference for integrator, free guess bias and completed recovery; manuscript updated; pulse predictions/comparison pending
-- reports/2026-10-22-paper-first-draft.md : first manuscript prose; qualified hidden-coherence population claim, separated analysis sets; final strategy results pending
-- reports/2026-10-23-control-only-selection.md : strict model holds under control-only CV (sv, guesses needed;
-  leak/urgency not); batches 1, 3b and recovery resubmitted
-- reports/2026-10-22-primacy-power.md : primacy pipeline built (synthetic-only checks); predicted pulse effect
-  ~0.025 logit, so the timing test has ~no power under the fitted model; decision pending
-- reports/2026-10-22-leak-urgency-diagnosis.md : leak/urgency gains are specific to PSUIM5/6/7 and mostly fit the
-  coherence-flat rate of > 5 s responses (likely late engagement); not a power issue
-- reports/2026-10-21-ddm-common-model-selection.md : sv and fast guesses pass the noise threshold in most mice; leak
-  and urgency only in the 3–4 best-sampled mice; sz out; fast_only guess form preferred
-- ../dissemination/reports/primacy-analysis-plan.md : locked confirmatory primacy plan (commit aeb0a22), 2 amendments
-- ../dissemination/reports/mouse-ddm-analysis-log.md : full analysis log (ME, hidden coherence, DDM generations)
-- ../dissemination/reports/motion-energy-methods.md : motion-energy method review and corrections
 
 ## Known issues
+- 2026-11-16 draft: animal/ethics/task author facts and final declarations are missing; named-human source verification pending. Neuron author-page access failed, so exact formatting is unverified. Office pagination not rendered locally; native-size figures and DOCX structure/math were checked.
+- Pulse-HMM setup complete in its isolated environment; use that interpreter for ssm. Pilot is choice-only and has no late pulse observations in PSUIM6/7. Alternate UCLA target-congruency inputs use reconstructed targets, not independent target logs. See 2026-11-15 SSM/pilot reports.
+- Serial results condition on selected sessions/responded choices. Original logged row order verified; masking excluded records does not model informative missingness. Latent timescales are saved-record steps, not elapsed time or known distinct presentations.
+- Response-delay pilot is bounded and exploratory, with no recovery/parameter intervals or group inference. PSUIM6 small NLL rankings remain seed-sensitive; PSUIM7 large RT advantage of drift variability persists. Pulse predictions use out-of-fold parameters and differ from earlier full-fit signatures (response-delay report).
 - Fitted NLL (train_nll) is evaluated at the fit's own noise draw (optimistic, model-dependent): use rescored_nll_2026-11-12.csv / model_ic_*_2026-11-12_rescored.csv, not model_ic_*_2026-11-11.csv (reports/2026-11-12-rescored-ic.md).
 - 2026-11-12 (resolved same day): /mnt/data was empty because the container started while the NAS was unmounted and a plain bind mount does not pick up later host mounts. docker-compose.yaml now binds host /mnt to /mnt/host (rslave) and links /mnt/data -> /mnt/host/cnc_backup/vaib_data/mouse-pulse-experiment at startup; NAS remounts now appear without a restart. If the NAS drops, /mnt/data reads as an empty local dir and writes go to local disk: check `findmnt -R /mnt/host` before long jobs. Claude history persisted to host ~/.claude-docker (CLAUDE_CONFIG_DIR=/root/.claude).
 - Choices vs RTs (choice_binomial_nll_2026-11-12.csv, scripts/ddm/choice_fit_binomial.py): on pulse trials, no-sv fits predict choices better than their sv counterparts (pulse-only: NLL -26 to -60, 8-9/10 mice; all-trial pairs too); sv wins the combined likelihood through RTs.
@@ -144,6 +98,15 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - Screen geometry not corrected in ME (ME methods §3.7).
 
 ## Decisions
+- 2026-11-15 (client date): Author explicitly requested local commits of all accumulated work in digestible chunks. Checkpointed without pushing; reports/2026-11-15-commit-work.md.
+- 2026-11-16: Follow author-selected figures → captions → Methods → Results order; apply comparable decision-making paper structure in original prose. First packet complete; Introduction/Discussion/Summary next. reports/2026-11-16-figures-first-draft.md.
+- 2026-11-15: Author preference: retain Huk-style persistence/decline analysis centrally. Primary-source check supports sustained integration interpretation and cautions against a direct intrinsic forgetting estimate; reports/2026-11-15-huk-pulse-interpretation.md.
+- 2026-11-15: Publication-direction recommendation (author adoption pending): retain accumulation-first argument and make pulse predictions the central mechanistic constraint; see reports/2026-11-15-paper-direction.md. No new manual gates or fitting campaign.
+- 2026-11-15: latest asynchronous selection sets physical direction × time inputs as primary, nonzero-coherence congruency views. Installed pinned SSM with user authorization; completed bounded two-mouse pilot. Retain shared pulse weights as the simpler benchmark; no consistent predictive benefit for state-specific pulse coefficients (NHP pulse-HMM pilot report).
+- 2026-11-15: author defines congruency relative to task-assigned correct side. Implemented six onset × congruency categories with target sign for right/left modeling; keep zero-coherence pulses and original masks. Use SSM fork pinned by the NHP lock, in a separate environment when installation is authorized (NHP SSM/target-congruency report).
+- 2026-11-14: positive gain feasibility tested with common-parameter refits in PSUIM6/7; improves part of RT/late-pulse tradeoff, still misses early pulse amplitude. Do not label attention or treat training scores as held-out validation. NHP source reuse audited; physical six-type inputs prepared pending congruency clarification (history/state/gain report).
+- 2026-11-14: literature recommendation is history/state diagnostics before another fit campaign; distinguish positive sensitivity gain from attention and evaluate temporal ordering outside the current pooled score. Proposed analyses, not established results (attention-decision literature report).
+- 2026-11-14: completed the currently authorized exploratory postdecision-delay pilot; do not expand this unhelpful candidate to the full cohort. Positive-gain variability is proposed, not tested. See reports/2026-11-14-response-delay-pilot.md.
 - 2026-10-28: D010 pulse effects reported as right vs left (per pulse time, psychometric bias/slope bootstrap); congruency framing dropped (reports/2026-10-28-pulse-direction-by-time.md).
 - 2026-10-27: exclude all trials without a response by 5 s from every analysis (V. Thakur: "both of these trials should not have been considered for any analysis"); likelihood made conditional on a response by 5 s.
 - 2026-10-26: approved G4 with the bounded N105–N107 Methods patch and the order S5 assembly, S6 artwork, then panel review (D009).
