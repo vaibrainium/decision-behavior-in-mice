@@ -1,0 +1,10 @@
+pair,quantile_bin,delta_rt_nll
+pw_per_time_no_sv_minus_pw_per_time,0.0,-15.855337974908672
+pw_per_time_no_sv_minus_pw_per_time,1.0,33.50673064453859
+pw_per_time_no_sv_minus_pw_per_time,2.0,195.5346130419881
+pw_per_time_no_sv_minus_pw_per_time,3.0,276.9553504867508
+pw_per_time_no_sv_minus_pw_per_time,4.0,207.9726504582852
+pw_per_time_no_sv_minus_pw_per_time,5.0,53.769380052054935
+pw_per_time_no_sv_minus_pw_per_time,6.0,-121.7779808190622
+pw_per_time_no_sv_minus_pw_per_time,7.0,-201.08438948146596
+pw_per_time_no_sv_minus_pw_per_time,8.0,-68.80358841424083

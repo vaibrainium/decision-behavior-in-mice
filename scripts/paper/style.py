@@ -12,7 +12,6 @@ import numpy as np
 import pandas as pd
 
 from config import dir_config
-from scripts.ddm.build_ddm_inputs import scheduled_pulse
 
 MM = 1 / 25.4
 FULL_WIDTH = 180 * MM
@@ -73,6 +72,9 @@ def load_trials():
     `sched_pulse_type` = sign(pulse coherence) x onset bin (1 early, 2 middle, 3 late), 0 if no pulse was scheduled.
     Preprocessing's `pulse_type` is not used: it is set to 0 when the response came before the pulse ended.
     """
+    # Keep figure-only imports independent of replay/OpenCV system libraries.
+    from scripts.ddm.build_ddm_inputs import scheduled_pulse
+
     valid = pd.read_csv(PROCESSED / "valid_data.csv").assign(censored=False)
     censored = pd.read_csv(PROCESSED / "censored_trials.csv").assign(censored=True)
     data = pd.concat([valid, censored], ignore_index=True)

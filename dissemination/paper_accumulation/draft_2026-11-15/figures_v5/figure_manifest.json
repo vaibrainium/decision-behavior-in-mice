@@ -1,0 +1,315 @@
+{
+  "population": {
+    "n_mice": 10,
+    "n_sessions": 50,
+    "n_responded": 25508,
+    "n_no_response_by_5s": 4537,
+    "n_accepted_eligible": 30045,
+    "n_model": 25493,
+    "n_control_responded": 14015,
+    "n_control_psychometric_mice": 10
+  },
+  "layout_checks": {
+    "figure1": {
+      "text_outside_canvas": []
+    },
+    "figure2": {
+      "text_outside_canvas": []
+    },
+    "figure3": {
+      "text_outside_canvas": []
+    },
+    "figure4": {
+      "text_outside_canvas": []
+    }
+  },
+  "control_scores": [
+    {
+      "model": "E",
+      "part": "total",
+      "n_mice": 10,
+      "mean": 12.75661938117317,
+      "median": 12.58995869402742,
+      "min": -16.88793684627083,
+      "max": 29.46719672484496,
+      "t": 2.960639273654399,
+      "p_t": 0.0159429538967632,
+      "p_wilcoxon": 0.02734375,
+      "dz": 0.9362363434894444,
+      "c_better_10": 5,
+      "alt_better_10": 0,
+      "p_t_holm": 0.0373519783715865,
+      "p_wilcoxon_holm": 0.05859375
+    },
+    {
+      "model": "ES",
+      "part": "total",
+      "n_mice": 10,
+      "mean": 18.74496319307892,
+      "median": 21.002662098058632,
+      "min": -9.319524157520226,
+      "max": 41.353994210901554,
+      "t": 3.606360847626684,
+      "p_t": 0.0056915298293329,
+      "p_wilcoxon": 0.013671875,
+      "dz": 1.140431434295576,
+      "c_better_10": 6,
+      "alt_better_10": 0,
+      "p_t_holm": 0.0227661193173316,
+      "p_wilcoxon_holm": 0.0546875
+    }
+  ],
+  "pulse": {
+    "n_temporal_trials": 19313,
+    "n_temporal_mice": 10,
+    "n_temporal_pulse": 8529,
+    "signed_mean_pp": 5.844356373835997,
+    "signed_ci_low": 1.7994914855323305,
+    "signed_ci_high": 9.889221262139664,
+    "temporal_bin_counts": [
+      {
+        "lo_s": 0.1,
+        "hi_s": 0.3,
+        "n_trials": 1413,
+        "n_pulse": 622
+      },
+      {
+        "lo_s": 0.3,
+        "hi_s": 0.6,
+        "n_trials": 3620,
+        "n_pulse": 1642
+      },
+      {
+        "lo_s": 0.6,
+        "hi_s": 0.9,
+        "n_trials": 3446,
+        "n_pulse": 1537
+      },
+      {
+        "lo_s": 0.9,
+        "hi_s": 1.2,
+        "n_trials": 2478,
+        "n_pulse": 1081
+      },
+      {
+        "lo_s": 1.2,
+        "hi_s": 1.5,
+        "n_trials": 1645,
+        "n_pulse": 722
+      },
+      {
+        "lo_s": 1.5,
+        "hi_s": 2.1,
+        "n_trials": 2225,
+        "n_pulse": 939
+      },
+      {
+        "lo_s": 2.1,
+        "hi_s": 5.0,
+        "n_trials": 4486,
+        "n_pulse": 1986
+      }
+    ]
+  },
+  "matched_tradeoff": {
+    "delta_choice_nll": -49.286470688144824,
+    "delta_rt_nll": 360.2174279939402,
+    "delta_total": 310.93095730579535,
+    "PSUIM7_share": 0.9010610152940338
+  },
+  "base_commit": "b63c9d919edc85e48446be48a8399ba6304b8df0",
+  "source_hashes": {
+    "/src/dissemination/paper/figures/fig1_task_behaviour_2026-10-26_v2_source_psychometric_mouse.csv": "749c14ef957e9e542310d862473899ef2d132325d048c706bf61dbb5c42d5eb3",
+    "/src/dissemination/paper/figures/fig1_task_behaviour_2026-10-26_v2_source_psychometric_group.csv": "14b307649e941e1beb6f9721cdb12ccc4b669c68079dcb46221faa06fbd9f9f1",
+    "/src/dissemination/paper/figures/fig1_task_behaviour_2026-10-26_v2_source_rt_mouse.csv": "9ac672ff3308752be46e2bb0642158899f2e67a9c3afdfe39420c6a73f882e2d",
+    "/src/dissemination/paper/figures/fig1_task_behaviour_2026-10-26_v2_source_rt_group.csv": "237ca90c4b8c2e061d17a453d951cc8ad494871292a8a85ca0daba20c525a376",
+    "/src/dissemination/paper/figures/fig1_task_behaviour_2026-10-26_v2_source_schedule.csv": "42e8d1a6b0cad45a711e41863422f9dd42b08a7f9965b63ca51e539777141c32",
+    "/src/dissemination/paper/figures/fig1_task_behaviour_2026-10-26_v2_source_overview.csv": "bd215d6fade6f3bbfe42b7fede6eb44bf0ef43c7aa82820ec7a30c9dd0048075",
+    "/src/dissemination/pulse_dynamics_2026-11-13/preparation_checks.json": "b6520d93957314074a52e61b7f780527a952871d83b41c23c12bbf333b4a0dbc",
+    "/src/dissemination/history_dynamics_2026-11-14/selection_audit.json": "3b9949b184beed9dd0c8fe0bd8b955f2fdab952d5faf0f06ddbfe4fb24394d88",
+    "/src/dissemination/paper_control/tables/heldout_diff_per_mouse_2026-10-29.csv": "4f1803af6f11813935dec93c9384e8fc851b9cb1c9ae0379323d2bb4dc6a59d1",
+    "/src/dissemination/paper_control/tables/heldout_group_2026-10-29.csv": "7649525391fc1caad070f52db22900ab1d022d6cb10f4edb29db1ad2d4e1f237",
+    "/src/dissemination/paper_control/tables/recovery_confusion_2026-10-30_v3.csv": "45d353f90154887191ec2529ee8020414206f921c7c71e00c701df2f749dea92",
+    "/src/dissemination/paper_control/tables/recovery_cohort_rates_2026-10-30_v3.csv": "c6c321363d963546663f9bac9530ef6e80fc88bf62aa420ed7349edfc34a3e6b",
+    "/mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/data/trial_table.csv": "44d7cdf94faa2f63618acc5668251cb09779b026ece1b61264fd57199e81f335",
+    "/src/dissemination/paper_accumulation/tables/pulse_decomposition_2026-10-30_bins.csv": "cb609a5051834dd9f3035af82002d00e8f2efc92f0a83e702f05f06b6764403b",
+    "/src/dissemination/pulse_dynamics_2026-11-13/data_readouts.csv": "52687af19d3b1ef46fe6ead78919c8c3c6f7d51364b36cb3aa9e90a006a00b59",
+    "/src/dissemination/pulse_dynamics_2026-11-13/data_bootstrap_readouts.csv": "6b9469f4e71bd6e1e674405e81de93afecbcb246901481d89e5b5df4f81d0ea3",
+    "/src/dissemination/reviewer_2026-11-12/independent_signed_effects.csv": "097df0feacd8320614f5896334cdaef9de4b97b4b060797b145615d83eb5bb0d",
+    "/src/dissemination/pulse_dynamics_2026-11-13/all_readouts.csv": "d6709809e38db2ee1a634453e89c48ffc79a7d91cfb99a505739d83ae4ba526b",
+    "/src/dissemination/pulse_rt_tradeoff_2026-11-13/difference_by_mouse_seed12345.csv": "e6d140ddeb73e5cca84940ac0da5f48647fedb0735be2cccb461dc815cc815fb",
+    "/src/dissemination/pulse_rt_tradeoff_2026-11-13/difference_by_quantile_seed12345.csv": "c132656ed9cc7c7041df2ff7b7fb846f8b17f49969913fca63b6a0bf7540f9ff",
+    "/src/dissemination/pulse_rt_tradeoff_2026-11-13/rt_histograms_seed12345.csv": "f9253d3ec9dbe732e92a50f57fcf31c62e9898364f3106e7938083a149478691",
+    "/src/dissemination/figures/qc/pulse_joint_signatures_2026-11-12_pw_windows.csv": "07efd130242a2a05d633434435c754de6b8bf1ff8e2f6134b0d6886845ea1d92",
+    "/src/dissemination/figures/qc/pulse_effect_bootstrap_2026-11-12_pw_data.csv": "aae7b48bcaa649fff5f26902abf9c5bbd0a2b96c54fcc804c63c895e56c46639",
+    "/src/scripts/paper/build_paper_2026_11_15.py": "e3ea7dd368e51c2074cb4cf4081f5484b39fdcf464e51bff045ca88e8be11a10"
+  },
+  "panels": [
+    {
+      "panel": "fig1_B_schedule",
+      "table": "source_data/fig1_B_schedule.csv",
+      "definition": "Scheduled signed-pulse timing in accepted sessions, independent of observed response timing. Onset spans are observed ranges.",
+      "rows": 10
+    },
+    {
+      "panel": "fig1_C_psychometric_mouse",
+      "table": "source_data/fig1_C_psychometric_mouse.csv",
+      "definition": "Scheduled controls, responses by 5 s; each row is a mouse \u00d7 signed coherence.",
+      "rows": 90
+    },
+    {
+      "panel": "fig1_C_psychometric_group",
+      "table": "source_data/fig1_C_psychometric_group.csv",
+      "definition": "Unweighted mouse means and SEM; number of contributing mice can vary by coherence.",
+      "rows": 9
+    },
+    {
+      "panel": "fig1_D_rt_mouse",
+      "table": "source_data/fig1_D_rt_mouse.csv",
+      "definition": "Scheduled controls; mouse median RT by coherence and outcome, displayed only for cells with at least 10 trials.",
+      "rows": 90
+    },
+    {
+      "panel": "fig1_D_rt_group",
+      "table": "source_data/fig1_D_rt_group.csv",
+      "definition": "Mean and SEM of eligible within-mouse medians; zero-coherence outcomes displayed separately.",
+      "rows": 9
+    },
+    {
+      "panel": "fig1_E_population",
+      "table": "source_data/fig1_E_population.csv",
+      "definition": "Accepted-session analysis flow; no response by 5 s includes late recorded choices and no-choice trials. Corrections are not in this eligible trial table.",
+      "rows": 1
+    },
+    {
+      "panel": "fig2_AB_control_differences",
+      "table": "source_data/fig2_AB_control_differences.csv",
+      "definition": "Alternative NLL minus accumulator NLL, per 1,000 held-out control trials; positive favors accumulation. Existing five-fold scores.",
+      "rows": 80
+    },
+    {
+      "panel": "fig2_AB_group_statistics",
+      "table": "source_data/fig2_AB_group_statistics.csv",
+      "definition": "Existing mouse-level group statistics; Holm correction follows the original four-alternative comparison family, separately by score component.",
+      "rows": 8
+    },
+    {
+      "panel": "fig2_C_recovery",
+      "table": "source_data/fig2_C_recovery.csv",
+      "definition": "Winner counts across all five fitted candidates; 20 fixed dataset pairs per generator. Each candidate fit uses the same generated train/test data.",
+      "rows": 5
+    },
+    {
+      "panel": "fig2_D_recombined_cohorts",
+      "table": "source_data/fig2_D_recombined_cohorts.csv",
+      "definition": "Existing fraction of 1,024 recombinations of two replicates per mouse that reproduce an accumulation preference; not 1,024 independent simulations.",
+      "rows": 3
+    },
+    {
+      "panel": "fig3_A_psychometric_mouse",
+      "table": "source_data/fig3_A_psychometric_mouse.csv",
+      "definition": "Huk-style eligible early/middle schedules, symmetric cells, responses after pulse offset and at least 0.1 s after onset; per-mouse P(right).",
+      "rows": 232
+    },
+    {
+      "panel": "fig3_A_psychometric_group",
+      "table": "source_data/fig3_A_psychometric_group.csv",
+      "definition": "Unweighted means/SEM over available mice, separately by coherence and physical pulse direction. Descriptive curves, not fitted shifts.",
+      "rows": 25
+    },
+    {
+      "panel": "fig3_B_directional_shared",
+      "table": "source_data/fig3_B_directional_shared.csv",
+      "definition": "Saved joint logistic directional D and shared S coefficients; percentile mouse-bootstrap intervals; Holm over seven bins separately per term.",
+      "rows": 7
+    },
+    {
+      "panel": "fig3_C_dilution_adjustment",
+      "table": "source_data/fig3_C_dilution_adjustment.csv",
+      "definition": "Point estimates and 600-mouse-bootstrap percentile intervals for gamma \u00d7 mean RT; bins are a descriptive response-conditioned readout.",
+      "rows": 7
+    },
+    {
+      "panel": "fig3_D_assignment_effects",
+      "table": "source_data/fig3_D_assignment_effects.csv",
+      "definition": "Signed directional response contrast by 5 s; all eligible assignments in symmetric matched cells, not the response-conditioned temporal estimator.",
+      "rows": 10
+    },
+    {
+      "panel": "fig4_AB_model_readouts",
+      "table": "source_data/fig4_AB_model_readouts.csv",
+      "definition": "Pooled model readouts from fixed fitted parameters; each seed pools 30 simulations per input. Individual seeds retained, not parameter uncertainty.",
+      "rows": 56
+    },
+    {
+      "panel": "fig4_AB_observed_readouts",
+      "table": "source_data/fig4_AB_observed_readouts.csv",
+      "definition": "Observed directional and dilution-adjusted readouts; identical estimators are applied to simulated decisions.",
+      "rows": 7
+    },
+    {
+      "panel": "fig4_C_individual_predictions",
+      "table": "source_data/fig4_C_individual_predictions.csv",
+      "definition": "Previously computed individual pulse-minus-control response-conditioned effect, pp; model predictions are fixed-parameter simulations.",
+      "rows": 60
+    },
+    {
+      "panel": "fig4_C_individual_intervals",
+      "table": "source_data/fig4_C_individual_intervals.csv",
+      "definition": "Within-mouse observed trial/bootstrap and block intervals from existing analysis; displayed interval is within-mouse block bootstrap, not animal-population uncertainty.",
+      "rows": 10
+    },
+    {
+      "panel": "fig4_C_cohort_interval",
+      "table": "source_data/fig4_C_cohort_interval.csv",
+      "definition": "Observed cohort mean with the existing mouse-plus-trial hierarchical bootstrap interval; distinct from the within-mouse block intervals.",
+      "rows": 1
+    },
+    {
+      "panel": "fig4_D_matched_scores",
+      "table": "source_data/fig4_D_matched_scores.csv",
+      "definition": "Matched onset-weight models, without minus with persistent drift variability; positive NLL difference favors variability. Includes controls and pulses.",
+      "rows": 10
+    },
+    {
+      "panel": "fig4_E_rt_quantiles",
+      "table": "source_data/fig4_E_rt_quantiles.csv",
+      "definition": "Held-out conditional RT-bin contributions; bins are within coherence \u00d7 pulse \u00d7 choice quantiles, not shared physical RT intervals.",
+      "rows": 9
+    },
+    {
+      "panel": "fig4_F_example_rt",
+      "table": "source_data/fig4_F_example_rt.csv",
+      "definition": "Largest matched RT-loss cell selected descriptively: PSUIM7, correct -100% controls. Saved fold histogram counts summed for display.",
+      "rows": 705
+    }
+  ],
+  "figures": [
+    {
+      "figure": "figure1",
+      "title": "Figure 1 | Task performance and analysis populations",
+      "width_mm": 180.0,
+      "height_mm": 164.0
+    },
+    {
+      "figure": "figure2",
+      "title": "Figure 2 | Control behavior discriminates tested strategies",
+      "width_mm": 180.0,
+      "height_mm": 156.0
+    },
+    {
+      "figure": "figure3",
+      "title": "Figure 3 | Transient motion has a sustained directional influence",
+      "width_mm": 180.0,
+      "height_mm": 160.0
+    },
+    {
+      "figure": "figure4",
+      "title": "Figure 4 | Pulse and response-time predictions impose joint constraints",
+      "width_mm": 180.0,
+      "height_mm": 204.99999999999997
+    }
+  ],
+  "scope": "Figure assembly from existing tables and descriptive aggregation only; no fits or new simulations.",
+  "format": "Provisional research-article layout; exact current Neuron requirements remain unverified (official page inaccessible)."
+}
