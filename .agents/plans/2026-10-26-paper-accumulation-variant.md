@@ -83,3 +83,15 @@ Changes to the first version's files.
 - 2026-11-17: Author requests removing E. Completed v6 with compact 2×2 A–D layout, revised title/caption and removal of obsolete Results panel reference. Exclusion details retained in Methods and population source CSV. Verified all source values unchanged from v5 and visually inspected export.
 
 - 2026-11-17: Author requests commits and progression to Figure 2. Figure 1 implementation/artifacts/text committed as 9f21e7f; no push. Initial Figure 2 walkthrough recorded in ../reports/2026-11-17-figure2-review.md. Current review step R continues with Figure 2; no Figure 2 edits yet. Scoped Python/Markdown whitespace and compile checks pass; generated SVG whitespace retained.
+
+- 2026-11-17: Author requests full Figure 2 redesign, starting only with A introducing tested models, inspired by Stine et al. 2020 (inferred from “stein”). Plan: inspect primary Figure 1 and local C/E/ES rules; draw original labeled illustrative traces/bounds with exported schematic coordinates and parameters; verify dynamics and inspect rendering; show in chat. Preserve existing full Figure 2 and defer remaining panels.
+
+- 2026-11-17: Completed A schematic draft v3 with source-linked C/E/ES rules, identical illustrative increments, thresholds and first crossings; caption states illustrative status and omitted shared components. Convolution/first-crossing checks pass; render inspected after correcting a clipped illustrative marker. Full Figure 2 untouched. Next: author review A, then B onward.
+
+- 2026-11-17: Author approves adding DDMx/ESx within the accumulation/extrema columns. Completed A v4 with all five labels and input/response-component notes; schematic coordinates unchanged; caption updated and render inspected. Next: assess A, then B.
+
+- 2026-11-17: Author approves separating model introduction from results. Build standalone Figure 2 with decision-rule schematics (A) and compact five-implementation table (B); export existing control results separately as provisional Figure 3, with linked source/caption and clearly pending redesign. Preserve earlier figures/manuscript numbering while this figure-led review proceeds; document proposed downstream numbering. Verify source identities and renders, then show model figure in chat.
+
+- 2026-11-17: Completed approved split: standalone Figure 2 (rules + implementation table), separate provisional Figure 3 (existing control scores/recovery), index mapping proposed five-figure organization. Verified unchanged schematic coordinates and control-result values; inspected renders. Captions adjacent; global manuscript numbering deliberately pending artwork selection. Next: assess model figure, then redo results Figure 3 including existing observed/predicted behavior.
+
+- 2026-11-17: Author accepts model Figure 2 and requests commit/move on. Figure/artifacts/split committed as a20629e; no push. Current focus Figure 3 opening observed/predicted behavior panels, then scores/recovery. Initial source check finds legacy chronometry only C/E with differing fit sources, so audit matched saved predictions before new overlays. See ../reports/2026-11-17-figure3-review.md.

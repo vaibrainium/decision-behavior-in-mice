@@ -2,7 +2,7 @@
 Last updated: 2026-11-17 by Codex (client date)
 
 ## Current focus
-Figure 1 v6 accepted for checkpoint; implementation, preserved revisions and aligned prose committed as 9f21e7f. No push. Current focus is author-led Figure 2 review from draft_2026-11-15/figures_v5/figure2.png; initial notes in reports/2026-11-17-figure2-review.md. Next: discuss model introduction and panel organization, then apply chosen edits.
+Figure 1 v6 accepted for checkpoint; implementation, preserved revisions and aligned prose committed as 9f21e7f. No push. Model Figure 2 accepted by author and checkpointed with the figure split as a20629e; no push. Current focus: redesign control-results Figure 3, starting from figure3_control_results_2026-11-17/figure3.png. Recommend observed/predicted choice and RT panels before score comparisons/recovery. Legacy chronometry has only C/E and differing fit sources; audit saved matched predictions before overlaying all candidates. Current source/next steps: reports/2026-11-17-figure3-review.md. Proposed pulse figures shift to 4–5; old manuscript numbering remains pending artwork selection. Selected model artwork and figure index: draft_2026-11-15/figure2_models_2026-11-17/figure2.pdf and FIGURE_REVIEW_INDEX.md.
 
 Selected Figure 1: dissemination/paper_accumulation/draft_2026-11-15/figure1_revision_2026-11-17_v6/figure1.pdf (A–D). C uses control points and author logit_4 fits; D uses left/right-choice mean control RTs, solid traces and shaded pointwise SEM. Exclusions remain in Methods. Figure previews should be images embedded in chat; the initial HTML viewer and packaged Word draft remain older versions, explicitly labeled in README.
 
@@ -60,6 +60,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-11-17-figure3-review.md : model figure committed; control-results redesign begins with prediction-source audit.
 - reports/2026-11-17-figure2-review.md : Figure 1 checkpointed; initial Figure 2 panel walkthrough and model-introduction recommendation.
 - reports/2026-11-17-basso-rt-display.md : verified Basso RT plotting precedents; mean-vs-median distinction and D recommendation.
 - reports/2026-11-17-figure1-review.md : Figure 1 initial walkthrough; author discussion pending.
