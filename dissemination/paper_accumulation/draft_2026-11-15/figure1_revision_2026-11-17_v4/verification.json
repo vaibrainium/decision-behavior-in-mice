@@ -1,0 +1,17 @@
+{
+  "controls": 14015,
+  "C_data_and_fits_unchanged": true,
+  "choice_means_and_mouse_SEM_verified": true,
+  "zero_coherence_split_by_choice": true,
+  "min_trials_per_cell": 10,
+  "mouse_count_ranges": {
+    "left choice": [
+      7,
+      10
+    ],
+    "right choice": [
+      8,
+      10
+    ]
+  }
+}

@@ -1,6 +1,7 @@
 """Build the accumulation paper's first figure set from existing audited results.
 
-No fitting, simulations, package changes or previous-output writes. New output
+No decision-model fitting, simulations, package changes or previous-output writes.
+Author-requested descriptive psychometric fits and control mean RTs are included. New output
 folder is mandatory. Run as a module so project imports resolve.
 """
 from __future__ import annotations
@@ -19,6 +20,7 @@ from matplotlib.patches import FancyBboxPatch
 import numpy as np
 import pandas as pd
 from scipy.stats import t as student_t
+from src.utils.pmf_utils import fit_psychometric_function
 
 from config import dir_config
 from scripts.paper.fig1_task_behaviour import (
@@ -133,19 +135,41 @@ def interval(ax, x, estimate, low, high, **kwargs):
             alpha=kwargs.get('alpha',1), lw=kwargs.get('lw',1), zorder=kwargs.get('zorder',3))
 
 
+def control_rt_means(b, psychometric_mouse):
+    """Summarize retained control RTs, matching the accepted choice population."""
+    data = pd.read_csv(b.record(Path(dir_config.data.processed) / 'valid_data.csv'))
+    # Equivalent to scheduled_pulse == 0 for this dataset; verify the complete
+    # mouse/coherence population against the archived control summary below.
+    control = data[(~data.is_pulse_trial) | data.pulse_coherence.eq(data.signed_coherence)].copy()
+    assert control.reaction_time.between(.3, 5).all()
+    assert control.choice.isin([0, 1]).all()
+    observed = control.groupby(['subject_id', 'signed_coherence']).agg(
+        n_trials=('choice', 'size'), p_right=('choice', 'mean')).sort_index()
+    expected = psychometric_mouse.set_index(['subject_id', 'signed_coherence'])[['n_trials', 'p_right']].sort_index()
+    pd.testing.assert_frame_equal(observed, expected, check_dtype=False)
+    control['response_class'] = np.where(control.choice.eq(1), 'right choice', 'left choice')
+    mouse = control.groupby(['subject_id', 'signed_coherence', 'response_class'], as_index=False).agg(
+        n_trials=('reaction_time', 'size'), mean_rt_s=('reaction_time', 'mean'))
+    mouse['eligible'] = mouse.n_trials >= 10
+    shown = mouse[mouse.eligible]
+    group = shown.groupby(['signed_coherence', 'response_class'], as_index=False).agg(
+        mean=('mean_rt_s', 'mean'), sem=('mean_rt_s', 'sem'), n_mice=('subject_id', 'nunique'),
+        n_trials_in_eligible_cells=('n_trials', 'sum'))
+    return mouse, group
+
+
 def figure1(b, book):
     prefix='dissemination/paper/figures/fig1_task_behaviour_2026-10-26_v2_source_'
     pm=b.read(prefix+'psychometric_mouse.csv')
     pg=b.read(prefix+'psychometric_group.csv')
-    rm=b.read(prefix+'rt_mouse.csv')
-    rg=b.read(prefix+'rt_group.csv')
+    rm, rg = control_rt_means(b, pm)
     schedule=b.read(prefix+'schedule.csv')
     overview=b.read(prefix+'overview.csv').set_index('rig').loc['all']
     b.export(schedule, 'fig1_B_schedule', 'Scheduled signed-pulse timing in accepted sessions, independent of observed response timing. Onset spans are observed ranges.')
     b.export(pm, 'fig1_C_psychometric_mouse', 'Scheduled controls, responses by 5 s; each row is a mouse × signed coherence.')
     b.export(pg, 'fig1_C_psychometric_group', 'Unweighted mouse means and SEM; number of contributing mice can vary by coherence.')
-    b.export(rm, 'fig1_D_rt_mouse', 'Scheduled controls; mouse median RT by coherence and outcome, displayed only for cells with at least 10 trials.')
-    b.export(rg, 'fig1_D_rt_group', 'Mean and SEM of eligible within-mouse medians; zero-coherence outcomes displayed separately.')
+    b.export(rm, 'fig1_D_rt_mouse', 'Scheduled controls; arithmetic mean RT per mouse, signed coherence and physical choice direction, including zero coherence. Display requires at least 10 trials per cell; excluded cells retained here.')
+    b.export(rg, 'fig1_D_rt_group', 'Unweighted mean and SEM across eligible mouse arithmetic means by choice direction. n_mice is given for every point.')
     prep = ROOT / DYN / 'preparation_checks.json'
     n_model = json.loads(b.record(prep).read_text())['n_input_trials']
     counts = {'n_mice':int(overview.n_mice), 'n_sessions':int(overview.n_mouse_sessions),
@@ -159,11 +183,10 @@ def figure1(b, book):
     counts['n_sessions'] = json.loads(b.record(audit).read_text())['n_accepted_sessions']
     assert counts['n_responded'] == 25508 and n_model == 25493
     b.summary['population'] = counts
-    b.export(pd.DataFrame([counts]), 'fig1_E_population', 'Accepted-session analysis flow; no response by 5 s includes late recorded choices and no-choice trials. Corrections are not in this eligible trial table.')
-    fig = plt.figure(figsize=(180/25.4, 164/25.4), layout='constrained')
-    grid = fig.add_gridspec(3,2,height_ratios=[1,1.05,.54],hspace=.12,wspace=.08)
+    b.export(pd.DataFrame([counts]), 'fig1_population', 'Accepted-session analysis flow; no response by 5 s includes late recorded choices and no-choice trials. Corrections are not in this eligible trial table.')
+    fig = plt.figure(figsize=(180/25.4, 132/25.4), layout='constrained')
+    grid = fig.add_gridspec(2,2,height_ratios=[1,1.05],hspace=.12,wspace=.08)
     aa, ab, ac, ad = [fig.add_subplot(grid[i,j]) for i,j in [(0,0),(0,1),(1,0),(1,1)]]
-    ae = fig.add_subplot(grid[2,:])
     panel_task(aa)
     panel_schedule(ab, schedule)
     for ax in [aa,ab]:
@@ -171,37 +194,47 @@ def figure1(b, book):
             t.set_fontsize(max(6.1,t.get_fontsize()))
     label(aa,'A','Motion discrimination')
     label(ab,'B','Brief signed motion perturbations')
+    # Source tables were extracted with sched_pulse_type == 0, then responded-only.
+    # Match the author's four-parameter logistic and its fitting implementation.
+    fit_rows, fit_curves = [], []
+    x_fit = np.linspace(-100, 100, 401)
     for mouse, g in pm.groupby('subject_id'):
-        ac.plot(g.signed_coherence,g.p_right,c='.72',lw=.55,alpha=.7)
-    ac.errorbar(pg.signed_coherence,pg['mean'],yerr=pg['sem'],fmt='o-',c='black',capsize=2,lw=1.3,label='Mouse mean ± SEM')
+        model = fit_psychometric_function(g.signed_coherence.to_numpy(), g.p_right.to_numpy(),
+                                         g.n_trials.to_numpy(), 'logit_4')
+        pred = model.predict(x_fit)
+        ac.plot(x_fit,pred,c='.72',lw=.55,alpha=.7)
+        ac.plot(g.signed_coherence,g.p_right,ls='none',marker='o',ms=1.5,c='.72',alpha=.6)
+        fit_rows.append({'subject_id':mouse,'weighting':'trial-count weighted least squares',**model.coefs_})
+        fit_curves.extend({'subject_id':mouse,'signed_coherence':x,'p_right':y} for x,y in zip(x_fit,pred))
+    # Fit the unweighted mouse means: do not let trial-rich mice set the group curve.
+    model = fit_psychometric_function(pg.signed_coherence.to_numpy(), pg['mean'].to_numpy(), None, 'logit_4')
+    fit_rows.append({'subject_id':'group','weighting':'unweighted least squares on mouse means',**model.coefs_})
+    pred = model.predict(x_fit)
+    fit_curves.extend({'subject_id':'group','signed_coherence':x,'p_right':y} for x,y in zip(x_fit,pred))
+    b.export(pd.DataFrame(fit_rows),'fig1_C_psychometric_parameters','Author logit_4 implementation; existing helper default bounds. Group fit uses equal-mouse means; individual fits use trial counts.')
+    b.export(pd.DataFrame(fit_curves),'fig1_C_psychometric_curves','Smooth four-parameter logistic predictions on a fixed coherence grid; descriptive fits only.')
+    ac.errorbar(pg.signed_coherence,pg['mean'],yerr=pg['sem'],fmt='o',ls='none',c='black',capsize=2,label='Control data ± SEM')
+    ac.plot(x_fit,pred,c='black',lw=1.3,label='4-parameter fit')
     ac.axhline(.5,c='.8',lw=.6,ls=':')
     ac.set(xlim=(-105,105),ylim=(0,1),xticks=[-100,-36,0,36,100],xlabel='Signed coherence (%)',ylabel='P(right response)')
     ac.legend(loc='upper left')
-    label(ac,'C','Choices follow motion direction')
-    for cls,col,marker,ls in [('correct',GREEN,'o','-'),('error',PURPLE,'s','--'),('zero coherence','.35','D','none')]:
-        z=rm[(rm.response_class==cls)&rm.eligible]
-        for _,g in z.groupby('subject_id'):
-            ad.plot(g.abs_coherence,g.median_rt_s,c=col,lw=.45,alpha=.22,ls=ls)
+    label(ac,'C','Control-trial psychometric function')
+    for cls,col,marker,ls in [('right choice',ORANGE,'o','-'),('left choice',BLUE,'s','-')]:
         g=rg[rg.response_class==cls]
-        ad.errorbar(g.abs_coherence,g['mean'],yerr=g['sem'],fmt=marker,c=col,ls=ls,capsize=2,label=cls.capitalize())
-    ad.set(xlabel='Absolute coherence (%)',ylabel='Within-mouse median RT (s)',xticks=[0,18,36,100],ylim=(0,None))
+        ad.plot(g.signed_coherence,g['mean'],marker=marker,c=col,ls='none',label=cls.capitalize())
+        # Reindex to preserve visible gaps if any coherence has no eligible mice.
+        connected = g.set_index('signed_coherence').reindex(pg.signed_coherence)
+        ad.fill_between(connected.index.to_numpy(),
+                        (connected['mean']-connected['sem']).to_numpy(),
+                        (connected['mean']+connected['sem']).to_numpy(),
+                        color=col,alpha=.18,linewidth=0,zorder=1)
+        ad.plot(connected.index,connected['mean'],c=col,ls=ls,lw=1.1)
+    ad.axvline(0,c='.8',lw=.6,ls=':')
+    ad.set(xlabel='Signed coherence (%)',ylabel='Mean RT (s)',xticks=[-100,-36,0,36,100],xlim=(-105,105))
+    ad.margins(y=.25)
     ad.legend(loc='upper right')
-    label(ad,'D','Median response times by outcome')
-    ae.set_axis_off(); ae.set_xlim(0,1); ae.set_ylim(0,1)
-    boxes=[(.00,.4,.20,f"{counts['n_mice']} mice\n{counts['n_sessions']} accepted sessions"),
-           (.25,.4,.20,f"{counts['n_accepted_eligible']:,} eligible\nlogged trials"),
-           (.51,.4,.22,f"{counts['n_responded']:,} responses\n0.3–5 s"),
-           (.79,.4,.20,f"{n_model:,} model trials\n15 duration exclusions")]
-    for x,y,w,txt in boxes:
-        ae.add_patch(FancyBboxPatch((x,y),w,.43,boxstyle='round,pad=.008',fc='.97',ec='.65',lw=.6))
-        ae.text(x+w/2,y+.215,txt,ha='center',va='center',fontsize=7.2)
-    for x1,x2 in [(.205,.24),(.455,.50),(.74,.78)]:
-        ae.annotate('',xy=(x2,.62),xytext=(x1,.62),arrowprops={'arrowstyle':'->','lw':.8})
-    ae.text(.62,.12,f"{counts['n_no_response_by_5s']:,} without a response by 5 s",ha='center',va='center',fontsize=7.2,color='.35')
-    ae.annotate('',xy=(.62,.25),xytext=(.35,.39),arrowprops={'arrowstyle':'->','lw':.7,'color':'.5'})
-    label(ae,'E','Analysis populations')
-    ae.texts[-1].set_x(-.045)
-    b.save(fig,'figure1','Figure 1 | Task performance and analysis populations',book)
+    label(ad,'D','Control-trial response times')
+    b.save(fig,'figure1','Figure 1 | Task and control-trial performance',book)
 
 
 def figure2(b, book):
@@ -429,7 +462,7 @@ def main():
     b.summary['source_hashes']=b.sources
     b.summary['panels']=b.panels
     b.summary['figures']=b.figures
-    b.summary['scope']='Figure assembly from existing tables and descriptive aggregation only; no fits or new simulations.'
+    b.summary['scope']='Figure assembly from existing results, descriptive psychometric fits and control mean RT aggregation; no decision-model fits or new simulations.'
     b.summary['format']='Provisional research-article layout; exact current Neuron requirements remain unverified (official page inaccessible).'
     (b.output/'figure_manifest.json').write_text(json.dumps(b.summary,indent=2)+'\n')
     print(json.dumps({'output':str(b.output),'figures':len(b.figures),'source_tables':len(b.panels),'population':b.summary['population']},indent=2))

@@ -1,0 +1,10 @@
+{
+  "all_source_values_unchanged_from_v5": true,
+  "population_table_retained_as": "fig1_population.csv",
+  "displayed_panels": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ]
+}

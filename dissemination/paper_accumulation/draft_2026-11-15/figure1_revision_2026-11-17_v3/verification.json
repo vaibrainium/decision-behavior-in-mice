@@ -1,0 +1,26 @@
+{
+  "control_n": 14015,
+  "mice": 10,
+  "control_filter_matches_original_function": true,
+  "accepted_C_data_and_fits_unchanged": true,
+  "group_mean_and_subject_SEM_verified": true,
+  "min_trials_per_cell": 10,
+  "excluded_small_cells": 10,
+  "trials_in_excluded_small_cells": 67,
+  "mouse_count_ranges": {
+    "correct": [
+      10,
+      10
+    ],
+    "error": [
+      7,
+      10
+    ],
+    "zero coherence": [
+      10,
+      10
+    ]
+  },
+  "scheduled_filter_source": "scripts/ddm/build_ddm_inputs.py",
+  "scheduled_filter_source_sha256": "ede77a2ad84f45082da25742d346bd6790f5d7e7bf822b57c73eca3ba20ad83a"
+}

@@ -1,0 +1,89 @@
+{
+  "population": {
+    "n_mice": 10,
+    "n_sessions": 50,
+    "n_responded": 25508,
+    "n_no_response_by_5s": 4537,
+    "n_accepted_eligible": 30045,
+    "n_model": 25493,
+    "n_control_responded": 14015,
+    "n_control_psychometric_mice": 10
+  },
+  "layout_checks": {
+    "figure1": {
+      "text_outside_canvas": []
+    }
+  },
+  "source_hashes": {
+    "/src/dissemination/paper/figures/fig1_task_behaviour_2026-10-26_v2_source_psychometric_mouse.csv": "749c14ef957e9e542310d862473899ef2d132325d048c706bf61dbb5c42d5eb3",
+    "/src/dissemination/paper/figures/fig1_task_behaviour_2026-10-26_v2_source_psychometric_group.csv": "14b307649e941e1beb6f9721cdb12ccc4b669c68079dcb46221faa06fbd9f9f1",
+    "/mnt/data/processed/valid_data.csv": "be508cc2e7918ae66bf7e82728d2617d07265b9f0f18442d6d531f345921e020",
+    "/src/dissemination/paper/figures/fig1_task_behaviour_2026-10-26_v2_source_schedule.csv": "42e8d1a6b0cad45a711e41863422f9dd42b08a7f9965b63ca51e539777141c32",
+    "/src/dissemination/paper/figures/fig1_task_behaviour_2026-10-26_v2_source_overview.csv": "bd215d6fade6f3bbfe42b7fede6eb44bf0ef43c7aa82820ec7a30c9dd0048075",
+    "/src/dissemination/pulse_dynamics_2026-11-13/preparation_checks.json": "b6520d93957314074a52e61b7f780527a952871d83b41c23c12bbf333b4a0dbc",
+    "/src/dissemination/history_dynamics_2026-11-14/selection_audit.json": "3b9949b184beed9dd0c8fe0bd8b955f2fdab952d5faf0f06ddbfe4fb24394d88",
+    "/src/scripts/paper/review_figure1.py": "c5c03c86b7c8afff3467300593493e7a5bd7527e298e72cf9afcd47f970ae470",
+    "/src/scripts/paper/build_paper_2026_11_15.py": "9db7ffcfb6977926d0222c42241824254749d7b1671fb334884ef114a0f03200",
+    "/src/scripts/paper/fig1_task_behaviour.py": "9797409d2b67815a111811bc3efe2ac3f3c67434ca4c73cc8ed0566a9b0a22f8",
+    "/src/src/utils/pmf_utils.py": "4a69de0c714e4ba1bb8bbbe210113bcf066eb03b312dc97bb0b9c5caf53c33d2"
+  },
+  "panels": [
+    {
+      "panel": "fig1_B_schedule",
+      "table": "source_data/fig1_B_schedule.csv",
+      "definition": "Scheduled signed-pulse timing in accepted sessions, independent of observed response timing. Onset spans are observed ranges.",
+      "rows": 10
+    },
+    {
+      "panel": "fig1_C_psychometric_mouse",
+      "table": "source_data/fig1_C_psychometric_mouse.csv",
+      "definition": "Scheduled controls, responses by 5 s; each row is a mouse \u00d7 signed coherence.",
+      "rows": 90
+    },
+    {
+      "panel": "fig1_C_psychometric_group",
+      "table": "source_data/fig1_C_psychometric_group.csv",
+      "definition": "Unweighted mouse means and SEM; number of contributing mice can vary by coherence.",
+      "rows": 9
+    },
+    {
+      "panel": "fig1_D_rt_mouse",
+      "table": "source_data/fig1_D_rt_mouse.csv",
+      "definition": "Scheduled controls; arithmetic mean RT per mouse, signed coherence and physical choice direction, including zero coherence. Display requires at least 10 trials per cell; excluded cells retained here.",
+      "rows": 180
+    },
+    {
+      "panel": "fig1_D_rt_group",
+      "table": "source_data/fig1_D_rt_group.csv",
+      "definition": "Unweighted mean and SEM across eligible mouse arithmetic means by choice direction. n_mice is given for every point.",
+      "rows": 18
+    },
+    {
+      "panel": "fig1_population",
+      "table": "source_data/fig1_population.csv",
+      "definition": "Accepted-session analysis flow; no response by 5 s includes late recorded choices and no-choice trials. Corrections are not in this eligible trial table.",
+      "rows": 1
+    },
+    {
+      "panel": "fig1_C_psychometric_parameters",
+      "table": "source_data/fig1_C_psychometric_parameters.csv",
+      "definition": "Author logit_4 implementation; existing helper default bounds. Group fit uses equal-mouse means; individual fits use trial counts.",
+      "rows": 11
+    },
+    {
+      "panel": "fig1_C_psychometric_curves",
+      "table": "source_data/fig1_C_psychometric_curves.csv",
+      "definition": "Smooth four-parameter logistic predictions on a fixed coherence grid; descriptive fits only.",
+      "rows": 4411
+    }
+  ],
+  "figures": [
+    {
+      "figure": "figure1",
+      "title": "Figure 1 | Task and control-trial performance",
+      "width_mm": 180.0,
+      "height_mm": 132.0
+    }
+  ],
+  "scope": "Control-only descriptive data and author logit_4 fits. No decision-model fits."
+}

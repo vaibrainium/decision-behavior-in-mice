@@ -150,9 +150,9 @@ def panel_schedule(ax, schedule):
     ax.set_yticks([])
     ax.spines["left"].set_visible(False)
     ax.set_title("Scheduled ±100% coherence pulses", loc="left", pad=2)
-    handles = [Line2D([0], [0], color=RIGHT_COLOR, lw=4, label="+ pulse"),
-               Line2D([0], [0], color=LEFT_COLOR, lw=4, label="− pulse")]
-    ax.legend(handles=handles, loc="lower right", ncols=2, handlelength=1.2, columnspacing=0.9)
+    handles = [Line2D([0], [0], color=RIGHT_COLOR, lw=4, label="Rightward pulse"),
+               Line2D([0], [0], color=LEFT_COLOR, lw=4, label="Leftward pulse")]
+    ax.legend(handles=handles, loc="lower right", ncols=1, handlelength=1.2, columnspacing=0.9)
 
 
 def psychometric_table(ctrl):

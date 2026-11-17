@@ -1,0 +1,76 @@
+{
+  "population": {
+    "n_mice": 10,
+    "n_sessions": 50,
+    "n_responded": 25508,
+    "n_no_response_by_5s": 4537,
+    "n_accepted_eligible": 30045,
+    "n_model": 25493,
+    "n_control_responded": 14015,
+    "n_control_psychometric_mice": 10
+  },
+  "layout_checks": {
+    "figure1": {
+      "text_outside_canvas": []
+    }
+  },
+  "source_hashes": {
+    "/src/dissemination/paper/figures/fig1_task_behaviour_2026-10-26_v2_source_psychometric_mouse.csv": "749c14ef957e9e542310d862473899ef2d132325d048c706bf61dbb5c42d5eb3",
+    "/src/dissemination/paper/figures/fig1_task_behaviour_2026-10-26_v2_source_psychometric_group.csv": "14b307649e941e1beb6f9721cdb12ccc4b669c68079dcb46221faa06fbd9f9f1",
+    "/src/dissemination/paper/figures/fig1_task_behaviour_2026-10-26_v2_source_rt_mouse.csv": "9ac672ff3308752be46e2bb0642158899f2e67a9c3afdfe39420c6a73f882e2d",
+    "/src/dissemination/paper/figures/fig1_task_behaviour_2026-10-26_v2_source_rt_group.csv": "237ca90c4b8c2e061d17a453d951cc8ad494871292a8a85ca0daba20c525a376",
+    "/src/dissemination/paper/figures/fig1_task_behaviour_2026-10-26_v2_source_schedule.csv": "42e8d1a6b0cad45a711e41863422f9dd42b08a7f9965b63ca51e539777141c32",
+    "/src/dissemination/paper/figures/fig1_task_behaviour_2026-10-26_v2_source_overview.csv": "bd215d6fade6f3bbfe42b7fede6eb44bf0ef43c7aa82820ec7a30c9dd0048075",
+    "/src/dissemination/pulse_dynamics_2026-11-13/preparation_checks.json": "b6520d93957314074a52e61b7f780527a952871d83b41c23c12bbf333b4a0dbc",
+    "/src/dissemination/history_dynamics_2026-11-14/selection_audit.json": "3b9949b184beed9dd0c8fe0bd8b955f2fdab952d5faf0f06ddbfe4fb24394d88",
+    "/src/scripts/paper/fig1_task_behaviour.py": "9797409d2b67815a111811bc3efe2ac3f3c67434ca4c73cc8ed0566a9b0a22f8",
+    "/src/scripts/paper/build_paper_2026_11_15.py": "e3ea7dd368e51c2074cb4cf4081f5484b39fdcf464e51bff045ca88e8be11a10"
+  },
+  "panels": [
+    {
+      "panel": "fig1_B_schedule",
+      "table": "source_data/fig1_B_schedule.csv",
+      "definition": "Scheduled signed-pulse timing in accepted sessions, independent of observed response timing. Onset spans are observed ranges.",
+      "rows": 10
+    },
+    {
+      "panel": "fig1_C_psychometric_mouse",
+      "table": "source_data/fig1_C_psychometric_mouse.csv",
+      "definition": "Scheduled controls, responses by 5 s; each row is a mouse \u00d7 signed coherence.",
+      "rows": 90
+    },
+    {
+      "panel": "fig1_C_psychometric_group",
+      "table": "source_data/fig1_C_psychometric_group.csv",
+      "definition": "Unweighted mouse means and SEM; number of contributing mice can vary by coherence.",
+      "rows": 9
+    },
+    {
+      "panel": "fig1_D_rt_mouse",
+      "table": "source_data/fig1_D_rt_mouse.csv",
+      "definition": "Scheduled controls; mouse median RT by coherence and outcome, displayed only for cells with at least 10 trials.",
+      "rows": 90
+    },
+    {
+      "panel": "fig1_D_rt_group",
+      "table": "source_data/fig1_D_rt_group.csv",
+      "definition": "Mean and SEM of eligible within-mouse medians; zero-coherence outcomes displayed separately.",
+      "rows": 9
+    },
+    {
+      "panel": "fig1_E_population",
+      "table": "source_data/fig1_E_population.csv",
+      "definition": "Accepted-session analysis flow; no response by 5 s includes late recorded choices and no-choice trials. Corrections are not in this eligible trial table.",
+      "rows": 1
+    }
+  ],
+  "figures": [
+    {
+      "figure": "figure1",
+      "title": "Figure 1 | Task performance and analysis populations",
+      "width_mm": 180.0,
+      "height_mm": 164.0
+    }
+  ],
+  "scope": "Figure 1 wording revision only; physical pulse directions named explicitly. Earlier exports preserved."
+}

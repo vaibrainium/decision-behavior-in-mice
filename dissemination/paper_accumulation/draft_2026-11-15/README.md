@@ -2,7 +2,13 @@
 
 Started 15 November 2026; first writing packet completed 16 November 2026. Target audience: a Neuron research article. This is a working draft with author-specific details still to complete.
 
-## Read these versions
+## Current author-reviewed Figure 1 — 17 November 2026
+
+Selected: [Figure 1, A–D](figure1_revision_2026-11-17_v6/figure1.pdf). Physical pulse directions are explicit; C uses control points and the author’s four-parameter logistic; D uses left/right-choice mean control RTs, solid traces and pointwise SEM bands. Panel E was removed; exclusions remain in Methods. Source tables and verification accompany each preserved revision. Current captions, Methods and Results reflect this update. The combined PDF and Word/Markdown packets below remain the earlier writing packet and have not been regenerated.
+
+Reproduce Figure 1 with `.venv/bin/python -m scripts.paper.review_figure1 --output <fresh-directory>`.
+
+## Earlier writing packet
 
 - [Four main figures, native-size PDF](figures_v5/main_figures.pdf)
 - [Editable packet: figures, captions, Methods, Results and references](working_draft_v3.docx)
@@ -16,7 +22,7 @@ The production order followed the author's instruction: figures → captions →
 
 ## Scientific argument
 
-Figure 1 establishes stimulus-guided behavior and the analysis populations. Figure 2 presents matched control-model discrimination and the completed fixed-data recovery. Figure 3 makes the sustained directional influence of brief motion pulses a central result, retaining the later decline. Figure 4 compares pulse and RT predictions, showing individual discrepancies, cohort uncertainty and the concentration of one matched score tradeoff.
+Figure 1 establishes stimulus-guided behavior and introduces the pulse task; population exclusions are detailed in Methods. Figure 2 presents matched control-model discrimination and the completed fixed-data recovery. Figure 3 makes the sustained directional influence of brief motion pulses a central result, retaining the later decline. Figure 4 compares pulse and RT predictions, showing individual discrepancies, cohort uncertainty and the concentration of one matched score tradeoff.
 
 The Results uses the question → comparison → observation → bounded inference structure found in the primary decision-making papers listed in `evidence/writing_models.json`. The prose is original. Historical rules are not reintroduced as approval gates.
 

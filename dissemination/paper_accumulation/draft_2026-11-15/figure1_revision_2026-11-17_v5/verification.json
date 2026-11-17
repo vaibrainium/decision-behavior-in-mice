@@ -1,0 +1,6 @@
+{
+  "all_source_tables_unchanged_from_v4": true,
+  "SEM_band": "pointwise mean minus SEM to mean plus SEM across eligible mice",
+  "band_alpha": 0.18,
+  "both_RT_lines": "solid"
+}
