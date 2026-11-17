@@ -1,0 +1,86 @@
+{
+  "control_scores": [
+    {
+      "model": "E",
+      "part": "total",
+      "n_mice": 10,
+      "mean": 12.75661938117317,
+      "median": 12.58995869402742,
+      "min": -16.88793684627083,
+      "max": 29.46719672484496,
+      "t": 2.960639273654399,
+      "p_t": 0.0159429538967632,
+      "p_wilcoxon": 0.02734375,
+      "dz": 0.9362363434894444,
+      "c_better_10": 5,
+      "alt_better_10": 0,
+      "p_t_holm": 0.0373519783715865,
+      "p_wilcoxon_holm": 0.05859375
+    },
+    {
+      "model": "ES",
+      "part": "total",
+      "n_mice": 10,
+      "mean": 18.74496319307892,
+      "median": 21.002662098058632,
+      "min": -9.319524157520226,
+      "max": 41.353994210901554,
+      "t": 3.606360847626684,
+      "p_t": 0.0056915298293329,
+      "p_wilcoxon": 0.013671875,
+      "dz": 1.140431434295576,
+      "c_better_10": 6,
+      "alt_better_10": 0,
+      "p_t_holm": 0.0227661193173316,
+      "p_wilcoxon_holm": 0.0546875
+    }
+  ],
+  "layout_checks": {
+    "figure3": {
+      "text_outside_canvas": []
+    }
+  },
+  "source_hashes": {
+    "/src/dissemination/paper_control/tables/heldout_diff_per_mouse_2026-10-29.csv": "4f1803af6f11813935dec93c9384e8fc851b9cb1c9ae0379323d2bb4dc6a59d1",
+    "/src/dissemination/paper_control/tables/heldout_group_2026-10-29.csv": "7649525391fc1caad070f52db22900ab1d022d6cb10f4edb29db1ad2d4e1f237",
+    "/src/dissemination/paper_control/tables/recovery_confusion_2026-10-30_v3.csv": "45d353f90154887191ec2529ee8020414206f921c7c71e00c701df2f749dea92",
+    "/src/dissemination/paper_control/tables/recovery_cohort_rates_2026-10-30_v3.csv": "c6c321363d963546663f9bac9530ef6e80fc88bf62aa420ed7349edfc34a3e6b",
+    "/src/scripts/paper/review_control_results.py": "02af03bf20452870519a7c055ed97be524ecb3e7ea0e275e58aeef7c94c3553c",
+    "/src/scripts/paper/build_paper_2026_11_15.py": "9db7ffcfb6977926d0222c42241824254749d7b1671fb334884ef114a0f03200"
+  },
+  "panels": [
+    {
+      "panel": "fig3_AB_control_differences",
+      "table": "source_data/fig3_AB_control_differences.csv",
+      "definition": "Alternative NLL minus accumulator NLL, per 1,000 held-out control trials; positive favors accumulation. Existing five-fold scores.",
+      "rows": 80
+    },
+    {
+      "panel": "fig3_AB_group_statistics",
+      "table": "source_data/fig3_AB_group_statistics.csv",
+      "definition": "Existing mouse-level group statistics; Holm correction follows the original four-alternative comparison family, separately by score component.",
+      "rows": 8
+    },
+    {
+      "panel": "fig3_C_recovery",
+      "table": "source_data/fig3_C_recovery.csv",
+      "definition": "Winner counts across all five fitted candidates; 20 fixed dataset pairs per generator. Each candidate fit uses the same generated train/test data.",
+      "rows": 5
+    },
+    {
+      "panel": "fig3_D_recombined_cohorts",
+      "table": "source_data/fig3_D_recombined_cohorts.csv",
+      "definition": "Existing fraction of 1,024 recombinations of two replicates per mouse that reproduce an accumulation preference; not 1,024 independent simulations.",
+      "rows": 3
+    }
+  ],
+  "figures": [
+    {
+      "figure": "figure3",
+      "title": "Figure 3 | Control behavior discriminates tested strategies",
+      "width_mm": 180.0,
+      "height_mm": 156.0
+    }
+  ],
+  "scope": "Existing control-model comparison/recovery separated as Figure 3; starting layout pending redesign. No new fitting or simulation."
+}

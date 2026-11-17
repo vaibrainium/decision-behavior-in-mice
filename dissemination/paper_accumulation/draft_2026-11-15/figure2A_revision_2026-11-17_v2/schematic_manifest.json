@@ -1,0 +1,46 @@
+{
+  "scope": "Illustrative decision-stage dynamics only; not data or fitted predictions.",
+  "construction": {
+    "seed": 7,
+    "noise_sd": 0.012,
+    "mean_increment": 0.005,
+    "zero_mean_indices": [
+      140,
+      260
+    ],
+    "deliberate_extreme_index": 400,
+    "deliberate_extreme_value": 0.15
+  },
+  "dt_s": 0.001,
+  "leak_per_s": 50.0,
+  "tau_s": 0.02,
+  "starting_state_centered": 0,
+  "thresholds": {
+    "C": 0.85,
+    "E": 0.18,
+    "ES": 0.08
+  },
+  "first_crossing_indices": {
+    "C": 385,
+    "E": 400,
+    "ES": 400
+  },
+  "inspiration": {
+    "doi": "10.7554/eLife.55365",
+    "figure": "1",
+    "url": "https://elifesciences.org/articles/55365/figures"
+  },
+  "differences_from_reference": "C, E and ES are the locally tested matched candidates; no snapshot candidate is depicted.",
+  "normalization": "Each decision signal is divided by its own illustrative threshold. Thresholds are not equated across models.",
+  "omitted_shared_components": "Sensory representation, across-trial drift variation, fast guesses, nondecision time and minimum-RT floor are not drawn.",
+  "checks": {
+    "rapid_forgetting_matches_convolution": true,
+    "C_matches_cumulative_sum": true,
+    "ES_tests_single_samples": true
+  },
+  "source_hashes": {
+    "/src/scripts/paper/figure2_models.py": "87a7e56667b78f123abda5e131589b8fed312a442cd7e6f9e56dac1713386884",
+    "src/ddm/simulator.py": "83528f667e2b7b3c6e9c5e686a511c61f17ed58a3a6be21487056f346f41c51f",
+    "scripts/ddm/primacy.py": "a85add0b8fdb298726984f7bf67ddb1ef4fd55730ab53e4865d3abb75e64106c"
+  }
+}

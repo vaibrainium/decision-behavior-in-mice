@@ -8,6 +8,10 @@ Selected: [Figure 1, A–D](figure1_revision_2026-11-17_v6/figure1.pdf). Physica
 
 Reproduce Figure 1 with `.venv/bin/python -m scripts.paper.review_figure1 --output <fresh-directory>`.
 
+## Current figure organization
+
+See [the figure review index](FIGURE_REVIEW_INDEX.md). Model introduction is now Figure 2, with control-model results separated as provisional Figure 3. Pulse figures will shift to Figures 4–5 when reviewed. Earlier packets retain their original numbering.
+
 ## Earlier writing packet
 
 - [Four main figures, native-size PDF](figures_v5/main_figures.pdf)

@@ -1,0 +1,6 @@
+Model,Decision rule,Input,Drift variability,Fast guesses
+C,Accumulation,Motion energy,Yes,Yes
+E,Rapid forgetting,Motion energy,Yes,Yes
+ES,Extrema detection,Motion energy,Yes,Yes
+DDMx,Accumulation,Nominal coherence,No,No
+ESx,Extrema detection,Nominal coherence,No,No
