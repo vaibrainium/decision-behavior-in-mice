@@ -36,6 +36,8 @@ Same analyses as the first version; numbers and verified sources copied, new row
 - [x] E. RESULTS: write figure-led Results from the assembled evidence, keeping sustained pulse influence central.
 - [x] F. Verify source/numeric consistency, provide an editable reading copy, report and update STATUS.
 
+- [ ] R. Author-led figure-by-figure review: discuss Figure 1 and resolve revisions before proceeding sequentially.
+
 - [ ] G. Next phase: write Introduction, Discussion, Summary and final title from the figure-led argument; incorporate supporting analyses and author facts as appropriate.
 
 The figures/captions/Methods/Results packet is complete; the overall manuscript plan remains active for the next phase.
@@ -57,3 +59,27 @@ Changes to the first version's files.
 - 2026-11-16: Figure-led Results completed after Methods, using comparable-paper structure: specific question, brief comparison, figure-linked finding, bounded inference. Five primary-paper comparators inspected for rhetoric/organization, with access limitations recorded. No Introduction/Discussion/Summary drafted. Next: evidence mapping, numeric/reference checks, editable reading copy and report.
 - 2026-11-16: Completed first writing packet; report ../reports/2026-11-16-figures-first-draft.md. Selected figures_v5, working_draft_v3.docx/Markdown, 23 source tables and 77 mapped claims. Final structural/reference/declared-consistency checks pass; human verification and publication-policy records intentionally remain open. Introduction/Discussion/Summary are the next unchecked current-phase step. No new fits, simulations, installs or submission.
 - 2026-11-16: Historical steps 3–5 marked dispositioned as superseded, not as executed; current step G is now the first unchecked action for a cold continuation.
+
+- 2026-11-17: Author steers to figure-by-figure review before remaining prose. Figure 1 inspected against caption/source CSVs; recommendations await author discussion. No artwork/data changed. See ../reports/2026-11-17-figure1-review.md.
+
+- 2026-11-17: Author requests explicit physical-direction pulse wording. Updated legend/caption and exported figure1_revision_2026-11-17; inspected rendered result. Other Figure 1 recommendations remain pending.
+
+- 2026-11-17: Author requests in-conversation figure previews for subsequent edits. Created figure_review/figure-workspace.html from the actual latest Figure 1 SVG, with full/B focus selection. Continue displaying revisions inline; preserve static scientific exports.
+
+- 2026-11-17: Author requests C/D controls only, observed points and their existing four-parameter psychometric fit. Verify archived scheduled-control selection; fit per-mouse and equal-mouse group curves using src/utils/pmf_utils.py; show RT data without a psychometric fit; export fresh revision, inspect and show inline. This author request authorizes these small descriptive fits; no decision-model fits.
+
+- 2026-11-17: Completed requested C/D control-only presentation: points and author logit_4 fits in C, observed RT points in D. Exported v2, verified source-table identity and curve predictions; inspected render. Caption/Methods updated; discuss current Figure 1 next.
+
+- 2026-11-17: Author approves C and requests Basso mean-RT figure precedents before revising D. Focused search and primary caption/render inspection completed for Jun et al. 2021 Figures 2 and 5; recommendation in ../reports/2026-11-17-basso-rt-display.md. C remains selected; D not yet changed.
+
+- 2026-11-17: Author authorizes trying mean-RT D redesign. Recompute signed-coherence control means from valid_data.csv, verify control counts against accepted C, retain the existing minimum of 10 trials per mouse/coherence/outcome cell and disclose varying error-cell mouse counts. Export fresh v3, inspect, update caption/Methods, show in chat.
+
+- 2026-11-17: Mean-RT D trial completed as v3. Verified original scheduled-control membership, unchanged approved C, equal-mouse means/SEM, and disclosed 7–10 mice for signed error cells. Figure inspected; caption/Methods/Results aligned. Next: author assess D preview.
+
+- 2026-11-17: Author requests left/right choice RT grouping. Completed v4: orange right-choice circles/solid line and blue left-choice squares/dashed line; zero coherence included in both series. Verified raw choice means and subject SEM; C unchanged. Caption/Methods/Results aligned; inspected render; next author assess D.
+
+- 2026-11-17: Author requests both RT traces solid and shaded SEM rather than error bars. Completed v5 with alpha 0.18 pointwise ±SEM bands; all source CSVs identical to v4, render inspected and caption/Methods updated. Next: continue author figure discussion.
+
+- 2026-11-17: Author requests removing E. Completed v6 with compact 2×2 A–D layout, revised title/caption and removal of obsolete Results panel reference. Exclusion details retained in Methods and population source CSV. Verified all source values unchanged from v5 and visually inspected export.
+
+- 2026-11-17: Author requests commits and progression to Figure 2. Figure 1 implementation/artifacts/text committed as 9f21e7f; no push. Initial Figure 2 walkthrough recorded in ../reports/2026-11-17-figure2-review.md. Current review step R continues with Figure 2; no Figure 2 edits yet. Scoped Python/Markdown whitespace and compile checks pass; generated SVG whitespace retained.

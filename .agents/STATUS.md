@@ -1,7 +1,11 @@
 # Status
-Last updated: 2026-11-15 by Codex (client date)
+Last updated: 2026-11-17 by Codex (client date)
 
 ## Current focus
+Figure 1 v6 accepted for checkpoint; implementation, preserved revisions and aligned prose committed as 9f21e7f. No push. Current focus is author-led Figure 2 review from draft_2026-11-15/figures_v5/figure2.png; initial notes in reports/2026-11-17-figure2-review.md. Next: discuss model introduction and panel organization, then apply chosen edits.
+
+Selected Figure 1: dissemination/paper_accumulation/draft_2026-11-15/figure1_revision_2026-11-17_v6/figure1.pdf (A–D). C uses control points and author logit_4 fits; D uses left/right-choice mean control RTs, solid traces and shaded pointwise SEM. Exclusions remain in Methods. Figure previews should be images embedded in chat; the initial HTML viewer and packaged Word draft remain older versions, explicitly labeled in README.
+
 All accumulated nonignored work checkpointed as 12 focused topic commits plus a final handoff commit on mouse-motion-energy; no push. Commit map and checks: reports/2026-11-15-commit-work.md and adjacent JSON records. The writing objective and next step are unchanged.
 
 Figures-first paper packet complete: reports/2026-11-16-figures-first-draft.md. Author requested figures → captions → Methods → Results and comparable decision-making language/structure. Selected files: dissemination/paper_accumulation/draft_2026-11-15/figures_v5/main_figures.pdf and working_draft_v3.docx (same revision in Markdown); separate captions, methods and results files are current. Main figures include completed recovery, sustained pulse influence, individual/cohort uncertainty and matched RT tradeoffs. No new fits or simulations.
@@ -56,6 +60,9 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-11-17-figure2-review.md : Figure 1 checkpointed; initial Figure 2 panel walkthrough and model-introduction recommendation.
+- reports/2026-11-17-basso-rt-display.md : verified Basso RT plotting precedents; mean-vs-median distinction and D recommendation.
+- reports/2026-11-17-figure1-review.md : Figure 1 initial walkthrough; author discussion pending.
 - reports/2026-11-15-commit-work.md : accumulated analysis/code/results/drafts split into topic commits; intended-environment tests pass; no push.
 - reports/2026-11-16-figures-first-draft.md : four figures, captions, Methods and Results assembled with source records and an editable packet; comparable-paper structure applied; next is remaining manuscript sections.
 - reports/2026-11-15-huk-pulse-interpretation.md : author retains main-paper pulse analysis; original Huk/Shadlen explicitly separates persistence evidence from estimating leak; no results changed.
