@@ -1,0 +1,10 @@
+{
+  "all150_archive_scores_verified": true,
+  "max_archive_residual": 0.0,
+  "max_decomposition_residual": 9.094947017729282e-13,
+  "all_bin_count_smoothing_and_normalization_verified": true,
+  "same_observed_quantile_cells_all_models": true,
+  "bin_and_coherence_contributions_sum_to_mouse_normalized_rt_advantage": true,
+  "absolute_errors_verified_without_signed_cancellation": true,
+  "script_compiles": true
+}

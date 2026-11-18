@@ -1,0 +1,31 @@
+{
+  "status": "Supplementary figure draft retained by author; further revision required",
+  "decision_date": "2026-11-18",
+  "figure_number": null,
+  "source_directory": "dissemination/paper_accumulation/draft_2026-11-15/control_rt_score_diagnostic_2026-11-18_v2",
+  "fold_cache": "dissemination/paper_accumulation/draft_2026-11-15/control_rt_score_diagnostic_2026-11-18_v2/fold_cache",
+  "files_sha256": {
+    "control_rt_diagnostic.png": "e374361b122663c970d8d2469a2fc2c4128ca10fe2932910148c9edb473be37d",
+    "control_rt_diagnostic.pdf": "3e802c17dba159193091458a19d43f6395006273ac50ec848192ef100a497074",
+    "control_rt_diagnostic.svg": "db6ac62a6cb6b611c2ebc1ef2441b360651cc705eb18e9efeb88de1ae05eed7e",
+    "caption.md": "009a237ac2bf9178cd23d2d632e667b840e882f570839f79cbd1464b3ac5f16f",
+    "RESULTS.md": "bed23325df5a91f81b6381ed41ab6e4b99b15d0218d81ba33a100a06f5954f28",
+    "manifest.json": "264c73c58316b2e0f187a4a9031b5b6b7f985adfdcd840f9af139ca5d1236065",
+    "dependency_hashes.json": "c411b53808600bd23037472f6a6df0e9dd0733e33bc210ea2dcef76fb4d3a1c9",
+    "verification.json": "3af9c49927092ce5c80c8d799dc4c74ad0cfd70196480d8e6062f292edf4764c",
+    "quantile_bias_per_mouse.csv": "b54b1ece87feaea10a4e1891edf6f79ecc006883fd0288079c0f49c5610dd35e",
+    "fold_score_verification.csv": "4d48e8ed6b20d4618da59365263d7ae9ad13111aaaff2036f94113451305aa55",
+    "score_differences.csv": "3aac1fd421b35318a20968c9bd57c556f6d6c177800579e070bd31f28c6afeb5",
+    "score_by_coherence.csv": "c7dadb786be7d38af56de14bc3213f4b5bf6d0915056a4491b4fcb952458557c",
+    "quantile_absolute_error_group.csv": "6c63da0a1ca7429681eec52b12b0ddc44d339a194e1ab9a9d89dcbe1c0dc5676",
+    "conditional_quantiles.csv": "27c33933c5e5229e8c4ba1c6b8b60a63a5122c2c34b73db34663fd42f6b74803",
+    "score_group_components.csv": "96639c9013ed3ad15c290227a7191f4dfd18d7ca5367c98f89577a1b4da52c05",
+    "quantile_bias_group.csv": "d17e08d6b8e39d5841c8bdf9e256aec62df21ea1206bb21fa4b84c7c1f505980",
+    "score_by_mouse_component.csv": "14cab1eebb577f86609f71bca9a46d82974a7e394cc02c87b4ada84a0453d486",
+    "bin_scores.csv": "5c50d59d6f5637605eb972cd95dd4ce08f27036e9b1f4327b5f44bd402d8dc70",
+    "quantile_absolute_error_per_mouse.csv": "011eea28678c167b6af6df7c4c3a94adbc4f51d0e38fc8b790d641a4fe3a6510",
+    "historical_component_comparison.csv": "564fe6d8c9de6271b26c3da75de097c6b76ad38bc2bd8860d726043dd2288baa",
+    "score_by_rt_bin.csv": "9c9925a7d0f5d45eab8b513453a28f3eeee2a6b4d3df4f232ee3f3d0629aea68"
+  },
+  "main_figure_placement": false
+}
