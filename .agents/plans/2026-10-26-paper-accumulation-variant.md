@@ -226,3 +226,13 @@ Author approves working order oldD→oldA→oldB→oldC: newA conditional accura
 - 2026-11-18: Story-order update complete: both previews relabeled A conditional accuracy/B comparison/C fits/D recovery; source hashes unchanged, SVG IDs unique, main raster inspected. Selection mapping and README saved; index/caption order pointers updated. Layout remains provisional; manuscript-wide cross-reference harmonization deferred until final layout.
 
 - 2026-11-18: User requests all Figure3 work committed. Verified both assemblies against source hashes, PNG dimensions and SVG structure; saved reordered captions and selection mapping. Stage Figure3-only code/artwork/docs; preserve unrelated Figure4 edits. Both comparison alternatives and provisional layout status retained.
+
+### Shared psychometric helper multistart — 2026-11-18
+User authorizes updating the helper after the individual-fit optimization audit. Preserve logistic equations, bounds, weighted least-squares objective, sklearn/public coefficient API and covariance. Add deterministic multistart default with original single-start candidate retained, select by residual error among finite successful fits, allow multistart=False for historical behavior, and export optimization/boundary diagnostics. Validate input/counts and numerical stability without changing the scientific model. Regression checks cover two affected pulse curves, all three logistic forms/custom bounds, exact legacy opt-out, weighted selection, convergence failure handling and sklearn cloning. Do not rerun preprocessing, change trial inclusion or regenerate accepted figures.
+- [x] Update helper and meaningful regression tests.
+- [x] Run checks including real affected fits; save fresh verification output.
+- [x] Document API, limitations and provenance; update handoff.
+
+- 2026-11-18: Shared-helper subtask complete; report ../reports/2026-11-18-psychometric-helper-multistart.md. Five regression tests pass and all20 pulse curves no worse than legacy; exact opt-out verified. Retained original logistic numerical evaluation after expit changed weakly identified coefficients in legacy mode. Saved verification/source hashes, no existing outputs replaced, no preprocessing/figure reruns or commit.
+
+- 2026-11-18: User requests committing the shared-helper update. Verified persisted source/test hashes match tested files; focused commit includes helper, regression tests, verification exports and related handoff only. No new fits or existing figure/data changes.

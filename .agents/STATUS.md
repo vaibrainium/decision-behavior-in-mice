@@ -2,6 +2,8 @@
 Last updated: 2026-11-18 by Codex (client date)
 
 ## Current focus
+Shared psychometric helper now defaults to deterministic multistart; multistart=False exactly preserves the original solver. Five regression tests pass; all20 saved pulse curves have no worse WLS, with the same2 material improvements. User requested a focused commit of helper/tests/verification. Existing data selections/figures untouched; future preprocessing reruns can change parameter-based selection. Report: reports/2026-11-18-psychometric-helper-multistart.md.
+
 Figure3 working order approved: A conditional accuracy, B model comparison, C model fits, D recovery. Current previews/captions/mapping/verification: dissemination/paper_accumulation/draft_2026-11-15/figure3_story_order_2026-11-18/. Both LL/BIC and bits/BIC comparison alternatives retained; layout provisional. Earlier original-order assembly archived alongside. User requests commit of all Figure3 work; no new fits or push. See reports/2026-11-18-figure3-assembled-preview.md.
 
 Figure3 work checkpointed in local topic commits7f80063 (A alternatives),316c8af (fits/recovery panels),fd2ee9c (likelihood/RT audit and supplement),0f9ffc5 (slope/optimization pilot); no push. Both A alternatives retained, B/C approved, former D result text-only. Combined A–C assembly remains pending A choice; no parameters replaced by pilot. Current task: author requests next figure. Begin Figure4 pulse-influence review at A: dissemination/paper_accumulation/draft_2026-11-15/figure4_pulse_review_2026-11-18/figure4.png (unchanged earlier pulse figure relabeled). All5 source tables verified equal, caption matched, render inspected. Next review A then B–D; pulse artwork review resumed, no new pulse fits/simulations. See reports/2026-11-18-figure3-commits.md and reports/2026-11-18-figure4-review.md. Supplement RT diagnostic refinement remains pending.
@@ -62,6 +64,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-11-18-psychometric-helper-multistart.md : shared multistart default, exact legacy opt-out and regression checks.
 - reports/2026-11-18-figure3-assembled-preview.md : both review assemblies, approved story order and verified source preservation.
 - reports/2026-11-18-figure4-review.md : next pulse-influence figure A–D re-exported unchanged; begin panel A review.
 - reports/2026-11-18-figure3-commits.md : four focused Figure3 checkpoints plus final handoff; no push.

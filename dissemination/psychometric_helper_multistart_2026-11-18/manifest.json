@@ -1,0 +1,11 @@
+{
+  "n_curves": 20,
+  "all_no_worse_than_legacy": true,
+  "n_material_sse_improvements_over_1e-5": 2,
+  "existing_figures_regenerated": false,
+  "source_hashes": {
+    "dissemination/paper_accumulation/draft_2026-11-15/figure4_revision_2026-11-18_v5/source_data/fig4_A_psychometric_mouse.csv": "b602bfbded10844aed379bc86adaab0b1d9c9720fb2c5886634d6733ec4b7746",
+    "src/utils/pmf_utils.py": "f0e91ba72d876524457978bc5f7363172e245b8f6c0d7cc28a8a92fd284398e9",
+    "tests/test_psychometric_multistart.py": "307676ca6c621f60e490190e7710d97ec8362048ad42eebfc10177403a4b96af"
+  }
+}
