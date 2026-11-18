@@ -1,0 +1,15 @@
+{
+  "n_profile_settings": 270,
+  "n_restarts": 9,
+  "n_restart_evaluations": 1758,
+  "all_parameter_bounds_valid": true,
+  "archived_fit_files_unchanged": true,
+  "profile_baseline_parameters_exactly_archived_fit": true,
+  "original_executed_source_hashes_verified": true,
+  "immutable_corrected_baselines_and_selection_argmin_verified": true,
+  "confirmation_winner_fixed_from_selection_seeds": true,
+  "all_score_components_sum_to_joint": true,
+  "no_response_guard_violations": true,
+  "old_independent_evaluation_json_invalidated_and_not_used": true,
+  "cv_not_run_due_inconsistent_independent_gain": true
+}

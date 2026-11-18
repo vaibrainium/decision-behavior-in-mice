@@ -1,0 +1,14 @@
+{
+  "scope": "Corrected independent original-fit versus refit comparison",
+  "immutable_archived_fit_baselines_checked": true,
+  "selection_seeds": [
+    10101,
+    20202
+  ],
+  "selection_reps": 30,
+  "confirmation_seed": 30303,
+  "confirmation_reps": 60,
+  "validation_script_sha256": "2d1907dcae549d04146c321824cdebe9dc51b365a4d5fa62a62e6d395b1819a7",
+  "objective_module_sha256": "aef39b128785b63d5ed720bec61dceac56c3dfec1cf64b03be1d27ef845cd03a",
+  "supersedes": "Original per-mouse independent_evaluation.json baseline-label collision; optimizer results/sensitivity maps unaffected"
+}

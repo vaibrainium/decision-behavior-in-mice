@@ -1,0 +1,11 @@
+{
+  "selection_source": "validation_v2, fixed before these seeds",
+  "seeds": [
+    123456,
+    234567,
+    345678
+  ],
+  "n_reps": 100,
+  "no_selection_or_optimization_on_these_draws": true,
+  "script_sha256": "c1009ce0b8484743696511ab0cd1e63ccf7c792ff691038cc283785f4c1bb4dc"
+}

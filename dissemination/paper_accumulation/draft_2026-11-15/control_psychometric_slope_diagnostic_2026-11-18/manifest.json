@@ -1,0 +1,10 @@
+{
+  "scope": "Existing-source slope/residual and parameter inspection; no new simulations or fits",
+  "source_hashes": {
+    "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3B_model_C_logit4_2026-11-18/psychometric_logit4_parameters.csv": "5b8f5e89d81916f0af44424b03e9897a847a92929fe4bf42fb61eef5af6dd07a",
+    "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3B_model_C_logit4_2026-11-18/psychometric_group.csv": "b9a6e21eba5bfcbd1168ab5e881b56b20f5deda134a9218320b743446e7f96d0",
+    "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3B_model_C_logit4_2026-11-18/psychometric_mouse.csv": "3929ece5fd34d214a6c030ef6bf23d8802abe1b1cdbff864d5cbf371f3402aa1",
+    "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3B_model_C_logit4_2026-11-18/fit_inventory.csv": "835cada5befaa9c4ea4dd0da1c5045adb9fb06febea52f065e8443d8d82861b8"
+  },
+  "interpretation": "Residual direction consistent with insufficient intermediate-coherence sensitivity; mechanism not established"
+}

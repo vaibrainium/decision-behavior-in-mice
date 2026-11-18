@@ -1,0 +1,10 @@
+mouse,restart,n_eval,optimizer_success,best_training_nll,message
+DBM12,original,200,False,2284.1286575995337,Maximum number of function evaluations has been exceeded.
+DBM12,map_choice_best,200,False,2284.4187056871147,Maximum number of function evaluations has been exceeded.
+DBM12,map_joint_best,200,False,2284.1286575995337,Maximum number of function evaluations has been exceeded.
+DBM13,original,200,False,1044.8287868464938,Maximum number of function evaluations has been exceeded.
+DBM13,map_choice_best,200,False,1046.1322949748546,Maximum number of function evaluations has been exceeded.
+DBM13,map_joint_best,186,True,1039.7168337666144,Optimization terminated successfully.
+PSUIM10,original,183,True,672.9811204190644,Optimization terminated successfully.
+PSUIM10,map_choice_best,189,True,672.024128838937,Optimization terminated successfully.
+PSUIM10,map_joint_best,200,False,671.1193920001995,Maximum number of function evaluations has been exceeded.

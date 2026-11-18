@@ -1,0 +1,3 @@
+source,weighting,mean,var,lapse_rate,guess_rate,max_derivative_per_coherence_percent
+data,unweighted least squares on equal-mouse mean proportions,0.5838115806830393,0.0389854603184205,0.1641351357525254,0.1345015046591239,0.0068357433560064336
+C,unweighted least squares on equal-mouse mean proportions,-2.719877389043269,0.025600088653147,0.1153054680477409,0.1136434758790811,0.004934743847893994

@@ -1,0 +1,8 @@
+{
+  "original_guarded_objective_matches_scorer": {
+    "DBM13": true,
+    "DBM12": true,
+    "PSUIM10": true
+  },
+  "all270_grid_settings_pass_response_guard": true
+}
