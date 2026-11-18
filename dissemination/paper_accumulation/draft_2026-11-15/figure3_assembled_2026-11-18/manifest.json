@@ -1,0 +1,45 @@
+{
+  "layout": {
+    "A": [
+      30,
+      30,
+      1299,
+      1039
+    ],
+    "B": [
+      1409,
+      30,
+      2125,
+      1039
+    ],
+    "C": [
+      100,
+      1110,
+      1160,
+      1098
+    ],
+    "D": [
+      1720,
+      1110,
+      1495,
+      1098
+    ]
+  },
+  "size": [
+    3564,
+    2240
+  ],
+  "sources": {
+    "dissemination/paper_accumulation/draft_2026-11-15/figure3A_final_alternatives_2026-11-17/A1_ll_bic_dual_axis.png": "f33138d20e5ad436acbb60276235b50de30230b802060e68d4209707aeb65afe",
+    "dissemination/paper_accumulation/draft_2026-11-15/figure3A_final_alternatives_2026-11-17/A1_ll_bic_dual_axis.svg": "a7e99dd7b740568e065d4bff0d91ad39a525b15248be6e2455aee4bd58c3f690",
+    "dissemination/paper_accumulation/draft_2026-11-15/figure3B_final_2026-11-18/figure3B_model_C.png": "2f7c5fad8df538364807cf6014336b7647c10cac9b501bea132c7c5ccc66452c",
+    "dissemination/paper_accumulation/draft_2026-11-15/figure3B_final_2026-11-18/figure3B_model_C.svg": "317c5a59ff13db36636e74d181b3bb89e6cb058cd60a20496342a78c79e7d38d",
+    "dissemination/paper_accumulation/draft_2026-11-15/figure3C_final_2026-11-18/figure3C.png": "ee5cf574ce1f255e08c1c455f6e78446b3140f67400c86e9d6e10159217554c7",
+    "dissemination/paper_accumulation/draft_2026-11-15/figure3C_final_2026-11-18/figure3C.svg": "7d79e962dd29771429d01cc371758e36e9e00a3513627cf593b4805ba00ee174",
+    "dissemination/paper_accumulation/draft_2026-11-15/figure3_exponential_2026-11-18/figure3D_exponential.png": "96cbc35c1686afc0e31dcbf308f5246472ef52f7b4f0bd7dfcec28a73e248421",
+    "dissemination/paper_accumulation/draft_2026-11-15/figure3_exponential_2026-11-18/figure3D_exponential.svg": "ab01b3c016ea2ee11eab8176c1a289af83f38529a123bc280ca6b59cd60a5f3e",
+    "dissemination/paper_accumulation/draft_2026-11-15/figure3A_final_alternatives_2026-11-17/A2_bits_bic_dual_axis.png": "ed8ef62c8ea4d820822fa10bcec2251265115f2f7ee4ef05d6fd02d38b88467c",
+    "dissemination/paper_accumulation/draft_2026-11-15/figure3A_final_alternatives_2026-11-17/A2_bits_bic_dual_axis.svg": "b14e4b19592c64d18e6ca756359b2f325b949e359257a116c622355db9a62da8"
+  },
+  "note": "Both approved A alternatives retained; D author-approved exponential. PNG composition is a review preview. SVG retains source vectors. No cropping or data changes."
+}

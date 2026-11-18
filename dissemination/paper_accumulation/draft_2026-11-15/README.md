@@ -103,3 +103,7 @@ Control-C shallow-slope sensitivity/local restart pilot completed: [results and 
 ## Selected Figure 3D — 18 November 2026
 
 Author approved the [exponential conditional-accuracy panel](figure3_exponential_2026-11-18/figure3D_exponential.pdf), with [caption](figure3_exponential_2026-11-18/caption.md) and [acceptance record](figure3_exponential_2026-11-18/acceptance.json). Figure 3 now comprises A: model comparison (both accepted alternatives retained); B: model C psychometric/chronometric fits; C: model recovery; D: conditional accuracy with descriptive exponential fits. Main shading is data SEM, not fitted-curve uncertainty. Weak-coherence time constants remain poorly identified. This supersedes earlier candidate-D/selection-pending notes. The former cohort-recovery D remains in Results text. Final A choice and combined artwork assembly remain pending.
+
+## Figure3 working order approved — 18 November 2026
+
+Current order: **A conditional accuracy** (previous D), **B model comparison** (previous A), **C model fits** (previous B), **D model recovery** (previous C). [Current preview](figure3_story_order_2026-11-18/figure3_A1.png), [bits/BIC alternative](figure3_story_order_2026-11-18/figure3_A2.png), [captions in current order](figure3_story_order_2026-11-18/captions.md), and [mapping/source notes](figure3_story_order_2026-11-18/README.md). Both comparison alternatives remain open. Layout is provisional; earlier panel-letter references are historical. Source hashes, PNG dimensions and SVG structure verified in verification.json.

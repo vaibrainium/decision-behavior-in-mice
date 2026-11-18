@@ -214,3 +214,15 @@ User authorizes trying descriptive saturation fits. Use the same scheduled-contr
 - 2026-11-18: Exponential subtask completed, report ../reports/2026-11-18-control-accuracy-exponential.md. Visually inspected main overlay; all fits converged and data counts exactly matched. Weak-coherence bootstrap tau boundary contacts disclosed. Original figures unchanged; author selection pending.
 
 - 2026-11-18: Author approved exponential Figure3D and requested a focused commit. Adopted D, added acceptance record and current caption/Methods pointers. Commit includes only conditional-accuracy/exponential scripts, outputs and related handoff; unrelated Figure4 edits remain in working tree. No new fits or push.
+
+### Combined Figure3 preview — 2026-11-18
+User requests current full figure. Assemble accepted A/B/C and approved exponential D from saved artwork, retaining both A alternatives. No analysis, refitting, cropping or changes to plotted values. Save reproducible composition script, PNG chat previews and vector SVG composites in a new directory; inspect layout and record source hashes.
+
+- 2026-11-18: Combined Figure3 preview completed with both A alternatives, accepted B/C and approved D. PNG layout inspected, SVG source vectors retained, hashes recorded. Report ../reports/2026-11-18-figure3-assembled-preview.md. No refits or plotted-value edits; final A choice/typography pending.
+
+### Figure3 story order — 2026-11-18
+Author approves working order oldD→oldA→oldB→oldC: newA conditional accuracy, newB model comparison, newC model fits, newD recovery. Update both comparison alternatives in a fresh preview directory and relabel headers only, preserving plotted data and source files. Save the mapping and revised caption order; layout remains provisional, no new fits or commit requested.
+
+- 2026-11-18: Story-order update complete: both previews relabeled A conditional accuracy/B comparison/C fits/D recovery; source hashes unchanged, SVG IDs unique, main raster inspected. Selection mapping and README saved; index/caption order pointers updated. Layout remains provisional; manuscript-wide cross-reference harmonization deferred until final layout.
+
+- 2026-11-18: User requests all Figure3 work committed. Verified both assemblies against source hashes, PNG dimensions and SVG structure; saved reordered captions and selection mapping. Stage Figure3-only code/artwork/docs; preserve unrelated Figure4 edits. Both comparison alternatives and provisional layout status retained.

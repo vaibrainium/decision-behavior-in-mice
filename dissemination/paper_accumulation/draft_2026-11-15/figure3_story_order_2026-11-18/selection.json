@@ -1,0 +1,15 @@
+{
+  "status": "author-approved working order; provisional layout",
+  "date": "2026-11-18",
+  "new_to_old": {
+    "A": "D",
+    "B": "A",
+    "C": "B",
+    "D": "C"
+  },
+  "comparison_alternatives_retained": [
+    "LL+BIC",
+    "bits+BIC"
+  ],
+  "final_layout": false
+}
