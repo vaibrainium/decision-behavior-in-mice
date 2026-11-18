@@ -199,3 +199,18 @@ Author's “do it” authorizes these bounded analyses/refits; no cluster jobs/i
 - 2026-11-18: Author accepts C. Saved standalone unchanged matrix, caption and acceptance/source record in figure3C_final_2026-11-18. Report ../reports/2026-11-18-figure3C-accepted.md. Next combined A–C assembly retaining both A alternatives; pulse work remains deferred.
 
 - 2026-11-18: Author requests commits and next figure. Four focused topic commits7f80063/316c8af/fd2ee9c/0f9ffc5 saved Figure3 work locally; final handoff/next-figure commit follows, no push. Pulse artwork review resumes as Figure4; existing A–D re-exported with5 source tables unchanged, caption matched/render inspected. Reports ../reports/2026-11-18-figure3-commits.md and ../reports/2026-11-18-figure4-review.md. Next A discussion, then B onward.
+
+### Conditional accuracy versus RT for Figure3 — 2026-11-18
+Author asks to add notebook bounded-accumulation plot to previous control-model figure. Steps: trace notebook cells5/7/10/12 (pulse_type0, pooled outcome,400ms bins); audit scheduled-control contamination, trial counts and zero-coherence correctness; reproduce original summary separately, derive subject-level conditional accuracy on same14,014 controls as Figure3; retain bin counts/available mice and SEM, verify group arithmetic. Preview new D without replacing A–C; title descriptive, not a standalone bound claim. If useful, compare existing C/E/ES fixed-fit conditional accuracy with same input/readout to assess specificity, no refits. Keep Figure4 correction intact.
+
+- 2026-11-18: Conditional-accuracy candidate D complete: notebook audit, corrected scheduled controls, mouse-balanced means/SEM, fixed-fit C/E/ES comparison, independent arithmetic/coverage checks and inspected renders. All steps complete for this subtask; panel review/assembly pending. Report ../reports/2026-11-18-control-conditional-accuracy.md. No model refits; all prior artwork preserved.
+
+### Exponential overlay for conditional accuracy — 2026-11-18
+User authorizes trying descriptive saturation fits. Use the same scheduled-control inputs and original points/SEM; fit trial-level Bernoulli outcomes separately for four nonzero coherences with equal total weight per mouse within coherence. Estimate starting accuracy and monotonic asymptote, anchor time at the 300-ms analysis limit, constrain tau to 0.01–20s for numerical stability and report bound contacts. At zero coherence use a constant. Bootstrap whole mice (200 resamples, fixed seed) for descriptive uncertainty; inspect convergence/boundaries and visual adequacy. Export a new version, source coefficients/curves/diagnostics/caption without replacing existing figures. No hypothesis tests or mechanistic tau interpretation.
+- [x] Fit and export exponential/constant overlays with subject bootstrap.
+- [x] Independently verify objective/derivatives/counts and inspect rendering/limitations.
+- [x] Document findings, update handoff and preview in chat.
+
+- 2026-11-18: Exponential subtask completed, report ../reports/2026-11-18-control-accuracy-exponential.md. Visually inspected main overlay; all fits converged and data counts exactly matched. Weak-coherence bootstrap tau boundary contacts disclosed. Original figures unchanged; author selection pending.
+
+- 2026-11-18: Author approved exponential Figure3D and requested a focused commit. Adopted D, added acceptance record and current caption/Methods pointers. Commit includes only conditional-accuracy/exponential scripts, outputs and related handoff; unrelated Figure4 edits remain in working tree. No new fits or push.

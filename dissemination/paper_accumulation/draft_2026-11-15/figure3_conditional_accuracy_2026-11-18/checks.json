@@ -1,0 +1,18 @@
+{
+  "trials": 14014,
+  "mice": 10,
+  "observed_cells": 613,
+  "group_cells": 65,
+  "mice_per_cell_range": [
+    5,
+    10
+  ],
+  "single_trial_mouse_cells": 57,
+  "model_group_coverage_differences": {
+    "C": 0,
+    "E": 0,
+    "ES": 0
+  },
+  "group_means_and_SEM_independently_verified": true,
+  "fit_sources": 30
+}

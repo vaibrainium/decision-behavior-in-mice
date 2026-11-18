@@ -70,3 +70,7 @@ Supplementary draft selected by author: [held-out control RT diagnostic](supplem
 Control-C shallow-slope sensitivity/local restart pilot completed: [results and provenance](control_C_optimization_pilot_2026-11-18/README.md), [diagnostic](control_C_optimization_pilot_2026-11-18/summary_v2/optimization_pilot.pdf). No useful consistent independent joint-score gain; original manuscript fits/artwork retained. This is exploratory diagnostics, not an additional selected manuscript figure.
 
 Current D clarity redesign: [direct-label cohort recovery](figure3D_intuitive_2026-11-18/figure3D.pdf), [caption](figure3D_intuitive_2026-11-18/caption.md). Generator→group-preference rows with identical existing percentages for C-vs-E and C-vs-ES. Draft pending author review/placement; A/B unchanged.
+
+## Selected Figure 3D — 18 November 2026
+
+Author approved the [exponential conditional-accuracy panel](figure3_exponential_2026-11-18/figure3D_exponential.pdf), with [caption](figure3_exponential_2026-11-18/caption.md) and [acceptance record](figure3_exponential_2026-11-18/acceptance.json). Figure 3 now comprises A: model comparison (both accepted alternatives retained); B: model C psychometric/chronometric fits; C: model recovery; D: conditional accuracy with descriptive exponential fits. Main shading is data SEM, not fitted-curve uncertainty. Weak-coherence time constants remain poorly identified. This supersedes earlier candidate-D/selection-pending notes. The former cohort-recovery D remains in Results text. Final A choice and combined artwork assembly remain pending.

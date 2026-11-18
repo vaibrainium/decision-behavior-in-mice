@@ -1,0 +1,19 @@
+{
+  "exact_match_to_previous_mouse_cells": true,
+  "n_trials": 14014,
+  "bootstrap_fits": 1000,
+  "all_fits_converged": true,
+  "all_curves_monotonic_and_probabilities_valid": true,
+  "tau_bound_bootstrap_counts": {
+    "0": 0,
+    "9": 11,
+    "18": 1,
+    "36": 0,
+    "100": 0
+  },
+  "input_hashes": {
+    "/mnt/data/processed/valid_data.csv": "be508cc2e7918ae66bf7e82728d2617d07265b9f0f18442d6d531f345921e020",
+    "/mnt/data/processed/ddm/ddm_inputs_global.npz": "1a6c88ecf5da258e18435ceab600c799b3e413f0a0adc464d70b6115e1d69980",
+    "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3_conditional_accuracy_2026-11-18/group_accuracy.csv": "f097d0b5ab29363b36fc7261a3a2d9affd2f65ceeb7a216d72e0dad577c27f94"
+  }
+}

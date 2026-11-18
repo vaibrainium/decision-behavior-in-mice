@@ -177,3 +177,6 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - 2026-10-20: primacy analysis plan locked (primacy-analysis-plan.md, commit aeb0a22); parsimony rules agreed
   (next-steps plan).
 - 2026-10-20: SC WFV inactivation excluded from the paper; separate study (V. Thakur).
+
+## Figure 3D approved — 2026-11-18
+Author selected the exponential conditional-accuracy overlay: dissemination/paper_accumulation/draft_2026-11-15/figure3_exponential_2026-11-18/figure3D_exponential.pdf. Figure3 now A–D; both A alternatives retained. Fits, data SEM, whole-mouse bootstrap diagnostics, selection audit and caption are saved. Weak-coherence tau remains poorly identified; no mechanistic tau claim. Report: reports/2026-11-18-control-accuracy-exponential.md. Combined assembly awaits final A choice.

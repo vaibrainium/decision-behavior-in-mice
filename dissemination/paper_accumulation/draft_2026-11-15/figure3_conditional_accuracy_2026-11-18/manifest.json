@@ -1,0 +1,18 @@
+{
+  "notebook_response_coded_control_count": 14339,
+  "scheduled_controls_in_valid_data": 14015,
+  "scheduled_pulse_trials_in_notebook_control": 324,
+  "modeled_scheduled_controls": 14014,
+  "zero_coherence_correctness": "Agreement with randomized task-assigned target side, not an objective motion direction",
+  "binning": "Notebook400ms grid retained; centers use actual response-window overlap, first300\u2013400ms center350, last4800\u20135000 center4900",
+  "aggregation": "Within-mouse mean accuracy; equal-mouse group means/SEM among nonempty cells; all cells/counts exported, no minimum-count exclusions",
+  "model_scope": "Descriptive fixed full-control fits C/E/ES; no fitting or unseen-data validation",
+  "seed": 45678,
+  "n_reps": 30,
+  "source_hashes": {
+    "/mnt/data/processed/valid_data.csv": "be508cc2e7918ae66bf7e82728d2617d07265b9f0f18442d6d531f345921e020",
+    "/mnt/data/processed/ddm/ddm_inputs_global.npz": "1a6c88ecf5da258e18435ceab600c799b3e413f0a0adc464d70b6115e1d69980",
+    "/src/notebooks/1.2-accumulator-analysis.ipynb": "4126f95e64bdd3621bceba936af362ba0eccc155f86d32ebddbbd48d1fa62866",
+    "/src/scripts/paper/control_conditional_accuracy.py": "13340125892f4d2ae3751adb337719361f508664951ba37412d33289e79fa348"
+  }
+}
