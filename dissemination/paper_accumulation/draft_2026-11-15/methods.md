@@ -2,6 +2,10 @@
 
 This Methods draft describes the analyses represented in Figures 1–4. The section structure is provisional pending access to the current Neuron author instructions. Bracketed author details are unresolved facts, not assumed procedures. The present writing pass assembled existing results and did not refit decision models or collect new data.
 
+### Control-model scoring and fitted curves — current figure revision
+
+Prediction of unseen control responses was assessed with five-fold held-out control scores: each test fold was scored using parameters fitted without that fold. These are the existing response-conditioned quantile log scores, with RT-bin cut points and sparse-cell eligibility determined within each test fold. Full-control fits were used separately for parameter reporting and descriptive fitted curves. Figure 3B shows model C predictions from its saved full-control parameters on the modeled control input schedules, without re-estimation for the plotted summaries. Choice probabilities and choice-conditioned mean RTs were pooled across simulation repetitions within mouse and then averaged equally across mice; shaded bands indicate observed between-mouse SEM. These fitted curves are not an additional out-of-sample validation. BIC shown alongside the held-out scores is a separate QMLE-based criterion calculated from independently evaluated full-control training scores.
+
 ## Resource availability
 
 ### Lead contact
@@ -139,3 +143,7 @@ For the matched onset-weight models, the saved held-out likelihood was decompose
 Group inference used mice as the independent unit. Control-model comparisons reported mean normalized score differences and both two-sided t and Wilcoxon tests with the original Holm correction across four alternatives. The assignment-based pulse effect used equal mouse weighting and a 95% t interval. Temporal regression intervals resampled mice. Within-mouse pulse-effect intervals and fixed-parameter simulated curves were labeled separately from population uncertainty. Non-significant estimates were not interpreted as equivalence or absence of an effect.
 
 The descriptive temporal windows, model variants and follow-up diagnostics were developed during the existing analysis sequence. Their current synthesis is exploratory. Historical fixed-analysis procedures and subsequent revisions remain in the repository; the present draft does not relabel later comparisons as prospectively specified or conceal unsuccessful analyses. Conclusions apply to the retained animals, sessions, response populations and tested model/input combinations.
+
+### Descriptive psychometric curves for current Figure3B
+
+For display, the author’s four-parameter logistic, p(right|x) = lapse_rate + (1 − guess_rate − lapse_rate)/(1 + exp[−var(x − mean)]), was fitted separately to equal-mouse mean observed proportions and full-control model C predicted proportions. Fits used unweighted least squares across tested coherence levels with the same helper and default bounds as Figure1. Curves were evaluated on a dense coherence grid. The curve fitted to model predictions is a descriptive logistic approximation; it does not change the underlying DDM parameters or supply a new predictive score. Raw proportions and fitted logistic coefficients are exported alongside the figure. Chronometric values and their calculation are unchanged.

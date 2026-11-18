@@ -1,0 +1,4 @@
+generator,rep_E,rep_bonf4_E,rep_ES,rep_bonf4_ES,rep_DDMx,rep_bonf4_DDMx,rep_ESx,rep_bonf4_ESx,n_recombined_cohorts,n_favor_C_vs_E,n_favor_C_vs_ES
+C,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1024,1024,1024
+E,0.0,0.0,0.0,0.0,1.0,1.0,0.7666015625,0.623046875,1024,0,0
+ES,0.0,0.0,0.0,0.0,0.9951171875,0.9619140625,0.4580078125,0.3271484375,1024,0,0

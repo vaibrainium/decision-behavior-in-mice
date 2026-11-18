@@ -1,0 +1,12 @@
+{
+  "source": "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3_control_results_2026-11-17/source_data/fig3_D_recombined_cohorts.csv",
+  "source_sha256": "47ab16771b196d6cf8574156153cd891c5536958f7ae276b41f5cdf03c3a8004",
+  "script_sha256": "536837695c2de1e413d06293bcc378b9661124981dd7381bdb788bf6cab21f31",
+  "scope": "Rendering-only redesign, identical existing group-recovery rates",
+  "checks": {
+    "both_comparison_rates_equal_in_all_rows": true,
+    "all_rates_are_zero_or_one": true,
+    "count_denominator_1024": true
+  },
+  "status": "Draft for author review; placement undecided"
+}

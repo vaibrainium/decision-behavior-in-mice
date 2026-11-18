@@ -1,0 +1,3 @@
+source,weighting,mean,var,lapse_rate,guess_rate
+data,unweighted least squares on equal-mouse mean proportions,0.5838115806830393,0.03898546031842059,0.1641351357525254,0.13450150465912394
+C,unweighted least squares on equal-mouse mean proportions,-2.719877389043269,0.025600088653147054,0.11530546804774099,0.11364347587908118

@@ -1,0 +1,23 @@
+{
+  "status": "Author-approved panel B",
+  "approval_date": "2026-11-18",
+  "source_directory": "dissemination/paper_accumulation/draft_2026-11-15/figure3B_model_C_logit4_2026-11-18",
+  "files_sha256": {
+    "manifest.json": "f9d18e3058b15dd249c6954e7ade197aaeedca4d2c339d671d6086fd293d51ba",
+    "caption.md": "395e6012bac3ff66fed9f740a4866c0d9cc2da564a5d7afaf84c7ca33b056d86",
+    "fit_inventory.csv": "835cada5befaa9c4ea4dd0da1c5045adb9fb06febea52f065e8443d8d82861b8",
+    "psychometric_logit4_parameters.csv": "5b8f5e89d81916f0af44424b03e9897a847a92929fe4bf42fb61eef5af6dd07a",
+    "rt_group.csv": "0727f83be1fcf3eaf13297d8c080b1e769602e59cb6c727d7733398b7065fb35",
+    "figure3B_model_C.pdf": "ca343c9fbd32db21bc759825039fa52dcabdac083fb6b2af6cbefbe22e3e3d27",
+    "rt_mouse.csv": "82c1ad7b561c310af0668e296c71512335d941f8bdf0eec23b82606dfc20ff1c",
+    "psychometric_group.csv": "b9a6e21eba5bfcbd1168ab5e881b56b20f5deda134a9218320b743446e7f96d0",
+    "psychometric_logit4_curves.csv": "82c8ed9efdf5eecd4df69a55547dce57fe3a387e846d319ba7db885af264d49b",
+    "figure3B_model_C.png": "2f7c5fad8df538364807cf6014336b7647c10cac9b501bea132c7c5ccc66452c",
+    "psychometric_mouse.csv": "3929ece5fd34d214a6c030ef6bf23d8802abe1b1cdbff864d5cbf371f3402aa1",
+    "verification.json": "68b31954ec4c64d223e59d64bb983b4413d0144c01c41b0287a3bf440623aa08",
+    "figure3B_model_C.svg": "317c5a59ff13db36636e74d181b3bb89e6cb058cd60a20496342a78c79e7d38d"
+  },
+  "model_parameters": "Original archived full-control C fits; optimization pilot not adopted",
+  "psychometric_display": "Author logit_4 curves fitted separately to observed and C-predicted group proportions",
+  "pulse_scope": "Deferred"
+}

@@ -1,0 +1,7 @@
+{
+  "all_original_source_tables_unchanged": true,
+  "rt_data_model_values_unchanged": true,
+  "exported_curves_recomputed_from_exact_equation": true,
+  "curves_finite_bounded_monotone": true,
+  "script_compiles": true
+}

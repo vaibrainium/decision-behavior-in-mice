@@ -1,0 +1,11 @@
+{
+  "/src/scripts/ddm/primacy.py": "a85add0b8fdb298726984f7bf67ddb1ef4fd55730ab53e4865d3abb75e64106c",
+  "/src/scripts/ddm/fit_mouse_ddm.py": "2d69af100aa7078f863b51f0bcf1d3365470558fde83421ef070b454bf7ee8c4",
+  "/src/src/ddm/ddm.py": "22443accab0b062e1b234c0fe009e01f84f77e87ce6258b3eed6c909c78679b8",
+  "/src/src/ddm/simulator.py": "83528f667e2b7b3c6e9c5e686a511c61f17ed58a3a6be21487056f346f41c51f",
+  "/src/scripts/ddm/build_ddm_inputs.py": "ede77a2ad84f45082da25742d346bd6790f5d7e7bf822b57c73eca3ba20ad83a",
+  "/src/scripts/compute_motion_energy_full.py": "673c5708d5de321f3328d5971ca541e97d665682649b54a6dd5a7d4fb7f590b0",
+  "/mnt/data/processed/valid_data.csv": "be508cc2e7918ae66bf7e82728d2617d07265b9f0f18442d6d531f345921e020",
+  "/src/dissemination/paper_accumulation/draft_2026-11-15/figure1_revision_2026-11-17_v6/source_data/fig1_C_psychometric_mouse.csv": "f5da210e55ab8e64810df5dea39dee43bf71167d0781b21803d611b9fe7bb0b7",
+  "/src/dissemination/paper_accumulation/draft_2026-11-15/figure1_revision_2026-11-17_v6/source_data/fig1_D_rt_mouse.csv": "d74360ae843a59bae10bf75d8be5a8d2422c8c59cde38c829142cd77425fcc3c"
+}

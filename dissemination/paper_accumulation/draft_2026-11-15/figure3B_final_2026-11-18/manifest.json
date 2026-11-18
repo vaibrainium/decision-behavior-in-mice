@@ -1,0 +1,18 @@
+{
+  "model": "C",
+  "scope": "Verified full-control predictions with optional descriptive four-parameter psychometric fits",
+  "psychometric_display": "logit4",
+  "psychometric_helper_sha256": "4a69de0c714e4ba1bb8bbbe210113bcf066eb03b312dc97bb0b9c5caf53c33d2",
+  "source_directory": "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3B_control_fits_2026-11-18",
+  "source_hashes": {
+    "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3B_control_fits_2026-11-18/psychometric_group.csv": "58403db7ec15afa344d81a67a5d8d9961835cdfbe23845ede3bc755282130242",
+    "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3B_control_fits_2026-11-18/rt_group.csv": "cd0554c12e7cfe671134200c3a6b0020f8aeb36082dc60880bba8949cf087b98",
+    "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3B_control_fits_2026-11-18/psychometric_mouse.csv": "8d6b650de6923fdfd21450e506a5b108f59c0ae15fe9383fd9db8ae87e9e2fb4",
+    "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3B_control_fits_2026-11-18/rt_mouse.csv": "c72b8b77e17ec7646b3917d396a469c0b286d058d13a2e610a40b917c0ec5801",
+    "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3B_control_fits_2026-11-18/fit_inventory.csv": "b2a131c5b4ab4a04d5185498f2e2a578578299729fc304a5b0e69fec39a2d330"
+  },
+  "script_sha256": "5b7d3856fd432fcce95ef38c843591d0ce519d986acf7d9cbc4ce27516e7e5ef",
+  "control_prediction_assessment": "Panel A held-out scores",
+  "parameter_and_curve_source": "Saved full-control model C fits",
+  "pulse_scope": "Deferred by author"
+}

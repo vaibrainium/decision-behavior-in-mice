@@ -1,0 +1,9 @@
+{
+  "scope": "Existing recovery results rendered without superseded A/B; no new analysis",
+  "source_hashes": {
+    "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3_control_results_2026-11-17/source_data/fig3_C_recovery.csv": "78cd6846fa6f0bde2220aeb3620c1a5025194a70f1a8acc6dfe222c2bde62c3c",
+    "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3_control_results_2026-11-17/source_data/fig3_D_recombined_cohorts.csv": "47ab16771b196d6cf8574156153cd891c5536958f7ae276b41f5cdf03c3a8004"
+  },
+  "script_sha256": "fec91a89fd15f1d8b13e2671663e2d8bfe6ec843d90728a83dd1fe4ba3178077",
+  "status": "Preview; D placement remains undecided"
+}

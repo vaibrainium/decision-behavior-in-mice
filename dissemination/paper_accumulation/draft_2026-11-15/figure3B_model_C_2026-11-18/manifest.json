@@ -1,0 +1,16 @@
+{
+  "model": "C",
+  "scope": "Rendering-only subset of verified full-control predictions",
+  "source_directory": "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3B_control_fits_2026-11-18",
+  "source_hashes": {
+    "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3B_control_fits_2026-11-18/psychometric_group.csv": "58403db7ec15afa344d81a67a5d8d9961835cdfbe23845ede3bc755282130242",
+    "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3B_control_fits_2026-11-18/rt_group.csv": "cd0554c12e7cfe671134200c3a6b0020f8aeb36082dc60880bba8949cf087b98",
+    "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3B_control_fits_2026-11-18/psychometric_mouse.csv": "8d6b650de6923fdfd21450e506a5b108f59c0ae15fe9383fd9db8ae87e9e2fb4",
+    "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3B_control_fits_2026-11-18/rt_mouse.csv": "c72b8b77e17ec7646b3917d396a469c0b286d058d13a2e610a40b917c0ec5801",
+    "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3B_control_fits_2026-11-18/fit_inventory.csv": "b2a131c5b4ab4a04d5185498f2e2a578578299729fc304a5b0e69fec39a2d330"
+  },
+  "script_sha256": "a503e60c53f2821dd0b3d7dd7bd72b10d917d55fe9a0c10d77c28835e192dac4",
+  "control_prediction_assessment": "Panel A held-out scores",
+  "parameter_and_curve_source": "Saved full-control model C fits",
+  "pulse_scope": "Deferred by author"
+}

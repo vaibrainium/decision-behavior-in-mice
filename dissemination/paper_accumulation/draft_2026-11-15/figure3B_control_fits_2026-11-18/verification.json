@@ -1,0 +1,9 @@
+{
+  "per_mouse_psychometric_count_ratios": true,
+  "per_mouse_rt_sum_count_ratios": true,
+  "group_mean_sem_n_mice": true,
+  "raw_valid_data_rt_cells": true,
+  "exact_model_data_rt_eligibility": true,
+  "observed_model_input_membership": true,
+  "figure1_single_trial_difference_verified": true
+}

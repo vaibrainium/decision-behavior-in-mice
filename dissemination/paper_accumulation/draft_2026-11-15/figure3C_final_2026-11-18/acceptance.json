@@ -1,0 +1,9 @@
+{
+  "status": "Author-approved Figure 3C",
+  "approval_date": "2026-11-18",
+  "source": "dissemination/paper_accumulation/draft_2026-11-15/figure3_control_results_2026-11-17/source_data/fig3_C_recovery.csv",
+  "source_sha256": "78cd6846fa6f0bde2220aeb3620c1a5025194a70f1a8acc6dfe222c2bde62c3c",
+  "source_values_unchanged": true,
+  "artwork": "figure3C.pdf",
+  "other_panel_decisions": "A both alternatives accepted, choice deferred; B accepted; former D text only"
+}
