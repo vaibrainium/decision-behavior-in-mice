@@ -1,12 +1,12 @@
 # Status
-Last updated: 2026-11-17 by Codex (client date)
+Last updated: 2026-11-18 by Codex (client date)
 
 ## Current focus
-Figure 1 v6 accepted for checkpoint; implementation, preserved revisions and aligned prose committed as 9f21e7f. No push. Model Figure 2 accepted by author and checkpointed with the figure split as a20629e; no push. Current focus: redesign control-results Figure 3, starting from figure3_control_results_2026-11-17/figure3.png. Recommend observed/predicted choice and RT panels before score comparisons/recovery. Legacy chronometry has only C/E and differing fit sources; audit saved matched predictions before overlaying all candidates. Current source/next steps: reports/2026-11-17-figure3-review.md. Proposed pulse figures shift to 4–5; old manuscript numbering remains pending artwork selection. Selected model artwork and figure index: draft_2026-11-15/figure2_models_2026-11-17/figure2.pdf and FIGURE_REVIEW_INDEX.md.
+Figure3 work checkpointed in local topic commits7f80063 (A alternatives),316c8af (fits/recovery panels),fd2ee9c (likelihood/RT audit and supplement),0f9ffc5 (slope/optimization pilot); no push. Both A alternatives retained, B/C approved, former D result text-only. Combined A–C assembly remains pending A choice; no parameters replaced by pilot. Current task: author requests next figure. Begin Figure4 pulse-influence review at A: dissemination/paper_accumulation/draft_2026-11-15/figure4_pulse_review_2026-11-18/figure4.png (unchanged earlier pulse figure relabeled). All5 source tables verified equal, caption matched, render inspected. Next review A then B–D; pulse artwork review resumed, no new pulse fits/simulations. See reports/2026-11-18-figure3-commits.md and reports/2026-11-18-figure4-review.md. Supplement RT diagnostic refinement remains pending.
 
 Selected Figure 1: dissemination/paper_accumulation/draft_2026-11-15/figure1_revision_2026-11-17_v6/figure1.pdf (A–D). C uses control points and author logit_4 fits; D uses left/right-choice mean control RTs, solid traces and shaded pointwise SEM. Exclusions remain in Methods. Figure previews should be images embedded in chat; the initial HTML viewer and packaged Word draft remain older versions, explicitly labeled in README.
 
-All accumulated nonignored work checkpointed as 12 focused topic commits plus a final handoff commit on mouse-motion-energy; no push. Commit map and checks: reports/2026-11-15-commit-work.md and adjacent JSON records. The writing objective and next step are unchanged.
+Earlier 2026-11-15 checkpoint: accumulated nonignored work saved as12 focused topic commits plus a final handoff commit on mouse-motion-energy; no push. Commit map and checks: reports/2026-11-15-commit-work.md and adjacent JSON records. The writing objective and next step are unchanged.
 
 Figures-first paper packet complete: reports/2026-11-16-figures-first-draft.md. Author requested figures → captions → Methods → Results and comparable decision-making language/structure. Selected files: dissemination/paper_accumulation/draft_2026-11-15/figures_v5/main_figures.pdf and working_draft_v3.docx (same revision in Markdown); separate captions, methods and results files are current. Main figures include completed recovery, sustained pulse influence, individual/cohort uncertainty and matched RT tradeoffs. No new fits or simulations.
 
@@ -60,6 +60,25 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-11-18-figure4-review.md : next pulse-influence figure A–D re-exported unchanged; begin panel A review.
+- reports/2026-11-18-figure3-commits.md : four focused Figure3 checkpoints plus final handoff; no push.
+- reports/2026-11-18-figure3C-accepted.md : C approved, standalone source-verified artwork saved; A–C panel review complete, A alternative choice deferred.
+- reports/2026-11-18-cohort-recovery-text-only.md : D result moved to Results text; current Figure3 A–C, historical artwork excluded.
+- reports/2026-11-18-figure3D-intuitive.md : direct-label group-recovery D redesign; same exact rates/counts, conditional interpretation retained.
+- reports/2026-11-18-figure3B-accepted.md : B approved; accepted smooth C-only psychometric/chronometric artwork preserved; next recovery C.
+- reports/2026-11-18-control-C-optimization-pilot.md :270 profiles/9 local restarts; independent100-rep checks show no reliable joint improvement, conditional CV not expanded; current fits retained.
+- reports/2026-11-18-control-psychometric-slope.md : raw C predictions understate intermediate-coherence sensitivity; assess optimization/gain-variability-guess tradeoff before nonlinear mapping; no new fits.
+- reports/2026-11-18-control-rt-supplement.md : RT diagnostic retained as supplementary draft with further revision pending; number unassigned.
+- reports/2026-11-18-control-rt-score-diagnostic.md : all150 held-out C/E/ES scores reproduced; C gains middle RT bins, alternatives slowest bins; absolute quantile diagnostic complete.
+- reports/2026-11-18-figure3B-mean-versus-score.md : E/ES closer to group mean RT by descriptive RMSE; C retains better archived held-out quantile score; distinct estimands/fit sources.
+- reports/2026-11-18-figure3B-model-c.md : C-only psychometric/chronometric panel B from full-control fits; held-out scores remain prediction assessment; pulse deferred.
+- reports/2026-11-17-ddm-likelihood-audit.md : Figure 3 DDM objective and sampled scores reproduced. Fold-specific RT quantiles and sparse choice cells qualify held-out score interpretation.
+- reports/2026-11-18-figure3B-control-fits.md : B replaced by control psychometric/choice-conditioned RT data/model overlays; full-control predictions verified; one-trial Fig1 difference documented.
+- reports/2026-11-18-figure3-remaining-panels.md : reviewed B decomposition and C/D recovery; start B, D supplementary placement proposed.
+- reports/2026-11-17-figure3A-final-alternatives.md : both dual-axis alternatives author-finalized and added to paper packet; final A selection deferred.
+- reports/2026-11-17-figure3A-metric-alternatives.md : two panel-A alternatives, dual-axis NLL/BIC and separate bits/BIC subpanels; verified rendering only.
+- reports/2026-11-17-figure3-absolute-bic.md : absolute BIC preview; same source scores, mean differences checked against prior ΔBIC.
+- reports/2026-11-17-figure3-bits-bic.md : verified joint test bits, choice-only bias-normalized bits and independently rescored QMLE ΔBIC; B/C previews ready.
 - reports/2026-11-17-figure3-review.md : model figure committed; control-results redesign begins with prediction-source audit.
 - reports/2026-11-17-figure2-review.md : Figure 1 checkpointed; initial Figure 2 panel walkthrough and model-introduction recommendation.
 - reports/2026-11-17-basso-rt-display.md : verified Basso RT plotting precedents; mean-vs-median distinction and D recommendation.
@@ -76,6 +95,8 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - reports/2026-11-13-pulse-weight-signatures.md : free pulse weights (shared / per time) raise PSUIM6/7 early effect only to 6.5-7.5 pp (data 15.5 / 13.5); best early chi2 74.6, worse than normalized UGM no sv; BIC +274 to +907
 
 ## Known issues
+- Control-C optimization pilot: original */control/independent_evaluation.json files are INVALID due to baseline-label collision. Use validation_v2/ and confirmation_100reps/ only; maps/optimizer traces unaffected. See pilot README/report.
+- Figure 3 held-out quantile score estimates RT cuts on each test fold and gives sparse condition-by-choice cells a choice-only contribution (1,990 of 14,014 controls). Report it as an outcome-binned score. See reports/2026-11-17-ddm-likelihood-audit.md.
 - 2026-11-16 draft: animal/ethics/task author facts and final declarations are missing; named-human source verification pending. Neuron author-page access failed, so exact formatting is unverified. Office pagination not rendered locally; native-size figures and DOCX structure/math were checked.
 - Pulse-HMM setup complete in its isolated environment; use that interpreter for ssm. Pilot is choice-only and has no late pulse observations in PSUIM6/7. Alternate UCLA target-congruency inputs use reconstructed targets, not independent target logs. See 2026-11-15 SSM/pilot reports.
 - Serial results condition on selected sessions/responded choices. Original logged row order verified; masking excluded records does not model informative missingness. Latent timescales are saved-record steps, not elapsed time or known distinct presentations.

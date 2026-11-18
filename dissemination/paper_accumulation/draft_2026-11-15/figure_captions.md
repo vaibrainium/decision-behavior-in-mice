@@ -1,5 +1,21 @@
 # Figure legends
 
+## Figure 3 panels approved — 18 November 2026
+
+A: [both finalized alternatives](figure3A_final_alternatives_2026-11-17/README.md), final choice deferred. B: [approved model C fits](figure3B_final_2026-11-18/README.md). C: [approved recovery matrix](figure3C_final_2026-11-18/README.md). Former D result is in Results text only. All A–C panel reviews complete; combined figure assembly pending. This supersedes older C-review-pending notes below.
+
+## Current Figure 3 layout — A–C
+
+A: held-out model comparison with QMLE-based BIC (both accepted alternatives retained). B: approved model C psychometric/chronometric fits. C: model-recovery matrix (review pending). Cohort-level recombination recovery is reported in the [Results text](cohort_recovery_text_2026-11-18/results_paragraph.md), **not a figure panel**. This author decision supersedes older D preview/placement notes below. Earlier artwork remains archived.
+
+## Approved Figure 3B — 18 November 2026
+
+[Accepted model C psychometric/chronometric panel](figure3B_final_2026-11-18/figure3B_model_C.pdf), [caption and source record](figure3B_final_2026-11-18/README.md). Author approved the smooth four-parameter psychometric version. Original full-control C estimates retained; optimization pilot not adopted. This supersedes older B-preview status below. Next: panel C recovery.
+
+## Figure 3A working alternatives (author-finalized; choose later)
+
+Both accepted versions are retained in [figure3A_final_alternatives_2026-11-17](figure3A_final_alternatives_2026-11-17/README.md), with [their captions](figure3A_final_alternatives_2026-11-17/captions.md): A1 uses test LL/BIC; A2 uses joint test bits per trial/BIC. Both use left/right y-axes. They are alternatives for one panel; final selection is pending. Earlier figure captions below retain historical numbering during figure-led review.
+
 Working draft. Figure 1 selected: `figure1_revision_2026-11-17_v6/`; Figures 2–4: `figures_v5/`. Analysis populations and interval definitions are stated separately for each panel.
 
 ## Figure 1. Mice report motion direction in a reaction-time discrimination task
@@ -16,7 +32,6 @@ Data are from 10 mice in 50 accepted sessions. Session and trial exclusions are 
 
 **(B)** Decomposition of the mean score advantages into choice and conditional-RT contributions. Blue denotes choice; hatched orange denotes RT. Most of the relative advantage is carried by RT predictions. **(C)** Recovery on fixed synthetic train/test dataset pairs. Each generating model produced two dataset pairs for each mouse's input schedule, yielding 20 dataset pairs per generator and 100 pairs overall. All five candidates were fitted to each pair, for 500 fits. Entries show the number of datasets for which each candidate had the lowest test NLL; shading shows the corresponding fraction out of 20. DDMx and ESx are the published-specification integration and extrema reference implementations, respectively, whereas C, E and ES include the response components used in the matched comparison. Each candidate evaluated exactly the same generated outcomes for a given dataset pair.
 
-**(D)** Cohort-level recovery using all 1,024 ways to choose one of the two replicates for each of 10 mice. A recombined cohort reproduced an accumulation preference when the mean normalized advantage was positive and its two-sided mouse-level t-test passed Holm correction across the four alternatives at p < 0.05. All C-generated recombinations and no E- or ES-generated recombinations reproduced the preference over either matched alternative. These recombinations reuse the same simulated datasets and are not independent simulations or biological replicates. Recovery is conditional on the tested candidates, generating parameters and trial schedules. Source tables: `figures_v5/source_data/fig2_*`.
 
 ## Figure 3. Brief motion pulses exert a sustained directional influence on choices
 
@@ -35,3 +50,15 @@ Data are from 10 mice in 50 accepted sessions. Session and trial exclusions are 
 **(C)** Individual-mouse pulse-minus-control directional choice effects for responses 0.3–1.2 s after actual or virtual onset. Black circles show the observed effects; horizontal lines show existing within-mouse percentile 95% block-bootstrap intervals using blocks of 50 retained trials within sessions. Blue squares and green triangles show fixed-parameter predictions of the matched onset-weight models with and without drift variability. The final row shows the unweighted cohort mean, with the existing mouse-plus-trial hierarchical 95% interval for the data; model symbols show the corresponding means. These effects use matched coherence/sign/onset comparisons at absolute baseline coherences up to 36%; they differ from Figure 3D's assignment-based endpoint. Individual-row intervals condition on each mouse and do not represent uncertainty across animals; the final-row hierarchical interval also resamples mice.
 
 **(D)** Held-out choice and RT NLL differences for the same matched onset-weight pair, without minus with drift variability. Blue bars denote choice, hatched orange bars denote RT and black points denote their sum. Positive differences favor the model with variability. The summed differences are −49.29 for choice, +360.22 for RT and +310.93 overall; PSUIM7 contributes +280.17 to the total difference. **(E)** RT contributions from D split by the nine quantile bins defined within each condition and choice. Quantile positions represent relative speed within those cells, rather than a common physical RT range. **(F)** An illustrative conditional RT distribution for correct −100%-coherence control responses in PSUIM7. The condition was selected descriptively because it contributes the largest matched RT-score disadvantage of removing variability. Points show observed 0.1-s histogram densities; lines show saved held-out model histograms summed across folds. The displayed RT range is restricted to 0.3–2.6 s, while density normalization uses all histogram bins. This example is a diagnostic illustration, not an independent test. Source tables: `figures_v5/source_data/fig4_*`.
+
+## Revised Figure3B — model fits on control data (preview)
+
+Author replaces decomposition B with psychometric and left/right-choice mean RT model overlays. Current [artwork](figure3B_control_fits_2026-11-18/figure3B.pdf) and [full caption](figure3B_control_fits_2026-11-18/caption.md) supersede historical decomposition-B text for this figure review. Full-control descriptive predictions; final layout pending author assessment.
+
+## Current Figure3B — model C alone
+
+Latest [artwork](figure3B_model_C_2026-11-18/figure3B_model_C.pdf) and [caption](figure3B_model_C_2026-11-18/caption.md): psychometric left, chronometric right. Model C full-control fit; held-out scores separately assess unseen-control prediction. Supersedes five-model B preview; pulse deferred.
+
+Current smooth-psychometric B: [model C artwork](figure3B_model_C_logit4_2026-11-18/figure3B_model_C.pdf), [caption](figure3B_model_C_logit4_2026-11-18/caption.md). Author logit_4 curves fitted separately to data and model C group probabilities; raw data points and RT plot unchanged. Coefficients/dense curves exported. Descriptive smoothing does not refit DDM parameters. Supersedes joined-segment psychometric preview for current review.
+
+Supplementary draft selected by author: [held-out control RT diagnostic](supplement_control_rt_diagnostic_2026-11-18/README.md), with [figure](supplement_control_rt_diagnostic_2026-11-18/control_rt_diagnostic.pdf) and [caption](supplement_control_rt_diagnostic_2026-11-18/caption.md). Further refinement pending; supplementary number unassigned. Source values/checks unchanged. This supersedes the earlier placement-undecided note for this diagnostic; it is separate from main Figure 3B.

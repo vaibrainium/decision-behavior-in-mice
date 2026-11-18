@@ -1,5 +1,25 @@
 # Figures-first paper draft
 
+## Current review: Figure 4 — pulse influence
+
+Figure3 A–C panel review is checkpointed; A alternative choice remains deferred. Next: [pulse-influence Figure4 preview](figure4_pulse_review_2026-11-18/figure4.pdf), [caption](figure4_pulse_review_2026-11-18/caption.md). A: pulse psychometrics; B: directional/shared response-conditioned time course; C: dilution-adjusted influence; D: assignment-based directional contrast. Existing results/source values preserved. Start author review with A; this supersedes the earlier pointer to figures_v5/figure3.pdf for current preview only. Global manuscript numbering remains pending.
+
+## Figure 3 panels approved — 18 November 2026
+
+A: [both finalized alternatives](figure3A_final_alternatives_2026-11-17/README.md), final choice deferred. B: [approved model C fits](figure3B_final_2026-11-18/README.md). C: [approved recovery matrix](figure3C_final_2026-11-18/README.md). Former D result is in Results text only. All A–C panel reviews complete; combined figure assembly pending. This supersedes older C-review-pending notes below.
+
+## Current Figure 3 layout — A–C
+
+A: held-out model comparison with QMLE-based BIC (both accepted alternatives retained). B: approved model C psychometric/chronometric fits. C: model-recovery matrix (review pending). Cohort-level recombination recovery is reported in the [Results text](cohort_recovery_text_2026-11-18/results_paragraph.md), **not a figure panel**. This author decision supersedes older D preview/placement notes below. Earlier artwork remains archived.
+
+## Approved Figure 3B — 18 November 2026
+
+[Accepted model C psychometric/chronometric panel](figure3B_final_2026-11-18/figure3B_model_C.pdf), [caption and source record](figure3B_final_2026-11-18/README.md). Author approved the smooth four-parameter psychometric version. Original full-control C estimates retained; optimization pilot not adopted. This supersedes older B-preview status below. Next: panel C recovery.
+
+## Finalized Figure 3A alternatives — selection pending
+
+Both dual-axis versions are author-finalized and included in [figure3A_final_alternatives_2026-11-17](figure3A_final_alternatives_2026-11-17/README.md): [LL/BIC](figure3A_final_alternatives_2026-11-17/A1_ll_bic_dual_axis.pdf) and [bits/BIC](figure3A_final_alternatives_2026-11-17/A2_bits_bic_dual_axis.pdf). Keep both as alternatives for the same panel A. Author will choose later. This decision supersedes older preview-selection notes below.
+
 Started 15 November 2026; first writing packet completed 16 November 2026. Target audience: a Neuron research article. This is a working draft with author-specific details still to complete.
 
 ## Current author-reviewed Figure 1 — 17 November 2026
@@ -67,3 +87,15 @@ The package command expects the selected figure set and existing reference/sourc
 **Figure 3:** Pulse direction changes choices and retains a directional influence after the pulse. The dilution-adjusted readout decreases for later responses. A separate panel displays the assignment-based directional endpoint and its mouse-level interval.
 
 **Figure 4:** Selected fitted models predict different pulse trajectories. Individual pulse effects and the cohort mean are shown alongside matched choice/RT score differences. RT-quantile contributions and one explicitly selected diagnostic distribution locate the major RT constraint.
+
+Current Figure3B preview: [control psychometric and choice-conditioned RT model overlays](figure3B_control_fits_2026-11-18/figure3B.pdf), with [caption](figure3B_control_fits_2026-11-18/caption.md). Author rejects earlier decomposition B. Predictions use saved full-control parameters (descriptive in-sample), not held-out curves. Five candidates; data points/SEM, model lines. One extra Figure1 missing-timing control is absent from modeled population and documented. B awaits author review; A alternatives unchanged.
+
+Latest B: [model C psychometric and chronometric fits](figure3B_model_C_2026-11-18/figure3B_model_C.pdf), [caption](figure3B_model_C_2026-11-18/caption.md). Author chooses C alone, superseding the five-model B preview for current review. Full-control parameters/curves; held-out scores in A assess unseen controls. Pulse deferred. B awaits author review.
+
+Current smooth-psychometric B: [model C artwork](figure3B_model_C_logit4_2026-11-18/figure3B_model_C.pdf), [caption](figure3B_model_C_logit4_2026-11-18/caption.md). Author logit_4 curves fitted separately to data and model C group probabilities; raw data points and RT plot unchanged. Coefficients/dense curves exported. Descriptive smoothing does not refit DDM parameters. Supersedes joined-segment psychometric preview for current review.
+
+Held-out RT diagnostic (not yet a manuscript panel): [plot](control_rt_score_diagnostic_2026-11-18_v2/control_rt_diagnostic.pdf), [results](control_rt_score_diagnostic_2026-11-18_v2/RESULTS.md). Exact C/E/ES CV score decomposition and matched conditional-quantile errors explain mean-fit versus score ranking. Existing A/B untouched; author to decide placement.
+
+Supplementary draft selected by author: [held-out control RT diagnostic](supplement_control_rt_diagnostic_2026-11-18/README.md), with [figure](supplement_control_rt_diagnostic_2026-11-18/control_rt_diagnostic.pdf) and [caption](supplement_control_rt_diagnostic_2026-11-18/caption.md). Further refinement pending; supplementary number unassigned. Source values/checks unchanged. This supersedes the earlier placement-undecided note for this diagnostic; it is separate from main Figure 3B.
+
+Control-C shallow-slope sensitivity/local restart pilot completed: [results and provenance](control_C_optimization_pilot_2026-11-18/README.md), [diagnostic](control_C_optimization_pilot_2026-11-18/summary_v2/optimization_pilot.pdf). No useful consistent independent joint-score gain; original manuscript fits/artwork retained. This is exploratory diagnostics, not an additional selected manuscript figure.

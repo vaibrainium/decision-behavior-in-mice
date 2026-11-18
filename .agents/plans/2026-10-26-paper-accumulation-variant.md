@@ -37,6 +37,10 @@ Same analyses as the first version; numbers and verified sources copied, new row
 - [x] F. Verify source/numeric consistency, provide an editable reading copy, report and update STATUS.
 
 - [ ] R. Author-led figure-by-figure review: discuss Figure 1 and resolve revisions before proceeding sequentially.
+  - [x] Figure 3 metric additions: joint test bits, training-only choice gain, independently rescored QMLE ΔBIC; arithmetic/seed checks and renders verified (2026-11-17).
+  - [x] Figure 3A: both LL/BIC and joint-bits/BIC dual-axis alternatives author-finalized and included; author selection deferred (2026-11-17).
+  - [x] Figure 3B: model C psychometric/chronometric with author logit_4 display curves approved, original full-control parameters retained (2026-11-18).
+  - [x] Figure 3C recovery matrix approved; former D text only. Figure3 A–C panel review complete, final A selection and assembly pending (2026-11-18).
 
 - [ ] G. Next phase: write Introduction, Discussion, Summary and final title from the figure-led argument; incorporate supporting analyses and author facts as appropriate.
 
@@ -95,3 +99,103 @@ Changes to the first version's files.
 - 2026-11-17: Completed approved split: standalone Figure 2 (rules + implementation table), separate provisional Figure 3 (existing control scores/recovery), index mapping proposed five-figure organization. Verified unchanged schematic coordinates and control-result values; inspected renders. Captions adjacent; global manuscript numbering deliberately pending artwork selection. Next: assess model figure, then redo results Figure 3 including existing observed/predicted behavior.
 
 - 2026-11-17: Author accepts model Figure 2 and requests commit/move on. Figure/artifacts/split committed as a20629e; no push. Current focus Figure 3 opening observed/predicted behavior panels, then scores/recovery. Initial source check finds legacy chronometry only C/E with differing fit sources, so audit matched saved predictions before new overlays. See ../reports/2026-11-17-figure3-review.md.
+
+- 2026-11-17: Author redirects Figure 3A to absolute NLL rather than differences. Build one-panel preview with five-fold total held-out NLL for all five candidates, faceted by mouse because counts differ. Verify raw totals/counts against archived fold inventory and original comparison differences; preserve previous layouts. No per-trial normalization or new scores/fits.
+
+- 2026-11-17: Completed raw-NLL A preview. All five candidates/10 mouse facets; exact five-fold totals and trial counts verified against fold inventory and original differences; render inspected. Caption/source exports included. No new fitting/scoring/statistics. Next: author assess A before other panels.
+
+- 2026-11-17: Author requests raw NLL bar graph for A and comparison with Stine. Existing raw-score preview found in workspace; preserve it. Check Stine primary comparison display, convert only rendering to zero-baseline per-mouse bars with numerical values, retain all five candidates and raw five-fold totals; verify exact source identity and inspect new version. No new fits/scores/statistics.
+
+- 2026-11-17: Completed direct-NLL horizontal bar A v2 after Stine Figure 7B check (source uses ΔBIC). Raw scores/fold exports identical to preceding preview; all bars zero-based with subject-specific axes and numeric labels. Inspected render after fixing clipped labels. Current A selected for discussion; next author assess before B.
+
+- 2026-11-17: Author requests removing mouse breakdown. Aggregate verified raw five-fold NLLs into a single five-bar panel using equal-mouse mean and SEM; retain raw scores and no reference subtraction/per-trial normalization. Preserve per-mouse display via CLI option and earlier exports; verify aggregation and inspect.
+
+- 2026-11-17: Completed single-panel A cohort display with means/SEM across 10 mice. Verified aggregate arithmetic and unchanged raw scores/folds; render inspected. Current selection figure3A_group_nll_2026-11-17; author assessment next.
+
+- 2026-11-17: Author challenges raw-NLL SEM display. Confirmed SEM across uncentered subject totals does not represent uncertainty in paired model differences. Remove bars of uncertainty, preserve raw mean heights, export existing corrected paired tests separately with explicit per-trial estimand; do not put significance stars on raw means using a different estimand. Inspect new version.
+
+- 2026-11-17: Corrected SEM presentation; current A figure3A_group_nll_no_sem_2026-11-17 keeps exact mean raw scores without error bars, alongside separately documented existing paired tests. Means/folds verified unchanged; render inspected. Paired normalized tests are distinct from raw mean bars; t/Wilcoxon robustness difference disclosed.
+
+- 2026-11-17: Author requests points. Completed A points v2 with same means and numeric labels, no uncertainty bars and labeled tighter NLL limits; CSV identity verified and render inspected. Next: author assess A before B.
+
+- 2026-11-17: Added author-requested connecting line to A; all source values/axes unchanged, render inspected. Current preview figure3A_group_nll_connected_2026-11-17; author assessment next.
+
+- 2026-11-17: Author requests connected-point test bits/trial and ΔBIC panels. Closest “JLM 2021” reference identified as Ashwood GLM-HMM 2021 preprint/2022 publication, with choice-only gain over a train-set Bernoulli baseline. Plan: preserve A; derive a joint test-log-score bits/trial view and a distinctly labeled Ashwood-style choice-gain view from saved control CV scores and fold-specific training-only nulls; audit full-control fit counts/free parameters and benchmark independent training rescoring for valid QMLE ΔBIC (not CV BIC), with two independent seeds if bounded; export source tables/checks, inspect renders and explain metric distinctions. No fitting or new experimental data. Previous fixed-bin bits outputs are known noise-limited and will not be reused.
+
+- 2026-11-17: Completed metric additions under step R; 100 independent fixed-parameter training evaluations, no refits. Main B/C preview and separate choice-only companion inspected, all numerical checks pass. Report: ../reports/2026-11-17-figure3-bits-bic.md. Next author assess B/C and select bits definition; overall figure review remains active.
+
+- 2026-11-17: Author requests normal absolute IC plot after BIC/ΔBIC discussion. Rendering-only continuation of R: average existing seed-averaged per-mouse BIC equally across mice, verify differences reproduce prior ΔBIC, preserve old outputs, inspect new connected-point preview and report. No rescoring/refits.
+
+- 2026-11-17: Absolute BIC rendering completed; matched subject coverage, source values and identity with prior ΔBIC checked; render inspected, source compiles. Report: ../reports/2026-11-17-figure3-absolute-bic.md. Next: author assess preview.
+
+- 2026-11-17: Author requests two panel-A alternatives: held-out NLL left axis / training BIC right axis, and joint test bits left / BIC separate right panel (literal requested right panel). Rendering only from approved source tables; export fresh outputs, verify identities and inspect both. Dual-axis ranges stay independently labeled and are not tuned for curve alignment.
+
+- 2026-11-17: Both A alternatives completed; source means/checks verified, renders inspected and script compiles. Report: ../reports/2026-11-17-figure3A-metric-alternatives.md. Next author select layout; R remains active.
+
+- 2026-11-17: Requested LL sign change completed in fresh A1 output; exact sign/unchanged BIC/bits checks, compile and visual inspection pass. Report updated: ../reports/2026-11-17-figure3A-metric-alternatives.md.
+
+- 2026-11-17: Author clarifies both A alternatives require dual axes. Completed rendering-only LL/BIC and bits/BIC with identical source values, checked exports and inspected both; report ../reports/2026-11-17-figure3A-metric-alternatives.md updated. Previous separate-right-panel interpretation superseded. Next author select A.
+
+- 2026-11-17: Author finalizes both A alternatives, will choose later. Added immutable copies with source/captions/hashes and pending-selection record; linked both in working packet. Report: ../reports/2026-11-17-figure3A-final-alternatives.md. Next review panel B; do not block on A selection.
+
+- 2026-11-18: Resume R after finalized A alternatives. Reviewed existing B/C/D and source values. Next B: explain choice/conditional-RT score contribution and discuss rendering, then C recovery. D supplementary placement proposed only; behavioral overlays require matched prediction audit. Report: ../reports/2026-11-18-figure3-remaining-panels.md. No new artwork/scores/fits.
+
+- 2026-11-18: Author rejects decomposition B; replaces it with control model fits on data, psychometric and choice-conditioned mean RT as Figure 1. Steps: audit response/control membership and 50 saved full-control fits; produce bounded fixed-parameter predictions (20 repetitions/input), cache aggregate counts/RT sums to fresh outputs; match observed subject/coherence and RT choice-cell eligibility to Figure 1; plot five model columns (psychometric above, left/right-choice mean RT below), inspect and document. Descriptive in-sample predictions, no refitting; A alternatives preserved. Existing caches lack choice-specific RT and cannot substitute.
+
+- 2026-11-18: B preview completed from50 saved full-control fits,20 repetitions/input, no refits. Exact Fig1 membership assumption failed by one missing-pulse-duration PSUIM7 control; B uses14,014 modeled controls and documents difference. Independent aggregation/raw-data checks pass; render inspected. Report: ../reports/2026-11-18-figure3B-control-fits.md. Next author assess B. Rejected decomposition B remains historical only.
+
+### Figure 3 likelihood audit (2026-11-17 client date)
+
+- [x] Locate current Figure 3 score provenance, earlier audits and fitting entry point.
+- [x] Trace observed and simulated responses through training and scoring. Check normalization, RT binning, response conditioning and sparse cells against the intended objective.
+- [x] Verify with bounded checks on synthetic counts and processed inputs and trace archived Figure 3A arithmetic.
+- [x] Record findings and limitations in a [linked report](../reports/2026-11-17-ddm-likelihood-audit.md) and STATUS.
+
+Audit scope is the current response-conditioned control fits and their reported scores. Historical branches are checked where shared code affects the interpretation. No refits are needed for this audit.
+
+- 2026-11-18: Author narrows B to model C psychometric/chronometric full-control fit; pulse explicitly deferred. Rendering-only subset completed with exact source checks and visual inspection. Report: ../reports/2026-11-18-figure3B-model-c.md. Unseen-control prediction remains assessed with held-out A scores; parameters/curves use full-control fits. Next author assess B.
+
+- 2026-11-18: Clarified actual optimization provenance for B: read all10 C control-fit pickles, n_train equals full eligible controls per mouse. Existing full-control optimization already supplies B parameters; no need to optimize again just for plotting. Report ../reports/2026-11-18-figure3B-model-c.md updated.
+
+- 2026-11-18: Author requests four-parameter psychometric curves instead of joined coherence segments. Use exact author logit_4 helper as Fig1; fit equal-mouse observed and C-predicted proportions separately, export coefficients/dense curves and raw source values. Retain raw data points, label descriptive smoothing clearly, leave RT values/layout intact, verify bounds/monotonicity/source identities and inspect. No DDM refits or pulse work.
+
+- 2026-11-18: Four-parameter psychometric revision completed with exact author helper; separate observed/predicted group fits, source tables/RT unchanged, coefficients-to-curves independently verified and render inspected. Report ../reports/2026-11-18-figure3B-model-c.md updated. Next author assess revised B.
+
+- 2026-11-18: Author questions E/ES visual fit versus C LL. Bounded check confirms E/ES lower group mean-RT RMSE, but not choice-proportion RMSE, than C. This differs from CV quantile log score in summary/weighting and fit parameters; exact RT-bin source of advantage not diagnosed. Report: ../reports/2026-11-18-figure3B-mean-versus-score.md. No artwork altered or new group inference.
+
+- 2026-11-18: Author authorizes held-out RT diagnostic to explain C versus E/ES despite mean RT overlays. Steps: capture actual scored simulations using original CV parameters/seeds/repetitions for C/E/ES, all mice/folds; reproduce archived choice+RT scores exactly; export observed/predicted conditional RT quantiles and exact score contributions by mouse/fold/coherence/choice/RT bin; aggregate within mouse before group summaries; inspect distribution/score-contribution plots and identify gains/losses without new inferential tests. Sparse cells, smoothing and test-derived bins retained and disclosed. No refitting, pulse work or changes to accepted figures.
+
+- 2026-11-18: Held-out diagnostic completed: all150 scores and exact bin contributions reproduced, conditional quantile absolute-error checks passed, final v2 render inspected. C gains middle bins, alternatives slowest bins; C wins net. Tiny old E component discrepancy recorded rather than altering archived totals. Report ../reports/2026-11-18-control-rt-score-diagnostic.md. No accepted artwork changes/refits/pulse work. Next author review diagnostic and placement.
+
+- 2026-11-18: Author selects held-out RT diagnostic for supplement, with further work pending. Saved byte-identical draft artwork, caption, source tables and provenance plus proposed revision checklist; number deliberately unassigned. Report ../reports/2026-11-18-control-rt-supplement.md. Main figures unchanged; next continue main review and revisit supplement later.
+
+- 2026-11-18: Author asks how to improve shallow psychometric slope. Bounded existing-source assessment confirms raw intermediate-coherence underfit (not just smoothing), descriptive max slope~28% shallower;9/10 mice same deficit direction. Recommendations documented, no refits/simulations run. Report ../reports/2026-11-18-control-psychometric-slope.md. Next if authorized: bounded current-model optimization/sensitivity audit before new sensory mapping.
+
+### Authorized control-C sensitivity and optimization pilot — 2026-11-18
+- [x] Map all10 mice over gain×sv×p_guess (3 levels each), with common draws at15 repetitions/input and original bounds/objective. Track choice, conditional-RT, joint scores, intermediate-coherence residuals and RT quantiles.
+- [x] Bounded derivative-free restarts on DBM13 (little slope deficit), DBM12 (moderate), PSUIM10 (largest deficit/small sample; updated after benchmark); allow all existing9 free parameters, retain original bounds. Compare original, joint-best and choice-improved starts.
+- [x] Independently evaluate original/new solutions using separate simulation seeds and higher repetitions; keep selection draws separate from confirmation draws.
+- [x] Assessed conditional CV expansion: not run because selected refits lack a useful consistent independent gain. If useful/reproducible, assess the same restart procedure within original control CV folds using training-only starts/selection; report pilot scope and do not replace manuscript scores before matched comparison.
+- [x] Verify arithmetic, parameters/bounds and resume checkpoints; export plots and report. Preserve old fits/artwork/raw inputs, pulse deferred.
+
+Author's “do it” authorizes these bounded analyses/refits; no cluster jobs/installations/pushes. This exploratory optimization pilot is not a new family comparison. Choice residuals are diagnostics, never a modified likelihood objective.
+
+- 2026-11-18: Pilot mouse refinement after benchmark: use DBM13 (little deficit), DBM12 (moderate), PSUIM10 (largest deficit, small sample) instead of PSUIM6. This spans the observed slope discrepancy and bounds restart runtime; all10 mice still receive sensitivity maps. Local restarts capped at200 objective evaluations/start,3 starts/mouse, same9 parameters/bounds. These are exploratory local pilots, not global optimization claims.
+
+- 2026-11-18: Implementation bug found before interpretation: name original for a local restart collided with archived-fit comparison baseline. Sensitivity and optimization outputs unaffected; original independent_evaluation.json files explicitly invalidated, executed source preserved, corrected comparisons in validation_v2. Independent 30-rep selection gains failed first60-rep confirmation. Resolve simulation sensitivity with already selected parameters fixed at3 new100-rep seeds (123456/234567/345678); no new parameter selection on confirmation draws. CV remains conditional on useful reproducible gains.
+
+- 2026-11-18: Authorized sensitivity/local pilot complete;270 profiles,9 capped restarts, corrected baseline comparisons and100-rep independent confirmation. No useful consistent joint gain, so conditional CV expansion not run; no manuscript fit replacements. Report ../reports/2026-11-18-control-C-optimization-pilot.md. Next author review findings; structural mapping or higher-precision optimization remains a separate next decision.
+
+- 2026-11-18: Author accepts B after optimization pilot. Approved artwork copied with source/captions/hashes to figure3B_final_2026-11-18; no parameter/artwork changes. Report ../reports/2026-11-18-figure3B-accepted.md. Next panel C recovery; A final selection and supplement refinement deferred.
+
+- 2026-11-18: Showed existing C/D recovery panels alone at author request; source values unchanged/verified and render inspected. Preview figure3_CD_review_2026-11-18/figure3_CD.png. Next author review C and decide D placement.
+
+- 2026-11-18: Author requests more intuitive D. Rendering-only redesign: replace overlapping dot axes with generator→group-conclusion rows, direct percentages/counts, explicit identical C-vs-E/C-vs-ES outcomes and reused-cohort caveat. Confirm group decision rule from recovery_cohorts.py; source values unchanged, inspect, document. C/A/B unchanged; D placement still undecided.
+
+- 2026-11-18: Intuitive D draft completed: generator→group-preference rows, exact percentages/counts, identical comparison rates verified; source rule/footnote caveats retained. Render inspected, source compiles. Report ../reports/2026-11-18-figure3D-intuitive.md. Next author assess D; placement undecided.
+
+- 2026-11-18: Author chooses cohort-recovery D in text only. Updated Results paragraph, removed obsolete D reference/current caption and made A–C layout explicit. Preserved historical artwork/source/caption. Report ../reports/2026-11-18-cohort-recovery-text-only.md. Next review C matrix; no D figure remains planned.
+
+- 2026-11-18: Author accepts C. Saved standalone unchanged matrix, caption and acceptance/source record in figure3C_final_2026-11-18. Report ../reports/2026-11-18-figure3C-accepted.md. Next combined A–C assembly retaining both A alternatives; pulse work remains deferred.
+
+- 2026-11-18: Author requests commits and next figure. Four focused topic commits7f80063/316c8af/fd2ee9c/0f9ffc5 saved Figure3 work locally; final handoff/next-figure commit follows, no push. Pulse artwork review resumes as Figure4; existing A–D re-exported with5 source tables unchanged, caption matched/render inspected. Reports ../reports/2026-11-18-figure3-commits.md and ../reports/2026-11-18-figure4-review.md. Next A discussion, then B onward.
