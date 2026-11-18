@@ -1,0 +1,12 @@
+{
+  "mouse": "DBM14",
+  "model": "ESx",
+  "seed": 23456,
+  "n_reps": 30,
+  "n_train": 396,
+  "k": 4,
+  "training_nll_independent_seed": 1146.1342702598026,
+  "bic_qmle": 2316.194197364623,
+  "fit_sha256": "c06a96f25b6da2dcb36d004377296d5d9bc98c7b0ef9016c7db9ccd7be5a2cca",
+  "input_sha256": "1a6c88ecf5da258e18435ceab600c799b3e413f0a0adc464d70b6115e1d69980"
+}

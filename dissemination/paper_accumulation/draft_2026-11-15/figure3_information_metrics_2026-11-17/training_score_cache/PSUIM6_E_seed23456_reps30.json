@@ -1,0 +1,12 @@
+{
+  "mouse": "PSUIM6",
+  "model": "E",
+  "seed": 23456,
+  "n_reps": 30,
+  "n_train": 3566,
+  "k": 10,
+  "training_nll_independent_seed": 9847.468443289574,
+  "bic_qmle": 19776.728884563378,
+  "fit_sha256": "ee0d4e679fd877ecec8856230ac150d492602859b3995576e04d381ff30dec6a",
+  "input_sha256": "1a6c88ecf5da258e18435ceab600c799b3e413f0a0adc464d70b6115e1d69980"
+}

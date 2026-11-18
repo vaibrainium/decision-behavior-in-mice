@@ -1,0 +1,12 @@
+{
+  "mouse": "PSUIM5",
+  "model": "DDMx",
+  "seed": 23456,
+  "n_reps": 30,
+  "n_train": 1337,
+  "k": 4,
+  "training_nll_independent_seed": 3799.5309513610064,
+  "bic_qmle": 7627.85463703042,
+  "fit_sha256": "1549700973fdcf72631f6304b275edca05bd39523193d6f4c2fc6ebd693893f2",
+  "input_sha256": "1a6c88ecf5da258e18435ceab600c799b3e413f0a0adc464d70b6115e1d69980"
+}

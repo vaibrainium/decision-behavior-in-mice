@@ -1,0 +1,8 @@
+{
+  "source": "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3A_metric_alternatives_ll_2026-11-17/source_panel_A.csv",
+  "source_sha256": "13b2ddb02ce0b921ea2f43fbf7846ab507ee24ac870884f64a4a4c5b24e23af4",
+  "script_sha256": "c64e9e7511239873a3684bc8e974bdc913beae03475f0eb37fe0e850574c2b6d",
+  "scope": "Rendering existing verified scores only",
+  "both_figures_use_two_y_axes": true,
+  "ll_negative_nll_verified": true
+}

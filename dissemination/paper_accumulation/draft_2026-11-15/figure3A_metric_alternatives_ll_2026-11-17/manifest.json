@@ -1,0 +1,26 @@
+{
+  "sources": {
+    "nll": {
+      "path": "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3A_group_nll_connected_2026-11-17/group_nll.csv",
+      "sha256": "6ddfe179793d12343485ae794908ec38e6cd44a03b319f062645c0361e7987ef"
+    },
+    "bits": {
+      "path": "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3_information_metrics_2026-11-17/group_metrics.csv",
+      "sha256": "10fe739d59a8151cfbf2ddcade4e9dfbce9ce7a3cfe0fa92fdadf33e618b294f"
+    },
+    "bic": {
+      "path": "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3_absolute_bic_2026-11-17/group_absolute_bic.csv",
+      "sha256": "2ec5cb6f19d3e7fe55c81704c8b442703091d5ba45abe3a139a095faee5cfaf9"
+    }
+  },
+  "scope": "Rendering approved mean scores only; no fits or rescoring",
+  "likelihood_display": "ll",
+  "script_sha256": "08b5127910c8fcceb50599ee74fe72f703c48a1d91d66903bf4c342ffa263a90",
+  "checks": {
+    "all_values_finite": true,
+    "nll_group_n_is_10": true,
+    "ll_equals_negative_saved_nll": true,
+    "bic_differences_match_previous_delta": true
+  },
+  "second_layout": "Literal interpretation of requested right panel: separate BIC subpanel"
+}

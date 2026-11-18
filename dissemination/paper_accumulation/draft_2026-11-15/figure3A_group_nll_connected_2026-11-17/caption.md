@@ -1,0 +1,9 @@
+# Proposed Figure 3A. Descriptive raw held-out NLL
+
+**(A)** Points show the unweighted mean across 10 mice of total saved held-out NLL, summed over five folds per mouse. Lower values indicate better prediction under this scoring procedure. The NLL axis has labeled nonzero limits for readability; printed values are rounded to one decimal. No reference subtraction or trial-count normalization is applied. Trial counts differ across mice, so this is a descriptive display of raw totals. No error bars are shown: SEM across uncentered raw mouse totals does not represent uncertainty in paired model differences. The previously displayed SEM was removed for that reason. No significance test is encoded by point positions alone.
+
+Existing inferential comparisons, exported separately in existing_paired_comparisons.csv, use within-mouse alternative-minus-C NLL per 1,000 control trials. They are not tests of the raw-mean points. Two-sided mouse-level t-test Holm p values across the four alternatives are E 0.0373519784, ES 0.022766 (full precision in CSV), DDMx 0.0373519784 and ESx 0.0373519784. The corresponding Holm-corrected Wilcoxon p values exceed 0.05 (E 0.05859375; ES 0.0546875; DDMx/ESx 0.05859375). These pre-existing tests are reported transparently; none was recomputed or selected by looking at the current graph.
+
+Source raw scores, folds and group means accompany the artwork and are unchanged from the SEM preview. Only display changed; source group_nll.csv retains the old descriptive SEM for provenance, but it is not plotted. Source-statistics file/hash in verification.json. B onward remain pending author review.
+
+A solid line joins the categorical model means as a visual guide. It does not represent interpolation or a continuous progression between model families.

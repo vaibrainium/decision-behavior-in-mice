@@ -1,0 +1,15 @@
+{
+  "source": "/src/dissemination/paper_accumulation/draft_2026-11-15/figure3_information_metrics_2026-11-17/bic_per_mouse.csv",
+  "source_sha256": "a311161d5316e32523e6ef55296e1ff935649b540382c33527ee97c2421c48ee",
+  "scope": "Rendering and equal-mouse aggregation of existing scores only",
+  "n_mice": 10,
+  "models": [
+    "C",
+    "E",
+    "ES",
+    "DDMx",
+    "ESx"
+  ],
+  "check_mean_differences_match_previous_delta_bic": true,
+  "script_sha256": "a7910766252c0cb22eb8a730cb5f4894b8ac6f47c7fa6b93598839d76e6afb1f"
+}

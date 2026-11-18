@@ -1,0 +1,5 @@
+# Test choice-and-RT log score in bits per trial
+
+Points show the equal-mouse mean of −NLL_test/[n_test ln(2)] for each of C, E, ES, DDMx and ESx. The saved total test NLL is summed over five control cross-validation folds before dividing by each mouse's held-out control count. Ten mice contribute, with 14,014 control trials total. Higher (less negative) values indicate better held-out prediction under the existing joint choice/RT quantile score. The line connects categorical models as a visual guide; no error bars or new significance tests are shown. Nonzero axis limits are explicitly labeled.
+
+This is a unit conversion and per-trial normalization of the existing joint QMLE objective. It is not a null-normalized choice-information gain or a continuous RT log density. The RT portion uses the original response-conditioned quantile bins, with the existing sparse-cell handling. It should not be compared numerically to a GLM-HMM's choice-only bits gain. Original fold scores/counts were verified; source values and formulas are in test_bits_per_mouse.csv and metric_manifest.json. No new test simulation or refitting was used for this view.

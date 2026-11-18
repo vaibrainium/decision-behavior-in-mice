@@ -1,0 +1,8 @@
+{
+  "source": "dissemination/paper_accumulation/draft_2026-11-15/figure3_information_metrics_2026-11-17",
+  "panels": [
+    "joint_test_logscore_bits_per_trial",
+    "delta_bic_vs_C"
+  ],
+  "scope": "Rendering only; no new analysis."
+}

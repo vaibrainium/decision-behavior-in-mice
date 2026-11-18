@@ -1,0 +1,18 @@
+{
+  "status": "Both alternatives finalized by author; final panel A selection pending",
+  "decision_date": "2026-11-17",
+  "alternatives": {
+    "A1_ll_bic_dual_axis": "LL left axis; BIC right axis",
+    "A2_bits_bic_dual_axis": "Joint test bits/trial left axis; BIC right axis"
+  },
+  "selected_alternative": null,
+  "source_directory": "dissemination/paper_accumulation/draft_2026-11-15/figure3A_both_dual_axes_2026-11-17",
+  "artwork_sha256": {
+    "A1_ll_bic_dual_axis.png": "f33138d20e5ad436acbb60276235b50de30230b802060e68d4209707aeb65afe",
+    "A1_ll_bic_dual_axis.pdf": "ea6614f1e93d4b45f3aba58395b5b8d4e154cde38cf681c30993ff609879984c",
+    "A1_ll_bic_dual_axis.svg": "a7e99dd7b740568e065d4bff0d91ad39a525b15248be6e2455aee4bd58c3f690",
+    "A2_bits_bic_dual_axis.png": "ed8ef62c8ea4d820822fa10bcec2251265115f2f7ee4ef05d6fd02d38b88467c",
+    "A2_bits_bic_dual_axis.pdf": "6853aa199b8a9e9a359a23c661f2084d8f584f306046bc3c4877edcb40b858f8",
+    "A2_bits_bic_dual_axis.svg": "b14e4b19592c64d18e6ca756359b2f325b949e359257a116c622355db9a62da8"
+  }
+}

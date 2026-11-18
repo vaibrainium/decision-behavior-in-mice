@@ -1,0 +1,5 @@
+# Proposed Figure 3A. Absolute held-out negative log likelihood
+
+**(A)** Total held-out negative log likelihood (NLL) for C, E, ES, DDMx and ESx, shown separately for each mouse. Each point is the sum of saved test NLLs across five cross-validation folds, with 14,014 control trials across 10 mice. The number of control trials for each mouse is indicated above its plot and is identical across its five models. Lower NLL indicates better prediction under the saved scoring procedure. Values are not subtracted from a reference model or normalized by trial count. Each mouse has an independently scaled, labeled y axis; compare candidate models within a mouse rather than interpreting differences in absolute NLL between mice as predictive quality. Gray lines connect categorical model values as visual guides. No group average, error bars or new significance tests are shown. Saved simulation-based scores do not convey parameter or Monte Carlo uncertainty.
+
+Source values: absolute_nll.csv. Fold-level score/count verification: fold_scores.csv and figure_manifest.json. Only panel A is revised; other panels remain pending author review.

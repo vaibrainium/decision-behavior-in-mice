@@ -1,0 +1,12 @@
+{
+  "mouse": "DBM5",
+  "model": "E",
+  "seed": 12345,
+  "n_reps": 30,
+  "n_train": 1213,
+  "k": 10,
+  "training_nll_independent_seed": 3482.828926989862,
+  "bic_qmle": 7036.666373069164,
+  "fit_sha256": "00faa29018e6e1fca6ca623745d124061d0fe56f26ee53285ab3fb338ef83f67",
+  "input_sha256": "1a6c88ecf5da258e18435ceab600c799b3e413f0a0adc464d70b6115e1d69980"
+}

@@ -1,0 +1,24 @@
+{
+  "all_50_full_fit_counts_verified": true,
+  "all_100_independent_BIC_calculations_verified": true,
+  "two_seeds_per_fit": true,
+  "within_mouse_seed_reference_verified": true,
+  "heldout_bits_advantages_match_archived_normalized_NLL_differences": true,
+  "rank_order_same_at_both_seeds": true,
+  "seed_rank_orders": [
+    [
+      "C",
+      "E",
+      "ES",
+      "DDMx",
+      "ESx"
+    ],
+    [
+      "C",
+      "E",
+      "ES",
+      "DDMx",
+      "ESx"
+    ]
+  ]
+}

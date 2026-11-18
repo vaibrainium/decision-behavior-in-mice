@@ -1,0 +1,12 @@
+{
+  "mouse": "DBM12",
+  "model": "ES",
+  "seed": 12345,
+  "n_reps": 30,
+  "n_train": 785,
+  "k": 8,
+  "training_nll_independent_seed": 2318.491918821364,
+  "bic_qmle": 4690.309307384987,
+  "fit_sha256": "734fcb2716998475e1cb805300015c02d772e28849c0cdcaf2c5ea02a4ffd9ae",
+  "input_sha256": "1a6c88ecf5da258e18435ceab600c799b3e413f0a0adc464d70b6115e1d69980"
+}

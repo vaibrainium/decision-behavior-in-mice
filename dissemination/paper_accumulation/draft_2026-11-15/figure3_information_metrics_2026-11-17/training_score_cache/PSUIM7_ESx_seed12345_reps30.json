@@ -1,0 +1,12 @@
+{
+  "mouse": "PSUIM7",
+  "model": "ESx",
+  "seed": 12345,
+  "n_reps": 30,
+  "n_train": 4095,
+  "k": 4,
+  "training_nll_independent_seed": 11802.421947972627,
+  "bic_qmle": 23638.1139839304,
+  "fit_sha256": "8db4cf5bcc218811cbf5334e0bd090849af7ed06e84ac8e3f58b3f85d4a7fc97",
+  "input_sha256": "1a6c88ecf5da258e18435ceab600c799b3e413f0a0adc464d70b6115e1d69980"
+}

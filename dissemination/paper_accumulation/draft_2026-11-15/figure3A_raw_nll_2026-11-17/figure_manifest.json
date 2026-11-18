@@ -1,0 +1,35 @@
+{
+  "scope": "Unsubtracted total held-out NLL, summed over five folds. No normalization, scoring rerun or new fit.",
+  "models": [
+    "C",
+    "E",
+    "ES",
+    "DDMx",
+    "ESx"
+  ],
+  "mice": [
+    "DBM12",
+    "DBM13",
+    "DBM14",
+    "DBM15",
+    "DBM5",
+    "DBM6",
+    "PSUIM10",
+    "PSUIM5",
+    "PSUIM6",
+    "PSUIM7"
+  ],
+  "control_trials": 14014,
+  "display": "Separate mouse facets, each with independently scaled and labeled y axis; lines join categorical model scores only.",
+  "checks": {
+    "all_totals_match_fold_inventory": true,
+    "trial_counts_match_fold_inventory": true,
+    "old_differences_reproduced": true
+  },
+  "source_hashes": {
+    "/src/dissemination/paper_control/tables/heldout_nll_per_mouse_2026-10-29.csv": "6f82144f179c4b91a40211859e219016bab76a40fbdcc17fdbdf693c9d185d9e",
+    "/src/dissemination/reviewer_2026-11-13/control_fold_inventory.csv": "e4ff163e933e7413d45f035db9aaf1a632175af7db31cb8821f9a2dced6cee73",
+    "/src/dissemination/paper_control/tables/heldout_diff_per_mouse_2026-10-29.csv": "4f1803af6f11813935dec93c9384e8fc851b9cb1c9ae0379323d2bb4dc6a59d1",
+    "/src/scripts/paper/figure3_raw_nll.py": "1d931f048a34f73d2cd3d4b8f6b8eec1987438a3e42891ecfd852846fabf7d15"
+  }
+}
