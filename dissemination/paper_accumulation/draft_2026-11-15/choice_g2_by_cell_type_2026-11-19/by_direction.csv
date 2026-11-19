@@ -1,0 +1,7 @@
+sv,direction,trials,mean_excess,min_excess,max_excess,mean_z,pulse_follow_pp,excess_per_100_trials
+no_sv,congruent,4312,162.0,136.85,182.76,4.34,2.69,3.76
+no_sv,incongruent,5779,145.86,122.05,178.76,3.49,1.36,2.52
+no_sv,zero_coh,1388,61.22,49.12,76.5,2.67,5.13,4.41
+sv,congruent,4312,242.04,206.32,293.59,6.45,5.42,5.61
+sv,incongruent,5779,144.67,126.05,169.26,3.46,1.51,2.5
+sv,zero_coh,1388,79.48,69.14,90.36,3.45,6.52,5.73

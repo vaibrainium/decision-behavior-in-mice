@@ -106,7 +106,7 @@ Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gat
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
-- plans/2026-11-19-choice-misfit-followup.md : choice misfit follow-up; next step 2 (control + training G²)
+- plans/2026-11-19-choice-misfit-followup.md : choice misfit follow-up; next step 4c (top-3 multi-seed rescore), then adaptive bins
 - plans/2026-10-29-control-paper.md : third paper (control trials only, Stine 2020 framing) in dissemination/paper_control/; G1 approved 2026-10-30 (D004), spine locked, stage S2; paired recovery 42579825 analysed: E separated (provisional, ES fits not yet submitted)
 - plans/2026-10-28-full-recovery-matrix.md : ON HOLD (author); recovery rerun on fixed CPU datasets if it becomes necessary
 - plans/2026-10-26-v2-refits-and-strategy-recovery.md : responded-only refits + full point-3 re-run (amendment 9); commands ready; next: user syncs code, submits R1-R6 (460), then F1a (80) and P1-P4 (850)
@@ -119,6 +119,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-11-19-choice-excess-cell-type-sv.md : choice excess not pulse-specific (controls too, PSUIM6/7); held-out excess in early/low-coh pulse cells, not 100% or late; guess_lapse not queued; sv 5-35x ME drift spread
 - reports/2026-11-19-choice-g2-all-families.md : choice excess driven by sv (all no-sv < all sv), not front end; power fixes slope but not excess; persists without PSUIM7
 - reports/2026-11-19-choice-rt-weighting.md : no choice/RT weighting bug; held-out pulse choice misfit real but small (excess G² 287–489 over 11,479 trials), systematic slope, PSUIM7-heavy
 - reports/2026-11-18-figure4-finalization.md : latest v13 finalized; tests/reproduction pass; changes committed in scoped chunks.
