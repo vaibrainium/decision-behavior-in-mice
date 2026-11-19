@@ -22,7 +22,7 @@ The likelihood is correct. Held-out pulse choice excess is 287–506 G² across 
 - [x] 4c. Rescore the top 3 by total held-out NLL (with and without PSUIM7: power UGM, norm UGM no sv, linear leak, linear leak + urgency) at >= 3 seeds before treating any ordering as a result.
 - [x] 4d. Data-only pulse effect vs coherence x timing with hierarchical bootstrap; residual bootstrap (early zero/low coherence) with and without PSUIM6/7.
 - [ ] 4e. Gain-decay / signed-leak pulse-only CV fits: table tasks_2026-11-19_pulse_w.csv generated (240 tasks); SUBMITTED 2026-11-19 14:55 (Hyak time) by author, all 10 mice, state slurm-logs/autosubmit_state_pulse_w.json; then rerun the cell split and residual bootstrap on them.
-- [ ] 4g. RT hazard aligned to pulse onset at 100% coherence (criteria B).
+- [x] 4g. RT hazard aligned to pulse onset at 100% coherence (criteria B).
 - [ ] 4h. Score PW fits against criteria A once all 240 tasks are done.
 - [ ] 4i. Random-effects model comparison across mice.
 - [ ] 4f. Control-trained no-sv fits only if the pulse-to-control transfer question still matters after 4e.
@@ -58,3 +58,4 @@ Refitting existing families; changing rt_nllh_weight for final fits.
 - 2026-11-19: Score audit committed (144107c) before rescore, per author. Top-4 rescore ran on CPU (GPU lost mid-session); <=0.55 NLL vs CUDA. Early-pulse residual mostly PSUIM6/7; data pulse effect does not shrink with coherence. Next: author decision on PW fits (all mice or PSUIM6/7).
 - 2026-11-19: Branch pushed (af74b35..e253c1f). PW table submitted by author: PW_gain jobs 43398729 (108 x 1 h), 43398730 (12 x 2 h); PW_signed_leak 43398731 (65 x 1 h), 43398732 (52 x 2 h), 43398733 (3 x 3 h). Outputs ddm/fits_pulse_linear_{gain_decay,signed_leak}. Pending from author: scoring criteria for PW fits and definition of the RT-to-pulse-onset alignment at 100% coherence.
 - 2026-11-19: Criteria A and B pre-registered (author's thresholds) before any PW or hazard result.
+- 2026-11-19: Criteria B result: no clustering in 150-400 ms (all CIs include 1); excess after 400 ms in other 8 mice. Flagged: lapses cancel in the pulse/control ratio, so 'flat = lapses' is not a valid reading (report pulse-onset-error-hazard).
