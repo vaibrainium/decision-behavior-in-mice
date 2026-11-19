@@ -1,0 +1,15 @@
+{
+  "date_client": "2026-11-18",
+  "instruction": "Adopt PDF persistence sequence under current constraints",
+  "main_panels": {
+    "A": "pulse psychometrics, preserved",
+    "B": "paired parameters, preserved",
+    "C": "ordinal onset stage, preserved",
+    "D": "directional-only post-pulse persistence",
+    "E": "dilution-adjusted influence, preserved estimates"
+  },
+  "supplement": "assignment effect; full directional/shared decomposition; individual/model-free/congruency candidates",
+  "backup": "direction by ordinal-time interaction",
+  "refits": false,
+  "final_submission_ready": false
+}

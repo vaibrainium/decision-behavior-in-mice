@@ -1,0 +1,30 @@
+{
+  "unchanged_ABDE_source_tables": {
+    "fig4_B_paired_tests.csv": true,
+    "fig4_B_paired_differences.csv": true,
+    "fig4_A_psychometric_group.csv": true,
+    "fig4_D_dilution_adjustment.csv": true,
+    "fig4_E_assignment_effects.csv": true,
+    "fig4_B_paired_individual_curves.csv": true,
+    "fig4_A_displayed_pulse_points.csv": true,
+    "fig4_B_paired_parameters.csv": true,
+    "fig4_B_paired_shared_asymptote_sensitivity.csv": true,
+    "fig4_A_psychometric_parameters.csv": true,
+    "fig4_A_psychometric_curves.csv": true,
+    "fig4_A_psychometric_mouse.csv": true
+  },
+  "no_refitting": true,
+  "timing_source_copied_exactly": true,
+  "primary_curve_rows": 101,
+  "late_mice": 6,
+  "total_mice": 10,
+  "ABC_artwork_unchanged": true,
+  "model_free_mean_SEM_verified": true,
+  "n_mice_range": [
+    5,
+    9
+  ],
+  "holm_tests": 12,
+  "any_corrected_significance": false,
+  "layout_inspected": true
+}

@@ -1,0 +1,9 @@
+{
+  "date": "2026-11-19",
+  "request": "Keep direction interaction as backup; add earlier single timing curve to Figure 4C.",
+  "panel_C": "all_available_10, WLS ordinal stages 1/2/3",
+  "ABDE": "Saved source tables and rendering retained",
+  "former_C": "supplementary_drafts/",
+  "direction_interaction": "backup_direction_interaction/",
+  "whole_figure_final": false
+}

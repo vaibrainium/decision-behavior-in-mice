@@ -1,0 +1,5 @@
+{
+  "half_alpha_right_minus_left_equals_selected_influence_curve": true,
+  "interaction_t_and_p_equal_existing_primary_slope_test": true,
+  "no_refitting_or_data_changes": true
+}

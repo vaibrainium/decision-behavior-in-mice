@@ -1,0 +1,12 @@
+{
+  "source_model": "dissemination/paper_accumulation/draft_2026-11-15/pulse_time_ordinal_2026-11-18",
+  "refitted": false,
+  "definition": "Full additive alpha follows notebook coh+A; population display uses mean categorical mouse baseline offset.",
+  "interaction": "Right slope minus left slope =2*direction_time_offset; same t and p as existing primary directional-influence slope test.",
+  "uncertainty": "Full score-Hessian trial-count CR1 mouse-cluster covariance; pointwise t(G-1)95% intervals. Curves are model estimates, not stage-wise raw observations.",
+  "source_hashes": {
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_time_ordinal_2026-11-18/coefficients.csv": "afa156509b8e6e91583643850bbf5ef659dff152c10bb54e4bccf453d67c0066",
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_time_ordinal_2026-11-18/slope_tests.csv": "906146b5896870d619924939b4c3cf86ba20d707dc4fb4800b7412c779210695",
+    "/src/scripts/paper/plot_pulse_time_direction_interaction.py": "441702adf7783a93a27c8ffc0fdb8281b1f7d19b4f322f7f0533221428c3e6c8"
+  }
+}

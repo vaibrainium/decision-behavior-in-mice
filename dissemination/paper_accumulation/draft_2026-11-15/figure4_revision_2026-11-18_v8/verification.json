@@ -1,0 +1,28 @@
+{
+  "unchanged_ABDE_source_tables": {
+    "fig4_B_paired_tests.csv": true,
+    "fig4_B_paired_differences.csv": true,
+    "fig4_A_psychometric_group.csv": true,
+    "fig4_D_dilution_adjustment.csv": true,
+    "fig4_E_assignment_effects.csv": true,
+    "fig4_B_paired_individual_curves.csv": true,
+    "fig4_A_displayed_pulse_points.csv": true,
+    "fig4_B_paired_parameters.csv": true,
+    "fig4_B_paired_shared_asymptote_sensitivity.csv": true,
+    "fig4_A_psychometric_parameters.csv": true,
+    "fig4_A_psychometric_curves.csv": true,
+    "fig4_A_psychometric_mouse.csv": true
+  },
+  "no_refitting": true,
+  "timing_source_copied_exactly": true,
+  "primary_curve_rows": 101,
+  "late_mice": 6,
+  "total_mice": 10,
+  "unchanged_ABC_pixels_identical": true,
+  "unchanged_ABC_different_pixels": 0,
+  "directional_source_identical": true,
+  "dilution_source_identical": true,
+  "assignment_source_identical": true,
+  "layout_review": "Full figure and assignment panel visually inspected; shortened D/E x labels fit canvas.",
+  "no_new_tests_or_trial_changes": true
+}

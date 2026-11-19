@@ -1,0 +1,20 @@
+[
+  {
+    "figure": "huk_shadlen_replication_2026-10-29_mouse_overlay_congruency.png",
+    "source_figure": "dissemination/paper_accumulation/figures/qc/huk_shadlen_replication_2026-10-29_mouse_overlay_congruency.png",
+    "source_table": "dissemination/paper_accumulation/tables/huk_shadlen_replication_2026-10-29_overlay_summary.csv",
+    "sha256": "63f7afd5ebc388f79f66b5494d75c52a0b159ad2f8d213e4edb3885fcfc5690c"
+  },
+  {
+    "figure": "congruency_choice_effect_2026-10-30.png",
+    "source_figure": "dissemination/paper_accumulation/figures/qc/congruency_choice_effect_2026-10-30.png",
+    "source_table": "dissemination/paper_accumulation/tables/congruency_choice_effect_2026-10-30_summary.csv",
+    "sha256": "336087b98f1a7b43c2bd033206a99d0821127501f513f95e365a5461af353891"
+  },
+  {
+    "figure": "congruency_roc_panel4_from250ms_2026-10-30.png",
+    "source_figure": "dissemination/paper_accumulation/figures/qc/congruency_roc_panel4_from250ms_2026-10-30.png",
+    "source_table": "dissemination/paper_accumulation/tables/congruency_roc_2026-10-30_panel4_from250ms.csv",
+    "sha256": "37fd69208fcdfadc047b8561c3eee4a0003746ab1933463e7add7a02cc0cd63f"
+  }
+]

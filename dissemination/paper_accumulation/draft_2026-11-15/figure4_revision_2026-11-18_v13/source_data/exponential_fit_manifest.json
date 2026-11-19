@@ -1,0 +1,26 @@
+{
+  "fit": {
+    "amplitude": 17.335862286472366,
+    "tau_s": 1.1119383377723342,
+    "sse": 72.17407640908812,
+    "log_tau": 0.1061047426473071,
+    "boundary": false,
+    "reference_s": 0.4534604377255519
+  },
+  "tau_percentile_interval_s": [
+    0.45057015675961337,
+    3.7254887142659414
+  ],
+  "bootstrap_fits": 600,
+  "boundary_fits": 7,
+  "n_mice": 10,
+  "scope": "Descriptive unweighted least squares across six displayed bins; zero asymptote fixed, amplitude nonnegative. Negative observations retained. No p value or mechanistic model comparison.",
+  "time_coordinates": "Observed mean pulse-to-response latency per bin, fixed across bootstrap fits; timing-coordinate uncertainty not propagated.",
+  "base_commit": "ed2d38d499081c9bce888b397f4d930a34b94251",
+  "source_sha256": {
+    "dissemination/pulse_dynamics_2026-11-13/data_readouts.csv": "52687af19d3b1ef46fe6ead78919c8c3c6f7d51364b36cb3aa9e90a006a00b59",
+    "dissemination/pulse_dynamics_2026-11-13/data_bootstrap_readouts.csv": "6b9469f4e71bd6e1e674405e81de93afecbcb246901481d89e5b5df4f81d0ea3",
+    "/mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/data/trial_table.csv": "44d7cdf94faa2f63618acc5668251cb09779b026ece1b61264fd57199e81f335",
+    "/src/scripts/paper/preview_pulse_exponential.py": "3749c9fd909ac4e5c38bd5930d4597989a40caa2c065f6115cd5881c0a4755f9"
+  }
+}
