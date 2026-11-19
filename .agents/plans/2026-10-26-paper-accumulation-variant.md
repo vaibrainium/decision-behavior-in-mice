@@ -200,6 +200,23 @@ Author's “do it” authorizes these bounded analyses/refits; no cluster jobs/i
 
 - 2026-11-18: Author requests commits and next figure. Four focused topic commits7f80063/316c8af/fd2ee9c/0f9ffc5 saved Figure3 work locally; final handoff/next-figure commit follows, no push. Pulse artwork review resumes as Figure4; existing A–D re-exported with5 source tables unchanged, caption matched/render inspected. Reports ../reports/2026-11-18-figure3-commits.md and ../reports/2026-11-18-figure4-review.md. Next A discussion, then B onward.
 
+- 2026-11-18: Author requests Figure4A remove control and fit psychometrics for left/right pulses only. Retain observed group means/SEM, exact author logit_4 helper with equal-coherence fit to equal-mouse means (as Fig1), fit each direction separately and restrict dense curves to its observed coherence range. Export points/coefs/curves, verify source identities and B–D untouched; inspect fresh full-figure revision. No pulse decision-model fitting or new inference.
+
+- 2026-11-18: Figure4A revision completed as v2: control omitted, left/right group points/SEM and exact author logit_4 curves, no coherence extrapolation. All original source tables equal, B–D/caption unchanged; curves verified and render inspected. Report ../reports/2026-11-18-figure4A-pulse-psychometrics.md. Next author assess A.
+
+- 2026-11-18: Author requests full-range pulse fit lines. Completed v3 with --extend-pulse-curves; exact parameters and all data/B–D unchanged, curves verified across−100/+100 and render inspected. Caption/Methods disclose extrapolation. Report ../reports/2026-11-18-figure4A-pulse-psychometrics.md updated.
+
+### Figure4 paired pulse psychometric parameters — 2026-11-18
+Author requests an additional paired α/β panel to assess pulse use. Clarification requested on labels: provisional α=author logit_4 mean (horizontal dynamic-range midpoint), β=var (logistic slope coefficient), with width alternative offered. Independent work can fit native mean/var without this label decision. Steps: audit per-mouse direction/coherence counts; fit exact4-param helper separately per mouse/direction using trial-count WLS as individual Fig1; inspect boundary/covariance/fit support issues; export paired parameter values and differences, exploratory two-sided paired tests with Holm across2 contrasts only if interpretable; plot connected subject pairs in an added panel, retaining A and existing temporal panels. Do not interpret β null as no pulse use or α midpoint as exactly P(right)=.5 with asymmetric asymptotes. Original decision-model fits unaffected.
+
+- 2026-11-18: Added paired B using same individual4-param form as A/author helper. Free fits expose instability; checked shared-control asymptotes as separate sensitivity, still midpoint-boundary issue. Kept all mice/original fits, explicit α=midpoint β=coefficient assumption after optional clarification. Exact paired sign-flip+Holm gives pα=.0703,pβ=.7031; exploratory, not definitive pulse-use proof. Full/focused renders inspected, all A and prior temporal sources equal, label B–D→C–E only. Report ../reports/2026-11-18-figure4-paired-psychometrics.md. Next author assess new B and fit adequacy.
+
+- 2026-11-18: Author challenges pairedα significance. Audit before interpretation: independently reproduce raw/adjusted tests; audit per-mouse fits with multiple starting points under exactly same4-param equation, trial weights and bounds, selecting only by WLS objective; compare coefficient stability and coherence support, no animal exclusions or p-driven fit selection. Preserve v4 and do not change correction family post hoc. User has now confirmed α=midpoint β=coefficient. Document whether arithmetic, optimization or identifiability explains result; do not force significance.
+
+- 2026-11-18: Audit found actual missed WLS solutions in2 single-start pulse curves. Same equation, weights, bounds, all10 mice,19 starts/curve selected by objective: corrected Holmαp=.01171875, βp=.13671875. Updated v5 paired/full figure; A and C–E unchanged. v4 paired results explicitly superseded. Numericalnear-minimumα inference stable in500 checks, no param-uncertainty claim. Report ../reports/2026-11-18-paired-psychometric-optimization-audit.md. User α/β definition confirmed. Next author review corrected B.
+
+- 2026-11-18: Author adopts corrected paired B/result. v5 marked current with acceptance.json and Results paragraph read directly from source tests; caption/Methods aligned, fit caveats retained. Report ../reports/2026-11-18-figure4-paired-update.md. Next temporal C review, then D/E. No new calculations or commits.
+
 ### Conditional accuracy versus RT for Figure3 — 2026-11-18
 Author asks to add notebook bounded-accumulation plot to previous control-model figure. Steps: trace notebook cells5/7/10/12 (pulse_type0, pooled outcome,400ms bins); audit scheduled-control contamination, trial counts and zero-coherence correctness; reproduce original summary separately, derive subject-level conditional accuracy on same14,014 controls as Figure3; retain bin counts/available mice and SEM, verify group arithmetic. Preview new D without replacing A–C; title descriptive, not a standalone bound claim. If useful, compare existing C/E/ES fixed-fit conditional accuracy with same input/readout to assess specificity, no refits. Keep Figure4 correction intact.
 
@@ -227,6 +244,8 @@ Author approves working order oldD→oldA→oldB→oldC: newA conditional accura
 
 - 2026-11-18: User requests all Figure3 work committed. Verified both assemblies against source hashes, PNG dimensions and SVG structure; saved reordered captions and selection mapping. Stage Figure3-only code/artwork/docs; preserve unrelated Figure4 edits. Both comparison alternatives and provisional layout status retained.
 
+- 2026-11-18: User returns to Figure4 after committing Figure3. Restored latest v5 preview and caption; resume C temporal influence, then D/E. A and corrected B retained; no numerical or artwork edits.
+
 ### Shared psychometric helper multistart — 2026-11-18
 User authorizes updating the helper after the individual-fit optimization audit. Preserve logistic equations, bounds, weighted least-squares objective, sklearn/public coefficient API and covariance. Add deterministic multistart default with original single-start candidate retained, select by residual error among finite successful fits, allow multistart=False for historical behavior, and export optimization/boundary diagnostics. Validate input/counts and numerical stability without changing the scientific model. Regression checks cover two affected pulse curves, all three logistic forms/custom bounds, exact legacy opt-out, weighted selection, convergence failure handling and sklearn cloning. Do not rerun preprocessing, change trial inclusion or regenerate accepted figures.
 - [x] Update helper and meaningful regression tests.
@@ -236,3 +255,146 @@ User authorizes updating the helper after the individual-fit optimization audit.
 - 2026-11-18: Shared-helper subtask complete; report ../reports/2026-11-18-psychometric-helper-multistart.md. Five regression tests pass and all20 pulse curves no worse than legacy; exact opt-out verified. Retained original logistic numerical evaluation after expit changed weakly identified coefficients in legacy mode. Saved verification/source hashes, no existing outputs replaced, no preprocessing/figure reruns or commit.
 
 - 2026-11-18: User requests committing the shared-helper update. Verified persisted source/test hashes match tested files; focused commit includes helper, regression tests, verification exports and related handoff only. No new fits or existing figure/data changes.
+
+### Pulse-time psychometric parameters — 2026-11-18
+User requests timing × physical-direction α/β plots like notebook examples. Audit notebook cell5/15–17: α is additive evidence offset (opposite current midpoint), plots are pulse-minus-control coefficients, linear stage dependence imposed, and SE formula omits shared-time term/covariances and adds SEs. New exploratory plots retain current α=midpoint and β=slope coefficient; plot within-mouse pulse-minus-control changes, summarize mice with SEM, no significance claims. Source audited trial table, scheduled signs/times, symmetric cells, modeled responses after actual/virtual offset and ≥0.1s after onset, as Figure4 except restoring late stratum for this requested exploratory comparison. Primary all-three-times view uses same6 UW mice; companion early/middle uses all10 mice. Audit timing metadata; do not reuse inaccurate notebook millisecond windows. Fit independently by time/direction with updated helper, retain failed/boundary diagnostics and observed support; inspect whether free4-parameter fits remain interpretable after splitting. Shared-control-asymptote sensitivity only if identification issues arise; clearly separate assumptions. Existing Figure4 unchanged.
+- [x] Audit selection/timing and notebook definitions; export subject/coherence counts.
+- [x] Fit timing-specific curves, derive paired control-relative estimates and diagnostics.
+- [x] Verify arithmetic/selection, inspect figures and document scientific limits.
+
+- 2026-11-18: Timing preview subtask complete; report ../reports/2026-11-18-pulse-psychometric-timing.md. Independent fits unstable; fixed-asymptote sensitivity changes trends. Author clarifies α absolute: v2 applies without refitting; β remains control-relative. Summaries/selection independently checked, renders inspected, Figure4 unchanged.
+
+- 2026-11-18: Author selects all10-mouse early/middle preview as primary; matched6-mouse three-time view retained separately. Existing v2 artifacts reused; all10 contribute to both directions/times and α/Δβ means/SEM independently rechecked. Added selection.json and primary_caption.md, updated pointers, no refits or Figure4 integration.
+
+### Audit misleading early-pulse coefficient averages — 2026-11-18
+Author challenges similar negative early α for both physical directions. Trace coding to physical pulse coherence and existing Figure4 source cells; compare observed equal-mouse choice curves with per-mouse midpoint estimates. Quantify boundary/weak-fit influence, without excluding mice. If confirmed, withdraw average-coefficient plot as a population psychometric summary and fit the same4-parameter equation directly to equal-mouse choice proportions (consistent Figure4A), independently by time/direction; label changed estimand explicitly. Preview observed curves before timing parameters, retain all mice. Bootstrap whole mice for population-curve coefficients if identifiable; no imposed timing trend or p-driven fit selection. Preserve prior outputs and existing Figure4. Document cause and superseded status.
+- 2026-11-18: Audit confirms physical pulse coding, observed directional separation, and a −100-bound early-left individual α influencing the average. Population free-asymptote fits also expose α versus P=.5 criterion mismatch. Add explicitly labeled joint per-time population-curve sensitivity with asymptotes shared across control/left/right, free midpoint/slope for each curve, no forced direction or time trend. Use same equal-mouse observed proportions as Figure4A; whole-mouse bootstrap keeps contrast covariance. Compare observed curves/free4 fits/shared fits, report any remaining instability and changed estimand. Do not claim a corrected individual-average statistic or alter existing Figure4.
+
+- 2026-11-18: Timing-summary audit complete; report ../reports/2026-11-18-pulse-timing-summary-audit.md. Verified coding, observed directional separation, −100-bound alpha influence and free-asymptote midpoint ambiguity. Withdrew prior population interpretation; saved data-first display and changed-estimand joint shared-asymptote sensitivity with120 whole-mouse resamples. Independent objectives/means checked, renders inspected; no exclusions or existing Figure4 changes.
+
+### Show per-mouse timing fit and boundary example — 2026-11-18
+Author requests the actual individual estimates and−100 mouse fit. Clarify the original plot did use per-mouse fitting then mean/SEM; population-curve sensitivity is a distinct estimand, not a replacement for subject-level inference. Plot all10 early left/right α pairs and DBM12 early-left observed fractions/counts with its saved fitted curve, marking α lower bound and observed coherence support. No refitting, exclusions, population substitution or new tests. Verify against saved cells/coefficients; document/preview.
+
+- 2026-11-18: Individual-fit display complete. Showed all10 early pairs and DBM12 early-left105 trial observations/boundary curve, saved squared residual reconstructed and render inspected. No refit/exclusions; clarified original per-mouse mean/SEM versus separate population sensitivity. Report ../reports/2026-11-18-pulse-timing-summary-audit.md updated.
+
+### Exact notebook population-fit reproduction — 2026-11-18
+Author reiterates screenshot is population fit; prior alternate analyses do not reproduce its model. Reproduce notebook cell5 fitting function on current valid_data without edits, reconstruct screenshot curves from saved cell14 coefficient output, and compare current fit to saved coefficients. Map additive-offset alpha versus midpoint and baseline-term omission exactly. Then hold equation/weights fixed while changing selection to scheduled labels and current Figure4 early/middle eligibility, isolating data/model/parameter-transform differences. Preserve full covariance for correct contrast SE; no new significance claims. Deliver direct comparison and acknowledge implementation mismatch rather than attributing original discrepancy solely to one mouse. No raw/notebook edits or existing-figure replacements.
+
+- 2026-11-18: Exact-reproduction subtask complete; report ../reports/2026-11-18-pulse-time-exact-reproduction.md. Same25,508-row data, original equation/start/bounds/weights reproduce all10 saved coefficients and screenshot alpha means. Independently checked offset/midpoint/baseline and full covariance transforms; same-model current-selection comparison also exported. Corrected assistant specification mismatch; individual-bound issue is separate. Render inspected; no existing figures changed.
+
+### Per-mouse exact joint pulse-time model — 2026-11-18
+User requests the reproduced notebook joint population model fitted separately per mouse. Primary uses original valid_data rows/response-coded labels for exact method comparability; separately labeled sensitivity uses current scheduled-label/post-offset eligibility. Each mouse jointly fits all its observed pulse stages plus controls, using notebook equation,10 coefficient bounds, pooled coherence-cell trial-count WLS, and shared asymptotes across conditions. Preserve original additive-offset α convention; export full α, original plotted baseline-omitted α, native midpoint, and β changes separately. Retain native single-start fits as diagnostic; multistart under same objective/bounds selected solely by WLS, with no animal or direction-based exclusions. Record boundary contacts, covariance/conditioning, actual-stage slope signs, fit adequacy and native-versus-best stability. Early/middle summaries use10 mice; late only6, with same6 three-time companion.
+Exploratory group tests fixed before fitting: exact two-sided subject-level sign-flip tests of right-minus-left α and β at each of3 stages, Holm across6 contrasts. Direction×time changes middle-minus-early for α and β are a separate2-test Holm family, all10 mice. Report paired mean effects, unadjusted95% t intervals and dz plus corrected p values; tests condition on fitted coefficients and do not propagate individual uncertainty. Do not infer no effect from a null, and do not treat linear model lines as independent proof of timing trends. Check unchanged model/aggregation on pooled reproduction and all selected objectives, render per-mouse and group figures; report primary/sensitivity, no existing-figure replacement.
+- [x] Fit original joint model per mouse and record fit diagnostics/native comparisons.
+- [x] Derive subject-level stage effects, prespecified exploratory contrasts and figures.
+- [x] Verify mapping/arithmetic/tests, assess stability, document and preview.
+
+- 2026-11-18: Per-mouse joint subtask complete; report ../reports/2026-11-18-pulse-time-per-mouse-joint.md. Original-mask α early/middle survive Holm6, timing interaction Holm2; β/late inconclusive. Scheduled eligibility sensitivity not corrected-significant, with unstable DBM12. All fits retained,580 attempts converged, independent objective/transform/exact-test/Holm checks passed and renders inspected. No existing outputs changed; original significance not used to pick final mask.
+
+### Trial-selection accounting — 2026-11-18
+User requests exact trial differences between notebook and current joint-model sensitivity. Join original valid_data IDs to audited trial table and current eligible IDs; reconstruct newer mask in explicit sequential order, report mutually exclusive removal counts plus independent rule failures, original versus scheduled label changes, and per-mouse counts. Identify null/no-change pulse removal and virtual-control timing gates separately; do not describe bundled sensitivity as only pulse-label correction. No fits, data changes or final mask choice.
+
+- 2026-11-18: Trial-accounting subtask complete; report ../reports/2026-11-18-pulse-timing-trial-accounting.md. Reconstructed retained IDs exactly and no retained labels differ. Detailed3,783 exclusions and virtual-control gates exported. Corrected earlier interpretation of sensitivity as relabeling; no refits or final mask decision.
+
+### Restricted-trial joint-model preview — 2026-11-18
+User asks to see the joint per-mouse model on the restricted21,725-trial set. Render saved scheduled_eligible_sensitivity coefficients in the same full additive-alpha/delta-beta convention,10 mice early/middle, matching6-mouse all-time companion. Verify summary arithmetic and copy existing corrected tests; no refits or new exclusions. Save a fresh display version and clarify all trials derive from author's filtered data.
+
+- 2026-11-18: Restricted-trial preview complete from saved per-mouse joint fits. Group means/SEM rechecked, tests copied unchanged, early/middle10-mouse and same6 all-time displays saved and main render inspected. Existing per-mouse report updated; no fitting, exclusion or statistical changes.
+
+### Joint pulse-time model with categorical mouse fixed offsets — 2026-11-18
+User requests a joint regression with mouse ID. Preserve notebook probability equation and additive-offset sign; replace global alpha1 with10 categorical mouse baseline offsets, share alpha2/alpha3/alpha4, beta1–4 and asymptotes. Primary early/middle restricted dataset19,313 trials (late excluded for common10-mouse support); original-label early/middle/control sensitivity23,684 trials. Explain that a shared pulse effect differs from averaging individual effects and weights trials through objective. Primary objective remains notebook trial-count WLS on mouse/condition/coherence cells; separately labeled binomial-deviance sensitivity keeps probability equation. Use multistart, same coefficient bounds, inspect adequacy/gradient/boundaries/actual slopes. Mouse-cluster sandwich covariance with CR1 finite correction and t9/F(2,9) reference;10 clusters means approximate inference. Leave-one-mouse cluster jackknife covariance/influence for WLS as sensitivity, not permanent exclusions. Main hypotheses fixed before fits: alpha directional block(alpha2,alpha4)=0 and beta directional block(beta2,beta4)=0, Holm across2 omnibus tests. Early/middle directional alpha contrasts are exploratory follow-ups, Holm across2. No significance-based model/objective/mask selection; retain all results and uncertainty-method discrepancies. Export curves/coefficients/covariances/tests and verify independently. Do not silently substitute ordinary logistic regression or change lapse structure.
+- [x] Fit mouse-offset joint WLS and binomial sensitivity on both datasets.
+- [x] Cluster inference, jackknife checks and plots; inspect adequacy/identification.
+- [x] Verify derivatives/objectives/tests, report and preview with limitations.
+- 2026-11-18: Initial Gauss–Newton/Fisher sandwich checked against statsmodels linearization. Full nonlinear score-Hessian check yields same scientific conclusion; use full observed score curvature as final M-estimator sandwich, retaining initial approximation separately. Restricted WLS Holm alpha≈3.20e-5,beta≈.100. This changes covariance postprocessing only, not model/data/fit or test family. Save fresh inference subdirectory; compare finite-difference step stability and jackknife.
+
+- 2026-11-18: Mouse-ID regression subtask complete; report ../reports/2026-11-18-pulse-time-mouse-fixed-effects.md. Final observed score-Hessian covariance;6 tests and numerical/linearization/Holm checks pass. Restricted alpha direction effect across sensitivities, beta/timing decline inconclusive. Shared-effect/unequal-weight distinction explicit; figures inspected, no existing-figure replacement or commit.
+
+### Continuous actual-onset slope as primary pulse-influence test — 2026-11-18
+User approves actual pulse-onset time and one primary slope of directional influence. Fit early/middle10-mouse joint nonlinear model, preserving notebook probability equation and categorical mouse baselines. Use x=(recorded_onset_s−.15)/.2 on pulse trials only; controls x=0,P=0,d=0. A=u_m+aP*P+aT*P*x+d*(w0+wT*x), B=b0+bP*P+bT*P*x+d*(v0+vT*x); shared asymptotes. Presence intercepts are explicit nuisance additions so centering time does not constrain common pulse bias/slope at time0; no sign/time trend forced. wT/.2 is directional-influence time slope per second (half right-minus-left offset), distinct from common aT. Primary restricted19,313 trials, original23,684 sensitivity; WLS primary and binomial sensitivity,21 parameters, same scaled coefficient bounds, multistart. One exploratory primary two-sided cluster-t9 test wT=0, report slope/CI per100ms, no stage-wise correction; all other coefficient tests descriptive. Full observed score-Hessian cluster CR1 covariance, WLS cluster jackknife check. Continuous recorded onset is not a continuous uniform timing experiment; six UW mice have2 exact earlier onsets, UCLA has timing spread. Export actual-time support, fit adequacy, derivatives/stability, and original-model sensitivity. Existing figures untouched.
+- [x] Prepare actual onset data and fit continuous-time models.
+- [x] Primary slope inference/jackknife and timing-curve plots.
+- [x] Independent checks, interpretation, report and handoff.
+
+- 2026-11-18: Continuous-time subtask complete; reports ../reports/2026-11-18-pulse-time-continuous.md and ../reports/2026-11-18-cluster-frequency-correction.md. Primary−2.93/100ms,p.0493; jackknife p.0903.40 starts, common-pulse nuisance specification and ordinal comparison,13 tests, gradient/curvature/unit/stability checks complete. Fixed aggregation-dependent finite correction in covariance and versioned continuous/earlier ordinal inference without refitting. Plots inspected, existing Figure4 unchanged; no firm primacy claim.
+
+### Ordinal1/2/3 time slope with same pulse-influence model — 2026-11-18
+User requests same slope analysis using stage1/2/3 instead of actual onset values. Keep current21-parameter structure for10 mice (or17 for6), common pulse-presence/time nuisance terms and notebook probability equation. x=stage−2 for pulses; controls P=d=x=0, so directional w(stage)=w0+wT*(stage−2). wT is per-stage effect (not per100ms). Primary exploratory display: all available restricted21,725 trials,10 mouse baselines with late support6. Companion: matched6 acrossall3 times; retain same10 early/middle-only case to isolate timing coding from late inclusion. WLS primary, binomial sensitivity, corrected underlying-trial CR1/t(G−1), cluster jackknife sensitivity. No exclusions based on fit or significance; one slope test per stated comparison, no claim of independent confirmatory analyses. Late interpretation conditional on common-effect assumptions and6-cluster matched inference approximate. Save new outputs, verify stage mapping/objectives/gradients/center invariance and reproduce prior21-parameter two-stage diagnostic p≈.0532. Existing figures unchanged.
+- [x] Fit ordinal stage-slope comparisons with same model and uncertainty methods.
+- [x] Verify stage coding/units, contrast tests and prior early/middle result.
+- [x] Preview three-stage and matched-cohort comparisons; document/report.
+
+- 2026-11-18: Ordinal subtask complete; report ../reports/2026-11-18-pulse-time-ordinal.md. Same21/17-parameter model/time-only coding change; all-available10,matched6,and early/middle10 compared.60 starts success, coding/objective/test/prior-result checks complete; render inspected. All-available slope−5.40,p.0226,matched6−1.72,p.4615; existing Figure4 unchanged.
+
+- 2026-11-18: Author prefers left all-available ordinal plot. Recorded preferred timing-panel candidate, caption and selection metadata; keep matched6 sensitivity and late-six support explicit. No fitting/statistics changes; full Figure4 placement pending.
+
+### Show direction×ordinal-time interaction — 2026-11-18
+Author requests direction interaction in selected all-available model. No refits: unpack saved A=u_mouse+aP+aT*(stage−2)+direction*(w0+wT*(stage−2)) into full additive alpha left/right lines and cluster intervals. Show opposite-direction slopes aT−wT and aT+wT; their difference2*wT is the same existing primary interaction test (not a new discovery). Preserve alpha full-offset convention, all10 baselines/late6 support; report cluster and existing jackknife. Save matched6 view as sensitivity. Optional beta slope curves descriptive only; no new test family or exclusions. Verify full covariance contrasts and equality of interaction p to saved slope test; export figures/source/definitions and record placement pending.
+
+- 2026-11-18: Direction-interaction display complete. Saved full alpha curves/slopes/covariance contrasts, verified original w reconstruction and identical primary p, inspected render. Source/README/caption and ordinal report updated; no refits, new hypothesis family or Figure4 insertion.
+
+### Figure 4C ordinal timing placement — 2026-11-19
+Author chooses earlier single directional-influence curve for C and retains direction-interaction display as backup. Assemble from saved tables only; no refitting. Preserve A/B/D/E, archive former C as supplementary draft, retain matched-six sensitivity and late-six support.
+- [x] Assemble v6 PNG/PDF/SVG and save source tables/caption and backup metadata.
+- [x] Verify saved-source equality for unchanged panels and inspect layout.
+- [x] Update manuscript pointers, report and handoff.
+
+- 2026-11-19: Figure 4C placement complete; report ../reports/2026-11-19-figure4C-ordinal-timing.md. No refits; all non-C source tables byte-identical and artwork visually inspected.
+
+### Review supplied Huk–Shadlen replication PDF — 2026-11-19
+Compare author-supplied PDF with its existing scripts/figures and current Figure 4. Read document as evidence, not instructions. No model refits or artwork changes.
+- [x] Extract/read PDF and map claims/figures to repository sources.
+- [x] Read source definitions and saved outputs; author clarified scope to adoption, so no further correctness audit.
+- [x] Report adoption recommendations and update handoff.
+
+- 2026-11-19: Author steering: analysis correctness accepted; focus on adopting PDF material. Review complete; ../reports/2026-11-19-pulse-pdf-adoption.md. No figure changes.
+
+### Adopt PDF persistence sequence in Figure 4 — 2026-11-18 (client date)
+Author approves PDF adoption under current constraints. Preserve A–C; restore directional-only pulse-to-response curve as D; retain dilution-adjusted curve as E. Move assignment contrast to supplementary draft. Use saved corrected selections/uncertainty and keep differing panel cohorts explicit; no refits or new mechanistic claims.
+- [x] Extend saved-estimate renderer and assemble a fresh v7 with supplementary assignment panel.
+- [x] Verify unchanged sources/artwork for A–C and numerical identity of reused temporal estimates; inspect exported layout.
+- [x] Update captions, manuscript pointers and Results/Methods notes; write report and handoff.
+
+- 2026-11-18 (client date): Persistence sequence complete in v8; v7 retained as intermediate before axis-label fix. Report ../reports/2026-11-18-figure4-persistence-sequence.md.
+
+### Simplify Figure 4 to A–D — 2026-11-18
+Author requests removal of dilution panel E and omission of congruency ROC. Preserve the directional persistence panel D, keep historical outputs, and update current caption/Results/Methods.
+- [x] Export fresh v10 A–D; keep compensated influence and remove separate directional panel per latest correction.
+- [x] Verify retained source values and inspect layout; update handoff and figure pointers.
+
+- 2026-11-18: Latest author correction supersedes preceding simplification: remove separate directional D; KEEP dilution-adjusted E as new D, exclude congruency ROC. Export fresh v10; preserve A–C and historical results.
+
+### Add model-free panel E — 2026-11-18
+Retain A–C and compensated D; add existing model-free matched-control accuracy differences as E, individual mice and equal-mouse mean/SEM. Saved 9–36% coherence, early/middle selection and corrected tests retained. No ROC, fitting or new tests.
+- [x] Render new panel and verify aggregation/source equality.
+- [x] Inspect layout and update caption, review pointers and handoff.
+
+### Separate exponential draft — 2026-11-18
+- [x] Record author correction: model-free E was not intended; restore v10 as current Figure 4.
+- [x] Preserve prior exponential artwork as reference in a separate draft; defer exact target and placement, no new fits.
+- [x] Update manuscript pointers and handoff. Report: ../reports/2026-11-18-exponential-separate-draft.md.
+
+### Standalone exponential pulse-influence preview — 2026-11-18
+Assumption communicated: target is compensated Figure 4D; optional clarification pending. Keep Figure4 unchanged. Reuse saved mouse-bootstrap curves; fit descriptive zero-asymptote exponential to all six displayed bins, retain negative estimates, use observed physical mean pulse-to-response times (no ordinal bin coordinates). No decision-model refits or intrinsic forgetting claim.
+- [x] Verify source alignment and physical time coordinates; render separate preview with explicit equation and uncertainty.
+- [x] Check resample fits/profile identification; document limits and preserve source provenance.
+
+- 2026-11-18: Separate exponential preview complete, report ../reports/2026-11-18-pulse-exponential-preview.md. Author specifies PDF; page-9 compensated readout used. Figure4 unchanged.
+
+### Overlay saved exponential on Figure 4 compensated panel — 2026-11-18
+User calls compensated panel E (historical name); current four-panel layout names it D. Overlay saved exponential and bootstrap band, use physical mean pulse-to-response coordinates, preserve A–C and data/intervals; no refits.
+- [x] Export new revision and verify source equality and axis coordinates.
+- [x] Inspect artwork and update caption/current pointers/handoff.
+
+### Compact compensated panel — 2026-11-18
+- [x] Reduce D width and connect observed points; preserve all data and fits.
+- [x] Inspect fresh preview and update current pointers/handoff.
+
+### Finalize Figure 4 and commit pending work — 2026-11-18
+Author accepts compact connected v13 and requests all pending changes in logical commits. Preserve historical outputs and raw inputs, no push or package installation.
+- [x] Verify regressions, paired-fit audit, source hashes and final artwork.
+- [x] Commit psychometric and trial-selection work separately from joint timing regression and PDF/exponential work.
+- [x] Create canonical final Figure 4, reconcile caption and current manuscript references, and commit assembly and handoff.
+- [x] Verify final commit history and clean working tree.
+
+- 2026-11-18: Latest v13 confirmed by author; exact artwork finalized in figure4_final_2026-11-18/. Regression and independent paired audit pass; reproduced PNG pixel-identical. Scientific work committed in separate chunks; final clean-tree check recorded in finalization report.

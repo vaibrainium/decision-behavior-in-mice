@@ -1,0 +1,110 @@
+# Figure legends
+
+Current preview: [Figure 4 v13](figure4_revision_2026-11-18_v13/figure4.pdf). Compensated panel narrowed and observed points connected; exponential overlay, intervals and all source values unchanged. [Caption](figure4_revision_2026-11-18_v13/caption.md). Earlier notices below are historical.
+
+## Current Figure 4: exponential overlay
+
+[Figure 4 v12](figure4_revision_2026-11-18_v12/figure4.pdf) overlays the saved descriptive exponential and its bootstrap band on the compensated pulse panel, currently **D** (historically E). A–C and the observed estimates/intervals are unchanged. D now uses physical mean pulse-to-response time. [Caption](figure4_revision_2026-11-18_v12/caption.md) explains the descriptive fit and uncertainty; no refits. Earlier notices below are historical.
+
+## Current decision: exponential analysis kept separate
+
+Figure 4 returns to [v10, A–D](figure4_revision_2026-11-18_v10/figure4.pdf), retaining compensated pulse influence D. The model-free E in v11 was added through a misunderstanding and is not selected. The [exponential analysis has a separate draft record](exponential_standalone_draft_2026-11-18/README.md); its final target and placement are deferred. No new fits. Earlier notices below are historical.
+
+## Current Figure 4: model-free E added
+
+[Figure 4 v11](figure4_revision_2026-11-18_v11/figure4.pdf) keeps A–C and the compensated influence D, and adds **E: model-free accuracy change**, with individual-mouse traces and equal-mouse mean/SEM. Saved estimates and eligibility are unchanged. [Caption](figure4_revision_2026-11-18_v11/caption.md) records 9–36% coherence, early/middle schedules, available mice and the existing corrected tests. ROC remains excluded. Earlier revision notes below are historical.
+
+## Current Figure 4 — compensated influence retained
+
+[Figure 4 v10](figure4_revision_2026-11-18_v10/figure4.pdf) preserves A–C and retains the dilution-adjusted plot as **D**. The separate directional persistence panel is removed from the main figure. Congruency ROC is excluded from the planned supplement. Historical outputs are retained; no refits or numerical changes. [Current caption](figure4_revision_2026-11-18_v10/caption.md) supersedes older panel mappings below.
+
+## Current Figure 4: pulse persistence sequence — 18 November 2026
+
+[Current Figure 4 v8](figure4_revision_2026-11-18_v8/figure4.pdf) adopts the PDF sequence: A pulse psychometrics, B paired parameters, C pulse-onset stage, D post-pulse directional persistence, E dilution-adjusted influence. A–C are unchanged from v6. The assignment-based contrast is now [supplementary](figure4_revision_2026-11-18_v8/supplementary_drafts/assignment_effects.pdf); full directional/shared decomposition and PDF supporting candidates are retained alongside it. [Caption](figure4_revision_2026-11-18_v8/caption.md) keeps panel-specific selections, mouse-level uncertainty, correction families and the late-six support in C explicit. No new fitting or tests. Earlier revision notices below are historical.
+
+## Current Figure 4 revision — 19 November 2026
+
+[Figure 4 v6](figure4_revision_2026-11-19_v6/figure4.pdf) now places the selected single directional-influence curve across ordinal pulse stages in **C**. A/B/D/E retain their saved estimates. [Current caption](figure4_revision_2026-11-19_v6/caption.md) states late-pulse support in six mice and the inconclusive matched-six sensitivity. The [direction-interaction plot](figure4_revision_2026-11-19_v6/backup_direction_interaction/all_available_10_direction_interaction.pdf) is backup; [former C](figure4_revision_2026-11-19_v6/supplementary_drafts/former_C_directional_shared.pdf) is an unnumbered supplementary draft. No refitting or new tests. Earlier revision notes below are historical.
+
+## Current Figure4 — corrected paired B adopted
+
+[Full v5 figure](figure4_revision_2026-11-18_v5/figure4.pdf) and [paired B](figure4_revision_2026-11-18_v5/paired_psychometric_panel.pdf) are the current working artwork. Author adopted the audited paired estimates: Holmαp=0.0117 andβp=0.1367. [Caption](figure4_revision_2026-11-18_v5/caption.md), [Results paragraph](figure4_revision_2026-11-18_v5/results_paragraph.md), and [acceptance/source record](figure4_revision_2026-11-18_v5/acceptance.json) align. v4 paired statistics superseded; uncertainty caveats retained. Next: temporal panels C–E review.
+
+## Corrected Figure4 paired panel — current v5
+
+[Paired α/β B](figure4_revision_2026-11-18_v5/paired_psychometric_panel.pdf), [full figure](figure4_revision_2026-11-18_v5/figure4.pdf), [caption/audit notes](figure4_revision_2026-11-18_v5/PAIRED_PARAMETER_NOTES.md). A same-objective multistart audit corrected missed individual fits: Holm-adjustedαp=0.0117, βp=0.1367. All10 mice, equation, bounds, weights and correction family unchanged; A and C–E values unchanged. This supersedes v4 paired estimates/statistics below. Fit-identification uncertainty remains explicit.
+
+## Figure 3 panels approved — 18 November 2026
+
+A: [both finalized alternatives](figure3A_final_alternatives_2026-11-17/README.md), final choice deferred. B: [approved model C fits](figure3B_final_2026-11-18/README.md). C: [approved recovery matrix](figure3C_final_2026-11-18/README.md). Former D result is in Results text only. All A–C panel reviews complete; combined figure assembly pending. This supersedes older C-review-pending notes below.
+
+## Current Figure 3 layout — A–C
+
+A: held-out model comparison with QMLE-based BIC (both accepted alternatives retained). B: approved model C psychometric/chronometric fits. C: model-recovery matrix (review pending). Cohort-level recombination recovery is reported in the [Results text](cohort_recovery_text_2026-11-18/results_paragraph.md), **not a figure panel**. This author decision supersedes older D preview/placement notes below. Earlier artwork remains archived.
+
+## Approved Figure 3B — 18 November 2026
+
+[Accepted model C psychometric/chronometric panel](figure3B_final_2026-11-18/figure3B_model_C.pdf), [caption and source record](figure3B_final_2026-11-18/README.md). Author approved the smooth four-parameter psychometric version. Original full-control C estimates retained; optimization pilot not adopted. This supersedes older B-preview status below. Next: panel C recovery.
+
+## Figure 3A working alternatives (author-finalized; choose later)
+
+Both accepted versions are retained in [figure3A_final_alternatives_2026-11-17](figure3A_final_alternatives_2026-11-17/README.md), with [their captions](figure3A_final_alternatives_2026-11-17/captions.md): A1 uses test LL/BIC; A2 uses joint test bits per trial/BIC. Both use left/right y-axes. They are alternatives for one panel; final selection is pending. Earlier figure captions below retain historical numbering during figure-led review.
+
+Working draft. Figure 1 selected: `figure1_revision_2026-11-17_v6/`; Figures 2–4: `figures_v5/`. Analysis populations and interval definitions are stated separately for each panel.
+
+## Figure 1. Mice report motion direction in a reaction-time discrimination task
+
+**(A)** Task schematic. Head-fixed mice reported leftward or rightward random-dot motion by licking the corresponding port. Responses could register after a 0.3-s minimum viewing interval. The 5-s boundary defines the analysis window rather than a common task-termination time. **(B)** Scheduled replacement pulses in the two task implementations. Colored rectangles indicate the median onset and duration of rightward (orange) and leftward (blue) pulses; thin horizontal lines indicate the observed onset range for the jittered UCLA schedule. E, M and L denote early, middle and late onset categories. Gray shading marks the minimum viewing interval. The schedule panel describes assignments in accepted sessions, including pulses scheduled after a response.
+
+**(C)** Scheduled-control psychometric functions. Gray points show individual mouse proportions and thin gray curves show their four-parameter logistic fits. Black points and error bars show the unweighted mean and SEM across 10 mice at each coherence; the black curve is a separate four-parameter logistic fit to those mouse means. Individual fits use trial-count-weighted least squares; the group fit weights coherence levels equally. These descriptive curves include 14,015 responded control trials. **(D)** Mean control-trial response times plotted against signed coherence, separately for right choices (orange circles) and left choices (blue squares), both joined by solid lines. Points show the unweighted mean of within-mouse arithmetic mean RTs; translucent bands show pointwise ±1 SEM across eligible mice (alpha = 0.18), with linear interpolation between observed coherence levels. Zero-coherence trials are included in each choice-direction series. Lines connect observed means and are descriptive guides, not model fits. A mouse × signed-coherence × choice-direction cell required at least 10 responses for display. Right-choice points contain 8–10 mice; left-choice points contain 7–10 mice. All individual-mouse summaries, including cells omitted from the display, are retained in the source table.
+
+Data are from 10 mice in 50 accepted sessions. Session and trial exclusions are detailed in Methods. Source tables: `figure1_revision_2026-11-17_v6/source_data/fig1_*`; source hashes and population definitions: `figure1_revision_2026-11-17_v6/figure_manifest.json`.
+
+## Figure 2. Control choices and response times favor accumulation over matched nonintegration accounts
+
+**(A)** Held-out negative-log-likelihood (NLL) differences between a bounded accumulator (C) and a rapid-forgetting model (E) or discrete-sample extrema model (ES). The matched candidates share the sensory input representation and relevant response components, including drift variability and fast guesses. Positive differences favor C. Colored points show each mouse's summed five-fold difference, divided by its held-out control count and multiplied by 1,000; connecting lines identify the same mouse. Black diamonds show the unweighted mouse mean ± SEM. There were 10 mice and 14,014 held-out control responses across the five folds. Mean advantages were 12.76 and 18.74 NLL units per 1,000 trials against E and ES, respectively. Existing two-sided mouse-level tests gave Holm-adjusted t-test p = 0.0374 and 0.0228, and Holm-adjusted Wilcoxon p = 0.0586 and 0.0547. Holm correction covered the original four alternative-model comparisons within each score component.
+
+**(B)** Decomposition of the mean score advantages into choice and conditional-RT contributions. Blue denotes choice; hatched orange denotes RT. Most of the relative advantage is carried by RT predictions. **(C)** Recovery on fixed synthetic train/test dataset pairs. Each generating model produced two dataset pairs for each mouse's input schedule, yielding 20 dataset pairs per generator and 100 pairs overall. All five candidates were fitted to each pair, for 500 fits. Entries show the number of datasets for which each candidate had the lowest test NLL; shading shows the corresponding fraction out of 20. DDMx and ESx are the published-specification integration and extrema reference implementations, respectively, whereas C, E and ES include the response components used in the matched comparison. Each candidate evaluated exactly the same generated outcomes for a given dataset pair.
+
+
+## Figure 3. Brief motion pulses exert a sustained directional influence on choices
+
+**(A)** Psychometric functions for left-pulse (blue downward triangles) and right-pulse (orange upward triangles) trials. Control trials are omitted from this panel. Points show unweighted means of per-mouse right-choice proportions; error bars show SEM across available mice. Solid curves are separate descriptive four-parameter logistic fits using the author’s logit_4 equation and default bounds, fitted without trial-count weighting across coherence levels to these equal-mouse means. Both fitted curves are displayed from −100% to +100% coherence; portions beyond the observed range of a pulse direction are descriptive extrapolations, with no additional data points. The plotted pulse conditions contain 8,529 eligible responses from 10 mice under the existing symmetric-schedule, early/middle-onset selection, with responses after the pulse ended and pulse-to-response interval at least 0.1 s. These curves are descriptive psychometric fits, not new decision-model fits or a test of their separation.
+
+**(B)** Logistic decomposition of pulse influence in seven response-latency bins. The directional coefficient D shifts choices toward the physical pulse direction. The shared coefficient S describes a shift toward the baseline-correct side for either pulse direction; zero-coherence trials contribute no signed shared term. Fits include mouse intercepts and coherence-by-bin baselines. Points are coefficients; vertical lines are percentile 95% intervals from 300 mouse-bootstrap refits. Asterisks indicate Holm-adjusted bootstrap p < 0.05 across seven bins within each coefficient family. Directional effects persist through the 0.9–1.2-s bin; no shared-effect bin passes that correction.
+
+**(C)** Coherence-equivalent pulse influence multiplied by mean response time from motion onset, γT. The coherence-equivalent influence γ is the separately estimated directional log-odds coefficient divided by the coherence slope. Points show the observed readout; vertical lines show percentile 95% intervals from 600 mouse-bootstrap samples. The dotted line marks the unweighted mean over the 0.3–1.2-s bins. This additional dilution-adjusted analysis retains the observed later decline. Its behavioral time course constrains model predictions without directly estimating an intrinsic integration time constant. The x axes in B–C use discrete bins; spacing does not represent equal physical durations.
+
+**(D)** Assignment-based directional response contrasts, a different estimand from the response-conditioned curves in A–C. Responses by 5 s were coded +0.5 for right, −0.5 for left and 0 for no response. Right-pulse minus left-pulse mean scores were computed within mouse × session × signed-coherence × onset cells, weighted within mouse by the smaller assignment count in each pair, and multiplied by 100. Squares denote UW mice and circles UCLA mice; apparatus, cohort and schedule are confounded. The black diamond and horizontal interval show the unweighted mouse mean and its 95% t interval: 5.84 percentage points [1.80, 9.89]. The previously reported Holm-adjusted p is 0.0194, corrected across the three primary directional contrasts (right versus left pulse, right pulse versus control, and control versus left pulse). Source tables: `figures_v5/source_data/fig3_*`; correction provenance: `dissemination/reviewer_2026-11-13/COMPLETED_RESULTS.md` and its referenced behavioral group table.
+
+## Figure 4. Pulse sensitivity and response-time distributions jointly constrain accumulation accounts
+
+**(A)** Observed directional coefficients and predictions from the control-trained accumulator, the joint power-input/leak/urgency account and the joint onset-weight account without persistent drift variability. **(B)** Dilution-adjusted readouts for the data and selected models, including a bounded accumulator with zero leak and zero drift variability. Model lines in A–B average the readouts from two simulation seeds, each pooling 30 repetitions per input at fixed fitted parameters. Black intervals show the corresponding mouse-bootstrap uncertainty of the data, as in Figure 3; model lines do not incorporate fitted-parameter uncertainty. The zero-leak model retains the fitted response mapping and fast-guess mixture. This example demonstrates that a later decrease in this readout is possible without intrinsic leakage, while the quantitative trajectories remain informative about the tested models.
+
+**(C)** Individual-mouse pulse-minus-control directional choice effects for responses 0.3–1.2 s after actual or virtual onset. Black circles show the observed effects; horizontal lines show existing within-mouse percentile 95% block-bootstrap intervals using blocks of 50 retained trials within sessions. Blue squares and green triangles show fixed-parameter predictions of the matched onset-weight models with and without drift variability. The final row shows the unweighted cohort mean, with the existing mouse-plus-trial hierarchical 95% interval for the data; model symbols show the corresponding means. These effects use matched coherence/sign/onset comparisons at absolute baseline coherences up to 36%; they differ from Figure 3D's assignment-based endpoint. Individual-row intervals condition on each mouse and do not represent uncertainty across animals; the final-row hierarchical interval also resamples mice.
+
+**(D)** Held-out choice and RT NLL differences for the same matched onset-weight pair, without minus with drift variability. Blue bars denote choice, hatched orange bars denote RT and black points denote their sum. Positive differences favor the model with variability. The summed differences are −49.29 for choice, +360.22 for RT and +310.93 overall; PSUIM7 contributes +280.17 to the total difference. **(E)** RT contributions from D split by the nine quantile bins defined within each condition and choice. Quantile positions represent relative speed within those cells, rather than a common physical RT range. **(F)** An illustrative conditional RT distribution for correct −100%-coherence control responses in PSUIM7. The condition was selected descriptively because it contributes the largest matched RT-score disadvantage of removing variability. Points show observed 0.1-s histogram densities; lines show saved held-out model histograms summed across folds. The displayed RT range is restricted to 0.3–2.6 s, while density normalization uses all histogram bins. This example is a diagnostic illustration, not an independent test. Source tables: `figures_v5/source_data/fig4_*`.
+
+## Revised Figure3B — model fits on control data (preview)
+
+Author replaces decomposition B with psychometric and left/right-choice mean RT model overlays. Current [artwork](figure3B_control_fits_2026-11-18/figure3B.pdf) and [full caption](figure3B_control_fits_2026-11-18/caption.md) supersede historical decomposition-B text for this figure review. Full-control descriptive predictions; final layout pending author assessment.
+
+## Current Figure3B — model C alone
+
+Latest [artwork](figure3B_model_C_2026-11-18/figure3B_model_C.pdf) and [caption](figure3B_model_C_2026-11-18/caption.md): psychometric left, chronometric right. Model C full-control fit; held-out scores separately assess unseen-control prediction. Supersedes five-model B preview; pulse deferred.
+
+Current smooth-psychometric B: [model C artwork](figure3B_model_C_logit4_2026-11-18/figure3B_model_C.pdf), [caption](figure3B_model_C_logit4_2026-11-18/caption.md). Author logit_4 curves fitted separately to data and model C group probabilities; raw data points and RT plot unchanged. Coefficients/dense curves exported. Descriptive smoothing does not refit DDM parameters. Supersedes joined-segment psychometric preview for current review.
+
+Supplementary draft selected by author: [held-out control RT diagnostic](supplement_control_rt_diagnostic_2026-11-18/README.md), with [figure](supplement_control_rt_diagnostic_2026-11-18/control_rt_diagnostic.pdf) and [caption](supplement_control_rt_diagnostic_2026-11-18/caption.md). Further refinement pending; supplementary number unassigned. Source values/checks unchanged. This supersedes the earlier placement-undecided note for this diagnostic; it is separate from main Figure 3B.
+
+Current Figure4 v4: [full figure with paired α/β B](figure4_revision_2026-11-18_v4/figure4.pdf), [focused B](figure4_revision_2026-11-18_v4/paired_psychometric_panel.pdf), [caption](figure4_revision_2026-11-18_v4/caption.md), [fit limitations](figure4_revision_2026-11-18_v4/PAIRED_PARAMETER_NOTES.md). A unchanged; old B–D now C–E. Paired10-mouse midpoint/slope fits are exploratory with weak/boundary-limited estimates, Holm p=.0703/.7031; sensitivity retained separately. Await author review.
+
+## Selected Figure 3D — conditional accuracy with exponential fits
+
+**D, Control accuracy conditional on response time, with descriptive saturation fits.** Points show equal-mouse mean accuracy in the existing response-time bins; shading is ±SEM across contributing mice. Solid curves are monotonic exponential fits for nonzero coherence, fitted to individual correct/error outcomes with each mouse contributing equal total weight within coherence. The 0% curve is a fitted constant. The exponential starts at the 300-ms analysis limit with freely estimated starting accuracy and asymptote. Because mice have different RT distributions, equal-mouse trial-weighted fits need not pass through the equal-mouse binned means. Curves are descriptive and their time constants are not estimates of a mechanistic integration time. Data selection and binning match the previous Figure3D candidate. Whole-mouse bootstrap intervals are shown separately in the diagnostic figure; the main shading remains data SEM.
+
+Author approved this D on 18 November 2026. It supplements the accepted A–C panels; the earlier cohort-recovery D remains text-only.
+
+## Figure3 working order approved — 18 November 2026
+
+Current order: **A conditional accuracy** (previous D), **B model comparison** (previous A), **C model fits** (previous B), **D model recovery** (previous C). [Current preview](figure3_story_order_2026-11-18/figure3_A1.png), [bits/BIC alternative](figure3_story_order_2026-11-18/figure3_A2.png), [captions in current order](figure3_story_order_2026-11-18/captions.md), and [mapping/source notes](figure3_story_order_2026-11-18/README.md). Both comparison alternatives remain open. Layout is provisional; earlier panel-letter references are historical. Source hashes, PNG dimensions and SVG structure verified in verification.json.
