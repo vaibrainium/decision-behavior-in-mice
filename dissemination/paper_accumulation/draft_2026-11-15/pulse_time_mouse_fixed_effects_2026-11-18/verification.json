@@ -1,0 +1,32 @@
+{
+  "five_regression_unit_tests_passed": true,
+  "cluster_covariance_checks": [
+    {
+      "dataset": "restricted",
+      "objective": "wls",
+      "cluster_covariance_relative_difference_vs_statsmodels_linearization": 2.105031786595012e-07,
+      "n_trials": 19313
+    },
+    {
+      "dataset": "restricted",
+      "objective": "binomial",
+      "cluster_covariance_relative_difference_vs_statsmodels_linearization": 5.824051773613372e-07,
+      "n_trials": 19313
+    },
+    {
+      "dataset": "original_selection",
+      "objective": "wls",
+      "cluster_covariance_relative_difference_vs_statsmodels_linearization": 1.1910900259052512e-07,
+      "n_trials": 23684
+    },
+    {
+      "dataset": "original_selection",
+      "objective": "binomial",
+      "cluster_covariance_relative_difference_vs_statsmodels_linearization": 4.0841813476786735e-07,
+      "n_trials": 23684
+    }
+  ],
+  "all_holm_adjustments_independently_verified": true,
+  "display_parameter_contrasts_verified": true,
+  "test_file_sha256": "1b85c942618f299ede9e0736cab849b5f8489449364d867d48b8d196bd7b160c"
+}

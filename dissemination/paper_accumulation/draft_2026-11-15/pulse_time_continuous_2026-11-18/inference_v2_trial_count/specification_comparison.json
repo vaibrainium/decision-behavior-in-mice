@@ -1,0 +1,6 @@
+{
+  "ordinal21_with_presence_slope_per_stage": -5.510364886107973,
+  "ordinal21_with_presence_raw_t9_p": 0.05321306237022628,
+  "continuous21_primary_raw_t9_p": 0.049261856194313995,
+  "scope": "Same21-parameter probability model and trials; change actual onset values to ordinal early/middle. Nuisance additions isolated from original19-parameter formulation separately."
+}

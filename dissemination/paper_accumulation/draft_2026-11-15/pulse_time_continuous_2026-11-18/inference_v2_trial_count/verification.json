@@ -1,0 +1,8 @@
+{
+  "13_relevant_tests_passed": true,
+  "primary_test_p_and_ci_independently_recomputed": true,
+  "units_per_second_to_per100ms_verified": true,
+  "frequency_aggregation_invariance_test_passed": true,
+  "optimizer_near_minimum_stability": "optimizer_stability.csv",
+  "all_saved_costs_reproduced": true
+}

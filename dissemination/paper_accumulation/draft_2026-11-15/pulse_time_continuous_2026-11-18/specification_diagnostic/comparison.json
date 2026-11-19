@@ -1,0 +1,13 @@
+{
+  "diagnostic_only": true,
+  "time_input": "Ordinal early/middle, centered at1.5. Physical onset variation removed; pulse-presence nuisance terms retained.",
+  "n_trials": 19313,
+  "n_cells": 380,
+  "n_parameters": 21,
+  "directional_slope_per_stage": -5.510364886107973,
+  "cluster_se_per_stage": 2.5444124676619237,
+  "raw_cluster_t9_p": 0.05852444014742046,
+  "cost": 60.26511296208598,
+  "old19parameter_ordinal_raw_p": 0.109578,
+  "continuous21parameter_raw_p": 0.0494637129887524
+}

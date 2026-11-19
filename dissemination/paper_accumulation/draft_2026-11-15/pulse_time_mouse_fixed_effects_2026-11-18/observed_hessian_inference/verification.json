@@ -1,0 +1,6 @@
+{
+  "six_regression_tests_passed": true,
+  "final_Holm_adjustments_verified_against_statsmodels": true,
+  "curvature_checks": "Positive definite observed score Hessians and covariance stable to10x step change; manifest.json",
+  "test_sha256": "db4b03e853b5db7e475a6eab0ffe0f02b77ed5bb39179bf9610a69ec0719bb8e"
+}

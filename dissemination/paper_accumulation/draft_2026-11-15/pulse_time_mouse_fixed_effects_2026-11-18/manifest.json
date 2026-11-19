@@ -1,0 +1,38 @@
+{
+  "model": "Notebook probability equation with10 categorical mouse additive offsets replacing alpha1; remaining9 coefficients shared, including asymptotes",
+  "main_objective": "trial-count WLS, identical notebook objective conditional on mouse; binomial likelihood sensitivity separately labeled",
+  "n_primary_trials": 19313,
+  "n_original_sensitivity_trials": 23684,
+  "timing": "Early/middle only for common10-mouse support; no late extrapolation",
+  "inference": "Mouse-cluster CR1 nonlinear sandwich with Gauss-Newton/Fisher bread; t9/F2,9 approximate with only10 clusters. WLS cluster-delete jackknife sensitivity",
+  "tests": "2 primary omnibus blocks alpha(direction, direction*time), beta(direction, direction*time), Holm2; separate2 exploratory early/middle alpha direction contrasts, Holm2. Do not choose inference method by significance.",
+  "weighting": "Trial-count weighted conditional fit; mouse fixed effects do not imply equal mouse pulse weights or random pulse slopes",
+  "verification": [
+    {
+      "dataset": "restricted",
+      "objective": "wls",
+      "probability_jacobian_max_error": 1.0619539914102916e-08
+    },
+    {
+      "dataset": "restricted",
+      "objective": "binomial",
+      "probability_jacobian_max_error": 1.070062305430497e-08
+    },
+    {
+      "dataset": "original_selection",
+      "objective": "wls",
+      "probability_jacobian_max_error": 1.0291632435155407e-08
+    },
+    {
+      "dataset": "original_selection",
+      "objective": "binomial",
+      "probability_jacobian_max_error": 1.1437471858499748e-08
+    }
+  ],
+  "source_hashes": {
+    "/mnt/data/processed/valid_data.csv": "be508cc2e7918ae66bf7e82728d2617d07265b9f0f18442d6d531f345921e020",
+    "notebooks/1.0-psychometric-analysis.ipynb": "62db7a56e52be946f11b9c23924d11e4dd232f82330d38d355791c94ed488d1a",
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_psychometric_timing_2026-11-18/eligible_trials.csv": "8a0ef609ba08aa6d1ae3ba79e8e9161e70a7465f32c40d7612a1b7a28d9fb5fa",
+    "/src/scripts/paper/pulse_time_mouse_fixed_effects.py": "c641d42aaa6fd6048a07905e280f94b516d135a1958c13de667a56d501eb3db6"
+  }
+}

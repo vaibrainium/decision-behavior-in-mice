@@ -1,0 +1,50 @@
+{
+  "time": "Pulse stages1/2/3, x=stage-2 for pulses; controlsP=d=x=0. Same probability equation and presence nuisance terms as continuous-time model.",
+  "units": "Directional influence slope per stage step, not per second or per100ms",
+  "comparisons": "All available10 mouse baselines with late supported6; matched6 all3 stages; same10 early/middle-only. No permanent exclusions beyond defining cohort/time support.",
+  "primary_test": "One exploratory two-sided slope=0 per stated comparison; sensitivity comparisons not independent confirmatory discoveries",
+  "uncertainty": "Full score-Hessian frequency-corrected mouse-cluster sandwich, t(G-1); cluster jackknife sensitivity",
+  "source_hashes": {
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_psychometric_timing_2026-11-18/eligible_trials.csv": "8a0ef609ba08aa6d1ae3ba79e8e9161e70a7465f32c40d7612a1b7a28d9fb5fa",
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_time_continuous_2026-11-18/coefficients.csv": "89e076f935e9fa62b6ba162d7672b034dafaf65a976498785745df8849681339",
+    "/src/scripts/paper/pulse_time_ordinal.py": "39291dc34d4c51d27f9d9240bebef494d21ff4d84306fb50772d4635cd3a6df4"
+  },
+  "checks": [
+    {
+      "comparison": "all_available_10",
+      "objective": "wls",
+      "cost_reproduced": true,
+      "covariance_10x_step_relative_change": 4.1214803241643626e-08
+    },
+    {
+      "comparison": "all_available_10",
+      "objective": "binomial",
+      "cost_reproduced": true,
+      "covariance_10x_step_relative_change": 4.823455740258852e-08
+    },
+    {
+      "comparison": "matched_6",
+      "objective": "wls",
+      "cost_reproduced": true,
+      "covariance_10x_step_relative_change": 9.303994685864525e-07
+    },
+    {
+      "comparison": "matched_6",
+      "objective": "binomial",
+      "cost_reproduced": true,
+      "covariance_10x_step_relative_change": 9.677585449106121e-07
+    },
+    {
+      "comparison": "early_middle_10",
+      "objective": "wls",
+      "cost_reproduced": true,
+      "covariance_10x_step_relative_change": 1.4259802658219921e-08
+    },
+    {
+      "comparison": "early_middle_10",
+      "objective": "binomial",
+      "cost_reproduced": true,
+      "covariance_10x_step_relative_change": 1.548313288450192e-08
+    }
+  ]
+}

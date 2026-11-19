@@ -1,0 +1,46 @@
+{
+  "source_fits": "dissemination/paper_accumulation/draft_2026-11-15/pulse_time_continuous_2026-11-18",
+  "refitted": false,
+  "finite_correction": "G/(G-1)*(N_trials-1)/(N_trials-K); frequency aggregation invariant. Previously used grouped-cell count, corrected here.",
+  "verification": [
+    {
+      "dataset": "restricted",
+      "objective": "wls",
+      "n_underlying_trials": 19313,
+      "n_grouped_cells": 6184,
+      "saved_cost_reproduced": true,
+      "covariance_relative_10x_step_change": 1.3769924560179042e-08
+    },
+    {
+      "dataset": "restricted",
+      "objective": "binomial",
+      "n_underlying_trials": 19313,
+      "n_grouped_cells": 6184,
+      "saved_cost_reproduced": true,
+      "covariance_relative_10x_step_change": 1.524515145164704e-08
+    },
+    {
+      "dataset": "original_selection",
+      "objective": "wls",
+      "n_underlying_trials": 23684,
+      "n_grouped_cells": 6299,
+      "saved_cost_reproduced": true,
+      "covariance_relative_10x_step_change": 5.768214093621047e-08
+    },
+    {
+      "dataset": "original_selection",
+      "objective": "binomial",
+      "n_underlying_trials": 23684,
+      "n_grouped_cells": 6299,
+      "saved_cost_reproduced": true,
+      "covariance_relative_10x_step_change": 7.25115244277053e-08
+    }
+  ],
+  "regression_tests": "7 continuous-time plus6 fixed-offset unit tests passed, including explicit aggregation versus trial expansion invariance",
+  "source_hashes": {
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_time_continuous_2026-11-18/coefficients.csv": "89e076f935e9fa62b6ba162d7672b034dafaf65a976498785745df8849681339",
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_time_continuous_2026-11-18/primary_slope_tests.csv": "7c6d430e9871e526b373c4732234d708a8b35c20c64559e7c34df420088bd03d",
+    "/src/scripts/paper/refine_continuous_time_inference.py": "d9b36725f30350a7ecb6a3c54fb2425201d68283684e1bd9d114e9583fc914cd",
+    "scripts/paper/pulse_time_continuous.py": "9805ca0ba07b7511d26fe81fe5fc35d9a420634d88efbd98c73c240a0e292bf0"
+  }
+}

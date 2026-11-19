@@ -1,0 +1,19 @@
+{
+  "status": "author-preferred timing-panel candidate",
+  "date": "2026-11-18",
+  "author_message": "i like the left plot",
+  "selected_analysis": "all_available_10",
+  "figure": "all_available_10.png",
+  "reviewed_composite": "cohort_comparison.png, left panel",
+  "time_coding": [
+    1,
+    2,
+    3
+  ],
+  "fit_population": "21725 responses;10 categorical mouse baselines; late pulses available in6 mice",
+  "uncertainty": "Pointwise95% mouse-cluster intervals; jackknife sensitivity retained",
+  "sensitivity": "matched_6 kept separately; result inconclusive",
+  "figure4_placement": "pending; existing full Figure4 unchanged",
+  "fit_changed": false,
+  "figure_sha256": "62e396ee78f25884df08ab4f157c773ba902364ee83891258c02d34c2eb29489"
+}

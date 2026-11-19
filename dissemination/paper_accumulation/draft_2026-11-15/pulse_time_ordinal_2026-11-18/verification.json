@@ -1,0 +1,49 @@
+{
+  "checks": [
+    {
+      "comparison": "all_available_10",
+      "objective": "wls",
+      "probability_formula_and_predictions_verified": true,
+      "stage_slope_units_and_test_verified": true,
+      "n_trials": 21725
+    },
+    {
+      "comparison": "all_available_10",
+      "objective": "binomial",
+      "probability_formula_and_predictions_verified": true,
+      "stage_slope_units_and_test_verified": true,
+      "n_trials": 21725
+    },
+    {
+      "comparison": "matched_6",
+      "objective": "wls",
+      "probability_formula_and_predictions_verified": true,
+      "stage_slope_units_and_test_verified": true,
+      "n_trials": 7434
+    },
+    {
+      "comparison": "matched_6",
+      "objective": "binomial",
+      "probability_formula_and_predictions_verified": true,
+      "stage_slope_units_and_test_verified": true,
+      "n_trials": 7434
+    },
+    {
+      "comparison": "early_middle_10",
+      "objective": "wls",
+      "probability_formula_and_predictions_verified": true,
+      "stage_slope_units_and_test_verified": true,
+      "n_trials": 19313
+    },
+    {
+      "comparison": "early_middle_10",
+      "objective": "binomial",
+      "probability_formula_and_predictions_verified": true,
+      "stage_slope_units_and_test_verified": true,
+      "n_trials": 19313
+    }
+  ],
+  "prior_early_middle_ordinal_result_reproduced": true,
+  "all60_multistart_attempts_converged": true,
+  "source_test_implementation": "Existing tested model/fit/covariance reused; ordinal design independently expanded algebraically."
+}

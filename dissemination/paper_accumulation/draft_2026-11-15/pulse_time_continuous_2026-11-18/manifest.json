@@ -1,0 +1,15 @@
+{
+  "model": "A=u_mouse+aP*P+aT*P*x+d*(w0+wT*x); B=b0+bP*P+bT*P*x+d*(v0+vT*x); p=L+(1-L-G)*logistic(B*(coherence+A))",
+  "time": "x=(recorded_onset_s-.15)/.2 for pulses; control x=P=d=0. Pulse-presence nuisance terms preserve center invariance.",
+  "primary": "One exploratory two-sided wT=0 test, report wT/.2 per second and scaled per100ms. No multiplicity adjustment for single primary; other coefficient p values descriptive.",
+  "inference": "Full observed score-Hessian mouse-cluster CR1 covariance, t9; WLS cluster jackknife sensitivity;10 clusters approximate",
+  "objectives": "Notebook trial-count WLS primary on exact continuous-onset cells; binomial sensitivity. Original selection sensitivity separately labeled. No permanent omissions.",
+  "support": "Earlier stages only, same10 mice. Actual onset values are discrete in UW and spread in UCLA; line assumes linear influence across windows.",
+  "weights": "Trial weighted, common pulse/slopes/asymptotes with mouse-specific baseline offsets",
+  "source_hashes": {
+    "/mnt/data/processed/valid_data.csv": "be508cc2e7918ae66bf7e82728d2617d07265b9f0f18442d6d531f345921e020",
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_psychometric_timing_2026-11-18/eligible_trials.csv": "8a0ef609ba08aa6d1ae3ba79e8e9161e70a7465f32c40d7612a1b7a28d9fb5fa",
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_time_mouse_fixed_effects_2026-11-18/coefficients.csv": "fcdd9143361c5a76e04c840777cb5c0d17f9be0896b48aec8e5e139b9ff7c212",
+    "/src/scripts/paper/pulse_time_continuous.py": "9f69c38992593e5b30b77c4488b48075279481e7b22c4a5890efa79321644a1d"
+  }
+}

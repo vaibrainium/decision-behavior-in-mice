@@ -1,0 +1,43 @@
+{
+  "source_fits": "dissemination/paper_accumulation/draft_2026-11-15/pulse_time_mouse_fixed_effects_2026-11-18",
+  "refitted": false,
+  "final_inference": "Full observed nonlinear score-Hessian bread; mouse-cluster CR1 sandwich; t9/F2,9 approximations",
+  "gauss_newton_approximation": "Retained in parent, not final reported covariance",
+  "checks": [
+    {
+      "dataset": "restricted",
+      "objective": "wls",
+      "score_hessian_asymmetry_relative": 5.158025827262108e-08,
+      "min_hessian_eigenvalue": 0.008986997509407728,
+      "covariance_relative_step_sensitivity": 1.1733746265976936e-08
+    },
+    {
+      "dataset": "restricted",
+      "objective": "binomial",
+      "score_hessian_asymmetry_relative": 4.5612133391651886e-08,
+      "min_hessian_eigenvalue": 0.043017374298331926,
+      "covariance_relative_step_sensitivity": 1.0647884069011273e-08
+    },
+    {
+      "dataset": "original_selection",
+      "objective": "wls",
+      "score_hessian_asymmetry_relative": 6.135288961066023e-08,
+      "min_hessian_eigenvalue": 0.010307142163994002,
+      "covariance_relative_step_sensitivity": 1.6619110841048474e-08
+    },
+    {
+      "dataset": "original_selection",
+      "objective": "binomial",
+      "score_hessian_asymmetry_relative": 5.500762497286885e-08,
+      "min_hessian_eigenvalue": 0.05064965166006905,
+      "covariance_relative_step_sensitivity": 2.1406097637910155e-08
+    }
+  ],
+  "source_hashes": {
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_time_mouse_fixed_effects_2026-11-18/coefficients.csv": "fcdd9143361c5a76e04c840777cb5c0d17f9be0896b48aec8e5e139b9ff7c212",
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_time_mouse_fixed_effects_2026-11-18/restricted_cells.csv": "2861dd512ac9a5875c5b99296a78f68838703b8a33d57a7b157462091ee72495",
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_time_mouse_fixed_effects_2026-11-18/original_selection_cells.csv": "3bcb5efa907c430a34d2474e7c22d4e12749aa3623e4dcce0aa735f192a23040",
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_time_mouse_fixed_effects_2026-11-18/regression_tests.csv": "bb5209c3b7c7a23d8829bf5352f7db146db6572a195a524bd21c3c2c1325d922",
+    "/src/scripts/paper/refine_mouse_fixed_effects_inference.py": "8d9699a70767f167396e4f570f7733195d247a6e1a9d32b15441a6c877097c3c"
+  }
+}
