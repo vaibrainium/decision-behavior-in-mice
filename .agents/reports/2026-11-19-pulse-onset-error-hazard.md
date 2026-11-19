@@ -20,7 +20,7 @@ Error hazard is P(error with RT − onset in the window | undecided at the windo
   | other 8 (42 / 781) | 1.09 [0.61, 1.65] | 1.50 [1.09, 1.92] |
 
 - VERIFIED: **By timing**, 150–400 ms ratio: early 1.11 [0.68, 1.76], middle 1.20 [0.67, 1.77], late 0.78 [0.00, 1.92]. Late pulses come from 6 mice, with only 7 window errors; PSUIM6/7 have no late pulses. In the 50 ms bins from 0 to 1500 ms, all bin CIs include 1.
-- VERIFIED: **Check**, 36% coherence with congruent pulses. Here 100% has no congruent pulses at all: all 1,538 pulse trials are incongruent, a deviation recorded in the plan. The 150–400 ms ratio is 0.97 [0.63, 1.30], as expected.
+- VERIFIED: **Check**, 36% coherence with congruent pulses. Here 100% has no congruent pulses at all: all 1,538 pulse trials are incongruent, a deviation recorded in the plan. This follows from the design: pulses replace baseline motion with ±100% coherence, and a replacement equal to the baseline is not a pulse. It is now stated in methods.md. The 150–400 ms ratio is 0.97 [0.63, 1.30], as expected.
 - VERIFIED: **Data scope.** 272 errors in 1,538 incongruent pulse trials at 100%, against 622 errors in 4,529 control trials. Pulse onsets fall at 17–117 ms (early), 200–283 ms (middle) and 417 ms (late) after stimulus onset.
 
 ## Interpretation (SUSPECTED; flags a problem in criteria B)
