@@ -24,6 +24,7 @@ The likelihood is correct. Held-out pulse choice excess is 287–506 G² across 
 - [ ] 4e. Gain-decay / signed-leak pulse-only CV fits: table tasks_2026-11-19_pulse_w.csv generated (240 tasks); SUBMITTED 2026-11-19 14:55 (Hyak time) by author, all 10 mice, state slurm-logs/autosubmit_state_pulse_w.json; then rerun the cell split and residual bootstrap on them.
 - [x] 4g. RT hazard aligned to pulse onset at 100% coherence (criteria B).
 - [ ] 4h. Score PW fits against criteria A once all 240 tasks are done.
+- [ ] 4h2. Conditional on 4h: if gain decay / signed leak does not absorb the PSUIM6/7 early low-coherence residual, run the same cell split and residual bootstrap on the existing pulse-weight fits (fits_joint_unfreeze_pulse_weight; scripts/slurm/submit_pulse_weight.sh, scripts/ddm/compare_pulse_weight.py) before building anything new. Note: these are JOINT fits (cv0-4 on all trials, L0U0V1Z0G1 and L0U0V0Z0G1), not pulse-only pcv fits; score their pulse cells within the joint held-out folds and compare with the matching joint constant-gain fits.
 - [ ] 4i. Random-effects model comparison across mice.
 - [ ] 4f. Control-trained no-sv fits only if the pulse-to-control transfer question still matters after 4e.
 - [ ] 5. Adaptive bins (5 if n ≥ 25, 2 if 8–24, otherwise count only). Rescore all families together at ≥3 seeds. Re-simulation, CPU/GPU.
@@ -46,6 +47,7 @@ All five are reported, including failures.
 - Time since (pseudo-)onset τ; at risk = still undecided (RT ≥ onset + τ_start); the RT floor applies equally to both.
 - Primary statistic: window error hazard = errors with RT − onset in [150, 400) ms / trials undecided at onset + 150 ms; ratio pulse/control, counts pooled across mice.
 - Clustering = ratio > 1 with 95% bootstrap CI excluding 1 (2,000 resamples: mice, then trials within mouse). A roughly flat ratio over time (the 50 ms-bin profile 0-1500 ms and the out-of-window ratio [400, 1500) ms) = lapse-like. Both reported.
+- CORRECTED READING (2026-11-19, AFTER the test ran; NOT pre-registered): lapses occur on control trials too and cancel in the pulse/control ratio, so 'flat = lapse-like' was wrong. Corrected: ratio ~1 at all times = pulse has no effect on errors; peak in 150-400 ms = pulse triggers responses; ratio > 1 spread over later times = pulse integrated, decision at an ordinary RT. The clustering criterion itself is unchanged; only the reading of non-clustered patterns changed (author-approved).
 - Groups: all mice; PSUIM6/7; other 8 mice.
 - Deviation (data): there are no congruent pulses at 100% coherence (all 1,538 are incongruent), so the congruent check uses 36% congruent pulses vs 36% controls (expect ratio ≤ 1).
 
@@ -59,3 +61,4 @@ Refitting existing families; changing rt_nllh_weight for final fits.
 - 2026-11-19: Branch pushed (af74b35..e253c1f). PW table submitted by author: PW_gain jobs 43398729 (108 x 1 h), 43398730 (12 x 2 h); PW_signed_leak 43398731 (65 x 1 h), 43398732 (52 x 2 h), 43398733 (3 x 3 h). Outputs ddm/fits_pulse_linear_{gain_decay,signed_leak}. Pending from author: scoring criteria for PW fits and definition of the RT-to-pulse-onset alignment at 100% coherence.
 - 2026-11-19: Criteria A and B pre-registered (author's thresholds) before any PW or hazard result.
 - 2026-11-19: Criteria B result: no clustering in 150-400 ms (all CIs include 1); excess after 400 ms in other 8 mice. Flagged: lapses cancel in the pulse/control ratio, so 'flat = lapses' is not a valid reading (report pulse-onset-error-hazard).
+- 2026-11-19: Criterion B reading corrected after the test (see criteria B). Settled: no pulse-triggered responses; the 100%-coherence pulse effect comes with ordinary-latency errors, so the pulse passes through the accumulator. Open: models under-weight the pulse, mostly PSUIM6/7 (primacy vs pulse salience). Methods sentence added (100% baseline has only incongruent pulses).

@@ -38,4 +38,5 @@ Lapses occur on control trials as well, so they cancel in the pulse/control rati
 - Pseudo-onsets match each mouse's onset distribution but not session or time in session.
 
 ## Open questions and next steps
-- [ ] Author: replace "flat ratio = lapses" with "ratio ≈ 1 = no pulse effect; flat ratio > 1 = integrated pulse" for future use?
+- [x] Author approved the corrected reading (2026-11-19): ratio ≈ 1 = no effect; peak at 150–400 ms = triggered; ratio > 1 spread later = integrated. Recorded in the plan as a post-hoc correction.
+- Conclusion (author): pulse-triggered responses ruled out. The pulse goes through the accumulator. The models under-weight it, mostly in PSUIM6/7.
