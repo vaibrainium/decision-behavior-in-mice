@@ -1,0 +1,42 @@
+{
+  "fits": [
+    {
+      "dataset": "original_notebook",
+      "n_trials": 25508,
+      "weighted_sse": 14.940982157344232,
+      "max_parameter_error_vs_saved_rounding": 4.621793676662378e-07,
+      "warnings": []
+    },
+    {
+      "dataset": "same_model_current_early_middle",
+      "n_trials": 19313,
+      "weighted_sse": 10.521631038971822,
+      "max_parameter_error_vs_saved_rounding": null,
+      "warnings": []
+    },
+    {
+      "dataset": "same_model_current_all_times",
+      "n_trials": 21725,
+      "weighted_sse": 17.372675581781525,
+      "max_parameter_error_vs_saved_rounding": null,
+      "warnings": []
+    }
+  ],
+  "notebook_cells": [
+    5,
+    13,
+    14,
+    15,
+    16
+  ],
+  "scope": "Direct notebook functions executed without changing fitting equation, initial guess, bounds or weighting. Later trial masks compared under same model.",
+  "alpha_mapping": "notebook full additive offset A=alpha1+alpha2*d+alpha3*t+alpha4*d*t; native midpoint mu=-A. Original plot shows A-alpha1, not mu.",
+  "error_bars": "Correct full contrast covariance c.T@Cov@c, conditional model SE; not across-mouse uncertainty. Original notebook SE2+t*SE4 preserved in table for audit only.",
+  "timing": "Ordinal stages1/2/3; linear stage trend imposed; physical schedules differ by site and late only UW",
+  "source_hashes": {
+    "notebooks/1.0-psychometric-analysis.ipynb": "62db7a56e52be946f11b9c23924d11e4dd232f82330d38d355791c94ed488d1a",
+    "/mnt/data/processed/valid_data.csv": "be508cc2e7918ae66bf7e82728d2617d07265b9f0f18442d6d531f345921e020",
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_psychometric_timing_2026-11-18/eligible_trials.csv": "8a0ef609ba08aa6d1ae3ba79e8e9161e70a7465f32c40d7612a1b7a28d9fb5fa",
+    "/src/scripts/paper/reproduce_pulse_time_notebook.py": "7ad60779c6500efe11e5f197cbaef97fe0d4413fd7c6a288d2ee567cd4b1b2ae"
+  }
+}

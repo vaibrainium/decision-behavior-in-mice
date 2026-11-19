@@ -1,0 +1,15 @@
+{
+  "scope": "Joint notebook model fitted per mouse, no separate-direction curve fitting or population-parameter substitution",
+  "primary": "original_notebook valid_data response-coded labels, same rows as exact reproduction",
+  "sensitivity": "scheduled_eligible_sensitivity current Figure4-type response timing/symmetric labels, includes late exploratory stratum",
+  "n_starts": 29,
+  "selection": "Native original-start fit retained; pooled-fit seed plus27 starts, minimum same-objective WLS only",
+  "alpha": "Full additive offset, notebook coh+A convention; original displayed baseline-omitted and native midpoint alternatives exported",
+  "group_tests": "Exact two-sided mouse sign-flip; Holm6 stage\u00d7parameter directional contrasts; separate Holm2 early-to-middle directional changes, per dataset. Conditional on fitted coefficients; t95% intervals unadjusted.",
+  "source_hashes": {
+    "notebooks/1.0-psychometric-analysis.ipynb": "62db7a56e52be946f11b9c23924d11e4dd232f82330d38d355791c94ed488d1a",
+    "/mnt/data/processed/valid_data.csv": "be508cc2e7918ae66bf7e82728d2617d07265b9f0f18442d6d531f345921e020",
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_psychometric_timing_2026-11-18/eligible_trials.csv": "8a0ef609ba08aa6d1ae3ba79e8e9161e70a7465f32c40d7612a1b7a28d9fb5fa",
+    "/src/scripts/paper/pulse_time_per_mouse_joint.py": "aa1479144847a2fc74af47a08db6973cbb3b692fd728edc2bfbf4ab2d75669fd"
+  }
+}

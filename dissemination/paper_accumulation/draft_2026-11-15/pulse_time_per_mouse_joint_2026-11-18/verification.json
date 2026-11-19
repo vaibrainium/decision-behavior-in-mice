@@ -1,0 +1,14 @@
+{
+  "all_selected_prediction_probabilities_and_objectives_verified": true,
+  "all_stage_transforms_verified": true,
+  "exact_signflip_p_independently_enumerated": true,
+  "holm_verified_against_statsmodels": true,
+  "all_selected_errors_no_worse_than_native": true,
+  "n_mouse_fits": 20,
+  "n_attempts": 580,
+  "n_successful_attempts": 580,
+  "max_near_minimum_early_alpha_direction_range": 0.02946762102506284,
+  "original_trials": 25508,
+  "sensitivity_trials": 21725,
+  "diagnostic_limit": "Numerical stability is not parameter-estimation uncertainty; no subject exclusions."
+}

@@ -1,0 +1,25 @@
+{
+  "analysis": "Original timing plot fits each mouse/time/direction separately, then reports across-mouse mean and SEM; no timing-effect tests performed",
+  "DBM12": {
+    "alpha": -99.9999999999984,
+    "beta": 0.0334500884132417,
+    "lower_asymptote": 0.3999999999999994,
+    "upper_asymptote": 0.6361564378501104,
+    "weighted_sse": 0.7726780136279895,
+    "n_trials": 105,
+    "coherence_range": [
+      -18.0,
+      100.0
+    ]
+  },
+  "n_mice": 10,
+  "mean_early_left_alpha": -12.84582905279905,
+  "mean_early_right_alpha": -11.090998395096266,
+  "refitted": false,
+  "all_mice_retained": true,
+  "source_hashes": {
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_psychometric_timing_2026-11-18/fits.csv": "37760cf739e82b161de82413f20f58de3d8f1e0aa6458f428533880f9f460429",
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_psychometric_timing_2026-11-18/mouse_cells.csv": "9b217204744cd040fe7cfbdf2f2c666a9df9afd39abadaaaa6b72cfc796ac77e",
+    "/src/scripts/paper/show_pulse_timing_individual.py": "03c89569e2c67b1d91ec2fdd1870e9ae62269d04a0a6fb5541b619022d58d008"
+  }
+}

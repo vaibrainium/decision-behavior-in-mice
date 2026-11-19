@@ -1,0 +1,15 @@
+{
+  "scope": "Audit and changed-estimand sensitivity, not replacement individual-mean coefficients",
+  "physical_direction_mismatches": 0,
+  "n_mice": 10,
+  "n_bootstrap": 120,
+  "seed": 13719,
+  "main_fit": "Joint per-time fit to equal-mouse coherence means; each curve has own alpha/beta, all3 curves share lower/upper asymptotes within time; WLS unweighted across group points as Figure4A",
+  "bootstrap": "Whole-mouse resampling, same draws across times and directions;120 percentile intervals exploratory",
+  "selection": "Minimum residual error from both direction-shift signs and flat starts; no sign restrictions on alpha or trends",
+  "source_hashes": {
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_psychometric_timing_2026-11-18/mouse_cells.csv": "9b217204744cd040fe7cfbdf2f2c666a9df9afd39abadaaaa6b72cfc796ac77e",
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_psychometric_timing_2026-11-18/fits.csv": "37760cf739e82b161de82413f20f58de3d8f1e0aa6458f428533880f9f460429",
+    "/src/scripts/paper/audit_pulse_timing_summary.py": "83539a95ed186f8f2ed939f1dc490a3d24cd10ed08644fed23ff2025917e8a72"
+  }
+}

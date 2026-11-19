@@ -1,0 +1,31 @@
+{
+  "status": "author-selected primary timing preview; exploratory",
+  "primary": "early_middle_ten_free4.png",
+  "matched_three_time_companion": "same_six_free4.png",
+  "primary_mice": [
+    "DBM12",
+    "DBM13",
+    "DBM14",
+    "DBM15",
+    "DBM5",
+    "DBM6",
+    "PSUIM10",
+    "PSUIM5",
+    "PSUIM6",
+    "PSUIM7"
+  ],
+  "companion_mice": [
+    "DBM12",
+    "DBM13",
+    "DBM14",
+    "DBM15",
+    "DBM5",
+    "DBM6"
+  ],
+  "alpha": "absolute midpoint",
+  "beta": "pulse minus matched control slope",
+  "error_bars": "across-mouse SEM",
+  "figure4_integrated": false,
+  "refitted": false,
+  "note": "All10 subjects verified in both directions at both earlier times. Late exists only for6 UW mice; do not connect a10-mouse early/middle summary to a6-mouse late summary."
+}

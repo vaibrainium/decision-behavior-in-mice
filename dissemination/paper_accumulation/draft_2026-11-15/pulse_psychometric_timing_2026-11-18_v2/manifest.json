@@ -1,0 +1,30 @@
+{
+  "source_results": "dissemination/paper_accumulation/draft_2026-11-15/pulse_psychometric_timing_2026-11-18",
+  "source_fits_sha256": "37760cf739e82b161de82413f20f58de3d8f1e0aa6458f428533880f9f460429",
+  "source_differences_sha256": "72d323f98c17d65e0ff97601846cb5fd32d65c47a50a82967132ad7405ea6e4e",
+  "source_script_sha256": "03d3cb4dd0619cfb57d4138f5923da7ca95363ddf4404592870cee5d8aad5ab9",
+  "alpha": "Absolute midpoint, no control subtraction",
+  "beta": "Pulse-minus-stage-matched-control slope change",
+  "uncertainty": "Across-mouse SEM of fitted coefficients; curve-estimation uncertainty not propagated",
+  "refitted": false,
+  "primary_mice": [
+    "DBM12",
+    "DBM13",
+    "DBM14",
+    "DBM15",
+    "DBM5",
+    "DBM6"
+  ],
+  "early_middle_mice": [
+    "DBM12",
+    "DBM13",
+    "DBM14",
+    "DBM15",
+    "DBM5",
+    "DBM6",
+    "PSUIM10",
+    "PSUIM5",
+    "PSUIM6",
+    "PSUIM7"
+  ]
+}

@@ -1,0 +1,16 @@
+trial_id,mouse,rig,original_label,ddm_sched_pulse_type,pulse_category,coherence_pct,pulse_coherence_pct,pulse_equals_baseline,onset_stratum,rt_s,analysis_onset_s,analysis_offset_s,in_ddm_input,signs_scheduled_symmetric,reason,in_current_npz
+PSUIM5_8_1_389,PSUIM5,ucla,-2,,negative,-18,-100.0,False,middle,0.300086498260498,,,False,True,not_in_model_input,False
+PSUIM6_15_1_505,PSUIM6,ucla,2,,positive,0,100.0,False,middle,0.3005986213684082,,,False,True,not_in_model_input,False
+PSUIM6_24_1_304,PSUIM6,ucla,-2,,negative,18,-100.0,False,middle,0.3007264137268066,,,False,True,not_in_model_input,False
+PSUIM7_12_1_156,PSUIM7,ucla,-2,,negative,-18,-100.0,False,middle,0.3002438545227051,,,False,True,not_in_model_input,False
+PSUIM7_12_1_317,PSUIM7,ucla,2,,positive,9,100.0,False,middle,0.3003394603729248,,,False,True,not_in_model_input,False
+PSUIM7_14_1_127,PSUIM7,ucla,-2,,negative,36,-100.0,False,middle,0.3007633686065674,,,False,True,not_in_model_input,False
+PSUIM7_14_1_319,PSUIM7,ucla,2,,positive,0,100.0,False,middle,0.3024518489837646,,,False,True,not_in_model_input,False
+PSUIM7_14_1_344,PSUIM7,ucla,0,,null_pulse,-100,-100.0,True,middle,0.3004732131958008,,,False,True,not_in_model_input,False
+PSUIM7_1_1_526,PSUIM7,ucla,-2,,negative,-36,-100.0,False,middle,0.3000586032867431,,,False,True,not_in_model_input,False
+PSUIM7_20_1_321,PSUIM7,ucla,-2,,negative,0,-100.0,False,middle,0.3005151748657226,,,False,True,not_in_model_input,False
+PSUIM7_3_1_5,PSUIM7,ucla,2,,positive,-100,100.0,False,middle,0.3008806705474853,,,False,True,not_in_model_input,False
+PSUIM7_4_1_61,PSUIM7,ucla,2,,positive,-18,100.0,False,middle,0.3087196350097656,,,False,True,not_in_model_input,False
+PSUIM7_8_1_203,PSUIM7,ucla,2,,positive,-36,100.0,False,middle,0.3090415000915527,,,False,True,not_in_model_input,False
+PSUIM7_8_1_291,PSUIM7,ucla,-2,,negative,-18,-100.0,False,middle,0.3003561496734619,,,False,True,not_in_model_input,False
+PSUIM7_9_1_174,PSUIM7,ucla,2,,positive,18,100.0,False,middle,0.3008322715759277,,,False,True,not_in_model_input,False

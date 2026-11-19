@@ -1,0 +1,11 @@
+mouse,no_change_pulse_category,not_in_model_input,one_pulse_direction_scheduled,response_before_actual_or_virtual_pulse_end,response_less_than_100ms_after_onset,retained
+DBM12,0,0,380,109,33,1178
+DBM13,0,0,159,20,8,532
+DBM14,0,0,190,31,6,602
+DBM15,0,0,244,24,10,817
+DBM5,0,0,583,109,30,1924
+DBM6,0,0,708,96,32,2381
+PSUIM10,22,0,0,1,3,399
+PSUIM5,124,1,0,1,17,2042
+PSUIM6,332,2,0,6,39,5466
+PSUIM7,314,12,0,11,126,6384

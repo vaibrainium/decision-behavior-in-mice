@@ -1,0 +1,7 @@
+mouse,rig,onset_stratum,direction,coherence_pct,mean,size,n_right
+DBM12,uw,early,-1,-18,0.631578947368421,19,12
+DBM12,uw,early,-1,-9,0.6521739130434783,23,15
+DBM12,uw,early,-1,0,0.4166666666666667,12,5
+DBM12,uw,early,-1,9,0.7272727272727273,22,16
+DBM12,uw,early,-1,18,0.6,10,6
+DBM12,uw,early,-1,100,0.631578947368421,19,12

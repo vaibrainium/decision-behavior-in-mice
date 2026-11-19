@@ -1,0 +1,37 @@
+{
+  "primary_mice": [
+    "DBM12",
+    "DBM13",
+    "DBM14",
+    "DBM15",
+    "DBM5",
+    "DBM6"
+  ],
+  "early_middle_mice": [
+    "DBM12",
+    "DBM13",
+    "DBM14",
+    "DBM15",
+    "DBM5",
+    "DBM6",
+    "PSUIM10",
+    "PSUIM5",
+    "PSUIM6",
+    "PSUIM7"
+  ],
+  "n_eligible_trials": 21725,
+  "scope": "Exploratory; Figure4 mask plus restored late stratum; scheduled direction/time, symmetric cells, after offset and >=100ms after onset",
+  "parameter_definitions": "alpha=horizontal midpoint; beta=positive slope coefficient. Plots show within-mouse pulse minus stage-matched control differences, including negative delta beta. Alpha has opposite sign to original notebook additive offset.",
+  "uncertainty": "Across-mouse SEM of paired fitted coefficients, not curve-estimation uncertainty. No new tests.",
+  "methods": {
+    "free4": "Updated helper default multistart trial-count WLS, all4 parameters free within original helper bounds",
+    "fixed_asymptotes": "Sensitivity: same mouse/time control asymptotes fixed for each pulse curve; 9-start WLS for alpha/beta"
+  },
+  "no_forced_timing_trend": true,
+  "source_hashes": {
+    "/mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/data/trial_table.csv": "44d7cdf94faa2f63618acc5668251cb09779b026ece1b61264fd57199e81f335",
+    "/src/scripts/paper/pulse_psychometric_timing.py": "44693eba3bd4270e1ec569f807942a17c04ba950b48976857274987930405002",
+    "src/utils/pmf_utils.py": "f0e91ba72d876524457978bc5f7363172e245b8f6c0d7cc28a8a92fd284398e9",
+    "notebooks/1.0-psychometric-analysis.ipynb": "62db7a56e52be946f11b9c23924d11e4dd232f82330d38d355791c94ed488d1a"
+  }
+}

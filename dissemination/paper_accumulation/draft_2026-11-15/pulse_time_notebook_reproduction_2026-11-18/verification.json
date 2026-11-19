@@ -1,0 +1,17 @@
+[
+  {
+    "dataset": "original_notebook",
+    "display_transform_verified": true,
+    "full_contrast_covariance_verified": true
+  },
+  {
+    "dataset": "same_model_current_all_times",
+    "display_transform_verified": true,
+    "full_contrast_covariance_verified": true
+  },
+  {
+    "dataset": "same_model_current_early_middle",
+    "display_transform_verified": true,
+    "full_contrast_covariance_verified": true
+  }
+]

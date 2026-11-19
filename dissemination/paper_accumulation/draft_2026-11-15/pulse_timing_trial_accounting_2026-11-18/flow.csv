@@ -1,0 +1,7 @@
+rule,removed_this_step,remaining,independent_failures_among_all_original_rows
+not_in_model_input,15,25493,15
+no_recorded_response,0,25493,0
+one_pulse_direction_scheduled,2264,23229,2264
+no_change_pulse_category,792,22437,793
+response_before_actual_or_virtual_pulse_end,408,22029,408
+response_less_than_100ms_after_onset,304,21725,712

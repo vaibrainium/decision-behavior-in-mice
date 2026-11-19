@@ -1,0 +1,55 @@
+{
+  "original": 25508,
+  "retained": 21725,
+  "excluded": 3783,
+  "retained_label_changes": 0,
+  "original_response_control_reassigned_as_scheduled_pulse": 324,
+  "all_such_early_label_changes_excluded": true,
+  "null_pulses_in_original": 793,
+  "current_npz_members_among_model_table_exclusions": 0,
+  "steps": [
+    {
+      "rule": "not_in_model_input",
+      "removed_this_step": 15,
+      "remaining": 25493,
+      "independent_failures_among_all_original_rows": 15
+    },
+    {
+      "rule": "no_recorded_response",
+      "removed_this_step": 0,
+      "remaining": 25493,
+      "independent_failures_among_all_original_rows": 0
+    },
+    {
+      "rule": "one_pulse_direction_scheduled",
+      "removed_this_step": 2264,
+      "remaining": 23229,
+      "independent_failures_among_all_original_rows": 2264
+    },
+    {
+      "rule": "no_change_pulse_category",
+      "removed_this_step": 792,
+      "remaining": 22437,
+      "independent_failures_among_all_original_rows": 793
+    },
+    {
+      "rule": "response_before_actual_or_virtual_pulse_end",
+      "removed_this_step": 408,
+      "remaining": 22029,
+      "independent_failures_among_all_original_rows": 408
+    },
+    {
+      "rule": "response_less_than_100ms_after_onset",
+      "removed_this_step": 304,
+      "remaining": 21725,
+      "independent_failures_among_all_original_rows": 712
+    }
+  ],
+  "scope": "Counts of exclusions in explicit rule order; some rules overlap before ordering. Sensitivity bundled label/selection choices from post-pulse workflow; no fitting.",
+  "source_hashes": {
+    "/mnt/data/processed/valid_data.csv": "be508cc2e7918ae66bf7e82728d2617d07265b9f0f18442d6d531f345921e020",
+    "/mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/data/trial_table.csv": "44d7cdf94faa2f63618acc5668251cb09779b026ece1b61264fd57199e81f335",
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_psychometric_timing_2026-11-18/eligible_trials.csv": "8a0ef609ba08aa6d1ae3ba79e8e9161e70a7465f32c40d7612a1b7a28d9fb5fa",
+    "/src/scripts/paper/audit_pulse_timing_trials.py": "0856d9d67d9c17bc5215018201a7d890b24037d1c51b9b91fb2f878eeb5c05af"
+  }
+}

@@ -1,0 +1,16 @@
+reason,pulse_category,n
+no_change_pulse_category,null_pulse,792
+not_in_model_input,negative,7
+not_in_model_input,null_pulse,1
+not_in_model_input,positive,7
+one_pulse_direction_scheduled,control,897
+one_pulse_direction_scheduled,positive,1367
+response_before_actual_or_virtual_pulse_end,control,200
+response_before_actual_or_virtual_pulse_end,negative,105
+response_before_actual_or_virtual_pulse_end,positive,103
+response_less_than_100ms_after_onset,control,157
+response_less_than_100ms_after_onset,negative,73
+response_less_than_100ms_after_onset,positive,74
+retained,control,11968
+retained,negative,4919
+retained,positive,4838

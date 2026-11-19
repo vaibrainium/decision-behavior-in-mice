@@ -1,0 +1,11 @@
+{
+  "eligible_trials": 21725,
+  "early_middle_trials": 19313,
+  "late_trials": 2412,
+  "mouse_cells": 595,
+  "fit_rows_including_sensitivity": 156,
+  "free_fit_nonfinite_condition": 8,
+  "all_control_subtractions_group_means_and_sem_verified": true,
+  "all_trials_within_response_window_and_after_pulse": true,
+  "same_six_are_UW_only": true
+}

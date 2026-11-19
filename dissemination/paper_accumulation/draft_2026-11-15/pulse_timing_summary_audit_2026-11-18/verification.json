@@ -1,0 +1,20 @@
+{
+  "observed_group_means_and_sem_verified": true,
+  "joint_residual_objective_independently_verified": true,
+  "bootstrap_parameter_rows": 720,
+  "bootstrap_alpha_or_beta_bound_contacts": 0,
+  "early_left_individual_alpha_mean": -12.84582905279905,
+  "early_left_individual_alpha_median": -0.4735538846480125,
+  "early_left_DBM12_alpha": -99.9999999999984,
+  "zero_coherence_right_minus_left": {
+    "early": {
+      "mean": 0.13276157262903926,
+      "sem": 0.06383149331653894
+    },
+    "middle": {
+      "mean": 0.12884537624375023,
+      "sem": 0.09085132336123565
+    }
+  },
+  "physical_direction_source_sha256": "44d7cdf94faa2f63618acc5668251cb09779b026ece1b61264fd57199e81f335"
+}

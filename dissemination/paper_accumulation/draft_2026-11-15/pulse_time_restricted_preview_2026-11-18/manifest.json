@@ -1,0 +1,16 @@
+{
+  "dataset": "scheduled_eligible_sensitivity",
+  "original_source_trial_count": 21725,
+  "refitted": false,
+  "means_sem_independently_verified": true,
+  "primary": "all10_early_middle.png",
+  "companion": "same6_all_times.png",
+  "alpha": "Full additive offset, notebook coh+A convention",
+  "beta": "Change from mouse-specific control slope",
+  "source_hashes": {
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_time_per_mouse_joint_2026-11-18/group_parameters.csv": "631143f594883e06ef38b3104a8e78423fb91afbe81e93e55e8546581708900a",
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_time_per_mouse_joint_2026-11-18/mouse_stage_parameters.csv": "ffcb0a29ba176387dde7ed0c4c4198fdc93e9ced1d2b8c1c643f6d85833bfdda",
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_time_per_mouse_joint_2026-11-18/group_tests.csv": "cf462982f1fcee722b7099a866db6e513bf32857f017983dc6a3602dfd618bf5",
+    "/src/scripts/paper/preview_restricted_pulse_time.py": "cc04de0d74fb8c24ecb19ade8e41f84f04d7320feadd23b65376c15d6d1b6461"
+  }
+}
