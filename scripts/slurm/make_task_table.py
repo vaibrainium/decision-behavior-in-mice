@@ -155,10 +155,39 @@ def ugm_main():
     print(f"\n{len(df)} tasks -> {out}")
 
 
+# Early-evidence weighting, pulse-only (plans/2026-11-19-choice-misfit-followup.md): gain decay
+# (drift_gain * exp(-gain_decay * t), --time_varying_gain) on the plain integrator, and a signed leak (--signed_leak, leak
+# down to -1/s) on the leak integrator, with and without sv, linear input, splits pcv0-pcv4 + pulse. New table and its own
+# autosubmit state (earlier tables unchanged). Runtime: the same mouse, variant and split of the finished constant-gain
+# pulse-only fits (fits_pulse_linear_integrators); 16 h only where that fit took more than LONG_HOURS.
+PULSE_W = [("PW_gain", 0, "--time_varying_gain", ["L0U0V0Z0G1", "L0U0V1Z0G1"], "ddm/fits_pulse_linear_gain_decay"),
+           ("PW_signed_leak", 1, "--signed_leak", ["L1U0V0Z0G1", "L1U0V1Z0G1"], "ddm/fits_pulse_linear_signed_leak")]
+
+
+def pulse_w_main():
+    inputs = load_inputs(DDM / "ddm_inputs_global_ucla_nofreeze.npz")
+    prev = fit_hours("fits_pulse_linear_integrators").set_index(["mouse", "variant", "split"]).hours
+    rows = []
+    for name, prio, flag, variants, out_dir in PULSE_W:
+        args = f"{PJ} {flag} --variants {' '.join(variants)} --splits {' '.join(PULSE_SPLITS)} --out_dir {out_dir}"
+        for i, job in enumerate(build_grid(inputs, variants, PULSE_SPLITS)):
+            base = prev[(job["mouse"], job["variant"], job["split"])]
+            rows.append({"batch": name, "priority": prio, "index": i, **job, "out": f"{out_dir}/{job['mouse']}_{job['variant']}_{job['split']}.pkl",
+                         "est_hours": round(base, 2), "time_hours": FIRST_MAX_HOURS if base > LONG_HOURS else limit(base), "args": args})
+    df = pd.DataFrame(rows)
+    out = Path(__file__).with_name("tasks_2026-11-19_pulse_w.csv")
+    assert not out.exists(), f"{out} exists; not overwriting"
+    df.to_csv(out, index=False)
+    print(df.groupby(["batch", "time_hours"]).size().to_string())
+    print(f"\n{len(df)} tasks -> {out}")
+
+
 def main():
     import sys
     if "--ugm" in sys.argv:
         return ugm_main()
+    if "--pulse_w" in sys.argv:
+        return pulse_w_main()
     for table in PULSE_TABLES:
         if f"--{table}" in sys.argv:
             return pulse_main(table)

@@ -106,7 +106,7 @@ Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gat
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
-- plans/2026-11-19-choice-misfit-followup.md : choice misfit follow-up; next step 4c (top-3 multi-seed rescore), then adaptive bins
+- plans/2026-11-19-choice-misfit-followup.md : choice misfit follow-up; next: author approves/submits tasks_2026-11-19_pulse_w.csv (gain decay, signed leak), then cell split on them
 - plans/2026-10-29-control-paper.md : third paper (control trials only, Stine 2020 framing) in dissemination/paper_control/; G1 approved 2026-10-30 (D004), spine locked, stage S2; paired recovery 42579825 analysed: E separated (provisional, ES fits not yet submitted)
 - plans/2026-10-28-full-recovery-matrix.md : ON HOLD (author); recovery rerun on fixed CPU datasets if it becomes necessary
 - plans/2026-10-26-v2-refits-and-strategy-recovery.md : responded-only refits + full point-3 re-run (amendment 9); commands ready; next: user syncs code, submits R1-R6 (460), then F1a (80) and P1-P4 (850)
@@ -119,6 +119,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-11-19-top4-multiseed-pulse-effect.md : norm UGM no sv best at 5/5 seeds but lead mostly PSUIM6/7; early-pulse residual mostly PSUIM6/7; data pulse effect does not shrink with coherence
 - reports/2026-11-19-choice-excess-cell-type-sv.md : choice excess not pulse-specific (controls too, PSUIM6/7); held-out excess in early/low-coh pulse cells, not 100% or late; guess_lapse not queued; sv 5-35x ME drift spread
 - reports/2026-11-19-choice-g2-all-families.md : choice excess driven by sv (all no-sv < all sv), not front end; power fixes slope but not excess; persists without PSUIM7
 - reports/2026-11-19-choice-rt-weighting.md : no choice/RT weighting bug; held-out pulse choice misfit real but small (excess G² 287–489 over 11,479 trials), systematic slope, PSUIM7-heavy
@@ -178,6 +179,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - reports/2026-11-13-pulse-weight-signatures.md : free pulse weights (shared / per time) raise PSUIM6/7 early effect only to 6.5-7.5 pp (data 15.5 / 13.5); best early chi2 74.6, worse than normalized UGM no sv; BIC +274 to +907
 
 ## Known issues
+- 2026-11-19: container GPU lost mid-session (NVML init fails, torch.cuda False); simulations fall back to CPU Numba (<=0.17 NLL per fold vs CUDA archives). Restore before CUDA-matched rescoring.
 - Figure4 paired psychometrics: v4 parameter fits/p values superseded by v5 after multistart optimization audit. Use v5 for current inference; parameter identifiability remains limited.
 - Control-C optimization pilot: original */control/independent_evaluation.json files are INVALID due to baseline-label collision. Use validation_v2/ and confirmation_100reps/ only; maps/optimizer traces unaffected. See pilot README/report.
 - Figure 3 held-out quantile score estimates RT cuts on each test fold and gives sparse condition-by-choice cells a choice-only contribution (1,990 of 14,014 controls). Report it as an outcome-binned score. See reports/2026-11-17-ddm-likelihood-audit.md.
