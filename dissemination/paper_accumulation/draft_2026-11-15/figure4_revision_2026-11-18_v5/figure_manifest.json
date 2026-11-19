@@ -1,0 +1,161 @@
+{
+  "pulse": {
+    "n_temporal_trials": 19313,
+    "n_temporal_mice": 10,
+    "n_temporal_pulse": 8529,
+    "signed_mean_pp": 5.844356373835997,
+    "signed_ci_low": 1.7994914855323305,
+    "signed_ci_high": 9.889221262139664,
+    "temporal_bin_counts": [
+      {
+        "lo_s": 0.1,
+        "hi_s": 0.3,
+        "n_trials": 1413,
+        "n_pulse": 622
+      },
+      {
+        "lo_s": 0.3,
+        "hi_s": 0.6,
+        "n_trials": 3620,
+        "n_pulse": 1642
+      },
+      {
+        "lo_s": 0.6,
+        "hi_s": 0.9,
+        "n_trials": 3446,
+        "n_pulse": 1537
+      },
+      {
+        "lo_s": 0.9,
+        "hi_s": 1.2,
+        "n_trials": 2478,
+        "n_pulse": 1081
+      },
+      {
+        "lo_s": 1.2,
+        "hi_s": 1.5,
+        "n_trials": 1645,
+        "n_pulse": 722
+      },
+      {
+        "lo_s": 1.5,
+        "hi_s": 2.1,
+        "n_trials": 2225,
+        "n_pulse": 939
+      },
+      {
+        "lo_s": 2.1,
+        "hi_s": 5.0,
+        "n_trials": 4486,
+        "n_pulse": 1986
+      }
+    ]
+  },
+  "layout_checks": {
+    "figure4": {
+      "text_outside_canvas": []
+    }
+  },
+  "source_hashes": {
+    "/mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/data/trial_table.csv": "44d7cdf94faa2f63618acc5668251cb09779b026ece1b61264fd57199e81f335",
+    "/src/dissemination/paper_accumulation/tables/pulse_decomposition_2026-10-30_bins.csv": "cb609a5051834dd9f3035af82002d00e8f2efc92f0a83e702f05f06b6764403b",
+    "/src/dissemination/pulse_dynamics_2026-11-13/data_readouts.csv": "52687af19d3b1ef46fe6ead78919c8c3c6f7d51364b36cb3aa9e90a006a00b59",
+    "/src/dissemination/pulse_dynamics_2026-11-13/data_bootstrap_readouts.csv": "6b9469f4e71bd6e1e674405e81de93afecbcb246901481d89e5b5df4f81d0ea3",
+    "/src/dissemination/reviewer_2026-11-12/independent_signed_effects.csv": "097df0feacd8320614f5896334cdaef9de4b97b4b060797b145615d83eb5bb0d",
+    "/src/scripts/paper/review_pulse_results.py": "25224f11ef4d657105cb35174722a766929ca9254a4e8ae86a6880db340c1676",
+    "/src/scripts/paper/build_paper_2026_11_15.py": "9db7ffcfb6977926d0222c42241824254749d7b1671fb334884ef114a0f03200",
+    "/src/src/utils/pmf_utils.py": "4a69de0c714e4ba1bb8bbbe210113bcf066eb03b312dc97bb0b9c5caf53c33d2",
+    "/src/scripts/paper/pulse_paired_psychometrics.py": "dff66cd8c2920cd584ed745978a4d41df13f7c098b16d251a8d319ba9332d72a"
+  },
+  "panels": [
+    {
+      "panel": "fig4_A_psychometric_mouse",
+      "table": "source_data/fig4_A_psychometric_mouse.csv",
+      "definition": "Huk-style eligible early/middle schedules, symmetric cells, responses after pulse offset and at least 0.1 s after onset; per-mouse P(right).",
+      "rows": 232
+    },
+    {
+      "panel": "fig4_A_psychometric_group",
+      "table": "source_data/fig4_A_psychometric_group.csv",
+      "definition": "Unweighted means/SEM over available mice, separately by coherence and physical pulse direction. Descriptive curves, not fitted shifts.",
+      "rows": 25
+    },
+    {
+      "panel": "fig4_C_directional_shared",
+      "table": "source_data/fig4_C_directional_shared.csv",
+      "definition": "Saved joint logistic directional D and shared S coefficients; percentile mouse-bootstrap intervals; Holm over seven bins separately per term.",
+      "rows": 7
+    },
+    {
+      "panel": "fig4_D_dilution_adjustment",
+      "table": "source_data/fig4_D_dilution_adjustment.csv",
+      "definition": "Point estimates and 600-mouse-bootstrap percentile intervals for gamma \u00d7 mean RT; bins are a descriptive response-conditioned readout.",
+      "rows": 7
+    },
+    {
+      "panel": "fig4_E_assignment_effects",
+      "table": "source_data/fig4_E_assignment_effects.csv",
+      "definition": "Signed directional response contrast by 5 s; all eligible assignments in symmetric matched cells, not the response-conditioned temporal estimator.",
+      "rows": 10
+    },
+    {
+      "panel": "fig4_A_displayed_pulse_points",
+      "table": "source_data/fig4_A_displayed_pulse_points.csv",
+      "definition": "Only physical left/right pulse groups displayed; group data and SEM unchanged. Control retained in original source table, excluded from panel A.",
+      "rows": 16
+    },
+    {
+      "panel": "fig4_A_psychometric_parameters",
+      "table": "source_data/fig4_A_psychometric_parameters.csv",
+      "definition": "Author logit_4 helper/default bounds, unweighted fit across equal-mouse group proportions, separately by pulse direction.",
+      "rows": 2
+    },
+    {
+      "panel": "fig4_A_psychometric_curves",
+      "table": "source_data/fig4_A_psychometric_curves.csv",
+      "definition": "Smooth descriptive four-parameter logistic over \u2212100 to100% at author request, including extrapolation beyond each direction\u2019s observed range.",
+      "rows": 802
+    },
+    {
+      "panel": "fig4_B_paired_parameters",
+      "table": "source_data/fig4_B_paired_parameters.csv",
+      "definition": "Individual author logit_4 fits, trial-count WLS, all20 fits retained; native mean=alpha, var=beta. Fit quality/bound flags exported.",
+      "rows": 20
+    },
+    {
+      "panel": "fig4_B_paired_differences",
+      "table": "source_data/fig4_B_paired_differences.csv",
+      "definition": "Right-minus-left paired mouse coefficients,10 mice.",
+      "rows": 20
+    },
+    {
+      "panel": "fig4_B_paired_tests",
+      "table": "source_data/fig4_B_paired_tests.csv",
+      "definition": "Exploratory exact two-sided sign-flip tests of mean fitted parameter differences; Holm over alpha and beta. Paired-t sensitivity corrected separately; t CIs conditional on fitted coefficients.",
+      "rows": 2
+    },
+    {
+      "panel": "fig4_B_paired_shared_asymptote_sensitivity",
+      "table": "source_data/fig4_B_paired_shared_asymptote_sensitivity.csv",
+      "definition": "Sensitivity only: asymptotes from each mouse control curve fixed for pulse pair; alpha/beta fitted. Not used to choose significance or replace primary fits.",
+      "rows": 20
+    },
+    {
+      "panel": "fig4_B_paired_individual_curves",
+      "table": "source_data/fig4_B_paired_individual_curves.csv",
+      "definition": "Per-mouse descriptive four-parameter fitted pulse curves for fit audit.",
+      "rows": 8020
+    }
+  ],
+  "figures": [
+    {
+      "figure": "figure4",
+      "title": "Figure 4 | Brief motion pulses influence subsequent choices",
+      "width_mm": 250.0,
+      "height_mm": 165.0
+    }
+  ],
+  "paired_psychometric": true,
+  "multistart_paired": true,
+  "scope": "Panel A shows left/right pulse points and descriptive author logit_4 fits; control hidden. B\u2013D unchanged; no decision-model fits or simulations."
+}

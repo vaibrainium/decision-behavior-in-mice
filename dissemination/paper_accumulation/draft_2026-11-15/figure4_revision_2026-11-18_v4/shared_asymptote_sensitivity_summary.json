@@ -1,0 +1,10 @@
+{
+  "alpha": {
+    "mean_right_minus_left": -8.771367450669198,
+    "median_right_minus_left": -19.938262681795322
+  },
+  "beta": {
+    "mean_right_minus_left": 0.0046992039252326786,
+    "median_right_minus_left": 0.002196232970729451
+  }
+}

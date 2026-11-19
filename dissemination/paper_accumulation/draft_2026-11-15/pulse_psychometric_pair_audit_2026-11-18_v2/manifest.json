@@ -1,0 +1,10 @@
+{
+  "scope": "Same equation/bounds/WLS objective,19 starts per curve, no data exclusions or model family changes",
+  "source_hashes": {
+    "dissemination/paper_accumulation/draft_2026-11-15/figure4_revision_2026-11-18_v4/source_data/fig4_A_psychometric_mouse.csv": "b602bfbded10844aed379bc86adaab0b1d9c9720fb2c5886634d6733ec4b7746",
+    "dissemination/paper_accumulation/draft_2026-11-15/figure4_revision_2026-11-18_v4/source_data/fig4_B_paired_parameters.csv": "9b21b35a86ce704443fe631d534ecc6233efd0f5c2c79da6e828e7b6d349faa9",
+    "/src/scripts/paper/audit_pulse_psychometric_pairs.py": "cc2f2c1c18bc0990d2ac76c33c143ca4030f4d0a7b2f825c2490a45b9735b7fb"
+  },
+  "selection": "Minimum WLS residual sum of squares only; no p-value selection",
+  "interpretation": "Optimization audit does not resolve parameter identifiability or make tests confirmatory"
+}

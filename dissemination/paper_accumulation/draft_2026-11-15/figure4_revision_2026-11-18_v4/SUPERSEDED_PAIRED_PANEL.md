@@ -1,0 +1,1 @@
+Paired panel B coefficients/statistics superseded by ../figure4_revision_2026-11-18_v5/ after a same-equation/bounds/WLS multistart optimization audit identified two missed local solutions. Original data, A and temporal panels remain valid/unchanged. Do not use v4 paired p values as current manuscript results.

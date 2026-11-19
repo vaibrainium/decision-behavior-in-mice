@@ -1,0 +1,11 @@
+{
+  "A_source_points_group_fits_unchanged": true,
+  "old_B_C_D_values_unchanged_as_C_D_E": true,
+  "ten_mice_twenty_individual_fits": true,
+  "paired_subject_alignment_verified": true,
+  "curve_equation_and_weighted_sse_verified": true,
+  "all1024_signflip_patterns_verified": true,
+  "holm_across_two_parameters_verified": true,
+  "no_fit_exclusions": true,
+  "full_figure_layout_no_clipping": true
+}

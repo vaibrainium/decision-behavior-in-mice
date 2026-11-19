@@ -1,0 +1,16 @@
+{
+  "status": "Corrected paired panel B adopted by author; Figure4 current version v5",
+  "decision_date": "2026-11-18",
+  "full_figure": "figure4.pdf",
+  "paired_panel": "paired_psychometric_panel.pdf",
+  "parameter_definitions_confirmed": {
+    "alpha": "midpoint",
+    "beta": "slope coefficient"
+  },
+  "p_holm": {
+    "alpha": 0.01171875,
+    "beta": 0.13671875
+  },
+  "source_test_sha256": "13324855b680290326b626af1150717f25a788adeaee7f825f458c7548322627",
+  "other_panels": "A and temporal/assignment C\u2013E values unchanged; remaining review continues"
+}

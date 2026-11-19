@@ -1,0 +1,16 @@
+{
+  "all20_fits_match_independent_multistart_audit": true,
+  "fits_selected_by_WLS_objective_only": true,
+  "no_subjects_excluded": true,
+  "equation_and_weighted_sse_verified": true,
+  "all1024_paired_sign_patterns_verified": true,
+  "holm_family_unchanged_two_parameters": true,
+  "A_curves_and_points_unchanged": true,
+  "old_temporal_assignment_values_unchanged": true,
+  "near_minimum_numerical_checks": 500,
+  "near_minimum_alpha_raw_p_range": [
+    0.005859375,
+    0.005859375
+  ],
+  "numerical_checks_are_not_additional_animal_or_trial_resamples": true
+}
