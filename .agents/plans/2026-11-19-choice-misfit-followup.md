@@ -21,7 +21,7 @@ The likelihood is correct. Held-out pulse choice excess is 287–506 G² across 
 - [x] 4b. Fitted sv vs within-cell ME drift spread (sv 5-35x larger).
 - [x] 4c. Rescore the top 3 by total held-out NLL (with and without PSUIM7: power UGM, norm UGM no sv, linear leak, linear leak + urgency) at >= 3 seeds before treating any ordering as a result.
 - [x] 4d. Data-only pulse effect vs coherence x timing with hierarchical bootstrap; residual bootstrap (early zero/low coherence) with and without PSUIM6/7.
-- [ ] 4e. Gain-decay / signed-leak pulse-only CV fits: table tasks_2026-11-19_pulse_w.csv generated (240 tasks); SUBMITTED 2026-11-19 14:55 (Hyak time) by author, all 10 mice, state slurm-logs/autosubmit_state_pulse_w.json; then rerun the cell split and residual bootstrap on them.
+- [x] 4e. Gain-decay / signed-leak pulse-only CV fits: table tasks_2026-11-19_pulse_w.csv generated (240 tasks); SUBMITTED 2026-11-19 14:55 (Hyak time) by author, all 10 mice, state slurm-logs/autosubmit_state_pulse_w.json; then rerun the cell split and residual bootstrap on them.
 - [x] 4g. RT hazard aligned to pulse onset at 100% coherence (criteria B).
 - [ ] 4h. Score PW fits against criteria A once all 240 tasks are done.
 - [ ] 4h2. Conditional on 4h: if gain decay / signed leak does not absorb the PSUIM6/7 early low-coherence residual, run the same cell split and residual bootstrap on the existing pulse-weight fits (fits_joint_unfreeze_pulse_weight; scripts/slurm/submit_pulse_weight.sh, scripts/ddm/compare_pulse_weight.py) before building anything new. Note: these are JOINT fits (cv0-4 on all trials, L0U0V1Z0G1 and L0U0V0Z0G1), not pulse-only pcv fits; score their pulse cells within the joint held-out folds and compare with the matching joint constant-gain fits.
@@ -40,6 +40,17 @@ Pairs: PW_gain L0U0V0Z0G1 vs pulse_linear_no_sv; L0U0V1Z0G1 vs pulse_linear_prim
 4. Mechanism: in the mice that improve, fitted gain_decay > 0 or signed leak_rate < 0 (pulse full fit and majority of pcv folds). An improvement with parameters not on the primacy side does not count as support.
 5. Guardrail: choice excess G² on control trials (full pulse fit scored out of sample, as choice_g2_control_training) must not increase versus the constant-gain counterpart, beyond its seed range.
 All five are reported, including failures.
+
+### A2. Exploratory tier for the PW fits (author, added 2026-11-20 BEFORE any PW scoring output was seen; does NOT replace A)
+A (strict, confirmatory) alone supports claims in the paper. A2 decides what to try next.
+Continuous effect sizes are reported for everything, plus these looser flags:
+1. Mouse improved (loose): seed-mean dNLL < 0 AND |dNLL| > 1 x that mouse's seed SD.
+2. Cohort (8 mice): per-mouse dNLL, sign count out of 8, median with a bootstrap 95% interval (resample mice). No p-value cutoff.
+3. Residual (loose): early low-coherence residual shrinks by >= 25% in absolute size (|new| <= 0.75 |old|).
+4. Parameter direction (loose): median over the 5 pcv folds on the primacy side.
+5. Control guardrail (loose): change in control excess reported as an effect size; flag only if worse by > 2 x the constant fit's seed range.
+Decision: A and A2 pass = result. Only A2 passes = direction worth one more round (pulse-weight fits or more seeds), not a claim. Neither = primacy ruled out for the PSUIM6/7 residual; move to pulse weighting (step 4h2).
+Pinned strict-tier details (author): rule 3 compares absolute sizes, |new| <= 0.5 |old| (an overshoot of the other sign can count); rule 4 = >= 3 of 5 pcv folds; rule 5 = seed max - min over 5 seeds.
 
 ### B. RT alignment to pulse onset at 100% coherence (hazard)
 - Pulse trials: 100% coherence, incongruent pulses (all timings pooled, primary; by timing, secondary). Error = choice against coherence (= following the pulse).
@@ -63,3 +74,5 @@ Refitting existing families; changing rt_nllh_weight for final fits.
 - 2026-11-19: Criteria B result: no clustering in 150-400 ms (all CIs include 1); excess after 400 ms in other 8 mice. Flagged: lapses cancel in the pulse/control ratio, so 'flat = lapses' is not a valid reading (report pulse-onset-error-hazard).
 - 2026-11-19: Criterion B reading corrected after the test (see criteria B). Settled: no pulse-triggered responses; the 100%-coherence pulse effect comes with ordinary-latency errors, so the pulse passes through the accumulator. Open: models under-weight the pulse, mostly PSUIM6/7 (primacy vs pulse salience). Methods sentence added (100% baseline has only incongruent pulses).
 - 2026-11-19: Status pass at 19:39 on Hyak: PW_signed_leak 120/120 done; PW_gain 118/120, with the 2 missing fits resubmitted by autosubmit as job 43407656 (2 x 2 h). Scoring waits for those 2 and the sync. The two fits timed out at 1 h (estimated 0.4 h): PW_gain:18 PSUIM6 L0U0V1Z0G1 pcv0 and PW_gain:115 DBM6 L0U0V1Z0G1 pulse; 43407656 pending on ckpt-all.
+- 2026-11-20: All 240 PW fits synced to /mnt/data/processed/ddm (verified against the task table). Scoring: scripts/paper/score_pw_fits.py (registers the new folders, runs the committed audit + control scorer unchanged, 5 seeds, CPU since GPU still down) -> pw_scores_{gain,leak}_2026-11-20; criteria via scripts/paper/score_pw_criteria.py. Operationalised (not in the pre-registration text): rule 3 'halves' = new residual <= 0.5 x constant residual (signed); rule 5 'beyond seed range' = mean increase > constant fit's seed max-min; rule 4 'majority of pcv folds' = >= 3 of 5.
+- 2026-11-20 04:59 UTC: Exploratory tier A2 added (author) and rule 3 changed to absolute sizes (|new| <= 0.5 |old|), committed while pw_scores_{gain,leak}_2026-11-20 runs were still in progress and before any of their output was read. A2 does not replace A.
