@@ -1,0 +1,11 @@
+{
+  "base_commit": "3b55ecadde05e6f7c525c9030dd81fd1f457d476",
+  "source": "dissemination/figures/qc/model_ic_summary_2026-11-12_rescored.csv",
+  "sha256": "9c9b3add7855bafeeeddd47a2af99f17073e9b093961a4425eba1089cde5f21d",
+  "code_sha256": "4a853ad5755b8db260b23e531452e49e435c59e73dcf73b4ef07846431e4d016",
+  "n_candidates": 22,
+  "n_trials": 11479,
+  "predictive_winner": "pulse_norm_ugm_no_sv",
+  "bic_winner": "pulse_linear_leak",
+  "scope": "Author-review opening preview; pulse-only models; no refits."
+}

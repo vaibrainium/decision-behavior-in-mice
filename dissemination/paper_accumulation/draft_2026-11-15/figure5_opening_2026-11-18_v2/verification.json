@@ -1,0 +1,8 @@
+{
+  "all_22_pulse_only_candidates_included": true,
+  "source_scores_exact": true,
+  "joint_and_control_fits_excluded": true,
+  "common_trial_count": 11479,
+  "winners_verified": true,
+  "new_fits": false
+}

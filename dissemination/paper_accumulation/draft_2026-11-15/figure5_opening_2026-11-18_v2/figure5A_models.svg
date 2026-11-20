@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="623.622047pt" height="170.07874pt" viewBox="0 0 623.622047 170.07874" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-19T05:13:54.720959</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.3, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 170.07874 
+L 623.622047 170.07874 
+L 623.622047 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 33.426142 107.489764 
+L 137.820472 107.489764 
+Q 143.620157 107.489764 143.620157 106.299213 
+L 143.620157 49.152756 
+Q 143.620157 47.962205 137.820472 47.962205 
+L 33.426142 47.962205 
+Q 27.626457 47.962205 27.626457 49.152756 
+L 27.626457 106.299213 
+Q 27.626457 107.489764 33.426142 107.489764 
+z
+" clip-path="url(#pd0ab27f6eb)" style="fill: #f3f5f7; stroke: #8c8c8c; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 175.518425 107.489764 
+L 297.311811 107.489764 
+Q 303.111496 107.489764 303.111496 106.299213 
+L 303.111496 49.152756 
+Q 303.111496 47.962205 297.311811 47.962205 
+L 175.518425 47.962205 
+Q 169.71874 47.962205 169.71874 49.152756 
+L 169.71874 106.299213 
+Q 169.71874 107.489764 175.518425 107.489764 
+z
+" clip-path="url(#pd0ab27f6eb)" style="fill: #f3f5f7; stroke: #8c8c8c; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 335.009764 107.489764 
+L 468.40252 107.489764 
+Q 474.202205 107.489764 474.202205 106.299213 
+L 474.202205 49.152756 
+Q 474.202205 47.962205 468.40252 47.962205 
+L 335.009764 47.962205 
+Q 329.210079 47.962205 329.210079 49.152756 
+L 329.210079 106.299213 
+Q 329.210079 107.489764 335.009764 107.489764 
+z
+" clip-path="url(#pd0ab27f6eb)" style="fill: #f3f5f7; stroke: #8c8c8c; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 500.300787 107.489764 
+L 587.296063 107.489764 
+Q 593.095748 107.489764 593.095748 106.299213 
+L 593.095748 49.152756 
+Q 593.095748 47.962205 587.296063 47.962205 
+L 500.300787 47.962205 
+Q 494.501102 47.962205 494.501102 49.152756 
+L 494.501102 106.299213 
+Q 494.501102 107.489764 500.300787 107.489764 
+z
+" clip-path="url(#pd0ab27f6eb)" style="fill: #f3f5f7; stroke: #8c8c8c; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 7.3px; font-family: 'DejaVu Sans'; text-anchor: middle" x="85.623307" y="63.072611" transform="rotate(-0 85.623307 63.072611)">Pulse-trial input</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 6.8px; font-family: 'DejaVu Sans'" transform="translate(57.600401 83.353921)">Motion evidence</text>
+    <text style="font-size: 6.8px; font-family: 'DejaVu Sans'" transform="translate(69.27887 92.518514)">over time</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 7.3px; font-family: 'DejaVu Sans'; text-anchor: middle" x="236.415118" y="63.044096" transform="rotate(-0 236.415118 63.044096)">Input mapping</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 6.8px; font-family: 'DejaVu Sans'" transform="translate(225.848024 78.771624)">Linear</text>
+    <text style="font-size: 6.8px; font-family: 'DejaVu Sans'" transform="translate(219.248306 87.936218)">Power law</text>
+    <text style="font-size: 6.8px; font-family: 'DejaVu Sans'" transform="translate(212.787774 97.100811)">Normalization</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 7.3px; font-family: 'DejaVu Sans'; text-anchor: middle" x="401.706142" y="63.044096" transform="rotate(-0 401.706142 63.044096)">Accumulation dynamics</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 6.8px; font-family: 'DejaVu Sans'" transform="translate(374.277173 78.771624)">Integrator / leak</text>
+    <text style="font-size: 6.8px; font-family: 'DejaVu Sans'" transform="translate(358.40661 87.936218)">Urgency / leak + urgency</text>
+    <text style="font-size: 6.8px; font-family: 'DejaVu Sans'" transform="translate(363.760548 97.100811)">Urgency-gating region</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 7.3px; font-family: 'DejaVu Sans'; text-anchor: middle" x="543.798425" y="63.072611" transform="rotate(-0 543.798425 63.072611)">Predictions</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 6.8px; font-family: 'DejaVu Sans'" transform="translate(532.28305 83.353921)">Choice</text>
+    <text style="font-size: 6.8px; font-family: 'DejaVu Sans'" transform="translate(532.128456 92.518514)">and RT</text>
+   </g>
+   <g id="patch_6">
+    <path d="M 145.622295 77.725984 
+Q 155.220537 77.725984 163.924352 77.725984 
+" style="fill: none; stroke: #666666; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 161.004352 76.265984 
+L 163.924352 77.725984 
+L 161.004352 79.185984 
+" style="fill: none; stroke: #666666; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 305.113633 77.725984 
+Q 314.711875 77.725984 323.41569 77.725984 
+" style="fill: none; stroke: #666666; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 320.49569 76.265984 
+L 323.41569 77.725984 
+L 320.49569 79.185984 
+" style="fill: none; stroke: #666666; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 476.202926 77.725984 
+Q 482.900224 77.725984 488.703094 77.725984 
+" style="fill: none; stroke: #666666; stroke-width: 0.8; stroke-linecap: round"/>
+    <path d="M 485.783094 76.265984 
+L 488.703094 77.725984 
+L 485.783094 79.185984 
+" style="fill: none; stroke: #666666; stroke-width: 0.8; stroke-linecap: round"/>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 7px; font-family: 'DejaVu Sans'; text-anchor: middle" x="401.706142" y="127.729134" transform="rotate(-0 401.706142 127.729134)">Across-trial drift variability sᵥ: fitted or fixed to zero</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 6.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #4c4c4c" x="33.426142" y="144.39685" transform="rotate(-0 33.426142 144.39685)">22 fitted combinations; model coverage differs across input mappings.</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start" x="21.826772" y="25.341732" transform="rotate(-0 21.826772 25.341732)">A</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start" x="21.826772" y="16.913386" transform="rotate(-0 21.826772 16.913386)">Accumulation models fitted to pulse trials</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pd0ab27f6eb">
+   <rect x="21.826772" y="28.913386" width="579.968504" height="119.055118"/>
+  </clipPath>
+ </defs>
+</svg>
