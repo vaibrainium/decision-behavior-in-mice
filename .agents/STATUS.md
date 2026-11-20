@@ -2,7 +2,7 @@
 Last updated: 2026-11-19 by Codex
 
 ## Current focus
-Choice-misfit follow-up (2026-11-20, Claude): PW primacy fits do not absorb the PSUIM6/7 early low-coherence residual (report pw-fits-criteria-a); next is the pulse-weight cell split (plan step 4h2).
+Choice-misfit follow-up (2026-11-20, Claude): Neither primacy (pw-fits-criteria-a) nor a joint pulse weight (pulse-weight-joint-criteria) absorbs the PSUIM6/7 early low-coherence residual; session confound ruled out. Per author's stopping rule this is reported as a mouse-specific deviation once the rig check is accepted; next 4i.
 
 The pulse-onset diagnosis localizes the strongest mismatch to excess directional sensitivity in PSUIM6/7. Reweighting the same Figure 4C regression gives −2.39 versus −5.40 under trial weighting. Full review, diagnostic tables and literature at dissemination/paper_accumulation/draft_2026-11-15/pulse_onset_diagnosis_2026-11-19_final/REVIEW.md. Report reports/2026-11-19-pulse-onset-diagnosis.md.
 
@@ -122,7 +122,7 @@ Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gat
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
-- plans/2026-11-19-choice-misfit-followup.md : choice misfit follow-up; PW fits scored 2026-11-20 (primacy ruled out for PSUIM6/7 residual); next: 4h2 pulse-weight joint fits cell split
+- plans/2026-11-19-choice-misfit-followup.md : choice misfit follow-up; PW and pulse-weight fits scored 2026-11-20 (neither fixes the PSUIM6/7 residual); next: author OK on rig check, then 4i
 - plans/2026-10-29-control-paper.md : third paper (control trials only, Stine 2020 framing) in dissemination/paper_control/; G1 approved 2026-10-30 (D004), spine locked, stage S2; paired recovery 42579825 analysed: E separated (provisional, ES fits not yet submitted)
 - plans/2026-10-28-full-recovery-matrix.md : ON HOLD (author); recovery rerun on fixed CPU datasets if it becomes necessary
 - plans/2026-10-26-v2-refits-and-strategy-recovery.md : responded-only refits + full point-3 re-run (amendment 9); commands ready; next: user syncs code, submits R1-R6 (460), then F1a (80) and P1-P4 (850)
@@ -135,6 +135,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-11-20-pulse-weight-joint-criteria.md : joint pulse weight fails A/A2 (w stays 1 in PSUIM6/7); session check clean; PSUIM6/7 closed as stable mouse-specific deviation pending rig-check OK
 - reports/2026-11-20-pw-fits-criteria-a.md : gain decay / signed leak fail strict (A) and exploratory (A2) criteria in all 4 pairs; primacy ruled out for PSUIM6/7 residual; PSUIM7 no-sv alone -94 NLL with gain_decay 2.9 but control excess doubles
 - reports/2026-11-19-pulse-onset-error-hazard.md : 100%-coh incongruent pulses do not trigger clustered errors at 150-400 ms (ratio 1.15 [0.76,1.54]); excess later (other 8 mice 1.50 [1.09,1.92])
 - reports/2026-11-19-top4-multiseed-pulse-effect.md : norm UGM no sv best at 5/5 seeds but lead mostly PSUIM6/7; early-pulse residual mostly PSUIM6/7; data pulse effect does not shrink with coherence
