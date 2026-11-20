@@ -1,0 +1,13 @@
+{
+  "source": "dissemination/figures/qc/model_ic_per_mouse_2026-11-12_rescored.csv",
+  "source_sha256": "eb4f242b776d018df803e2b8e84ecce6287da0f4ff91c6fd6505679b96265278",
+  "code_sha256": "8e6483b7bb2b7d5828fb0df80fb14ed45a5c6518754fad878f52a543432a0713",
+  "base_commit": "3b55ecadde05e6f7c525c9030dd81fd1f457d476",
+  "definition": "within-mouse -heldout_nll/(n_heldout ln2), then equal-mouse mean; higher is better",
+  "winner_equal_mouse": "pulse_norm_ugm_no_sv",
+  "winner_pooled": "pulse_norm_ugm_no_sv",
+  "matched_denominators_verified": true,
+  "formula_inversion_verified": true,
+  "new_fits": false,
+  "uncertainty": "Descriptive ranking only; no new significance tests; no null baseline subtraction."
+}

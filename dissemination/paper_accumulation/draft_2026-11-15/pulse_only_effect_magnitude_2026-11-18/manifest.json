@@ -1,0 +1,16 @@
+{
+  "scope": "All22 pulse-only models; saved 0.3\u20131.2s post-pulse choice-effect estimator; equal-mouse mean. Descriptive only.",
+  "largest_effect": "pulse_norm_ugm_no_sv",
+  "closest_cohort_mean": "pulse_power_leak",
+  "source_sha256": {
+    "dissemination/figures/qc/pulse_joint_signatures_2026-11-11_po_part0_windows.csv": "d53345fcc086049b02abea886b9b30c208703d845a5be760e1ca206258ac599d",
+    "dissemination/figures/qc/pulse_joint_signatures_2026-11-11_po_part1_windows.csv": "5ac16195b41a2aa23e652eeb777764d150ded945abf5714f6b14e46b2ed712b5",
+    "dissemination/figures/qc/pulse_joint_signatures_2026-11-11_po_part2_windows.csv": "c80919e7eda946801fd037bf9992e25016440ae0255aa77c81e048e919c9dda6",
+    "dissemination/figures/qc/pulse_joint_signatures_2026-11-11_po_part3_windows.csv": "f7f501b0eddbff6f88349d45834a4784e639cb06617758d1bd6d3948ed471c3c",
+    "dissemination/figures/qc/pulse_joint_signatures_2026-11-11_ugm_part0_windows.csv": "050fed9905e89e10100afe357fe4de279e8433d1f3ad2b1bc6786ff90b513ace",
+    "dissemination/figures/qc/pulse_joint_signatures_2026-11-11_ugm_part1_windows.csv": "2b028a6bd7f017e5c77922af0d568d8ca2d9d39a10b49ab8f73df090d31f00ad",
+    "dissemination/figures/qc/pulse_joint_signatures_2026-11-11_ugm_part2_windows.csv": "5e8c3b26c356a79652ea872d298267200f16390d5b276225c9d59a13f1094c5c"
+  },
+  "all_data_references_identical": true,
+  "new_fits_or_tests": false
+}
