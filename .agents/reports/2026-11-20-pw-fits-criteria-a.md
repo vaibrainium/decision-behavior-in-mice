@@ -6,7 +6,7 @@ Plan: plans/2026-11-19-choice-misfit-followup.md (step 4h; criteria A pre-regist
 Does primacy (a time-decaying evidence weight, or a self-exciting accumulator with negative leak) absorb the held-out early low-coherence pulse residual, especially in PSUIM6/7, without harming the control-trial choice fit?
 
 ## Summary
-No. Neither tier passes for any of the four pairs. Per the pre-registered decision rule, primacy is ruled out as the explanation for the PSUIM6/7 residual, and the next step is pulse weighting (4h2). One exploratory observation stands out: PSUIM7 without sv improves strongly with near-maximal gain decay (ΔNLL −94), but its control-trial choice excess doubles and its residual shrinks only 40%. Signed leak changes nothing: no mouse improves, and fitted leak rates are mostly positive.
+No. Neither tier passes for any of the four pairs. Within the tested range (gain_decay ≤ 3/s, leak ≥ −1/s), primacy does not account for the residual: ruled out for the cohort and for PSUIM6. For PSUIM7 it partly helps the pulse trials, at a clear cost on control trials. The next step is pulse weighting (4h2). One exploratory observation stands out: PSUIM7 without sv improves strongly with near-maximal gain decay (ΔNLL −94), but its control-trial choice excess doubles and its residual shrinks only 40%. Signed leak changes nothing: no mouse improves, and fitted leak rates are mostly positive.
 
 ## Findings
 All numbers: held-out pulse-only NLL (pcv0–4, nbins 9), 5 seeds (12345 … 56789), CPU backend. ΔNLL = new − constant-gain, summed over folds, then mean ± SD over seeds. Source: `dissemination/paper_accumulation/draft_2026-11-15/pw_scores_{gain,leak}_2026-11-20/criteria_{summary,per_mouse}.csv`.
@@ -61,6 +61,8 @@ All numbers: held-out pulse-only NLL (pcv0–4, nbins 9), 5 seeds (12345 … 567
 - Fits: `/mnt/data/processed/ddm/fits_pulse_linear_{gain_decay,signed_leak}` (task table `scripts/slurm/tasks_2026-11-19_pulse_w.csv`, all 240 present).
 
 ## Caveats
+- PSUIM7's gain_decay (2.88; pcv median 2.90) sits at the upper bound of 3/s. At 3/s only about 5% of the evidence weight remains after 1 s, so widening the bound would mostly push PSUIM7 toward using only the first few hundred ms, which the extrema-detection models already cover. Not refitted (author decision 2026-11-20).
+- PSUIM7's trade-off (better pulse fit, control excess doubled) means one parameter set cannot describe both trial types for that mouse. Whether pulse and control trials share sessions for PSUIM6/7 is being checked (possible session or engagement confound).
 - CPU backend (GPU still unavailable). Differences of ≤0.17 NLL per fold are negligible relative to the effects.
 - 10 mice. The cohort test has only 8.
 - Single functional forms: exponential gain decay, and leak bounded at −1/s. Other primacy shapes (e.g. a step or an early integration window) were not tested.

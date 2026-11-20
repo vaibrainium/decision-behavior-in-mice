@@ -52,6 +52,15 @@ Continuous effect sizes are reported for everything, plus these looser flags:
 Decision: A and A2 pass = result. Only A2 passes = direction worth one more round (pulse-weight fits or more seeds), not a claim. Neither = primacy ruled out for the PSUIM6/7 residual; move to pulse weighting (step 4h2).
 Pinned strict-tier details (author): rule 3 compares absolute sizes, |new| <= 0.5 |old| (an overshoot of the other sign can count); rule 4 = >= 3 of 5 pcv folds; rule 5 = seed max - min over 5 seeds.
 
+### A3. Criteria for the pulse-weight joint fits, step 4h2 (author, fixed 2026-11-20 BEFORE this scoring ran)
+The two tiers A (confirmatory) and A2 (exploratory) apply unchanged to these fits, with the same five rules, thresholds and decision table. Mapping to joint fits:
+- Pairs: fits_joint_unfreeze_pulse_weight L0U0V1Z0G1 vs fits_joint_unfreeze_integrators L0U0V1Z0G1 (sv); L0U0V0Z0G1 vs L0U0V0Z0G1 (no sv). Joint folds cv0-4 over all responded trials; 5 seeds (12345, 23456, 34567, 45678, 56789); same audit cell scorer (nbins 9).
+- Rule 1/2 dNLL: held-out NLL over all trials in the joint folds (the fits' own objective). The pulse-trial and control-trial parts are reported separately as well.
+- Rule 3: early low-coherence residual on held-out pulse cells within the joint folds; |new| <= 0.5 |old| (A2: 0.75).
+- Rule 4: pulse weight (stored as parameter `noise_weight`) > 1 in the "all" fit and in >= 3 of 5 cv folds (A2: fold median > 1).
+- Rule 5: choice excess G² on held-out CONTROL trials within the joint folds; fail if worse by more than the constant fit's seed range (A2 flag: > 2x).
+- Disclosure: NOT blind for total NLL. Total held-out NLL at seed 12345 and the fitted weights were already reported on 2026-10-30 (reports/2026-10-30-pulse-weight-joint.md: w ~ 1, no mouse better by 10, PSUIM7 NLL worse at w = 2). Rules 1, 2 and 4 are therefore largely known in advance. New and unseen: the 5-seed values, the residual (rule 3) and the control excess (rule 5).
+
 ### B. RT alignment to pulse onset at 100% coherence (hazard)
 - Pulse trials: 100% coherence, incongruent pulses (all timings pooled, primary; by timing, secondary). Error = choice against coherence (= following the pulse).
 - Control: 100% control trials of the same mouse, each assigned 20 pseudo-onsets drawn from that mouse's 100% pulse-onset distribution.
@@ -77,3 +86,4 @@ Refitting existing families; changing rt_nllh_weight for final fits.
 - 2026-11-20: All 240 PW fits synced to /mnt/data/processed/ddm (verified against the task table). Scoring: scripts/paper/score_pw_fits.py (registers the new folders, runs the committed audit + control scorer unchanged, 5 seeds, CPU since GPU still down) -> pw_scores_{gain,leak}_2026-11-20; criteria via scripts/paper/score_pw_criteria.py. Operationalised (not in the pre-registration text): rule 3 'halves' = new residual <= 0.5 x constant residual (signed); rule 5 'beyond seed range' = mean increase > constant fit's seed max-min; rule 4 'majority of pcv folds' = >= 3 of 5.
 - 2026-11-20 04:59 UTC: Exploratory tier A2 added (author) and rule 3 changed to absolute sizes (|new| <= 0.5 |old|), committed while pw_scores_{gain,leak}_2026-11-20 runs were still in progress and before any of their output was read. A2 does not replace A.
 - 2026-11-20: 4h done (report pw-fits-criteria-a): neither A nor A2 passes for any of the 4 pairs; primacy ruled out for the PSUIM6/7 residual per the decision rule. PSUIM7 no-sv gain decay -94 NLL (gain_decay 2.9) but control excess 33->64 and residual -40%. Signed leak: no improvers, leak mostly positive. Next: 4h2 (pulse-weight joint fits).
+- 2026-11-20 05:55 UTC: Criteria A3 (tiers A and A2 applied unchanged to the pulse-weight joint fits) committed before any 4h2 scoring ran; prior 2026-10-30 total-NLL result disclosed.
