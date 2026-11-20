@@ -1,0 +1,49 @@
+{
+  "source": "dissemination/figures/qc/fit_browser_2026-11-12_v7.json",
+  "source_sha256": "2573e51db626e7240b5b336f52d1fd6c60b717bed4e5d723a789180beebd4498",
+  "code_sha256": "8549bfaab213be8805f8c9167862df8d2b0b55533114cf919bdb08f9a17678a2",
+  "base_commit": "3b55ecadde05e6f7c525c9030dd81fd1f457d476",
+  "models": {
+    "pulse_norm_ugm_no_sv": [
+      "Predictive winner: normalized UGM, no s\u1d65",
+      "-"
+    ],
+    "pulse_linear_leak": [
+      "BIC winner: linear leak, with s\u1d65",
+      "--"
+    ]
+  },
+  "population_counts": [
+    {
+      "cond": "early left",
+      "n": 2214,
+      "n_mice": 10
+    },
+    {
+      "cond": "early right",
+      "n": 2157,
+      "n_mice": 10
+    },
+    {
+      "cond": "late left",
+      "n": 718,
+      "n_mice": 6
+    },
+    {
+      "cond": "late right",
+      "n": 742,
+      "n_mice": 6
+    },
+    {
+      "cond": "middle left",
+      "n": 2165,
+      "n_mice": 10
+    },
+    {
+      "cond": "middle right",
+      "n": 2116,
+      "n_mice": 10
+    }
+  ],
+  "scope": "Tentative Figure6; saved full-pulse-fit outputs; descriptive psychometric display fits only."
+}

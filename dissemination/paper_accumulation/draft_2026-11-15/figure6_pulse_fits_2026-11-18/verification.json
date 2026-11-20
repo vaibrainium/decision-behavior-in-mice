@@ -1,0 +1,20 @@
+{
+  "all_prediction_cells_match_observed_support": true,
+  "n_models": 2,
+  "control_rows_displayed": 0,
+  "coherence_endpoints_borrowed": false,
+  "new_decision_fits": false,
+  "new_simulations": false,
+  "data_precision": "Saved browser per-mouse probabilities and RT means rounded to 4 decimals",
+  "equal_mouse_means_and_SEM_independently_rechecked": true,
+  "observed_pulse_responses": 10112,
+  "stage_mouse_counts": {
+    "early left": 10,
+    "early right": 10,
+    "late left": 6,
+    "late right": 6,
+    "middle left": 10,
+    "middle right": 10
+  },
+  "figure_inspected": true
+}
