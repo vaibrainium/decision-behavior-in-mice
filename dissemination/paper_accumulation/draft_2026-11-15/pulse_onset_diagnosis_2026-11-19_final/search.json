@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-19",
+  "type": "Focused single-reviewer narrative update",
+  "prior_review": "dissemination/attention_decision_review_2026-11-14",
+  "discovery": "Web search of public scholarly literature, including PubMed/PMC, journal and author-hosted records. Search focused on temporally varying sensory input, bounded and nonlinear decisions, temporal expectation, mouse behavior, choice history, joint choice/RT and primacy. Selected primary research with a relevant manipulation, measurement or model prediction. No meta-analysis or exhaustive screening.",
+  "queries": [
+    "Huk Shadlen 2005 neural activity area LIP reflects temporal integration visual motion pulses early late bounded integration pulse onset",
+    "Yates Park Katz Pillow Huk functional dissection signal noise MT LIP primacy temporally declining motion sensitivity pulses decision making psychophysical kernels 2017",
+    "Okazawa Sha Kiani psychophysical reverse correlation reflects both sensory decision-making processes 2018 bounds nondecision time",
+    "Levi Yates Huk Katz temporal weighting strategy dynamic decision making flexibility motion pulses temporal expectation sensory gain MT",
+    "attention temporal expectation improves sensory information processing timing rhythmic attention Nobre Carrasco voluntary temporal attention perceptual sensitivity trade-offs in time 2016",
+    "mice perceptual decision making Ashwood Hulsey 2024 McGaughey Gold encoding integration attention mice primacy RDK pupil",
+    "Kiani Hanks Shadlen 2008 bounded integration decisions when viewing duration dictated by environment pulse motion early commitment free response Stine integration extrema",
+    "Brunton Botvinick Brody rats humans evidence accumulation sensory adaptation pulses Brunton 2013 decision making click adaptation initial pulse",
+    "McGaughey Gold perceptual decision-making mouse primate temporal encoding integration motion pulses attention pupil accumulation",
+    "Ashwood mice alternate between discrete strategies perceptual decision making Hulsey state arousal performance mouse perceptual decision making behavior pupil",
+    "Stine Zylberberg Ditterich Shadlen distinguishing integration alternatives temporal decision making joint choice reaction time eLife 2020",
+    "Wong Huk Shadlen Wang temporal dynamics underlying perceptual decision making early later pulses nonlinear attractor time shifts LIP predictions",
+    "mouse random dot motion decision tactile auditory accumulation temporal weighting early late pulses mouse visual evidence flexible accumulation individual early late weights Pinto Koay virtual navigation Scott pulsatile flashes",
+    "McGaughey Gold dynamics sensory encoding evidence accumulation random dot motion perceptual decisions primacy encoding time 2026",
+    "rodent visual change detection transient motion pulse motor commitment reaction time pulse triggered choice transient during decisions sensory motor conflict express saccade compelled response Salinas Stanford",
+    "evidence accumulation timing pulse action human motor urgency change reach Dmochowski Norcia brief pulses additive transients mouse model choice RT primacy Kira decision time commitment snapshot mouse visual contrast",
+    "Orsolic 2021 mice change detection visual evidence reaction time expectation sensory evidence motor cortex change timing visual change detection wheel mouse",
+    "Loughnane target selection signals influence onset rate evidence accumulation varying sensory evidence human perceptual decisions 2016 pulse",
+    "sensory encoding integration McGaughey Gold random dot motion pupil temporal weighting primate encoding integration matched published McGaughey Gold visual motion decisions time course",
+    "Talluri Urai choice induced confirmation bias perceptual decision making evidence 2018 choice consistent evidence postdecision",
+    "Urai de Gee Tsetsos Donner choice history biases subsequent evidence accumulation eLife 2019 reaction time",
+    "Koay Amplitude modulations cortical sensory responses pulsatile evidence accumulation choice evidence accumulated cue mouse eLife evidence history adaptation"
+  ]
+}
