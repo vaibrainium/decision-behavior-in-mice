@@ -398,3 +398,40 @@ Author accepts compact connected v13 and requests all pending changes in logical
 - [x] Verify final commit history and clean working tree.
 
 - 2026-11-18: Latest v13 confirmed by author; exact artwork finalized in figure4_final_2026-11-18/. Regression and independent paired audit pass; reproduced PNG pixel-identical. Scientific work committed in separate chunks; final clean-tree check recorded in finalization report.
+
+### Figure 5 scope: pulse-only fitted accumulation models — 2026-11-18
+Author explicitly restricts Figure5 model introduction/comparison to pulse-only fitted candidates. Joint/control-only comparison is out of scope for this figure unless later requested. Existing rescored table has distinct held-out and BIC winners; do not label a single universal winner. No fits rerun.
+- [x] Read pulse-only candidate scores and confirm scoring-population restriction.
+- [x] Review candidate definitions and prepare model-introduction panel for author review.
+
+- 2026-11-18: Figure5 opening preview A model components/B pulse-only scores exported in figure5_opening_2026-11-18_v2; all22 source scores verified. Layout and candidate breadth await author review; no fitting.
+
+### Tentative Figure 6 pulse-only psychometric/chronometric fits — 2026-11-18
+Figure5 deferred for later discussion. Use existing full-pulse-fit predictions for predictive and BIC winners on pulse trials only. Show early/middle/late and physical left/right direction; equal-mouse observations/SEM with matched model summaries. No controls borrowed to anchor psychometrics, no decision-model refits or new simulations. Descriptive four-parameter display curves may be fitted to saved summaries; source/eligibility differences disclosed.
+- [x] Inspect browser summaries and verify full-fit prediction provenance and matched mouse/coherence support.
+- [x] Render tentative comparison with psychometric and mean-RT views and export source tables.
+- [x] Verify aggregations, inspect artwork and document scope/limitations for author choice.
+
+- 2026-11-18: Tentative Figure6 complete in figure6_pulse_fits_2026-11-18/. Both winners overlaid and individual previews exported; matched equal-mouse support/SEM verified. Figure5 deferred; no decision fits/simulations. Report ../reports/2026-11-18-figure6-pulse-fits.md.
+
+### Pulse-only held-out bits per trial — 2026-11-18
+Compute same metric as Figure3 for all22 pulse-only candidates: -heldout_NLL/(n_heldout ln2) within mouse, then equal-mouse mean. Keep pooled trial-weighted score separately, verify matched trial counts, no fits or null-baseline claim.
+- [x] Export per-mouse and group scores, verify formula/ranking and document result.
+
+### Pulse-only pulse-effect magnitude — 2026-11-18
+- [x] Compare all22 saved pulse-only0.3–1.2s effects and verify shared observed reference; normalizedUGM/no sv largest, power+leak closest cohort mean. Report ../reports/2026-11-18-pulse-only-effect-magnitude.md. No fits/tests.
+
+### Pulse-only model predictions of Figure4C onset-stage influence — 2026-11-18
+User requests which model reproduces primacy. Existing response-time caches exclude late, so generate bounded fixed-parameter predictions on the same pre-response-selection schedules, not refit DDM parameters. All22 pulse-only candidates; start with30 reps/seed, use two independent seeds to assess simulation stability. Reproduce observed21725/10-mouse Figure4C cells/slope before ranking. Apply simulated response/offset/onset eligibility to outcomes; controls with virtual schedules included as predicted outcomes, not fitting data. Fit same21-parameter ordinal descriptive regression/WLS to model-generated choices, with per-cell simulation counts scaled by reps so simulation repetitions are not additional biological trials. Compare stage curve RMSE and slope error, not slope alone; report conditional predictions/identification and six-late-mouse caveat. Do not infer biological support from simulation p values.
+- [x] Verify preselection/observed estimator and pilot fixed-parameter prediction.
+- [x] Generate all22 candidates and apply identical regression; check optimizers and seed stability.
+- [x] Compare slope/amplitude/curve discrepancy, inspect render, report and handoff.
+
+- 2026-11-18: Model-primacy comparison complete. NormalizedUGM/no sv closest all-available but far shallower than data; matched6 ranking changes. Exact selection/cells verified;440 simulations/88 readout fits/880 successful starts. Report ../reports/2026-11-18-pulse-model-primacy.md.
+
+### Review of the onset discrepancy — 2026-11-19
+- [x] Audit the fitted objective, time weights, cohort schedules, simulations and previous tests.
+- [x] Check whether the early deficit survives a comparison in observed choice probabilities within mouse and task implementation.
+- [x] Synthesize primary research on stimulus encoding, commitment, attention and choice state. Report competing explanations, discriminating analyses and limitations.
+
+- 2026-11-19. Onset-discrepancy review complete. Direct matched probability contrasts, reweighted ordinal fits, session checks, trial-sized simulation ranges and pulse-locked response timing are in the review. See ../reports/2026-11-19-pulse-onset-diagnosis.md.

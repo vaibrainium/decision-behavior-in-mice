@@ -1,5 +1,5 @@
 # Report: Tentative Figure 6 pulse psychometric and chronometric fits
-Date: 2026-11-18   Agent: Codex   Commit: 3b55eca (uncommitted)
+Date: 2026-11-18   Agent: Codex   Commit: 9fe29c7
 Plan: plans/2026-10-26-paper-accumulation-variant.md
 
 ## Question

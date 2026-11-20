@@ -1,5 +1,5 @@
 # Why pulse-only models miss the perturbation
-Date: 2026-11-19   Agent: Codex   Base commit: 3b55eca
+Date: 2026-11-19   Agent: Codex   Commit: 300a223 (analysis base: 3b55eca)
 Plan: plans/2026-10-26-paper-accumulation-variant.md (onset-discrepancy review)
 
 ## Question

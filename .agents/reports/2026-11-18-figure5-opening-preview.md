@@ -1,5 +1,5 @@
 # Report: Figure 5 pulse-only opening preview
-Date: 2026-11-18   Agent: Codex   Commit: 3b55eca (uncommitted)
+Date: 2026-11-18   Agent: Codex   Commit: c16cedf
 Plan: plans/2026-10-26-paper-accumulation-variant.md
 
 ## Question

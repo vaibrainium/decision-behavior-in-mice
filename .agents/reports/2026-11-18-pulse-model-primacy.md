@@ -1,5 +1,5 @@
 # Report: Pulse-only models and Figure 4C primacy
-Date: 2026-11-18   Agent: Codex   Commit: 3b55eca (analysis uncommitted)
+Date: 2026-11-18   Agent: Codex   Commit: 986329a
 Plan: plans/2026-10-26-paper-accumulation-variant.md
 
 ## Question

@@ -1,5 +1,5 @@
 # Report: Pulse-only held-out bits per trial
-Date: 2026-11-18   Agent: Codex   Commit: 3b55eca (uncommitted)
+Date: 2026-11-18   Agent: Codex   Commit: fe8cb41
 Plan: plans/2026-10-26-paper-accumulation-variant.md
 
 ## Question

@@ -1,7 +1,21 @@
 # Status
-Last updated: 2026-11-18 by Codex (client date)
+Last updated: 2026-11-19 by Codex
 
 ## Current focus
+The pulse-onset diagnosis localizes the strongest mismatch to excess directional sensitivity in PSUIM6/7. Reweighting the same Figure 4C regression gives −2.39 versus −5.40 under trial weighting. Full review, diagnostic tables and literature at dissemination/paper_accumulation/draft_2026-11-15/pulse_onset_diagnosis_2026-11-19_final/REVIEW.md. Report reports/2026-11-19-pulse-onset-diagnosis.md.
+
+Pulse-only model primacy comparison complete: pulse_model_primacy_2026-11-18/. All22 fixed models,2 seeds, exact Figure4C selection/readout. NormalizedUGM/no sv closest in both seeds but slope−0.73 versus data−5.40/stage; matched6 ranking differs and observed slope inconclusive. No decision-model refits;440 simulations/88 readout fits checked. Figure4 remains final unchanged. Report: reports/2026-11-18-pulse-model-primacy.md.
+
+Pulse-only effect ranking checked: normalizedUGM/no sv predicts largest0.3–1.2s cohort pulse effect5.99pp; data5.48pp; power+leak closest mean5.23pp. Distinct from overall likelihood/individual adequacy. Report: reports/2026-11-18-pulse-only-effect-magnitude.md.
+
+Pulse-only Figure3-style held-out bits calculated: pulse_only_bits_2026-11-18/. Normalized UGM without sv wins, equal-mouse mean−1.540348bits/trial. All22/10 mice, matched counts verified; pooled scores separate and lower ranks differ from summedNLL. No fits/tests. Report: reports/2026-11-18-pulse-only-bits.md.
+
+Tentative Figure6 ready: figure6_pulse_fits_2026-11-18/. Predictive/BIC pulse-only winners, psychometrics + mean RT in early/middle/late columns; combined and individual views. Saved full-fit predictions, no new decision fits/simulations; display curves only. Support/SEM verified; author review pending. Figure5 discussion deferred. Report: reports/2026-11-18-figure6-pulse-fits.md.
+
+Figure5 opening preview ready: figure5_opening_2026-11-18_v2. A conceptual pulse-only model components; B all22 existing pulse-only held-out NLL/BIC values with distinct winners. Source equality verified, no fits. Author review pending. Report: reports/2026-11-18-figure5-opening-preview.md. Figure4 final unchanged.
+
+Figure5 review begins with author-restricted pulse-only fitted accumulation models. Existing held-out winner pulse_norm_ugm_no_sv; BIC winner pulse_linear_leak. Joint/control-only winners excluded from this figure scope. See reports/2026-11-18-figure5-pulse-only-scope.md. Figure4 final unchanged.
+
 Figure 4 FINAL: dissemination/paper_accumulation/draft_2026-11-15/figure4_final_2026-11-18/. Exact approved v13 artwork: compact D, connected black observations, blue exponential. Caption/Methods reconciled; tests and reproduction pass. Analysis commits split by purpose; finalization report reports commit chain. Earlier entries below are historical. Report: reports/2026-11-18-figure4-finalization.md.
 
 Current Figure4 v13: compensated panel narrowed, observed points connected; saved exponential/intervals retained. All v12 source files verified byte-identical; layout inspected. Report: reports/2026-11-18-figure4-compact-connected.md.
@@ -106,7 +120,7 @@ Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gat
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
-- plans/2026-11-19-choice-misfit-followup.md : choice misfit follow-up; next: author approves/submits tasks_2026-11-19_pulse_w.csv (gain decay, signed leak), then cell split on them
+- plans/2026-11-19-choice-misfit-followup.md : choice misfit follow-up; PW fits submitted 2026-11-19 (jobs 43398729-33); next: score them (criteria pending from author)
 - plans/2026-10-29-control-paper.md : third paper (control trials only, Stine 2020 framing) in dissemination/paper_control/; G1 approved 2026-10-30 (D004), spine locked, stage S2; paired recovery 42579825 analysed: E separated (provisional, ES fits not yet submitted)
 - plans/2026-10-28-full-recovery-matrix.md : ON HOLD (author); recovery rerun on fixed CPU datasets if it becomes necessary
 - plans/2026-10-26-v2-refits-and-strategy-recovery.md : responded-only refits + full point-3 re-run (amendment 9); commands ready; next: user syncs code, submits R1-R6 (460), then F1a (80) and P1-P4 (850)
@@ -119,10 +133,13 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-11-19-pulse-onset-error-hazard.md : 100%-coh incongruent pulses do not trigger clustered errors at 150-400 ms (ratio 1.15 [0.76,1.54]); excess later (other 8 mice 1.50 [1.09,1.92])
 - reports/2026-11-19-top4-multiseed-pulse-effect.md : norm UGM no sv best at 5/5 seeds but lead mostly PSUIM6/7; early-pulse residual mostly PSUIM6/7; data pulse effect does not shrink with coherence
 - reports/2026-11-19-choice-excess-cell-type-sv.md : choice excess not pulse-specific (controls too, PSUIM6/7); held-out excess in early/low-coh pulse cells, not 100% or late; guess_lapse not queued; sv 5-35x ME drift spread
 - reports/2026-11-19-choice-g2-all-families.md : choice excess driven by sv (all no-sv < all sv), not front end; power fixes slope but not excess; persists without PSUIM7
 - reports/2026-11-19-choice-rt-weighting.md : no choice/RT weighting bug; held-out pulse choice misfit real but small (excess G² 287–489 over 11,479 trials), systematic slope, PSUIM7-heavy
+- reports/2026-11-19-pulse-onset-diagnosis.md — Direct choice residuals, mouse weighting, within-session recurrence and primary literature on pulse encoding and commitment.
+- reports/2026-11-18-pulse-model-primacy.md : normalized UGM/no sv closest pooled primacy readout but too shallow; matched6 sensitivity changes ranking.
 - reports/2026-11-18-figure4-finalization.md : latest v13 finalized; tests/reproduction pass; changes committed in scoped chunks.
 - reports/2026-11-18-pulse-exponential-preview.md : standalone descriptive exponential; saved mouse-bootstrap uncertainty, Figure4 unchanged.
 - reports/2026-11-18-figure4-persistence-sequence.md : restored persistence D, dilution E; A–C preserved; assignment supplementary.

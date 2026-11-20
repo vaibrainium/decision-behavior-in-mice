@@ -1,5 +1,11 @@
 # Author-reviewed figure organization — 17 November 2026
 
+Model onset-stage diagnostic: [pulse-only predictions versus Figure4C](pulse_model_primacy_2026-11-18/primacy_comparison.pdf), [results/reproduction](pulse_model_primacy_2026-11-18/README.md). Exact readout, matched-six sensitivity; placement undecided.
+
+Tentative Figure6: [pulse psychometric/chronometric fits](figure6_pulse_fits_2026-11-18/figure6_comparison.pdf), [caption](figure6_pulse_fits_2026-11-18/caption.md), [individual model views](figure6_pulse_fits_2026-11-18/README.md). Figure5 deferred for later review.
+
+Figure5 opening preview: [A model components and B pulse-only scores](figure5_opening_2026-11-18_v2/figure5_opening.pdf), [caption](figure5_opening_2026-11-18_v2/caption.md). All22 pulse-only models; joint/control fits excluded. Awaiting review.
+
 ## Final Figure 4 — author approved
 
 [Final Figure 4](figure4_final_2026-11-18/figure4.pdf) is the latest compact, connected version (v13), with exponential overlay in D. [Caption](figure4_final_2026-11-18/caption.md), [source and reproduction record](figure4_final_2026-11-18/README.md), and [acceptance](figure4_final_2026-11-18/acceptance.json). A–C and all fitted values are unchanged. Earlier revision notices below are historical.
