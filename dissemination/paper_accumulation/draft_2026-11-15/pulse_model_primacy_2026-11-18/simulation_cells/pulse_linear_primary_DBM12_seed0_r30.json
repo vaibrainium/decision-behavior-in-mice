@@ -1,0 +1,14 @@
+{
+  "family": "pulse_linear_primary",
+  "mouse": "DBM12",
+  "seed": 0,
+  "mouse_seed": 436019651,
+  "reps": 30,
+  "fit_path": "/mnt/data/processed/ddm/fits_pulse_linear_integrators/DBM12_L0U0V1Z0G1_pulse.pkl",
+  "fit_sha256": "f9cff32fec6b0aea56a29994fe7732d95879cd1890ccdc9667979fc23d5a067d",
+  "n_input": 1320,
+  "n_raw_outcomes": 39600,
+  "n_eligible_simulated": 33491,
+  "nonresponse_fraction": 0.04454545454545455,
+  "seconds": 0.07556684501469135
+}

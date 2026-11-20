@@ -1,0 +1,14 @@
+{
+  "family": "pulse_power_ugm_no_sv",
+  "mouse": "DBM14",
+  "seed": 1,
+  "mouse_seed": 2253380374,
+  "reps": 30,
+  "fit_path": "/mnt/data/processed/ddm/fits_pulse_power_ugm/DBM14_L1U1V0Z0G1_pulse.pkl",
+  "fit_sha256": "dccbdfaf8cf412ee127d8a7499087cf49f9bc5a8a3cda3ea991247e3b4ab3ff4",
+  "n_input": 639,
+  "n_raw_outcomes": 19170,
+  "n_eligible_simulated": 15971,
+  "nonresponse_fraction": 0.10292123109024517,
+  "seconds": 0.05729301902465522
+}

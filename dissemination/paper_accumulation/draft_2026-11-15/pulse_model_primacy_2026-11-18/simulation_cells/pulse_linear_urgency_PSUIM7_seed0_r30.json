@@ -1,0 +1,14 @@
+{
+  "family": "pulse_linear_urgency",
+  "mouse": "PSUIM7",
+  "seed": 0,
+  "mouse_seed": 2793319757,
+  "reps": 30,
+  "fit_path": "/mnt/data/processed/ddm/fits_pulse_linear_integrators/PSUIM7_L0U1V1Z0G1_pulse.pkl",
+  "fit_sha256": "859bf377412a6e117ce64b17d6c3948beff537be8d193242593b85f81002d63b",
+  "n_input": 6521,
+  "n_raw_outcomes": 195630,
+  "n_eligible_simulated": 184736,
+  "nonresponse_fraction": 0.03491795736850176,
+  "seconds": 0.27148318907711655
+}

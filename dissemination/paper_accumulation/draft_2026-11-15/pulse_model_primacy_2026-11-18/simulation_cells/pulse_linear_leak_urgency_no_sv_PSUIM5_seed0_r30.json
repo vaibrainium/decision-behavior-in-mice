@@ -1,0 +1,14 @@
+{
+  "family": "pulse_linear_leak_urgency_no_sv",
+  "mouse": "PSUIM5",
+  "seed": 0,
+  "mouse_seed": 4262597772,
+  "reps": 30,
+  "fit_path": "/mnt/data/processed/ddm/fits_pulse_linear_integrators/PSUIM5_L1U1V0Z0G1_pulse.pkl",
+  "fit_sha256": "44a645942499c03be7eb278b9c6ecc2af3819dd4f5336e8729ff03fc3a3d99b1",
+  "n_input": 2060,
+  "n_raw_outcomes": 61800,
+  "n_eligible_simulated": 55595,
+  "nonresponse_fraction": 0.091084142394822,
+  "seconds": 0.13076473702676594
+}

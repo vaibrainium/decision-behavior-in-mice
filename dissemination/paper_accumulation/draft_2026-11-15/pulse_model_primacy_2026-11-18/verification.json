@@ -1,0 +1,23 @@
+{
+  "all_candidates": 22,
+  "independent_simulation_seeds": 2,
+  "repetitions_per_input_per_seed": 30,
+  "simulation_mouse_jobs": 440,
+  "readout_fits": 88,
+  "starts_per_fit": 10,
+  "all_starts_successful": true,
+  "all_readout_parameters_interior": true,
+  "all_observed_coherence_slopes_positive": true,
+  "replicate_scaling_invariance_checked": true,
+  "best_full_curve_all_available": "pulse_norm_ugm_no_sv",
+  "best_full_curve_matched6": "pulse_linear_primary",
+  "source_sha256": {
+    "/src/scripts/paper/plot_pulse_model_primacy.py": "b2757b1334b02f0551d93f3a776a0065de8341806431f0efd442a2417cfa8f9a",
+    "scripts/paper/pulse_model_primacy.py": "a3e0bdf66c421478acda6fe31bb690ff73ccf687ed796797f888471a09702a77",
+    "/mnt/data/processed/ddm/ddm_inputs_global_ucla_nofreeze.npz": "dd1563d743656317ac611a7b041b199e05c1852adb544e2f916c757b1c496cd5",
+    "/mnt/data/processed/ddm/pulse_timing_global.npz": "01d4d378e9cdf731cbcf5a427e8a4ad869416838473ab4d4af83a7d3eaae55f4",
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_time_ordinal_2026-11-18/coefficients.csv": "afa156509b8e6e91583643850bbf5ef659dff152c10bb54e4bccf453d67c0066",
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_time_ordinal_2026-11-18/influence_curves.csv": "40939cef042be2bd3a54a42d81cbe6f586f9dd3cd87b3e83fa0a0cc2c9ca4494"
+  },
+  "scope": "Fixed full-pulse-fit parameters; exploratory conditional readout ranking. Data and model response eligibility matched; model parameters not refitted. No biological significance tests on model simulations."
+}

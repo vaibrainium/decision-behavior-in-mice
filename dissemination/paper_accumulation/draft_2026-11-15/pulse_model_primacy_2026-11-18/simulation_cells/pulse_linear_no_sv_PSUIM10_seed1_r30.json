@@ -1,0 +1,14 @@
+{
+  "family": "pulse_linear_no_sv",
+  "mouse": "PSUIM10",
+  "seed": 1,
+  "mouse_seed": 831366555,
+  "reps": 30,
+  "fit_path": "/mnt/data/processed/ddm/fits_pulse_linear_integrators/PSUIM10_L0U0V0Z0G1_pulse.pkl",
+  "fit_sha256": "4e4803f3837ef9e01da883460eaee00b66916f58a633600dc4068d9444c25afa",
+  "n_input": 403,
+  "n_raw_outcomes": 12090,
+  "n_eligible_simulated": 10894,
+  "nonresponse_fraction": 0.00033085194375516956,
+  "seconds": 0.04126865300349891
+}

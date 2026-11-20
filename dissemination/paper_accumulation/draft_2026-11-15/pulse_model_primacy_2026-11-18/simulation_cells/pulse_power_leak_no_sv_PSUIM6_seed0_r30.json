@@ -1,0 +1,14 @@
+{
+  "family": "pulse_power_leak_no_sv",
+  "mouse": "PSUIM6",
+  "seed": 0,
+  "mouse_seed": 1743811213,
+  "reps": 30,
+  "fit_path": "/mnt/data/processed/ddm/fits_pulse_power_integrators/PSUIM6_L1U0V0Z0G1_pulse.pkl",
+  "fit_sha256": "5b19bb424dbf0ac04008c12562250ab6a737c3636259e86e264d7dbc0c8c80b5",
+  "n_input": 5511,
+  "n_raw_outcomes": 165330,
+  "n_eligible_simulated": 150257,
+  "nonresponse_fraction": 0.08311256275328131,
+  "seconds": 0.3647772220429033
+}

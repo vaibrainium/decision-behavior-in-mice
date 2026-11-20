@@ -1,0 +1,14 @@
+{
+  "family": "pulse_power_leak_urgency_no_sv",
+  "mouse": "DBM6",
+  "seed": 1,
+  "mouse_seed": 1715360799,
+  "reps": 30,
+  "fit_path": "/mnt/data/processed/ddm/fits_pulse_power_integrators/DBM6_L1U1V0Z0G1_pulse.pkl",
+  "fit_sha256": "4947921bf8ef43af4315f8b746de662a6c5743861e6b12a1f07dcd4c304133e2",
+  "n_input": 2509,
+  "n_raw_outcomes": 75270,
+  "n_eligible_simulated": 63216,
+  "nonresponse_fraction": 0.11769629334396174,
+  "seconds": 0.17617170396260917
+}

@@ -1,0 +1,14 @@
+{
+  "family": "pulse_power_urgency",
+  "mouse": "DBM15",
+  "seed": 0,
+  "mouse_seed": 818295872,
+  "reps": 30,
+  "fit_path": "/mnt/data/processed/ddm/fits_pulse_power_integrators/DBM15_L0U1V1Z0G1_pulse.pkl",
+  "fit_sha256": "efca1b11e2c57cb77c61acb595b010dfa2e6795aed1376db4dc6b4cf5e08979c",
+  "n_input": 851,
+  "n_raw_outcomes": 25530,
+  "n_eligible_simulated": 20563,
+  "nonresponse_fraction": 0.13607520564042302,
+  "seconds": 0.0485557810170576
+}

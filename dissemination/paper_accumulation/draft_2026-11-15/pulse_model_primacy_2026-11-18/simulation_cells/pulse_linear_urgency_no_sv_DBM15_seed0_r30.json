@@ -1,0 +1,14 @@
+{
+  "family": "pulse_linear_urgency_no_sv",
+  "mouse": "DBM15",
+  "seed": 0,
+  "mouse_seed": 818295872,
+  "reps": 30,
+  "fit_path": "/mnt/data/processed/ddm/fits_pulse_linear_integrators/DBM15_L0U1V0Z0G1_pulse.pkl",
+  "fit_sha256": "f3daebdfd3ee9d82129a5dd0d25d72e6ce0e36ac4005c46b8550cef2b4df9db4",
+  "n_input": 851,
+  "n_raw_outcomes": 25530,
+  "n_eligible_simulated": 23354,
+  "nonresponse_fraction": 0.012573443008225616,
+  "seconds": 0.047288743080571294
+}

@@ -1,0 +1,14 @@
+{
+  "family": "pulse_linear_leak_no_sv",
+  "mouse": "DBM6",
+  "seed": 0,
+  "mouse_seed": 288973961,
+  "reps": 30,
+  "fit_path": "/mnt/data/processed/ddm/fits_pulse_linear_integrators/DBM6_L1U0V0Z0G1_pulse.pkl",
+  "fit_sha256": "46cbfa9272deebade407bd1a7f41f787c0ff5dfffa0b6a288e8cd5b3c3196b49",
+  "n_input": 2509,
+  "n_raw_outcomes": 75270,
+  "n_eligible_simulated": 68462,
+  "nonresponse_fraction": 0.03665470971170453,
+  "seconds": 0.16304157103877515
+}

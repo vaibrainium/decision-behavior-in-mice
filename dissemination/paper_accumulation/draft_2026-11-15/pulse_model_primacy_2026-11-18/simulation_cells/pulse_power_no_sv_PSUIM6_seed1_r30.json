@@ -1,0 +1,14 @@
+{
+  "family": "pulse_power_no_sv",
+  "mouse": "PSUIM6",
+  "seed": 1,
+  "mouse_seed": 284639771,
+  "reps": 30,
+  "fit_path": "/mnt/data/processed/ddm/fits_pulse_power_integrators/PSUIM6_L0U0V0Z0G1_pulse.pkl",
+  "fit_sha256": "ef64cc96e56fad639097db3d194c6a7776e239f19b326f674ecab07143207e2e",
+  "n_input": 5511,
+  "n_raw_outcomes": 165330,
+  "n_eligible_simulated": 150353,
+  "nonresponse_fraction": 0.08009435674106333,
+  "seconds": 0.22499755397439003
+}
