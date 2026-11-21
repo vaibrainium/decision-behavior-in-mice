@@ -182,8 +182,38 @@ def pulse_w_main():
     print(f"\n{len(df)} tasks -> {out}")
 
 
+# Transient channel (plans/2026-11-20-transient-channel.md): norm UGM without sv plus fe_h / fe_tau_h
+# (--front_end norm_transient), pulse-only splits, warm-started from the norm UGM no-sv fits so every fit starts at the
+# base model (fe_h = 0). New table and its own autosubmit state. Runtime: the same mouse, variant and split of
+# fits_pulse_norm_ugm times TRANSIENT_SLOWDOWN (assumed for two extra parameters; no finished fits to measure; the
+# timeout retry and the per-generation checkpoint cover it); 16 h only where that fit took more than LONG_HOURS.
+TRANSIENT_SLOWDOWN = 1.5
+
+
+def transient_main():
+    inputs = load_inputs(DDM / "ddm_inputs_global_ucla_nofreeze.npz")
+    prev = fit_hours("fits_pulse_norm_ugm").set_index(["mouse", "variant", "split"]).hours
+    out_dir, variants = "ddm/fits_pulse_norm_transient_ugm", ["L1U1V0Z0G1"]
+    args = (f"{PJ} --ugm --front_end norm_transient --warm_start_from ddm/fits_pulse_norm_ugm --variants {' '.join(variants)} "
+            f"--splits {' '.join(PULSE_SPLITS)} --out_dir {out_dir}")
+    rows = []
+    for i, job in enumerate(build_grid(inputs, variants, PULSE_SPLITS)):
+        base = prev[(job["mouse"], job["variant"], job["split"])]
+        rows.append({"batch": "TR_norm_ugm", "priority": 0, "index": i, **job, "out": f"{out_dir}/{job['mouse']}_{job['variant']}_{job['split']}.pkl",
+                     "est_hours": round(base * TRANSIENT_SLOWDOWN, 2),
+                     "time_hours": FIRST_MAX_HOURS if base > LONG_HOURS else limit(base * TRANSIENT_SLOWDOWN), "args": args})
+    df = pd.DataFrame(rows)
+    out = Path(__file__).with_name("tasks_2026-11-21_transient.csv")
+    assert not out.exists(), f"{out} exists; not overwriting"
+    df.to_csv(out, index=False)
+    print(df.groupby(["batch", "time_hours"]).size().to_string())
+    print(f"\n{len(df)} tasks -> {out}")
+
+
 def main():
     import sys
+    if "--transient" in sys.argv:
+        return transient_main()
     if "--ugm" in sys.argv:
         return ugm_main()
     if "--pulse_w" in sys.argv:
