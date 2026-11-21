@@ -19,7 +19,7 @@ Signed high-pass term added after the existing front end: x'' = x' + fe_h · (x'
 - Pulse-only fits (pcv0–4 + pulse) are the comparison set, as for the other pulse-only families.
 
 ## Steps
-- [ ] 1. Implement fe_h / fe_tau_h in front_end_numpy and front_end_torch (src/ddm/simulator.py). Add a fit-script option (scripts/ddm/fit_mouse_ddm.py `--front_end norm_transient`) and the make_model mapping. Unit checks: fe_h = 0 reproduces norm exactly; numpy == torch; a step input gives the expected overshoot.
+- [x] 1. Implement fe_h / fe_tau_h in front_end_numpy and front_end_torch (src/ddm/simulator.py). Add a fit-script option (scripts/ddm/fit_mouse_ddm.py `--front_end norm_transient`) and the make_model mapping. Unit checks: fe_h = 0 reproduces norm exactly; numpy == torch; a step input gives the expected overshoot.
 - [ ] 2. Pre-fit profile (CPU, minutes): PSUIM6, PSUIM7 and two other mice. Held-out pcv NLL of the norm UGM no sv fits with fe_h on a grid (0, 1, 3, 10) × fe_tau_h (0.05, 0.15), other parameters fixed. If no improvement anywhere, report that and ask whether fitting is still worth it.
 - [ ] 3. Write the criteria before fitting: tiers A and A2 unchanged. Pair: transient vs pulse_norm_ugm_no_sv. Rule 4: fe_h > 0 in the full fit and ≥ 3/5 folds (A2: fold median). Rule 5: control-trial choice excess of the full fit. Commit.
 - [ ] 4. New task table (new file + state; committed tables are never changed): 10 mice × (pcv0–4, pulse) = 60 fits; time limits from the norm UGM no sv fit times (16 h only where those took > 4 h). Author submits on Hyak.
@@ -27,8 +27,24 @@ Signed high-pass term added after the existing front end: x'' = x' + fe_h · (x'
 - [ ] 6. Pick the winner by the decision table. Update the Figure 6 model-vs-data panels for the winner (psychometric, RT quantiles, pulse effect by time × coherence).
 - [ ] 7. Verify: fe_h = 0 reproduction check passes in scoring; report written.
 
+## Criteria (written 2026-11-21, before the profile results and before any fit)
+Tiers A (confirmatory) and A2 (exploratory) exactly as in plans/2026-11-19-choice-misfit-followup.md, applied to the
+pulse-only fits as for the PW families (scripts/paper/score_pw_criteria.py machinery):
+- Pair: pulse_norm_transient_no_sv (fits_pulse_norm_transient_ugm, L1U1V0Z0G1) vs pulse_norm_ugm_no_sv (fits_pulse_norm_ugm, L1U1V0Z0G1).
+- ΔNLL: held-out pcv0-4 pulse-trial NLL, nbins 9, summed over folds, 5 seeds (12345, 23456, 34567, 45678, 56789), CPU.
+- Rules 1-3 unchanged (rule 3: PSUIM6 and PSUIM7 improve and |resid_new| <= 0.5 |resid_old|; A2: 0.75).
+- Rule 4 (mechanism): fe_h > 0.05 in the full "pulse" fit and in >= 3 of 5 pcv folds (A2: fold median > 0.05). The
+  threshold 0.05 stops a value pinned at the lower bound 0 from counting (cf. the w = 1.000 tolerance artefact).
+- Rule 5 (guardrail): control-trial choice excess of the full "pulse" fit scored on control trials, new vs constant;
+  fail if worse by more than the constant's seed range (A2: flag at 2x).
+- Decision: A passes -> transient model replaces norm UGM no sv as the best pulse model. Only A2 passes -> report as
+  suggestive, norm UGM no sv stays the best model. Neither -> norm UGM no sv is the best model; the early low-coherence
+  pulse residual is reported as a limitation.
+- The pre-fit profile (step 2) only decides whether fitting is worth it; it is not evidence for the criteria.
+
 ## Out of scope
 Widening the fe_beta bound alone; joint (control + pulse) refits; other transient forms.
 
 ## Log
+- 2026-11-21: Author approved the plan ("ok"); the fe_beta-widening family not added. Step 1 done: fe_h/fe_tau_h in front_end_numpy/torch, `--front_end norm_transient`, and fe_h switched off in evidence_gain's second pass. Checks: fe_h = 0 identical to norm (array_equal); numpy == torch (max diff 0.0 at float32); unit step gives 1 + h(1-k) at onset, decaying with tau_h (matches closed form). Fits will warm-start from fits_pulse_norm_ugm, so each starts at the base model.
 - 2026-11-20: Plan written. PSUIM7 fe_beta at bound noted; widening it is a cheaper partial test and can be added as a second family if the author wants.
