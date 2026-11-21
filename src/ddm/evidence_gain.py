@@ -52,5 +52,5 @@ class EvidenceGainSimulator(DriftDiffusionSimulator):
             if front_end_active(params):mapped=front_end_numpy(mapped,params)
             mapped=mapped*gain[:,None]
         # The front end has already acted before gain; never apply it twice.
-        return super().simulate_trials(mapped,{**params,'fe_gamma':1.,'fe_beta':0.},
+        return super().simulate_trials(mapped,{**params,'fe_gamma':1.,'fe_beta':0.,'fe_h':0.},
             unit_noise,unit_sv,unit_sz,labels)

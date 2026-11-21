@@ -94,6 +94,8 @@ GAIN_DECAY = ("gain_decay", (-0.5, 3.0), 0.0)
 FRONT_ENDS = {
     "power": [("fe_gamma", (0.3, 3.0), 1.0)],  # x' = sign(x)|x|^gamma
     "norm": [("fe_beta", (0.0, 20.0), 0.0), ("fe_tau", (0.02, 1.0), 0.1)],  # x' = x / (1 + beta * lowpass_tau(|x|))
+    # norm plus a signed transient channel (plan 2026-11-20-transient-channel): x'' = x' + h * (x' - lowpass_tau_h(x'))
+    "norm_transient": [("fe_beta", (0.0, 20.0), 0.0), ("fe_tau", (0.02, 1.0), 0.1), ("fe_h", (0.0, 20.0), 0.0), ("fe_tau_h", (0.02, 0.5), 0.1)],
 }
 # Signed leak (plan step 6.5): leak_rate < 0 is a self-exciting accumulator, which amplifies early evidence (primacy).
 # Lower bound -1/s limits the growth to e^5 ~ 148x over the 5 s stimulus.
@@ -458,7 +460,7 @@ if __name__ == "__main__":
     parser.add_argument("--signed_leak", action="store_true", help="allow leak_rate down to -1/s (self-exciting accumulator) in variants with leak (plan step 6.5)")
     parser.add_argument("--fixed_guess_bias", action="store_true", help="fix guess_bias at 0.5 (guesses at chance; parsimony rule 3)")
     parser.add_argument("--leak_bounds", type=float, nargs=2, metavar=("LO", "HI"), help="leak_rate bounds (/s) in variants with leak, e.g. 20 200 for the extrema-detection model (primacy plan, amendment 4)")
-    parser.add_argument("--front_end", choices=list(FRONT_ENDS), help="visual front end on the drift input (primacy plan, amendment 7): power or norm")
+    parser.add_argument("--front_end", choices=list(FRONT_ENDS), help="visual front end on the drift input (primacy plan, amendment 7): power, norm, or norm_transient (norm + transient channel)")
     parser.add_argument("--responded_only", action="store_true", help="drop trials without a response by 5 s; likelihood conditional on a response")
     parser.add_argument("--extrema_samples", action="store_true", help="discrete-sample extrema detection (amendment 10); use with a variant without leak or urgency")
     parser.add_argument("--drift_gain_max", type=float, help="upper bound of drift_gain (default 20); amendment 5: 200 for the extrema-detection model if its fits reach 20")

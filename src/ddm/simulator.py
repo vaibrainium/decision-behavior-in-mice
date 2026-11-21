@@ -98,14 +98,17 @@ def normalized_urgency(params: dict) -> dict:
 
 def front_end_active(params: dict) -> bool:
     """True if a visual front-end transform (primacy plan, amendment 7) changes the input."""
-    return float(params.get("fe_gamma", 1.0)) != 1.0 or float(params.get("fe_beta", 0.0)) != 0.0
+    return (float(params.get("fe_gamma", 1.0)) != 1.0 or float(params.get("fe_beta", 0.0)) != 0.0
+            or float(params.get("fe_h", 0.0)) != 0.0)
 
 
 def front_end_numpy(stim: np.ndarray, params: dict) -> np.ndarray:
     """Front end applied to the drift input x(t) before accumulation (amendment 7); identity with default parameters.
     Power law: x' = sign(x)|x|^fe_gamma. Temporal divisive normalization: x'(t) = x(t) / (1 + fe_beta * p(t)), where
     p is a causal exponential low-pass of |x| with time constant fe_tau (s): p[t] = (1 - k) p[t-1] + k |x[t]|,
-    k = dt / fe_tau, p starting at 0. Returns a new array; NaN (no stimulus) stays NaN."""
+    k = dt / fe_tau, p starting at 0. Transient channel (plan 2026-11-20-transient-channel), applied last:
+    x''(t) = x'(t) + fe_h * (x'(t) - q(t)), q the same causal low-pass of the signed x' with time constant fe_tau_h.
+    Returns a new array; NaN (no stimulus) stays NaN."""
     gamma, beta = float(params.get("fe_gamma", 1.0)), float(params.get("fe_beta", 0.0))
     x = np.asarray(stim, dtype=np.float32)
     if gamma != 1.0:
@@ -116,6 +119,13 @@ def front_end_numpy(stim: np.ndarray, params: dict) -> np.ndarray:
         k = min(1.0, float(params["dt"]) / float(params["fe_tau"]))
         pool = lfilter([k], [1.0, k - 1.0], np.nan_to_num(np.abs(x)), axis=1)
         x = (x / (1.0 + beta * pool)).astype(np.float32)
+    h = float(params.get("fe_h", 0.0))
+    if h != 0.0:
+        from scipy.signal import lfilter
+
+        k = min(1.0, float(params["dt"]) / float(params["fe_tau_h"]))
+        slow = lfilter([k], [1.0, k - 1.0], np.nan_to_num(x).astype(np.float64), axis=1)
+        x = (x + h * (x - slow)).astype(np.float32)
     return x
 
 
@@ -134,6 +144,15 @@ def front_end_torch(stim: torch.Tensor, params: dict) -> torch.Tensor:
         a = torch.nan_to_num(torch.abs(x)).to(torch.float64)
         pool = torch.fft.irfft(torch.fft.rfft(a, n=2 * n) * torch.fft.rfft(kernel, n=2 * n), n=2 * n)[:, :n]
         x = (x / (1.0 + beta * pool)).to(torch.float32)
+    h = float(params.get("fe_h", 0.0))
+    if h != 0.0:
+        n = x.shape[1]
+        k = min(1.0, float(params["dt"]) / float(params["fe_tau_h"]))
+        lags = torch.arange(n, device=x.device, dtype=torch.float64)
+        kernel = k * (1.0 - k) ** lags
+        a = torch.nan_to_num(x).to(torch.float64)
+        slow = torch.fft.irfft(torch.fft.rfft(a, n=2 * n) * torch.fft.rfft(kernel, n=2 * n), n=2 * n)[:, :n]
+        x = (x + h * (x - slow)).to(torch.float32)
     return x
 
 
