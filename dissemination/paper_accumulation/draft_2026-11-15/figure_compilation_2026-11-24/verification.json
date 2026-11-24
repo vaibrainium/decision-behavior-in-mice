@@ -1,0 +1,26 @@
+{
+  "checks": {
+    "six_pages_each": true,
+    "valid_pdf_markers": true,
+    "hashes_match": true,
+    "common_page_sources_identical": true,
+    "only_figure3_key_differs": true,
+    "all_source_dpi_near_300": true
+  },
+  "packets": {
+    "LL_BIC": {
+      "bytes": 1798917,
+      "header": "%PDF-1.4",
+      "ends_eof": true,
+      "page_objects": 6,
+      "sha256_matches_manifest": true
+    },
+    "bits_BIC": {
+      "bytes": 1800901,
+      "header": "%PDF-1.4",
+      "ends_eof": true,
+      "page_objects": 6,
+      "sha256_matches_manifest": true
+    }
+  }
+}

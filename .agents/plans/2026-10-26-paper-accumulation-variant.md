@@ -44,12 +44,21 @@ Same analyses as the first version; numbers and verified sources copied, new row
 
 - [ ] G. Next phase: write Introduction, Discussion, Summary and final title from the figure-led argument; incorporate supporting analyses and author facts as appropriate.
 
+### Current-figure review packet — 2026-11-24
+User requests a compiled view of the current figures. Build two non-submission review PDFs from the existing 300-dpi exports: Figures 1, 2, 4 are the current approved/checkpointed artwork; Figure 3 is compiled once with each retained comparison alternative; Figures 5 and 6 remain explicitly provisional. Do not rerun analyses or touch the unrelated transient-channel output.
+
+- [x] R1. Add a reproducible, no-overwrite packet compiler and record exact source files/statuses.
+- [x] R2. Compile both Figure 3 variants into fresh six-page review PDFs.
+- [x] R3. Verify page count, raster dimensions, source/output hashes and readable rendering; document the review-only raster limitation.
+- [x] R4. Write a short report and update STATUS with links to the compiled packets.
+
 The figures/captions/Methods/Results packet is complete; the overall manuscript plan remains active for the next phase.
 
 ## Out of scope
 Changes to the first version's files.
 
 ## Log
+- 2026-11-24: Compiled two six-page current-figure review PDFs in `figure_compilation_2026-11-24/`, differing only in the retained Figure 3 comparison alternative (LL+BIC versus bits+BIC). Figures 5/6 remain explicitly provisional. Source exports were not regenerated; all seven 300-dpi pages were visually inspected, and PDF page markers, hashes, ordering and EOF integrity passed. These raster review packets are not submission masters; use the source PDF/SVG artwork for final assembly. Report: `../reports/2026-11-24-current-figure-compilation.md`.
 - 2026-10-26: started at author request ("start working on this paper in a separate folder").
 - 2026-10-26: G0 approved; amendment 8 run, verdict 'neither'; whether to mention it goes to G1. Next: S1 architect.
 

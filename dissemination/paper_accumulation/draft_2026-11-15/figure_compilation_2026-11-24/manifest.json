@@ -1,0 +1,139 @@
+{
+  "purpose": "review-only current-figure compilation",
+  "date": "2026-11-24",
+  "journal_target": "Neuron; submission requirements not asserted by this compilation",
+  "rendering": "300-dpi raster PDF compiled from existing PNG exports; retain source PDF/SVG for submission",
+  "statuses": {
+    "figure1": "accepted checkpoint",
+    "figure2": "accepted model-introduction figure",
+    "figure3": "working order approved; layout provisional; comparison alternative pending",
+    "figure4": "author approved final artwork",
+    "figure5": "provisional opening preview; author review pending",
+    "figure6": "tentative fit preview; author review pending"
+  },
+  "figure3_variants": {
+    "LL_BIC": "Figure 3 panel B uses held-out log likelihood and BIC",
+    "bits_BIC": "Figure 3 panel B uses held-out bits/trial and BIC"
+  },
+  "sources": {
+    "figure1": {
+      "path": "figure1_revision_2026-11-17_v6/figure1.png",
+      "sha256": "f4f0776a6964140bbf5d60a5e87a51d76b6495c98b1ef8f2e6657a00892c54f5",
+      "pixels": [
+        2125,
+        1559
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "mode": "RGBA"
+    },
+    "figure2": {
+      "path": "figure2_models_2026-11-17/figure2.png",
+      "sha256": "20276d4d5afa90145050ba338a84bc9a3ec9c9ff1de3a8494a04f0322802d6d6",
+      "pixels": [
+        2125,
+        1629
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "mode": "RGBA"
+    },
+    "figure3_ll_bic": {
+      "path": "figure3_story_order_2026-11-18/figure3_A1.png",
+      "sha256": "5510fef8c1762db3c75503d1233589fd752e4f16eb3a378c911882cb3893ddb9",
+      "pixels": [
+        3564,
+        2290
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "mode": "RGB"
+    },
+    "figure3_bits_bic": {
+      "path": "figure3_story_order_2026-11-18/figure3_A2.png",
+      "sha256": "3ecf65ecc4c9763477848af314de9116e477f1796180a3ccc0205a589d3cecaf",
+      "pixels": [
+        3564,
+        2290
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "mode": "RGB"
+    },
+    "figure4": {
+      "path": "figure4_final_2026-11-18/figure4.png",
+      "sha256": "d5b1f50742b6214ed57de4fcd85a9ed6ae6529be708428e4501cafef9f05fdcb",
+      "pixels": [
+        2952,
+        1948
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "mode": "RGBA"
+    },
+    "figure5": {
+      "path": "figure5_opening_2026-11-18_v2/figure5_opening.png",
+      "sha256": "027e0d19400cc73e37205e531294093e50a442d4c7154b73851fce77ef65583c",
+      "pixels": [
+        2598,
+        2421
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "mode": "RGBA"
+    },
+    "figure6": {
+      "path": "figure6_pulse_fits_2026-11-18/figure6_comparison.png",
+      "sha256": "dcd41bae6fd63a9a774bb02aa90fa56a45569153e7d649868ab82a55895ce5ab",
+      "pixels": [
+        2598,
+        1712
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ],
+      "mode": "RGBA"
+    }
+  },
+  "outputs": {
+    "LL_BIC": {
+      "path": "main_figures_review_LL_BIC.pdf",
+      "sha256": "4632f868aad4e4da2bcc1833f7f356fedcce484ceeeb97e6001eddd1d9e5e485",
+      "page_count": 6,
+      "page_sources": [
+        "figure1",
+        "figure2",
+        "figure3_ll_bic",
+        "figure4",
+        "figure5",
+        "figure6"
+      ]
+    },
+    "bits_BIC": {
+      "path": "main_figures_review_bits_BIC.pdf",
+      "sha256": "2367f29fc4280645373e15bb466ed1bbbecb6caf0520b25fb8048ccac9a2e76a",
+      "page_count": 6,
+      "page_sources": [
+        "figure1",
+        "figure2",
+        "figure3_bits_bic",
+        "figure4",
+        "figure5",
+        "figure6"
+      ]
+    }
+  }
+}
