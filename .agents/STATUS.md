@@ -1,8 +1,8 @@
 # Status
-Last updated: 2026-11-24 by Claude
+Last updated: 2026-11-24 by Codex
 
 ## Current focus
-Informed-guess family (Molano-Mazón action initiation): stages 1-2 done, author approved stage 3; table committed, awaiting Hyak submission. Lit follow-ups 2026-11-24 (Claude): spine Brunton citation narrowed (D011). Fig 4D exponential calibrated: not a leak estimate. Report reports/2026-11-24-lit-followups-results.md; informed-guess profile and recovery in reports/2026-11-24-informed-guess-profile.md.
+Informed-guess family (Molano-Mazón action initiation): stages 1-2 done, author approved stage 3; 60 fits running on Hyak. Lit follow-ups 2026-11-24 (Claude): spine Brunton citation narrowed (D011). Fig 4D exponential calibrated: not a leak estimate. Report reports/2026-11-24-lit-followups-results.md; informed-guess profile and recovery in reports/2026-11-24-informed-guess-profile.md.
 
 Current Figures 1–6 compiled into two six-page review packets at `dissemination/paper_accumulation/draft_2026-11-15/figure_compilation_2026-11-24/`. Packets differ only in Figure 3 LL+BIC versus bits+BIC; Figures 5/6 remain provisional. Report: `reports/2026-11-24-current-figure-compilation.md`.
 
@@ -126,7 +126,7 @@ Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gat
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
-- plans/2026-11-24-informed-guess-family.md : informed fast guesses; stages 1-2 done, criteria written, table tasks_2026-11-24_informed.csv committed; next: author submits on Hyak, then score
+- plans/2026-11-24-informed-guess-family.md : informed fast guesses; stages 1-2 done, criteria written, 60 fits submitted on Hyak 2026-11-24 (jobs 43513803-43513810); next: sync fits, then score
 - plans/2026-11-19-choice-misfit-followup.md : choice misfit follow-up; PW and pulse-weight fits scored 2026-11-20 (neither fixes the PSUIM6/7 residual); next: author OK on rig check, then 4i
 - plans/2026-10-29-control-paper.md : third paper (control trials only, Stine 2020 framing) in dissemination/paper_control/; G1 approved 2026-10-30 (D004), spine locked, stage S2; paired recovery 42579825 analysed: E separated (provisional, ES fits not yet submitted)
 - plans/2026-10-28-full-recovery-matrix.md : ON HOLD (author); recovery rerun on fixed CPU datasets if it becomes necessary
