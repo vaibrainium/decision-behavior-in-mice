@@ -1,0 +1,42 @@
+{
+  "data_tau_s": 1.1119383377723342,
+  "data_tau_interval_s": [
+    0.45057015675961337,
+    3.7254887142659414
+  ],
+  "leaks_per_s": [
+    0.0,
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0
+  ],
+  "bases": [
+    "no_sv",
+    "primary"
+  ],
+  "seeds": [
+    0,
+    1
+  ],
+  "reps": 30,
+  "time_coordinates_s": {
+    "1": 0.4534604377255519,
+    "2": 0.7403061418815167,
+    "3": 1.0399574781461876,
+    "4": 1.341669190665387,
+    "5": 1.7767371902643097,
+    "6": 3.260115073487141
+  },
+  "commit": "886d3d1a7f80857c3d165cb076ea3e368303a2a2",
+  "sources_sha256": {
+    "scripts/paper/leak_readout_calibration.py": "0b903d1173e72cc3a16b4d602d4ad2ba521e92c29c02eb466c7bdec9ad1e2ce9",
+    "scripts/ddm/pulse_dynamics_bridge.py": "0f778a44b72c7bf09ac3958657d662719abbfb77294382cb8df1fc61182efacf",
+    "scripts/paper/preview_pulse_exponential.py": "3749c9fd909ac4e5c38bd5930d4597989a40caa2c065f6115cd5881c0a4755f9",
+    "src/ddm/simulator.py": "c0f0628f94db0db20ff84f68b70f3379d6829d7de5c90e1ed5e47710ca630fcf",
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_exponential_preview_2026-11-18/observations.csv": "276520cd906bfc03cc03a05c79f4a33a34908feede60e2d54e40d5ab84e6474f"
+  },
+  "scope": "Fixed fitted parameters except leak_rate; per-rep spread is simulation sampling at data size, not mouse resampling or parameter uncertainty."
+}
