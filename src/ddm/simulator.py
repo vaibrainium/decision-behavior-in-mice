@@ -31,19 +31,29 @@ def _simulate_ddm_trials_numba(
     leak_rate: float,
     time_constant: float,
     gain_decay: float,
-    sample_threshold: float = 0.0,
-) -> tuple[np.ndarray, np.ndarray]:
+    sample_threshold: float,
+    read_step: np.ndarray,  # (n_trials,) int64; >= 0: report the DV side at this step (informed guesses), -1: none
+) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     """sample_threshold > 0: extrema detection (Stine et al. 2020): each step's evidence sample (drift + noise) is
-    compared with +-sample_threshold and nothing is accumulated; a, z, leak and urgency are then unused."""
+    compared with +-sample_threshold and nothing is accumulated; a, z, leak and urgency are then unused.
+    read: for trials with read_step >= 0 (plan 2026-11-24-informed-guess-family), 1 if the decision variable is above
+    the bound midpoint a/2 at that step (step 0: the starting point), else 0; the committed choice if a bound was
+    reached at or before that step; the last decision variable if the input ends first. NaN where read_step < 0.
+    rt and choice do not depend on read_step."""
     n_trials, n_timepoints = stimulus.shape
     rt = np.full(n_trials, np.nan, dtype=np.float32)
     choice = np.full(n_trials, np.nan, dtype=np.float32)
+    read = np.full(n_trials, np.nan, dtype=np.float32)
 
     for trial in prange(n_trials):
         z_trial = min(0.99, max(0.01, z + z_offsets[trial]))
         starting_point = z_trial * a
         evidence = starting_point
         trial_drift_offset = drift_offset + sv_draws[trial]
+        rs = read_step[trial]
+        decision_var = evidence
+        if rs == 0:
+            read[trial] = 1.0 if decision_var > a / 2 else 0.0
 
         for t in range(1, n_timepoints):
             if np.isnan(stimulus[trial, t]):
@@ -79,8 +89,16 @@ def _simulate_ddm_trials_numba(
                 rt[trial] = t * dt + ndt
                 choice[trial] = 0.0
                 break
+            if t == rs:
+                read[trial] = 1.0 if decision_var > a / 2 else 0.0
 
-    return rt, choice
+        if rs >= 0 and np.isnan(read[trial]):
+            if not np.isnan(choice[trial]):
+                read[trial] = choice[trial]
+            else:
+                read[trial] = 1.0 if decision_var > a / 2 else 0.0
+
+    return rt, choice, read
 
 
 def normalized_urgency(params: dict) -> dict:
@@ -166,7 +184,8 @@ class _NumbaSimulator:
         unit_noise: np.ndarray | None = None,
         unit_sv: np.ndarray | None = None,
         unit_sz: np.ndarray | None = None,
-    ) -> tuple[np.ndarray, np.ndarray]:
+        read_step: np.ndarray | None = None,
+    ) -> tuple[np.ndarray, np.ndarray] | tuple[np.ndarray, np.ndarray, np.ndarray]:
         if isinstance(stimulus, tuple):
             signal, *channels = stimulus
             assert len(channels) <= len(CHANNEL_WEIGHTS), f"{len(channels)} extra channels; weights for {len(CHANNEL_WEIGHTS)}"
@@ -174,7 +193,8 @@ class _NumbaSimulator:
             for name, channel in zip(CHANNEL_WEIGHTS, channels):
                 stimulus = stimulus + float(params.get(name, 1.0)) * np.asarray(channel, dtype=np.float32)
         if stimulus.size == 0:
-            return np.array([], dtype=np.float32), np.array([], dtype=np.float32)
+            empty = np.array([], dtype=np.float32)
+            return (empty, empty) if read_step is None else (empty, empty, empty)
         stim = np.asarray(stimulus, dtype=np.float32)
         if front_end_active(params):
             stim = front_end_numpy(stim, params)
@@ -196,7 +216,8 @@ class _NumbaSimulator:
         else:
             z_offsets = np.zeros(n_trials, dtype=np.float32)
 
-        return _simulate_ddm_trials_numba(
+        steps = np.full(n_trials, -1, dtype=np.int64) if read_step is None else np.asarray(read_step, dtype=np.int64)
+        rt, choice, read = _simulate_ddm_trials_numba(
             stim,
             noise,
             sv_draws,
@@ -211,7 +232,9 @@ class _NumbaSimulator:
             params["time_constant"],
             float(params.get("gain_decay", 0.0)),
             float(params.get("extrema_bound", 0.0)) * noise_std,
+            steps,
         )
+        return (rt, choice) if read_step is None else (rt, choice, read)
 
 
 class _TorchSimulator:
@@ -251,7 +274,8 @@ class _TorchSimulator:
         unit_noise: np.ndarray | None = None,
         unit_sv: np.ndarray | None = None,
         unit_sz: np.ndarray | None = None,
-    ) -> tuple[np.ndarray, np.ndarray]:
+        read_step: np.ndarray | None = None,
+    ) -> tuple[np.ndarray, np.ndarray] | tuple[np.ndarray, np.ndarray, np.ndarray]:
         dev = self.device
         if isinstance(stimulus, tuple):
             # (signal, channel, ...): drift input = signal + sum of CHANNEL_WEIGHTS[k] * channel k
@@ -266,7 +290,8 @@ class _TorchSimulator:
             stim = self._to_device(stimulus, "stimulus")
 
         if stim.numel() == 0:
-            return np.array([], dtype=np.float32), np.array([], dtype=np.float32)
+            empty = np.array([], dtype=np.float32)
+            return (empty, empty) if read_step is None else (empty, empty, empty)
         if front_end_active(params):
             stim = front_end_torch(stim, params)
 
@@ -381,7 +406,25 @@ class _TorchSimulator:
             rt[has_crossed] = (first_idx.float() + 1) * dt + ndt
             choice[has_crossed] = upper[has_crossed].gather(1, first_idx.unsqueeze(1)).squeeze(1).float()
 
-        return rt.cpu().numpy(), choice.cpu().numpy()
+        if read_step is None:
+            return rt.cpu().numpy(), choice.cpu().numpy()
+        # Informed guesses (same definition as the numba kernel): DV side vs a/2 at step read_step (column
+        # read_step - 1; step 0 = starting point), the committed choice if a bound was reached at or before it, the last
+        # valid DV if the input ends first. Extrema detection has no DV; not supported.
+        if sample_threshold > 0.0:
+            raise ValueError("informed guesses need an accumulator (extrema_bound must be 0)")
+        steps = torch.as_tensor(np.asarray(read_step, dtype=np.int64), device=dev)
+        n_valid = valid.sum(dim=1)  # valid is a prefix: the input is NaN only after it ends
+        col = torch.minimum(steps - 1, n_valid - 1).clamp(min=0)
+        dv_at = decision_var.expand(n_trials, T).gather(1, col.unsqueeze(1)).squeeze(1)
+        sp_vec = torch.as_tensor(sp, device=dev, dtype=torch.float32).reshape(-1).expand(n_trials)
+        dv_at = torch.where((steps == 0) | (n_valid == 0), sp_vec, dv_at)
+        read = (dv_at > a / 2).float()
+        crossed_idx = torch.where(has_crossed, crossed.int().argmax(dim=1), torch.full_like(steps, T))
+        committed = has_crossed & (crossed_idx + 1 <= steps)
+        read = torch.where(committed, choice, read)
+        read = torch.where(steps >= 0, read, torch.full_like(read, float("nan")))
+        return rt.cpu().numpy(), choice.cpu().numpy(), read.cpu().numpy()
 
 
 # ---------------------------------------------------------------------------
@@ -451,20 +494,24 @@ class DriftDiffusionSimulator:
         unit_sv: np.ndarray | None = None,
         unit_sz: np.ndarray | None = None,
         labels: np.ndarray | None = None,
+        read_step: np.ndarray | None = None,
     ) -> pd.DataFrame:
-        """Simulate one decision per trial.
+        """Simulate one decision per trial. With `read_step` (informed guesses), adds column read_choice.
 
         `stimulus` is (n_trials, n_timepoints), or a (signal, noise) tuple of such arrays whose drift input is
         signal + params["noise_weight"] * noise; further channels take the later CHANNEL_WEIGHTS. `labels` gives each trial's condition (e.g. coherence) for the
         likelihood; without it the first stimulus sample is used, which is only right for a constant stimulus.
         """
         params = normalized_urgency(params)
-        rt, choice = self._backend.simulate_trials(stimulus, params, unit_noise=unit_noise, unit_sv=unit_sv, unit_sz=unit_sz)
+        out = self._backend.simulate_trials(stimulus, params, unit_noise=unit_noise, unit_sv=unit_sv, unit_sz=unit_sz,
+                                            **({} if read_step is None else {"read_step": read_step}))
+        rt, choice = out[0], out[1]
         if labels is None:
             if isinstance(stimulus, tuple):
                 raise ValueError("labels are required for a two-channel stimulus")
             labels = stimulus[:, 0]
-        return pd.DataFrame({"signed_coherence": labels, "rt": rt, "choice": choice})
+        frame = pd.DataFrame({"signed_coherence": labels, "rt": rt, "choice": choice})
+        return frame if read_step is None else frame.assign(read_choice=out[2])
 
     def clear_cache(self) -> None:
         if hasattr(self._backend, "clear_cache"):
