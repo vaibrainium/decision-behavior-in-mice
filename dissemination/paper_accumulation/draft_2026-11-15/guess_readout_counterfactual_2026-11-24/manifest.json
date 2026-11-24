@@ -1,0 +1,146 @@
+{
+  "families": [
+    "pulse_norm_ugm_no_sv",
+    "no_sv",
+    "primary"
+  ],
+  "versions": [
+    "coin",
+    "readout_mid",
+    "readout_start"
+  ],
+  "seeds": [
+    0,
+    1
+  ],
+  "reps": 30,
+  "fits": {
+    "pulse_norm_ugm_no_sv|DBM12": {
+      "path": "/mnt/data/processed/ddm/fits_pulse_norm_ugm/DBM12_L1U1V0Z0G1_pulse.pkl",
+      "p_guess": 0.4309923294323683
+    },
+    "pulse_norm_ugm_no_sv|DBM13": {
+      "path": "/mnt/data/processed/ddm/fits_pulse_norm_ugm/DBM13_L1U1V0Z0G1_pulse.pkl",
+      "p_guess": 0.297309050427746
+    },
+    "pulse_norm_ugm_no_sv|DBM14": {
+      "path": "/mnt/data/processed/ddm/fits_pulse_norm_ugm/DBM14_L1U1V0Z0G1_pulse.pkl",
+      "p_guess": 0.4714618796604949
+    },
+    "pulse_norm_ugm_no_sv|DBM15": {
+      "path": "/mnt/data/processed/ddm/fits_pulse_norm_ugm/DBM15_L1U1V0Z0G1_pulse.pkl",
+      "p_guess": 0.07426709166030371
+    },
+    "pulse_norm_ugm_no_sv|DBM5": {
+      "path": "/mnt/data/processed/ddm/fits_pulse_norm_ugm/DBM5_L1U1V0Z0G1_pulse.pkl",
+      "p_guess": 0.33286207918909283
+    },
+    "pulse_norm_ugm_no_sv|DBM6": {
+      "path": "/mnt/data/processed/ddm/fits_pulse_norm_ugm/DBM6_L1U1V0Z0G1_pulse.pkl",
+      "p_guess": 0.12932984067567227
+    },
+    "pulse_norm_ugm_no_sv|PSUIM10": {
+      "path": "/mnt/data/processed/ddm/fits_pulse_norm_ugm/PSUIM10_L1U1V0Z0G1_pulse.pkl",
+      "p_guess": 0.5307927492209887
+    },
+    "pulse_norm_ugm_no_sv|PSUIM5": {
+      "path": "/mnt/data/processed/ddm/fits_pulse_norm_ugm/PSUIM5_L1U1V0Z0G1_pulse.pkl",
+      "p_guess": 0.129897421900055
+    },
+    "pulse_norm_ugm_no_sv|PSUIM6": {
+      "path": "/mnt/data/processed/ddm/fits_pulse_norm_ugm/PSUIM6_L1U1V0Z0G1_pulse.pkl",
+      "p_guess": 0.13097980002767698
+    },
+    "pulse_norm_ugm_no_sv|PSUIM7": {
+      "path": "/mnt/data/processed/ddm/fits_pulse_norm_ugm/PSUIM7_L1U1V0Z0G1_pulse.pkl",
+      "p_guess": 0.3323144957095969
+    },
+    "no_sv|DBM12": {
+      "path": "/mnt/data/processed/ddm/fits_joint_unfreeze_integrators/DBM12_L0U0V0Z0G1_all.pkl",
+      "p_guess": 0.40969470845267225
+    },
+    "no_sv|DBM13": {
+      "path": "/mnt/data/processed/ddm/fits_joint_unfreeze_integrators/DBM13_L0U0V0Z0G1_all.pkl",
+      "p_guess": 0.2735261296350264
+    },
+    "no_sv|DBM14": {
+      "path": "/mnt/data/processed/ddm/fits_joint_unfreeze_integrators/DBM14_L0U0V0Z0G1_all.pkl",
+      "p_guess": 0.22189847493730508
+    },
+    "no_sv|DBM15": {
+      "path": "/mnt/data/processed/ddm/fits_joint_unfreeze_integrators/DBM15_L0U0V0Z0G1_all.pkl",
+      "p_guess": 0.16148045380922407
+    },
+    "no_sv|DBM5": {
+      "path": "/mnt/data/processed/ddm/fits_joint_unfreeze_integrators/DBM5_L0U0V0Z0G1_all.pkl",
+      "p_guess": 0.29412424775687307
+    },
+    "no_sv|DBM6": {
+      "path": "/mnt/data/processed/ddm/fits_joint_unfreeze_integrators/DBM6_L0U0V0Z0G1_all.pkl",
+      "p_guess": 0.22718453886921658
+    },
+    "no_sv|PSUIM10": {
+      "path": "/mnt/data/processed/ddm/fits_joint_unfreeze_integrators/PSUIM10_L0U0V0Z0G1_all.pkl",
+      "p_guess": 0.07722661490582247
+    },
+    "no_sv|PSUIM5": {
+      "path": "/mnt/data/processed/ddm/fits_joint_unfreeze_integrators/PSUIM5_L0U0V0Z0G1_all.pkl",
+      "p_guess": 0.10130507189900129
+    },
+    "no_sv|PSUIM6": {
+      "path": "/mnt/data/processed/ddm/fits_joint_unfreeze_integrators/PSUIM6_L0U0V0Z0G1_all.pkl",
+      "p_guess": 0.06205643335765357
+    },
+    "no_sv|PSUIM7": {
+      "path": "/mnt/data/processed/ddm/fits_joint_unfreeze_integrators/PSUIM7_L0U0V0Z0G1_all.pkl",
+      "p_guess": 0.278078721656165
+    },
+    "primary|DBM12": {
+      "path": "/mnt/data/processed/ddm/fits_joint_unfreeze_integrators/DBM12_L0U0V1Z0G1_all.pkl",
+      "p_guess": 0.36561664467216987
+    },
+    "primary|DBM13": {
+      "path": "/mnt/data/processed/ddm/fits_joint_unfreeze_integrators/DBM13_L0U0V1Z0G1_all.pkl",
+      "p_guess": 0.25112323456098823
+    },
+    "primary|DBM14": {
+      "path": "/mnt/data/processed/ddm/fits_joint_unfreeze_integrators/DBM14_L0U0V1Z0G1_all.pkl",
+      "p_guess": 0.21591202380811889
+    },
+    "primary|DBM15": {
+      "path": "/mnt/data/processed/ddm/fits_joint_unfreeze_integrators/DBM15_L0U0V1Z0G1_all.pkl",
+      "p_guess": 0.1312182544143416
+    },
+    "primary|DBM5": {
+      "path": "/mnt/data/processed/ddm/fits_joint_unfreeze_integrators/DBM5_L0U0V1Z0G1_all.pkl",
+      "p_guess": 0.2835471555866053
+    },
+    "primary|DBM6": {
+      "path": "/mnt/data/processed/ddm/fits_joint_unfreeze_integrators/DBM6_L0U0V1Z0G1_all.pkl",
+      "p_guess": 0.2336098721007518
+    },
+    "primary|PSUIM10": {
+      "path": "/mnt/data/processed/ddm/fits_joint_unfreeze_integrators/PSUIM10_L0U0V1Z0G1_all.pkl",
+      "p_guess": 0.08456687768318136
+    },
+    "primary|PSUIM5": {
+      "path": "/mnt/data/processed/ddm/fits_joint_unfreeze_integrators/PSUIM5_L0U0V1Z0G1_all.pkl",
+      "p_guess": 0.12518150962196178
+    },
+    "primary|PSUIM6": {
+      "path": "/mnt/data/processed/ddm/fits_joint_unfreeze_integrators/PSUIM6_L0U0V1Z0G1_all.pkl",
+      "p_guess": 0.11958411060207796
+    },
+    "primary|PSUIM7": {
+      "path": "/mnt/data/processed/ddm/fits_joint_unfreeze_integrators/PSUIM7_L0U0V1Z0G1_all.pkl",
+      "p_guess": 0.23581554406208424
+    }
+  },
+  "commit": "886d3d1a7f80857c3d165cb076ea3e368303a2a2",
+  "source_sha256": {
+    "scripts/paper/guess_readout_counterfactual.py": "5fb2322022284aaf554913e4800790f09a01bde6ccb37a8b95ca9dd2f889ce9f",
+    "src/ddm/simulator.py": "c0f0628f94db0db20ff84f68b70f3379d6829d7de5c90e1ed5e47710ca630fcf",
+    "src/ddm/ddm.py": "22443accab0b062e1b234c0fe009e01f84f77e87ce6258b3eed6c909c78679b8"
+  },
+  "scope": "Fixed fitted parameters (fitted under coin-flip guesses); RTs identical across versions; descriptive."
+}
