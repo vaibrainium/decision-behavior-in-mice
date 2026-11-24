@@ -77,6 +77,10 @@ def validate_params(p: dict) -> None:
         raise ValueError(f"Invalid sz (starting point variability): {p['sz']}")
     if not (0 <= p.get("p_guess", 0.0) < 1):
         raise ValueError(f"Invalid p_guess: {p['p_guess']}")
+    if not (0 <= p.get("guess_w", 0.0) <= 1):
+        raise ValueError(f"Invalid guess_w: {p['guess_w']}")
+    if p.get("guess_w", 0.0) > 0 and not p.get("read_lag", -1.0) >= 0:
+        raise ValueError(f"Informed guesses need read_lag >= 0, got {p.get('read_lag')}")
     if not (0 <= p.get("guess_bias", 0.5) <= 1):
         raise ValueError(f"Invalid guess_bias: {p['guess_bias']}")
     if p.get("p_guess", 0.0) > 0 and not p.get("guess_tau", 0.0) > 0:
@@ -99,9 +103,16 @@ def apply_guesses(sim: pd.DataFrame, params: dict, draws: np.ndarray) -> pd.Data
     p_guess, p_lapse = float(params.get("p_guess", 0.0)), float(params.get("p_lapse", 0.0))
     if p_guess <= 0 and p_lapse <= 0:
         return sim
-    choice = (draws[:, 1] < float(params.get("guess_bias", 0.5))).astype(float)
+    bias = float(params.get("guess_bias", 0.5))
+    choice = (draws[:, 1] < bias).astype(float)
     is_guess = draws[:, 0] < p_guess
     is_lapse = ~is_guess & (draws[:, 0] < p_guess + p_lapse)
+    w = float(params.get("guess_w", 0.0))
+    if w > 0 and p_guess > 0:  # informed guesses (plan 2026-11-24-informed-guess-family); w = 0 leaves choice as above
+        informed = is_guess & (draws[:, 1] < w)
+        blind = (draws[:, 1] - w) / (1.0 - w) < bias if w < 1 else np.zeros(len(choice), dtype=bool)
+        guess_choice = np.where(informed, np.asarray(sim["read_choice"], dtype=float), blind.astype(float))
+        choice = np.where(is_guess, guess_choice, choice)
     rt = np.asarray(sim["rt"], dtype=float).copy()
     if p_guess > 0:
         rt[is_guess] = float(params.get("guess_t0", 0.0)) - float(params["guess_tau"]) * np.log1p(-draws[is_guess, 2])
@@ -110,6 +121,20 @@ def apply_guesses(sim: pd.DataFrame, params: dict, draws: np.ndarray) -> pd.Data
         rt[is_lapse] = t0 + (t1 - t0) * draws[is_lapse, 2]
     replaced = is_guess | is_lapse
     return sim.assign(choice=np.where(replaced, choice, sim["choice"]), rt=rt)
+
+
+def informed_read_steps(params: dict, draws: np.ndarray) -> np.ndarray | None:
+    """Informed fast guesses (Molano-Mazon et al. 2024 action initiation; plan 2026-11-24-informed-guess-family).
+    A guess (u0 < p_guess) is informed with probability guess_w (u1 < guess_w): its choice is the side of the
+    decision variable read_lag s before the guess RT (see _simulate_ddm_trials_numba); the guess RT is unchanged.
+    Returns the per-trial readout step (-1: none), or None when guess_w is 0, so the standard path is untouched."""
+    w, p_guess = float(params.get("guess_w", 0.0)), float(params.get("p_guess", 0.0))
+    if w <= 0 or p_guess <= 0:
+        return None
+    informed = (draws[:, 0] < p_guess) & (draws[:, 1] < w)
+    guess_rt = float(params.get("guess_t0", 0.0)) - float(params["guess_tau"]) * np.log1p(-draws[:, 2])
+    steps = np.maximum(0, np.round((guess_rt - float(params["read_lag"])) / float(params["dt"])))
+    return np.where(informed, steps, -1).astype(np.int64)
 
 
 @dataclass
@@ -265,6 +290,7 @@ class DecisionModel:
                 rep_noise = rep_sv = rep_sz = None
                 rep_guess = np.random.uniform(size=(self._stimulus_shape(stimulus)[0], 3))
             try:
+                steps = informed_read_steps(params, rep_guess)
                 sim = self.simulator.simulate_trials(
                     stimulus,
                     params,
@@ -272,6 +298,7 @@ class DecisionModel:
                     unit_sv=rep_sv,
                     unit_sz=rep_sz,
                     labels=self._labels,
+                    **({} if steps is None else {"read_step": steps}),
                 )
             except Exception as exc:
                 logger.warning("Simulation failed: %s", exc)
@@ -534,8 +561,14 @@ class DecisionModel:
         n_trials = self._stimulus_shape(stimulus)[0]
         simulations = []
         for rep in range(n_reps):
-            sim = self.simulator.simulate_trials(stimulus, params, labels=labels)
-            sim = apply_guesses(sim, params, np.random.uniform(size=(n_trials, 3)))
+            if float(params.get("guess_w", 0.0)) > 0:  # draws needed before simulating; random stream differs from w = 0
+                draws = np.random.uniform(size=(n_trials, 3))
+                steps = informed_read_steps(params, draws)
+                sim = self.simulator.simulate_trials(stimulus, params, labels=labels, **({} if steps is None else {"read_step": steps}))
+            else:  # original order: identical random stream to the code before informed guesses
+                sim = self.simulator.simulate_trials(stimulus, params, labels=labels)
+                draws = np.random.uniform(size=(n_trials, 3))
+            sim = apply_guesses(sim, params, draws)
             simulations.append(sim.assign(trial=np.arange(n_trials), rep=rep))
         return pd.concat(simulations, ignore_index=True)
 

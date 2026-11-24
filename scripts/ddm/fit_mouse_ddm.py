@@ -86,6 +86,10 @@ GUESS_MODELS = {
     "single": OPTIONAL_FREE_PARAMS["G"],  # one component, exponential delay up to 2 s (fast guesses and slow lapses)
     "fast_only": [("p_guess", (0.0, 0.6), 0.0), ("guess_bias", (0.0, 1.0), 0.5), ("guess_tau", (0.01, 0.3), 0.1)],
     "guess_lapse": [("p_guess", (0.0, 0.6), 0.0), ("guess_bias", (0.0, 1.0), 0.5), ("guess_tau", (0.01, 0.3), 0.1), ("p_lapse", (0.0, 0.6), 0.0)],
+    # fast_only plus informed guesses (plan 2026-11-24-informed-guess-family): a fraction guess_w of guesses reports the
+    # side of the decision variable read_lag s before the guess RT; guess_w = 0 is exactly fast_only.
+    "informed": [("p_guess", (0.0, 0.6), 0.0), ("guess_bias", (0.0, 1.0), 0.5), ("guess_tau", (0.01, 0.3), 0.1),
+                 ("guess_w", (0.0, 1.0), 0.0), ("read_lag", (0.05, 0.5), 0.1)],
 }
 LAPSE_WINDOW = {"lapse_t0": FixedParam(0.3), "lapse_t1": FixedParam(5.0)}  # lapse RTs uniform over the response window
 # Time-varying evidence weight (plan step 6.5): drift_gain * exp(-gain_decay * t); > 0 primacy, < 0 recency, 0 = constant.
