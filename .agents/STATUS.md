@@ -1,7 +1,9 @@
 # Status
-Last updated: 2026-11-19 by Codex
+Last updated: 2026-11-24 by Claude
 
 ## Current focus
+Informed-guess family (Molano-Mazón action initiation): stages 1-2 done, author approved stage 3; table committed, awaiting Hyak submission. Lit follow-ups 2026-11-24 (Claude): spine Brunton citation narrowed (D011). Fig 4D exponential calibrated: not a leak estimate. Report reports/2026-11-24-lit-followups-results.md; informed-guess profile and recovery in reports/2026-11-24-informed-guess-profile.md.
+
 Choice-misfit follow-up (2026-11-20, Claude): Neither primacy (pw-fits-criteria-a) nor a joint pulse weight (pulse-weight-joint-criteria) absorbs the PSUIM6/7 early low-coherence residual; session confound ruled out. Per author's stopping rule this is reported as a mouse-specific deviation once the rig check is accepted; next 4i.
 
 The pulse-onset diagnosis localizes the strongest mismatch to excess directional sensitivity in PSUIM6/7. Reweighting the same Figure 4C regression gives −2.39 versus −5.40 under trial weighting. Full review, diagnostic tables and literature at dissemination/paper_accumulation/draft_2026-11-15/pulse_onset_diagnosis_2026-11-19_final/REVIEW.md. Report reports/2026-11-19-pulse-onset-diagnosis.md.
@@ -122,6 +124,7 @@ Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gat
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
+- plans/2026-11-24-informed-guess-family.md : informed fast guesses; stages 1-2 done, criteria written, table tasks_2026-11-24_informed.csv committed; next: author submits on Hyak, then score
 - plans/2026-11-19-choice-misfit-followup.md : choice misfit follow-up; PW and pulse-weight fits scored 2026-11-20 (neither fixes the PSUIM6/7 residual); next: author OK on rig check, then 4i
 - plans/2026-10-29-control-paper.md : third paper (control trials only, Stine 2020 framing) in dissemination/paper_control/; G1 approved 2026-10-30 (D004), spine locked, stage S2; paired recovery 42579825 analysed: E separated (provisional, ES fits not yet submitted)
 - plans/2026-10-28-full-recovery-matrix.md : ON HOLD (author); recovery rerun on fixed CPU datasets if it becomes necessary
@@ -135,6 +138,9 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-11-24-informed-guess-profile.md : informed guesses w≈0.5, lag 0.1 improve PSUIM6/7 held-out NLL ~8-9 at fixed params, DBM12 worse; w recoverable, read_lag not
+- reports/2026-11-24-lit-followups-results.md : Fig 4D tau=1.11 s does not identify leak (zero-leak model ~0.8 s; leak 0-2 /s all compatible); front-end onset gain 1.05-1.57x, not the PSUIM6/7 gap; evidence-reading fast guesses (0.1 s lag) take PSUIM7 early pulse 11.4->21.3 pp (data 25.1), overshoot evidence-blind mice; candidate fit family pending approval
+- reports/2026-11-24-lit-brunton-piet-molano.md : Brunton/Piet/Molano reviewed vs story; spine Brunton citation overstated (no snapshot/extrema test); proposes Figure 4D exponential calibration and front-end gain account of 4C; no analyses run
 - reports/2026-11-20-pulse-weight-joint-criteria.md : joint pulse weight fails A/A2 (w stays 1 in PSUIM6/7); session check clean; PSUIM6/7 closed as stable mouse-specific deviation pending rig-check OK
 - reports/2026-11-20-pw-fits-criteria-a.md : gain decay / signed leak fail strict (A) and exploratory (A2) criteria in all 4 pairs; primacy ruled out for PSUIM6/7 residual; PSUIM7 no-sv alone -94 NLL with gain_decay 2.9 but control excess doubles
 - reports/2026-11-19-pulse-onset-error-hazard.md : 100%-coh incongruent pulses do not trigger clustered errors at 150-400 ms (ratio 1.15 [0.76,1.54]); excess later (other 8 mice 1.50 [1.09,1.92])
