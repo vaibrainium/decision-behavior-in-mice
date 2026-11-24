@@ -101,7 +101,7 @@
     "max_panel_rounds": 1,
     "min_verified_sources": 25
   },
-  "spine_hash": null,
+  "spine_hash": "b3630df9343a6a67",
   "history": [
     {
       "at": "2026-10-26T22:10:47",
@@ -114,6 +114,10 @@
     {
       "at": "2026-10-26T22:13:33",
       "event": "advance S0_intake -> S1_spine"
+    },
+    {
+      "at": "2026-11-24T04:16:55",
+      "event": "spine locked b3630df9343a6a67"
     }
   ]
 }
