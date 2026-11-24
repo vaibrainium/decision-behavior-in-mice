@@ -1,0 +1,27 @@
+{
+  "family": "pulse_norm_ugm_no_sv",
+  "spearman_descriptive": {
+    "gain_ratio_early_over_middle__vs__obs_early_minus_middle_pp": {
+      "rho": 0.34545454545454546,
+      "p_uncorrected": 0.32822651147136733,
+      "n": 10
+    },
+    "gain_ratio_early_over_middle__vs__model_early_minus_middle_pp": {
+      "rho": -0.006060606060606061,
+      "p_uncorrected": 0.9867429111949892,
+      "n": 10
+    },
+    "fe_beta__vs__obs_early_pp": {
+      "rho": 0.43030303030303024,
+      "p_uncorrected": 0.21449233253280775,
+      "n": 10
+    }
+  },
+  "commit": "886d3d1a7f80857c3d165cb076ea3e368303a2a2",
+  "sources_sha256": {
+    "scripts/paper/front_end_onset_gain.py": "fd7e6aafdcb2cb034dd8b95894b441342ffa2a80f51edf267e0b551677f7054e",
+    "src/ddm/simulator.py": "c0f0628f94db0db20ff84f68b70f3379d6829d7de5c90e1ed5e47710ca630fcf",
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_onset_diagnosis_2026-11-19_final/mouse.csv": "d3c7ad15665c1b046147bebf00cc761b3fc3b03d75a0cd76064bac1fb0a3bdfb"
+  },
+  "scope": "Descriptive; n = 10 mice; fixed fitted parameters; gain is a front-end property only (leak, urgency and bounds also shape stage effects)."
+}
