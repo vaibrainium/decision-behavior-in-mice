@@ -210,8 +210,38 @@ def transient_main():
     print(f"\n{len(df)} tasks -> {out}")
 
 
+# Informed fast guesses (plans/2026-11-24-informed-guess-family.md): norm UGM without sv with guess model "informed"
+# (fast_only plus guess_w, read_lag), pulse-only splits, warm-started from the norm UGM no-sv fits (guess_w = 0 reproduces
+# them exactly). New table and its own autosubmit state; not submitted without the author's go-ahead. Runtime as for the
+# transient table (base fit time x INFORMED_SLOWDOWN, assumed for two extra parameters).
+INFORMED_SLOWDOWN = 1.5
+
+
+def informed_main():
+    inputs = load_inputs(DDM / "ddm_inputs_global_ucla_nofreeze.npz")
+    prev = fit_hours("fits_pulse_norm_ugm").set_index(["mouse", "variant", "split"]).hours
+    out_dir, variants = "ddm/fits_pulse_norm_ugm_informed", ["L1U1V0Z0G1"]
+    args = (f"{PJ.replace('--guess_model fast_only', '--guess_model informed')} --ugm --front_end norm --warm_start_from ddm/fits_pulse_norm_ugm "
+            f"--variants {' '.join(variants)} --splits {' '.join(PULSE_SPLITS)} --out_dir {out_dir}")
+    assert "--guess_model informed" in args
+    rows = []
+    for i, job in enumerate(build_grid(inputs, variants, PULSE_SPLITS)):
+        base = prev[(job["mouse"], job["variant"], job["split"])]
+        rows.append({"batch": "IG_norm_ugm", "priority": 0, "index": i, **job, "out": f"{out_dir}/{job['mouse']}_{job['variant']}_{job['split']}.pkl",
+                     "est_hours": round(base * INFORMED_SLOWDOWN, 2),
+                     "time_hours": FIRST_MAX_HOURS if base > LONG_HOURS else limit(base * INFORMED_SLOWDOWN), "args": args})
+    df = pd.DataFrame(rows)
+    out = Path(__file__).with_name("tasks_2026-11-24_informed.csv")
+    assert not out.exists(), f"{out} exists; not overwriting"
+    df.to_csv(out, index=False)
+    print(df.groupby(["batch", "time_hours"]).size().to_string())
+    print(f"\n{len(df)} tasks -> {out}")
+
+
 def main():
     import sys
+    if "--informed" in sys.argv:
+        return informed_main()
     if "--transient" in sys.argv:
         return transient_main()
     if "--ugm" in sys.argv:
