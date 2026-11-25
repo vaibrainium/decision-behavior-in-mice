@@ -1,5 +1,5 @@
 # Report: Best all-trial model fit preview
-Date: 2026-11-25   Agent: Codex   Commit: 9e04533
+Date: 2026-11-25   Agent: Codex   Commit: a68d2f0
 Plan: plans/2026-10-26-paper-accumulation-variant.md
 
 ## Question

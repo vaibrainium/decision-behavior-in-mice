@@ -1,5 +1,5 @@
 # Report: Figure 5 ranking by held-out bits/trial
-Date: 2026-11-25   Agent: Codex   Commit: WORKTREE on 9e04533
+Date: 2026-11-25   Agent: Codex   Commit: 8e9fa71
 Plan: plans/2026-10-26-paper-accumulation-variant.md
 
 ## Question

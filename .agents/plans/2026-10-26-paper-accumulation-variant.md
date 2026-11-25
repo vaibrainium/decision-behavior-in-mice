@@ -52,12 +52,27 @@ User requests a compiled view of the current figures. Build two non-submission r
 - [x] R3. Verify page count, raster dimensions, source/output hashes and readable rendering; document the review-only raster limitation.
 - [x] R4. Write a short report and update STATUS with links to the compiled packets.
 
+### Figure 5 bits/trial ranking preview — 2026-11-25
+Replace the descriptive summed held-out NLL ordering in Figure 5B with the already verified equal-mouse held-out joint bits/trial metric, while retaining BIC as a separate full-fit criterion. Preserve the existing Figure 5 opening and write a fresh preview; no fitting, rescoring, or inferential test.
+
+- [x] F5B1. Merge the 22-model bits summary with the existing BIC table and verify one-to-one coverage, winner, formula, and ordering.
+- [x] F5B2. Export a fresh Figure 5 preview ordered by bits/trial, with higher/lower directions and aggregation stated directly.
+- [x] F5B3. Inspect raster/vector outputs, verify source hashes and plotted values, then document the result and caveats.
+
+### Figure 5 all-trial preview — 2026-11-25
+Create a separate author-review preview using all 42 `kind=joint` candidates fitted to control and pulse trials. Rank by the same equal-mouse held-out joint bits/trial metric and retain BIC in the identical row order. Keep prior pulse-only previews unchanged; no fitting, rescoring, manuscript selection, or commit.
+
+- [x] F5J1. Verify 42×10 joint score coverage and matched within-mouse held-out denominators.
+- [x] F5J2. Export the expanded all-trial Figure 5 preview with accurate model-family scope.
+- [x] F5J3. Independently verify plotted values, ordering, winners, hashes, and rendering; show preview only.
+
 The figures/captions/Methods/Results packet is complete; the overall manuscript plan remains active for the next phase.
 
 ## Out of scope
 Changes to the first version's files.
 
 ## Log
+- 2026-11-25: Fresh Figure 5 bits-ranked preview saved at `figure5_bits_ranked_2026-11-25/`. All 22 pulse-only candidates are ordered by equal-mouse held-out joint bits/trial; normalized UGM/no-sv remains first at −1.540348 bits/trial, while BIC still favors linear leak with drift variability. Independent reconstruction from the 220 mouse-model rows, source hashes, 300-dpi raster, SVG/PDF structure and no-new-fit/no-new-score status verified. Original NLL Figure 5 retained. Report: `../reports/2026-11-25-figure5-bits-ranking.md`.
 - 2026-11-24: Compiled two six-page current-figure review PDFs in `figure_compilation_2026-11-24/`, differing only in the retained Figure 3 comparison alternative (LL+BIC versus bits+BIC). Figures 5/6 remain explicitly provisional. Source exports were not regenerated; all seven 300-dpi pages were visually inspected, and PDF page markers, hashes, ordering and EOF integrity passed. These raster review packets are not submission masters; use the source PDF/SVG artwork for final assembly. Report: `../reports/2026-11-24-current-figure-compilation.md`.
 - 2026-10-26: started at author request ("start working on this paper in a separate folder").
 - 2026-10-26: G0 approved; amendment 8 run, verdict 'neither'; whether to mention it goes to G1. Next: S1 architect.
@@ -422,6 +437,37 @@ Figure5 deferred for later discussion. Use existing full-pulse-fit predictions f
 - [x] Verify aggregations, inspect artwork and document scope/limitations for author choice.
 
 - 2026-11-18: Tentative Figure6 complete in figure6_pulse_fits_2026-11-18/. Both winners overlaid and individual previews exported; matched equal-mouse support/SEM verified. Figure5 deferred; no decision fits/simulations. Report ../reports/2026-11-18-figure6-pulse-fits.md.
+
+### Best all-trial model-on-data preview — 2026-11-25
+The all-trial Figure 5 preview identifies `power_leak_urgency` as the best candidate by both equal-mouse held-out joint bits/trial and full-fit BIC. Show its saved full-fit descriptive predictions against matched observed control and pulse summaries. Use the existing fit-browser simulations only; do not refit the decision model or imply that full-fit curves are held-out validation.
+- [x] Verify saved `power_leak_urgency` prediction provenance and match observed mouse/condition/coherence support.
+- [x] Export a fresh control/early/middle/late psychometric and mean-RT preview with source tables and explicit uncertainty definitions.
+- [x] Verify aggregations and artwork, then provide previews without changing the manuscript's current figure selection.
+
+- 2026-11-25: Preview exported to `best_all_trial_model_fit_2026-11-25/`; 464 observed and 464 matched model mouse/condition/coherence cells, 23,229 displayed observed responses. No decision-model refit or new simulation. Report: `../reports/2026-11-25-best-all-trial-model-fit-preview.md`.
+
+### Best pulse-only model-on-data preview — 2026-11-25
+Mirror the all-trial winner preview for the pulse-only held-out bits/trial winner, `pulse_norm_ugm_no_sv`. Retain the control column but label it as a prediction outside the pulse-only fitting domain; use the saved browser simulations only.
+- [x] Verify exact observed/predicted support and the pulse-only provenance of the saved parameters.
+- [x] Export matched control/early/middle/late psychometric and mean-RT artwork plus source tables.
+- [x] Validate the render and provenance without changing the manuscript's selected figure sequence.
+
+- 2026-11-25: Corrected preview is `best_pulse_only_model_fit_2026-11-25_v2/`; the first export is retained as an intermediate with an overlong footer. Exact 464-cell support match and 300-dpi exports verified. Report: `../reports/2026-11-25-best-pulse-only-model-fit-preview.md`.
+
+### Name best-model previews as Figure 6 variations — 2026-11-25
+- [x] Export the all-trial winner as variation 6a and pulse-only winner as variation 6b using fresh, explicit filenames.
+- [x] Update the figure review index and verify both labeled exports.
+
+- 2026-11-25: Current review names are 6a = best all-trial model and 6b = best pulse-only model. The labels denote alternative Figure 6 versions, not panels within one figure.
+
+### Direct model-point psychometric displays and eight-figure review — 2026-11-25
+For DDM/model-fit psychometric overlays, remove descriptive four-parameter logistic smoothing. Show observed probabilities as points with between-mouse SEM and saved model probabilities as explicit points connected only across tested coherences. Preserve descriptive data-only psychometrics in Figure 1. For the requested eight-image review, treat Figure 5 and Figure 6 as the two figures with two variations: 5a pulse-only ranking, 5b all-trial ranking, 6a all-trial fit and 6b pulse-only fit; use the bits/BIC Figure 3 comparison.
+- [x] Replace Figure 3 model-C psychometric smoothing with direct saved model points and reassemble the current story-order Figure 3.
+- [x] Replace Figure 6a/6b psychometric smoothing with direct saved model points; update captions, manifests and source exports.
+- [x] Assemble a fresh eight-image review set for Figures 1–4, 5a/5b and 6a/6b; validate support, rendering and provenance.
+- [x] Show all eight PNG previews directly in chat.
+
+- 2026-11-25: Direct-point rule applied to Figure 3C and Figure 6a/6b; Figure 1 data-only logistic retained. Eight-image set indexed in `eight_figure_review_2026-11-25/README.md`. Report: `../reports/2026-11-25-direct-model-points-eight-figure-review.md`.
 
 ### Pulse-only held-out bits per trial — 2026-11-18
 Compute same metric as Figure3 for all22 pulse-only candidates: -heldout_NLL/(n_heldout ln2) within mouse, then equal-mouse mean. Keep pooled trial-weighted score separately, verify matched trial counts, no fits or null-baseline claim.

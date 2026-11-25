@@ -1,8 +1,12 @@
 # Author-reviewed figure organization — 17 November 2026
 
+Figure 5 model-comparison variations: **5a** = [pulse-only candidates](figure5a_pulse_only_bits_2026-11-25/figure5_bits_ranked.png); **5b** = [all-trial candidates](figure5b_all_trials_bits_2026-11-25/figure5_all_trials_bits.png). Both rank by equal-mouse held-out joint bits/trial and show BIC in the same candidate order.
+
+Figure 6 model-fit variations: **[6a — best all-trial model](figure6a_direct_model_points_2026-11-25/figure6a_all_trial_model_fit.png)** ([caption](figure6a_direct_model_points_2026-11-25/caption.md)); **[6b — best pulse-only model](figure6b_direct_model_points_2026-11-25/figure6b_pulse_only_model_fit.png)** ([caption](figure6b_direct_model_points_2026-11-25/caption.md)). Psychometric panels show observed points/SEM and saved model points connected at tested coherences, with no logistic display fit. In 6b the control column is predicted, not fitted.
+
 Model onset-stage diagnostic: [pulse-only predictions versus Figure4C](pulse_model_primacy_2026-11-18/primacy_comparison.pdf), [results/reproduction](pulse_model_primacy_2026-11-18/README.md). Exact readout, matched-six sensitivity; placement undecided.
 
-Tentative Figure6: [pulse psychometric/chronometric fits](figure6_pulse_fits_2026-11-18/figure6_comparison.pdf), [caption](figure6_pulse_fits_2026-11-18/caption.md), [individual model views](figure6_pulse_fits_2026-11-18/README.md). Figure5 deferred for later review.
+Historical tentative Figure6 comparison: [pulse psychometric/chronometric fits](figure6_pulse_fits_2026-11-18/figure6_comparison.pdf), [caption](figure6_pulse_fits_2026-11-18/caption.md), [individual model views](figure6_pulse_fits_2026-11-18/README.md). Superseded for current review by variations 6a and 6b above.
 
 Figure5 opening preview: [A model components and B pulse-only scores](figure5_opening_2026-11-18_v2/figure5_opening.pdf), [caption](figure5_opening_2026-11-18_v2/caption.md). All22 pulse-only models; joint/control fits excluded. Awaiting review.
 

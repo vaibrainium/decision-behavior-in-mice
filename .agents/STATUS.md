@@ -1,7 +1,17 @@
 # Status
-Last updated: 2026-11-24 by Codex
+Last updated: 2026-11-25 by Codex
 
 ## Current focus
+Eight current previews are indexed at `dissemination/paper_accumulation/draft_2026-11-15/eight_figure_review_2026-11-25/README.md`: Figures 1–4, 5a pulse-only, 5b all-trial, 6a all-trial and 6b pulse-only. DDM/model-fit psychometrics in Figure 3 and Figure 6 now use direct saved model points joined across tested coherences, with no logistic display smoothing. Report: `reports/2026-11-25-direct-model-points-eight-figure-review.md`.
+
+Figure 6 alternatives are now explicitly named: **6a** = best all-trial model (`figure6a_direct_model_points_2026-11-25/`) and **6b** = best pulse-only model (`figure6b_direct_model_points_2026-11-25/`). These are alternative versions, not panels. Figure review index updated.
+
+Best pulse-only model-on-data analysis shows `pulse_norm_ugm_no_sv` on matched choice and mean-RT summaries; controls are explicitly predicted rather than fitted. Report: `reports/2026-11-25-best-pulse-only-model-fit-preview.md`.
+
+Best all-trial model-on-data preview ready at `dissemination/paper_accumulation/draft_2026-11-15/best_all_trial_model_fit_2026-11-25/`. It overlays saved full-fit `power_leak_urgency` predictions on matched control/early/middle/late choice and mean-RT summaries; no refit or new simulation. Report: `reports/2026-11-25-best-all-trial-model-fit-preview.md`.
+
+Figure 5 bits/trial-ranked alternative ready at `dissemination/paper_accumulation/draft_2026-11-15/figure5_bits_ranked_2026-11-25/`. Normalized UGM/no-sv remains first; BIC still favors linear leak with drift variability. Original NLL preview retained. Report: `reports/2026-11-25-figure5-bits-ranking.md`.
+
 Informed-guess family (Molano-Mazón action initiation) scored 2026-11-25: fails A and A2 (residual shrinks only 18-24%); norm UGM no sv stays the best pulse model (report reports/2026-11-25-informed-guess-criteria.md). Lit follow-ups 2026-11-24 (Claude): spine Brunton citation narrowed (D011). Fig 4D exponential calibrated: not a leak estimate. Report reports/2026-11-24-lit-followups-results.md; informed-guess profile and recovery in reports/2026-11-24-informed-guess-profile.md.
 
 Current Figures 1–6 compiled into two six-page review packets at `dissemination/paper_accumulation/draft_2026-11-15/figure_compilation_2026-11-24/`. Packets differ only in Figure 3 LL+BIC versus bits+BIC; Figures 5/6 remain provisional. Report: `reports/2026-11-24-current-figure-compilation.md`.
@@ -139,6 +149,10 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-11-25-direct-model-points-eight-figure-review.md : Removed logistic smoothing from model overlays and assembled/validated the eight current PNG previews.
+- reports/2026-11-25-best-pulse-only-model-fit-preview.md : Pulse-only bits winner overlaid on pulse data with an explicitly out-of-domain control prediction; no new fits.
+- reports/2026-11-25-best-all-trial-model-fit-preview.md : Full-fit all-trial winner overlaid on matched control/pulse choice and RT summaries; preview only, no new fits.
+- reports/2026-11-25-figure5-bits-ranking.md : Figure 5 alternative ranks all 22 pulse-only models by equal-mouse held-out joint bits/trial; winner unchanged
 - reports/2026-11-25-informed-guess-criteria.md : informed fast guesses fail A/A2; PSUIM6/7 w>0.05 in 5/5 folds and ΔNLL about -10 each, control excess 283->204, but early-pulse residual shrinks only to 0.76-0.82x; norm UGM no sv stays
 - reports/2026-11-24-informed-guess-profile.md : informed guesses w≈0.5, lag 0.1 improve PSUIM6/7 held-out NLL ~8-9 at fixed params, DBM12 worse; w recoverable, read_lag not
 - reports/2026-11-24-lit-followups-results.md : Fig 4D tau=1.11 s does not identify leak (zero-leak model ~0.8 s; leak 0-2 /s all compatible); front-end onset gain 1.05-1.57x, not the PSUIM6/7 gap; evidence-reading fast guesses (0.1 s lag) take PSUIM7 early pulse 11.4->21.3 pp (data 25.1), overshoot evidence-blind mice; candidate fit family pending approval
