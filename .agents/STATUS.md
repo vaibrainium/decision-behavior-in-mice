@@ -2,7 +2,7 @@
 Last updated: 2026-11-24 by Codex
 
 ## Current focus
-Informed-guess family (Molano-Mazón action initiation): stages 1-2 done, author approved stage 3; 60 fits running on Hyak. Lit follow-ups 2026-11-24 (Claude): spine Brunton citation narrowed (D011). Fig 4D exponential calibrated: not a leak estimate. Report reports/2026-11-24-lit-followups-results.md; informed-guess profile and recovery in reports/2026-11-24-informed-guess-profile.md.
+Informed-guess family (Molano-Mazón action initiation) scored 2026-11-25: fails A and A2 (residual shrinks only 18-24%); norm UGM no sv stays the best pulse model (report reports/2026-11-25-informed-guess-criteria.md). Lit follow-ups 2026-11-24 (Claude): spine Brunton citation narrowed (D011). Fig 4D exponential calibrated: not a leak estimate. Report reports/2026-11-24-lit-followups-results.md; informed-guess profile and recovery in reports/2026-11-24-informed-guess-profile.md.
 
 Current Figures 1–6 compiled into two six-page review packets at `dissemination/paper_accumulation/draft_2026-11-15/figure_compilation_2026-11-24/`. Packets differ only in Figure 3 LL+BIC versus bits+BIC; Figures 5/6 remain provisional. Report: `reports/2026-11-24-current-figure-compilation.md`.
 
@@ -126,7 +126,6 @@ Older draft dissemination/paper/manuscript_2026-10-22.md includes first-pass gat
 Primary paper question: integration versus extrema detection; primacy secondary, conditional on adequacy/sensitivity.
 
 ## Active plans
-- plans/2026-11-24-informed-guess-family.md : informed fast guesses; stages 1-2 done, criteria written, 60 fits submitted on Hyak 2026-11-24 (jobs 43513803-43513810); next: sync fits, then score
 - plans/2026-11-19-choice-misfit-followup.md : choice misfit follow-up; PW and pulse-weight fits scored 2026-11-20 (neither fixes the PSUIM6/7 residual); next: author OK on rig check, then 4i
 - plans/2026-10-29-control-paper.md : third paper (control trials only, Stine 2020 framing) in dissemination/paper_control/; G1 approved 2026-10-30 (D004), spine locked, stage S2; paired recovery 42579825 analysed: E separated (provisional, ES fits not yet submitted)
 - plans/2026-10-28-full-recovery-matrix.md : ON HOLD (author); recovery rerun on fixed CPU datasets if it becomes necessary
@@ -140,6 +139,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-11-25-informed-guess-criteria.md : informed fast guesses fail A/A2; PSUIM6/7 w>0.05 in 5/5 folds and ΔNLL about -10 each, control excess 283->204, but early-pulse residual shrinks only to 0.76-0.82x; norm UGM no sv stays
 - reports/2026-11-24-informed-guess-profile.md : informed guesses w≈0.5, lag 0.1 improve PSUIM6/7 held-out NLL ~8-9 at fixed params, DBM12 worse; w recoverable, read_lag not
 - reports/2026-11-24-lit-followups-results.md : Fig 4D tau=1.11 s does not identify leak (zero-leak model ~0.8 s; leak 0-2 /s all compatible); front-end onset gain 1.05-1.57x, not the PSUIM6/7 gap; evidence-reading fast guesses (0.1 s lag) take PSUIM7 early pulse 11.4->21.3 pp (data 25.1), overshoot evidence-blind mice; candidate fit family pending approval
 - reports/2026-11-24-lit-brunton-piet-molano.md : Brunton/Piet/Molano reviewed vs story; spine Brunton citation overstated (no snapshot/extrema test); proposes Figure 4D exponential calibration and front-end gain account of 4C; no analyses run

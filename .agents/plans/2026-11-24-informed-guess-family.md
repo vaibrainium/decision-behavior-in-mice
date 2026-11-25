@@ -1,7 +1,7 @@
 # Plan: informed fast guesses (Molano-Mazón action initiation) on norm UGM no sv
-Status: active
+Status: done
 Created: 2026-11-24 by Claude (Opus 5.5)
-Related reports: reports/2026-11-24-lit-followups-results.md, reports/2026-11-24-lit-brunton-piet-molano.md
+Related reports: reports/2026-11-25-informed-guess-criteria.md, reports/2026-11-24-informed-guess-profile.md, reports/2026-11-24-lit-followups-results.md, reports/2026-11-24-lit-brunton-piet-molano.md
 
 ## Goal
 Test whether fast guesses that report the decision variable (DV) explain the PSUIM6/7 fast-window pulse effect and fast control accuracy in a fitted model. Stages 1–2 are local. Stage 3 (Hyak) needs the author's go-ahead.
@@ -31,7 +31,7 @@ Test whether fast guesses that report the decision variable (DV) explain the PSU
 - [x] 3. Fixed-parameter profile: PSUIM6, PSUIM7 and two other mice. Held-out pcv NLL on a grid w ∈ {0, .25, .5, 1} × read_lag ∈ {0.1, 0.2, 0.3}; other parameters fixed. Report total, choice/RT split and fast-window effects.
 - [x] 4. Recovery check: simulate PSUIM7-like data (truths changed to (0.5, 0.12), (0.25, 0.2), (0, 0.1), 2 datasets each), then fit w and read_lag only (other parameters at their true values) from a few starts. Check whether w and read_lag are identifiable.
 - [x] 5. Write criteria (A/A2; mechanism w > 0.05 in PSUIM6/7 in ≥ 3/5 folds; guardrail on control choice excess and fast control accuracy), draft the task table (not submitted), and report.
-- [ ] 6. (Stage 3, author's go-ahead needed) Author submits scripts/slurm/tasks_2026-11-24_informed.csv on Hyak (60 fits, batch IG_norm_ugm, warm start from fits_pulse_norm_ugm). Then score with the committed machinery (5 seeds, held-out + control) and evaluate the criteria below.
+- [x] 6. (Stage 3, author's go-ahead needed) Author submits scripts/slurm/tasks_2026-11-24_informed.csv on Hyak (60 fits, batch IG_norm_ugm, warm start from fits_pulse_norm_ugm). Then score with the committed machinery (5 seeds, held-out + control) and evaluate the criteria below.
 
 ## Criteria (written 2026-11-24, after the fixed-parameter profile and recovery, before any fit)
 Tiers A (confirmatory) and A2 (exploratory) exactly as in plans/2026-11-19-choice-misfit-followup.md and as applied in
@@ -66,3 +66,6 @@ Hyak submission without the author's go-ahead; control-model (Figure 2/3) refits
 - 2026-11-24: Step 5: criteria written above; draft table scripts/slurm/tasks_2026-11-24_informed.csv generated (60 tasks, 303.5 h requested, est 157.5 h), not committed, not submitted. Report: reports/2026-11-24-informed-guess-profile.md. Next: author decision on stage 3 (step 6).
 - 2026-11-24: Author "yes" (go on stage 3, commit in small packets). Table committed (3438d1c); the author submits on Hyak.
 - 2026-11-24 15:37: Author submitted all 60 tasks on Hyak (state slurm-logs/autosubmit_state_informed.json, --watch 10). Jobs 43513803 (10 tasks, 3 h), 43513804 (12, 2 h), 43513805 (11, 6 h), 43513806 (6, 8 h), 43513807 (6, 1 h), 43513808 (7, 16 h), 43513809 (7, 4 h), 43513810 (1, 12 h). Next: when outputs are synced to ddm/fits_pulse_norm_ugm_informed, score (step 6) against the criteria.
+- 2026-11-25: Synced 58/60 fits. Unfinished (checkpoint only, likely TIMEOUT; autosubmit resubmits at 2x limit and resumes): DBM12 pulse (3 h limit, DE gen 255), PSUIM7 pcv4 (2 h limit, gen 87). Scoring wrapper scripts/paper/score_informed_fits.py added; audit_pulse_choice_rt_score and choice_g2_control_training guards now accept guess_model "informed" (simulation reads guess_w from the stored parameters). First scoring run stopped before output (would fail on the missing fit). Preliminary rule 4 from the fitted parameters: PSUIM6 w full 0.21, folds 5/5 > 0.05; PSUIM7 w full 0.58, folds 4/4 available > 0.05. Next: sync the two remaining fits, then run score_informed_fits and the criteria.
+- 2026-11-25 10:57: Author resubmitted the two timed-out tasks via autosubmit (resume from checkpoint): index 49 PSUIM7 pcv4, 4 h, job 43534708; index 50 DBM12 pulse, 6 h, job 43534709. Next: sync when done, then score.
+- 2026-11-25: All 60 fits synced and scored (5 seeds). Verdict: criteria A fail (rules 1-3), A2 fail (rule 3); rule 4 and 5 pass. Decision: neither; norm UGM no sv stays the best pulse model. Report reports/2026-11-25-informed-guess-criteria.md. Plan done.
