@@ -1,0 +1,25 @@
+{
+  "plotted_bits_match_independent_mouse_mean": true,
+  "bits_order_descending": true,
+  "winner_bits": "pulse_norm_ugm_no_sv",
+  "winner_bic": "pulse_linear_leak",
+  "n_candidates": 22,
+  "n_mice": 10,
+  "raster": {
+    "pixels": [
+      2598,
+      2421
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "mode": "RGBA"
+  },
+  "svg_parses_basic": true,
+  "pdf_header": "%PDF-1.4",
+  "pdf_ends_eof": true,
+  "source_hashes_match_manifest": true,
+  "new_fits": false,
+  "new_scores": false
+}

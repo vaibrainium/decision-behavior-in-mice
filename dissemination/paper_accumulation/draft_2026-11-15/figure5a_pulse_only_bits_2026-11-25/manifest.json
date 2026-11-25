@@ -1,0 +1,18 @@
+{
+  "base_commit": "9e0453315b9b793c8457138ea6747c1a2b499cdd",
+  "bits_source": "dissemination/paper_accumulation/draft_2026-11-15/pulse_only_bits_2026-11-18/bits_summary.csv",
+  "bits_source_sha256": "74a604e016bfe3396c5d77e0c32acc74a4f7914fe7df2a6bc4533bb45d2a0530",
+  "ic_source": "dissemination/figures/qc/model_ic_summary_2026-11-12_rescored.csv",
+  "ic_source_sha256": "9c9b3add7855bafeeeddd47a2af99f17073e9b093961a4425eba1089cde5f21d",
+  "code_sha256": "eea0b254e777211734f80dcb61db89f6cc95f9ccded9d79d11149b5fd1241238",
+  "definition": "within-mouse -heldout_nll/(n_heldout ln2), then equal-mouse mean",
+  "n_candidates": 22,
+  "n_mice": 10,
+  "n_test_total_per_candidate": 11479,
+  "bits_winner": "pulse_norm_ugm_no_sv",
+  "bic_winner": "pulse_linear_leak",
+  "new_fits": false,
+  "new_scores": false,
+  "figure_variation": "5a",
+  "status": "author-review preview; original Figure 5 retained"
+}

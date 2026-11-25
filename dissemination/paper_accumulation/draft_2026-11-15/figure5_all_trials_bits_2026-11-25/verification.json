@@ -1,0 +1,26 @@
+{
+  "n_candidates": 42,
+  "n_mice": 10,
+  "matched_denominators_within_mouse": true,
+  "formula_inversion_verified": true,
+  "plotted_bits_reconstructed": true,
+  "bits_order_descending": true,
+  "bits_winner": "power_leak_urgency",
+  "bic_winner": "power_leak_urgency",
+  "raster": {
+    "pixels": [
+      2598,
+      3248
+    ],
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "mode": "RGBA"
+  },
+  "pdf_valid_markers": true,
+  "svg_basic_parse": true,
+  "code_hash_matches_manifest": true,
+  "new_fits": false,
+  "new_scores": false
+}

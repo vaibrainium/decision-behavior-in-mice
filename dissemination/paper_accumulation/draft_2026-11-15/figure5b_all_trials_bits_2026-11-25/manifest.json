@@ -1,0 +1,20 @@
+{
+  "base_commit": "9e0453315b9b793c8457138ea6747c1a2b499cdd",
+  "per_mouse_source": "dissemination/figures/qc/model_ic_per_mouse_2026-11-12_rescored.csv",
+  "per_mouse_source_sha256": "eb4f242b776d018df803e2b8e84ecce6287da0f4ff91c6fd6505679b96265278",
+  "summary_source": "dissemination/figures/qc/model_ic_summary_2026-11-12_rescored.csv",
+  "summary_source_sha256": "9c9b3add7855bafeeeddd47a2af99f17073e9b093961a4425eba1089cde5f21d",
+  "code_sha256": "e8ebaa4d40f8bbe1ed59a50e34c52c908105ad0dcf06117decdfd5fd5ee90ea6",
+  "scope": "kind=joint; fitted jointly to control and pulse trials",
+  "definition": "within-mouse -heldout_nll/(n_heldout ln2), then equal-mouse mean",
+  "n_candidates": 42,
+  "n_mice": 10,
+  "n_test_total_per_candidate": 25493,
+  "bits_winner": "power_leak_urgency",
+  "bic_winner": "power_leak_urgency",
+  "matched_denominators_within_mouse": true,
+  "new_fits": false,
+  "new_scores": false,
+  "figure_variation": "5b",
+  "status": "author-review preview only"
+}
