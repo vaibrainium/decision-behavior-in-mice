@@ -1,4 +1,9 @@
-"""Apply the Figure4C ordinal readout to fixed pulse-only model simulations."""
+"""Apply the Figure4C ordinal readout to fixed model simulations.
+
+The historical default remains the pulse-only candidate set.  Explicit
+``--families`` may also name joint all-trial fits so the same Figure4C readout
+can be compared across fit scopes without refitting either decision model.
+"""
 import argparse,gc,hashlib,json,pickle,subprocess,time,zlib
 from pathlib import Path
 import numpy as np
@@ -40,7 +45,7 @@ def prepare(out):
     (out/'preparation.json').write_text(json.dumps({'observed_eligible_reproduced':True,'n_observed':len(observed),'n_preselection':len(t),'source_sha256':{str(p):sha(p) for p in [SOURCE,ELIGIBLE,ORDINAL/'all_available_10_cells.csv',Path(__file__)]},'base_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()},indent=2)+'\n')
     print('PREPARED',len(t),'schedules; observed21725 selection and cells exactly reproduced',flush=True)
 
-def simulate(out,families,seeds,reps):
+def simulate(out,families,seeds,reps,mice=None):
     from scripts.ddm.fit_mouse_ddm import select
     from scripts.ddm.primacy import make_model,simulate_outcomes
     from scripts.ddm.pulse_joint_signatures import model_path,OPTIONS
@@ -50,10 +55,16 @@ def simulate(out,families,seeds,reps):
     for family in families:
         for seed in seeds:
             for mouse,m in meta.groupby('mouse'):
+                if mice and mouse not in mice:
+                    continue
                 target=cache/f'{family}_{mouse}_seed{seed}_r{reps}.csv'
                 if target.exists():continue
                 path=model_path(family)(mouse);r=pickle.load(path.open('rb'));opt=OPTIONS.get(family,{})
-                assert r['split']=='pulse' if 'split' in r else str(path).endswith('_pulse.pkl')
+                expected_split = 'pulse' if family.startswith('pulse_') else 'all'
+                if 'split' in r:
+                    assert r['split'] == expected_split, (family, r['split'], expected_split)
+                else:
+                    assert str(path).endswith(f'_{expected_split}.pkl'), (family, path, expected_split)
                 assert r.get('front_end')==opt.get('front_end') and bool(r.get('ugm'))==opt.get('ugm',False)
                 ddm=make_model(r['variant'],m.rig.iloc[0],fixed_guess_bias=False,responded=True,front_end=opt.get('front_end'),ugm=opt.get('ugm',False))
                 rows=m.row.to_numpy();data,stim=select(x,rows);seed_mouse=zlib.crc32(f'{mouse}|primacy|{seed}'.encode());start=time.monotonic()
@@ -100,10 +111,10 @@ def analyze(out,families,seeds,reps,comparison="all_available_10"):
     print(summary.to_string(index=False),flush=True)
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser(__doc__);p.add_argument('--output',type=Path,required=True);p.add_argument('--phase',choices=['prepare','simulate','analyze'],required=True);p.add_argument('--families',nargs='*');p.add_argument('--seeds',nargs='+',type=int,default=[0,1]);p.add_argument('--reps',type=int,default=30);p.add_argument('--comparison',choices=['all_available_10','matched_6'],default='all_available_10');a=p.parse_args()
+    p=argparse.ArgumentParser(__doc__);p.add_argument('--output',type=Path,required=True);p.add_argument('--phase',choices=['prepare','simulate','analyze'],required=True);p.add_argument('--families',nargs='*');p.add_argument('--seeds',nargs='+',type=int,default=[0,1]);p.add_argument('--reps',type=int,default=30);p.add_argument('--mice',nargs='*');p.add_argument('--comparison',choices=['all_available_10','matched_6'],default='all_available_10');a=p.parse_args()
     if a.phase=='prepare':a.output.mkdir(parents=True,exist_ok=False);prepare(a.output)
     else:
         score=pd.read_csv(SCORE);families=a.families or score[score.kind=='pulse_only'].sort_values('heldout').family.tolist()
-        assert set(families)<=set(score[score.kind=='pulse_only'].family)
-        if a.phase=='simulate':simulate(a.output,families,a.seeds,a.reps)
+        assert set(families) <= set(score.family), sorted(set(families) - set(score.family))
+        if a.phase=='simulate':simulate(a.output,families,a.seeds,a.reps,a.mice)
         else:analyze(a.output,families,a.seeds,a.reps,a.comparison)
