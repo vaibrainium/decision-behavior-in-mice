@@ -40,7 +40,9 @@ def relabel(node, raster, key):
 
 
 def main():
- p=argparse.ArgumentParser(__doc__);p.add_argument('--output',type=Path,required=True);p.add_argument('--behavior-first',action='store_true');a=p.parse_args();a.output.mkdir(parents=True,exist_ok=False)
+ p=argparse.ArgumentParser(__doc__);p.add_argument('--output',type=Path,required=True);p.add_argument('--behavior-first',action='store_true');p.add_argument('--panel-b',type=Path,default=None,help='Optional stem (without extension) for the model-fit panel.');a=p.parse_args();a.output.mkdir(parents=True,exist_ok=False)
+ panels=dict(PANELS)
+ if a.panel_b is not None:panels['B']=str(a.panel_b)
  # All coordinates in preview pixels. Original panel content is preserved in full.
  positions={'A':(30,30,1299,1039),'B':(1409,30,2125,1039),'C':(100,1110,1160,1098),'D':(1720,1110,1495,1098)}
  if a.behavior_first:
@@ -51,7 +53,7 @@ def main():
   canvas=Image.new('RGB',(width,height),'white');svg=ET.Element(f'{{{ns}}}svg',{'width':str(width),'height':str(height),'viewBox':f'0 0 {width} {height}'})
   ET.SubElement(svg,f'{{{ns}}}rect',{'width':'100%','height':'100%','fill':'white'})
   for panel in (['D','A','B','C'] if a.behavior_first else ['A','B','C','D']):
-   key=alternative if panel=='A' else panel;stem=DRAFT/PANELS[key];x,y,w,h=positions[panel]
+   key=alternative if panel=='A' else panel;stem=Path(panels[key]);stem=stem if stem.is_absolute() else DRAFT/stem;x,y,w,h=positions[panel]
    source=Image.open(stem.with_suffix('.png')).convert('RGB')
    xml=stem.with_suffix('.svg').read_text();ids=re.findall(r'\bid="([^"]+)"',xml)
    for ident in sorted(set(ids),key=len,reverse=True):
