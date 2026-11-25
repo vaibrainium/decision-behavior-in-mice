@@ -1,0 +1,13 @@
+family,seed,bin,lo_s,hi_s,gammaT
+power_leak_urgency,0,1,0.3,0.6,12.310827548900898
+power_leak_urgency,0,2,0.6,0.9,6.318130769255539
+power_leak_urgency,0,3,0.9,1.2,-0.580875227102541
+power_leak_urgency,0,4,1.2,1.5,-4.366723594818962
+power_leak_urgency,0,5,1.5,2.1,-8.002309530293832
+power_leak_urgency,0,6,2.1,5.0,-19.517184769626613
+power_leak_urgency,1,1,0.3,0.6,11.841474640980511
+power_leak_urgency,1,2,0.6,0.9,6.733993985372012
+power_leak_urgency,1,3,0.9,1.2,-0.3323874519263943
+power_leak_urgency,1,4,1.2,1.5,-5.045040149445368
+power_leak_urgency,1,5,1.5,2.1,-7.792388400312763
+power_leak_urgency,1,6,2.1,5.0,-18.42917466477018

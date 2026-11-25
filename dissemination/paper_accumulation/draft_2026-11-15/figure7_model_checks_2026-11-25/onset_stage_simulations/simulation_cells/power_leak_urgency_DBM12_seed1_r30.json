@@ -1,0 +1,14 @@
+{
+  "family": "power_leak_urgency",
+  "mouse": "DBM12",
+  "seed": 1,
+  "mouse_seed": 1861882197,
+  "reps": 30,
+  "fit_path": "/mnt/data/processed/ddm/fits_joint_power_integrators/DBM12_L1U1V1Z0G1_all.pkl",
+  "fit_sha256": "9cab56f97886d5de17317cfbcb88eac63cf90a01ce20dac4509a83aaa23031e7",
+  "n_input": 1320,
+  "n_raw_outcomes": 39600,
+  "n_eligible_simulated": 31209,
+  "nonresponse_fraction": 0.1040909090909091,
+  "seconds": 4.908302094088867
+}

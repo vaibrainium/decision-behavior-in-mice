@@ -1,0 +1,22 @@
+{
+  "variation": "7a",
+  "model": {
+    "family": "power_leak_urgency",
+    "label": "Power-law input + leak + urgency, with s\u1d65",
+    "scope": "all-trial fit",
+    "color": "#6A51A3"
+  },
+  "decision_model_refit": false,
+  "panel_A": "Saved fit-browser predictions; direct model points connected at tested coherences; pulse stages pooled within mouse using cell counts.",
+  "panel_B": "Same 21-parameter WLS ordinal descriptive readout as Figure 4C; 30 repetitions x 2 independent seeds.",
+  "panel_C": "Same grouped-binomial dilution readout as Figure 4D; bins 0.3-5 s; 30 repetitions x 2 independent seeds.",
+  "source_sha256": {
+    "dissemination/figures/qc/fit_browser_2026-11-12_v7.json": "2573e51db626e7240b5b336f52d1fd6c60b717bed4e5d723a789180beebd4498",
+    "dissemination/paper_accumulation/draft_2026-11-15/figure4_final_2026-11-18/source_data/fig4_C_timing_curves.csv": "40939cef042be2bd3a54a42d81cbe6f586f9dd3cd87b3e83fa0a0cc2c9ca4494",
+    "dissemination/paper_accumulation/draft_2026-11-15/figure4_final_2026-11-18/source_data/fig4_D_dilution_adjustment.csv": "b6cf49247051651336d7cfed754264c10a80b2e429f5423baba8838cb08153d2",
+    "dissemination/pulse_dynamics_2026-11-13/all_readouts.csv": "d6709809e38db2ee1a634453e89c48ffc79a7d91cfb99a505739d83ae4ba526b",
+    "dissemination/paper_accumulation/draft_2026-11-15/figure7_model_checks_2026-11-25/onset_stage_simulations/model_readout_by_seed.csv": "5f627d3fe839b657793d77f92984ac82b6fbe32187e12db6690dac005d903f29",
+    "/src/scripts/paper/figure7_simulated_pulse_checks.py": "3965949668c47aa442cb9ee15ee0c9198a51766fe39aeaf627d764f480d990cd"
+  },
+  "git_head": "510545d40ec780c85a594ac2497f378b9b7c6015"
+}

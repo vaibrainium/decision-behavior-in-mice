@@ -1,0 +1,12 @@
+{
+  "observed_eligible_reproduced": true,
+  "n_observed": 21725,
+  "n_preselection": 22437,
+  "source_sha256": {
+    "/mnt/data/processed/pulse_followup/20261023T191030Z_fa8de8b/data/trial_table.csv": "44d7cdf94faa2f63618acc5668251cb09779b026ece1b61264fd57199e81f335",
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_psychometric_timing_2026-11-18/eligible_trials.csv": "8a0ef609ba08aa6d1ae3ba79e8e9161e70a7465f32c40d7612a1b7a28d9fb5fa",
+    "dissemination/paper_accumulation/draft_2026-11-15/pulse_time_ordinal_2026-11-18/all_available_10_cells.csv": "13a968b60fb9fee21ad85ae93c1c7523cda889de5019a6c2f88605c159b140b2",
+    "/src/scripts/paper/pulse_model_primacy.py": "166a47fdba37f7fa2a83e1fbe3e0609116546f7474b5a953f2c9e46b860b4e0b"
+  },
+  "base_commit": "510545d40ec780c85a594ac2497f378b9b7c6015"
+}

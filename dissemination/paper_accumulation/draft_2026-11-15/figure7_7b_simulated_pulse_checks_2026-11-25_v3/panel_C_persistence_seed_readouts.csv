@@ -1,0 +1,13 @@
+family,seed,bin,lo_s,hi_s,gammaT
+pulse_norm_ugm_no_sv,0,1,0.3,0.6,9.465586500742583
+pulse_norm_ugm_no_sv,0,2,0.6,0.9,14.148559771002173
+pulse_norm_ugm_no_sv,0,3,0.9,1.2,6.222670675756518
+pulse_norm_ugm_no_sv,0,4,1.2,1.5,0.4411069535638703
+pulse_norm_ugm_no_sv,0,5,1.5,2.1,-1.0326656095910467
+pulse_norm_ugm_no_sv,0,6,2.1,5.0,-0.7564530776728179
+pulse_norm_ugm_no_sv,1,1,0.3,0.6,9.612702618129878
+pulse_norm_ugm_no_sv,1,2,0.6,0.9,14.074423013493917
+pulse_norm_ugm_no_sv,1,3,0.9,1.2,6.253402339775693
+pulse_norm_ugm_no_sv,1,4,1.2,1.5,-0.0213469392724213
+pulse_norm_ugm_no_sv,1,5,1.5,2.1,-0.4107477946180027
+pulse_norm_ugm_no_sv,1,6,2.1,5.0,-0.5228644497092313
