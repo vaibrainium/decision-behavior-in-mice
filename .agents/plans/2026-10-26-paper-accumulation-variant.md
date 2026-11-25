@@ -469,6 +469,15 @@ For DDM/model-fit psychometric overlays, remove descriptive four-parameter logis
 
 - 2026-11-25: Direct-point rule applied to Figure 3C and Figure 6a/6b; Figure 1 data-only logistic retained. Eight-image set indexed in `eight_figure_review_2026-11-25/README.md`. Report: `../reports/2026-11-25-direct-model-points-eight-figure-review.md`.
 
+### Figure 7 simulated Figure 4 readouts — 2026-11-25
+Create matched Figure 7 variations for the two Figure 6 winners: 7a uses the all-trial `power_leak_urgency` fit and 7b uses the pulse-only `pulse_norm_ugm_no_sv` fit. Apply the same descriptive estimators used for the observed Figure 4 data to fixed-parameter simulations; do not refit either decision model. Reuse verified simulations where the trial selection matches, and generate only the missing exact onset-stage prediction in a new versioned output. Show model probabilities/readouts directly rather than adding psychometric smoothing.
+- [x] Audit which Figure 4 estimands and selections are already available for both winners.
+- [x] Generate and verify the missing fixed-parameter all-trial onset-stage prediction, preserving the observed trial-selection audit.
+- [x] Render matched 7a/7b previews with common axes and explicit observed-versus-model provenance.
+- [x] Verify numerical sources and artwork, show PNGs in chat, and write a reproducible report.
+
+- 2026-11-25: Figure 7 v3 previews verified and rendered. 7B is closer than 7A on all three displayed checks, but neither captures the full choice-shift/onset-time signature. Report: `../reports/2026-11-25-figure7-simulated-pulse-checks.md`.
+
 ### Pulse-only held-out bits per trial — 2026-11-18
 Compute same metric as Figure3 for all22 pulse-only candidates: -heldout_NLL/(n_heldout ln2) within mouse, then equal-mouse mean. Keep pooled trial-weighted score separately, verify matched trial counts, no fits or null-baseline claim.
 - [x] Export per-mouse and group scores, verify formula/ranking and document result.
