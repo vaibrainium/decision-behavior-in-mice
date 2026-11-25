@@ -82,7 +82,7 @@ def run(out, families, seeds):
                 with path.open("rb") as stream:
                     r = pickle.load(stream)
                 assert r["split"] == f"pcv{fold}" and r["n_test"] == len(test) and r["n_train"] == len(train)
-                assert r["n_reps"] == 15 and r["guess_model"] == "fast_only"
+                assert r["n_reps"] == 15 and r["guess_model"] in ("fast_only", "informed")
                 model = make_model(r["variant"], rig, r["fixed_guess_bias"], responded=True,
                                    front_end=r["front_end"], ugm=r.get("ugm", False))
                 for seed in seeds:

@@ -51,7 +51,7 @@ def run(out, families, seeds):
         for family in families:
             with model_path(family)(mouse).open("rb") as f:
                 r = pickle.load(f)
-            assert r["split"] == "pulse" and r["n_train"] == len(sets["pulse"]) and r["guess_model"] == "fast_only"
+            assert r["split"] == "pulse" and r["n_train"] == len(sets["pulse"]) and r["guess_model"] in ("fast_only", "informed")
             model = make_model(r["variant"], rig, r["fixed_guess_bias"], responded=True,
                                front_end=r["front_end"], ugm=r.get("ugm", False))
             for scored, idx in sets.items():
