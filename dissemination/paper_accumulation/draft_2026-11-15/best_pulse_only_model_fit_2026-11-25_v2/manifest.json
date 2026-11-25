@@ -1,0 +1,49 @@
+{
+  "source": "dissemination/figures/qc/fit_browser_2026-11-12_v7.json",
+  "source_sha256": "2573e51db626e7240b5b336f52d1fd6c60b717bed4e5d723a789180beebd4498",
+  "code_sha256": "69386de1caab5c61f40c8b277c1e1a94ceed469c3c678269fed83069f46d1993",
+  "shared_code": "/src/scripts/paper/figure6_best_all_trial_fit.py",
+  "shared_code_sha256": "df02cadf86b8e1d187a326c4296166b434271f40626c8bcce31b2f9fc193a49d",
+  "base_commit": "9e0453315b9b793c8457138ea6747c1a2b499cdd",
+  "model": "pulse_norm_ugm_no_sv",
+  "model_label": "Normalized input + urgency-gating region, no s\u1d65",
+  "browser_made": "2026-11-12",
+  "scope": "Preview only; pulse-only full-fit simulations; controls predicted; no refit or new simulation.",
+  "population_counts": [
+    {
+      "cond": "control",
+      "n_trials": 13117,
+      "n_mice": 10
+    },
+    {
+      "cond": "early left",
+      "n_trials": 2214,
+      "n_mice": 10
+    },
+    {
+      "cond": "early right",
+      "n_trials": 2157,
+      "n_mice": 10
+    },
+    {
+      "cond": "late left",
+      "n_trials": 718,
+      "n_mice": 6
+    },
+    {
+      "cond": "late right",
+      "n_trials": 742,
+      "n_mice": 6
+    },
+    {
+      "cond": "middle left",
+      "n_trials": 2165,
+      "n_mice": 10
+    },
+    {
+      "cond": "middle right",
+      "n_trials": 2116,
+      "n_mice": 10
+    }
+  ]
+}

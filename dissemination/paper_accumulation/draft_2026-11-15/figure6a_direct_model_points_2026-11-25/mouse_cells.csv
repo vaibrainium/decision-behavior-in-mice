@@ -1,0 +1,929 @@
+cond,coh,n,p,se_p,rt,se_rt,mouse,family
+control,-100,133,0.2932,0.0395,0.7982,0.0469,DBM12,data
+control,-18,77,0.4026,0.0559,1.0722,0.0985,DBM12,data
+control,-9,77,0.5195,0.0569,1.1399,0.106,DBM12,data
+control,0,76,0.6053,0.0561,1.2446,0.1229,DBM12,data
+control,9,75,0.4933,0.0577,0.9957,0.0909,DBM12,data
+control,18,69,0.6522,0.0573,1.284,0.1125,DBM12,data
+control,100,126,0.8016,0.0355,1.2929,0.0938,DBM12,data
+early left,-18,19,0.6316,0.1107,1.5331,0.2898,DBM12,data
+early left,-9,23,0.6522,0.0993,1.0439,0.1737,DBM12,data
+early left,0,12,0.4167,0.1423,1.1715,0.3489,DBM12,data
+early left,9,22,0.7273,0.095,1.1707,0.2201,DBM12,data
+early left,18,10,0.6,0.1549,1.0729,0.2266,DBM12,data
+early left,100,19,0.6316,0.1107,1.1282,0.1827,DBM12,data
+early right,-100,23,0.3043,0.0959,1.0613,0.1662,DBM12,data
+early right,-18,22,0.6364,0.1026,1.3839,0.2728,DBM12,data
+early right,-9,21,0.5714,0.108,0.8006,0.1034,DBM12,data
+early right,0,21,0.5714,0.108,1.0106,0.1908,DBM12,data
+early right,9,22,0.6818,0.0993,1.1188,0.1275,DBM12,data
+early right,18,22,0.5909,0.1048,1.2111,0.2326,DBM12,data
+late left,-18,23,0.3043,0.0959,0.8285,0.15,DBM12,data
+late left,-9,21,0.619,0.106,1.0656,0.2159,DBM12,data
+late left,0,25,0.64,0.096,1.2143,0.2427,DBM12,data
+late left,9,14,0.8571,0.0935,1.1935,0.2277,DBM12,data
+late left,18,18,0.7222,0.1056,1.1647,0.2518,DBM12,data
+late left,100,22,0.6364,0.1026,0.8959,0.1436,DBM12,data
+late right,-100,24,0.4167,0.1006,0.8287,0.0997,DBM12,data
+late right,-18,18,0.5556,0.1171,1.3737,0.2842,DBM12,data
+late right,-9,21,0.4286,0.108,1.0109,0.1876,DBM12,data
+late right,0,19,0.4737,0.1145,1.2344,0.2447,DBM12,data
+late right,9,15,0.8,0.1033,1.1046,0.172,DBM12,data
+late right,18,20,0.5,0.1118,1.2482,0.2075,DBM12,data
+middle left,-18,20,0.55,0.1112,0.9139,0.1382,DBM12,data
+middle left,-9,18,0.7778,0.098,1.1472,0.1979,DBM12,data
+middle left,0,21,0.6667,0.1029,0.9807,0.1363,DBM12,data
+middle left,9,23,0.5217,0.1042,1.2735,0.1959,DBM12,data
+middle left,18,23,0.6522,0.0993,0.9983,0.1662,DBM12,data
+middle left,100,22,0.6818,0.0993,1.1503,0.1751,DBM12,data
+middle right,-100,17,0.2941,0.1105,0.8131,0.1,DBM12,data
+middle right,-18,12,0.5833,0.1423,1.1649,0.2722,DBM12,data
+middle right,-9,13,0.6923,0.128,1.049,0.2321,DBM12,data
+middle right,0,15,0.3333,0.1217,1.1421,0.281,DBM12,data
+middle right,9,9,0.6667,0.1571,0.879,0.2043,DBM12,data
+middle right,18,18,0.7778,0.098,1.132,0.237,DBM12,data
+control,-100,60,0.2167,0.0532,1.2018,0.1335,DBM13,data
+control,-36,36,0.4722,0.0832,1.5751,0.2283,DBM13,data
+control,-9,39,0.4615,0.0798,1.5584,0.2031,DBM13,data
+control,0,33,0.4242,0.086,1.8261,0.22,DBM13,data
+control,9,34,0.3529,0.082,1.7946,0.224,DBM13,data
+control,36,24,0.7083,0.0928,1.3974,0.2072,DBM13,data
+control,100,61,0.6885,0.0593,1.7118,0.1654,DBM13,data
+early left,-36,12,0.25,0.125,1.5102,0.4252,DBM13,data
+early left,-9,7,0.4286,0.187,1.3242,0.2241,DBM13,data
+early left,0,6,0.6667,0.1925,1.7663,0.432,DBM13,data
+early left,9,6,0.5,0.2041,1.3521,0.5883,DBM13,data
+early left,36,8,0.75,0.1531,1.4206,0.3581,DBM13,data
+early left,100,9,0.6667,0.1571,1.7136,0.4503,DBM13,data
+early right,-100,6,0.3333,0.1925,1.3394,0.2817,DBM13,data
+early right,-36,4,0.5,0.25,1.3129,0.4787,DBM13,data
+early right,-9,8,0.375,0.1712,1.4633,0.3479,DBM13,data
+early right,0,6,0.6667,0.1925,2.1798,0.7643,DBM13,data
+early right,9,4,0.25,0.2165,1.9146,0.7939,DBM13,data
+early right,36,8,0.75,0.1531,1.0529,0.2267,DBM13,data
+late left,-36,9,0.3333,0.1571,1.5725,0.3902,DBM13,data
+late left,-9,12,0.3333,0.1361,1.2905,0.3205,DBM13,data
+late left,0,3,0.3333,0.2722,1.3069,0.3067,DBM13,data
+late left,9,10,0.6,0.1549,1.8023,0.3061,DBM13,data
+late left,36,8,0.625,0.1712,1.1188,0.2505,DBM13,data
+late left,100,6,0.6667,0.1925,2.4746,0.6893,DBM13,data
+late right,-100,13,0.1538,0.1001,1.8555,0.4769,DBM13,data
+late right,-36,6,0.8333,0.1521,1.8605,0.5461,DBM13,data
+late right,-9,2,0.0,0.0,0.3957,0.0884,DBM13,data
+late right,0,8,0.625,0.1712,1.4298,0.2461,DBM13,data
+late right,9,9,0.4444,0.1656,1.2704,0.2629,DBM13,data
+late right,36,16,0.5,0.125,1.4983,0.3458,DBM13,data
+middle left,-36,6,0.5,0.2041,1.4803,0.6989,DBM13,data
+middle left,-9,8,0.25,0.1531,0.8858,0.1073,DBM13,data
+middle left,0,10,0.7,0.1449,2.3065,0.469,DBM13,data
+middle left,9,3,0.6667,0.2722,1.9568,1.1201,DBM13,data
+middle left,36,10,0.4,0.1549,1.3478,0.3834,DBM13,data
+middle left,100,3,1.0,0.0,2.4709,1.2149,DBM13,data
+middle right,-100,6,0.3333,0.1925,0.6268,0.091,DBM13,data
+middle right,-36,8,0.25,0.1531,2.3724,0.4993,DBM13,data
+middle right,-9,6,0.5,0.2041,0.8936,0.1194,DBM13,data
+middle right,0,10,0.6,0.1549,1.8074,0.4136,DBM13,data
+middle right,9,13,0.6154,0.1349,2.2047,0.4564,DBM13,data
+middle right,36,4,0.75,0.2165,2.4507,0.8878,DBM13,data
+control,-100,59,0.1356,0.0446,1.4086,0.1448,DBM14,data
+control,-36,43,0.2791,0.0684,1.7865,0.1984,DBM14,data
+control,-9,35,0.4286,0.0836,1.3876,0.198,DBM14,data
+control,0,31,0.5484,0.0894,1.8103,0.213,DBM14,data
+control,9,45,0.4444,0.0741,1.6939,0.1854,DBM14,data
+control,36,36,0.75,0.0722,1.8097,0.1943,DBM14,data
+control,100,57,0.8421,0.0483,1.5627,0.1491,DBM14,data
+early left,-36,8,0.125,0.1169,3.0381,0.3169,DBM14,data
+early left,-9,12,0.4167,0.1423,1.9641,0.3234,DBM14,data
+early left,0,9,0.6667,0.1571,1.4616,0.5158,DBM14,data
+early left,9,10,0.6,0.1549,1.8354,0.3613,DBM14,data
+early left,36,9,0.8889,0.1048,1.4886,0.4584,DBM14,data
+early left,100,12,0.75,0.125,2.1141,0.5674,DBM14,data
+early right,-100,13,0.2308,0.1169,1.8841,0.3836,DBM14,data
+early right,-36,6,0.0,0.0,1.8562,0.5611,DBM14,data
+early right,-9,8,0.5,0.1768,0.7856,0.1451,DBM14,data
+early right,0,9,0.5556,0.1656,2.189,0.5665,DBM14,data
+early right,9,8,0.875,0.1169,1.3262,0.4606,DBM14,data
+early right,36,8,0.875,0.1169,2.2678,0.4871,DBM14,data
+late left,-36,10,0.4,0.1549,1.3756,0.2473,DBM14,data
+late left,-9,11,0.3636,0.145,1.6041,0.3634,DBM14,data
+late left,0,12,0.3333,0.1361,1.412,0.3113,DBM14,data
+late left,9,7,0.4286,0.187,1.8245,0.3967,DBM14,data
+late left,36,4,1.0,0.0,1.3754,0.4288,DBM14,data
+late left,100,8,1.0,0.0,1.6008,0.3348,DBM14,data
+late right,-100,13,0.1538,0.1001,1.338,0.2277,DBM14,data
+late right,-36,13,0.3077,0.128,1.2488,0.1632,DBM14,data
+late right,-9,7,0.4286,0.187,1.7619,0.3545,DBM14,data
+late right,0,10,0.5,0.1581,2.1347,0.4154,DBM14,data
+late right,9,7,0.5714,0.187,1.4325,0.3698,DBM14,data
+late right,36,10,0.5,0.1581,1.8861,0.3619,DBM14,data
+middle left,-36,5,0.4,0.2191,1.0654,0.2852,DBM14,data
+middle left,-9,12,0.4167,0.1423,1.7843,0.3862,DBM14,data
+middle left,0,7,0.1429,0.1323,0.8681,0.2838,DBM14,data
+middle left,9,6,0.6667,0.1925,2.3285,0.427,DBM14,data
+middle left,36,9,0.7778,0.1386,1.4193,0.4301,DBM14,data
+middle left,100,9,0.7778,0.1386,2.1,0.3096,DBM14,data
+middle right,-100,9,0.1111,0.1048,1.8215,0.496,DBM14,data
+middle right,-36,9,0.1111,0.1048,1.5396,0.3145,DBM14,data
+middle right,-9,7,0.2857,0.1707,2.2087,0.352,DBM14,data
+middle right,0,9,0.8889,0.1048,1.615,0.4492,DBM14,data
+middle right,9,11,0.1818,0.1163,1.9191,0.4418,DBM14,data
+middle right,36,16,0.8125,0.0976,1.6556,0.311,DBM14,data
+control,-100,100,0.21,0.0407,1.523,0.1058,DBM15,data
+control,-36,37,0.4324,0.0814,1.4003,0.1517,DBM15,data
+control,-18,17,0.1176,0.0781,1.7894,0.2847,DBM15,data
+control,-9,51,0.3725,0.0677,1.6112,0.1427,DBM15,data
+control,0,50,0.6,0.0693,1.7471,0.1668,DBM15,data
+control,9,42,0.5,0.0772,1.8125,0.1817,DBM15,data
+control,18,11,0.5455,0.1501,2.137,0.4077,DBM15,data
+control,36,31,0.5806,0.0886,1.7095,0.2215,DBM15,data
+control,100,81,0.8148,0.0432,1.8594,0.1307,DBM15,data
+early left,-36,7,0.4286,0.187,1.0885,0.1284,DBM15,data
+early left,-18,3,0.3333,0.2722,2.0449,0.949,DBM15,data
+early left,-9,11,0.4545,0.1501,1.9726,0.3499,DBM15,data
+early left,0,13,0.5385,0.1383,1.5939,0.3574,DBM15,data
+early left,9,13,0.6923,0.128,1.6836,0.4013,DBM15,data
+early left,18,4,0.0,0.0,1.5918,0.1426,DBM15,data
+early left,36,6,0.6667,0.1925,2.2874,0.6063,DBM15,data
+early left,100,12,0.6667,0.1361,1.7992,0.4729,DBM15,data
+early right,-100,13,0.2308,0.1169,1.1437,0.1103,DBM15,data
+early right,-36,6,0.5,0.2041,1.5822,0.5626,DBM15,data
+early right,-18,3,0.0,0.0,1.7357,0.4262,DBM15,data
+early right,-9,12,0.5,0.1443,1.4685,0.262,DBM15,data
+early right,0,13,0.3846,0.1349,1.6042,0.3091,DBM15,data
+early right,9,9,0.5556,0.1656,2.1249,0.4492,DBM15,data
+early right,18,4,0.0,0.0,1.2165,0.3551,DBM15,data
+early right,36,13,0.9231,0.0739,2.1325,0.3687,DBM15,data
+late left,-36,11,0.5455,0.1501,1.5429,0.2556,DBM15,data
+late left,-18,4,0.75,0.2165,1.978,0.8828,DBM15,data
+late left,-9,17,0.2941,0.1105,1.3053,0.1589,DBM15,data
+late left,0,12,0.5,0.1443,1.7411,0.3032,DBM15,data
+late left,9,11,0.1818,0.1163,1.8973,0.2827,DBM15,data
+late left,18,3,0.3333,0.2722,1.8574,1.1367,DBM15,data
+late left,36,7,0.1429,0.1323,2.076,0.4124,DBM15,data
+late left,100,14,0.8571,0.0935,1.5609,0.2913,DBM15,data
+late right,-100,17,0.2353,0.1029,1.1014,0.1692,DBM15,data
+late right,-36,11,0.6364,0.145,1.4331,0.2134,DBM15,data
+late right,-18,4,0.25,0.2165,1.8058,0.5769,DBM15,data
+late right,-9,11,0.5455,0.1501,1.3554,0.3347,DBM15,data
+late right,0,12,0.4167,0.1423,1.8351,0.3565,DBM15,data
+late right,9,13,0.4615,0.1383,1.8907,0.3218,DBM15,data
+late right,18,4,0.5,0.25,2.6062,0.6214,DBM15,data
+late right,36,4,0.75,0.2165,1.5283,1.0766,DBM15,data
+middle left,-36,12,0.4167,0.1423,1.0498,0.139,DBM15,data
+middle left,-18,2,0.0,0.0,1.3063,0.0576,DBM15,data
+middle left,-9,11,0.5455,0.1501,1.3967,0.1717,DBM15,data
+middle left,0,9,0.3333,0.1571,1.6112,0.2579,DBM15,data
+middle left,9,12,0.6667,0.1361,2.5612,0.3675,DBM15,data
+middle left,18,4,0.25,0.2165,2.1168,0.5058,DBM15,data
+middle left,36,9,0.3333,0.1571,1.312,0.2619,DBM15,data
+middle left,100,16,0.8125,0.0976,2.3964,0.277,DBM15,data
+middle right,-100,12,0.1667,0.1076,1.2402,0.2476,DBM15,data
+middle right,-36,6,0.5,0.2041,1.0587,0.1823,DBM15,data
+middle right,-18,4,1.0,0.0,1.6084,0.5469,DBM15,data
+middle right,-9,10,0.3,0.1449,2.5653,0.3598,DBM15,data
+middle right,0,8,0.25,0.1531,1.86,0.565,DBM15,data
+middle right,9,8,0.625,0.1712,1.9416,0.5189,DBM15,data
+middle right,18,1,1.0,0.0,1.692,,DBM15,data
+middle right,36,10,0.9,0.0949,1.7203,0.4323,DBM15,data
+control,-100,217,0.1751,0.0258,1.4308,0.0697,DBM5,data
+control,-36,79,0.2911,0.0511,1.7045,0.1323,DBM5,data
+control,-18,21,0.5714,0.108,1.9438,0.3088,DBM5,data
+control,-9,110,0.5364,0.0475,1.5015,0.1042,DBM5,data
+control,0,115,0.4609,0.0465,1.5213,0.0907,DBM5,data
+control,9,114,0.4737,0.0468,1.5362,0.105,DBM5,data
+control,18,22,0.5909,0.1048,1.7524,0.1896,DBM5,data
+control,36,93,0.6129,0.0505,1.3745,0.1115,DBM5,data
+control,100,215,0.8047,0.027,1.4344,0.0646,DBM5,data
+early left,-36,21,0.2381,0.0929,1.326,0.2487,DBM5,data
+early left,-18,7,0.5714,0.187,1.8529,0.5522,DBM5,data
+early left,-9,32,0.3438,0.084,1.606,0.225,DBM5,data
+early left,0,28,0.3929,0.0923,1.7802,0.2455,DBM5,data
+early left,9,24,0.4583,0.1017,1.6012,0.2943,DBM5,data
+early left,18,5,0.4,0.2191,2.9972,0.5751,DBM5,data
+early left,36,30,0.5667,0.0905,1.4556,0.2127,DBM5,data
+early left,100,43,0.7674,0.0644,1.3736,0.1712,DBM5,data
+early right,-100,27,0.1111,0.0605,1.4421,0.1819,DBM5,data
+early right,-36,19,0.4737,0.1145,1.2262,0.2512,DBM5,data
+early right,-18,11,0.5455,0.1501,1.6106,0.3276,DBM5,data
+early right,-9,27,0.2963,0.0879,1.4781,0.188,DBM5,data
+early right,0,30,0.5667,0.0905,1.4226,0.1644,DBM5,data
+early right,9,24,0.7083,0.0928,1.5249,0.2415,DBM5,data
+early right,18,12,0.6667,0.1361,1.7191,0.344,DBM5,data
+early right,36,24,0.5833,0.1006,1.2956,0.2206,DBM5,data
+late left,-36,31,0.2258,0.0751,1.7206,0.2173,DBM5,data
+late left,-18,6,0.6667,0.1925,2.4428,0.3709,DBM5,data
+late left,-9,31,0.4839,0.0898,1.3645,0.1742,DBM5,data
+late left,0,31,0.4839,0.0898,1.5832,0.2405,DBM5,data
+late left,9,35,0.6,0.0828,1.6321,0.1695,DBM5,data
+late left,18,6,0.3333,0.1925,1.7652,0.6142,DBM5,data
+late left,36,25,0.6,0.098,1.3307,0.2115,DBM5,data
+late left,100,29,0.6207,0.0901,1.4928,0.1774,DBM5,data
+late right,-100,37,0.2162,0.0677,1.3089,0.1511,DBM5,data
+late right,-36,27,0.2963,0.0879,1.3231,0.1428,DBM5,data
+late right,-18,7,0.5714,0.187,2.3693,0.4269,DBM5,data
+late right,-9,28,0.4286,0.0935,1.75,0.2278,DBM5,data
+late right,0,32,0.625,0.0856,1.6115,0.1751,DBM5,data
+late right,9,37,0.5405,0.0819,1.5848,0.1852,DBM5,data
+late right,18,4,0.5,0.25,1.6161,0.171,DBM5,data
+late right,36,22,0.5455,0.1062,1.2706,0.253,DBM5,data
+middle left,-36,18,0.1667,0.0878,1.5109,0.2869,DBM5,data
+middle left,-18,6,0.3333,0.1925,1.9552,0.4129,DBM5,data
+middle left,-9,25,0.48,0.0999,1.4149,0.1609,DBM5,data
+middle left,0,24,0.5833,0.1006,1.382,0.202,DBM5,data
+middle left,9,34,0.4412,0.0852,1.3208,0.2132,DBM5,data
+middle left,18,7,0.5714,0.187,1.9866,0.5553,DBM5,data
+middle left,36,23,0.6957,0.0959,1.5896,0.2356,DBM5,data
+middle left,100,25,0.56,0.0993,1.4121,0.2003,DBM5,data
+middle right,-100,29,0.1724,0.0701,1.1872,0.1365,DBM5,data
+middle right,-36,37,0.3243,0.077,1.3069,0.1058,DBM5,data
+middle right,-18,2,0.5,0.3536,3.4918,1.3327,DBM5,data
+middle right,-9,22,0.5455,0.1062,1.5968,0.2697,DBM5,data
+middle right,0,27,0.5556,0.0956,1.6096,0.2033,DBM5,data
+middle right,9,24,0.5,0.1021,1.3907,0.1732,DBM5,data
+middle right,18,5,0.6,0.2191,1.8924,0.4305,DBM5,data
+middle right,36,17,0.4706,0.1211,1.7833,0.3268,DBM5,data
+control,-100,262,0.145,0.0218,1.3263,0.0623,DBM6,data
+control,-36,105,0.3238,0.0457,1.3516,0.0936,DBM6,data
+control,-18,24,0.5,0.1021,2.1193,0.2301,DBM6,data
+control,-9,149,0.4497,0.0408,1.6585,0.0911,DBM6,data
+control,0,138,0.5797,0.042,1.6034,0.096,DBM6,data
+control,9,138,0.6232,0.0413,1.8135,0.0962,DBM6,data
+control,18,25,0.6,0.098,1.801,0.2344,DBM6,data
+control,36,123,0.748,0.0391,1.3901,0.0759,DBM6,data
+control,100,264,0.8826,0.0198,1.3696,0.053,DBM6,data
+early left,-36,17,0.1765,0.0925,1.6888,0.2718,DBM6,data
+early left,-18,15,0.5333,0.1288,1.714,0.3051,DBM6,data
+early left,-9,33,0.5455,0.0867,1.3897,0.1913,DBM6,data
+early left,0,35,0.4571,0.0842,2.1882,0.2457,DBM6,data
+early left,9,30,0.7,0.0837,1.3429,0.1559,DBM6,data
+early left,18,11,0.7273,0.1343,2.2325,0.4431,DBM6,data
+early left,36,21,0.8095,0.0857,1.5238,0.2047,DBM6,data
+early left,100,48,0.7917,0.0586,1.4449,0.1136,DBM6,data
+early right,-100,30,0.1333,0.0621,1.4323,0.162,DBM6,data
+early right,-36,32,0.4375,0.0877,1.4979,0.1673,DBM6,data
+early right,-18,7,0.4286,0.187,1.5603,0.388,DBM6,data
+early right,-9,25,0.52,0.0999,1.5859,0.2049,DBM6,data
+early right,0,27,0.4815,0.0962,1.7363,0.2037,DBM6,data
+early right,9,52,0.5962,0.068,1.5632,0.1407,DBM6,data
+early right,18,6,1.0,0.0,2.8692,0.7104,DBM6,data
+early right,36,22,0.8636,0.0732,1.3659,0.1235,DBM6,data
+late left,-36,31,0.2903,0.0815,1.6816,0.1936,DBM6,data
+late left,-18,16,0.5625,0.124,1.6694,0.282,DBM6,data
+late left,-9,34,0.4706,0.0856,1.5128,0.1976,DBM6,data
+late left,0,34,0.5882,0.0844,1.6017,0.1799,DBM6,data
+late left,9,41,0.7805,0.0646,1.7221,0.1688,DBM6,data
+late left,18,6,0.6667,0.1925,1.9676,0.4775,DBM6,data
+late left,36,25,0.64,0.096,1.413,0.1928,DBM6,data
+late left,100,35,0.8286,0.0637,1.5009,0.1485,DBM6,data
+late right,-100,41,0.2195,0.0646,1.2954,0.1304,DBM6,data
+late right,-36,37,0.3514,0.0785,1.6259,0.1881,DBM6,data
+late right,-18,4,0.25,0.2165,2.0738,0.4817,DBM6,data
+late right,-9,45,0.5778,0.0736,1.8137,0.1944,DBM6,data
+late right,0,34,0.6176,0.0833,1.7578,0.2016,DBM6,data
+late right,9,37,0.7297,0.073,1.4295,0.1844,DBM6,data
+late right,18,13,0.7692,0.1169,2.4375,0.2731,DBM6,data
+late right,36,30,0.8333,0.068,1.5185,0.1941,DBM6,data
+middle left,-36,25,0.36,0.096,1.2905,0.15,DBM6,data
+middle left,-18,6,0.3333,0.1925,1.2622,0.3197,DBM6,data
+middle left,-9,44,0.4773,0.0753,1.6517,0.1716,DBM6,data
+middle left,0,36,0.5833,0.0822,1.37,0.1877,DBM6,data
+middle left,9,32,0.5625,0.0877,1.9181,0.2464,DBM6,data
+middle left,18,6,0.6667,0.1925,2.237,0.5462,DBM6,data
+middle left,36,32,0.7812,0.0731,1.67,0.1644,DBM6,data
+middle left,100,37,0.8649,0.0562,1.4512,0.1523,DBM6,data
+middle right,-100,24,0.1667,0.0761,1.4655,0.2282,DBM6,data
+middle right,-36,32,0.3125,0.0819,1.7644,0.2267,DBM6,data
+middle right,-18,6,0.3333,0.1925,2.9511,0.6279,DBM6,data
+middle right,-9,27,0.5556,0.0956,1.7465,0.2267,DBM6,data
+middle right,0,27,0.7407,0.0843,1.7981,0.257,DBM6,data
+middle right,9,34,0.7647,0.0727,1.6227,0.1951,DBM6,data
+middle right,18,10,0.8,0.1265,3.0899,0.4385,DBM6,data
+middle right,36,29,0.7586,0.0795,1.361,0.1318,DBM6,data
+control,-100,43,0.1395,0.0528,2.1151,0.1756,PSUIM10,data
+control,-36,25,0.48,0.0999,2.2406,0.247,PSUIM10,data
+control,-18,21,0.381,0.106,2.1877,0.3084,PSUIM10,data
+control,-9,25,0.6,0.098,2.0439,0.2523,PSUIM10,data
+control,0,20,0.6,0.1095,1.962,0.2396,PSUIM10,data
+control,9,31,0.7097,0.0815,1.6955,0.153,PSUIM10,data
+control,18,29,0.7931,0.0752,1.7045,0.1881,PSUIM10,data
+control,36,27,0.963,0.0363,1.539,0.1661,PSUIM10,data
+control,100,38,0.8947,0.0498,1.2864,0.0859,PSUIM10,data
+early left,-36,5,0.6,0.2191,1.9996,0.5907,PSUIM10,data
+early left,-18,6,0.1667,0.1521,2.2822,0.4783,PSUIM10,data
+early left,-9,5,0.4,0.2191,2.4548,0.3519,PSUIM10,data
+early left,0,7,0.2857,0.1707,1.5934,0.2957,PSUIM10,data
+early left,9,4,0.75,0.2165,2.1762,0.2231,PSUIM10,data
+early left,18,5,0.8,0.1789,1.9189,0.4932,PSUIM10,data
+early left,36,2,1.0,0.0,1.4845,0.1752,PSUIM10,data
+early left,100,5,0.8,0.1789,0.9658,0.0931,PSUIM10,data
+early right,-100,2,0.5,0.3536,2.7198,1.4561,PSUIM10,data
+early right,-36,9,0.4444,0.1656,2.3614,0.5598,PSUIM10,data
+early right,-18,9,0.6667,0.1571,2.3911,0.5327,PSUIM10,data
+early right,-9,9,0.6667,0.1571,1.6973,0.4065,PSUIM10,data
+early right,0,4,0.75,0.2165,1.5401,0.2068,PSUIM10,data
+early right,9,5,0.8,0.1789,1.9752,0.4039,PSUIM10,data
+early right,18,4,0.5,0.25,1.5889,0.3457,PSUIM10,data
+early right,36,7,0.8571,0.1323,1.04,0.1539,PSUIM10,data
+middle left,-36,3,0.6667,0.2722,1.4642,0.2313,PSUIM10,data
+middle left,-18,5,0.0,0.0,3.3095,0.5005,PSUIM10,data
+middle left,-9,1,1.0,0.0,1.2557,,PSUIM10,data
+middle left,0,2,0.5,0.3536,1.103,0.2108,PSUIM10,data
+middle left,9,4,1.0,0.0,0.9605,0.0853,PSUIM10,data
+middle left,18,6,0.3333,0.1925,3.0954,0.4502,PSUIM10,data
+middle left,36,5,0.8,0.1789,1.6379,0.4753,PSUIM10,data
+middle left,100,9,0.8889,0.1048,1.575,0.2651,PSUIM10,data
+middle right,-100,3,0.3333,0.2722,1.0329,0.145,PSUIM10,data
+middle right,-36,5,0.2,0.1789,2.1926,0.3393,PSUIM10,data
+middle right,-18,2,1.0,0.0,1.0473,0.2996,PSUIM10,data
+middle right,-9,4,0.5,0.25,2.7678,0.3864,PSUIM10,data
+middle right,0,13,0.8462,0.1001,1.6412,0.2205,PSUIM10,data
+middle right,9,3,1.0,0.0,0.7896,0.2542,PSUIM10,data
+middle right,18,5,0.8,0.1789,1.4653,0.4102,PSUIM10,data
+middle right,36,8,0.875,0.1169,1.5636,0.2692,PSUIM10,data
+control,-100,217,0.1106,0.0213,1.656,0.0697,PSUIM5,data
+control,-36,136,0.1765,0.0327,2.1321,0.103,PSUIM5,data
+control,-18,111,0.2613,0.0417,2.3804,0.1229,PSUIM5,data
+control,-9,117,0.3504,0.0441,2.0949,0.1128,PSUIM5,data
+control,0,112,0.4107,0.0465,2.3897,0.1339,PSUIM5,data
+control,9,134,0.5373,0.0431,2.311,0.1081,PSUIM5,data
+control,18,125,0.608,0.0437,2.0242,0.1016,PSUIM5,data
+control,36,153,0.7908,0.0329,1.7786,0.0804,PSUIM5,data
+control,100,232,0.8966,0.02,1.3501,0.047,PSUIM5,data
+early left,-36,17,0.2941,0.1105,2.3717,0.3345,PSUIM5,data
+early left,-18,28,0.2143,0.0775,2.2669,0.2297,PSUIM5,data
+early left,-9,24,0.375,0.0988,2.4487,0.2598,PSUIM5,data
+early left,0,20,0.4,0.1095,1.9737,0.2768,PSUIM5,data
+early left,9,29,0.5172,0.0928,2.1324,0.1939,PSUIM5,data
+early left,18,30,0.6667,0.0861,2.609,0.2578,PSUIM5,data
+early left,36,29,0.8276,0.0701,1.7245,0.1715,PSUIM5,data
+early left,100,34,0.8529,0.0607,1.6292,0.1487,PSUIM5,data
+early right,-100,17,0.0588,0.0571,1.9611,0.273,PSUIM5,data
+early right,-36,20,0.25,0.0968,2.0071,0.224,PSUIM5,data
+early right,-18,34,0.3235,0.0802,2.2504,0.2081,PSUIM5,data
+early right,-9,26,0.5385,0.0978,2.0692,0.2184,PSUIM5,data
+early right,0,31,0.5484,0.0894,2.2685,0.2522,PSUIM5,data
+early right,9,25,0.76,0.0854,2.1007,0.2507,PSUIM5,data
+early right,18,29,0.6897,0.0859,2.0755,0.2446,PSUIM5,data
+early right,36,24,0.8333,0.0761,1.8473,0.26,PSUIM5,data
+middle left,-36,24,0.1667,0.0761,1.9797,0.2017,PSUIM5,data
+middle left,-18,29,0.2759,0.083,2.1902,0.2229,PSUIM5,data
+middle left,-9,24,0.2917,0.0928,2.2098,0.2598,PSUIM5,data
+middle left,0,25,0.24,0.0854,1.7094,0.2135,PSUIM5,data
+middle left,9,21,0.4286,0.108,2.5206,0.3121,PSUIM5,data
+middle left,18,30,0.5667,0.0905,1.9918,0.2253,PSUIM5,data
+middle left,36,32,0.7812,0.0731,1.8579,0.1856,PSUIM5,data
+middle left,100,25,0.96,0.0392,1.4325,0.1372,PSUIM5,data
+middle right,-100,29,0.2414,0.0795,1.4381,0.1378,PSUIM5,data
+middle right,-36,23,0.2174,0.086,2.4661,0.26,PSUIM5,data
+middle right,-18,22,0.3636,0.1026,2.2682,0.2987,PSUIM5,data
+middle right,-9,31,0.3226,0.084,2.074,0.2288,PSUIM5,data
+middle right,0,25,0.48,0.0999,1.959,0.2538,PSUIM5,data
+middle right,9,28,0.5714,0.0935,1.9436,0.1981,PSUIM5,data
+middle right,18,31,0.6774,0.084,2.2154,0.2279,PSUIM5,data
+middle right,36,31,0.8387,0.0661,1.7126,0.2008,PSUIM5,data
+control,-100,591,0.088,0.0117,1.684,0.0406,PSUIM6,data
+control,-36,400,0.1825,0.0193,2.1046,0.0632,PSUIM6,data
+control,-18,344,0.2093,0.0219,2.2019,0.0677,PSUIM6,data
+control,-9,332,0.3705,0.0265,2.2634,0.072,PSUIM6,data
+control,0,326,0.4509,0.0276,2.1986,0.0765,PSUIM6,data
+control,9,327,0.6391,0.0266,2.0961,0.0726,PSUIM6,data
+control,18,338,0.6746,0.0255,1.8084,0.0674,PSUIM6,data
+control,36,348,0.8075,0.0211,1.5699,0.0601,PSUIM6,data
+control,100,560,0.925,0.0111,1.2072,0.0365,PSUIM6,data
+early left,-36,61,0.1639,0.0474,1.787,0.145,PSUIM6,data
+early left,-18,77,0.1948,0.0451,2.3333,0.1469,PSUIM6,data
+early left,-9,62,0.371,0.0613,1.9566,0.1536,PSUIM6,data
+early left,0,78,0.359,0.0543,1.9973,0.1422,PSUIM6,data
+early left,9,65,0.4923,0.062,2.0421,0.1433,PSUIM6,data
+early left,18,77,0.5325,0.0569,2.1825,0.1557,PSUIM6,data
+early left,36,70,0.7857,0.049,1.6043,0.1298,PSUIM6,data
+early left,100,90,0.8778,0.0345,1.2952,0.0908,PSUIM6,data
+early right,-100,74,0.1622,0.0428,1.4894,0.094,PSUIM6,data
+early right,-36,75,0.32,0.0539,2.02,0.1571,PSUIM6,data
+early right,-18,68,0.4559,0.0604,1.9338,0.1613,PSUIM6,data
+early right,-9,68,0.5588,0.0602,1.8085,0.1522,PSUIM6,data
+early right,0,71,0.5775,0.0586,2.2232,0.1644,PSUIM6,data
+early right,9,65,0.6,0.0608,1.8062,0.1561,PSUIM6,data
+early right,18,74,0.7568,0.0499,1.9106,0.1624,PSUIM6,data
+early right,36,68,0.8529,0.0429,1.3538,0.132,PSUIM6,data
+middle left,-36,61,0.1475,0.0454,1.619,0.1153,PSUIM6,data
+middle left,-18,75,0.2667,0.0511,2.134,0.1455,PSUIM6,data
+middle left,-9,87,0.3793,0.052,2.2498,0.1421,PSUIM6,data
+middle left,0,55,0.4545,0.0671,1.996,0.1753,PSUIM6,data
+middle left,9,67,0.5672,0.0605,1.6803,0.1345,PSUIM6,data
+middle left,18,55,0.6545,0.0641,1.9284,0.1862,PSUIM6,data
+middle left,36,92,0.7826,0.043,1.6556,0.1071,PSUIM6,data
+middle left,100,90,0.9333,0.0263,1.2256,0.1057,PSUIM6,data
+middle right,-100,86,0.0698,0.0275,1.5736,0.1003,PSUIM6,data
+middle right,-36,65,0.2308,0.0523,2.2895,0.1622,PSUIM6,data
+middle right,-18,71,0.3803,0.0576,2.0651,0.1551,PSUIM6,data
+middle right,-9,65,0.4462,0.0617,2.0951,0.1638,PSUIM6,data
+middle right,0,74,0.6486,0.0555,1.9587,0.1548,PSUIM6,data
+middle right,9,66,0.697,0.0566,1.7954,0.1655,PSUIM6,data
+middle right,18,61,0.8361,0.0474,1.6318,0.1416,PSUIM6,data
+middle right,36,64,0.8281,0.0472,1.4833,0.1401,PSUIM6,data
+control,-100,594,0.1717,0.0155,1.1472,0.0395,PSUIM7,data
+control,-36,385,0.2805,0.0229,1.3644,0.0528,PSUIM7,data
+control,-18,379,0.3879,0.025,1.518,0.0625,PSUIM7,data
+control,-9,421,0.4846,0.0244,1.4968,0.0586,PSUIM7,data
+control,0,414,0.4976,0.0246,1.4393,0.0537,PSUIM7,data
+control,9,410,0.6244,0.0239,1.2986,0.0496,PSUIM7,data
+control,18,440,0.6795,0.0222,1.2651,0.0464,PSUIM7,data
+control,36,433,0.7921,0.0195,0.9973,0.0327,PSUIM7,data
+control,100,619,0.8869,0.0127,0.8326,0.0213,PSUIM7,data
+early left,-36,91,0.2967,0.0479,1.0141,0.0848,PSUIM7,data
+early left,-18,77,0.3636,0.0548,1.7339,0.1447,PSUIM7,data
+early left,-9,90,0.3,0.0483,1.4187,0.1273,PSUIM7,data
+early left,0,87,0.3678,0.0517,1.4722,0.1268,PSUIM7,data
+early left,9,76,0.5526,0.057,1.3311,0.121,PSUIM7,data
+early left,18,73,0.6164,0.0569,1.1878,0.0919,PSUIM7,data
+early left,36,95,0.7895,0.0418,1.1505,0.0849,PSUIM7,data
+early left,100,113,0.8496,0.0336,0.8155,0.0375,PSUIM7,data
+early right,-100,79,0.1266,0.0374,1.1407,0.0849,PSUIM7,data
+early right,-36,74,0.5405,0.0579,1.1113,0.089,PSUIM7,data
+early right,-18,86,0.6628,0.051,1.1207,0.1077,PSUIM7,data
+early right,-9,87,0.6897,0.0496,1.066,0.0989,PSUIM7,data
+early right,0,76,0.7763,0.0478,0.9497,0.0735,PSUIM7,data
+early right,9,94,0.7553,0.0443,0.9459,0.0798,PSUIM7,data
+early right,18,93,0.8602,0.036,0.995,0.0816,PSUIM7,data
+early right,36,83,0.759,0.0469,0.8868,0.0724,PSUIM7,data
+middle left,-36,68,0.2941,0.0553,1.1326,0.1075,PSUIM7,data
+middle left,-18,90,0.3,0.0483,1.747,0.1307,PSUIM7,data
+middle left,-9,84,0.4286,0.054,1.3672,0.118,PSUIM7,data
+middle left,0,88,0.4659,0.0532,1.3421,0.1255,PSUIM7,data
+middle left,9,93,0.5699,0.0513,1.4268,0.1187,PSUIM7,data
+middle left,18,83,0.6627,0.0519,1.3263,0.1206,PSUIM7,data
+middle left,36,84,0.7857,0.0448,1.0113,0.0935,PSUIM7,data
+middle left,100,78,0.9359,0.0277,0.8318,0.057,PSUIM7,data
+middle right,-100,81,0.2099,0.0452,1.0263,0.092,PSUIM7,data
+middle right,-36,96,0.2917,0.0464,1.4755,0.1217,PSUIM7,data
+middle right,-18,78,0.4744,0.0565,1.4654,0.1408,PSUIM7,data
+middle right,-9,78,0.6026,0.0554,1.4297,0.1292,PSUIM7,data
+middle right,0,88,0.6136,0.0519,1.2482,0.108,PSUIM7,data
+middle right,9,86,0.7558,0.0463,1.2268,0.1103,PSUIM7,data
+middle right,18,93,0.7742,0.0434,1.0553,0.0891,PSUIM7,data
+middle right,36,98,0.8265,0.0382,1.0436,0.0965,PSUIM7,data
+control,-100,3650,0.3247,0.0078,0.9646,0.0137,DBM12,power_leak_urgency
+control,-18,2039,0.4708,0.0111,1.1806,0.0226,DBM12,power_leak_urgency
+control,-9,2026,0.502,0.0111,1.143,0.022,DBM12,power_leak_urgency
+control,0,1987,0.5415,0.0112,1.1804,0.0221,DBM12,power_leak_urgency
+control,9,1974,0.6084,0.011,1.2082,0.0229,DBM12,power_leak_urgency
+control,18,1841,0.6214,0.0113,1.2174,0.0242,DBM12,power_leak_urgency
+control,100,3516,0.7884,0.0069,1.1473,0.0144,DBM12,power_leak_urgency
+early left,-18,507,0.501,0.0222,1.1134,0.0442,DBM12,power_leak_urgency
+early left,-9,601,0.4942,0.0204,1.0566,0.0383,DBM12,power_leak_urgency
+early left,0,316,0.538,0.028,1.3022,0.0623,DBM12,power_leak_urgency
+early left,9,582,0.5704,0.0205,1.0894,0.0371,DBM12,power_leak_urgency
+early left,18,268,0.6642,0.0288,1.2284,0.0627,DBM12,power_leak_urgency
+early left,100,526,0.7624,0.0186,1.1499,0.0399,DBM12,power_leak_urgency
+early right,-100,624,0.3141,0.0186,1.0176,0.0339,DBM12,power_leak_urgency
+early right,-18,577,0.4818,0.0208,1.1851,0.041,DBM12,power_leak_urgency
+early right,-9,547,0.5338,0.0213,1.1619,0.0427,DBM12,power_leak_urgency
+early right,0,556,0.5612,0.021,1.2049,0.0435,DBM12,power_leak_urgency
+early right,9,582,0.5773,0.0205,1.2561,0.0427,DBM12,power_leak_urgency
+early right,18,573,0.6248,0.0202,1.1354,0.0387,DBM12,power_leak_urgency
+late left,-18,609,0.4877,0.0203,1.1776,0.0413,DBM12,power_leak_urgency
+late left,-9,553,0.4991,0.0213,1.1351,0.0432,DBM12,power_leak_urgency
+late left,0,658,0.5486,0.0194,1.2092,0.0391,DBM12,power_leak_urgency
+late left,9,375,0.5333,0.0258,1.263,0.0577,DBM12,power_leak_urgency
+late left,18,479,0.6347,0.022,1.1796,0.0453,DBM12,power_leak_urgency
+late left,100,607,0.743,0.0177,1.2725,0.0406,DBM12,power_leak_urgency
+late right,-100,676,0.3136,0.0178,1.0145,0.0345,DBM12,power_leak_urgency
+late right,-18,487,0.5154,0.0226,1.1514,0.0424,DBM12,power_leak_urgency
+late right,-9,559,0.5152,0.0211,1.1307,0.0398,DBM12,power_leak_urgency
+late right,0,505,0.5406,0.0222,1.2126,0.0435,DBM12,power_leak_urgency
+late right,9,397,0.5945,0.0246,1.1321,0.0472,DBM12,power_leak_urgency
+late right,18,535,0.5981,0.0212,1.2016,0.0431,DBM12,power_leak_urgency
+middle left,-18,520,0.4558,0.0218,1.0829,0.04,DBM12,power_leak_urgency
+middle left,-9,470,0.5191,0.023,1.1625,0.0452,DBM12,power_leak_urgency
+middle left,0,568,0.544,0.0209,1.1562,0.0411,DBM12,power_leak_urgency
+middle left,9,604,0.5861,0.02,1.1165,0.0371,DBM12,power_leak_urgency
+middle left,18,612,0.6013,0.0198,1.1443,0.0396,DBM12,power_leak_urgency
+middle left,100,619,0.7577,0.0172,1.1719,0.0338,DBM12,power_leak_urgency
+middle right,-100,466,0.3348,0.0219,0.9209,0.0325,DBM12,power_leak_urgency
+middle right,-18,306,0.5229,0.0286,1.1925,0.0579,DBM12,power_leak_urgency
+middle right,-9,327,0.578,0.0273,1.2317,0.0602,DBM12,power_leak_urgency
+middle right,0,397,0.5416,0.025,1.1439,0.0512,DBM12,power_leak_urgency
+middle right,9,233,0.5064,0.0328,1.2219,0.061,DBM12,power_leak_urgency
+middle right,18,489,0.6646,0.0214,1.1884,0.0436,DBM12,power_leak_urgency
+control,-100,1712,0.2798,0.0108,1.3541,0.0252,DBM13,power_leak_urgency
+control,-36,1004,0.4104,0.0155,1.4769,0.0353,DBM13,power_leak_urgency
+control,-9,1093,0.4794,0.0151,1.5337,0.0362,DBM13,power_leak_urgency
+control,0,929,0.4855,0.0164,1.4589,0.037,DBM13,power_leak_urgency
+control,9,958,0.5271,0.0161,1.5131,0.037,DBM13,power_leak_urgency
+control,36,678,0.5236,0.0192,1.4936,0.0443,DBM13,power_leak_urgency
+control,100,1747,0.6875,0.0111,1.4567,0.0259,DBM13,power_leak_urgency
+early left,-36,339,0.4159,0.0268,1.4622,0.0613,DBM13,power_leak_urgency
+early left,-9,196,0.4847,0.0357,1.6623,0.0868,DBM13,power_leak_urgency
+early left,0,172,0.4419,0.0379,1.3308,0.0767,DBM13,power_leak_urgency
+early left,9,172,0.4651,0.038,1.5046,0.0869,DBM13,power_leak_urgency
+early left,36,224,0.5089,0.0334,1.5632,0.0788,DBM13,power_leak_urgency
+early left,100,253,0.7036,0.0287,1.5787,0.0688,DBM13,power_leak_urgency
+early right,-100,173,0.289,0.0345,1.3686,0.0764,DBM13,power_leak_urgency
+early right,-36,115,0.513,0.0466,1.409,0.1045,DBM13,power_leak_urgency
+early right,-9,225,0.4889,0.0333,1.412,0.076,DBM13,power_leak_urgency
+early right,0,173,0.4971,0.038,1.5149,0.0866,DBM13,power_leak_urgency
+early right,9,108,0.5648,0.0477,1.5977,0.1189,DBM13,power_leak_urgency
+early right,36,227,0.5595,0.033,1.5439,0.0741,DBM13,power_leak_urgency
+late left,-36,254,0.4213,0.031,1.4669,0.0732,DBM13,power_leak_urgency
+late left,-9,341,0.4604,0.027,1.6489,0.0648,DBM13,power_leak_urgency
+late left,0,78,0.5128,0.0566,1.572,0.1335,DBM13,power_leak_urgency
+late left,9,281,0.4804,0.0298,1.5408,0.0696,DBM13,power_leak_urgency
+late left,36,227,0.5022,0.0332,1.4681,0.0777,DBM13,power_leak_urgency
+late left,100,172,0.7326,0.0337,1.4754,0.0815,DBM13,power_leak_urgency
+late right,-100,371,0.2642,0.0229,1.4692,0.056,DBM13,power_leak_urgency
+late right,-36,168,0.375,0.0374,1.3875,0.0858,DBM13,power_leak_urgency
+late right,-9,58,0.4483,0.0653,1.7809,0.1699,DBM13,power_leak_urgency
+late right,0,231,0.4848,0.0329,1.5254,0.0787,DBM13,power_leak_urgency
+late right,9,252,0.4841,0.0315,1.5685,0.0758,DBM13,power_leak_urgency
+late right,36,446,0.5695,0.0234,1.5282,0.0537,DBM13,power_leak_urgency
+middle left,-36,168,0.4345,0.0382,1.575,0.0919,DBM13,power_leak_urgency
+middle left,-9,224,0.4286,0.0331,1.4819,0.0764,DBM13,power_leak_urgency
+middle left,0,282,0.4929,0.0298,1.4943,0.0686,DBM13,power_leak_urgency
+middle left,9,86,0.4767,0.0539,1.4318,0.1172,DBM13,power_leak_urgency
+middle left,36,280,0.5357,0.0298,1.6252,0.0728,DBM13,power_leak_urgency
+middle left,100,84,0.6548,0.0519,1.5017,0.1275,DBM13,power_leak_urgency
+middle right,-100,171,0.3216,0.0357,1.4267,0.081,DBM13,power_leak_urgency
+middle right,-36,229,0.441,0.0328,1.4865,0.0754,DBM13,power_leak_urgency
+middle right,-9,164,0.5061,0.039,1.4157,0.0819,DBM13,power_leak_urgency
+middle right,0,277,0.4874,0.03,1.6056,0.0745,DBM13,power_leak_urgency
+middle right,9,365,0.5041,0.0262,1.5303,0.0612,DBM13,power_leak_urgency
+middle right,36,118,0.5508,0.0458,1.5182,0.1058,DBM13,power_leak_urgency
+control,-100,1490,0.1718,0.0098,1.3625,0.0265,DBM14,power_leak_urgency
+control,-36,916,0.2937,0.015,1.5288,0.0402,DBM14,power_leak_urgency
+control,-9,711,0.436,0.0186,1.7013,0.0487,DBM14,power_leak_urgency
+control,0,615,0.4179,0.0199,1.7857,0.0533,DBM14,power_leak_urgency
+control,9,888,0.5225,0.0168,1.746,0.0442,DBM14,power_leak_urgency
+control,36,710,0.6873,0.0174,1.7849,0.0491,DBM14,power_leak_urgency
+control,100,1318,0.8035,0.0109,1.5938,0.0327,DBM14,power_leak_urgency
+early left,-36,187,0.2513,0.0317,1.5472,0.0854,DBM14,power_leak_urgency
+early left,-9,240,0.3833,0.0314,1.8598,0.0895,DBM14,power_leak_urgency
+early left,0,173,0.4971,0.038,1.7265,0.1039,DBM14,power_leak_urgency
+early left,9,206,0.5728,0.0345,1.6396,0.0845,DBM14,power_leak_urgency
+early left,36,180,0.6278,0.036,1.7205,0.1006,DBM14,power_leak_urgency
+early left,100,275,0.8545,0.0213,1.5854,0.0685,DBM14,power_leak_urgency
+early right,-100,335,0.1881,0.0213,1.4265,0.0581,DBM14,power_leak_urgency
+early right,-36,126,0.2857,0.0402,1.7229,0.1174,DBM14,power_leak_urgency
+early right,-9,162,0.4012,0.0385,1.6937,0.0947,DBM14,power_leak_urgency
+early right,0,182,0.4451,0.0368,1.6982,0.094,DBM14,power_leak_urgency
+early right,9,158,0.4241,0.0393,1.6664,0.1023,DBM14,power_leak_urgency
+early right,36,157,0.6433,0.0382,1.7828,0.1112,DBM14,power_leak_urgency
+late left,-36,212,0.3255,0.0322,1.6584,0.0876,DBM14,power_leak_urgency
+late left,-9,231,0.3939,0.0321,1.6409,0.0853,DBM14,power_leak_urgency
+late left,0,227,0.4361,0.0329,1.6183,0.083,DBM14,power_leak_urgency
+late left,9,143,0.5385,0.0417,1.7825,0.115,DBM14,power_leak_urgency
+late left,36,79,0.5949,0.0552,2.0667,0.1461,DBM14,power_leak_urgency
+late left,100,182,0.8352,0.0275,1.6101,0.0814,DBM14,power_leak_urgency
+late right,-100,339,0.177,0.0207,1.3667,0.0522,DBM14,power_leak_urgency
+late right,-36,270,0.2963,0.0278,1.6364,0.0716,DBM14,power_leak_urgency
+late right,-9,147,0.3878,0.0402,1.7792,0.101,DBM14,power_leak_urgency
+late right,0,199,0.402,0.0348,1.7787,0.0893,DBM14,power_leak_urgency
+late right,9,137,0.5255,0.0427,1.7249,0.0992,DBM14,power_leak_urgency
+late right,36,193,0.6269,0.0348,1.702,0.0843,DBM14,power_leak_urgency
+middle left,-36,117,0.2906,0.042,1.3988,0.098,DBM14,power_leak_urgency
+middle left,-9,230,0.387,0.0321,1.6761,0.0868,DBM14,power_leak_urgency
+middle left,0,153,0.4575,0.0403,1.6487,0.1055,DBM14,power_leak_urgency
+middle left,9,124,0.4839,0.0449,1.7876,0.1127,DBM14,power_leak_urgency
+middle left,36,190,0.6368,0.0349,1.7333,0.096,DBM14,power_leak_urgency
+middle left,100,198,0.8283,0.0268,1.5837,0.0811,DBM14,power_leak_urgency
+middle right,-100,220,0.15,0.0241,1.4875,0.0715,DBM14,power_leak_urgency
+middle right,-36,193,0.3368,0.034,1.5825,0.0861,DBM14,power_leak_urgency
+middle right,-9,143,0.3846,0.0407,1.557,0.0996,DBM14,power_leak_urgency
+middle right,0,172,0.4826,0.0381,1.6787,0.0895,DBM14,power_leak_urgency
+middle right,9,205,0.4927,0.0349,1.6124,0.0814,DBM14,power_leak_urgency
+middle right,36,308,0.6526,0.0271,1.6688,0.0734,DBM14,power_leak_urgency
+control,-100,2769,0.195,0.0075,1.4057,0.0189,DBM15,power_leak_urgency
+control,-36,991,0.328,0.0149,1.5669,0.0348,DBM15,power_leak_urgency
+control,-18,438,0.3904,0.0233,1.6697,0.0551,DBM15,power_leak_urgency
+control,-9,1346,0.4071,0.0134,1.7181,0.0308,DBM15,power_leak_urgency
+control,0,1309,0.479,0.0138,1.75,0.0329,DBM15,power_leak_urgency
+control,9,1099,0.4832,0.0151,1.7471,0.0352,DBM15,power_leak_urgency
+control,18,290,0.5276,0.0293,1.8434,0.0666,DBM15,power_leak_urgency
+control,36,810,0.5753,0.0174,1.7934,0.0413,DBM15,power_leak_urgency
+control,100,2203,0.7671,0.009,1.7077,0.0228,DBM15,power_leak_urgency
+early left,-36,200,0.325,0.0331,1.7179,0.0759,DBM15,power_leak_urgency
+early left,-18,73,0.3836,0.0569,1.7377,0.1381,DBM15,power_leak_urgency
+early left,-9,294,0.4252,0.0288,1.7223,0.0654,DBM15,power_leak_urgency
+early left,0,335,0.4567,0.0272,1.7324,0.0645,DBM15,power_leak_urgency
+early left,9,337,0.4599,0.0271,1.7758,0.069,DBM15,power_leak_urgency
+early left,18,105,0.5619,0.0484,1.85,0.1123,DBM15,power_leak_urgency
+early left,36,154,0.5584,0.04,1.8065,0.098,DBM15,power_leak_urgency
+early left,100,328,0.7774,0.023,1.7493,0.0616,DBM15,power_leak_urgency
+early right,-100,361,0.1994,0.021,1.4385,0.0551,DBM15,power_leak_urgency
+early right,-36,164,0.2927,0.0355,1.6974,0.086,DBM15,power_leak_urgency
+early right,-18,79,0.3544,0.0538,1.9496,0.1458,DBM15,power_leak_urgency
+early right,-9,317,0.4101,0.0276,1.684,0.0617,DBM15,power_leak_urgency
+early right,0,341,0.3988,0.0265,1.8001,0.0633,DBM15,power_leak_urgency
+early right,9,231,0.4545,0.0328,1.856,0.0788,DBM15,power_leak_urgency
+early right,18,107,0.5047,0.0483,1.6937,0.1046,DBM15,power_leak_urgency
+early right,36,338,0.5651,0.027,1.7584,0.0603,DBM15,power_leak_urgency
+late left,-36,294,0.3163,0.0271,1.6211,0.0621,DBM15,power_leak_urgency
+late left,-18,101,0.3465,0.0474,1.7661,0.1087,DBM15,power_leak_urgency
+late left,-9,447,0.4183,0.0233,1.6409,0.0555,DBM15,power_leak_urgency
+late left,0,319,0.4201,0.0276,1.655,0.0654,DBM15,power_leak_urgency
+late left,9,290,0.4621,0.0293,1.791,0.0702,DBM15,power_leak_urgency
+late left,18,76,0.5263,0.0573,1.5628,0.1078,DBM15,power_leak_urgency
+late left,36,184,0.5598,0.0366,1.6926,0.0839,DBM15,power_leak_urgency
+late left,100,375,0.7573,0.0221,1.7908,0.059,DBM15,power_leak_urgency
+late right,-100,480,0.2021,0.0183,1.4343,0.0442,DBM15,power_leak_urgency
+late right,-36,293,0.3413,0.0277,1.5945,0.0643,DBM15,power_leak_urgency
+late right,-18,111,0.3514,0.0453,1.4718,0.1006,DBM15,power_leak_urgency
+late right,-9,287,0.3972,0.0289,1.6553,0.0687,DBM15,power_leak_urgency
+late right,0,324,0.4321,0.0275,1.6583,0.0635,DBM15,power_leak_urgency
+late right,9,339,0.4867,0.0271,1.7586,0.0608,DBM15,power_leak_urgency
+late right,18,104,0.5385,0.0489,1.8528,0.118,DBM15,power_leak_urgency
+late right,36,108,0.5556,0.0478,1.5238,0.1043,DBM15,power_leak_urgency
+middle left,-36,316,0.3418,0.0267,1.5863,0.0617,DBM15,power_leak_urgency
+middle left,-18,49,0.2857,0.0645,1.5937,0.1541,DBM15,power_leak_urgency
+middle left,-9,294,0.4048,0.0286,1.7442,0.0676,DBM15,power_leak_urgency
+middle left,0,223,0.4574,0.0334,1.6859,0.074,DBM15,power_leak_urgency
+middle left,9,313,0.5687,0.028,1.8192,0.0689,DBM15,power_leak_urgency
+middle left,18,106,0.5472,0.0483,1.9052,0.1195,DBM15,power_leak_urgency
+middle left,36,243,0.5802,0.0317,1.7778,0.0726,DBM15,power_leak_urgency
+middle left,100,430,0.7233,0.0216,1.8266,0.0555,DBM15,power_leak_urgency
+middle right,-100,330,0.1818,0.0212,1.3915,0.0539,DBM15,power_leak_urgency
+middle right,-36,162,0.3148,0.0365,1.5171,0.084,DBM15,power_leak_urgency
+middle right,-18,108,0.3796,0.0467,1.5155,0.0932,DBM15,power_leak_urgency
+middle right,-9,262,0.416,0.0305,1.7012,0.0698,DBM15,power_leak_urgency
+middle right,0,205,0.5415,0.0348,1.8277,0.0853,DBM15,power_leak_urgency
+middle right,9,201,0.5274,0.0352,1.7911,0.0825,DBM15,power_leak_urgency
+middle right,18,28,0.4643,0.0942,1.8076,0.2246,DBM15,power_leak_urgency
+middle right,36,268,0.556,0.0304,1.7507,0.0695,DBM15,power_leak_urgency
+control,-100,5594,0.2131,0.0055,1.3791,0.0126,DBM5,power_leak_urgency
+control,-36,1849,0.3515,0.0111,1.5105,0.0254,DBM5,power_leak_urgency
+control,-18,486,0.4547,0.0226,1.4969,0.0501,DBM5,power_leak_urgency
+control,-9,2466,0.4481,0.01,1.5011,0.0217,DBM5,power_leak_urgency
+control,0,2572,0.4872,0.0099,1.5666,0.0229,DBM5,power_leak_urgency
+control,9,2568,0.5366,0.0098,1.5554,0.0225,DBM5,power_leak_urgency
+control,18,502,0.5159,0.0223,1.4845,0.0478,DBM5,power_leak_urgency
+control,36,2157,0.6314,0.0104,1.5577,0.0244,DBM5,power_leak_urgency
+control,100,5437,0.7896,0.0055,1.4586,0.0138,DBM5,power_leak_urgency
+early left,-36,489,0.3292,0.0213,1.5903,0.0535,DBM5,power_leak_urgency
+early left,-18,165,0.4364,0.0386,1.6868,0.0968,DBM5,power_leak_urgency
+early left,-9,742,0.4394,0.0182,1.579,0.0418,DBM5,power_leak_urgency
+early left,0,648,0.4784,0.0196,1.5293,0.0414,DBM5,power_leak_urgency
+early left,9,544,0.5129,0.0214,1.5627,0.0497,DBM5,power_leak_urgency
+early left,18,106,0.6792,0.0453,1.6429,0.1114,DBM5,power_leak_urgency
+early left,36,681,0.5918,0.0188,1.5713,0.0429,DBM5,power_leak_urgency
+early left,100,1093,0.7758,0.0126,1.4775,0.0304,DBM5,power_leak_urgency
+early right,-100,703,0.2134,0.0155,1.366,0.0367,DBM5,power_leak_urgency
+early right,-36,423,0.3688,0.0235,1.5652,0.0538,DBM5,power_leak_urgency
+early right,-18,248,0.371,0.0307,1.6609,0.0718,DBM5,power_leak_urgency
+early right,-9,589,0.4958,0.0206,1.5978,0.0473,DBM5,power_leak_urgency
+early right,0,682,0.4868,0.0191,1.6049,0.0441,DBM5,power_leak_urgency
+early right,9,538,0.5353,0.0215,1.6303,0.0463,DBM5,power_leak_urgency
+early right,18,273,0.5714,0.03,1.7294,0.0732,DBM5,power_leak_urgency
+early right,36,555,0.636,0.0204,1.5148,0.0475,DBM5,power_leak_urgency
+late left,-36,727,0.4003,0.0182,1.4562,0.0404,DBM5,power_leak_urgency
+late left,-18,136,0.4044,0.0421,1.6278,0.1073,DBM5,power_leak_urgency
+late left,-9,705,0.4752,0.0188,1.5636,0.0439,DBM5,power_leak_urgency
+late left,0,714,0.4496,0.0186,1.5046,0.0413,DBM5,power_leak_urgency
+late left,9,774,0.4832,0.018,1.6257,0.042,DBM5,power_leak_urgency
+late left,18,144,0.4861,0.0417,1.4622,0.0892,DBM5,power_leak_urgency
+late left,36,562,0.605,0.0206,1.5071,0.0465,DBM5,power_leak_urgency
+late left,100,754,0.7759,0.0152,1.5246,0.0386,DBM5,power_leak_urgency
+late right,-100,978,0.2106,0.013,1.4688,0.0324,DBM5,power_leak_urgency
+late right,-36,634,0.3375,0.0188,1.5675,0.0445,DBM5,power_leak_urgency
+late right,-18,167,0.4371,0.0384,1.4847,0.0892,DBM5,power_leak_urgency
+late right,-9,630,0.4571,0.0198,1.5314,0.0445,DBM5,power_leak_urgency
+late right,0,714,0.5322,0.0187,1.6402,0.0446,DBM5,power_leak_urgency
+late right,9,842,0.5475,0.0172,1.6167,0.0397,DBM5,power_leak_urgency
+late right,18,91,0.6264,0.0507,1.546,0.117,DBM5,power_leak_urgency
+late right,36,512,0.6504,0.0211,1.4998,0.0491,DBM5,power_leak_urgency
+middle left,-36,425,0.3506,0.0231,1.4048,0.0521,DBM5,power_leak_urgency
+middle left,-18,141,0.461,0.042,1.508,0.0943,DBM5,power_leak_urgency
+middle left,-9,571,0.4431,0.0208,1.4973,0.0468,DBM5,power_leak_urgency
+middle left,0,545,0.4936,0.0214,1.5572,0.0487,DBM5,power_leak_urgency
+middle left,9,742,0.527,0.0183,1.5581,0.0414,DBM5,power_leak_urgency
+middle left,18,161,0.5404,0.0393,1.6176,0.0865,DBM5,power_leak_urgency
+middle left,36,519,0.6281,0.0212,1.5893,0.0487,DBM5,power_leak_urgency
+middle left,100,633,0.8057,0.0157,1.5436,0.0416,DBM5,power_leak_urgency
+middle right,-100,762,0.2152,0.0149,1.3739,0.0337,DBM5,power_leak_urgency
+middle right,-36,854,0.3724,0.0165,1.5324,0.0372,DBM5,power_leak_urgency
+middle right,-18,45,0.4889,0.0745,1.3013,0.158,DBM5,power_leak_urgency
+middle right,-9,503,0.4632,0.0222,1.4862,0.0499,DBM5,power_leak_urgency
+middle right,0,606,0.5099,0.0203,1.6228,0.0468,DBM5,power_leak_urgency
+middle right,9,566,0.523,0.021,1.5176,0.0447,DBM5,power_leak_urgency
+middle right,18,115,0.5304,0.0465,1.5157,0.1162,DBM5,power_leak_urgency
+middle right,36,391,0.6982,0.0232,1.5333,0.0549,DBM5,power_leak_urgency
+control,-100,6458,0.1826,0.0048,1.3565,0.0119,DBM6,power_leak_urgency
+control,-36,2199,0.3552,0.0102,1.5597,0.0236,DBM6,power_leak_urgency
+control,-18,498,0.4538,0.0223,1.6913,0.0525,DBM6,power_leak_urgency
+control,-9,2997,0.5028,0.0091,1.6506,0.0214,DBM6,power_leak_urgency
+control,0,2752,0.5814,0.0094,1.6692,0.0222,DBM6,power_leak_urgency
+control,9,2851,0.6461,0.009,1.6912,0.0222,DBM6,power_leak_urgency
+control,18,508,0.6772,0.0207,1.6297,0.0511,DBM6,power_leak_urgency
+control,36,2683,0.7726,0.0081,1.6297,0.0211,DBM6,power_leak_urgency
+control,100,6920,0.9036,0.0035,1.4274,0.011,DBM6,power_leak_urgency
+early left,-36,354,0.2994,0.0243,1.5285,0.0587,DBM6,power_leak_urgency
+early left,-18,299,0.4381,0.0287,1.6694,0.07,DBM6,power_leak_urgency
+early left,-9,658,0.503,0.0195,1.5648,0.0436,DBM6,power_leak_urgency
+early left,0,686,0.5554,0.019,1.6827,0.0448,DBM6,power_leak_urgency
+early left,9,621,0.6023,0.0196,1.6331,0.0473,DBM6,power_leak_urgency
+early left,18,219,0.6667,0.0319,1.6244,0.0779,DBM6,power_leak_urgency
+early left,36,468,0.8034,0.0184,1.6341,0.0488,DBM6,power_leak_urgency
+early left,100,1248,0.9006,0.0085,1.5341,0.028,DBM6,power_leak_urgency
+early right,-100,762,0.1837,0.014,1.4132,0.0353,DBM6,power_leak_urgency
+early right,-36,656,0.3963,0.0191,1.7362,0.0473,DBM6,power_leak_urgency
+early right,-18,147,0.5034,0.0412,1.5494,0.0883,DBM6,power_leak_urgency
+early right,-9,505,0.5287,0.0222,1.6705,0.0528,DBM6,power_leak_urgency
+early right,0,552,0.6105,0.0208,1.7649,0.0524,DBM6,power_leak_urgency
+early right,9,1052,0.6702,0.0145,1.6985,0.0366,DBM6,power_leak_urgency
+early right,18,128,0.6953,0.0407,1.6649,0.0944,DBM6,power_leak_urgency
+early right,36,461,0.7852,0.0191,1.6882,0.0499,DBM6,power_leak_urgency
+late left,-36,661,0.3404,0.0184,1.5399,0.0428,DBM6,power_leak_urgency
+late left,-18,338,0.4645,0.0271,1.538,0.0622,DBM6,power_leak_urgency
+late left,-9,652,0.5123,0.0196,1.6779,0.0462,DBM6,power_leak_urgency
+late left,0,662,0.6073,0.019,1.7228,0.0462,DBM6,power_leak_urgency
+late left,9,839,0.6389,0.0166,1.7088,0.0399,DBM6,power_leak_urgency
+late left,18,140,0.7571,0.0362,1.588,0.0833,DBM6,power_leak_urgency
+late left,36,532,0.7632,0.0184,1.7251,0.0514,DBM6,power_leak_urgency
+late left,100,924,0.8939,0.0101,1.5186,0.0313,DBM6,power_leak_urgency
+late right,-100,1010,0.1891,0.0123,1.4465,0.0309,DBM6,power_leak_urgency
+late right,-36,795,0.4226,0.0175,1.6217,0.0409,DBM6,power_leak_urgency
+late right,-18,78,0.5256,0.0565,1.7089,0.1464,DBM6,power_leak_urgency
+late right,-9,919,0.5277,0.0165,1.6538,0.0391,DBM6,power_leak_urgency
+late right,0,683,0.6003,0.0187,1.6213,0.043,DBM6,power_leak_urgency
+late right,9,760,0.6487,0.0173,1.6288,0.0424,DBM6,power_leak_urgency
+late right,18,266,0.7744,0.0256,1.6537,0.068,DBM6,power_leak_urgency
+late right,36,645,0.7876,0.0161,1.5639,0.0429,DBM6,power_leak_urgency
+middle left,-36,553,0.3382,0.0201,1.5249,0.0476,DBM6,power_leak_urgency
+middle left,-18,117,0.3932,0.0452,1.7888,0.1216,DBM6,power_leak_urgency
+middle left,-9,896,0.5257,0.0167,1.7143,0.0401,DBM6,power_leak_urgency
+middle left,0,710,0.5732,0.0186,1.6489,0.0449,DBM6,power_leak_urgency
+middle left,9,670,0.6224,0.0187,1.7275,0.0465,DBM6,power_leak_urgency
+middle left,18,133,0.7293,0.0385,1.6899,0.1017,DBM6,power_leak_urgency
+middle left,36,714,0.7815,0.0155,1.7271,0.0448,DBM6,power_leak_urgency
+middle left,100,964,0.8983,0.0097,1.523,0.0307,DBM6,power_leak_urgency
+middle right,-100,593,0.1754,0.0156,1.4145,0.039,DBM6,power_leak_urgency
+middle right,-36,680,0.3397,0.0182,1.7095,0.0451,DBM6,power_leak_urgency
+middle right,-18,121,0.4876,0.0454,1.5631,0.1083,DBM6,power_leak_urgency
+middle right,-9,562,0.5231,0.0211,1.6638,0.0493,DBM6,power_leak_urgency
+middle right,0,557,0.5745,0.0209,1.6459,0.0491,DBM6,power_leak_urgency
+middle right,9,707,0.6337,0.0181,1.7776,0.0454,DBM6,power_leak_urgency
+middle right,18,201,0.7413,0.0309,1.6513,0.0803,DBM6,power_leak_urgency
+middle right,36,619,0.7948,0.0162,1.7347,0.0455,DBM6,power_leak_urgency
+control,-100,1194,0.2203,0.012,2.1,0.0318,PSUIM10,power_leak_urgency
+control,-36,678,0.4277,0.019,2.2222,0.0442,PSUIM10,power_leak_urgency
+control,-18,577,0.5321,0.0208,2.169,0.0484,PSUIM10,power_leak_urgency
+control,-9,673,0.5854,0.019,2.0439,0.0453,PSUIM10,power_leak_urgency
+control,0,548,0.6478,0.0204,2.039,0.0487,PSUIM10,power_leak_urgency
+control,9,841,0.7015,0.0158,1.8837,0.039,PSUIM10,power_leak_urgency
+control,18,804,0.7214,0.0158,1.8517,0.039,PSUIM10,power_leak_urgency
+control,36,751,0.8402,0.0134,1.7999,0.04,PSUIM10,power_leak_urgency
+control,100,1107,0.9205,0.0081,1.3098,0.0246,PSUIM10,power_leak_urgency
+early left,-36,134,0.3657,0.0416,2.2679,0.1024,PSUIM10,power_leak_urgency
+early left,-18,170,0.4882,0.0383,2.2189,0.0966,PSUIM10,power_leak_urgency
+early left,-9,139,0.5755,0.0419,2.237,0.1057,PSUIM10,power_leak_urgency
+early left,0,189,0.6508,0.0347,1.9591,0.0818,PSUIM10,power_leak_urgency
+early left,9,109,0.7064,0.0436,2.1358,0.1053,PSUIM10,power_leak_urgency
+early left,18,132,0.7727,0.0365,1.926,0.0956,PSUIM10,power_leak_urgency
+early left,36,54,0.7963,0.0548,1.9435,0.182,PSUIM10,power_leak_urgency
+early left,100,146,0.911,0.0236,1.5682,0.0851,PSUIM10,power_leak_urgency
+early right,-100,57,0.2105,0.054,2.1419,0.1351,PSUIM10,power_leak_urgency
+early right,-36,244,0.4877,0.032,2.1914,0.0766,PSUIM10,power_leak_urgency
+early right,-18,242,0.5207,0.0321,2.0116,0.0733,PSUIM10,power_leak_urgency
+early right,-9,247,0.5587,0.0316,2.1331,0.0776,PSUIM10,power_leak_urgency
+early right,0,110,0.7182,0.0429,1.8166,0.1176,PSUIM10,power_leak_urgency
+early right,9,143,0.6783,0.0391,2.09,0.0979,PSUIM10,power_leak_urgency
+early right,18,114,0.807,0.037,1.748,0.0979,PSUIM10,power_leak_urgency
+early right,36,195,0.7949,0.0289,1.65,0.0758,PSUIM10,power_leak_urgency
+middle left,-36,82,0.4024,0.0542,2.2522,0.1248,PSUIM10,power_leak_urgency
+middle left,-18,138,0.4565,0.0424,2.0876,0.1006,PSUIM10,power_leak_urgency
+middle left,-9,25,0.64,0.096,2.0159,0.235,PSUIM10,power_leak_urgency
+middle left,0,53,0.566,0.0681,2.1078,0.1674,PSUIM10,power_leak_urgency
+middle left,9,104,0.7212,0.044,1.8767,0.106,PSUIM10,power_leak_urgency
+middle left,18,166,0.7651,0.0329,1.9878,0.091,PSUIM10,power_leak_urgency
+middle left,36,136,0.8235,0.0327,1.8668,0.0921,PSUIM10,power_leak_urgency
+middle left,100,261,0.9042,0.0182,1.376,0.0507,PSUIM10,power_leak_urgency
+middle right,-100,85,0.2235,0.0452,2.191,0.1188,PSUIM10,power_leak_urgency
+middle right,-36,138,0.413,0.0419,2.2089,0.1032,PSUIM10,power_leak_urgency
+middle right,-18,53,0.5472,0.0684,2.0566,0.1536,PSUIM10,power_leak_urgency
+middle right,-9,111,0.6757,0.0444,2.1155,0.1242,PSUIM10,power_leak_urgency
+middle right,0,348,0.6552,0.0255,1.9791,0.0661,PSUIM10,power_leak_urgency
+middle right,9,83,0.8313,0.0411,1.9484,0.1358,PSUIM10,power_leak_urgency
+middle right,18,138,0.6884,0.0394,1.753,0.0989,PSUIM10,power_leak_urgency
+middle right,36,217,0.8157,0.0263,1.69,0.0679,PSUIM10,power_leak_urgency
+control,-100,6191,0.0922,0.0037,1.7143,0.0126,PSUIM5,power_leak_urgency
+control,-36,3558,0.2279,0.007,2.0734,0.0199,PSUIM5,power_leak_urgency
+control,-18,2814,0.3252,0.0088,2.1426,0.0232,PSUIM5,power_leak_urgency
+control,-9,2969,0.3991,0.009,2.2225,0.0231,PSUIM5,power_leak_urgency
+control,0,2838,0.487,0.0094,2.2299,0.0237,PSUIM5,power_leak_urgency
+control,9,3402,0.5817,0.0085,2.1644,0.0214,PSUIM5,power_leak_urgency
+control,18,3197,0.6487,0.0084,2.109,0.0221,PSUIM5,power_leak_urgency
+control,36,3982,0.7554,0.0068,1.9838,0.0195,PSUIM5,power_leak_urgency
+control,100,6585,0.9016,0.0037,1.5284,0.012,PSUIM5,power_leak_urgency
+early left,-36,449,0.2272,0.0198,2.0719,0.0563,PSUIM5,power_leak_urgency
+early left,-18,722,0.3241,0.0174,2.1707,0.047,PSUIM5,power_leak_urgency
+early left,-9,601,0.3977,0.02,2.2326,0.0493,PSUIM5,power_leak_urgency
+early left,0,499,0.4569,0.0223,2.2553,0.0577,PSUIM5,power_leak_urgency
+early left,9,740,0.5959,0.018,2.2362,0.047,PSUIM5,power_leak_urgency
+early left,18,753,0.6733,0.0171,2.1312,0.0454,PSUIM5,power_leak_urgency
+early left,36,766,0.7428,0.0158,2.0835,0.0449,PSUIM5,power_leak_urgency
+early left,100,966,0.8841,0.0103,1.5282,0.0315,PSUIM5,power_leak_urgency
+early right,-100,485,0.0825,0.0125,1.7063,0.0441,PSUIM5,power_leak_urgency
+early right,-36,522,0.2395,0.0187,2.1496,0.0525,PSUIM5,power_leak_urgency
+early right,-18,876,0.3253,0.0158,2.1739,0.0412,PSUIM5,power_leak_urgency
+early right,-9,652,0.4064,0.0192,2.2357,0.0489,PSUIM5,power_leak_urgency
+early right,0,777,0.4916,0.0179,2.2343,0.0453,PSUIM5,power_leak_urgency
+early right,9,633,0.6035,0.0194,2.0955,0.0507,PSUIM5,power_leak_urgency
+early right,18,724,0.6754,0.0174,2.0312,0.046,PSUIM5,power_leak_urgency
+early right,36,622,0.7267,0.0179,2.0802,0.051,PSUIM5,power_leak_urgency
+middle left,-36,625,0.2432,0.0172,2.0246,0.0484,PSUIM5,power_leak_urgency
+middle left,-18,737,0.2944,0.0168,2.148,0.0444,PSUIM5,power_leak_urgency
+middle left,-9,607,0.4168,0.02,2.2348,0.0512,PSUIM5,power_leak_urgency
+middle left,0,623,0.504,0.02,2.1844,0.05,PSUIM5,power_leak_urgency
+middle left,9,547,0.574,0.0211,2.2294,0.0531,PSUIM5,power_leak_urgency
+middle left,18,750,0.6787,0.0171,2.11,0.0447,PSUIM5,power_leak_urgency
+middle left,36,845,0.7586,0.0147,2.0491,0.0408,PSUIM5,power_leak_urgency
+middle left,100,710,0.8831,0.0121,1.606,0.0379,PSUIM5,power_leak_urgency
+middle right,-100,827,0.0931,0.0101,1.7777,0.0348,PSUIM5,power_leak_urgency
+middle right,-36,602,0.2326,0.0172,2.1665,0.0495,PSUIM5,power_leak_urgency
+middle right,-18,560,0.3268,0.0198,2.1931,0.0524,PSUIM5,power_leak_urgency
+middle right,-9,794,0.3829,0.0173,2.1586,0.0446,PSUIM5,power_leak_urgency
+middle right,0,630,0.4968,0.0199,2.16,0.0509,PSUIM5,power_leak_urgency
+middle right,9,711,0.6414,0.018,2.1583,0.0498,PSUIM5,power_leak_urgency
+middle right,18,793,0.6545,0.0169,2.1244,0.0458,PSUIM5,power_leak_urgency
+middle right,36,807,0.7608,0.015,1.9442,0.0419,PSUIM5,power_leak_urgency
+control,-100,16445,0.0778,0.0021,1.6761,0.0077,PSUIM6,power_leak_urgency
+control,-36,9974,0.2117,0.0041,1.9699,0.0118,PSUIM6,power_leak_urgency
+control,-18,8191,0.3073,0.0051,2.0297,0.0136,PSUIM6,power_leak_urgency
+control,-9,7765,0.3943,0.0055,2.0322,0.0142,PSUIM6,power_leak_urgency
+control,0,7696,0.5109,0.0057,1.9943,0.0145,PSUIM6,power_leak_urgency
+control,9,7697,0.6387,0.0055,1.9037,0.0144,PSUIM6,power_leak_urgency
+control,18,8097,0.7146,0.005,1.8072,0.0138,PSUIM6,power_leak_urgency
+control,36,8775,0.804,0.0042,1.6504,0.0127,PSUIM6,power_leak_urgency
+control,100,15677,0.9082,0.0023,1.2529,0.0072,PSUIM6,power_leak_urgency
+early left,-36,1509,0.2087,0.0105,1.9684,0.0307,PSUIM6,power_leak_urgency
+early left,-18,1814,0.2982,0.0107,2.0442,0.0289,PSUIM6,power_leak_urgency
+early left,-9,1456,0.3894,0.0128,2.0331,0.0328,PSUIM6,power_leak_urgency
+early left,0,1818,0.4978,0.0117,2.0621,0.0296,PSUIM6,power_leak_urgency
+early left,9,1509,0.6368,0.0124,1.9585,0.0323,PSUIM6,power_leak_urgency
+early left,18,1828,0.6898,0.0108,1.8876,0.0283,PSUIM6,power_leak_urgency
+early left,36,1745,0.7862,0.0098,1.7983,0.0283,PSUIM6,power_leak_urgency
+early left,100,2537,0.9113,0.0056,1.3326,0.0177,PSUIM6,power_leak_urgency
+early right,-100,2056,0.0973,0.0065,1.6933,0.0214,PSUIM6,power_leak_urgency
+early right,-36,1914,0.2456,0.0098,1.9145,0.0272,PSUIM6,power_leak_urgency
+early right,-18,1631,0.3219,0.0116,1.9863,0.0314,PSUIM6,power_leak_urgency
+early right,-9,1601,0.431,0.0124,1.9616,0.0323,PSUIM6,power_leak_urgency
+early right,0,1675,0.5421,0.0122,1.9363,0.0317,PSUIM6,power_leak_urgency
+early right,9,1554,0.6538,0.0121,1.8272,0.032,PSUIM6,power_leak_urgency
+early right,18,1789,0.6987,0.0108,1.7107,0.029,PSUIM6,power_leak_urgency
+early right,36,1732,0.8025,0.0096,1.6092,0.0276,PSUIM6,power_leak_urgency
+middle left,-36,1546,0.1986,0.0101,1.9462,0.0298,PSUIM6,power_leak_urgency
+middle left,-18,1746,0.2955,0.0109,1.9948,0.0289,PSUIM6,power_leak_urgency
+middle left,-9,2009,0.3868,0.0109,2.0589,0.0282,PSUIM6,power_leak_urgency
+middle left,0,1298,0.4792,0.0139,2.0457,0.0359,PSUIM6,power_leak_urgency
+middle left,9,1554,0.6377,0.0122,1.9918,0.0323,PSUIM6,power_leak_urgency
+middle left,18,1286,0.7131,0.0126,1.8869,0.0339,PSUIM6,power_leak_urgency
+middle left,36,2308,0.7929,0.0084,1.7535,0.0247,PSUIM6,power_leak_urgency
+middle left,100,2517,0.9098,0.0057,1.3242,0.0181,PSUIM6,power_leak_urgency
+middle right,-100,2397,0.0859,0.0057,1.701,0.0199,PSUIM6,power_leak_urgency
+middle right,-36,1640,0.2335,0.0104,1.9778,0.0302,PSUIM6,power_leak_urgency
+middle right,-18,1707,0.3175,0.0113,2.0247,0.03,PSUIM6,power_leak_urgency
+middle right,-9,1558,0.4005,0.0124,2.0174,0.0315,PSUIM6,power_leak_urgency
+middle right,0,1732,0.5462,0.012,1.898,0.0302,PSUIM6,power_leak_urgency
+middle right,9,1518,0.6436,0.0123,1.8577,0.033,PSUIM6,power_leak_urgency
+middle right,18,1479,0.7187,0.0117,1.7123,0.0317,PSUIM6,power_leak_urgency
+middle right,36,1616,0.7927,0.0101,1.5971,0.0295,PSUIM6,power_leak_urgency
+control,-100,17383,0.1761,0.0029,1.1413,0.0059,PSUIM7,power_leak_urgency
+control,-36,10834,0.323,0.0045,1.3479,0.0096,PSUIM7,power_leak_urgency
+control,-18,10586,0.4247,0.0048,1.3713,0.0102,PSUIM7,power_leak_urgency
+control,-9,11720,0.4915,0.0046,1.3643,0.0096,PSUIM7,power_leak_urgency
+control,0,11627,0.5829,0.0046,1.3358,0.0096,PSUIM7,power_leak_urgency
+control,9,11562,0.6546,0.0044,1.2494,0.0091,PSUIM7,power_leak_urgency
+control,18,12458,0.7161,0.004,1.1892,0.0084,PSUIM7,power_leak_urgency
+control,36,12495,0.7713,0.0038,1.0906,0.0076,PSUIM7,power_leak_urgency
+control,100,18380,0.8429,0.0027,0.8532,0.0041,PSUIM7,power_leak_urgency
+early left,-36,2568,0.3357,0.0093,1.3388,0.0195,PSUIM7,power_leak_urgency
+early left,-18,2109,0.4035,0.0107,1.391,0.0225,PSUIM7,power_leak_urgency
+early left,-9,2528,0.5079,0.0099,1.4019,0.0209,PSUIM7,power_leak_urgency
+early left,0,2415,0.5723,0.0101,1.3636,0.0206,PSUIM7,power_leak_urgency
+early left,9,2146,0.6473,0.0103,1.3163,0.0218,PSUIM7,power_leak_urgency
+early left,18,2070,0.7005,0.0101,1.253,0.0205,PSUIM7,power_leak_urgency
+early left,36,2744,0.7522,0.0082,1.1658,0.0168,PSUIM7,power_leak_urgency
+early left,100,3356,0.8439,0.0063,0.9031,0.0097,PSUIM7,power_leak_urgency
+early right,-100,2323,0.1808,0.008,1.1568,0.0158,PSUIM7,power_leak_urgency
+early right,-36,2098,0.3289,0.0103,1.3359,0.0214,PSUIM7,power_leak_urgency
+early right,-18,2437,0.4354,0.01,1.3215,0.0203,PSUIM7,power_leak_urgency
+early right,-9,2459,0.4921,0.0101,1.2913,0.0211,PSUIM7,power_leak_urgency
+early right,0,2133,0.6057,0.0106,1.2539,0.0221,PSUIM7,power_leak_urgency
+early right,9,2668,0.6436,0.0093,1.2367,0.0197,PSUIM7,power_leak_urgency
+early right,18,2638,0.7191,0.0088,1.1096,0.017,PSUIM7,power_leak_urgency
+early right,36,2409,0.7696,0.0086,1.0709,0.0174,PSUIM7,power_leak_urgency
+middle left,-36,1929,0.3079,0.0105,1.3479,0.023,PSUIM7,power_leak_urgency
+middle left,-18,2527,0.4286,0.0098,1.3528,0.0203,PSUIM7,power_leak_urgency
+middle left,-9,2366,0.4666,0.0103,1.3803,0.022,PSUIM7,power_leak_urgency
+middle left,0,2465,0.57,0.01,1.357,0.0208,PSUIM7,power_leak_urgency
+middle left,9,2602,0.6703,0.0092,1.2872,0.0194,PSUIM7,power_leak_urgency
+middle left,18,2351,0.7061,0.0094,1.2314,0.0197,PSUIM7,power_leak_urgency
+middle left,36,2434,0.7555,0.0087,1.1516,0.0177,PSUIM7,power_leak_urgency
+middle left,100,2314,0.8453,0.0075,0.9044,0.0122,PSUIM7,power_leak_urgency
+middle right,-100,2388,0.191,0.008,1.1753,0.0159,PSUIM7,power_leak_urgency
+middle right,-36,2707,0.3502,0.0092,1.3139,0.0186,PSUIM7,power_leak_urgency
+middle right,-18,2186,0.4433,0.0106,1.3474,0.0217,PSUIM7,power_leak_urgency
+middle right,-9,2209,0.5061,0.0106,1.2975,0.0215,PSUIM7,power_leak_urgency
+middle right,0,2487,0.5895,0.0099,1.2695,0.0202,PSUIM7,power_leak_urgency
+middle right,9,2412,0.6853,0.0095,1.2381,0.0201,PSUIM7,power_leak_urgency
+middle right,18,2653,0.7169,0.0087,1.1496,0.0178,PSUIM7,power_leak_urgency
+middle right,36,2833,0.7744,0.0079,1.0585,0.0156,PSUIM7,power_leak_urgency

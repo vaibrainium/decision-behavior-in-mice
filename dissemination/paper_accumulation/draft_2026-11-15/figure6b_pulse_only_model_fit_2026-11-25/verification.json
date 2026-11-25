@@ -1,0 +1,15 @@
+{
+  "model": "pulse_norm_ugm_no_sv",
+  "fit_domain": "pulse trials only",
+  "control_column_status": "prediction outside fitted domain",
+  "all_prediction_cells_match_observed_support": true,
+  "n_observed_mouse_cells": 464,
+  "n_model_mouse_cells": 464,
+  "n_mice": 10,
+  "new_decision_model_fits": false,
+  "new_simulations": false,
+  "psychometric_display_fit": "unweighted logit_4 over equal-mouse condition/coherence summaries",
+  "observed_uncertainty": "between-mouse SEM",
+  "model_uncertainty_displayed": false,
+  "saved_summary_precision": "four decimal places"
+}

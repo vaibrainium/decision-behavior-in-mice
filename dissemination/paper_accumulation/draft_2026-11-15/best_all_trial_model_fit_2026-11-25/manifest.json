@@ -1,0 +1,47 @@
+{
+  "source": "dissemination/figures/qc/fit_browser_2026-11-12_v7.json",
+  "source_sha256": "2573e51db626e7240b5b336f52d1fd6c60b717bed4e5d723a789180beebd4498",
+  "code_sha256": "df02cadf86b8e1d187a326c4296166b434271f40626c8bcce31b2f9fc193a49d",
+  "base_commit": "9e0453315b9b793c8457138ea6747c1a2b499cdd",
+  "model": "power_leak_urgency",
+  "model_label": "Power-law input + leak + urgency, with s\u1d65",
+  "browser_made": "2026-11-12",
+  "scope": "Preview only; saved full-fit simulations; no decision-model refit or manuscript selection change.",
+  "population_counts": [
+    {
+      "cond": "control",
+      "n_trials": 13117,
+      "n_mice": 10
+    },
+    {
+      "cond": "early left",
+      "n_trials": 2214,
+      "n_mice": 10
+    },
+    {
+      "cond": "early right",
+      "n_trials": 2157,
+      "n_mice": 10
+    },
+    {
+      "cond": "late left",
+      "n_trials": 718,
+      "n_mice": 6
+    },
+    {
+      "cond": "late right",
+      "n_trials": 742,
+      "n_mice": 6
+    },
+    {
+      "cond": "middle left",
+      "n_trials": 2165,
+      "n_mice": 10
+    },
+    {
+      "cond": "middle right",
+      "n_trials": 2116,
+      "n_mice": 10
+    }
+  ]
+}
