@@ -478,6 +478,16 @@ Create matched Figure 7 variations for the two Figure 6 winners: 7a uses the all
 
 - 2026-11-25: Figure 7 v3 previews verified and rendered. 7B is closer than 7A on all three displayed checks, but neither captures the full choice-shift/onset-time signature. Report: `../reports/2026-11-25-figure7-simulated-pulse-checks.md`.
 
+### Choice–RT Pareto refits for the Figure 6B winner — 2026-11-26
+Exploratory diagnostic approved by the author. Refit the pulse-only normalized UGM/no-sv architecture while reducing the conditional-RT term, which is optimization-equivalent to increasing the relative choice weight. Prespecified sweep: `rt_nllh_weight` 1.0 (existing baseline), 0.5, 0.25, 0.125 and 0 (choice-only endpoint). Fit `pulse` plus `pcv0`–`pcv4` for all 10 mice, warm-started from the existing weight-1 fits. All candidates must be rescored on held-out folds with the original unweighted (`rt_nllh_weight=1`) likelihood; weighted training NLL and BIC are not comparable across weights. Primary descriptive outcomes are held-out choice NLL, held-out conditional-RT NLL, original joint NLL and Figure 7A–C readouts. This is a Pareto/architecture diagnostic, not confirmatory model selection.
+- [x] Add an explicit, recorded RT-likelihood-weight option without changing the production default; add regression tests.
+- [x] Build a deterministic 240-task table (4 new weights × 10 mice × 6 pulse splits), checkpointed and warm-started from `fits_pulse_norm_ugm`.
+- [x] Add common-scale held-out scoring and validate registrations on existing weight-1 fits; add Figure 7 readout/plotting after fits sync so it consumes the final common-scale outputs.
+- [x] Verify task commands and write the cluster submission command for the author; do not submit it from the agent session.
+- [ ] After fits sync: score all weights, construct the Pareto frontier, simulate Figure 7 readouts, report and decide whether any weighted fit merits a manuscript panel.
+
+- 2026-11-26: Preparation complete. The new CLI preserves weight1 by default;3 standard-library tests pass. The versioned task table has240 unique outputs and420.2 baseline-equivalent compute-hours. Scorer registration finds all60 baseline fits and correctly reports240 new fits absent before submission. `pytest` is unavailable in the project environment, so the existing pytest checkpoint suite was not rerun; list-only command/grid smoke test passed. Figure7 simulation/render wiring is intentionally deferred until final fit files exist, avoiding a second provisional file schema.
+
 ### Pulse-only held-out bits per trial — 2026-11-18
 Compute same metric as Figure3 for all22 pulse-only candidates: -heldout_NLL/(n_heldout ln2) within mouse, then equal-mouse mean. Keep pooled trial-weighted score separately, verify matched trial counts, no fits or null-baseline claim.
 - [x] Export per-mouse and group scores, verify formula/ranking and document result.
