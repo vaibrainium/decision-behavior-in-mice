@@ -487,6 +487,7 @@ Exploratory diagnostic approved by the author. Refit the pulse-only normalized U
 - [ ] After fits sync: score all weights, construct the Pareto frontier, simulate Figure 7 readouts, report and decide whether any weighted fit merits a manuscript panel.
 
 - 2026-11-26: Preparation complete. The new CLI preserves weight1 by default;3 standard-library tests pass. The versioned task table has240 unique outputs and420.2 baseline-equivalent compute-hours. Scorer registration finds all60 baseline fits and correctly reports240 new fits absent before submission. `pytest` is unavailable in the project environment, so the existing pytest checkpoint suite was not rerun; list-only command/grid smoke test passed. Figure7 simulation/render wiring is intentionally deferred until final fit files exist, avoiding a second provisional file schema.
+- 2026-11-26: Author ran the reviewed autosubmit command. Cluster output reports all240 tasks submitted:60 each for CW2, CW4, CW8 and choice-only; autosubmit state shows no tasks left pending. Pasted identifiers include jobs43544157–43544179 (the earlier CW2 array identifiers were not included in the pasted excerpt). Next: let the watcher retry timeouts, then sync and validate all outputs before scoring.
 
 ### Pulse-only held-out bits per trial — 2026-11-18
 Compute same metric as Figure3 for all22 pulse-only candidates: -heldout_NLL/(n_heldout ln2) within mouse, then equal-mouse mean. Keep pooled trial-weighted score separately, verify matched trial counts, no fits or null-baseline claim.

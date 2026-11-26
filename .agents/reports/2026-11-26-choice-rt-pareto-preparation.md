@@ -6,7 +6,7 @@ Plan: plans/2026-10-26-paper-accumulation-variant.md
 Can the Figure 6B pulse-only winner recover the pulse-choice signatures when choice likelihood is given more relative influence, and how much response-time fit must be sacrificed?
 
 ## Summary
-The checkpointed production sweep and common-scale scorer are prepared but no new model has been fitted or interpreted. The prespecified RT weights are 0.5, 0.25, 0.125 and 0, corresponding to relative choice weights 2, 4, 8 and a choice-only endpoint; the existing weight-1 model is the baseline. The table contains 240 new fits (10 mice × 6 pulse splits × 4 weights), estimated at 420.2 baseline-equivalent compute-hours. Cluster submission remains an author action under repository rules.
+The checkpointed production sweep and common-scale scorer are prepared; no completed weighted model has yet been scored or interpreted. The prespecified RT weights are 0.5, 0.25, 0.125 and 0, corresponding to relative choice weights 2, 4, 8 and a choice-only endpoint; the existing weight-1 model is the baseline. The table contains 240 new fits (10 mice × 6 pulse splits × 4 weights), estimated at 420.2 baseline-equivalent compute-hours. The author submitted all 240 tasks after reviewing the dry run.
 
 ## Findings
 - VERIFIED: `fit_mouse_ddm` now accepts `--rt_nllh_weight`, records it in each fit, rejects negative/nonfinite values and preserves the production default exactly at 1. Source: `scripts/ddm/fit_mouse_ddm.py`; test: `.venv/bin/python tests/test_choice_rt_weight.py` (3 tests pass).
@@ -43,6 +43,6 @@ OPENBLAS_NUM_THREADS=1 .venv/bin/python -W ignore -m scripts.paper.score_choice_
 Weighted training objectives and BIC values are not comparable across weights. All selection must use the scorer's original unweighted held-out choice, conditional-RT and joint NLL components. This is exploratory architecture diagnosis, not a confirmatory test. Full-pulse fits are needed for Figure 7 predictions; `pcv` fits are needed for honest held-out comparison.
 
 ## Open questions and next steps
-- [ ] Author runs the dry run and cluster watcher.
+- [x] Author ran the dry run and cluster watcher; autosubmit reported60 submitted tasks per weight.
 - [ ] Sync and validate all 240 fit files.
 - [ ] Run five-seed common-scale scoring, construct the subject-level Pareto frontier and then generate the Figure 7 readouts.

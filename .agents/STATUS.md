@@ -2,7 +2,7 @@
 Last updated: 2026-11-25 by Codex
 
 ## Current focus
-Choice–RT Pareto refits are prepared for the Figure 6B pulse-only winner. Four new RT weights (0.5, 0.25, 0.125, 0) give relative choice weights 2, 4, 8 and choice-only; 240 checkpointed/warm-started tasks are in `scripts/slurm/tasks_2026-11-26_choice_weight.csv`. No jobs were submitted and no weighted-fit result exists yet. The common-scale scorer evaluates every candidate with the original unweighted held-out likelihood. Report: `reports/2026-11-26-choice-rt-pareto-preparation.md`.
+Choice–RT Pareto refits are running for the Figure 6B pulse-only winner. Four new RT weights (0.5, 0.25, 0.125, 0) give relative choice weights 2, 4, 8 and choice-only; the author submitted all240 checkpointed/warm-started tasks (60 per weight) on2026-11-26. Autosubmit reported no tasks left pending at submission. No completed weighted-fit result has been scored or interpreted yet. After the watcher finishes: sync, validate all240 files, then use the original unweighted held-out scorer. Report: `reports/2026-11-26-choice-rt-pareto-preparation.md`.
 
 Figure 7 simulated pulse-check alternatives are ready: **7A** uses the Figure 6a all-trial `power_leak_urgency` winner and **7B** uses the Figure 6b pulse-only `pulse_norm_ugm_no_sv` winner. Current previews are `figure7_7a_simulated_pulse_checks_2026-11-25_v3/` and `figure7_7b_simulated_pulse_checks_2026-11-25_v3/`. Fixed-parameter predictions are compared with choice shifts, onset-stage influence and dilution-adjusted persistence. 7B is closer on all three, but still underpredicts pulse-shift magnitude and primacy. Report: `reports/2026-11-25-figure7-simulated-pulse-checks.md`.
 
@@ -229,7 +229,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - reports/2026-11-13-pulse-weight-signatures.md : free pulse weights (shared / per time) raise PSUIM6/7 early effect only to 6.5-7.5 pp (data 15.5 / 13.5); best early chi2 74.6, worse than normalized UGM no sv; BIC +274 to +907
 
 ## Known issues
-- Choice–RT Pareto sweep is prepared but not run. Do not treat weighted objectives/BIC as comparable; use only original weight-1 held-out rescoring after all 240 fits sync. Project `.venv` lacks pytest; new unittest/compile/CLI checks pass, existing pytest checkpoint suite was not rerun.
+- Choice–RT Pareto sweep is running; completion has not been verified. Do not treat weighted objectives/BIC as comparable; use only original weight-1 held-out rescoring after all240 fits sync. Project `.venv` lacks pytest; new unittest/compile/CLI checks pass, existing pytest checkpoint suite was not rerun.
 - Figure 7 panel A uses matched fit-browser summaries and is not the exact final Figure 4A trial table; B/C use the exact Figure 4C/4D estimators. Keep panel-specific populations explicit. Two-seed model bands are simulation stability only.
 - 2026-11-19: container GPU lost mid-session (NVML init fails, torch.cuda False); simulations fall back to CPU Numba (<=0.17 NLL per fold vs CUDA archives). Restore before CUDA-matched rescoring.
 - Figure4 paired psychometrics: v4 parameter fits/p values superseded by v5 after multistart optimization audit. Use v5 for current inference; parameter identifiability remains limited.
