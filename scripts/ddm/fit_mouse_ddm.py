@@ -59,6 +59,20 @@ RESPONDED_LIKELIHOOD_PARAMS = {**LIKELIHOOD_PARAMS, "include_censored": False}
 MAX_NO_RESPONSE = 0.5
 
 
+def fit_likelihood_params(responded: bool, rt_nllh_weight: float = 1.0) -> dict:
+    """Return a fresh likelihood configuration for a fit.
+
+    Values below one are an exploratory choice--RT Pareto diagnostic: the
+    outcome/choice term remains at unit weight while the conditional RT term is
+    multiplied by ``rt_nllh_weight``.  The production default remains one.
+    """
+    if not np.isfinite(rt_nllh_weight) or rt_nllh_weight < 0:
+        raise ValueError("rt_nllh_weight must be finite and nonnegative")
+    params = dict(RESPONDED_LIKELIHOOD_PARAMS if responded else LIKELIHOOD_PARAMS)
+    params["rt_nllh_weight"] = float(rt_nllh_weight)
+    return params
+
+
 def too_few_responses(likelihood_calc, choice: np.ndarray) -> bool:
     """Amendment 11: in responded-only fits, more than MAX_NO_RESPONSE of simulated trials without a response by 5 s."""
     return not getattr(likelihood_calc, "include_censored", True) and float(np.mean(choice < 0)) > MAX_NO_RESPONSE
@@ -466,6 +480,8 @@ if __name__ == "__main__":
     parser.add_argument("--leak_bounds", type=float, nargs=2, metavar=("LO", "HI"), help="leak_rate bounds (/s) in variants with leak, e.g. 20 200 for the extrema-detection model (primacy plan, amendment 4)")
     parser.add_argument("--front_end", choices=list(FRONT_ENDS), help="visual front end on the drift input (primacy plan, amendment 7): power, norm, or norm_transient (norm + transient channel)")
     parser.add_argument("--responded_only", action="store_true", help="drop trials without a response by 5 s; likelihood conditional on a response")
+    parser.add_argument("--rt_nllh_weight", type=float, default=1.0,
+                        help="multiplier on conditional RT NLL (default 1; values below 1 are exploratory choice-RT Pareto fits)")
     parser.add_argument("--extrema_samples", action="store_true", help="discrete-sample extrema detection (amendment 10); use with a variant without leak or urgency")
     parser.add_argument("--drift_gain_max", type=float, help="upper bound of drift_gain (default 20); amendment 5: 200 for the extrema-detection model if its fits reach 20")
     parser.add_argument("--pulse_timing", default="ddm/pulse_timing_global.npz", help="scheduled pulse timing (build_pulse_timing.py); read only with --nominal_input, for pulse trials")
@@ -506,5 +522,5 @@ if __name__ == "__main__":
         else:
             logger.info("job %s: %s", args.job_id, job)
             run_job(inputs, job, processed / args.out_dir, args.n_reps, args.max_iterations, args.guess_model, [processed / d for d in args.warm_start_from], args.time_varying_gain, args.signed_leak, args.fixed_guess_bias, args.leak_bounds, args.drift_gain_max, args.front_end,
-                    RESPONDED_LIKELIHOOD_PARAMS if args.responded_only else LIKELIHOOD_PARAMS, args.extrema_samples, args.nominal_input, args.pulse_weight,
+                    fit_likelihood_params(args.responded_only, args.rt_nllh_weight), args.extrema_samples, args.nominal_input, args.pulse_weight,
                     args.nominal_matched, args.pulse_time_weights, args.ugm)
