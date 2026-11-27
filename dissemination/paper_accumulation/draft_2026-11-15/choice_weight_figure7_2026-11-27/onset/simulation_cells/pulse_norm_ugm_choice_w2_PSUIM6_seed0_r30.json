@@ -1,0 +1,14 @@
+{
+  "family": "pulse_norm_ugm_choice_w2",
+  "mouse": "PSUIM6",
+  "seed": 0,
+  "mouse_seed": 1743811213,
+  "reps": 30,
+  "fit_path": "/mnt/data/processed/ddm/fits_pulse_norm_ugm_choice_w2/PSUIM6_L1U1V0Z0G1_pulse.pkl",
+  "fit_sha256": "69ee1504e145ccd4aca8d05382d58888ced892dbece4a2b34a28385433baed07",
+  "n_input": 5511,
+  "n_raw_outcomes": 165330,
+  "n_eligible_simulated": 150147,
+  "nonresponse_fraction": 0.08291901046392064,
+  "seconds": 22.235240870155394
+}

@@ -1,0 +1,51 @@
+{
+  "exact_historical_trial_selection": true,
+  "n_input_trials": 25493,
+  "eligible_schedules": 19579,
+  "n_readout_trials": 19313,
+  "grouped_estimator_max_absolute_errors": {
+    "D": 4.773959005888173e-15,
+    "b1_per_pct": 9.020562075079397e-17,
+    "gamma_pct": 1.4921397450962104e-13,
+    "T_s": 2.220446049250313e-16,
+    "gammaT": 1.2434497875801753e-13,
+    "K": 8.881784197001252e-15,
+    "D_joint": 6.2450045135165055e-15,
+    "S_joint": 3.941291737419306e-15
+  },
+  "input_sha256": "dd1563d743656317ac611a7b041b199e05c1852adb544e2f916c757b1c496cd5",
+  "timing_sha256": "01d4d378e9cdf731cbcf5a427e8a4ad869416838473ab4d4af83a7d3eaae55f4",
+  "trial_table_sha256": "44d7cdf94faa2f63618acc5668251cb09779b026ece1b61264fd57199e81f335",
+  "models": [
+    "pulse_norm_ugm_choice_w2",
+    "pulse_norm_ugm_choice_w4",
+    "pulse_norm_ugm_choice_w8",
+    "pulse_norm_ugm_choice_only"
+  ],
+  "labels": {
+    "data": "Observed data",
+    "control_primary": "Control-trained integrator",
+    "primary": "Joint integrator with drift variability",
+    "no_sv": "Joint integrator without drift variability",
+    "power_leak_urgency": "Power input + leak + urgency",
+    "norm_leak": "Normalized input + leak",
+    "pulse_linear_leak": "Pulse-only leak model",
+    "pulse_norm_ugm_no_sv": "Pulse-only normalized urgency gating, no sv",
+    "primary_sv0": "Joint integrator, sv set to zero (ablation)",
+    "pulse_norm_ugm_choice_w2": "Normalized UGM, 2\u00d7 relative choice weight",
+    "pulse_norm_ugm_choice_w4": "Normalized UGM, 4\u00d7 relative choice weight",
+    "pulse_norm_ugm_choice_w8": "Normalized UGM, 8\u00d7 relative choice weight",
+    "pulse_norm_ugm_choice_only": "Normalized UGM, choice-only fit"
+  },
+  "edged_seconds": [
+    0.1,
+    0.3,
+    0.6,
+    0.9,
+    1.2,
+    1.5,
+    2.1,
+    5.0
+  ],
+  "scope": "Fixed parameters; same empirical responded-trial stimulus pool as existing fits; no parameter uncertainty"
+}

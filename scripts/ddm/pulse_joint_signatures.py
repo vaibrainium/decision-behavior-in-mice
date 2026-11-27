@@ -55,6 +55,15 @@ PULSE_ONLY_FAMILIES = {f"pulse_{fe}_{name}": (f"fits_pulse_{fe}_integrators", va
 UGM_VARIANTS = [("ugm", "L1U1V1Z0G1"), ("ugm_no_sv", "L1U1V0Z0G1")]
 UGM_FAMILIES = {f"{fe}_{name}": (f"fits_joint_{fe}_ugm", var) for fe in ("linear", "power", "norm") for name, var in UGM_VARIANTS}
 UGM_PULSE_FAMILIES = {f"pulse_{fe}_{name}": (f"fits_pulse_{fe}_ugm", var) for fe in ("linear", "power", "norm") for name, var in UGM_VARIANTS}
+# Same normalized UGM/no-sv architecture, refitted with progressively less
+# weight on the conditional-RT likelihood (choice--RT Pareto diagnostic).
+CHOICE_WEIGHT_PULSE_FAMILIES = {
+    "pulse_norm_ugm_choice_w2": ("fits_pulse_norm_ugm_choice_w2", "L1U1V0Z0G1"),
+    "pulse_norm_ugm_choice_w4": ("fits_pulse_norm_ugm_choice_w4", "L1U1V0Z0G1"),
+    "pulse_norm_ugm_choice_w8": ("fits_pulse_norm_ugm_choice_w8", "L1U1V0Z0G1"),
+    "pulse_norm_ugm_choice_only": ("fits_pulse_norm_ugm_choice_only", "L1U1V0Z0G1"),
+}
+UGM_PULSE_FAMILIES.update(CHOICE_WEIGHT_PULSE_FAMILIES)
 OPTIONS = {  # family -> make_model options (as the fits)
     "fixed_guess_bias": dict(fixed_guess_bias=True), "extrema_E_leak20-200": dict(leak_bounds=(20, 200)),
     "free_leak_0-200": dict(leak_bounds=(0, 200)), "extrema_sampling_ES": dict(extrema_samples=True),

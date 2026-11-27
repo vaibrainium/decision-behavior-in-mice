@@ -1,0 +1,14 @@
+{
+  "family": "pulse_norm_ugm_choice_w8",
+  "mouse": "DBM14",
+  "seed": 1,
+  "mouse_seed": 2253380374,
+  "reps": 30,
+  "fit_path": "/mnt/data/processed/ddm/fits_pulse_norm_ugm_choice_w8/DBM14_L1U1V0Z0G1_pulse.pkl",
+  "fit_sha256": "820cf8c1acaa76c7fde3534582f2b1a4a2c2501af8e633b02f94d5f0d4bde9b5",
+  "n_input": 639,
+  "n_raw_outcomes": 19170,
+  "n_eligible_simulated": 17704,
+  "nonresponse_fraction": 0.007459572248304643,
+  "seconds": 2.2609556620009243
+}

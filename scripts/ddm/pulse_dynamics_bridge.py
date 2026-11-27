@@ -35,11 +35,17 @@ EDGES = np.array([.1, .3, .6, .9, 1.2, 1.5, 2.1, 5.])
 GROUP = ['mouse', 'coherence_pct', 'pulse', 'bin']
 FAMILIES = ['control_primary', 'primary', 'no_sv', 'power_leak_urgency', 'norm_leak',
             'pulse_linear_leak', 'pulse_norm_ugm_no_sv', 'primary_sv0']
+WEIGHTED_FAMILIES = ['pulse_norm_ugm_choice_w2', 'pulse_norm_ugm_choice_w4',
+                     'pulse_norm_ugm_choice_w8', 'pulse_norm_ugm_choice_only']
 LABELS = {'data': 'Observed data', 'control_primary': 'Control-trained integrator',
           'primary': 'Joint integrator with drift variability', 'no_sv': 'Joint integrator without drift variability',
           'power_leak_urgency': 'Power input + leak + urgency', 'norm_leak': 'Normalized input + leak',
           'pulse_linear_leak': 'Pulse-only leak model', 'pulse_norm_ugm_no_sv': 'Pulse-only normalized urgency gating, no sv',
-          'primary_sv0': 'Joint integrator, sv set to zero (ablation)'}
+          'primary_sv0': 'Joint integrator, sv set to zero (ablation)',
+          'pulse_norm_ugm_choice_w2': 'Normalized UGM, 2× relative choice weight',
+          'pulse_norm_ugm_choice_w4': 'Normalized UGM, 4× relative choice weight',
+          'pulse_norm_ugm_choice_w8': 'Normalized UGM, 8× relative choice weight',
+          'pulse_norm_ugm_choice_only': 'Normalized UGM, choice-only fit'}
 
 
 def sha(path):
@@ -145,7 +151,7 @@ def readout(counts, full=True):
     return res
 
 
-def prepare():
+def prepare(models=None):
     from scripts.behavior.huk_shadlen_replication import load
     x = inputs()
     m = metadata(x)
@@ -169,7 +175,7 @@ def prepare():
     record = {'exact_historical_trial_selection': True, 'n_input_trials': len(x['rt']), 'eligible_schedules': len(m),
               'n_readout_trials': len(t), 'grouped_estimator_max_absolute_errors': errors,
               'input_sha256': sha(INPUT), 'timing_sha256': sha(TIMING), 'trial_table_sha256': sha(TRIAL_TABLE),
-              'models': FAMILIES, 'labels': LABELS, 'edged_seconds': EDGES.tolist(),
+              'models': list(models or FAMILIES), 'labels': LABELS, 'edged_seconds': EDGES.tolist(),
               'scope': 'Fixed parameters; same empirical responded-trial stimulus pool as existing fits; no parameter uncertainty'}
     (OUT / 'preparation_checks.json').write_text(json.dumps(record, indent=2) + '\n')
     print(json.dumps(record, indent=2), flush=True)
@@ -307,20 +313,24 @@ def analyze(families, seeds, reps, per_rep):
 
 
 def main():
+    global OUT
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output', type=Path, default=OUT,
+                        help='versioned output directory (default preserves the historical location)')
     parser.add_argument('--prepare', action='store_true')
     parser.add_argument('--simulate', action='store_true')
     parser.add_argument('--analyze', action='store_true')
-    parser.add_argument('--families', nargs='+', choices=FAMILIES, default=FAMILIES)
+    parser.add_argument('--families', nargs='+', choices=FAMILIES + WEIGHTED_FAMILIES, default=FAMILIES)
     parser.add_argument('--mice', nargs='+')
     parser.add_argument('--seed', type=int, default=0)
     parser.add_argument('--seeds', nargs='+', type=int, default=[0, 1])
     parser.add_argument('--reps', type=int, default=30)
     parser.add_argument('--per-rep', action='store_true')
     args = parser.parse_args()
+    OUT = args.output
     (OUT / 'cache').mkdir(parents=True, exist_ok=True)
     if args.prepare:
-        prepare()
+        prepare(args.families)
     if args.simulate:
         simulate(args.families, args.mice, args.seed, args.reps)
     if args.analyze:

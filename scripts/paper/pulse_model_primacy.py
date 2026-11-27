@@ -115,6 +115,8 @@ if __name__=='__main__':
     if a.phase=='prepare':a.output.mkdir(parents=True,exist_ok=False);prepare(a.output)
     else:
         score=pd.read_csv(SCORE);families=a.families or score[score.kind=='pulse_only'].sort_values('heldout').family.tolist()
-        assert set(families) <= set(score.family), sorted(set(families) - set(score.family))
+        from scripts.ddm.pulse_joint_signatures import CHOICE_WEIGHT_PULSE_FAMILIES
+        registered=set(score.family)|set(CHOICE_WEIGHT_PULSE_FAMILIES)
+        assert set(families) <= registered, sorted(set(families) - registered)
         if a.phase=='simulate':simulate(a.output,families,a.seeds,a.reps,a.mice)
         else:analyze(a.output,families,a.seeds,a.reps,a.comparison)

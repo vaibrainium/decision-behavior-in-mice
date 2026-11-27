@@ -1,0 +1,7 @@
+{
+  "decision_model_refit": false,
+  "panel_A": "Full-fit simulated choice probabilities; matched direction contrast averaged across coherence and onset stage within mouse; 95% t interval across 10 mice.",
+  "panel_B": "Figure 4C ordinal readout; 30 repetitions and two independent seeds.",
+  "panel_C": "Figure 4D dilution-adjusted readout; 30 repetitions and two independent seeds.",
+  "git_head": "2da0201b0bfa6726b8aa203eba5242bee720b153"
+}
