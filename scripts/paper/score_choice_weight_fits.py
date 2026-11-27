@@ -110,7 +110,51 @@ def summarize(output: Path) -> None:
     })
     reproduction["rt_nllh_weight_fit"] = reproduction.family.map(weight)
     reproduction["same_objective_as_stored"] = reproduction.rt_nllh_weight_fit.eq(1.0)
-    reproduction.to_csv(output / "heldout/reproduction.csv", index=False)
+    reproduction.to_csv(output / "heldout/reproduction_common_scale.csv", index=False)
+
+
+def combine_parts(output: Path, families: list[str]) -> None:
+    """Combine completed per-family audits without rerunning simulations."""
+    heldout = output / "heldout"
+    control = output / "control"
+    heldout.mkdir(exist_ok=False)
+    control.mkdir(exist_ok=False)
+    for filename in ["cells.csv.gz", "summary.csv", "reproduction.csv"]:
+        frames = [pd.read_csv(output / "parts" / family / "heldout" / filename) for family in families]
+        pd.concat(frames, ignore_index=True).to_csv(heldout / filename, index=False)
+    coverage = [pd.read_csv(output / "parts" / family / "heldout/coverage.csv") for family in families]
+    reference = coverage[0]
+    for frame in coverage[1:]:
+        pd.testing.assert_frame_equal(frame, reference)
+    reference.to_csv(heldout / "coverage.csv", index=False)
+    control_cells = [pd.read_csv(output / "parts" / family / "control/cells.csv.gz") for family in families]
+    pd.concat(control_cells, ignore_index=True).to_csv(control / "cells.csv.gz", index=False)
+
+
+def score_parts(output: Path, families: list[str], seeds: list[int]) -> None:
+    """Score one family at a time and checkpoint each completed audit."""
+    from scripts.paper.audit_pulse_choice_rt_score import run as run_heldout
+    from scripts.paper.choice_g2_control_training import run as run_control
+    parts = output / "parts"
+    parts.mkdir(parents=True, exist_ok=True)
+    for family in families:
+        part = parts / family
+        heldout_done = part / "heldout/summary.csv"
+        control_done = part / "control/cells.csv.gz"
+        if heldout_done.exists() and control_done.exists():
+            print(f"CACHED {family}", flush=True)
+            continue
+        part.mkdir(exist_ok=True)
+        if not heldout_done.exists():
+            if (part / "heldout").exists():
+                raise RuntimeError(f"Incomplete held-out checkpoint; use a new output: {part / 'heldout'}")
+            run_heldout(part / "heldout", [family], seeds)
+        if not control_done.exists():
+            if (part / "control").exists():
+                raise RuntimeError(f"Incomplete control checkpoint; use a new output: {part / 'control'}")
+            run_control(part / "control", [family], seeds)
+        print(f"SCORED {family}", flush=True)
+    combine_parts(output, families)
 
 
 def main() -> None:
@@ -118,6 +162,7 @@ def main() -> None:
     p.add_argument("--output", type=Path)
     p.add_argument("--seeds", type=int, nargs="+", default=[12345, 23456, 34567, 45678, 56789])
     p.add_argument("--check", action="store_true")
+    p.add_argument("--resume", action="store_true", help="resume completed per-family checkpoints in --output")
     a = p.parse_args()
     state = validate(require_new=not a.check)
     print(state.groupby(["family", "exists"]).size().to_string())
@@ -125,12 +170,24 @@ def main() -> None:
         return
     if a.output is None:
         p.error("--output is required unless --check is used")
-    from scripts.paper.audit_pulse_choice_rt_score import run as run_heldout
-    from scripts.paper.choice_g2_control_training import run as run_control
-    a.output.mkdir(parents=True, exist_ok=False)
+    if a.resume:
+        if not a.output.exists():
+            p.error("--resume requires an existing --output directory")
+    else:
+        a.output.mkdir(parents=True, exist_ok=False)
     families = [BASELINE, *FAMILIES]
-    run_heldout(a.output / "heldout", families, a.seeds)
-    run_control(a.output / "control", families, a.seeds)
+    summaries = [
+        a.output / "pareto_scores_by_seed.csv",
+        a.output / "pareto_scores_by_mouse_seed.csv",
+        a.output / "pareto_summary.csv",
+    ]
+    if a.resume and all(path.exists() for path in summaries):
+        print(f"COMPLETE {a.output}")
+        return
+    combined = a.output / "heldout/summary.csv"
+    control = a.output / "control/cells.csv.gz"
+    if not (combined.exists() and control.exists()):
+        score_parts(a.output, families, a.seeds)
     summarize(a.output)
 
 

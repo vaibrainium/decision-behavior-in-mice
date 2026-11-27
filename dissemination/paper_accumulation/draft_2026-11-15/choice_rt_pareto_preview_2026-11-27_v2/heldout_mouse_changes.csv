@@ -1,0 +1,151 @@
+family,label,mouse,component,improvement_bits_per_trial
+pulse_norm_ugm_no_sv,1×,DBM12,choice,0.0
+pulse_norm_ugm_no_sv,1×,DBM13,choice,0.0
+pulse_norm_ugm_no_sv,1×,DBM14,choice,0.0
+pulse_norm_ugm_no_sv,1×,DBM15,choice,0.0
+pulse_norm_ugm_no_sv,1×,DBM5,choice,0.0
+pulse_norm_ugm_no_sv,1×,DBM6,choice,0.0
+pulse_norm_ugm_no_sv,1×,PSUIM10,choice,0.0
+pulse_norm_ugm_no_sv,1×,PSUIM5,choice,0.0
+pulse_norm_ugm_no_sv,1×,PSUIM6,choice,0.0
+pulse_norm_ugm_no_sv,1×,PSUIM7,choice,0.0
+pulse_norm_ugm_no_sv,1×,DBM12,rt,0.0
+pulse_norm_ugm_no_sv,1×,DBM13,rt,0.0
+pulse_norm_ugm_no_sv,1×,DBM14,rt,0.0
+pulse_norm_ugm_no_sv,1×,DBM15,rt,0.0
+pulse_norm_ugm_no_sv,1×,DBM5,rt,0.0
+pulse_norm_ugm_no_sv,1×,DBM6,rt,0.0
+pulse_norm_ugm_no_sv,1×,PSUIM10,rt,0.0
+pulse_norm_ugm_no_sv,1×,PSUIM5,rt,0.0
+pulse_norm_ugm_no_sv,1×,PSUIM6,rt,0.0
+pulse_norm_ugm_no_sv,1×,PSUIM7,rt,0.0
+pulse_norm_ugm_no_sv,1×,DBM12,joint,0.0
+pulse_norm_ugm_no_sv,1×,DBM13,joint,0.0
+pulse_norm_ugm_no_sv,1×,DBM14,joint,0.0
+pulse_norm_ugm_no_sv,1×,DBM15,joint,0.0
+pulse_norm_ugm_no_sv,1×,DBM5,joint,0.0
+pulse_norm_ugm_no_sv,1×,DBM6,joint,0.0
+pulse_norm_ugm_no_sv,1×,PSUIM10,joint,0.0
+pulse_norm_ugm_no_sv,1×,PSUIM5,joint,0.0
+pulse_norm_ugm_no_sv,1×,PSUIM6,joint,0.0
+pulse_norm_ugm_no_sv,1×,PSUIM7,joint,0.0
+pulse_norm_ugm_choice_w2,2×,DBM12,choice,-0.0006346177525224075
+pulse_norm_ugm_choice_w2,2×,DBM13,choice,0.004618825329778227
+pulse_norm_ugm_choice_w2,2×,DBM14,choice,-5.7503658164080265e-05
+pulse_norm_ugm_choice_w2,2×,DBM15,choice,0.00016503558930600545
+pulse_norm_ugm_choice_w2,2×,DBM5,choice,-3.510258634457222e-05
+pulse_norm_ugm_choice_w2,2×,DBM6,choice,-0.0003719731564341413
+pulse_norm_ugm_choice_w2,2×,PSUIM10,choice,0.0005603053546976744
+pulse_norm_ugm_choice_w2,2×,PSUIM5,choice,7.475841110435122e-05
+pulse_norm_ugm_choice_w2,2×,PSUIM6,choice,-0.00026379777456632175
+pulse_norm_ugm_choice_w2,2×,PSUIM7,choice,-0.0001972445755811367
+pulse_norm_ugm_choice_w2,2×,DBM12,rt,5.4857197327060284e-05
+pulse_norm_ugm_choice_w2,2×,DBM13,rt,0.0
+pulse_norm_ugm_choice_w2,2×,DBM14,rt,0.0
+pulse_norm_ugm_choice_w2,2×,DBM15,rt,0.0
+pulse_norm_ugm_choice_w2,2×,DBM5,rt,-2.751161880187133e-05
+pulse_norm_ugm_choice_w2,2×,DBM6,rt,-4.782388564242821e-05
+pulse_norm_ugm_choice_w2,2×,PSUIM10,rt,0.0
+pulse_norm_ugm_choice_w2,2×,PSUIM5,rt,0.0
+pulse_norm_ugm_choice_w2,2×,PSUIM6,rt,0.00035041830435908087
+pulse_norm_ugm_choice_w2,2×,PSUIM7,rt,0.00018863127004566655
+pulse_norm_ugm_choice_w2,2×,DBM12,joint,-0.0005797605551954368
+pulse_norm_ugm_choice_w2,2×,DBM13,joint,0.004618825329778227
+pulse_norm_ugm_choice_w2,2×,DBM14,joint,-5.7503658164080265e-05
+pulse_norm_ugm_choice_w2,2×,DBM15,joint,0.00016503558930600545
+pulse_norm_ugm_choice_w2,2×,DBM5,joint,-6.261420514632909e-05
+pulse_norm_ugm_choice_w2,2×,DBM6,joint,-0.00041979704207618696
+pulse_norm_ugm_choice_w2,2×,PSUIM10,joint,0.0005603053546976744
+pulse_norm_ugm_choice_w2,2×,PSUIM5,joint,7.475841110435122e-05
+pulse_norm_ugm_choice_w2,2×,PSUIM6,joint,8.662052979319131e-05
+pulse_norm_ugm_choice_w2,2×,PSUIM7,joint,-8.61330553558986e-06
+pulse_norm_ugm_choice_w4,4×,DBM12,choice,0.00016602644268904222
+pulse_norm_ugm_choice_w4,4×,DBM13,choice,0.0036148168702731555
+pulse_norm_ugm_choice_w4,4×,DBM14,choice,-0.00388058919618977
+pulse_norm_ugm_choice_w4,4×,DBM15,choice,-0.0004481046769284777
+pulse_norm_ugm_choice_w4,4×,DBM5,choice,-0.0002914912203214968
+pulse_norm_ugm_choice_w4,4×,DBM6,choice,-0.00029828771530845217
+pulse_norm_ugm_choice_w4,4×,PSUIM10,choice,-0.0003244747075598009
+pulse_norm_ugm_choice_w4,4×,PSUIM5,choice,0.0018654917507962916
+pulse_norm_ugm_choice_w4,4×,PSUIM6,choice,-0.00023753297609920511
+pulse_norm_ugm_choice_w4,4×,PSUIM7,choice,0.0011094711889942687
+pulse_norm_ugm_choice_w4,4×,DBM12,rt,6.234547699764723e-05
+pulse_norm_ugm_choice_w4,4×,DBM13,rt,0.0
+pulse_norm_ugm_choice_w4,4×,DBM14,rt,0.0
+pulse_norm_ugm_choice_w4,4×,DBM15,rt,0.0
+pulse_norm_ugm_choice_w4,4×,DBM5,rt,7.328575818062293e-05
+pulse_norm_ugm_choice_w4,4×,DBM6,rt,-7.210430071335238e-05
+pulse_norm_ugm_choice_w4,4×,PSUIM10,rt,0.0
+pulse_norm_ugm_choice_w4,4×,PSUIM5,rt,0.0
+pulse_norm_ugm_choice_w4,4×,PSUIM6,rt,0.00042883739221336834
+pulse_norm_ugm_choice_w4,4×,PSUIM7,rt,-0.0084780297391729
+pulse_norm_ugm_choice_w4,4×,DBM12,joint,0.00022837191968642058
+pulse_norm_ugm_choice_w4,4×,DBM13,joint,0.0036148168702731555
+pulse_norm_ugm_choice_w4,4×,DBM14,joint,-0.00388058919618977
+pulse_norm_ugm_choice_w4,4×,DBM15,joint,-0.0004481046769284777
+pulse_norm_ugm_choice_w4,4×,DBM5,joint,-0.00021820546214064491
+pulse_norm_ugm_choice_w4,4×,DBM6,joint,-0.0003703920160217089
+pulse_norm_ugm_choice_w4,4×,PSUIM10,joint,-0.0003244747075598009
+pulse_norm_ugm_choice_w4,4×,PSUIM5,joint,0.0018654917507962916
+pulse_norm_ugm_choice_w4,4×,PSUIM6,joint,0.00019130441611488354
+pulse_norm_ugm_choice_w4,4×,PSUIM7,joint,-0.0073685585501783914
+pulse_norm_ugm_choice_w8,8×,DBM12,choice,0.0009866609262740688
+pulse_norm_ugm_choice_w8,8×,DBM13,choice,0.0040634801049215085
+pulse_norm_ugm_choice_w8,8×,DBM14,choice,-0.008095228092355838
+pulse_norm_ugm_choice_w8,8×,DBM15,choice,-0.007619833217994374
+pulse_norm_ugm_choice_w8,8×,DBM5,choice,0.00023420251420272676
+pulse_norm_ugm_choice_w8,8×,DBM6,choice,0.0008526969270360248
+pulse_norm_ugm_choice_w8,8×,PSUIM10,choice,-0.015486808553642486
+pulse_norm_ugm_choice_w8,8×,PSUIM5,choice,0.00018603314687471343
+pulse_norm_ugm_choice_w8,8×,PSUIM6,choice,-0.00067134377947819
+pulse_norm_ugm_choice_w8,8×,PSUIM7,choice,0.003925040667405524
+pulse_norm_ugm_choice_w8,8×,DBM12,rt,0.00012428275037876772
+pulse_norm_ugm_choice_w8,8×,DBM13,rt,0.0
+pulse_norm_ugm_choice_w8,8×,DBM14,rt,0.0
+pulse_norm_ugm_choice_w8,8×,DBM15,rt,0.0
+pulse_norm_ugm_choice_w8,8×,DBM5,rt,0.00016727887227345055
+pulse_norm_ugm_choice_w8,8×,DBM6,rt,-0.0018533019063616569
+pulse_norm_ugm_choice_w8,8×,PSUIM10,rt,0.0
+pulse_norm_ugm_choice_w8,8×,PSUIM5,rt,0.0
+pulse_norm_ugm_choice_w8,8×,PSUIM6,rt,-0.002598840747355894
+pulse_norm_ugm_choice_w8,8×,PSUIM7,rt,-0.021770531784739835
+pulse_norm_ugm_choice_w8,8×,DBM12,joint,0.0011109436766527244
+pulse_norm_ugm_choice_w8,8×,DBM13,joint,0.0040634801049215085
+pulse_norm_ugm_choice_w8,8×,DBM14,joint,-0.008095228092355838
+pulse_norm_ugm_choice_w8,8×,DBM15,joint,-0.007619833217994374
+pulse_norm_ugm_choice_w8,8×,DBM5,joint,0.00040148138647629175
+pulse_norm_ugm_choice_w8,8×,DBM6,joint,-0.0010006049793257277
+pulse_norm_ugm_choice_w8,8×,PSUIM10,joint,-0.015486808553642486
+pulse_norm_ugm_choice_w8,8×,PSUIM5,joint,0.00018603314687471343
+pulse_norm_ugm_choice_w8,8×,PSUIM6,joint,-0.003270184526834228
+pulse_norm_ugm_choice_w8,8×,PSUIM7,joint,-0.01784549111733443
+pulse_norm_ugm_choice_only,Choice only,DBM12,choice,0.007158705548635163
+pulse_norm_ugm_choice_only,Choice only,DBM13,choice,-0.016247993876072057
+pulse_norm_ugm_choice_only,Choice only,DBM14,choice,-0.023088149326787898
+pulse_norm_ugm_choice_only,Choice only,DBM15,choice,-0.004316310365963736
+pulse_norm_ugm_choice_only,Choice only,DBM5,choice,-0.004011099454035935
+pulse_norm_ugm_choice_only,Choice only,DBM6,choice,-0.0003820991760061694
+pulse_norm_ugm_choice_only,Choice only,PSUIM10,choice,0.00831982233069295
+pulse_norm_ugm_choice_only,Choice only,PSUIM5,choice,-0.0009447691887051051
+pulse_norm_ugm_choice_only,Choice only,PSUIM6,choice,0.0075547549132657125
+pulse_norm_ugm_choice_only,Choice only,PSUIM7,choice,0.007862960292782235
+pulse_norm_ugm_choice_only,Choice only,DBM12,rt,-0.07029635045767783
+pulse_norm_ugm_choice_only,Choice only,DBM13,rt,0.0
+pulse_norm_ugm_choice_only,Choice only,DBM14,rt,0.0
+pulse_norm_ugm_choice_only,Choice only,DBM15,rt,0.0
+pulse_norm_ugm_choice_only,Choice only,DBM5,rt,-0.1503040712695413
+pulse_norm_ugm_choice_only,Choice only,DBM6,rt,-0.2984158991675181
+pulse_norm_ugm_choice_only,Choice only,PSUIM10,rt,0.0
+pulse_norm_ugm_choice_only,Choice only,PSUIM5,rt,0.0
+pulse_norm_ugm_choice_only,Choice only,PSUIM6,rt,-1.1543980303214771
+pulse_norm_ugm_choice_only,Choice only,PSUIM7,rt,-0.9615617681112338
+pulse_norm_ugm_choice_only,Choice only,DBM12,joint,-0.0631376449090428
+pulse_norm_ugm_choice_only,Choice only,DBM13,joint,-0.016247993876072057
+pulse_norm_ugm_choice_only,Choice only,DBM14,joint,-0.023088149326787898
+pulse_norm_ugm_choice_only,Choice only,DBM15,joint,-0.004316310365963736
+pulse_norm_ugm_choice_only,Choice only,DBM5,joint,-0.15431517072357692
+pulse_norm_ugm_choice_only,Choice only,DBM6,joint,-0.29879799834352405
+pulse_norm_ugm_choice_only,Choice only,PSUIM10,joint,0.00831982233069295
+pulse_norm_ugm_choice_only,Choice only,PSUIM5,joint,-0.0009447691887051051
+pulse_norm_ugm_choice_only,Choice only,PSUIM6,joint,-1.1468432754082118
+pulse_norm_ugm_choice_only,Choice only,PSUIM7,joint,-0.9536988078184517

@@ -1,0 +1,7 @@
+{
+  "source": "dissemination/paper_accumulation/draft_2026-11-15/choice_rt_pareto_2026-11-27_v2",
+  "estimand": "Equal-mouse mean change in unweighted held-out bits/trial after averaging five simulation seeds within mouse.",
+  "uncertainty": "Two-sided 95% Student-t interval across 10 mice; descriptive exploratory analysis.",
+  "positive_direction": "Positive held-out bits/trial is better; negative full-fit G2/trial change is better.",
+  "git_head": "2da0201b0bfa6726b8aa203eba5242bee720b153"
+}
