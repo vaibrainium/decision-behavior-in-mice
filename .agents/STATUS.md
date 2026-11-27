@@ -1,8 +1,8 @@
 # Status
-Last updated: 2026-11-25 by Codex
+Last updated: 2026-11-27 by Codex
 
 ## Current focus
-Choice–RT Pareto refits are running for the Figure 6B pulse-only winner. Four new RT weights (0.5, 0.25, 0.125, 0) give relative choice weights 2, 4, 8 and choice-only; the author submitted all240 checkpointed/warm-started tasks (60 per weight) on2026-11-26. Autosubmit reported no tasks left pending at submission. No completed weighted-fit result has been scored or interpreted yet. After the watcher finishes: sync, validate all240 files, then use the original unweighted held-out scorer. Report: `reports/2026-11-26-choice-rt-pareto-preparation.md`.
+Choice–RT Pareto sweep is complete. Moderate choice weighting does not rescue the Figure 7 timing mismatch; choice-only partly steepens onset primacy only by destroying RT/nonresponse adequacy. Retain the weight-1 Figure 6B/7B model. Final previews: `choice_rt_pareto_preview_2026-11-27_v3/` and `choice_weight_figure7_preview_2026-11-27_v5/`. Report: `reports/2026-11-27-choice-rt-pareto-results.md`.
 
 Figure 7 simulated pulse-check alternatives are ready: **7A** uses the Figure 6a all-trial `power_leak_urgency` winner and **7B** uses the Figure 6b pulse-only `pulse_norm_ugm_no_sv` winner. Current previews are `figure7_7a_simulated_pulse_checks_2026-11-25_v3/` and `figure7_7b_simulated_pulse_checks_2026-11-25_v3/`. Fixed-parameter predictions are compared with choice shifts, onset-stage influence and dilution-adjusted persistence. 7B is closer on all three, but still underpredicts pulse-shift magnitude and primacy. Report: `reports/2026-11-25-figure7-simulated-pulse-checks.md`.
 
@@ -153,6 +153,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
   (3.3 confirmed the strict model); next: guess-bias fits, fit quality, gate 1 first pass, recovery (jobs running)
 
 ## Recent reports (newest first, keep about 10)
+- reports/2026-11-27-choice-rt-pareto-results.md : weighted likelihood does not rescue pulse timing; choice-only fails RT/nonresponse adequacy
 - reports/2026-11-26-choice-rt-pareto-preparation.md : Prepared 240 checkpointed choice-weight refits and common-scale held-out scorer; no jobs submitted or results interpreted.
 - reports/2026-11-25-figure7-simulated-pulse-checks.md : Fixed-parameter 7A/7B checks; pulse-only winner is closer on choice shift, onset primacy and persistence, but still underpredicts pulse magnitude and timing dependence.
 - reports/2026-11-25-direct-model-points-eight-figure-review.md : Removed logistic smoothing from model overlays and assembled/validated the eight current PNG previews.
@@ -229,7 +230,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - reports/2026-11-13-pulse-weight-signatures.md : free pulse weights (shared / per time) raise PSUIM6/7 early effect only to 6.5-7.5 pp (data 15.5 / 13.5); best early chi2 74.6, worse than normalized UGM no sv; BIC +274 to +907
 
 ## Known issues
-- Choice–RT Pareto sweep is running; completion has not been verified. Do not treat weighted objectives/BIC as comparable; use only original weight-1 held-out rescoring after all240 fits sync. Project `.venv` lacks pytest; new unittest/compile/CLI checks pass, existing pytest checkpoint suite was not rerun.
+- Choice–RT Pareto sweep is complete. Weighted objectives/BIC remain incomparable; common weight-1 rescoring shows no moderate-weight rescue. Choice-only conditional-RT terms can be zero in sparse cells, but fixed simulations independently show catastrophic RT/nonresponse failure. See reports/2026-11-27-choice-rt-pareto-results.md.
 - Figure 7 panel A uses matched fit-browser summaries and is not the exact final Figure 4A trial table; B/C use the exact Figure 4C/4D estimators. Keep panel-specific populations explicit. Two-seed model bands are simulation stability only.
 - 2026-11-19: container GPU lost mid-session (NVML init fails, torch.cuda False); simulations fall back to CPU Numba (<=0.17 NLL per fold vs CUDA archives). Restore before CUDA-matched rescoring.
 - Figure4 paired psychometrics: v4 parameter fits/p values superseded by v5 after multistart optimization audit. Use v5 for current inference; parameter identifiability remains limited.
@@ -265,6 +266,7 @@ Primary paper question: integration versus extrema detection; primacy secondary,
 - Screen geometry not corrected in ME (ME methods §3.7).
 
 ## Decisions
+- 2026-11-27: Retain the weight-1 normalized UGM/no-sv pulse model; weighted refits are supplementary/internal diagnostics, not replacement models. See reports/2026-11-27-choice-rt-pareto-results.md.
 - 2026-11-15 (client date): Author explicitly requested local commits of all accumulated work in digestible chunks. Checkpointed without pushing; reports/2026-11-15-commit-work.md.
 - 2026-11-16: Follow author-selected figures → captions → Methods → Results order; apply comparable decision-making paper structure in original prose. First packet complete; Introduction/Discussion/Summary next. reports/2026-11-16-figures-first-draft.md.
 - 2026-11-15: Author preference: retain Huk-style persistence/decline analysis centrally. Primary-source check supports sustained integration interpretation and cautions against a direct intrinsic forgetting estimate; reports/2026-11-15-huk-pulse-interpretation.md.
